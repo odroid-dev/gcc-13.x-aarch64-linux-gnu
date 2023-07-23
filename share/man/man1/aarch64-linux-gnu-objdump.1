@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "OBJDUMP 1"
-.TH OBJDUMP 1 "2023-06-20" "binutils-2.40.0" "GNU Development Tools"
+.TH OBJDUMP 1 "2023-07-23" "binutils-2.40.90" "GNU Development Tools"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -332,8 +332,9 @@ used when disassembling.
 .IP "\fB\-\-disassemble\-all\fR" 4
 .IX Item "--disassemble-all"
 .PD
-Like \fB\-d\fR, but disassemble the contents of all sections, not just
-those expected to contain instructions.
+Like \fB\-d\fR, but disassemble the contents of all non-empty
+non-bss sections, not just those expected to contain instructions.
+\&\fB\-j\fR may be used to select specific sections.
 .Sp
 This option also has a subtle effect on the disassembly of
 instructions in code sections.  When option \fB\-d\fR is in effect
@@ -441,7 +442,8 @@ for specification with \fB\-b\fR or \fB\-m\fR.
 .IP "\fB\-\-section=\fR\fIname\fR" 4
 .IX Item "--section=name"
 .PD
-Display information only for section \fIname\fR.
+Display information for section \fIname\fR.  This option may be
+specified multiple times.
 .IP "\fB\-L\fR" 4
 .IX Item "-L"
 .PD 0
@@ -780,6 +782,18 @@ For \s-1XCOFF,\s0 the available options are:
 .RS 4
 .PD
 .Sp
+For \s-1PE,\s0 the available options are:
+.ie n .IP """header""" 4
+.el .IP "\f(CWheader\fR" 4
+.IX Item "header"
+.PD 0
+.ie n .IP """sections""" 4
+.el .IP "\f(CWsections\fR" 4
+.IX Item "sections"
+.RE
+.RS 4
+.PD
+.Sp
 Not all object formats support this option.  In particular the \s-1ELF\s0
 format does not use it.
 .RE
@@ -809,8 +823,9 @@ disassembly.
 .IP "\fB\-\-full\-contents\fR" 4
 .IX Item "--full-contents"
 .PD
-Display the full contents of any sections requested.  By default all
-non-empty sections are displayed.
+Display the full contents of sections, often used in combination with
+\&\fB\-j\fR to request specific sections.  By default all non-empty
+non-bss sections are displayed.
 .IP "\fB\-S\fR" 4
 .IX Item "-S"
 .PD 0

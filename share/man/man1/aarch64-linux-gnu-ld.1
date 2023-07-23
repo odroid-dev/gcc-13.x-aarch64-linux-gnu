@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "LD 1"
-.TH LD 1 "2023-06-20" "binutils-2.40.0" "GNU Development Tools"
+.TH LD 1 "2023-07-23" "binutils-2.40.90" "GNU Development Tools"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -362,6 +362,20 @@ specified in the library.  If specified multiple times \f(CW\*(C`DT_DEPAUDIT\*(C
 will contain a colon separated list of audit interfaces to use.  This
 option is only meaningful on \s-1ELF\s0 platforms supporting the rtld-audit interface.
 The \-P option is provided for Solaris compatibility.
+.IP "\fB\-\-enable\-linker\-version\fR" 4
+.IX Item "--enable-linker-version"
+Enables the \f(CW\*(C`LINKER_VERSION\*(C'\fR linker script directive, described
+in \fBOutput Section Data\fR.  If this directive is used in a linker
+script and this option has been enabled then a string containing the
+linker version will be inserted at the current point.
+.Sp
+Note \- this location of this option on the linker command line is
+significant.  It will only affect linker scripts that come after it on
+the command line, or which are built into the linker.
+.IP "\fB\-\-disable\-linker\-version\fR" 4
+.IX Item "--disable-linker-version"
+Disables the \f(CW\*(C`LINKER_VERSION\*(C'\fR linker script directive, so that it
+does not insert a version string.  This is the default.
 .IP "\fB\-\-enable\-non\-contiguous\-regions\fR" 4
 .IX Item "--enable-non-contiguous-regions"
 This option avoids generating an error if an input section does not
@@ -374,14 +388,14 @@ sections are evaluated does not change, for instance:
 .Sp
 .Vb 10
 \&          MEMORY {
-\&            MEM1 (rwx) : ORIGIN : 0x1000, LENGTH = 0x14
-\&            MEM2 (rwx) : ORIGIN : 0x1000, LENGTH = 0x40
-\&            MEM3 (rwx) : ORIGIN : 0x2000, LENGTH = 0x40
+\&            MEM1 (rwx) : ORIGIN = 0x1000, LENGTH = 0x14
+\&            MEM2 (rwx) : ORIGIN = 0x1000, LENGTH = 0x40
+\&            MEM3 (rwx) : ORIGIN = 0x2000, LENGTH = 0x40
 \&          }
 \&          SECTIONS {
 \&            mem1 : { *(.data.*); } > MEM1
 \&            mem2 : { *(.data.*); } > MEM2
-\&            mem3 : { *(.data.*); } > MEM2
+\&            mem3 : { *(.data.*); } > MEM3
 \&          }
 \&        
 \&          with input sections:
@@ -649,6 +663,66 @@ If the \fB\-m\fR option is not used, the emulation is taken from the
 .Sp
 Otherwise, the default emulation depends upon how the linker was
 configured.
+.IP "\fB\-\-remap\-inputs=\f(BIpattern\fB=\f(BIfilename\fB\fR" 4
+.IX Item "--remap-inputs=pattern=filename"
+.PD 0
+.IP "\fB\-\-remap\-inputs\-file=\f(BIfile\fB\fR" 4
+.IX Item "--remap-inputs-file=file"
+.PD
+These options allow the names of input files to be changed before the
+linker attempts to open them.  The option
+\&\fB\-\-remap\-inputs=foo.o=bar.o\fR will cause any attempt to load a
+file called \fIfoo.o\fR to instead try to load a file called
+\&\fIbar.o\fR.  Wildcard patterns are permitted in the first filename,
+so \fB\-\-remap\-inputs=foo*.o=bar.o\fR will rename any input file that
+matches \fIfoo*.o\fR to \fIbar.o\fR.
+.Sp
+An alternative form of the option
+\&\fB\-\-remap\-inputs\-file=filename\fR allows the remappings to be read
+from a file.  Each line in the file can contain a single remapping.
+Blank lines are ignored.  Anything from a hash character (\fB#\fR) to
+the end of a line is considered to be a comment and is also ignored.
+The mapping pattern can be separated from the filename by whitespace
+or an equals (\fB=\fR) character.
+.Sp
+The options can be specified multiple times.  Their contents
+accumulate.  The remappings will be processed in the order in which
+they occur on the command line, and if they come from a file, in the
+order in which they occur in the file.  If a match is made, no further
+checking for that filename will be performed.
+.Sp
+If the replacement filename is \fI/dev/null\fR or just \fI\s-1NUL\s0\fR
+then the remapping will actually cause the input file to be ignored.
+This can be a convenient way to experiment with removing input files
+from a complicated build environment.
+.Sp
+Note that this option is position dependent and only affects filenames
+that come after it on the command line.  Thus:
+.Sp
+.Vb 1
+\&          ld foo.o \-\-remap\-inputs=foo.o=bar.o
+.Ve
+.Sp
+Will have no effect, whereas:
+.Sp
+.Vb 1
+\&          ld \-\-remap\-inputs=foo.o=bar.o foo.o
+.Ve
+.Sp
+Will rename the input file \fIfoo.o\fR to \fIbar.o\fR.
+.Sp
+Note \- these options also affect files referenced by \fI\s-1INPUT\s0\fR
+statements in linker scripts.  But since linker scripts are processed
+after the entire command line is read, the position of the remap
+options on the command line is not significant.
+.Sp
+If the \fBverbose\fR option is enabled then any mappings that match
+will be reported, although again the \fBverbose\fR option needs to
+be enabled on the command line \fIbefore\fR the remaped filenames
+appear.
+.Sp
+If the \fB\-Map\fR or \fB\-\-print\-map\fR options are enabled then
+the remapping list will be included in the map output.
 .IP "\fB\-M\fR" 4
 .IX Item "-M"
 .PD 0
@@ -726,6 +800,17 @@ is 0x1, and \fIbar.o\fR, whose 0xc0010001 property value is 0x1.
 .PD
 Print (or do not print) the list of discarded and garbage collected sections
 in the link map.  Enabled by default.
+.IP "\fB\-\-print\-map\-locals\fR" 4
+.IX Item "--print-map-locals"
+.PD 0
+.IP "\fB\-\-no\-print\-map\-locals\fR" 4
+.IX Item "--no-print-map-locals"
+.PD
+Print (or do not print) local symbols in the link map.  Local symbols
+will have the text \fB(local)\fR printed before their name, and will
+be listed after all of the global symbols in a given section.
+Temporary local symbols (typically those that start with \fB.L\fR)
+will not be included in the output.  Disabled by default.
 .IP "\fB\-n\fR" 4
 .IX Item "-n"
 .PD 0
@@ -914,7 +999,8 @@ a linker bug report.
 .IX Item "--script=scriptfile"
 .PD
 Use \fIscriptfile\fR as the linker script.  This script replaces
-\&\fBld\fR's default linker script (rather than adding to it), so
+\&\fBld\fR's default linker script (rather than adding to it),
+unless the script contains \f(CW\*(C`INSERT\*(C'\fR, so
 \&\fIcommandfile\fR must specify everything necessary to describe the
 output file.    If \fIscriptfile\fR does not exist in
 the current directory, \f(CW\*(C`ld\*(C'\fR looks for it in the directories
@@ -962,14 +1048,18 @@ and exit.  The same effect can be achieved in a linker script by using
 can be used multiple times to require additional symbols.
 .IP "\fB\-Ur\fR" 4
 .IX Item "-Ur"
-For anything other than \*(C+ programs, this option is equivalent to
-\&\fB\-r\fR: it generates relocatable output\-\-\-i.e., an output file that can in
-turn serve as input to \fBld\fR.  When linking \*(C+ programs, \fB\-Ur\fR
-\&\fIdoes\fR resolve references to constructors, unlike \fB\-r\fR.
-It does not work to use \fB\-Ur\fR on files that were themselves linked
-with \fB\-Ur\fR; once the constructor table has been built, it cannot
-be added to.  Use \fB\-Ur\fR only for the last partial link, and
-\&\fB\-r\fR for the others.
+For programs that do not use constructors or destructors, or for \s-1ELF\s0
+based systems this option is equivalent to \fB\-r\fR:  it generates
+relocatable output\-\-\-i.e., an output file that can in turn serve as
+input to \fBld\fR.  For other binaries however the \fB\-Ur\fR
+option is similar to \fB\-r\fR but it also resolves references to
+constructors and destructors.
+.Sp
+For those systems where \fB\-r\fR and \fB\-Ur\fR behave
+differently, it does not work to use \fB\-Ur\fR on files that were
+themselves linked with \fB\-Ur\fR; once the constructor table has
+been built, it cannot be added to.  Use \fB\-Ur\fR only for the last
+partial link, and \fB\-r\fR for the others.
 .IP "\fB\-\-orphan\-handling=\fR\fI\s-1MODE\s0\fR" 4
 .IX Item "--orphan-handling=MODE"
 Control how orphan sections are handled.  An orphan section is one not
@@ -1020,7 +1110,9 @@ in a linker script.
 .IX Item "-V"
 .PD
 Display the version number for \fBld\fR.  The \fB\-V\fR option also
-lists the supported emulations.
+lists the supported emulations.  See also the description of the
+\&\fB\-\-enable\-linker\-version\fR in \fBOptions,,Command\-line Options\fR
+which can be used to insert the linker version string into a binary.
 .IP "\fB\-x\fR" 4
 .IX Item "-x"
 .PD 0
@@ -1341,6 +1433,14 @@ Don't create an \s-1ELF\s0 \f(CW\*(C`PT_GNU_RELRO\*(C'\fR segment if \fBnorelro\
 .IX Item "report-relative-reloc"
 Report dynamic relative relocations generated by linker.  Supported for
 Linux/i386 and Linux/x86_64.
+.IP "\fBsectionheader\fR" 4
+.IX Item "sectionheader"
+.PD 0
+.IP "\fBnosectionheader\fR" 4
+.IX Item "nosectionheader"
+.PD
+Generate section header.  Don't generate section header if
+\&\fBnosectionheader\fR is used.  \fBsectionheader\fR is the default.
 .IP "\fBseparate-code\fR" 4
 .IX Item "separate-code"
 .PD 0
@@ -2634,7 +2734,7 @@ section and \s-1ELF\s0 \f(CW\*(C`PT_GNU_EH_FRAME\*(C'\fR segment header.
 Request creation of \f(CW\*(C`.eh_frame\*(C'\fR unwind info for linker
 generated code sections like \s-1PLT.\s0  This option is on by default
 if linker generated unwind info is supported.  This option also
-controls the generation of \f(CW\*(C`.sframe\*(C'\fR unwind info for linker
+controls the generation of \f(CW\*(C`.sframe\*(C'\fR stack trace info for linker
 generated code sections like \s-1PLT.\s0
 .IP "\fB\-\-enable\-new\-dtags\fR" 4
 .IX Item "--enable-new-dtags"

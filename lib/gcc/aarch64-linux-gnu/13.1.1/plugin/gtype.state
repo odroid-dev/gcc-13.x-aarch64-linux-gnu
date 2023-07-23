@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "13.1.1 20230620")
+(!version  "13.1.1 20230723")
 (!srcdir  "../../gcc/gcc")
 (!languages 12 ada c cp d fortran go jit lto m2 objc objcp rust)
 (!fileslist 244 0
@@ -23065,16 +23065,16 @@
  )
  
  (!type struct 1371 nil  gc_unused "macinfo_entry_hasher"
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28878)
   (!fields 0 )
   nil 4095 nil nil )
  
  (!type user_struct 1372 nil  gc_unused "hash_table<macinfo_entry_hasher>"
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28878)
   (!fields 1 
    (!pair  "macinfo_entry_hasher"
     (!type already_seen 1371)
-    (!srcfileloc  "dwarf2out.cc" 28877)
+    (!srcfileloc  "dwarf2out.cc" 28878)
     nil )
   )
  )
@@ -23084,16 +23084,16 @@
   nil 0 nil nil )
  
  (!type struct 1374 nil  gc_unused "loc_list_hasher"
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31933)
   (!fields 0 )
   nil 4095 nil nil )
  
  (!type user_struct 1375 nil  gc_unused "hash_table<loc_list_hasher>"
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31933)
   (!fields 1 
    (!pair  "loc_list_hasher"
     (!type already_seen 1374)
-    (!srcfileloc  "dwarf2out.cc" 31932)
+    (!srcfileloc  "dwarf2out.cc" 31933)
     nil )
   )
  )
@@ -26638,11 +26638,11 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1842 nil  gc_unused "anonymous:../../gcc/gcc/config/aarch64/aarch64-builtins.cc:1770"nil 
+ (!type struct 1842 nil  gc_unused "anonymous:../../gcc/gcc/config/aarch64/aarch64-builtins.cc:1780"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1843 nil  gc_unused "anonymous:../../gcc/gcc/config/aarch64/aarch64-builtins.cc:1817"nil 
+ (!type struct 1843 nil  gc_unused "anonymous:../../gcc/gcc/config/aarch64/aarch64-builtins.cc:1827"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -29557,19 +29557,19 @@
   nil 0 nil nil )
  
  (!type struct 2137 nil  gc_pointed_to "source_location_table_entry"
-  (!srcfileloc  "cp/cp-gimplify.cc" 3385)
+  (!srcfileloc  "cp/cp-gimplify.cc" 3387)
   (!fields 3 
    (!pair  "loc"
     (!type already_seen 2)
-    (!srcfileloc  "cp/cp-gimplify.cc" 3382)
+    (!srcfileloc  "cp/cp-gimplify.cc" 3384)
     nil )
    (!pair  "uid"
     (!type already_seen 2)
-    (!srcfileloc  "cp/cp-gimplify.cc" 3383)
+    (!srcfileloc  "cp/cp-gimplify.cc" 3385)
     nil )
    (!pair  "var"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-gimplify.cc" 3384)
+    (!srcfileloc  "cp/cp-gimplify.cc" 3386)
     nil )
   )
   (!options 
@@ -29578,7 +29578,7 @@
   1028 nil nil )
  
  (!type struct 2138 nil  gc_used "source_location_table_entry_hash"
-  (!srcfileloc  "cp/cp-gimplify.cc" 3461)
+  (!srcfileloc  "cp/cp-gimplify.cc" 3463)
   (!fields 0 )
   nil 1028 nil nil )
  
@@ -29587,11 +29587,11 @@
    (!type already_seen 2139)
   )
   gc_pointed_to "hash_table<source_location_table_entry_hash>"
-  (!srcfileloc  "cp/cp-gimplify.cc" 3461)
+  (!srcfileloc  "cp/cp-gimplify.cc" 3463)
   (!fields 1 
    (!pair  "source_location_table_entry_hash"
     (!type already_seen 2138)
-    (!srcfileloc  "cp/cp-gimplify.cc" 3461)
+    (!srcfileloc  "cp/cp-gimplify.cc" 3463)
     nil )
   )
  )
@@ -30506,15 +30506,15 @@
    (!type already_seen 2268)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.cc" 30447)
+  (!srcfileloc  "cp/pt.cc" 30458)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 541)
-    (!srcfileloc  "cp/pt.cc" 30447)
+    (!srcfileloc  "cp/pt.cc" 30458)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.cc" 30447)
+    (!srcfileloc  "cp/pt.cc" 30458)
     nil )
   )
  )
@@ -31836,7 +31836,7 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2268)
-  (!srcfileloc  "cp/pt.cc" 30447)
+  (!srcfileloc  "cp/pt.cc" 30458)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2252)
@@ -32160,11 +32160,11 @@
   nil )
  (!pair  "source_location_table_entry_hash"
   (!type already_seen 2138)
-  (!srcfileloc  "cp/cp-gimplify.cc" 3461)
+  (!srcfileloc  "cp/cp-gimplify.cc" 3463)
   nil )
  (!pair  "hash_table<source_location_table_entry_hash>"
   (!type already_seen 2139)
-  (!srcfileloc  "cp/cp-gimplify.cc" 3461)
+  (!srcfileloc  "cp/cp-gimplify.cc" 3463)
   nil )
  (!pair  "coroutine_info_hasher"
   (!type already_seen 2118)
@@ -32662,11 +32662,11 @@
   nil )
  (!pair  "builtin_simd_arg"
   (!type already_seen 2)
-  (!srcfileloc  "config/aarch64/aarch64-builtins.cc" 2029)
+  (!srcfileloc  "config/aarch64/aarch64-builtins.cc" 2043)
   nil )
  (!pair  "ls64_builtins_data"
   (!type already_seen 1843)
-  (!srcfileloc  "config/aarch64/aarch64-builtins.cc" 1821)
+  (!srcfileloc  "config/aarch64/aarch64-builtins.cc" 1831)
   nil )
  (!pair  "aarch64_simd_intrinsic_datum"
   (!type already_seen 1839)
@@ -33606,27 +33606,27 @@
   nil )
  (!pair  "loc_list_hash_type"
   (!type already_seen 1375)
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31933)
   nil )
  (!pair  "loc_list_hasher"
   (!type already_seen 1374)
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31933)
   nil )
  (!pair  "hash_table<loc_list_hasher>"
   (!type already_seen 1375)
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31933)
   nil )
  (!pair  "macinfo_hash_type"
   (!type already_seen 1372)
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28878)
   nil )
  (!pair  "macinfo_entry_hasher"
   (!type already_seen 1371)
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28878)
   nil )
  (!pair  "hash_table<macinfo_entry_hasher>"
   (!type already_seen 1372)
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28878)
   nil )
  (!pair  "inline_entry_data_hasher"
   (!type already_seen 1368)
@@ -36689,37 +36689,37 @@
   (!type array 2417 nil  gc_used "(int) BT_LAST + 1" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "d/d-builtins.cc" 1133)
+  (!srcfileloc  "d/d-builtins.cc" 1136)
   nil )
  (!pair  "built_in_attributes"
   (!type array 2418 nil  gc_used "(int) ATTR_LAST" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "d/d-builtins.cc" 1037)
+  (!srcfileloc  "d/d-builtins.cc" 1040)
   nil )
  (!pair  "signed_size_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 886)
+  (!srcfileloc  "d/d-builtins.cc" 889)
   nil )
  (!pair  "uintmax_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 885)
+  (!srcfileloc  "d/d-builtins.cc" 888)
   nil )
  (!pair  "intmax_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 884)
+  (!srcfileloc  "d/d-builtins.cc" 887)
   nil )
  (!pair  "wint_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 883)
+  (!srcfileloc  "d/d-builtins.cc" 886)
   nil )
  (!pair  "const_string_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 882)
+  (!srcfileloc  "d/d-builtins.cc" 885)
   nil )
  (!pair  "string_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 881)
+  (!srcfileloc  "d/d-builtins.cc" 884)
   nil )
  (!pair  "gcc_builtins_types"
   (!type already_seen 85)
@@ -36781,28 +36781,28 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2269)
-  (!srcfileloc  "cp/pt.cc" 30447)
+  (!srcfileloc  "cp/pt.cc" 30458)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "explicit_specifier_map"
   (!type already_seen 948)
-  (!srcfileloc  "cp/pt.cc" 14195)
+  (!srcfileloc  "cp/pt.cc" 14206)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "defarg_inst"
   (!type already_seen 1564)
-  (!srcfileloc  "cp/pt.cc" 14057)
+  (!srcfileloc  "cp/pt.cc" 14068)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "last_error_tinst_level"
   (!type already_seen 2028)
-  (!srcfileloc  "cp/pt.cc" 11090)
+  (!srcfileloc  "cp/pt.cc" 11101)
   nil )
  (!pair  "pending_template_freelist_head"
   (!type already_seen 2253)
@@ -37081,11 +37081,11 @@
   nil )
  (!pair  "source_location_id"
   (!type already_seen 2)
-  (!srcfileloc  "cp/cp-gimplify.cc" 3463)
+  (!srcfileloc  "cp/cp-gimplify.cc" 3465)
   nil )
  (!pair  "source_location_table"
   (!type already_seen 2140)
-  (!srcfileloc  "cp/cp-gimplify.cc" 3462)
+  (!srcfileloc  "cp/cp-gimplify.cc" 3464)
   nil )
  (!pair  "fold_caches"
   (!type array 2423 nil  gc_used "2" 
@@ -37317,7 +37317,7 @@
   nil )
  (!pair  "default_arg_context"
   (!type already_seen 85)
-  (!srcfileloc  "cp/call.cc" 9147)
+  (!srcfileloc  "cp/call.cc" 9162)
   nil )
  (!pair  "unemitted_tinfo_decls"
   (!type already_seen 85)
@@ -37738,7 +37738,7 @@
   nil )
  (!pair  "ls64_arm_data_t"
   (!type already_seen 23)
-  (!srcfileloc  "config/aarch64/aarch64-builtins.cc" 1823)
+  (!srcfileloc  "config/aarch64/aarch64-builtins.cc" 1833)
   nil )
  (!pair  "aarch64_simd_intXI_type_node"
   (!type already_seen 23)
