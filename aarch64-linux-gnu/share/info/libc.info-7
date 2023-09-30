@@ -1,6 +1,6 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.37.
+This is ‘The GNU C Library Reference Manual’, for version 2.38.
 
    Copyright © 1993–2023 Free Software Foundation, Inc.
 
@@ -1612,6 +1612,7 @@ START-INFO-DIR-ENTRY
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
 * posix_memalign: (libc)Aligned Memory Blocks.
+* posix_openpt: (libc)Allocation.
 * pow: (libc)Exponents and Logarithms.
 * powf: (libc)Exponents and Logarithms.
 * powfN: (libc)Exponents and Logarithms.
@@ -1898,6 +1899,8 @@ START-INFO-DIR-ENTRY
 * strdup: (libc)Copying Strings and Arrays.
 * strdupa: (libc)Copying Strings and Arrays.
 * strerror: (libc)Error Messages.
+* strerror_l: (libc)Error Messages.
+* strerror_r: (libc)Error Messages.
 * strerror_r: (libc)Error Messages.
 * strerrordesc_np: (libc)Error Messages.
 * strerrorname_np: (libc)Error Messages.
@@ -1909,6 +1912,8 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strlcat: (libc)Truncating Strings.
+* strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
 * strncasecmp: (libc)String/Array Comparison.
 * strncat: (libc)Truncating Strings.
@@ -2104,6 +2109,8 @@ START-INFO-DIR-ENTRY
 * wcscspn: (libc)Search Functions.
 * wcsdup: (libc)Copying Strings and Arrays.
 * wcsftime: (libc)Formatting Calendar Time.
+* wcslcat: (libc)Truncating Strings.
+* wcslcpy: (libc)Truncating Strings.
 * wcslen: (libc)String Length.
 * wcsncasecmp: (libc)String/Array Comparison.
 * wcsncat: (libc)Truncating Strings.
@@ -5530,7 +5537,7 @@ Internet namespace socket address.
           This combines the IPv6 traffic class and flow label values, as
           found in the IPv6 header.  This field is stored in network
           byte order.  Only the 28 lower bits (of the number in network
-          byte order) are used; the remainig bits must be zero.  The
+          byte order) are used; the remaining bits must be zero.  The
           lower 20 bits are the flow label, and bits 20 to 27 are the
           the traffic class.  Typically, this field is zero.
 
@@ -7363,285 +7370,4 @@ client shutting down its end of the connection).
                }
          }
      }
-
-
-File: libc.info,  Node: Out-of-Band Data,  Prev: Server Example,  Up: Connections
-
-16.9.8 Out-of-Band Data
------------------------
-
-Streams with connections permit “out-of-band” data that is delivered
-with higher priority than ordinary data.  Typically the reason for
-sending out-of-band data is to send notice of an exceptional condition.
-To send out-of-band data use ‘send’, specifying the flag ‘MSG_OOB’
-(*note Sending Data::).
-
-   Out-of-band data are received with higher priority because the
-receiving process need not read it in sequence; to read the next
-available out-of-band data, use ‘recv’ with the ‘MSG_OOB’ flag (*note
-Receiving Data::).  Ordinary read operations do not read out-of-band
-data; they read only ordinary data.
-
-   When a socket finds that out-of-band data are on their way, it sends
-a ‘SIGURG’ signal to the owner process or process group of the socket.
-You can specify the owner using the ‘F_SETOWN’ command to the ‘fcntl’
-function; see *note Interrupt Input::.  You must also establish a
-handler for this signal, as described in *note Signal Handling::, in
-order to take appropriate action such as reading the out-of-band data.
-
-   Alternatively, you can test for pending out-of-band data, or wait
-until there is out-of-band data, using the ‘select’ function; it can
-wait for an exceptional condition on the socket.  *Note Waiting for
-I/O::, for more information about ‘select’.
-
-   Notification of out-of-band data (whether with ‘SIGURG’ or with
-‘select’) indicates that out-of-band data are on the way; the data may
-not actually arrive until later.  If you try to read the out-of-band
-data before it arrives, ‘recv’ fails with an ‘EWOULDBLOCK’ error.
-
-   Sending out-of-band data automatically places a “mark” in the stream
-of ordinary data, showing where in the sequence the out-of-band data
-“would have been”.  This is useful when the meaning of out-of-band data
-is “cancel everything sent so far”.  Here is how you can test, in the
-receiving process, whether any ordinary data was sent before the mark:
-
-     success = ioctl (socket, SIOCATMARK, &atmark);
-
-   The ‘integer’ variable ATMARK is set to a nonzero value if the
-socket’s read pointer has reached the “mark”.
-
-   Here’s a function to discard any ordinary data preceding the
-out-of-band mark:
-
-     int
-     discard_until_mark (int socket)
-     {
-       while (1)
-         {
-           /* This is not an arbitrary limit; any size will do.  */
-           char buffer[1024];
-           int atmark, success;
-
-           /* If we have reached the mark, return.  */
-           success = ioctl (socket, SIOCATMARK, &atmark);
-           if (success < 0)
-             perror ("ioctl");
-           if (result)
-             return;
-
-           /* Otherwise, read a bunch of ordinary data and discard it.
-              This is guaranteed not to read past the mark
-              if it starts before the mark.  */
-           success = read (socket, buffer, sizeof buffer);
-           if (success < 0)
-             perror ("read");
-         }
-     }
-
-   If you don’t want to discard the ordinary data preceding the mark,
-you may need to read some of it anyway, to make room in internal system
-buffers for the out-of-band data.  If you try to read out-of-band data
-and get an ‘EWOULDBLOCK’ error, try reading some ordinary data (saving
-it so that you can use it when you want it) and see if that makes room.
-Here is an example:
-
-     struct buffer
-     {
-       char *buf;
-       int size;
-       struct buffer *next;
-     };
-
-     /* Read the out-of-band data from SOCKET and return it
-        as a ‘struct buffer’, which records the address of the data
-        and its size.
-
-        It may be necessary to read some ordinary data
-        in order to make room for the out-of-band data.
-        If so, the ordinary data are saved as a chain of buffers
-        found in the ‘next’ field of the value.  */
-
-     struct buffer *
-     read_oob (int socket)
-     {
-       struct buffer *tail = 0;
-       struct buffer *list = 0;
-
-       while (1)
-         {
-           /* This is an arbitrary limit.
-              Does anyone know how to do this without a limit?  */
-     #define BUF_SZ 1024
-           char *buf = (char *) xmalloc (BUF_SZ);
-           int success;
-           int atmark;
-
-           /* Try again to read the out-of-band data.  */
-           success = recv (socket, buf, BUF_SZ, MSG_OOB);
-           if (success >= 0)
-             {
-               /* We got it, so return it.  */
-               struct buffer *link
-                 = (struct buffer *) xmalloc (sizeof (struct buffer));
-               link->buf = buf;
-               link->size = success;
-               link->next = list;
-               return link;
-             }
-
-           /* If we fail, see if we are at the mark.  */
-           success = ioctl (socket, SIOCATMARK, &atmark);
-           if (success < 0)
-             perror ("ioctl");
-           if (atmark)
-             {
-               /* At the mark; skipping past more ordinary data cannot help.
-                  So just wait a while.  */
-               sleep (1);
-               continue;
-             }
-
-           /* Otherwise, read a bunch of ordinary data and save it.
-              This is guaranteed not to read past the mark
-              if it starts before the mark.  */
-           success = read (socket, buf, BUF_SZ);
-           if (success < 0)
-             perror ("read");
-
-           /* Save this data in the buffer list.  */
-           {
-             struct buffer *link
-               = (struct buffer *) xmalloc (sizeof (struct buffer));
-             link->buf = buf;
-             link->size = success;
-
-             /* Add the new link to the end of the list.  */
-             if (tail)
-               tail->next = link;
-             else
-               list = link;
-             tail = link;
-           }
-         }
-     }
-
-
-File: libc.info,  Node: Datagrams,  Next: Inetd,  Prev: Connections,  Up: Sockets
-
-16.10 Datagram Socket Operations
-================================
-
-This section describes how to use communication styles that don’t use
-connections (styles ‘SOCK_DGRAM’ and ‘SOCK_RDM’).  Using these styles,
-you group data into packets and each packet is an independent
-communication.  You specify the destination for each packet
-individually.
-
-   Datagram packets are like letters: you send each one independently
-with its own destination address, and they may arrive in the wrong order
-or not at all.
-
-   The ‘listen’ and ‘accept’ functions are not allowed for sockets using
-connectionless communication styles.
-
-* Menu:
-
-* Sending Datagrams::    Sending packets on a datagram socket.
-* Receiving Datagrams::  Receiving packets on a datagram socket.
-* Datagram Example::     An example program: packets sent over a
-                           datagram socket in the local namespace.
-* Example Receiver::	 Another program, that receives those packets.
-
-
-File: libc.info,  Node: Sending Datagrams,  Next: Receiving Datagrams,  Up: Datagrams
-
-16.10.1 Sending Datagrams
--------------------------
-
-The normal way of sending data on a datagram socket is by using the
-‘sendto’ function, declared in ‘sys/socket.h’.
-
-   You can call ‘connect’ on a datagram socket, but this only specifies
-a default destination for further data transmission on the socket.  When
-a socket has a default destination you can use ‘send’ (*note Sending
-Data::) or even ‘write’ (*note I/O Primitives::) to send a packet there.
-You can cancel the default destination by calling ‘connect’ using an
-address format of ‘AF_UNSPEC’ in the ADDR argument.  *Note Connecting::,
-for more information about the ‘connect’ function.
-
- -- Function: ssize_t sendto (int SOCKET, const void *BUFFER, size_t
-          SIZE, int FLAGS, struct sockaddr *ADDR, socklen_t LENGTH)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     The ‘sendto’ function transmits the data in the BUFFER through the
-     socket SOCKET to the destination address specified by the ADDR and
-     LENGTH arguments.  The SIZE argument specifies the number of bytes
-     to be transmitted.
-
-     The FLAGS are interpreted the same way as for ‘send’; see *note
-     Socket Data Options::.
-
-     The return value and error conditions are also the same as for
-     ‘send’, but you cannot rely on the system to detect errors and
-     report them; the most common error is that the packet is lost or
-     there is no-one at the specified address to receive it, and the
-     operating system on your machine usually does not know this.
-
-     It is also possible for one call to ‘sendto’ to report an error
-     owing to a problem related to a previous call.
-
-     This function is defined as a cancellation point in multi-threaded
-     programs, so one has to be prepared for this and make sure that
-     allocated resources (like memory, file descriptors, semaphores or
-     whatever) are freed even if the thread is canceled.
-
-
-File: libc.info,  Node: Receiving Datagrams,  Next: Datagram Example,  Prev: Sending Datagrams,  Up: Datagrams
-
-16.10.2 Receiving Datagrams
----------------------------
-
-The ‘recvfrom’ function reads a packet from a datagram socket and also
-tells you where it was sent from.  This function is declared in
-‘sys/socket.h’.
-
- -- Function: ssize_t recvfrom (int SOCKET, void *BUFFER, size_t SIZE,
-          int FLAGS, struct sockaddr *ADDR, socklen_t *LENGTH-PTR)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     The ‘recvfrom’ function reads one packet from the socket SOCKET
-     into the buffer BUFFER.  The SIZE argument specifies the maximum
-     number of bytes to be read.
-
-     If the packet is longer than SIZE bytes, then you get the first
-     SIZE bytes of the packet and the rest of the packet is lost.
-     There’s no way to read the rest of the packet.  Thus, when you use
-     a packet protocol, you must always know how long a packet to
-     expect.
-
-     The ADDR and LENGTH-PTR arguments are used to return the address
-     where the packet came from.  *Note Socket Addresses::.  For a
-     socket in the local domain the address information won’t be
-     meaningful, since you can’t read the address of such a socket
-     (*note Local Namespace::).  You can specify a null pointer as the
-     ADDR argument if you are not interested in this information.
-
-     The FLAGS are interpreted the same way as for ‘recv’ (*note Socket
-     Data Options::).  The return value and error conditions are also
-     the same as for ‘recv’.
-
-     This function is defined as a cancellation point in multi-threaded
-     programs, so one has to be prepared for this and make sure that
-     allocated resources (like memory, file descriptors, semaphores or
-     whatever) are freed even if the thread is canceled.
-
-   You can use plain ‘recv’ (*note Receiving Data::) instead of
-‘recvfrom’ if you don’t need to find out who sent the packet (either
-because you know where it should come from or because you treat all
-possible senders alike).  Even ‘read’ can be used if you don’t want to
-specify FLAGS (*note I/O Primitives::).
 

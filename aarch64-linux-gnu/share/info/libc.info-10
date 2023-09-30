@@ -1,6 +1,6 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.37.
+This is ‘The GNU C Library Reference Manual’, for version 2.38.
 
    Copyright © 1993–2023 Free Software Foundation, Inc.
 
@@ -1612,6 +1612,7 @@ START-INFO-DIR-ENTRY
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
 * posix_memalign: (libc)Aligned Memory Blocks.
+* posix_openpt: (libc)Allocation.
 * pow: (libc)Exponents and Logarithms.
 * powf: (libc)Exponents and Logarithms.
 * powfN: (libc)Exponents and Logarithms.
@@ -1898,6 +1899,8 @@ START-INFO-DIR-ENTRY
 * strdup: (libc)Copying Strings and Arrays.
 * strdupa: (libc)Copying Strings and Arrays.
 * strerror: (libc)Error Messages.
+* strerror_l: (libc)Error Messages.
+* strerror_r: (libc)Error Messages.
 * strerror_r: (libc)Error Messages.
 * strerrordesc_np: (libc)Error Messages.
 * strerrorname_np: (libc)Error Messages.
@@ -1909,6 +1912,8 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strlcat: (libc)Truncating Strings.
+* strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
 * strncasecmp: (libc)String/Array Comparison.
 * strncat: (libc)Truncating Strings.
@@ -2104,6 +2109,8 @@ START-INFO-DIR-ENTRY
 * wcscspn: (libc)Search Functions.
 * wcsdup: (libc)Copying Strings and Arrays.
 * wcsftime: (libc)Formatting Calendar Time.
+* wcslcat: (libc)Truncating Strings.
+* wcslcpy: (libc)Truncating Strings.
 * wcslen: (libc)String Length.
 * wcsncasecmp: (libc)String/Array Comparison.
 * wcsncat: (libc)Truncating Strings.
@@ -2165,6 +2172,632 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Complex Numbers,  Next: Operations on Complex,  Prev: Arithmetic Functions,  Up: Arithmetic
+
+20.9 Complex Numbers
+====================
+
+ISO C99 introduces support for complex numbers in C. This is done with a
+new type qualifier, ‘complex’.  It is a keyword if and only if
+‘complex.h’ has been included.  There are three complex types,
+corresponding to the three real types: ‘float complex’, ‘double
+complex’, and ‘long double complex’.
+
+   Likewise, on machines that have support for ‘_FloatN’ or ‘_FloatNx’
+enabled, the complex types ‘_FloatN complex’ and ‘_FloatNx complex’ are
+also available if ‘complex.h’ has been included; *note Mathematics::.
+
+   To construct complex numbers you need a way to indicate the imaginary
+part of a number.  There is no standard notation for an imaginary
+floating point constant.  Instead, ‘complex.h’ defines two macros that
+can be used to create complex numbers.
+
+ -- Macro: const float complex _Complex_I
+
+     This macro is a representation of the complex number “0+1i”.
+     Multiplying a real floating-point value by ‘_Complex_I’ gives a
+     complex number whose value is purely imaginary.  You can use this
+     to construct complex constants:
+
+          3.0 + 4.0i = 3.0 + 4.0 * _Complex_I
+
+     Note that ‘_Complex_I * _Complex_I’ has the value ‘-1’, but the
+     type of that value is ‘complex’.
+
+‘_Complex_I’ is a bit of a mouthful.  ‘complex.h’ also defines a shorter
+name for the same constant.
+
+ -- Macro: const float complex I
+
+     This macro has exactly the same value as ‘_Complex_I’.  Most of the
+     time it is preferable.  However, it causes problems if you want to
+     use the identifier ‘I’ for something else.  You can safely write
+
+          #include <complex.h>
+          #undef I
+
+     if you need ‘I’ for your own purposes.  (In that case we recommend
+     you also define some other short name for ‘_Complex_I’, such as
+     ‘J’.)
+
+
+File: libc.info,  Node: Operations on Complex,  Next: Parsing of Numbers,  Prev: Complex Numbers,  Up: Arithmetic
+
+20.10 Projections, Conjugates, and Decomposing of Complex Numbers
+=================================================================
+
+ISO C99 also defines functions that perform basic operations on complex
+numbers, such as decomposition and conjugation.  The prototypes for all
+these functions are in ‘complex.h’.  All functions are available in
+three variants, one for each of the three complex types.
+
+ -- Function: double creal (complex double Z)
+ -- Function: float crealf (complex float Z)
+ -- Function: long double creall (complex long double Z)
+ -- Function: _FloatN crealfN (complex _FloatN Z)
+ -- Function: _FloatNx crealfNx (complex _FloatNx Z)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     These functions return the real part of the complex number Z.
+
+ -- Function: double cimag (complex double Z)
+ -- Function: float cimagf (complex float Z)
+ -- Function: long double cimagl (complex long double Z)
+ -- Function: _FloatN cimagfN (complex _FloatN Z)
+ -- Function: _FloatNx cimagfNx (complex _FloatNx Z)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     These functions return the imaginary part of the complex number Z.
+
+ -- Function: complex double conj (complex double Z)
+ -- Function: complex float conjf (complex float Z)
+ -- Function: complex long double conjl (complex long double Z)
+ -- Function: complex _FloatN conjfN (complex _FloatN Z)
+ -- Function: complex _FloatNx conjfNx (complex _FloatNx Z)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     These functions return the conjugate value of the complex number Z.
+     The conjugate of a complex number has the same real part and a
+     negated imaginary part.  In other words, ‘conj(a + bi) = a + -bi’.
+
+ -- Function: double carg (complex double Z)
+ -- Function: float cargf (complex float Z)
+ -- Function: long double cargl (complex long double Z)
+ -- Function: _FloatN cargfN (complex _FloatN Z)
+ -- Function: _FloatNx cargfNx (complex _FloatNx Z)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     These functions return the argument of the complex number Z.  The
+     argument of a complex number is the angle in the complex plane
+     between the positive real axis and a line passing through zero and
+     the number.  This angle is measured in the usual fashion and ranges
+     from -pi to pi.
+
+     ‘carg’ has a branch cut along the negative real axis.
+
+ -- Function: complex double cproj (complex double Z)
+ -- Function: complex float cprojf (complex float Z)
+ -- Function: complex long double cprojl (complex long double Z)
+ -- Function: complex _FloatN cprojfN (complex _FloatN Z)
+ -- Function: complex _FloatNx cprojfNx (complex _FloatNx Z)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     These functions return the projection of the complex value Z onto
+     the Riemann sphere.  Values with an infinite imaginary part are
+     projected to positive infinity on the real axis, even if the real
+     part is NaN. If the real part is infinite, the result is equivalent
+     to
+
+          INFINITY + I * copysign (0.0, cimag (z))
+
+
+File: libc.info,  Node: Parsing of Numbers,  Next: Printing of Floats,  Prev: Operations on Complex,  Up: Arithmetic
+
+20.11 Parsing of Numbers
+========================
+
+This section describes functions for “reading” integer and
+floating-point numbers from a string.  It may be more convenient in some
+cases to use ‘sscanf’ or one of the related functions; see *note
+Formatted Input::.  But often you can make a program more robust by
+finding the tokens in the string by hand, then converting the numbers
+one by one.
+
+* Menu:
+
+* Parsing of Integers::         Functions for conversion of integer values.
+* Parsing of Floats::           Functions for conversion of floating-point
+				 values.
+
+
+File: libc.info,  Node: Parsing of Integers,  Next: Parsing of Floats,  Up: Parsing of Numbers
+
+20.11.1 Parsing of Integers
+---------------------------
+
+The ‘str’ functions are declared in ‘stdlib.h’ and those beginning with
+‘wcs’ are declared in ‘wchar.h’.  One might wonder about the use of
+‘restrict’ in the prototypes of the functions in this section.  It is
+seemingly useless but the ISO C standard uses it (for the functions
+defined there) so we have to do it as well.
+
+ -- Function: long int strtol (const char *restrict STRING, char
+          **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘strtol’ (“string-to-long”) function converts the initial part
+     of STRING to a signed integer, which is returned as a value of type
+     ‘long int’.
+
+     This function attempts to decompose STRING as follows:
+
+        • A (possibly empty) sequence of whitespace characters.  Which
+          characters are whitespace is determined by the ‘isspace’
+          function (*note Classification of Characters::).  These are
+          discarded.
+
+        • An optional plus or minus sign (‘+’ or ‘-’).
+
+        • A nonempty sequence of digits in the radix specified by BASE.
+
+          If BASE is zero, decimal radix is assumed unless the series of
+          digits begins with ‘0’ (specifying octal radix), or ‘0x’ or
+          ‘0X’ (specifying hexadecimal radix), or ‘0b’ or ‘0B’
+          (specifying binary radix; only supported when C2X features are
+          enabled); in other words, the same syntax used for integer
+          constants in C.
+
+          Otherwise BASE must have a value between ‘2’ and ‘36’.  If
+          BASE is ‘16’, the digits may optionally be preceded by ‘0x’ or
+          ‘0X’.  If BASE is ‘2’, and C2X features are enabled, the
+          digits may optionally be preceded by ‘0b’ or ‘0B’.  If base
+          has no legal value the value returned is ‘0l’ and the global
+          variable ‘errno’ is set to ‘EINVAL’.
+
+        • Any remaining characters in the string.  If TAILPTR is not a
+          null pointer, ‘strtol’ stores a pointer to this tail in
+          ‘*TAILPTR’.
+
+     If the string is empty, contains only whitespace, or does not
+     contain an initial substring that has the expected syntax for an
+     integer in the specified BASE, no conversion is performed.  In this
+     case, ‘strtol’ returns a value of zero and the value stored in
+     ‘*TAILPTR’ is the value of STRING.
+
+     In a locale other than the standard ‘"C"’ locale, this function may
+     recognize additional implementation-dependent syntax.
+
+     If the string has valid syntax for an integer but the value is not
+     representable because of overflow, ‘strtol’ returns either
+     ‘LONG_MAX’ or ‘LONG_MIN’ (*note Range of Type::), as appropriate
+     for the sign of the value.  It also sets ‘errno’ to ‘ERANGE’ to
+     indicate there was overflow.
+
+     You should not check for errors by examining the return value of
+     ‘strtol’, because the string might be a valid representation of
+     ‘0l’, ‘LONG_MAX’, or ‘LONG_MIN’.  Instead, check whether TAILPTR
+     points to what you expect after the number (e.g.  ‘'\0'’ if the
+     string should end after the number).  You also need to clear
+     ‘errno’ before the call and check it afterward, in case there was
+     overflow.
+
+     There is an example at the end of this section.
+
+ -- Function: long int wcstol (const wchar_t *restrict STRING, wchar_t
+          **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘wcstol’ function is equivalent to the ‘strtol’ function in
+     nearly all aspects but handles wide character strings.
+
+     The ‘wcstol’ function was introduced in Amendment 1 of ISO C90.
+
+ -- Function: unsigned long int strtoul (const char *restrict STRING,
+          char **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘strtoul’ (“string-to-unsigned-long”) function is like ‘strtol’
+     except it converts to an ‘unsigned long int’ value.  The syntax is
+     the same as described above for ‘strtol’.  The value returned on
+     overflow is ‘ULONG_MAX’ (*note Range of Type::).
+
+     If STRING depicts a negative number, ‘strtoul’ acts the same as
+     STRTOL but casts the result to an unsigned integer.  That means for
+     example that ‘strtoul’ on ‘"-1"’ returns ‘ULONG_MAX’ and an input
+     more negative than ‘LONG_MIN’ returns (‘ULONG_MAX’ + 1) / 2.
+
+     ‘strtoul’ sets ‘errno’ to ‘EINVAL’ if BASE is out of range, or
+     ‘ERANGE’ on overflow.
+
+ -- Function: unsigned long int wcstoul (const wchar_t *restrict STRING,
+          wchar_t **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘wcstoul’ function is equivalent to the ‘strtoul’ function in
+     nearly all aspects but handles wide character strings.
+
+     The ‘wcstoul’ function was introduced in Amendment 1 of ISO C90.
+
+ -- Function: long long int strtoll (const char *restrict STRING, char
+          **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘strtoll’ function is like ‘strtol’ except that it returns a
+     ‘long long int’ value, and accepts numbers with a correspondingly
+     larger range.
+
+     If the string has valid syntax for an integer but the value is not
+     representable because of overflow, ‘strtoll’ returns either
+     ‘LLONG_MAX’ or ‘LLONG_MIN’ (*note Range of Type::), as appropriate
+     for the sign of the value.  It also sets ‘errno’ to ‘ERANGE’ to
+     indicate there was overflow.
+
+     The ‘strtoll’ function was introduced in ISO C99.
+
+ -- Function: long long int wcstoll (const wchar_t *restrict STRING,
+          wchar_t **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘wcstoll’ function is equivalent to the ‘strtoll’ function in
+     nearly all aspects but handles wide character strings.
+
+     The ‘wcstoll’ function was introduced in Amendment 1 of ISO C90.
+
+ -- Function: long long int strtoq (const char *restrict STRING, char
+          **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     ‘strtoq’ (“string-to-quad-word”) is the BSD name for ‘strtoll’.
+
+ -- Function: long long int wcstoq (const wchar_t *restrict STRING,
+          wchar_t **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘wcstoq’ function is equivalent to the ‘strtoq’ function in
+     nearly all aspects but handles wide character strings.
+
+     The ‘wcstoq’ function is a GNU extension.
+
+ -- Function: unsigned long long int strtoull (const char *restrict
+          STRING, char **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘strtoull’ function is related to ‘strtoll’ the same way
+     ‘strtoul’ is related to ‘strtol’.
+
+     The ‘strtoull’ function was introduced in ISO C99.
+
+ -- Function: unsigned long long int wcstoull (const wchar_t *restrict
+          STRING, wchar_t **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘wcstoull’ function is equivalent to the ‘strtoull’ function in
+     nearly all aspects but handles wide character strings.
+
+     The ‘wcstoull’ function was introduced in Amendment 1 of ISO C90.
+
+ -- Function: unsigned long long int strtouq (const char *restrict
+          STRING, char **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     ‘strtouq’ is the BSD name for ‘strtoull’.
+
+ -- Function: unsigned long long int wcstouq (const wchar_t *restrict
+          STRING, wchar_t **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘wcstouq’ function is equivalent to the ‘strtouq’ function in
+     nearly all aspects but handles wide character strings.
+
+     The ‘wcstouq’ function is a GNU extension.
+
+ -- Function: intmax_t strtoimax (const char *restrict STRING, char
+          **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘strtoimax’ function is like ‘strtol’ except that it returns a
+     ‘intmax_t’ value, and accepts numbers of a corresponding range.
+
+     If the string has valid syntax for an integer but the value is not
+     representable because of overflow, ‘strtoimax’ returns either
+     ‘INTMAX_MAX’ or ‘INTMAX_MIN’ (*note Integers::), as appropriate for
+     the sign of the value.  It also sets ‘errno’ to ‘ERANGE’ to
+     indicate there was overflow.
+
+     See *note Integers:: for a description of the ‘intmax_t’ type.  The
+     ‘strtoimax’ function was introduced in ISO C99.
+
+ -- Function: intmax_t wcstoimax (const wchar_t *restrict STRING,
+          wchar_t **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘wcstoimax’ function is equivalent to the ‘strtoimax’ function
+     in nearly all aspects but handles wide character strings.
+
+     The ‘wcstoimax’ function was introduced in ISO C99.
+
+ -- Function: uintmax_t strtoumax (const char *restrict STRING, char
+          **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘strtoumax’ function is related to ‘strtoimax’ the same way
+     that ‘strtoul’ is related to ‘strtol’.
+
+     See *note Integers:: for a description of the ‘intmax_t’ type.  The
+     ‘strtoumax’ function was introduced in ISO C99.
+
+ -- Function: uintmax_t wcstoumax (const wchar_t *restrict STRING,
+          wchar_t **restrict TAILPTR, int BASE)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘wcstoumax’ function is equivalent to the ‘strtoumax’ function
+     in nearly all aspects but handles wide character strings.
+
+     The ‘wcstoumax’ function was introduced in ISO C99.
+
+ -- Function: long int atol (const char *STRING)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     This function is similar to the ‘strtol’ function with a BASE
+     argument of ‘10’, except that it need not detect overflow errors.
+     The ‘atol’ function is provided mostly for compatibility with
+     existing code; using ‘strtol’ is more robust.
+
+ -- Function: int atoi (const char *STRING)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     This function is like ‘atol’, except that it returns an ‘int’.  The
+     ‘atoi’ function is also considered obsolete; use ‘strtol’ instead.
+
+ -- Function: long long int atoll (const char *STRING)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     This function is similar to ‘atol’, except it returns a ‘long long
+     int’.
+
+     The ‘atoll’ function was introduced in ISO C99.  It too is obsolete
+     (despite having just been added); use ‘strtoll’ instead.
+
+   All the functions mentioned in this section so far do not handle
+alternative representations of characters as described in the locale
+data.  Some locales specify thousands separator and the way they have to
+be used which can help to make large numbers more readable.  To read
+such numbers one has to use the ‘scanf’ functions with the ‘'’ flag.
+
+   Here is a function which parses a string as a sequence of integers
+and returns the sum of them:
+
+     int
+     sum_ints_from_string (char *string)
+     {
+       int sum = 0;
+
+       while (1) {
+         char *tail;
+         int next;
+
+         /* Skip whitespace by hand, to detect the end.  */
+         while (isspace (*string)) string++;
+         if (*string == 0)
+           break;
+
+         /* There is more nonwhitespace,  */
+         /* so it ought to be another number.  */
+         errno = 0;
+         /* Parse it.  */
+         next = strtol (string, &tail, 0);
+         /* Add it in, if not overflow.  */
+         if (errno)
+           printf ("Overflow\n");
+         else
+           sum += next;
+         /* Advance past it.  */
+         string = tail;
+       }
+
+       return sum;
+     }
+
+
+File: libc.info,  Node: Parsing of Floats,  Prev: Parsing of Integers,  Up: Parsing of Numbers
+
+20.11.2 Parsing of Floats
+-------------------------
+
+The ‘str’ functions are declared in ‘stdlib.h’ and those beginning with
+‘wcs’ are declared in ‘wchar.h’.  One might wonder about the use of
+‘restrict’ in the prototypes of the functions in this section.  It is
+seemingly useless but the ISO C standard uses it (for the functions
+defined there) so we have to do it as well.
+
+ -- Function: double strtod (const char *restrict STRING, char
+          **restrict TAILPTR)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘strtod’ (“string-to-double”) function converts the initial
+     part of STRING to a floating-point number, which is returned as a
+     value of type ‘double’.
+
+     This function attempts to decompose STRING as follows:
+
+        • A (possibly empty) sequence of whitespace characters.  Which
+          characters are whitespace is determined by the ‘isspace’
+          function (*note Classification of Characters::).  These are
+          discarded.
+
+        • An optional plus or minus sign (‘+’ or ‘-’).
+
+        • A floating point number in decimal or hexadecimal format.  The
+          decimal format is:
+
+             − A nonempty sequence of digits optionally containing a
+               decimal-point character—normally ‘.’, but it depends on
+               the locale (*note General Numeric::).
+
+             − An optional exponent part, consisting of a character ‘e’
+               or ‘E’, an optional sign, and a sequence of digits.
+
+          The hexadecimal format is as follows:
+
+             − A 0x or 0X followed by a nonempty sequence of hexadecimal
+               digits optionally containing a decimal-point
+               character—normally ‘.’, but it depends on the locale
+               (*note General Numeric::).
+
+             − An optional binary-exponent part, consisting of a
+               character ‘p’ or ‘P’, an optional sign, and a sequence of
+               digits.
+
+        • Any remaining characters in the string.  If TAILPTR is not a
+          null pointer, a pointer to this tail of the string is stored
+          in ‘*TAILPTR’.
+
+     If the string is empty, contains only whitespace, or does not
+     contain an initial substring that has the expected syntax for a
+     floating-point number, no conversion is performed.  In this case,
+     ‘strtod’ returns a value of zero and the value returned in
+     ‘*TAILPTR’ is the value of STRING.
+
+     In a locale other than the standard ‘"C"’ or ‘"POSIX"’ locales,
+     this function may recognize additional locale-dependent syntax.
+
+     If the string has valid syntax for a floating-point number but the
+     value is outside the range of a ‘double’, ‘strtod’ will signal
+     overflow or underflow as described in *note Math Error Reporting::.
+
+     ‘strtod’ recognizes four special input strings.  The strings
+     ‘"inf"’ and ‘"infinity"’ are converted to oo, or to the largest
+     representable value if the floating-point format doesn’t support
+     infinities.  You can prepend a ‘"+"’ or ‘"-"’ to specify the sign.
+     Case is ignored when scanning these strings.
+
+     The strings ‘"nan"’ and ‘"nan(CHARS...)"’ are converted to NaN.
+     Again, case is ignored.  If CHARS... are provided, they are used in
+     some unspecified fashion to select a particular representation of
+     NaN (there can be several).
+
+     Since zero is a valid result as well as the value returned on
+     error, you should check for errors in the same way as for ‘strtol’,
+     by examining ‘errno’ and TAILPTR.
+
+ -- Function: float strtof (const char *STRING, char **TAILPTR)
+ -- Function: long double strtold (const char *STRING, char **TAILPTR)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     These functions are analogous to ‘strtod’, but return ‘float’ and
+     ‘long double’ values respectively.  They report errors in the same
+     way as ‘strtod’.  ‘strtof’ can be substantially faster than
+     ‘strtod’, but has less precision; conversely, ‘strtold’ can be much
+     slower but has more precision (on systems where ‘long double’ is a
+     separate type).
+
+     These functions have been GNU extensions and are new to ISO C99.
+
+ -- Function: _FloatN strtofN (const char *STRING, char **TAILPTR)
+ -- Function: _FloatNx strtofNx (const char *STRING, char **TAILPTR)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     These functions are like ‘strtod’, except for the return type.
+
+     They were introduced in ISO/IEC TS 18661-3 and are available on
+     machines that support the related types; *note Mathematics::.
+
+ -- Function: double wcstod (const wchar_t *restrict STRING, wchar_t
+          **restrict TAILPTR)
+ -- Function: float wcstof (const wchar_t *STRING, wchar_t **TAILPTR)
+ -- Function: long double wcstold (const wchar_t *STRING, wchar_t
+          **TAILPTR)
+ -- Function: _FloatN wcstofN (const wchar_t *STRING, wchar_t **TAILPTR)
+ -- Function: _FloatNx wcstofNx (const wchar_t *STRING, wchar_t
+          **TAILPTR)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘wcstod’, ‘wcstof’, ‘wcstol’, ‘wcstofN’, and ‘wcstofNx’
+     functions are equivalent in nearly all aspects to the ‘strtod’,
+     ‘strtof’, ‘strtold’, ‘strtofN’, and ‘strtofNx’ functions, but they
+     handle wide character strings.
+
+     The ‘wcstod’ function was introduced in Amendment 1 of ISO C90.
+     The ‘wcstof’ and ‘wcstold’ functions were introduced in ISO C99.
+
+     The ‘wcstofN’ and ‘wcstofNx’ functions are not in any standard, but
+     are added to provide completeness for the non-deprecated interface
+     of wide character string to floating-point conversion functions.
+     They are only available on machines that support the related types;
+     *note Mathematics::.
+
+ -- Function: double atof (const char *STRING)
+
+     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     This function is similar to the ‘strtod’ function, except that it
+     need not detect overflow and underflow errors.  The ‘atof’ function
+     is provided mostly for compatibility with existing code; using
+     ‘strtod’ is more robust.
+
+   The GNU C Library also provides ‘_l’ versions of these functions,
+which take an additional argument, the locale to use in conversion.
+
+   See also *note Parsing of Integers::.
 
 
 File: libc.info,  Node: Printing of Floats,  Next: System V Number Conversion,  Prev: Parsing of Numbers,  Up: Arithmetic
@@ -2884,7 +3517,7 @@ measurements are not affected by changes to the system clock.
 
  -- Function: int clock_gettime (clockid_t CLOCK, struct timespec *TS)
 
-     Get the current time accoding to the clock identified by CLOCK,
+     Get the current time according to the clock identified by CLOCK,
      storing it as seconds and nanoseconds in ‘*TS’.  *Note Time
      Types::, for a description of ‘struct timespec’.
 
@@ -3383,9 +4016,9 @@ and it also indicates which time zone that is.
           visible in a strict ISO C environment.
 
      ‘const char *tm_zone’
-          This field is the name for the time zone that was used to
-          compute this broken-down time value.  Like ‘tm_gmtoff’, this
-          field is a BSD and GNU extension, and is not visible in a
+          This field is the abbreviation for the time zone that was used
+          to compute this broken-down time value.  Like ‘tm_gmtoff’,
+          this field is a BSD and GNU extension, and is not visible in a
           strict ISO C environment.
 
  -- Function: struct tm * localtime (const time_t *TIME)
@@ -4341,7 +4974,7 @@ is defined and implemented in terms of calls to ‘strptime’.
           The offset from GMT in ISO 8601/RFC822 format.
 
      ‘%Z’
-          The timezone name.
+          The time zone abbreviation.
 
           _Note:_ Currently, this is not fully implemented.  The format
           is recognized, input is consumed but no field in TM is set.
@@ -4494,10 +5127,10 @@ environment variable).
           timezone of the runtime environment.
 
           _Note_: This is not implemented (currently).  The problem is
-          that timezone names are not unique.  If a fixed timezone is
-          assumed for a given string (say ‘EST’ meaning US East Coast
-          time), then uses for countries other than the USA will fail.
-          So far we have found no good solution to this.
+          that time zone abbreviations are not unique.  If a fixed time
+          zone is assumed for a given string (say ‘EST’ meaning US East
+          Coast time), then uses for countries other than the USA will
+          fail.  So far we have found no good solution to this.
 
         • If only the weekday is specified the selected day depends on
           the current date.  If the current weekday is greater than or
@@ -4620,11 +5253,11 @@ summer time) in the local time zone:
 
      STD OFFSET
 
-   The STD string specifies the name of the time zone.  It must be three
-or more characters long and must not contain a leading colon, embedded
-digits, commas, nor plus and minus signs.  There is no space character
-separating the time zone name from the OFFSET, so these restrictions are
-necessary to parse the specification correctly.
+   The STD string specifies the time zone abbreviation.  It must be
+three or more characters long and must not contain a leading colon,
+embedded digits, commas, nor plus and minus signs.  There is no space
+character separating the time zone abbreviation from the OFFSET, so
+these restrictions are necessary to parse the specification correctly.
 
    The OFFSET specifies the time value you must add to the local time to
 get a Coordinated Universal Time value.  It has syntax like
@@ -4642,8 +5275,8 @@ without any Daylight Saving Time alternative:
      STD OFFSET DST [OFFSET]‘,’START[‘/’TIME]‘,’END[‘/’TIME]
 
    The initial STD and OFFSET specify the standard time zone, as
-described above.  The DST string and OFFSET specify the name and offset
-for the corresponding Daylight Saving Time zone; if the OFFSET is
+described above.  The DST string and OFFSET are the abbreviation and
+offset for the corresponding Daylight Saving Time zone; if the OFFSET is
 omitted, it defaults to one hour ahead of standard time.
 
    The remainder of the specification describes when Daylight Saving
@@ -4753,11 +5386,11 @@ File: libc.info,  Node: Time Zone Functions,  Next: Time Functions Example,  Pre
  -- Variable: char * tzname [2]
 
      The array ‘tzname’ contains two strings, which are the standard
-     names of the pair of time zones (standard and Daylight Saving) that
-     the user has selected.  ‘tzname[0]’ is the name of the standard
-     time zone (for example, ‘"EST"’), and ‘tzname[1]’ is the name for
-     the time zone when Daylight Saving Time is in use (for example,
-     ‘"EDT"’).  These correspond to the STD and DST strings
+     abbreviations of the pair of time zones (standard and Daylight
+     Saving) that the user has selected.  ‘tzname[0]’ abbreviates the
+     standard time zone (for example, ‘"EST"’), and ‘tzname[1]’
+     abbreviates the time zone when Daylight Saving Time is in use (for
+     example, ‘"EDT"’).  These correspond to the STD and DST strings
      (respectively) from the ‘TZ’ environment variable.  If Daylight
      Saving Time is never used, ‘tzname[1]’ is the empty string.
 
@@ -6724,609 +7357,4 @@ value of ‘-1’.
      else
        /* Code to be executed normally after setting up the return point. */
        ...
-
-
-File: libc.info,  Node: Non-Local Details,  Next: Non-Local Exits and Signals,  Prev: Non-Local Intro,  Up: Non-Local Exits
-
-23.2 Details of Non-Local Exits
-===============================
-
-Here are the details on the functions and data structures used for
-performing non-local exits.  These facilities are declared in
-‘setjmp.h’.
-
- -- Data Type: jmp_buf
-
-     Objects of type ‘jmp_buf’ hold the state information to be restored
-     by a non-local exit.  The contents of a ‘jmp_buf’ identify a
-     specific place to return to.
-
- -- Macro: int setjmp (jmp_buf STATE)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     When called normally, ‘setjmp’ stores information about the
-     execution state of the program in STATE and returns zero.  If
-     ‘longjmp’ is later used to perform a non-local exit to this STATE,
-     ‘setjmp’ returns a nonzero value.
-
- -- Function: void longjmp (jmp_buf STATE, int VALUE)
-
-     Preliminary: | MT-Safe | AS-Unsafe plugin corrupt lock/hurd |
-     AC-Unsafe corrupt lock/hurd | *Note POSIX Safety Concepts::.
-
-     This function restores current execution to the state saved in
-     STATE, and continues execution from the call to ‘setjmp’ that
-     established that return point.  Returning from ‘setjmp’ by means of
-     ‘longjmp’ returns the VALUE argument that was passed to ‘longjmp’,
-     rather than ‘0’.  (But if VALUE is given as ‘0’, ‘setjmp’ returns
-     ‘1’).
-
-   There are a lot of obscure but important restrictions on the use of
-‘setjmp’ and ‘longjmp’.  Most of these restrictions are present because
-non-local exits require a fair amount of magic on the part of the C
-compiler and can interact with other parts of the language in strange
-ways.
-
-   The ‘setjmp’ function is actually a macro without an actual function
-definition, so you shouldn’t try to ‘#undef’ it or take its address.  In
-addition, calls to ‘setjmp’ are safe in only the following contexts:
-
-   • As the test expression of a selection or iteration statement (such
-     as ‘if’, ‘switch’, or ‘while’).
-
-   • As one operand of an equality or comparison operator that appears
-     as the test expression of a selection or iteration statement.  The
-     other operand must be an integer constant expression.
-
-   • As the operand of a unary ‘!’ operator, that appears as the test
-     expression of a selection or iteration statement.
-
-   • By itself as an expression statement.
-
-   Return points are valid only during the dynamic extent of the
-function that called ‘setjmp’ to establish them.  If you ‘longjmp’ to a
-return point that was established in a function that has already
-returned, unpredictable and disastrous things are likely to happen.
-
-   You should use a nonzero VALUE argument to ‘longjmp’.  While
-‘longjmp’ refuses to pass back a zero argument as the return value from
-‘setjmp’, this is intended as a safety net against accidental misuse and
-is not really good programming style.
-
-   When you perform a non-local exit, accessible objects generally
-retain whatever values they had at the time ‘longjmp’ was called.  The
-exception is that the values of automatic variables local to the
-function containing the ‘setjmp’ call that have been changed since the
-call to ‘setjmp’ are indeterminate, unless you have declared them
-‘volatile’.
-
-
-File: libc.info,  Node: Non-Local Exits and Signals,  Next: System V contexts,  Prev: Non-Local Details,  Up: Non-Local Exits
-
-23.3 Non-Local Exits and Signals
-================================
-
-In BSD Unix systems, ‘setjmp’ and ‘longjmp’ also save and restore the
-set of blocked signals; see *note Blocking Signals::.  However, the
-POSIX.1 standard requires ‘setjmp’ and ‘longjmp’ not to change the set
-of blocked signals, and provides an additional pair of functions
-(‘sigsetjmp’ and ‘siglongjmp’) to get the BSD behavior.
-
-   The behavior of ‘setjmp’ and ‘longjmp’ in the GNU C Library is
-controlled by feature test macros; see *note Feature Test Macros::.  The
-default in the GNU C Library is the POSIX.1 behavior rather than the BSD
-behavior.
-
-   The facilities in this section are declared in the header file
-‘setjmp.h’.
-
- -- Data Type: sigjmp_buf
-
-     This is similar to ‘jmp_buf’, except that it can also store state
-     information about the set of blocked signals.
-
- -- Function: int sigsetjmp (sigjmp_buf STATE, int SAVESIGS)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock/hurd | AC-Unsafe lock/hurd
-     | *Note POSIX Safety Concepts::.
-
-     This is similar to ‘setjmp’.  If SAVESIGS is nonzero, the set of
-     blocked signals is saved in STATE and will be restored if a
-     ‘siglongjmp’ is later performed with this STATE.
-
- -- Function: void siglongjmp (sigjmp_buf STATE, int VALUE)
-
-     Preliminary: | MT-Safe | AS-Unsafe plugin corrupt lock/hurd |
-     AC-Unsafe corrupt lock/hurd | *Note POSIX Safety Concepts::.
-
-     This is similar to ‘longjmp’ except for the type of its STATE
-     argument.  If the ‘sigsetjmp’ call that set this STATE used a
-     nonzero SAVESIGS flag, ‘siglongjmp’ also restores the set of
-     blocked signals.
-
-
-File: libc.info,  Node: System V contexts,  Prev: Non-Local Exits and Signals,  Up: Non-Local Exits
-
-23.4 Complete Context Control
-=============================
-
-The Unix standard provides one more set of functions to control the
-execution path and these functions are more powerful than those
-discussed in this chapter so far.  These functions were part of the
-original System V API and by this route were added to the Unix API.
-Besides on branded Unix implementations these interfaces are not widely
-available.  Not all platforms and/or architectures the GNU C Library is
-available on provide this interface.  Use ‘configure’ to detect the
-availability.
-
-   Similar to the ‘jmp_buf’ and ‘sigjmp_buf’ types used for the
-variables to contain the state of the ‘longjmp’ functions the interfaces
-of interest here have an appropriate type as well.  Objects of this type
-are normally much larger since more information is contained.  The type
-is also used in a few more places as we will see.  The types and
-functions described in this section are all defined and declared
-respectively in the ‘ucontext.h’ header file.
-
- -- Data Type: ucontext_t
-
-     The ‘ucontext_t’ type is defined as a structure with at least the
-     following elements:
-
-     ‘ucontext_t *uc_link’
-          This is a pointer to the next context structure which is used
-          if the context described in the current structure returns.
-
-     ‘sigset_t uc_sigmask’
-          Set of signals which are blocked when this context is used.
-
-     ‘stack_t uc_stack’
-          Stack used for this context.  The value need not be (and
-          normally is not) the stack pointer.  *Note Signal Stack::.
-
-     ‘mcontext_t uc_mcontext’
-          This element contains the actual state of the process.  The
-          ‘mcontext_t’ type is also defined in this header but the
-          definition should be treated as opaque.  Any use of knowledge
-          of the type makes applications less portable.
-
-   Objects of this type have to be created by the user.  The
-initialization and modification happens through one of the following
-functions:
-
- -- Function: int getcontext (ucontext_t *UCP)
-
-     Preliminary: | MT-Safe race:ucp | AS-Safe | AC-Safe | *Note POSIX
-     Safety Concepts::.
-
-     The ‘getcontext’ function initializes the variable pointed to by
-     UCP with the context of the calling thread.  The context contains
-     the content of the registers, the signal mask, and the current
-     stack.  Executing the contents would start at the point where the
-     ‘getcontext’ call just returned.
-
-     *Compatibility Note:* Depending on the operating system,
-     information about the current context’s stack may be in the
-     ‘uc_stack’ field of UCP, or it may instead be in
-     architecture-specific subfields of the ‘uc_mcontext’ field.
-
-     The function returns ‘0’ if successful.  Otherwise it returns ‘-1’
-     and sets ‘errno’ accordingly.
-
-   The ‘getcontext’ function is similar to ‘setjmp’ but it does not
-provide an indication of whether ‘getcontext’ is returning for the first
-time or whether an initialized context has just been restored.  If this
-is necessary the user has to determine this herself.  This must be done
-carefully since the context contains registers which might contain
-register variables.  This is a good situation to define variables with
-‘volatile’.
-
-   Once the context variable is initialized it can be used as is or it
-can be modified using the ‘makecontext’ function.  The latter is
-normally done when implementing co-routines or similar constructs.
-
- -- Function: void makecontext (ucontext_t *UCP, void (*FUNC) (void),
-          int ARGC, ...)
-
-     Preliminary: | MT-Safe race:ucp | AS-Safe | AC-Safe | *Note POSIX
-     Safety Concepts::.
-
-     The UCP parameter passed to ‘makecontext’ shall be initialized by a
-     call to ‘getcontext’.  The context will be modified in a way such
-     that if the context is resumed it will start by calling the
-     function ‘func’ which gets ARGC integer arguments passed.  The
-     integer arguments which are to be passed should follow the ARGC
-     parameter in the call to ‘makecontext’.
-
-     Before the call to this function the ‘uc_stack’ and ‘uc_link’
-     element of the UCP structure should be initialized.  The ‘uc_stack’
-     element describes the stack which is used for this context.  No two
-     contexts which are used at the same time should use the same memory
-     region for a stack.
-
-     The ‘uc_link’ element of the object pointed to by UCP should be a
-     pointer to the context to be executed when the function FUNC
-     returns or it should be a null pointer.  See ‘setcontext’ for more
-     information about the exact use.
-
-   While allocating the memory for the stack one has to be careful.
-Most modern processors keep track of whether a certain memory region is
-allowed to contain code which is executed or not.  Data segments and
-heap memory are normally not tagged to allow this.  The result is that
-programs would fail.  Examples for such code include the calling
-sequences the GNU C compiler generates for calls to nested functions.
-Safe ways to allocate stacks correctly include using memory on the
-original thread’s stack or explicitly allocating memory tagged for
-execution using (*note Memory-mapped I/O::).
-
-   *Compatibility note*: The current Unix standard is very imprecise
-about the way the stack is allocated.  All implementations seem to agree
-that the ‘uc_stack’ element must be used but the values stored in the
-elements of the ‘stack_t’ value are unclear.  The GNU C Library and most
-other Unix implementations require the ‘ss_sp’ value of the ‘uc_stack’
-element to point to the base of the memory region allocated for the
-stack and the size of the memory region is stored in ‘ss_size’.  There
-are implementations out there which require ‘ss_sp’ to be set to the
-value the stack pointer will have (which can, depending on the direction
-the stack grows, be different).  This difference makes the ‘makecontext’
-function hard to use and it requires detection of the platform at
-compile time.
-
- -- Function: int setcontext (const ucontext_t *UCP)
-
-     Preliminary: | MT-Safe race:ucp | AS-Unsafe corrupt | AC-Unsafe
-     corrupt | *Note POSIX Safety Concepts::.
-
-     The ‘setcontext’ function restores the context described by UCP.
-     The context is not modified and can be reused as often as wanted.
-
-     If the context was created by ‘getcontext’ execution resumes with
-     the registers filled with the same values and the same stack as if
-     the ‘getcontext’ call just returned.
-
-     If the context was modified with a call to ‘makecontext’ execution
-     continues with the function passed to ‘makecontext’ which gets the
-     specified parameters passed.  If this function returns execution is
-     resumed in the context which was referenced by the ‘uc_link’
-     element of the context structure passed to ‘makecontext’ at the
-     time of the call.  If ‘uc_link’ was a null pointer the application
-     terminates normally with an exit status value of ‘EXIT_SUCCESS’
-     (*note Program Termination::).
-
-     If the context was created by a call to a signal handler or from
-     any other source then the behaviour of ‘setcontext’ is unspecified.
-
-     Since the context contains information about the stack no two
-     threads should use the same context at the same time.  The result
-     in most cases would be disastrous.
-
-     The ‘setcontext’ function does not return unless an error occurred
-     in which case it returns ‘-1’.
-
-   The ‘setcontext’ function simply replaces the current context with
-the one described by the UCP parameter.  This is often useful but there
-are situations where the current context has to be preserved.
-
- -- Function: int swapcontext (ucontext_t *restrict OUCP, const
-          ucontext_t *restrict UCP)
-
-     Preliminary: | MT-Safe race:oucp race:ucp | AS-Unsafe corrupt |
-     AC-Unsafe corrupt | *Note POSIX Safety Concepts::.
-
-     The ‘swapcontext’ function is similar to ‘setcontext’ but instead
-     of just replacing the current context the latter is first saved in
-     the object pointed to by OUCP as if this was a call to
-     ‘getcontext’.  The saved context would resume after the call to
-     ‘swapcontext’.
-
-     Once the current context is saved the context described in UCP is
-     installed and execution continues as described in this context.
-
-     If ‘swapcontext’ succeeds the function does not return unless the
-     context OUCP is used without prior modification by ‘makecontext’.
-     The return value in this case is ‘0’.  If the function fails it
-     returns ‘-1’ and sets ‘errno’ accordingly.
-
-Example for SVID Context Handling
-=================================
-
-The easiest way to use the context handling functions is as a
-replacement for ‘setjmp’ and ‘longjmp’.  The context contains on most
-platforms more information which may lead to fewer surprises but this
-also means using these functions is more expensive (besides being less
-portable).
-
-     int
-     random_search (int n, int (*fp) (int, ucontext_t *))
-     {
-       volatile int cnt = 0;
-       ucontext_t uc;
-
-       /* Safe current context.  */
-       if (getcontext (&uc) < 0)
-         return -1;
-
-       /* If we have not tried N times try again.  */
-       if (cnt++ < n)
-         /* Call the function with a new random number
-            and the context.  */
-         if (fp (rand (), &uc) != 0)
-           /* We found what we were looking for.  */
-           return 1;
-
-       /* Not found.  */
-       return 0;
-     }
-
-   Using contexts in such a way enables emulating exception handling.
-The search functions passed in the FP parameter could be very large,
-nested, and complex which would make it complicated (or at least would
-require a lot of code) to leave the function with an error value which
-has to be passed down to the caller.  By using the context it is
-possible to leave the search function in one step and allow restarting
-the search which also has the nice side effect that it can be
-significantly faster.
-
-   Something which is harder to implement with ‘setjmp’ and ‘longjmp’ is
-to switch temporarily to a different execution path and then resume
-where execution was stopped.
-
-
-     #include <signal.h>
-     #include <stdio.h>
-     #include <stdlib.h>
-     #include <ucontext.h>
-     #include <sys/time.h>
-
-     /* Set by the signal handler. */
-     static volatile int expired;
-
-     /* The contexts. */
-     static ucontext_t uc[3];
-
-     /* We do only a certain number of switches. */
-     static int switches;
-
-
-     /* This is the function doing the work.  It is just a
-        skeleton, real code has to be filled in. */
-     static void
-     f (int n)
-     {
-       int m = 0;
-       while (1)
-         {
-           /* This is where the work would be done. */
-           if (++m % 100 == 0)
-             {
-               putchar ('.');
-               fflush (stdout);
-             }
-
-           /* Regularly the EXPIRE variable must be checked. */
-           if (expired)
-             {
-               /* We do not want the program to run forever. */
-               if (++switches == 20)
-                 return;
-
-               printf ("\nswitching from %d to %d\n", n, 3 - n);
-               expired = 0;
-               /* Switch to the other context, saving the current one. */
-               swapcontext (&uc[n], &uc[3 - n]);
-             }
-         }
-     }
-
-     /* This is the signal handler which simply set the variable. */
-     void
-     handler (int signal)
-     {
-       expired = 1;
-     }
-
-
-     int
-     main (void)
-     {
-       struct sigaction sa;
-       struct itimerval it;
-       char st1[8192];
-       char st2[8192];
-
-       /* Initialize the data structures for the interval timer. */
-       sa.sa_flags = SA_RESTART;
-       sigfillset (&sa.sa_mask);
-       sa.sa_handler = handler;
-       it.it_interval.tv_sec = 0;
-       it.it_interval.tv_usec = 1;
-       it.it_value = it.it_interval;
-
-       /* Install the timer and get the context we can manipulate. */
-       if (sigaction (SIGPROF, &sa, NULL) < 0
-           || setitimer (ITIMER_PROF, &it, NULL) < 0
-           || getcontext (&uc[1]) == -1
-           || getcontext (&uc[2]) == -1)
-         abort ();
-
-       /* Create a context with a separate stack which causes the
-          function ‘f’ to be call with the parameter ‘1’.
-          Note that the ‘uc_link’ points to the main context
-          which will cause the program to terminate once the function
-          return. */
-       uc[1].uc_link = &uc[0];
-       uc[1].uc_stack.ss_sp = st1;
-       uc[1].uc_stack.ss_size = sizeof st1;
-       makecontext (&uc[1], (void (*) (void)) f, 1, 1);
-
-       /* Similarly, but ‘2’ is passed as the parameter to ‘f’. */
-       uc[2].uc_link = &uc[0];
-       uc[2].uc_stack.ss_sp = st2;
-       uc[2].uc_stack.ss_size = sizeof st2;
-       makecontext (&uc[2], (void (*) (void)) f, 1, 2);
-
-       /* Start running. */
-       swapcontext (&uc[0], &uc[1]);
-       putchar ('\n');
-
-       return 0;
-     }
-
-   This an example how the context functions can be used to implement
-co-routines or cooperative multi-threading.  All that has to be done is
-to call every once in a while ‘swapcontext’ to continue running a
-different context.  It is not recommended to do the context switching
-from the signal handler directly since leaving the signal handler via
-‘setcontext’ if the signal was delivered during code that was not
-asynchronous signal safe could lead to problems.  Setting a variable in
-the signal handler and checking it in the body of the functions which
-are executed is a safer approach.  Since ‘swapcontext’ is saving the
-current context it is possible to have multiple different scheduling
-points in the code.  Execution will always resume where it was left.
-
-
-File: libc.info,  Node: Signal Handling,  Next: Program Basics,  Prev: Non-Local Exits,  Up: Top
-
-24 Signal Handling
-******************
-
-A “signal” is a software interrupt delivered to a process.  The
-operating system uses signals to report exceptional situations to an
-executing program.  Some signals report errors such as references to
-invalid memory addresses; others report asynchronous events, such as
-disconnection of a phone line.
-
-   The GNU C Library defines a variety of signal types, each for a
-particular kind of event.  Some kinds of events make it inadvisable or
-impossible for the program to proceed as usual, and the corresponding
-signals normally abort the program.  Other kinds of signals that report
-harmless events are ignored by default.
-
-   If you anticipate an event that causes signals, you can define a
-handler function and tell the operating system to run it when that
-particular type of signal arrives.
-
-   Finally, one process can send a signal to another process; this
-allows a parent process to abort a child, or two related processes to
-communicate and synchronize.
-
-* Menu:
-
-* Concepts of Signals::         Introduction to the signal facilities.
-* Standard Signals::            Particular kinds of signals with
-                                 standard names and meanings.
-* Signal Actions::              Specifying what happens when a
-                                 particular signal is delivered.
-* Defining Handlers::           How to write a signal handler function.
-* Interrupted Primitives::	Signal handlers affect use of ‘open’,
-				 ‘read’, ‘write’ and other functions.
-* Generating Signals::          How to send a signal to a process.
-* Blocking Signals::            Making the system hold signals temporarily.
-* Waiting for a Signal::        Suspending your program until a signal
-                                 arrives.
-* Signal Stack::                Using a Separate Signal Stack.
-* BSD Signal Handling::         Additional functions for backward
-			         compatibility with BSD.
-
-
-File: libc.info,  Node: Concepts of Signals,  Next: Standard Signals,  Up: Signal Handling
-
-24.1 Basic Concepts of Signals
-==============================
-
-This section explains basic concepts of how signals are generated, what
-happens after a signal is delivered, and how programs can handle
-signals.
-
-* Menu:
-
-* Kinds of Signals::            Some examples of what can cause a signal.
-* Signal Generation::           Concepts of why and how signals occur.
-* Delivery of Signal::          Concepts of what a signal does to the
-                                 process.
-
-
-File: libc.info,  Node: Kinds of Signals,  Next: Signal Generation,  Up: Concepts of Signals
-
-24.1.1 Some Kinds of Signals
-----------------------------
-
-A signal reports the occurrence of an exceptional event.  These are some
-of the events that can cause (or “generate”, or “raise”) a signal:
-
-   • A program error such as dividing by zero or issuing an address
-     outside the valid range.
-
-   • A user request to interrupt or terminate the program.  Most
-     environments are set up to let a user suspend the program by typing
-     ‘C-z’, or terminate it with ‘C-c’.  Whatever key sequence is used,
-     the operating system sends the proper signal to interrupt the
-     process.
-
-   • The termination of a child process.
-
-   • Expiration of a timer or alarm.
-
-   • A call to ‘kill’ or ‘raise’ by the same process.
-
-   • A call to ‘kill’ from another process.  Signals are a limited but
-     useful form of interprocess communication.
-
-   • An attempt to perform an I/O operation that cannot be done.
-     Examples are reading from a pipe that has no writer (*note Pipes
-     and FIFOs::), and reading or writing to a terminal in certain
-     situations (*note Job Control::).
-
-   Each of these kinds of events (excepting explicit calls to ‘kill’ and
-‘raise’) generates its own particular kind of signal.  The various kinds
-of signals are listed and described in detail in *note Standard
-Signals::.
-
-
-File: libc.info,  Node: Signal Generation,  Next: Delivery of Signal,  Prev: Kinds of Signals,  Up: Concepts of Signals
-
-24.1.2 Concepts of Signal Generation
-------------------------------------
-
-In general, the events that generate signals fall into three major
-categories: errors, external events, and explicit requests.
-
-   An error means that a program has done something invalid and cannot
-continue execution.  But not all kinds of errors generate signals—in
-fact, most do not.  For example, opening a nonexistent file is an error,
-but it does not raise a signal; instead, ‘open’ returns ‘-1’.  In
-general, errors that are necessarily associated with certain library
-functions are reported by returning a value that indicates an error.
-The errors which raise signals are those which can happen anywhere in
-the program, not just in library calls.  These include division by zero
-and invalid memory addresses.
-
-   An external event generally has to do with I/O or other processes.
-These include the arrival of input, the expiration of a timer, and the
-termination of a child process.
-
-   An explicit request means the use of a library function such as
-‘kill’ whose purpose is specifically to generate a signal.
-
-   Signals may be generated “synchronously” or “asynchronously”.  A
-synchronous signal pertains to a specific action in the program, and is
-delivered (unless blocked) during that action.  Most errors generate
-signals synchronously, and so do explicit requests by a process to
-generate a signal for that same process.  On some machines, certain
-kinds of hardware errors (usually floating-point exceptions) are not
-reported completely synchronously, but may arrive a few instructions
-later.
-
-   Asynchronous signals are generated by events outside the control of
-the process that receives them.  These signals arrive at unpredictable
-times during execution.  External events generate signals
-asynchronously, and so do explicit requests that apply to some other
-process.
-
-   A given type of signal is either typically synchronous or typically
-asynchronous.  For example, signals for errors are typically synchronous
-because errors generate signals synchronously.  But any type of signal
-can be generated synchronously or asynchronously with an explicit
-request.
 

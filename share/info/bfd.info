@@ -467,6 +467,20 @@ major data about the file and pointers to the rest of the data.
        /* The direction with which the BFD was opened.  */
        ENUM_BITFIELD (bfd_direction) direction : 2;
 
+       /* POSIX.1-2017 (IEEE Std 1003.1) says of fopen : "When a file is
+          opened with update mode ('+' as the second or third character in
+          the mode argument), both input and output may be performed on
+          the associated stream.  However, the application shall ensure
+          that output is not directly followed by input without an
+          intervening call to fflush() or to a file positioning function
+          (fseek(), fsetpos(), or rewind()), and input is not directly
+          followed by output without an intervening call to a file
+          positioning function, unless the input operation encounters
+          end-of-file."
+          This field tracks the last IO operation, so that bfd can insert
+          a seek when IO direction changes.  */
+       ENUM_BITFIELD (bfd_last_io) last_io : 2;
+
        /* Is the file descriptor being cached?  That is, can it be closed as
           needed, and re-opened when accessed later?  */
        unsigned int cacheable : 1;
@@ -14108,62 +14122,62 @@ Node: BFD information loss6213
 Node: Canonical format8754
 Node: BFD front end13097
 Node: typedef bfd13521
-Node: Error reporting26077
-Node: Initialization32324
-Node: Miscellaneous32859
-Node: Memory Usage51894
-Node: Sections53119
-Node: Section Input53600
-Node: Section Output54794
-Node: typedef asection57281
-Node: section prototypes74426
-Node: Symbols85699
-Node: Reading Symbols87302
-Node: Writing Symbols88410
-Node: Mini Symbols90154
-Node: typedef asymbol91128
-Node: symbol handling functions97334
-Node: Archives102549
-Node: Formats106697
-Node: Relocations109710
-Node: typedef arelent110435
-Node: howto manager124292
-Node: Core Files261018
-Node: Targets263019
-Node: bfd_target264980
-Node: Architectures291755
-Node: Opening and Closing323577
-Node: Internal339192
-Node: File Caching339296
-Node: Linker Functions341172
-Node: Creating a Linker Hash Table342846
-Node: Adding Symbols to the Hash Table344585
-Node: Differing file formats345485
-Node: Adding symbols from an object file347210
-Node: Adding symbols from an archive349360
-Node: Performing the Final Link351706
-Node: Information provided by the linker352947
-Node: Relocating the section contents354101
-Node: Writing the symbol table355853
-Node: Hash Tables362944
-Node: Creating and Freeing a Hash Table364142
-Node: Looking Up or Entering a String365392
-Node: Traversing a Hash Table366645
-Node: Deriving a New Hash Table Type367434
-Node: Define the Derived Structures368500
-Node: Write the Derived Creation Routine369581
-Node: Write Other Derived Routines372192
-Node: BFD back ends377617
-Node: What to Put Where377866
-Node: aout378024
-Node: coff384109
-Node: elf405252
-Node: mmo405653
-Node: File layout406523
-Node: Symbol-table412436
-Node: mmo section mapping416199
-Node: GNU Free Documentation License419853
-Node: BFD Index444917
+Node: Error reporting26912
+Node: Initialization33159
+Node: Miscellaneous33694
+Node: Memory Usage52729
+Node: Sections53954
+Node: Section Input54435
+Node: Section Output55629
+Node: typedef asection58116
+Node: section prototypes75261
+Node: Symbols86534
+Node: Reading Symbols88137
+Node: Writing Symbols89245
+Node: Mini Symbols90989
+Node: typedef asymbol91963
+Node: symbol handling functions98169
+Node: Archives103384
+Node: Formats107532
+Node: Relocations110545
+Node: typedef arelent111270
+Node: howto manager125127
+Node: Core Files261853
+Node: Targets263854
+Node: bfd_target265815
+Node: Architectures292590
+Node: Opening and Closing324412
+Node: Internal340027
+Node: File Caching340131
+Node: Linker Functions342007
+Node: Creating a Linker Hash Table343681
+Node: Adding Symbols to the Hash Table345420
+Node: Differing file formats346320
+Node: Adding symbols from an object file348045
+Node: Adding symbols from an archive350195
+Node: Performing the Final Link352541
+Node: Information provided by the linker353782
+Node: Relocating the section contents354936
+Node: Writing the symbol table356688
+Node: Hash Tables363779
+Node: Creating and Freeing a Hash Table364977
+Node: Looking Up or Entering a String366227
+Node: Traversing a Hash Table367480
+Node: Deriving a New Hash Table Type368269
+Node: Define the Derived Structures369335
+Node: Write the Derived Creation Routine370416
+Node: Write Other Derived Routines373027
+Node: BFD back ends378452
+Node: What to Put Where378701
+Node: aout378859
+Node: coff384944
+Node: elf406087
+Node: mmo406488
+Node: File layout407358
+Node: Symbol-table413271
+Node: mmo section mapping417034
+Node: GNU Free Documentation License420688
+Node: BFD Index445752
 
 End Tag Table
 

@@ -1,6 +1,6 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.37.
+This is ‘The GNU C Library Reference Manual’, for version 2.38.
 
    Copyright © 1993–2023 Free Software Foundation, Inc.
 
@@ -1612,6 +1612,7 @@ START-INFO-DIR-ENTRY
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
 * posix_memalign: (libc)Aligned Memory Blocks.
+* posix_openpt: (libc)Allocation.
 * pow: (libc)Exponents and Logarithms.
 * powf: (libc)Exponents and Logarithms.
 * powfN: (libc)Exponents and Logarithms.
@@ -1898,6 +1899,8 @@ START-INFO-DIR-ENTRY
 * strdup: (libc)Copying Strings and Arrays.
 * strdupa: (libc)Copying Strings and Arrays.
 * strerror: (libc)Error Messages.
+* strerror_l: (libc)Error Messages.
+* strerror_r: (libc)Error Messages.
 * strerror_r: (libc)Error Messages.
 * strerrordesc_np: (libc)Error Messages.
 * strerrorname_np: (libc)Error Messages.
@@ -1909,6 +1912,8 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strlcat: (libc)Truncating Strings.
+* strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
 * strncasecmp: (libc)String/Array Comparison.
 * strncat: (libc)Truncating Strings.
@@ -2104,6 +2109,8 @@ START-INFO-DIR-ENTRY
 * wcscspn: (libc)Search Functions.
 * wcsdup: (libc)Copying Strings and Arrays.
 * wcsftime: (libc)Formatting Calendar Time.
+* wcslcat: (libc)Truncating Strings.
+* wcslcpy: (libc)Truncating Strings.
 * wcslen: (libc)String Length.
 * wcsncasecmp: (libc)String/Array Comparison.
 * wcsncat: (libc)Truncating Strings.
@@ -2165,6 +2172,611 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Non-Local Details,  Next: Non-Local Exits and Signals,  Prev: Non-Local Intro,  Up: Non-Local Exits
+
+23.2 Details of Non-Local Exits
+===============================
+
+Here are the details on the functions and data structures used for
+performing non-local exits.  These facilities are declared in
+‘setjmp.h’.
+
+ -- Data Type: jmp_buf
+
+     Objects of type ‘jmp_buf’ hold the state information to be restored
+     by a non-local exit.  The contents of a ‘jmp_buf’ identify a
+     specific place to return to.
+
+ -- Macro: int setjmp (jmp_buf STATE)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     When called normally, ‘setjmp’ stores information about the
+     execution state of the program in STATE and returns zero.  If
+     ‘longjmp’ is later used to perform a non-local exit to this STATE,
+     ‘setjmp’ returns a nonzero value.
+
+ -- Function: void longjmp (jmp_buf STATE, int VALUE)
+
+     Preliminary: | MT-Safe | AS-Unsafe plugin corrupt lock/hurd |
+     AC-Unsafe corrupt lock/hurd | *Note POSIX Safety Concepts::.
+
+     This function restores current execution to the state saved in
+     STATE, and continues execution from the call to ‘setjmp’ that
+     established that return point.  Returning from ‘setjmp’ by means of
+     ‘longjmp’ returns the VALUE argument that was passed to ‘longjmp’,
+     rather than ‘0’.  (But if VALUE is given as ‘0’, ‘setjmp’ returns
+     ‘1’).
+
+   There are a lot of obscure but important restrictions on the use of
+‘setjmp’ and ‘longjmp’.  Most of these restrictions are present because
+non-local exits require a fair amount of magic on the part of the C
+compiler and can interact with other parts of the language in strange
+ways.
+
+   The ‘setjmp’ function is actually a macro without an actual function
+definition, so you shouldn’t try to ‘#undef’ it or take its address.  In
+addition, calls to ‘setjmp’ are safe in only the following contexts:
+
+   • As the test expression of a selection or iteration statement (such
+     as ‘if’, ‘switch’, or ‘while’).
+
+   • As one operand of an equality or comparison operator that appears
+     as the test expression of a selection or iteration statement.  The
+     other operand must be an integer constant expression.
+
+   • As the operand of a unary ‘!’ operator, that appears as the test
+     expression of a selection or iteration statement.
+
+   • By itself as an expression statement.
+
+   Return points are valid only during the dynamic extent of the
+function that called ‘setjmp’ to establish them.  If you ‘longjmp’ to a
+return point that was established in a function that has already
+returned, unpredictable and disastrous things are likely to happen.
+
+   You should use a nonzero VALUE argument to ‘longjmp’.  While
+‘longjmp’ refuses to pass back a zero argument as the return value from
+‘setjmp’, this is intended as a safety net against accidental misuse and
+is not really good programming style.
+
+   When you perform a non-local exit, accessible objects generally
+retain whatever values they had at the time ‘longjmp’ was called.  The
+exception is that the values of automatic variables local to the
+function containing the ‘setjmp’ call that have been changed since the
+call to ‘setjmp’ are indeterminate, unless you have declared them
+‘volatile’.
+
+
+File: libc.info,  Node: Non-Local Exits and Signals,  Next: System V contexts,  Prev: Non-Local Details,  Up: Non-Local Exits
+
+23.3 Non-Local Exits and Signals
+================================
+
+In BSD Unix systems, ‘setjmp’ and ‘longjmp’ also save and restore the
+set of blocked signals; see *note Blocking Signals::.  However, the
+POSIX.1 standard requires ‘setjmp’ and ‘longjmp’ not to change the set
+of blocked signals, and provides an additional pair of functions
+(‘sigsetjmp’ and ‘siglongjmp’) to get the BSD behavior.
+
+   The behavior of ‘setjmp’ and ‘longjmp’ in the GNU C Library is
+controlled by feature test macros; see *note Feature Test Macros::.  The
+default in the GNU C Library is the POSIX.1 behavior rather than the BSD
+behavior.
+
+   The facilities in this section are declared in the header file
+‘setjmp.h’.
+
+ -- Data Type: sigjmp_buf
+
+     This is similar to ‘jmp_buf’, except that it can also store state
+     information about the set of blocked signals.
+
+ -- Function: int sigsetjmp (sigjmp_buf STATE, int SAVESIGS)
+
+     Preliminary: | MT-Safe | AS-Unsafe lock/hurd | AC-Unsafe lock/hurd
+     | *Note POSIX Safety Concepts::.
+
+     This is similar to ‘setjmp’.  If SAVESIGS is nonzero, the set of
+     blocked signals is saved in STATE and will be restored if a
+     ‘siglongjmp’ is later performed with this STATE.
+
+ -- Function: void siglongjmp (sigjmp_buf STATE, int VALUE)
+
+     Preliminary: | MT-Safe | AS-Unsafe plugin corrupt lock/hurd |
+     AC-Unsafe corrupt lock/hurd | *Note POSIX Safety Concepts::.
+
+     This is similar to ‘longjmp’ except for the type of its STATE
+     argument.  If the ‘sigsetjmp’ call that set this STATE used a
+     nonzero SAVESIGS flag, ‘siglongjmp’ also restores the set of
+     blocked signals.
+
+
+File: libc.info,  Node: System V contexts,  Prev: Non-Local Exits and Signals,  Up: Non-Local Exits
+
+23.4 Complete Context Control
+=============================
+
+The Unix standard provides one more set of functions to control the
+execution path and these functions are more powerful than those
+discussed in this chapter so far.  These functions were part of the
+original System V API and by this route were added to the Unix API.
+Besides on branded Unix implementations these interfaces are not widely
+available.  Not all platforms and/or architectures the GNU C Library is
+available on provide this interface.  Use ‘configure’ to detect the
+availability.
+
+   Similar to the ‘jmp_buf’ and ‘sigjmp_buf’ types used for the
+variables to contain the state of the ‘longjmp’ functions the interfaces
+of interest here have an appropriate type as well.  Objects of this type
+are normally much larger since more information is contained.  The type
+is also used in a few more places as we will see.  The types and
+functions described in this section are all defined and declared
+respectively in the ‘ucontext.h’ header file.
+
+ -- Data Type: ucontext_t
+
+     The ‘ucontext_t’ type is defined as a structure with at least the
+     following elements:
+
+     ‘ucontext_t *uc_link’
+          This is a pointer to the next context structure which is used
+          if the context described in the current structure returns.
+
+     ‘sigset_t uc_sigmask’
+          Set of signals which are blocked when this context is used.
+
+     ‘stack_t uc_stack’
+          Stack used for this context.  The value need not be (and
+          normally is not) the stack pointer.  *Note Signal Stack::.
+
+     ‘mcontext_t uc_mcontext’
+          This element contains the actual state of the process.  The
+          ‘mcontext_t’ type is also defined in this header but the
+          definition should be treated as opaque.  Any use of knowledge
+          of the type makes applications less portable.
+
+   Objects of this type have to be created by the user.  The
+initialization and modification happens through one of the following
+functions:
+
+ -- Function: int getcontext (ucontext_t *UCP)
+
+     Preliminary: | MT-Safe race:ucp | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘getcontext’ function initializes the variable pointed to by
+     UCP with the context of the calling thread.  The context contains
+     the content of the registers, the signal mask, and the current
+     stack.  Executing the contents would start at the point where the
+     ‘getcontext’ call just returned.
+
+     *Compatibility Note:* Depending on the operating system,
+     information about the current context’s stack may be in the
+     ‘uc_stack’ field of UCP, or it may instead be in
+     architecture-specific subfields of the ‘uc_mcontext’ field.
+
+     The function returns ‘0’ if successful.  Otherwise it returns ‘-1’
+     and sets ‘errno’ accordingly.
+
+   The ‘getcontext’ function is similar to ‘setjmp’ but it does not
+provide an indication of whether ‘getcontext’ is returning for the first
+time or whether an initialized context has just been restored.  If this
+is necessary the user has to determine this herself.  This must be done
+carefully since the context contains registers which might contain
+register variables.  This is a good situation to define variables with
+‘volatile’.
+
+   Once the context variable is initialized it can be used as is or it
+can be modified using the ‘makecontext’ function.  The latter is
+normally done when implementing co-routines or similar constructs.
+
+ -- Function: void makecontext (ucontext_t *UCP, void (*FUNC) (void),
+          int ARGC, ...)
+
+     Preliminary: | MT-Safe race:ucp | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The UCP parameter passed to ‘makecontext’ shall be initialized by a
+     call to ‘getcontext’.  The context will be modified in a way such
+     that if the context is resumed it will start by calling the
+     function ‘func’ which gets ARGC integer arguments passed.  The
+     integer arguments which are to be passed should follow the ARGC
+     parameter in the call to ‘makecontext’.
+
+     Before the call to this function the ‘uc_stack’ and ‘uc_link’
+     element of the UCP structure should be initialized.  The ‘uc_stack’
+     element describes the stack which is used for this context.  No two
+     contexts which are used at the same time should use the same memory
+     region for a stack.
+
+     The ‘uc_link’ element of the object pointed to by UCP should be a
+     pointer to the context to be executed when the function FUNC
+     returns or it should be a null pointer.  See ‘setcontext’ for more
+     information about the exact use.
+
+   While allocating the memory for the stack one has to be careful.
+Most modern processors keep track of whether a certain memory region is
+allowed to contain code which is executed or not.  Data segments and
+heap memory are normally not tagged to allow this.  The result is that
+programs would fail.  Examples for such code include the calling
+sequences the GNU C compiler generates for calls to nested functions.
+Safe ways to allocate stacks correctly include using memory on the
+original thread’s stack or explicitly allocating memory tagged for
+execution using (*note Memory-mapped I/O::).
+
+   *Compatibility note*: The current Unix standard is very imprecise
+about the way the stack is allocated.  All implementations seem to agree
+that the ‘uc_stack’ element must be used but the values stored in the
+elements of the ‘stack_t’ value are unclear.  The GNU C Library and most
+other Unix implementations require the ‘ss_sp’ value of the ‘uc_stack’
+element to point to the base of the memory region allocated for the
+stack and the size of the memory region is stored in ‘ss_size’.  There
+are implementations out there which require ‘ss_sp’ to be set to the
+value the stack pointer will have (which can, depending on the direction
+the stack grows, be different).  This difference makes the ‘makecontext’
+function hard to use and it requires detection of the platform at
+compile time.
+
+ -- Function: int setcontext (const ucontext_t *UCP)
+
+     Preliminary: | MT-Safe race:ucp | AS-Unsafe corrupt | AC-Unsafe
+     corrupt | *Note POSIX Safety Concepts::.
+
+     The ‘setcontext’ function restores the context described by UCP.
+     The context is not modified and can be reused as often as wanted.
+
+     If the context was created by ‘getcontext’ execution resumes with
+     the registers filled with the same values and the same stack as if
+     the ‘getcontext’ call just returned.
+
+     If the context was modified with a call to ‘makecontext’ execution
+     continues with the function passed to ‘makecontext’ which gets the
+     specified parameters passed.  If this function returns execution is
+     resumed in the context which was referenced by the ‘uc_link’
+     element of the context structure passed to ‘makecontext’ at the
+     time of the call.  If ‘uc_link’ was a null pointer the application
+     terminates normally with an exit status value of ‘EXIT_SUCCESS’
+     (*note Program Termination::).
+
+     If the context was created by a call to a signal handler or from
+     any other source then the behaviour of ‘setcontext’ is unspecified.
+
+     Since the context contains information about the stack no two
+     threads should use the same context at the same time.  The result
+     in most cases would be disastrous.
+
+     The ‘setcontext’ function does not return unless an error occurred
+     in which case it returns ‘-1’.
+
+   The ‘setcontext’ function simply replaces the current context with
+the one described by the UCP parameter.  This is often useful but there
+are situations where the current context has to be preserved.
+
+ -- Function: int swapcontext (ucontext_t *restrict OUCP, const
+          ucontext_t *restrict UCP)
+
+     Preliminary: | MT-Safe race:oucp race:ucp | AS-Unsafe corrupt |
+     AC-Unsafe corrupt | *Note POSIX Safety Concepts::.
+
+     The ‘swapcontext’ function is similar to ‘setcontext’ but instead
+     of just replacing the current context the latter is first saved in
+     the object pointed to by OUCP as if this was a call to
+     ‘getcontext’.  The saved context would resume after the call to
+     ‘swapcontext’.
+
+     Once the current context is saved the context described in UCP is
+     installed and execution continues as described in this context.
+
+     If ‘swapcontext’ succeeds the function does not return unless the
+     context OUCP is used without prior modification by ‘makecontext’.
+     The return value in this case is ‘0’.  If the function fails it
+     returns ‘-1’ and sets ‘errno’ accordingly.
+
+Example for SVID Context Handling
+=================================
+
+The easiest way to use the context handling functions is as a
+replacement for ‘setjmp’ and ‘longjmp’.  The context contains on most
+platforms more information which may lead to fewer surprises but this
+also means using these functions is more expensive (besides being less
+portable).
+
+     int
+     random_search (int n, int (*fp) (int, ucontext_t *))
+     {
+       volatile int cnt = 0;
+       ucontext_t uc;
+
+       /* Safe current context.  */
+       if (getcontext (&uc) < 0)
+         return -1;
+
+       /* If we have not tried N times try again.  */
+       if (cnt++ < n)
+         /* Call the function with a new random number
+            and the context.  */
+         if (fp (rand (), &uc) != 0)
+           /* We found what we were looking for.  */
+           return 1;
+
+       /* Not found.  */
+       return 0;
+     }
+
+   Using contexts in such a way enables emulating exception handling.
+The search functions passed in the FP parameter could be very large,
+nested, and complex which would make it complicated (or at least would
+require a lot of code) to leave the function with an error value which
+has to be passed down to the caller.  By using the context it is
+possible to leave the search function in one step and allow restarting
+the search which also has the nice side effect that it can be
+significantly faster.
+
+   Something which is harder to implement with ‘setjmp’ and ‘longjmp’ is
+to switch temporarily to a different execution path and then resume
+where execution was stopped.
+
+
+     #include <signal.h>
+     #include <stdio.h>
+     #include <stdlib.h>
+     #include <ucontext.h>
+     #include <sys/time.h>
+
+     /* Set by the signal handler. */
+     static volatile int expired;
+
+     /* The contexts. */
+     static ucontext_t uc[3];
+
+     /* We do only a certain number of switches. */
+     static int switches;
+
+
+     /* This is the function doing the work.  It is just a
+        skeleton, real code has to be filled in. */
+     static void
+     f (int n)
+     {
+       int m = 0;
+       while (1)
+         {
+           /* This is where the work would be done. */
+           if (++m % 100 == 0)
+             {
+               putchar ('.');
+               fflush (stdout);
+             }
+
+           /* Regularly the EXPIRE variable must be checked. */
+           if (expired)
+             {
+               /* We do not want the program to run forever. */
+               if (++switches == 20)
+                 return;
+
+               printf ("\nswitching from %d to %d\n", n, 3 - n);
+               expired = 0;
+               /* Switch to the other context, saving the current one. */
+               swapcontext (&uc[n], &uc[3 - n]);
+             }
+         }
+     }
+
+     /* This is the signal handler which simply set the variable. */
+     void
+     handler (int signal)
+     {
+       expired = 1;
+     }
+
+
+     int
+     main (void)
+     {
+       struct sigaction sa;
+       struct itimerval it;
+       char st1[8192];
+       char st2[8192];
+
+       /* Initialize the data structures for the interval timer. */
+       sa.sa_flags = SA_RESTART;
+       sigfillset (&sa.sa_mask);
+       sa.sa_handler = handler;
+       it.it_interval.tv_sec = 0;
+       it.it_interval.tv_usec = 1;
+       it.it_value = it.it_interval;
+
+       /* Install the timer and get the context we can manipulate. */
+       if (sigaction (SIGPROF, &sa, NULL) < 0
+           || setitimer (ITIMER_PROF, &it, NULL) < 0
+           || getcontext (&uc[1]) == -1
+           || getcontext (&uc[2]) == -1)
+         abort ();
+
+       /* Create a context with a separate stack which causes the
+          function ‘f’ to be call with the parameter ‘1’.
+          Note that the ‘uc_link’ points to the main context
+          which will cause the program to terminate once the function
+          return. */
+       uc[1].uc_link = &uc[0];
+       uc[1].uc_stack.ss_sp = st1;
+       uc[1].uc_stack.ss_size = sizeof st1;
+       makecontext (&uc[1], (void (*) (void)) f, 1, 1);
+
+       /* Similarly, but ‘2’ is passed as the parameter to ‘f’. */
+       uc[2].uc_link = &uc[0];
+       uc[2].uc_stack.ss_sp = st2;
+       uc[2].uc_stack.ss_size = sizeof st2;
+       makecontext (&uc[2], (void (*) (void)) f, 1, 2);
+
+       /* Start running. */
+       swapcontext (&uc[0], &uc[1]);
+       putchar ('\n');
+
+       return 0;
+     }
+
+   This an example how the context functions can be used to implement
+co-routines or cooperative multi-threading.  All that has to be done is
+to call every once in a while ‘swapcontext’ to continue running a
+different context.  It is not recommended to do the context switching
+from the signal handler directly since leaving the signal handler via
+‘setcontext’ if the signal was delivered during code that was not
+asynchronous signal safe could lead to problems.  Setting a variable in
+the signal handler and checking it in the body of the functions which
+are executed is a safer approach.  Since ‘swapcontext’ is saving the
+current context it is possible to have multiple different scheduling
+points in the code.  Execution will always resume where it was left.
+
+
+File: libc.info,  Node: Signal Handling,  Next: Program Basics,  Prev: Non-Local Exits,  Up: Top
+
+24 Signal Handling
+******************
+
+A “signal” is a software interrupt delivered to a process.  The
+operating system uses signals to report exceptional situations to an
+executing program.  Some signals report errors such as references to
+invalid memory addresses; others report asynchronous events, such as
+disconnection of a phone line.
+
+   The GNU C Library defines a variety of signal types, each for a
+particular kind of event.  Some kinds of events make it inadvisable or
+impossible for the program to proceed as usual, and the corresponding
+signals normally abort the program.  Other kinds of signals that report
+harmless events are ignored by default.
+
+   If you anticipate an event that causes signals, you can define a
+handler function and tell the operating system to run it when that
+particular type of signal arrives.
+
+   Finally, one process can send a signal to another process; this
+allows a parent process to abort a child, or two related processes to
+communicate and synchronize.
+
+* Menu:
+
+* Concepts of Signals::         Introduction to the signal facilities.
+* Standard Signals::            Particular kinds of signals with
+                                 standard names and meanings.
+* Signal Actions::              Specifying what happens when a
+                                 particular signal is delivered.
+* Defining Handlers::           How to write a signal handler function.
+* Interrupted Primitives::	Signal handlers affect use of ‘open’,
+				 ‘read’, ‘write’ and other functions.
+* Generating Signals::          How to send a signal to a process.
+* Blocking Signals::            Making the system hold signals temporarily.
+* Waiting for a Signal::        Suspending your program until a signal
+                                 arrives.
+* Signal Stack::                Using a Separate Signal Stack.
+* BSD Signal Handling::         Additional functions for backward
+			         compatibility with BSD.
+
+
+File: libc.info,  Node: Concepts of Signals,  Next: Standard Signals,  Up: Signal Handling
+
+24.1 Basic Concepts of Signals
+==============================
+
+This section explains basic concepts of how signals are generated, what
+happens after a signal is delivered, and how programs can handle
+signals.
+
+* Menu:
+
+* Kinds of Signals::            Some examples of what can cause a signal.
+* Signal Generation::           Concepts of why and how signals occur.
+* Delivery of Signal::          Concepts of what a signal does to the
+                                 process.
+
+
+File: libc.info,  Node: Kinds of Signals,  Next: Signal Generation,  Up: Concepts of Signals
+
+24.1.1 Some Kinds of Signals
+----------------------------
+
+A signal reports the occurrence of an exceptional event.  These are some
+of the events that can cause (or “generate”, or “raise”) a signal:
+
+   • A program error such as dividing by zero or issuing an address
+     outside the valid range.
+
+   • A user request to interrupt or terminate the program.  Most
+     environments are set up to let a user suspend the program by typing
+     ‘C-z’, or terminate it with ‘C-c’.  Whatever key sequence is used,
+     the operating system sends the proper signal to interrupt the
+     process.
+
+   • The termination of a child process.
+
+   • Expiration of a timer or alarm.
+
+   • A call to ‘kill’ or ‘raise’ by the same process.
+
+   • A call to ‘kill’ from another process.  Signals are a limited but
+     useful form of interprocess communication.
+
+   • An attempt to perform an I/O operation that cannot be done.
+     Examples are reading from a pipe that has no writer (*note Pipes
+     and FIFOs::), and reading or writing to a terminal in certain
+     situations (*note Job Control::).
+
+   Each of these kinds of events (excepting explicit calls to ‘kill’ and
+‘raise’) generates its own particular kind of signal.  The various kinds
+of signals are listed and described in detail in *note Standard
+Signals::.
+
+
+File: libc.info,  Node: Signal Generation,  Next: Delivery of Signal,  Prev: Kinds of Signals,  Up: Concepts of Signals
+
+24.1.2 Concepts of Signal Generation
+------------------------------------
+
+In general, the events that generate signals fall into three major
+categories: errors, external events, and explicit requests.
+
+   An error means that a program has done something invalid and cannot
+continue execution.  But not all kinds of errors generate signals—in
+fact, most do not.  For example, opening a nonexistent file is an error,
+but it does not raise a signal; instead, ‘open’ returns ‘-1’.  In
+general, errors that are necessarily associated with certain library
+functions are reported by returning a value that indicates an error.
+The errors which raise signals are those which can happen anywhere in
+the program, not just in library calls.  These include division by zero
+and invalid memory addresses.
+
+   An external event generally has to do with I/O or other processes.
+These include the arrival of input, the expiration of a timer, and the
+termination of a child process.
+
+   An explicit request means the use of a library function such as
+‘kill’ whose purpose is specifically to generate a signal.
+
+   Signals may be generated “synchronously” or “asynchronously”.  A
+synchronous signal pertains to a specific action in the program, and is
+delivered (unless blocked) during that action.  Most errors generate
+signals synchronously, and so do explicit requests by a process to
+generate a signal for that same process.  On some machines, certain
+kinds of hardware errors (usually floating-point exceptions) are not
+reported completely synchronously, but may arrive a few instructions
+later.
+
+   Asynchronous signals are generated by events outside the control of
+the process that receives them.  These signals arrive at unpredictable
+times during execution.  External events generate signals
+asynchronously, and so do explicit requests that apply to some other
+process.
+
+   A given type of signal is either typically synchronous or typically
+asynchronous.  For example, signals for errors are typically synchronous
+because errors generate signals synchronously.  But any type of signal
+can be generated synchronously or asynchronously with an explicit
+request.
 
 
 File: libc.info,  Node: Delivery of Signal,  Prev: Signal Generation,  Up: Concepts of Signals
@@ -6714,789 +7326,4 @@ options.  They specify which help text the TEXT argument contains:
 
      The argument doc string; formally the ‘args_doc’ field from the
      argp parser.  *Note Argp Parsers::.
-
-
-File: libc.info,  Node: Argp Help,  Next: Argp Examples,  Prev: Argp Flags,  Up: Argp
-
-25.3.9 The ‘argp_help’ Function
--------------------------------
-
-Normally programs using argp need not be written with particular
-printing argument-usage-type help messages in mind as the standard
-‘--help’ option is handled automatically by argp.  Typical error cases
-can be handled using ‘argp_usage’ and ‘argp_error’.  *Note Argp Helper
-Functions::.  However, if it’s desirable to print a help message in some
-context other than parsing the program options, argp offers the
-‘argp_help’ interface.
-
- -- Function: void argp_help (const struct argp *ARGP, FILE *STREAM,
-          unsigned FLAGS, char *NAME)
-
-     Preliminary: | MT-Unsafe race:argpbuf env locale | AS-Unsafe heap
-     i18n corrupt | AC-Unsafe mem corrupt lock | *Note POSIX Safety
-     Concepts::.
-
-     This outputs a help message for the argp parser ARGP to STREAM.
-     The type of messages printed will be determined by FLAGS.
-
-     Any options such as ‘--help’ that are implemented automatically by
-     argp itself will _not_ be present in the help output; for this
-     reason it is best to use ‘argp_state_help’ if calling from within
-     an argp parser function.  *Note Argp Helper Functions::.
-
-* Menu:
-
-* Flags: Argp Help Flags.       Specifying what sort of help message to print.
-
-
-File: libc.info,  Node: Argp Help Flags,  Up: Argp Help
-
-25.3.10 Flags for the ‘argp_help’ Function
-------------------------------------------
-
-When calling ‘argp_help’ (*note Argp Help::) or ‘argp_state_help’ (*note
-Argp Helper Functions::) the exact output is determined by the FLAGS
-argument.  This should consist of any of the following flags, or’d
-together:
-
-‘ARGP_HELP_USAGE’
-
-     A unix ‘Usage:’ message that explicitly lists all options.
-
-‘ARGP_HELP_SHORT_USAGE’
-
-     A unix ‘Usage:’ message that displays an appropriate placeholder to
-     indicate where the options go; useful for showing the non-option
-     argument syntax.
-
-‘ARGP_HELP_SEE’
-
-     A ‘Try ... for more help’ message; ‘...’ contains the program name
-     and ‘--help’.
-
-‘ARGP_HELP_LONG’
-
-     A verbose option help message that gives each option available
-     along with its documentation string.
-
-‘ARGP_HELP_PRE_DOC’
-
-     The part of the argp parser doc string preceding the verbose option
-     help.
-
-‘ARGP_HELP_POST_DOC’
-
-     The part of the argp parser doc string that following the verbose
-     option help.
-
-‘ARGP_HELP_DOC’
-
-     ‘(ARGP_HELP_PRE_DOC | ARGP_HELP_POST_DOC)’
-
-‘ARGP_HELP_BUG_ADDR’
-
-     A message that prints where to report bugs for this program, if the
-     ‘argp_program_bug_address’ variable contains this information.
-
-‘ARGP_HELP_LONG_ONLY’
-
-     This will modify any output to reflect the ‘ARGP_LONG_ONLY’ mode.
-
-   The following flags are only understood when used with
-‘argp_state_help’.  They control whether the function returns after
-printing its output, or terminates the program:
-
-‘ARGP_HELP_EXIT_ERR’
-
-     This will terminate the program with ‘exit (argp_err_exit_status)’.
-
-‘ARGP_HELP_EXIT_OK’
-
-     This will terminate the program with ‘exit (0)’.
-
-   The following flags are combinations of the basic flags for printing
-standard messages:
-
-‘ARGP_HELP_STD_ERR’
-
-     Assuming that an error message for a parsing error has printed,
-     this prints a message on how to get help, and terminates the
-     program with an error.
-
-‘ARGP_HELP_STD_USAGE’
-
-     This prints a standard usage message and terminates the program
-     with an error.  This is used when no other specific error messages
-     are appropriate or available.
-
-‘ARGP_HELP_STD_HELP’
-
-     This prints the standard response for a ‘--help’ option, and
-     terminates the program successfully.
-
-
-File: libc.info,  Node: Argp Examples,  Next: Argp User Customization,  Prev: Argp Help,  Up: Argp
-
-25.3.11 Argp Examples
----------------------
-
-These example programs demonstrate the basic usage of argp.
-
-* Menu:
-
-* 1: Argp Example 1.            A minimal program using argp.
-* 2: Argp Example 2.            A program using only default options.
-* 3: Argp Example 3.            A simple program with user options.
-* 4: Argp Example 4.            Combining multiple argp parsers.
-
-
-File: libc.info,  Node: Argp Example 1,  Next: Argp Example 2,  Up: Argp Examples
-
-25.3.11.1 A Minimal Program Using Argp
-......................................
-
-This is perhaps the smallest program possible that uses argp.  It won’t
-do much except give an error message and exit when there are any
-arguments, and prints a rather pointless message for ‘--help’.
-
-
-     /* This is (probably) the smallest possible program that
-        uses argp.  It won’t do much except give an error
-        messages and exit when there are any arguments, and print
-        a (rather pointless) messages for –help. */
-
-     #include <stdlib.h>
-     #include <argp.h>
-
-     int
-     main (int argc, char **argv)
-     {
-       argp_parse (0, argc, argv, 0, 0, 0);
-       exit (0);
-     }
-
-
-File: libc.info,  Node: Argp Example 2,  Next: Argp Example 3,  Prev: Argp Example 1,  Up: Argp Examples
-
-25.3.11.2 A Program Using Argp with Only Default Options
-........................................................
-
-This program doesn’t use any options or arguments, it uses argp to be
-compliant with the GNU standard command line format.
-
-   In addition to giving no arguments and implementing a ‘--help’
-option, this example has a ‘--version’ option, which will put the given
-documentation string and bug address in the ‘--help’ output, as per GNU
-standards.
-
-   The variable ‘argp’ contains the argument parser specification.
-Adding fields to this structure is the way most parameters are passed to
-‘argp_parse’.  The first three fields are normally used, but they are
-not in this small program.  There are also two global variables that
-argp can use defined here, ‘argp_program_version’ and
-‘argp_program_bug_address’.  They are considered global variables
-because they will almost always be constant for a given program, even if
-they use different argument parsers for various tasks.
-
-
-     /* This program doesn’t use any options or arguments, but uses
-        argp to be compliant with the GNU standard command line
-        format.
-
-        In addition to making sure no arguments are given, and
-        implementing a –help option, this example will have a
-        –version option, and will put the given documentation string
-        and bug address in the –help output, as per GNU standards.
-
-        The variable ARGP contains the argument parser specification;
-        adding fields to this structure is the way most parameters are
-        passed to argp_parse (the first three fields are usually used,
-        but not in this small program).  There are also two global
-        variables that argp knows about defined here,
-        ARGP_PROGRAM_VERSION and ARGP_PROGRAM_BUG_ADDRESS (they are
-        global variables because they will almost always be constant
-        for a given program, even if it uses different argument
-        parsers for various tasks). */
-
-     #include <stdlib.h>
-     #include <argp.h>
-
-     const char *argp_program_version =
-       "argp-ex2 1.0";
-     const char *argp_program_bug_address =
-       "<bug-gnu-utils@gnu.org>";
-
-     /* Program documentation. */
-     static char doc[] =
-       "Argp example #2 -- a pretty minimal program using argp";
-
-     /* Our argument parser.  The ‘options’, ‘parser’, and
-        ‘args_doc’ fields are zero because we have neither options or
-        arguments; ‘doc’ and ‘argp_program_bug_address’ will be
-        used in the output for ‘--help’, and the ‘--version’
-        option will print out ‘argp_program_version’. */
-     static struct argp argp = { 0, 0, 0, doc };
-
-     int
-     main (int argc, char **argv)
-     {
-       argp_parse (&argp, argc, argv, 0, 0, 0);
-       exit (0);
-     }
-
-
-File: libc.info,  Node: Argp Example 3,  Next: Argp Example 4,  Prev: Argp Example 2,  Up: Argp Examples
-
-25.3.11.3 A Program Using Argp with User Options
-................................................
-
-This program uses the same features as example 2, adding user options
-and arguments.
-
-   We now use the first four fields in ‘argp’ (*note Argp Parsers::) and
-specify ‘parse_opt’ as the parser function.  *Note Argp Parser
-Functions::.
-
-   Note that in this example, ‘main’ uses a structure to communicate
-with the ‘parse_opt’ function, a pointer to which it passes in the
-‘input’ argument to ‘argp_parse’.  *Note Argp::.  It is retrieved by
-‘parse_opt’ through the ‘input’ field in its ‘state’ argument.  *Note
-Argp Parsing State::.  Of course, it’s also possible to use global
-variables instead, but using a structure like this is somewhat more
-flexible and clean.
-
-
-     /* This program uses the same features as example 2, and uses options and
-        arguments.
-
-        We now use the first four fields in ARGP, so here’s a description of them:
-          OPTIONS  – A pointer to a vector of struct argp_option (see below)
-          PARSER   – A function to parse a single option, called by argp
-          ARGS_DOC – A string describing how the non-option arguments should look
-          DOC      – A descriptive string about this program; if it contains a
-                      vertical tab character (\v), the part after it will be
-                      printed *following* the options
-
-        The function PARSER takes the following arguments:
-          KEY  – An integer specifying which option this is (taken
-                  from the KEY field in each struct argp_option), or
-                  a special key specifying something else; the only
-                  special keys we use here are ARGP_KEY_ARG, meaning
-                  a non-option argument, and ARGP_KEY_END, meaning
-                  that all arguments have been parsed
-          ARG  – For an option KEY, the string value of its
-                  argument, or NULL if it has none
-          STATE– A pointer to a struct argp_state, containing
-                  various useful information about the parsing state; used here
-                  are the INPUT field, which reflects the INPUT argument to
-                  argp_parse, and the ARG_NUM field, which is the number of the
-                  current non-option argument being parsed
-        It should return either 0, meaning success, ARGP_ERR_UNKNOWN, meaning the
-        given KEY wasn’t recognized, or an errno value indicating some other
-        error.
-
-        Note that in this example, main uses a structure to communicate with the
-        parse_opt function, a pointer to which it passes in the INPUT argument to
-        argp_parse.  Of course, it’s also possible to use global variables
-        instead, but this is somewhat more flexible.
-
-        The OPTIONS field contains a pointer to a vector of struct argp_option’s;
-        that structure has the following fields (if you assign your option
-        structures using array initialization like this example, unspecified
-        fields will be defaulted to 0, and need not be specified):
-          NAME   – The name of this option’s long option (may be zero)
-          KEY    – The KEY to pass to the PARSER function when parsing this option,
-                    *and* the name of this option’s short option, if it is a
-                    printable ascii character
-          ARG    – The name of this option’s argument, if any
-          FLAGS  – Flags describing this option; some of them are:
-                      OPTION_ARG_OPTIONAL – The argument to this option is optional
-                      OPTION_ALIAS        – This option is an alias for the
-                                             previous option
-                      OPTION_HIDDEN       – Don’t show this option in –help output
-          DOC    – A documentation string for this option, shown in –help output
-
-        An options vector should be terminated by an option with all fields zero. */
-
-     #include <stdlib.h>
-     #include <argp.h>
-
-     const char *argp_program_version =
-       "argp-ex3 1.0";
-     const char *argp_program_bug_address =
-       "<bug-gnu-utils@gnu.org>";
-
-     /* Program documentation. */
-     static char doc[] =
-       "Argp example #3 -- a program with options and arguments using argp";
-
-     /* A description of the arguments we accept. */
-     static char args_doc[] = "ARG1 ARG2";
-
-     /* The options we understand. */
-     static struct argp_option options[] = {
-       {"verbose",  'v', 0,      0,  "Produce verbose output" },
-       {"quiet",    'q', 0,      0,  "Don't produce any output" },
-       {"silent",   's', 0,      OPTION_ALIAS },
-       {"output",   'o', "FILE", 0,
-        "Output to FILE instead of standard output" },
-       { 0 }
-     };
-
-     /* Used by ‘main’ to communicate with ‘parse_opt’. */
-     struct arguments
-     {
-       char *args[2];                /* ARG1 & ARG2 */
-       int silent, verbose;
-       char *output_file;
-     };
-
-     /* Parse a single option. */
-     static error_t
-     parse_opt (int key, char *arg, struct argp_state *state)
-     {
-       /* Get the INPUT argument from ‘argp_parse’, which we
-          know is a pointer to our arguments structure. */
-       struct arguments *arguments = state->input;
-
-       switch (key)
-         {
-         case 'q': case 's':
-           arguments->silent = 1;
-           break;
-         case 'v':
-           arguments->verbose = 1;
-           break;
-         case 'o':
-           arguments->output_file = arg;
-           break;
-
-         case ARGP_KEY_ARG:
-           if (state->arg_num >= 2)
-             /* Too many arguments. */
-             argp_usage (state);
-
-           arguments->args[state->arg_num] = arg;
-
-           break;
-
-         case ARGP_KEY_END:
-           if (state->arg_num < 2)
-             /* Not enough arguments. */
-             argp_usage (state);
-           break;
-
-         default:
-           return ARGP_ERR_UNKNOWN;
-         }
-       return 0;
-     }
-
-     /* Our argp parser. */
-     static struct argp argp = { options, parse_opt, args_doc, doc };
-
-     int
-     main (int argc, char **argv)
-     {
-       struct arguments arguments;
-
-       /* Default values. */
-       arguments.silent = 0;
-       arguments.verbose = 0;
-       arguments.output_file = "-";
-
-       /* Parse our arguments; every option seen by ‘parse_opt’ will
-          be reflected in ‘arguments’. */
-       argp_parse (&argp, argc, argv, 0, 0, &arguments);
-
-       printf ("ARG1 = %s\nARG2 = %s\nOUTPUT_FILE = %s\n"
-               "VERBOSE = %s\nSILENT = %s\n",
-               arguments.args[0], arguments.args[1],
-               arguments.output_file,
-               arguments.verbose ? "yes" : "no",
-               arguments.silent ? "yes" : "no");
-
-       exit (0);
-     }
-
-
-File: libc.info,  Node: Argp Example 4,  Prev: Argp Example 3,  Up: Argp Examples
-
-25.3.11.4 A Program Using Multiple Combined Argp Parsers
-........................................................
-
-This program uses the same features as example 3, but has more options,
-and presents more structure in the ‘--help’ output.  It also illustrates
-how you can ‘steal’ the remainder of the input arguments past a certain
-point for programs that accept a list of items.  It also illustrates the
-KEY value ‘ARGP_KEY_NO_ARGS’, which is only given if no non-option
-arguments were supplied to the program.  *Note Argp Special Keys::.
-
-   For structuring help output, two features are used: _headers_ and a
-two part option string.  The _headers_ are entries in the options
-vector.  *Note Argp Option Vectors::.  The first four fields are zero.
-The two part documentation string are in the variable ‘doc’, which
-allows documentation both before and after the options.  *Note Argp
-Parsers::, the two parts of ‘doc’ are separated by a vertical-tab
-character (‘'\v'’, or ‘'\013'’).  By convention, the documentation
-before the options is a short string stating what the program does, and
-after any options it is longer, describing the behavior in more detail.
-All documentation strings are automatically filled for output, although
-newlines may be included to force a line break at a particular point.
-In addition, documentation strings are passed to the ‘gettext’ function,
-for possible translation into the current locale.
-
-
-     /* This program uses the same features as example 3, but has more
-        options, and somewhat more structure in the -help output.  It
-        also shows how you can ‘steal’ the remainder of the input
-        arguments past a certain point, for programs that accept a
-        list of items.  It also shows the special argp KEY value
-        ARGP_KEY_NO_ARGS, which is only given if no non-option
-        arguments were supplied to the program.
-
-        For structuring the help output, two features are used,
-        *headers* which are entries in the options vector with the
-        first four fields being zero, and a two part documentation
-        string (in the variable DOC), which allows documentation both
-        before and after the options; the two parts of DOC are
-        separated by a vertical-tab character (’\v’, or ’\013’).  By
-        convention, the documentation before the options is just a
-        short string saying what the program does, and that afterwards
-        is longer, describing the behavior in more detail.  All
-        documentation strings are automatically filled for output,
-        although newlines may be included to force a line break at a
-        particular point.  All documentation strings are also passed to
-        the ‘gettext’ function, for possible translation into the
-        current locale. */
-
-     #include <stdlib.h>
-     #include <error.h>
-     #include <argp.h>
-
-     const char *argp_program_version =
-       "argp-ex4 1.0";
-     const char *argp_program_bug_address =
-       "<bug-gnu-utils@prep.ai.mit.edu>";
-
-     /* Program documentation. */
-     static char doc[] =
-       "Argp example #4 -- a program with somewhat more complicated\
-     options\
-     \vThis part of the documentation comes *after* the options;\
-      note that the text is automatically filled, but it's possible\
-      to force a line-break, e.g.\n<-- here.";
-
-     /* A description of the arguments we accept. */
-     static char args_doc[] = "ARG1 [STRING...]";
-
-     /* Keys for options without short-options. */
-     #define OPT_ABORT  1            /* –abort */
-
-     /* The options we understand. */
-     static struct argp_option options[] = {
-       {"verbose",  'v', 0,       0, "Produce verbose output" },
-       {"quiet",    'q', 0,       0, "Don't produce any output" },
-       {"silent",   's', 0,       OPTION_ALIAS },
-       {"output",   'o', "FILE",  0,
-        "Output to FILE instead of standard output" },
-
-       {0,0,0,0, "The following options should be grouped together:" },
-       {"repeat",   'r', "COUNT", OPTION_ARG_OPTIONAL,
-        "Repeat the output COUNT (default 10) times"},
-       {"abort",    OPT_ABORT, 0, 0, "Abort before showing any output"},
-
-       { 0 }
-     };
-
-     /* Used by ‘main’ to communicate with ‘parse_opt’. */
-     struct arguments
-     {
-       char *arg1;                   /* ARG1 */
-       char **strings;               /* [STRING...] */
-       int silent, verbose, abort;   /* ‘-s’, ‘-v’, ‘--abort’ */
-       char *output_file;            /* FILE arg to ‘--output’ */
-       int repeat_count;             /* COUNT arg to ‘--repeat’ */
-     };
-
-     /* Parse a single option. */
-     static error_t
-     parse_opt (int key, char *arg, struct argp_state *state)
-     {
-       /* Get the ‘input’ argument from ‘argp_parse’, which we
-          know is a pointer to our arguments structure. */
-       struct arguments *arguments = state->input;
-
-       switch (key)
-         {
-         case 'q': case 's':
-           arguments->silent = 1;
-           break;
-         case 'v':
-           arguments->verbose = 1;
-           break;
-         case 'o':
-           arguments->output_file = arg;
-           break;
-         case 'r':
-           arguments->repeat_count = arg ? atoi (arg) : 10;
-           break;
-         case OPT_ABORT:
-           arguments->abort = 1;
-           break;
-
-         case ARGP_KEY_NO_ARGS:
-           argp_usage (state);
-
-         case ARGP_KEY_ARG:
-           /* Here we know that ‘state->arg_num == 0’, since we
-              force argument parsing to end before any more arguments can
-              get here. */
-           arguments->arg1 = arg;
-
-           /* Now we consume all the rest of the arguments.
-              ‘state->next’ is the index in ‘state->argv’ of the
-              next argument to be parsed, which is the first STRING
-              we’re interested in, so we can just use
-              ‘&state->argv[state->next]’ as the value for
-              arguments->strings.
-
-              _In addition_, by setting ‘state->next’ to the end
-              of the arguments, we can force argp to stop parsing here and
-              return. */
-           arguments->strings = &state->argv[state->next];
-           state->next = state->argc;
-
-           break;
-
-         default:
-           return ARGP_ERR_UNKNOWN;
-         }
-       return 0;
-     }
-
-     /* Our argp parser. */
-     static struct argp argp = { options, parse_opt, args_doc, doc };
-
-     int
-     main (int argc, char **argv)
-     {
-       int i, j;
-       struct arguments arguments;
-
-       /* Default values. */
-       arguments.silent = 0;
-       arguments.verbose = 0;
-       arguments.output_file = "-";
-       arguments.repeat_count = 1;
-       arguments.abort = 0;
-
-       /* Parse our arguments; every option seen by ‘parse_opt’ will be
-          reflected in ‘arguments’. */
-       argp_parse (&argp, argc, argv, 0, 0, &arguments);
-
-       if (arguments.abort)
-         error (10, 0, "ABORTED");
-
-       for (i = 0; i < arguments.repeat_count; i++)
-         {
-           printf ("ARG1 = %s\n", arguments.arg1);
-           printf ("STRINGS = ");
-           for (j = 0; arguments.strings[j]; j++)
-             printf (j == 0 ? "%s" : ", %s", arguments.strings[j]);
-           printf ("\n");
-           printf ("OUTPUT_FILE = %s\nVERBOSE = %s\nSILENT = %s\n",
-                   arguments.output_file,
-                   arguments.verbose ? "yes" : "no",
-                   arguments.silent ? "yes" : "no");
-         }
-
-       exit (0);
-     }
-
-
-File: libc.info,  Node: Argp User Customization,  Prev: Argp Examples,  Up: Argp
-
-25.3.12 Argp User Customization
--------------------------------
-
-The formatting of argp ‘--help’ output may be controlled to some extent
-by a program’s users, by setting the ‘ARGP_HELP_FMT’ environment
-variable to a comma-separated list of tokens.  Whitespace is ignored:
-
-‘dup-args’
-‘no-dup-args’
-     These turn “duplicate-argument-mode” on or off.  In duplicate
-     argument mode, if an option that accepts an argument has multiple
-     names, the argument is shown for each name.  Otherwise, it is only
-     shown for the first long option.  A note is subsequently printed so
-     the user knows that it applies to other names as well.  The default
-     is ‘no-dup-args’, which is less consistent, but prettier.
-
-‘dup-args-note’
-‘no-dup-args-note’
-     These will enable or disable the note informing the user of
-     suppressed option argument duplication.  The default is
-     ‘dup-args-note’.
-
-‘short-opt-col=N’
-     This prints the first short option in column N.  The default is 2.
-
-‘long-opt-col=N’
-     This prints the first long option in column N.  The default is 6.
-
-‘doc-opt-col=N’
-     This prints ‘documentation options’ (*note Argp Option Flags::) in
-     column N.  The default is 2.
-
-‘opt-doc-col=N’
-     This prints the documentation for options starting in column N.
-     The default is 29.
-
-‘header-col=N’
-     This will indent the group headers that document groups of options
-     to column N.  The default is 1.
-
-‘usage-indent=N’
-     This will indent continuation lines in ‘Usage:’ messages to column
-     N.  The default is 12.
-
-‘rmargin=N’
-     This will word wrap help output at or before column N.  The default
-     is 79.
-
-
-File: libc.info,  Node: Suboptions,  Next: Suboptions Example,  Prev: Argp,  Up: Parsing Program Arguments
-
-25.3.12.1 Parsing of Suboptions
-...............................
-
-Having a single level of options is sometimes not enough.  There might
-be too many options which have to be available or a set of options is
-closely related.
-
-   For this case some programs use suboptions.  One of the most
-prominent programs is certainly ‘mount’(8).  The ‘-o’ option take one
-argument which itself is a comma separated list of options.  To ease the
-programming of code like this the function ‘getsubopt’ is available.
-
- -- Function: int getsubopt (char **OPTIONP, char *const *TOKENS, char
-          **VALUEP)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     The OPTIONP parameter must be a pointer to a variable containing
-     the address of the string to process.  When the function returns,
-     the reference is updated to point to the next suboption or to the
-     terminating ‘\0’ character if there are no more suboptions
-     available.
-
-     The TOKENS parameter references an array of strings containing the
-     known suboptions.  All strings must be ‘\0’ terminated and to mark
-     the end a null pointer must be stored.  When ‘getsubopt’ finds a
-     possible legal suboption it compares it with all strings available
-     in the TOKENS array and returns the index in the string as the
-     indicator.
-
-     In case the suboption has an associated value introduced by a ‘=’
-     character, a pointer to the value is returned in VALUEP.  The
-     string is ‘\0’ terminated.  If no argument is available VALUEP is
-     set to the null pointer.  By doing this the caller can check
-     whether a necessary value is given or whether no unexpected value
-     is present.
-
-     In case the next suboption in the string is not mentioned in the
-     TOKENS array the starting address of the suboption including a
-     possible value is returned in VALUEP and the return value of the
-     function is ‘-1’.
-
-
-File: libc.info,  Node: Suboptions Example,  Prev: Suboptions,  Up: Parsing Program Arguments
-
-25.3.13 Parsing of Suboptions Example
--------------------------------------
-
-The code which might appear in the ‘mount’(8) program is a perfect
-example of the use of ‘getsubopt’:
-
-
-     #include <stdio.h>
-     #include <stdlib.h>
-     #include <unistd.h>
-
-     int do_all;
-     const char *type;
-     int read_size;
-     int write_size;
-     int read_only;
-
-     enum
-     {
-       RO_OPTION = 0,
-       RW_OPTION,
-       READ_SIZE_OPTION,
-       WRITE_SIZE_OPTION,
-       THE_END
-     };
-
-     const char *mount_opts[] =
-     {
-       [RO_OPTION] = "ro",
-       [RW_OPTION] = "rw",
-       [READ_SIZE_OPTION] = "rsize",
-       [WRITE_SIZE_OPTION] = "wsize",
-       [THE_END] = NULL
-     };
-
-     int
-     main (int argc, char **argv)
-     {
-       char *subopts, *value;
-       int opt;
-
-       while ((opt = getopt (argc, argv, "at:o:")) != -1)
-         switch (opt)
-           {
-           case 'a':
-             do_all = 1;
-             break;
-           case 't':
-             type = optarg;
-             break;
-           case 'o':
-             subopts = optarg;
-             while (*subopts != '\0')
-               switch (getsubopt (&subopts, mount_opts, &value))
-                 {
-                 case RO_OPTION:
-                   read_only = 1;
-                   break;
-                 case RW_OPTION:
-                   read_only = 0;
-                   break;
-                 case READ_SIZE_OPTION:
-                   if (value == NULL)
-                     abort ();
-                   read_size = atoi (value);
-                   break;
-                 case WRITE_SIZE_OPTION:
-                   if (value == NULL)
-                     abort ();
-                   write_size = atoi (value);
-                   break;
-                 default:
-                   /* Unknown suboption. */
-                   printf ("Unknown suboption `%s'\n", value);
-                   break;
-                 }
-             break;
-           default:
-             abort ();
-           }
-
-       /* Do the real work. */
-
-       return 0;
-     }
 
