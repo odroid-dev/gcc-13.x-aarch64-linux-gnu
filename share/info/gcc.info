@@ -29583,7 +29583,7 @@ These '-m' options are defined for the x86 family of computers.
           CLDEMOTE, WAITPKG, ADCX, AVX, AVX2, BMI, BMI2, F16C, FMA,
           LZCNT, PCONFIG, PKU, VAES, VPCLMULQDQ, SERIALIZE, HRESET, KL,
           WIDEKL, AVX-VNNI, AVXIFMA, AVXVNNIINT8, AVXNECONVERT,
-          CMPCCXADD, ENQCMD, UINTR and RAOINT instruction set support.
+          CMPCCXADD, ENQCMD and UINTR instruction set support.
 
      'knl'
           Intel Knight's Landing CPU with 64-bit extensions, MOVBE, MMX,
@@ -46593,18 +46593,18 @@ to be protected.  The list is ignored by GCC which treats it as empty.
 GCC interprets an empty list as meaning that all globally accessible
 variables should be protected.
 
- -- Built-in Function: TYPE __sync_fetch_and_add (TYPE *ptr, TYPE value,
+ -- Built-in Function: TYPE __sync_fetch_and_add (TYPE *PTR, TYPE VALUE,
           ...)
- -- Built-in Function: TYPE __sync_fetch_and_sub (TYPE *ptr, TYPE value,
+ -- Built-in Function: TYPE __sync_fetch_and_sub (TYPE *PTR, TYPE VALUE,
           ...)
- -- Built-in Function: TYPE __sync_fetch_and_or (TYPE *ptr, TYPE value,
+ -- Built-in Function: TYPE __sync_fetch_and_or (TYPE *PTR, TYPE VALUE,
           ...)
- -- Built-in Function: TYPE __sync_fetch_and_and (TYPE *ptr, TYPE value,
+ -- Built-in Function: TYPE __sync_fetch_and_and (TYPE *PTR, TYPE VALUE,
           ...)
- -- Built-in Function: TYPE __sync_fetch_and_xor (TYPE *ptr, TYPE value,
+ -- Built-in Function: TYPE __sync_fetch_and_xor (TYPE *PTR, TYPE VALUE,
           ...)
- -- Built-in Function: TYPE __sync_fetch_and_nand (TYPE *ptr, TYPE
-          value, ...)
+ -- Built-in Function: TYPE __sync_fetch_and_nand (TYPE *PTR, TYPE
+          VALUE, ...)
      These built-in functions perform the operation suggested by the
      name, and returns the value that had previously been in memory.
      That is, operations on integer operands have the following
@@ -46621,18 +46621,18 @@ variables should be protected.
      _Note:_ GCC 4.4 and later implement '__sync_fetch_and_nand' as
      '*ptr = ~(tmp & value)' instead of '*ptr = ~tmp & value'.
 
- -- Built-in Function: TYPE __sync_add_and_fetch (TYPE *ptr, TYPE value,
+ -- Built-in Function: TYPE __sync_add_and_fetch (TYPE *PTR, TYPE VALUE,
           ...)
- -- Built-in Function: TYPE __sync_sub_and_fetch (TYPE *ptr, TYPE value,
+ -- Built-in Function: TYPE __sync_sub_and_fetch (TYPE *PTR, TYPE VALUE,
           ...)
- -- Built-in Function: TYPE __sync_or_and_fetch (TYPE *ptr, TYPE value,
+ -- Built-in Function: TYPE __sync_or_and_fetch (TYPE *PTR, TYPE VALUE,
           ...)
- -- Built-in Function: TYPE __sync_and_and_fetch (TYPE *ptr, TYPE value,
+ -- Built-in Function: TYPE __sync_and_and_fetch (TYPE *PTR, TYPE VALUE,
           ...)
- -- Built-in Function: TYPE __sync_xor_and_fetch (TYPE *ptr, TYPE value,
+ -- Built-in Function: TYPE __sync_xor_and_fetch (TYPE *PTR, TYPE VALUE,
           ...)
- -- Built-in Function: TYPE __sync_nand_and_fetch (TYPE *ptr, TYPE
-          value, ...)
+ -- Built-in Function: TYPE __sync_nand_and_fetch (TYPE *PTR, TYPE
+          VALUE, ...)
      These built-in functions perform the operation suggested by the
      name, and return the new value.  That is, operations on integer
      operands have the following semantics.  Operations on pointer
@@ -46647,10 +46647,10 @@ variables should be protected.
      _Note:_ GCC 4.4 and later implement '__sync_nand_and_fetch' as
      '*ptr = ~(*ptr & value)' instead of '*ptr = ~*ptr & value'.
 
- -- Built-in Function: bool __sync_bool_compare_and_swap (TYPE *ptr,
-          TYPE oldval, TYPE newval, ...)
- -- Built-in Function: TYPE __sync_val_compare_and_swap (TYPE *ptr, TYPE
-          oldval, TYPE newval, ...)
+ -- Built-in Function: bool __sync_bool_compare_and_swap (TYPE *PTR,
+          TYPE OLDVAL, TYPE NEWVAL, ...)
+ -- Built-in Function: TYPE __sync_val_compare_and_swap (TYPE *PTR, TYPE
+          OLDVAL, TYPE NEWVAL, ...)
      These built-in functions perform an atomic compare and swap.  That
      is, if the current value of '*PTR' is OLDVAL, then write NEWVAL
      into '*PTR'.
@@ -46662,8 +46662,8 @@ variables should be protected.
  -- Built-in Function: void __sync_synchronize (...)
      This built-in function issues a full memory barrier.
 
- -- Built-in Function: TYPE __sync_lock_test_and_set (TYPE *ptr, TYPE
-          value, ...)
+ -- Built-in Function: TYPE __sync_lock_test_and_set (TYPE *PTR, TYPE
+          VALUE, ...)
      This built-in function, as described by Intel, is not a traditional
      test-and-set operation, but rather an atomic exchange operation.
      It writes VALUE into '*PTR', and returns the previous contents of
@@ -46681,7 +46681,7 @@ variables should be protected.
      previous memory stores may not be globally visible yet, and
      previous memory loads may not yet be satisfied.
 
- -- Built-in Function: void __sync_lock_release (TYPE *ptr, ...)
+ -- Built-in Function: void __sync_lock_release (TYPE *PTR, ...)
      This built-in function releases the lock acquired by
      '__sync_lock_test_and_set'.  Normally this means writing the
      constant 0 to '*PTR'.
@@ -46798,48 +46798,48 @@ are reserved for the memory order.  The remainder of the signed int is
 reserved for target use and should be 0.  Use of the predefined atomic
 values ensures proper usage.
 
- -- Built-in Function: TYPE __atomic_load_n (TYPE *ptr, int memorder)
+ -- Built-in Function: TYPE __atomic_load_n (TYPE *PTR, int MEMORDER)
      This built-in function implements an atomic load operation.  It
      returns the contents of '*PTR'.
 
      The valid memory order variants are '__ATOMIC_RELAXED',
      '__ATOMIC_SEQ_CST', '__ATOMIC_ACQUIRE', and '__ATOMIC_CONSUME'.
 
- -- Built-in Function: void __atomic_load (TYPE *ptr, TYPE *ret, int
-          memorder)
+ -- Built-in Function: void __atomic_load (TYPE *PTR, TYPE *RET, int
+          MEMORDER)
      This is the generic version of an atomic load.  It returns the
      contents of '*PTR' in '*RET'.
 
- -- Built-in Function: void __atomic_store_n (TYPE *ptr, TYPE val, int
-          memorder)
+ -- Built-in Function: void __atomic_store_n (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
      This built-in function implements an atomic store operation.  It
      writes 'VAL' into '*PTR'.
 
      The valid memory order variants are '__ATOMIC_RELAXED',
      '__ATOMIC_SEQ_CST', and '__ATOMIC_RELEASE'.
 
- -- Built-in Function: void __atomic_store (TYPE *ptr, TYPE *val, int
-          memorder)
+ -- Built-in Function: void __atomic_store (TYPE *PTR, TYPE *VAL, int
+          MEMORDER)
      This is the generic version of an atomic store.  It stores the
      value of '*VAL' into '*PTR'.
 
- -- Built-in Function: TYPE __atomic_exchange_n (TYPE *ptr, TYPE val,
-          int memorder)
+ -- Built-in Function: TYPE __atomic_exchange_n (TYPE *PTR, TYPE VAL,
+          int MEMORDER)
      This built-in function implements an atomic exchange operation.  It
      writes VAL into '*PTR', and returns the previous contents of
      '*PTR'.
 
      All memory order variants are valid.
 
- -- Built-in Function: void __atomic_exchange (TYPE *ptr, TYPE *val,
-          TYPE *ret, int memorder)
+ -- Built-in Function: void __atomic_exchange (TYPE *PTR, TYPE *VAL,
+          TYPE *RET, int MEMORDER)
      This is the generic version of an atomic exchange.  It stores the
      contents of '*VAL' into '*PTR'.  The original value of '*PTR' is
      copied into '*RET'.
 
- -- Built-in Function: bool __atomic_compare_exchange_n (TYPE *ptr, TYPE
-          *expected, TYPE desired, bool weak, int success_memorder, int
-          failure_memorder)
+ -- Built-in Function: bool __atomic_compare_exchange_n (TYPE *PTR, TYPE
+          *EXPECTED, TYPE DESIRED, bool WEAK, int SUCCESS_MEMORDER, int
+          FAILURE_MEMORDER)
      This built-in function implements an atomic compare and exchange
      operation.  This compares the contents of '*PTR' with the contents
      of '*EXPECTED'.  If equal, the operation is a _read-modify-write_
@@ -46861,26 +46861,26 @@ values ensures proper usage.
      nor '__ATOMIC_ACQ_REL'.  It also cannot be a stronger order than
      that specified by SUCCESS_MEMORDER.
 
- -- Built-in Function: bool __atomic_compare_exchange (TYPE *ptr, TYPE
-          *expected, TYPE *desired, bool weak, int success_memorder, int
-          failure_memorder)
+ -- Built-in Function: bool __atomic_compare_exchange (TYPE *PTR, TYPE
+          *EXPECTED, TYPE *DESIRED, bool WEAK, int SUCCESS_MEMORDER, int
+          FAILURE_MEMORDER)
      This built-in function implements the generic version of
      '__atomic_compare_exchange'.  The function is virtually identical
      to '__atomic_compare_exchange_n', except the desired value is also
      a pointer.
 
- -- Built-in Function: TYPE __atomic_add_fetch (TYPE *ptr, TYPE val, int
-          memorder)
- -- Built-in Function: TYPE __atomic_sub_fetch (TYPE *ptr, TYPE val, int
-          memorder)
- -- Built-in Function: TYPE __atomic_and_fetch (TYPE *ptr, TYPE val, int
-          memorder)
- -- Built-in Function: TYPE __atomic_xor_fetch (TYPE *ptr, TYPE val, int
-          memorder)
- -- Built-in Function: TYPE __atomic_or_fetch (TYPE *ptr, TYPE val, int
-          memorder)
- -- Built-in Function: TYPE __atomic_nand_fetch (TYPE *ptr, TYPE val,
-          int memorder)
+ -- Built-in Function: TYPE __atomic_add_fetch (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
+ -- Built-in Function: TYPE __atomic_sub_fetch (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
+ -- Built-in Function: TYPE __atomic_and_fetch (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
+ -- Built-in Function: TYPE __atomic_xor_fetch (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
+ -- Built-in Function: TYPE __atomic_or_fetch (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
+ -- Built-in Function: TYPE __atomic_nand_fetch (TYPE *PTR, TYPE VAL,
+          int MEMORDER)
      These built-in functions perform the operation suggested by the
      name, and return the result of the operation.  Operations on
      pointer arguments are performed as if the operands were of the
@@ -46894,18 +46894,18 @@ values ensures proper usage.
      pointer type.  It must not be a boolean type.  All memory orders
      are valid.
 
- -- Built-in Function: TYPE __atomic_fetch_add (TYPE *ptr, TYPE val, int
-          memorder)
- -- Built-in Function: TYPE __atomic_fetch_sub (TYPE *ptr, TYPE val, int
-          memorder)
- -- Built-in Function: TYPE __atomic_fetch_and (TYPE *ptr, TYPE val, int
-          memorder)
- -- Built-in Function: TYPE __atomic_fetch_xor (TYPE *ptr, TYPE val, int
-          memorder)
- -- Built-in Function: TYPE __atomic_fetch_or (TYPE *ptr, TYPE val, int
-          memorder)
- -- Built-in Function: TYPE __atomic_fetch_nand (TYPE *ptr, TYPE val,
-          int memorder)
+ -- Built-in Function: TYPE __atomic_fetch_add (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
+ -- Built-in Function: TYPE __atomic_fetch_sub (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
+ -- Built-in Function: TYPE __atomic_fetch_and (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
+ -- Built-in Function: TYPE __atomic_fetch_xor (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
+ -- Built-in Function: TYPE __atomic_fetch_or (TYPE *PTR, TYPE VAL, int
+          MEMORDER)
+ -- Built-in Function: TYPE __atomic_fetch_nand (TYPE *PTR, TYPE VAL,
+          int MEMORDER)
      These built-in functions perform the operation suggested by the
      name, and return the value that had previously been in '*PTR'.
      Operations on pointer arguments are performed as if the operands
@@ -46919,8 +46919,8 @@ values ensures proper usage.
      '__atomic_op_fetch' built-in functions.  All memory orders are
      valid.
 
- -- Built-in Function: bool __atomic_test_and_set (void *ptr, int
-          memorder)
+ -- Built-in Function: bool __atomic_test_and_set (void *PTR, int
+          MEMORDER)
 
      This built-in function performs an atomic test-and-set operation on
      the byte at '*PTR'.  The byte is set to some implementation defined
@@ -46931,7 +46931,7 @@ values ensures proper usage.
 
      All memory orders are valid.
 
- -- Built-in Function: void __atomic_clear (bool *ptr, int memorder)
+ -- Built-in Function: void __atomic_clear (bool *PTR, int MEMORDER)
 
      This built-in function performs an atomic clear operation on
      '*PTR'.  After the operation, '*PTR' contains 0.  It should be only
@@ -46943,22 +46943,22 @@ values ensures proper usage.
      The valid memory order variants are '__ATOMIC_RELAXED',
      '__ATOMIC_SEQ_CST', and '__ATOMIC_RELEASE'.
 
- -- Built-in Function: void __atomic_thread_fence (int memorder)
+ -- Built-in Function: void __atomic_thread_fence (int MEMORDER)
 
      This built-in function acts as a synchronization fence between
      threads based on the specified memory order.
 
      All memory orders are valid.
 
- -- Built-in Function: void __atomic_signal_fence (int memorder)
+ -- Built-in Function: void __atomic_signal_fence (int MEMORDER)
 
      This built-in function acts as a synchronization fence between a
      thread and signal handlers based in the same thread.
 
      All memory orders are valid.
 
- -- Built-in Function: bool __atomic_always_lock_free (size_t size, void
-          *ptr)
+ -- Built-in Function: bool __atomic_always_lock_free (size_t SIZE, void
+          *PTR)
 
      This built-in function returns 'true' if objects of SIZE bytes
      always generate lock-free atomic instructions for the target
@@ -46971,8 +46971,8 @@ values ensures proper usage.
 
           if (__atomic_always_lock_free (sizeof (long long), 0))
 
- -- Built-in Function: bool __atomic_is_lock_free (size_t size, void
-          *ptr)
+ -- Built-in Function: bool __atomic_is_lock_free (size_t SIZE, void
+          *PTR)
 
      This built-in function returns 'true' if objects of SIZE bytes
      always generate lock-free atomic instructions for the target
@@ -46993,21 +46993,21 @@ File: gcc.info,  Node: Integer Overflow Builtins,  Next: x86 specific memory mod
 The following built-in functions allow performing simple arithmetic
 operations together with checking whether the operations overflowed.
 
- -- Built-in Function: bool __builtin_add_overflow (TYPE1 a, TYPE2 b,
-          TYPE3 *res)
- -- Built-in Function: bool __builtin_sadd_overflow (int a, int b, int
-          *res)
- -- Built-in Function: bool __builtin_saddl_overflow (long int a, long
-          int b, long int *res)
- -- Built-in Function: bool __builtin_saddll_overflow (long long int a,
-          long long int b, long long int *res)
- -- Built-in Function: bool __builtin_uadd_overflow (unsigned int a,
-          unsigned int b, unsigned int *res)
+ -- Built-in Function: bool __builtin_add_overflow (TYPE1 A, TYPE2 B,
+          TYPE3 *RES)
+ -- Built-in Function: bool __builtin_sadd_overflow (int A, int B, int
+          *RES)
+ -- Built-in Function: bool __builtin_saddl_overflow (long int A, long
+          int B, long int *RES)
+ -- Built-in Function: bool __builtin_saddll_overflow (long long int A,
+          long long int B, long long int *RES)
+ -- Built-in Function: bool __builtin_uadd_overflow (unsigned int A,
+          unsigned int B, unsigned int *RES)
  -- Built-in Function: bool __builtin_uaddl_overflow (unsigned long int
-          a, unsigned long int b, unsigned long int *res)
+          A, unsigned long int B, unsigned long int *RES)
  -- Built-in Function: bool __builtin_uaddll_overflow (unsigned long
-          long int a, unsigned long long int b, unsigned long long int
-          *res)
+          long int A, unsigned long long int B, unsigned long long int
+          *RES)
 
      These built-in functions promote the first two operands into
      infinite precision signed type and perform addition on those
@@ -47027,41 +47027,41 @@ operations together with checking whether the operations overflowed.
      these built-in functions where possible, like conditional jump on
      overflow after addition, conditional jump on carry etc.
 
- -- Built-in Function: bool __builtin_sub_overflow (TYPE1 a, TYPE2 b,
-          TYPE3 *res)
- -- Built-in Function: bool __builtin_ssub_overflow (int a, int b, int
-          *res)
- -- Built-in Function: bool __builtin_ssubl_overflow (long int a, long
-          int b, long int *res)
- -- Built-in Function: bool __builtin_ssubll_overflow (long long int a,
-          long long int b, long long int *res)
- -- Built-in Function: bool __builtin_usub_overflow (unsigned int a,
-          unsigned int b, unsigned int *res)
+ -- Built-in Function: bool __builtin_sub_overflow (TYPE1 A, TYPE2 B,
+          TYPE3 *RES)
+ -- Built-in Function: bool __builtin_ssub_overflow (int A, int B, int
+          *RES)
+ -- Built-in Function: bool __builtin_ssubl_overflow (long int A, long
+          int B, long int *RES)
+ -- Built-in Function: bool __builtin_ssubll_overflow (long long int A,
+          long long int B, long long int *RES)
+ -- Built-in Function: bool __builtin_usub_overflow (unsigned int A,
+          unsigned int B, unsigned int *RES)
  -- Built-in Function: bool __builtin_usubl_overflow (unsigned long int
-          a, unsigned long int b, unsigned long int *res)
+          A, unsigned long int B, unsigned long int *RES)
  -- Built-in Function: bool __builtin_usubll_overflow (unsigned long
-          long int a, unsigned long long int b, unsigned long long int
-          *res)
+          long int A, unsigned long long int B, unsigned long long int
+          *RES)
 
      These built-in functions are similar to the add overflow checking
      built-in functions above, except they perform subtraction, subtract
      the second argument from the first one, instead of addition.
 
- -- Built-in Function: bool __builtin_mul_overflow (TYPE1 a, TYPE2 b,
-          TYPE3 *res)
- -- Built-in Function: bool __builtin_smul_overflow (int a, int b, int
-          *res)
- -- Built-in Function: bool __builtin_smull_overflow (long int a, long
-          int b, long int *res)
- -- Built-in Function: bool __builtin_smulll_overflow (long long int a,
-          long long int b, long long int *res)
- -- Built-in Function: bool __builtin_umul_overflow (unsigned int a,
-          unsigned int b, unsigned int *res)
+ -- Built-in Function: bool __builtin_mul_overflow (TYPE1 A, TYPE2 B,
+          TYPE3 *RES)
+ -- Built-in Function: bool __builtin_smul_overflow (int A, int B, int
+          *RES)
+ -- Built-in Function: bool __builtin_smull_overflow (long int A, long
+          int B, long int *RES)
+ -- Built-in Function: bool __builtin_smulll_overflow (long long int A,
+          long long int B, long long int *RES)
+ -- Built-in Function: bool __builtin_umul_overflow (unsigned int A,
+          unsigned int B, unsigned int *RES)
  -- Built-in Function: bool __builtin_umull_overflow (unsigned long int
-          a, unsigned long int b, unsigned long int *res)
+          A, unsigned long int B, unsigned long int *RES)
  -- Built-in Function: bool __builtin_umulll_overflow (unsigned long
-          long int a, unsigned long long int b, unsigned long long int
-          *res)
+          long int A, unsigned long long int B, unsigned long long int
+          *RES)
 
      These built-in functions are similar to the add overflow checking
      built-in functions above, except they perform multiplication,
@@ -47070,12 +47070,12 @@ operations together with checking whether the operations overflowed.
  The following built-in functions allow checking if simple arithmetic
 operation would overflow.
 
- -- Built-in Function: bool __builtin_add_overflow_p (TYPE1 a, TYPE2 b,
-          TYPE3 c)
- -- Built-in Function: bool __builtin_sub_overflow_p (TYPE1 a, TYPE2 b,
-          TYPE3 c)
- -- Built-in Function: bool __builtin_mul_overflow_p (TYPE1 a, TYPE2 b,
-          TYPE3 c)
+ -- Built-in Function: bool __builtin_add_overflow_p (TYPE1 A, TYPE2 B,
+          TYPE3 C)
+ -- Built-in Function: bool __builtin_sub_overflow_p (TYPE1 A, TYPE2 B,
+          TYPE3 C)
+ -- Built-in Function: bool __builtin_mul_overflow_p (TYPE1 A, TYPE2 B,
+          TYPE3 C)
 
      These built-in functions are similar to '__builtin_add_overflow',
      '__builtin_sub_overflow', or '__builtin_mul_overflow', except that
@@ -47430,7 +47430,7 @@ available for all target libcs, but in all cases they will gracefully
 fallback to libc calls.  These built-in functions appear both with and
 without the '__builtin_' prefix.
 
- -- Built-in Function: void * __builtin_alloca (size_t size)
+ -- Built-in Function: void * __builtin_alloca (size_t SIZE)
      The '__builtin_alloca' function must be called at block scope.  The
      function allocates an object SIZE bytes large on the stack of the
      calling function.  The object is aligned on the default stack
@@ -47467,8 +47467,8 @@ without the '__builtin_' prefix.
      programs where GCC provides them as an extension.  *Note Variable
      Length::, for details.
 
- -- Built-in Function: void * __builtin_alloca_with_align (size_t size,
-          size_t alignment)
+ -- Built-in Function: void * __builtin_alloca_with_align (size_t SIZE,
+          size_t ALIGNMENT)
      The '__builtin_alloca_with_align' function must be called at block
      scope.  The function allocates an object SIZE bytes large on the
      stack of the calling function.  The allocated object is aligned on
@@ -47513,7 +47513,7 @@ without the '__builtin_' prefix.
      extension.  *Note Variable Length::, for details.
 
  -- Built-in Function: void * __builtin_alloca_with_align_and_max
-          (size_t size, size_t alignment, size_t max_size)
+          (size_t SIZE, size_t ALIGNMENT, size_t MAX_SIZE)
      Similar to '__builtin_alloca_with_align' but takes an extra
      argument specifying an upper bound for SIZE in case its value
      cannot be computed at compile time, for use by '-fstack-usage',
@@ -47562,8 +47562,8 @@ without the '__builtin_' prefix.
      '__builtin_has_attribute' is an intrinsic function that is not
      recognized in such contexts.
 
- -- Built-in Function: TYPE __builtin_speculation_safe_value (TYPE val,
-          TYPE failval)
+ -- Built-in Function: TYPE __builtin_speculation_safe_value (TYPE VAL,
+          TYPE FAILVAL)
 
      This built-in function can be used to help mitigate against unsafe
      speculative execution.  TYPE may be any integral type or any
@@ -48193,7 +48193,7 @@ without the '__builtin_' prefix.
      type-generic, which means it does not do default promotion from
      float to double.
 
- -- Built-in Function: double __builtin_nan (const char *str)
+ -- Built-in Function: double __builtin_nan (const char *STR)
      This is an implementation of the ISO C99 function 'nan'.
 
      Since ISO C99 defines this function in terms of 'strtod', which we
@@ -48209,56 +48209,56 @@ without the '__builtin_' prefix.
      been consumed by 'strtol', is evaluated early enough that it is
      considered a compile-time constant.
 
- -- Built-in Function: _Decimal32 __builtin_nand32 (const char *str)
+ -- Built-in Function: _Decimal32 __builtin_nand32 (const char *STR)
      Similar to '__builtin_nan', except the return type is '_Decimal32'.
 
- -- Built-in Function: _Decimal64 __builtin_nand64 (const char *str)
+ -- Built-in Function: _Decimal64 __builtin_nand64 (const char *STR)
      Similar to '__builtin_nan', except the return type is '_Decimal64'.
 
- -- Built-in Function: _Decimal128 __builtin_nand128 (const char *str)
+ -- Built-in Function: _Decimal128 __builtin_nand128 (const char *STR)
      Similar to '__builtin_nan', except the return type is
      '_Decimal128'.
 
- -- Built-in Function: float __builtin_nanf (const char *str)
+ -- Built-in Function: float __builtin_nanf (const char *STR)
      Similar to '__builtin_nan', except the return type is 'float'.
 
- -- Built-in Function: long double __builtin_nanl (const char *str)
+ -- Built-in Function: long double __builtin_nanl (const char *STR)
      Similar to '__builtin_nan', except the return type is 'long
      double'.
 
- -- Built-in Function: _FloatN __builtin_nanfN (const char *str)
+ -- Built-in Function: _FloatN __builtin_nanfN (const char *STR)
      Similar to '__builtin_nan', except the return type is '_FloatN'.
 
- -- Built-in Function: _FloatNx __builtin_nanfNx (const char *str)
+ -- Built-in Function: _FloatNx __builtin_nanfNx (const char *STR)
      Similar to '__builtin_nan', except the return type is '_FloatNx'.
 
- -- Built-in Function: double __builtin_nans (const char *str)
+ -- Built-in Function: double __builtin_nans (const char *STR)
      Similar to '__builtin_nan', except the significand is forced to be
      a signaling NaN.  The 'nans' function is proposed by WG14 N965.
 
- -- Built-in Function: _Decimal32 __builtin_nansd32 (const char *str)
+ -- Built-in Function: _Decimal32 __builtin_nansd32 (const char *STR)
      Similar to '__builtin_nans', except the return type is
      '_Decimal32'.
 
- -- Built-in Function: _Decimal64 __builtin_nansd64 (const char *str)
+ -- Built-in Function: _Decimal64 __builtin_nansd64 (const char *STR)
      Similar to '__builtin_nans', except the return type is
      '_Decimal64'.
 
- -- Built-in Function: _Decimal128 __builtin_nansd128 (const char *str)
+ -- Built-in Function: _Decimal128 __builtin_nansd128 (const char *STR)
      Similar to '__builtin_nans', except the return type is
      '_Decimal128'.
 
- -- Built-in Function: float __builtin_nansf (const char *str)
+ -- Built-in Function: float __builtin_nansf (const char *STR)
      Similar to '__builtin_nans', except the return type is 'float'.
 
- -- Built-in Function: long double __builtin_nansl (const char *str)
+ -- Built-in Function: long double __builtin_nansl (const char *STR)
      Similar to '__builtin_nans', except the return type is 'long
      double'.
 
- -- Built-in Function: _FloatN __builtin_nansfN (const char *str)
+ -- Built-in Function: _FloatN __builtin_nansfN (const char *STR)
      Similar to '__builtin_nans', except the return type is '_FloatN'.
 
- -- Built-in Function: _FloatNx __builtin_nansfNx (const char *str)
+ -- Built-in Function: _FloatNx __builtin_nansfNx (const char *STR)
      Similar to '__builtin_nans', except the return type is '_FloatNx'.
 
  -- Built-in Function: int __builtin_issignaling (...)
@@ -48274,27 +48274,27 @@ without the '__builtin_' prefix.
      '-ffinite-math-only' option this built-in function will always
      return 0.
 
- -- Built-in Function: int __builtin_ffs (int x)
+ -- Built-in Function: int __builtin_ffs (int X)
      Returns one plus the index of the least significant 1-bit of X, or
      if X is zero, returns zero.
 
- -- Built-in Function: int __builtin_clz (unsigned int x)
+ -- Built-in Function: int __builtin_clz (unsigned int X)
      Returns the number of leading 0-bits in X, starting at the most
      significant bit position.  If X is 0, the result is undefined.
 
- -- Built-in Function: int __builtin_ctz (unsigned int x)
+ -- Built-in Function: int __builtin_ctz (unsigned int X)
      Returns the number of trailing 0-bits in X, starting at the least
      significant bit position.  If X is 0, the result is undefined.
 
- -- Built-in Function: int __builtin_clrsb (int x)
+ -- Built-in Function: int __builtin_clrsb (int X)
      Returns the number of leading redundant sign bits in X, i.e. the
      number of bits following the most significant bit that are
      identical to it.  There are no special cases for 0 or other values.
 
- -- Built-in Function: int __builtin_popcount (unsigned int x)
+ -- Built-in Function: int __builtin_popcount (unsigned int X)
      Returns the number of 1-bits in X.
 
- -- Built-in Function: int __builtin_parity (unsigned int x)
+ -- Built-in Function: int __builtin_parity (unsigned int X)
      Returns the parity of X, i.e. the number of 1-bits in X modulo 2.
 
  -- Built-in Function: int __builtin_ffsl (long)
@@ -48350,35 +48350,35 @@ without the '__builtin_' prefix.
      Unlike the 'pow' function no guarantees about precision and
      rounding are made.
 
- -- Built-in Function: uint16_t __builtin_bswap16 (uint16_t x)
+ -- Built-in Function: uint16_t __builtin_bswap16 (uint16_t X)
      Returns X with the order of the bytes reversed; for example,
      '0xaabb' becomes '0xbbaa'.  Byte here always means exactly 8 bits.
 
- -- Built-in Function: uint32_t __builtin_bswap32 (uint32_t x)
+ -- Built-in Function: uint32_t __builtin_bswap32 (uint32_t X)
      Similar to '__builtin_bswap16', except the argument and return
      types are 32-bit.
 
- -- Built-in Function: uint64_t __builtin_bswap64 (uint64_t x)
+ -- Built-in Function: uint64_t __builtin_bswap64 (uint64_t X)
      Similar to '__builtin_bswap32', except the argument and return
      types are 64-bit.
 
- -- Built-in Function: uint128_t __builtin_bswap128 (uint128_t x)
+ -- Built-in Function: uint128_t __builtin_bswap128 (uint128_t X)
      Similar to '__builtin_bswap64', except the argument and return
      types are 128-bit.  Only supported on targets when 128-bit types
      are supported.
 
- -- Built-in Function: Pmode __builtin_extend_pointer (void * x)
+ -- Built-in Function: Pmode __builtin_extend_pointer (void * X)
      On targets where the user visible pointer size is smaller than the
      size of an actual hardware address this function returns the
      extended user pointer.  Targets where this is true included ILP32
      mode on x86_64 or Aarch64.  This function is mainly useful when
      writing inline assembly code.
 
- -- Built-in Function: int __builtin_goacc_parlevel_id (int x)
+ -- Built-in Function: int __builtin_goacc_parlevel_id (int X)
      Returns the openacc gang, worker or vector id depending on whether
      X is 0, 1 or 2.
 
- -- Built-in Function: int __builtin_goacc_parlevel_size (int x)
+ -- Built-in Function: int __builtin_goacc_parlevel_size (int X)
      Returns the openacc gang, worker or vector size depending on
      whether X is 0, 1 or 2.
 
@@ -53306,18 +53306,18 @@ vec_cnttzm (vector unsigned long long int, vector unsigned long long int);
 implemented by the 'vctzdm' instruction.
 
 vector signed char
-vec_clrl (vector signed char a, unsigned int n);
+vec_clrl (vector signed char A, unsigned int N);
 vector unsigned char
-vec_clrl (vector unsigned char a, unsigned int n);
+vec_clrl (vector unsigned char A, unsigned int N);
  Clear the left-most '(16 - n)' bytes of vector argument 'a', as if
 implemented by the 'vclrlb' instruction on a big-endian target and by
 the 'vclrrb' instruction on a little-endian target.  A value of 'n' that
 is greater than 16 is treated as if it equaled 16.
 
 vector signed char
-vec_clrr (vector signed char a, unsigned int n);
+vec_clrr (vector signed char A, unsigned int N);
 vector unsigned char
-vec_clrr (vector unsigned char a, unsigned int n);
+vec_clrr (vector unsigned char A, unsigned int N);
  Clear the right-most '(16 - n)' bytes of vector argument 'a', as if
 implemented by the 'vclrrb' instruction on a big-endian target and by
 the 'vclrlb' instruction on a little-endian target.  A value of 'n' that
@@ -53693,9 +53693,9 @@ vector unsigned int vec_genpcvm (vector unsigned long long int,
  Vector Integer Multiply/Divide/Modulo
 
 vector signed int
-vec_mulh (vector signed int a, vector signed int b);
+vec_mulh (vector signed int A, vector signed int B);
 vector unsigned int
-vec_mulh (vector unsigned int a, vector unsigned int b);
+vec_mulh (vector unsigned int A, vector unsigned int B);
 
  For each integer value 'i' from 0 to 3, do the following.  The integer
 value in word element 'i' of a is multiplied by the integer value in
@@ -53703,9 +53703,9 @@ word element 'i' of b.  The high-order 32 bits of the 64-bit product are
 placed into word element 'i' of the vector returned.
 
 vector signed long long
-vec_mulh (vector signed long long a, vector signed long long b);
+vec_mulh (vector signed long long A, vector signed long long B);
 vector unsigned long long
-vec_mulh (vector unsigned long long a, vector unsigned long long b);
+vec_mulh (vector unsigned long long A, vector unsigned long long B);
 
  For each integer value 'i' from 0 to 1, do the following.  The integer
 value in doubleword element 'i' of a is multiplied by the integer value
@@ -53713,9 +53713,9 @@ in doubleword element 'i' of b.  The high-order 64 bits of the 128-bit
 product are placed into doubleword element 'i' of the vector returned.
 
 vector unsigned long long
-vec_mul (vector unsigned long long a, vector unsigned long long b);
+vec_mul (vector unsigned long long A, vector unsigned long long B);
 vector signed long long
-vec_mul (vector signed long long a, vector signed long long b);
+vec_mul (vector signed long long A, vector signed long long B);
 
  For each integer value 'i' from 0 to 1, do the following.  The integer
 value in doubleword element 'i' of a is multiplied by the integer value
@@ -53723,9 +53723,9 @@ in doubleword element 'i' of b.  The low-order 64 bits of the 128-bit
 product are placed into doubleword element 'i' of the vector returned.
 
 vector signed int
-vec_div (vector signed int a, vector signed int b);
+vec_div (vector signed int A, vector signed int B);
 vector unsigned int
-vec_div (vector unsigned int a, vector unsigned int b);
+vec_div (vector unsigned int A, vector unsigned int B);
 
  For each integer value 'i' from 0 to 3, do the following.  The integer
 in word element 'i' of a is divided by the integer in word element 'i'
@@ -53734,9 +53734,9 @@ of the vector returned.  If an attempt is made to perform any of the
 divisions <anything> ÷ 0 then the quotient is undefined.
 
 vector signed long long
-vec_div (vector signed long long a, vector signed long long b);
+vec_div (vector signed long long A, vector signed long long B);
 vector unsigned long long
-vec_div (vector unsigned long long a, vector unsigned long long b);
+vec_div (vector unsigned long long A, vector unsigned long long B);
 
  For each integer value 'i' from 0 to 1, do the following.  The integer
 in doubleword element 'i' of a is divided by the integer in doubleword
@@ -53746,9 +53746,9 @@ perform any of the divisions 0x8000_0000_0000_0000 ÷ -1 or <anything> ÷
 0 then the quotient is undefined.
 
 vector signed int
-vec_dive (vector signed int a, vector signed int b);
+vec_dive (vector signed int A, vector signed int B);
 vector unsigned int
-vec_dive (vector unsigned int a, vector unsigned int b);
+vec_dive (vector unsigned int A, vector unsigned int B);
 
  For each integer value 'i' from 0 to 3, do the following.  The integer
 in word element 'i' of a is shifted left by 32 bits, then divided by the
@@ -53758,9 +53758,9 @@ cannot be represented in 32 bits, or if an attempt is made to perform
 any of the divisions <anything> ÷ 0 then the quotient is undefined.
 
 vector signed long long
-vec_dive (vector signed long long a, vector signed long long b);
+vec_dive (vector signed long long A, vector signed long long B);
 vector unsigned long long
-vec_dive (vector unsigned long long a, vector unsigned long long b);
+vec_dive (vector unsigned long long A, vector unsigned long long B);
 
  For each integer value 'i' from 0 to 1, do the following.  The integer
 in doubleword element 'i' of a is shifted left by 64 bits, then divided
@@ -53771,9 +53771,9 @@ attempt is made to perform <anything> ÷ 0 then the quotient is
 undefined.
 
 vector signed int
-vec_mod (vector signed int a, vector signed int b);
+vec_mod (vector signed int A, vector signed int B);
 vector unsigned int
-vec_mod (vector unsigned int a, vector unsigned int b);
+vec_mod (vector unsigned int A, vector unsigned int B);
 
  For each integer value 'i' from 0 to 3, do the following.  The integer
 in word element 'i' of a is divided by the integer in word element 'i'
@@ -53783,9 +53783,9 @@ divisions 0x8000_0000 ÷ -1 or <anything> ÷ 0 then the remainder is
 undefined.
 
 vector signed long long
-vec_mod (vector signed long long a, vector signed long long b);
+vec_mod (vector signed long long A, vector signed long long B);
 vector unsigned long long
-vec_mod (vector unsigned long long a, vector unsigned long long b);
+vec_mod (vector unsigned long long A, vector unsigned long long B);
 
  For each integer value 'i' from 0 to 1, do the following.  The integer
 in doubleword element 'i' of a is divided by the integer in doubleword
@@ -54439,7 +54439,7 @@ following functions are supported:
      Generates the 'mvtaclo' machine instruction to set the bottom 32
      bits of the accumulator.
 
- -- Built-in Function: void __builtin_rx_mvtc (int reg, int val)
+ -- Built-in Function: void __builtin_rx_mvtc (int REG, int VAL)
      Generates the 'mvtc' machine instruction which sets control
      register number 'reg' to 'val'.
 
@@ -69323,8 +69323,12 @@ A.2 Concept and Symbol Index
 * __builtin_ctz:                         Other Builtins.     (line  990)
 * __builtin_ctzl:                        Other Builtins.     (line 1012)
 * __builtin_ctzll:                       Other Builtins.     (line 1035)
+* __builtin_darn:                        Basic PowerPC Built-in Functions Available on ISA 3.0.
+                                                             (line   53)
 * __builtin_darn_32:                     Basic PowerPC Built-in Functions Available on ISA 3.0.
                                                              (line   55)
+* __builtin_darn_raw:                    Basic PowerPC Built-in Functions Available on ISA 3.0.
+                                                             (line   54)
 * __builtin_divf128_round_to_odd:        Basic PowerPC Built-in Functions Available on ISA 3.0.
                                                              (line   30)
 * __builtin_dynamic_object_size:         Object Size Checking.
@@ -69356,6 +69360,14 @@ A.2 Concept and Symbol Index
 * __builtin_huge_vall:                   Other Builtins.     (line  841)
 * __builtin_huge_valq:                   x86 Built-in Functions.
                                                              (line   49)
+* __builtin_ia32_crc32di:                x86 Built-in Functions.
+                                                             (line  863)
+* __builtin_ia32_crc32hi:                x86 Built-in Functions.
+                                                             (line  855)
+* __builtin_ia32_crc32qi:                x86 Built-in Functions.
+                                                             (line  851)
+* __builtin_ia32_crc32si:                x86 Built-in Functions.
+                                                             (line  859)
 * __builtin_ia32_loadhps:                x86 Built-in Functions.
                                                              (line  521)
 * __builtin_ia32_loadlps:                x86 Built-in Functions.
@@ -69376,6 +69388,8 @@ A.2 Concept and Symbol Index
                                                              (line  515)
 * __builtin_ia32_vec_ext_v16qi:          x86 Built-in Functions.
                                                              (line  800)
+* __builtin_ia32_vec_ext_v2di:           x86 Built-in Functions.
+                                                             (line  826)
 * __builtin_ia32_vec_ext_v4sf:           x86 Built-in Functions.
                                                              (line  819)
 * __builtin_ia32_vec_ext_v4si:           x86 Built-in Functions.
@@ -70505,12 +70519,6 @@ A.2 Concept and Symbol Index
 * installation trouble:                  Trouble.            (line    6)
 * instrumentation options:               Instrumentation Options.
                                                              (line    6)
-* int:                                   x86 Built-in Functions.
-                                                             (line  851)
-* int <1>:                               x86 Built-in Functions.
-                                                             (line  855)
-* int <2>:                               x86 Built-in Functions.
-                                                             (line  859)
 * integrating function code:             Inline.             (line    6)
 * interface and implementation headers, C++: C++ Interface.  (line    6)
 * intermediate C version, nonexistent:   G++ and GCC.        (line   34)
@@ -70725,14 +70733,6 @@ A.2 Concept and Symbol Index
 * logbl:                                 Other Builtins.     (line    6)
 * logf:                                  Other Builtins.     (line    6)
 * logl:                                  Other Builtins.     (line    6)
-* long:                                  Basic PowerPC Built-in Functions Available on ISA 3.0.
-                                                             (line   53)
-* long <1>:                              Basic PowerPC Built-in Functions Available on ISA 3.0.
-                                                             (line   54)
-* long <2>:                              x86 Built-in Functions.
-                                                             (line  826)
-* long <3>:                              x86 Built-in Functions.
-                                                             (line  863)
 * long long data types:                  Long Long.          (line    6)
 * longcall function attribute, Blackfin: Blackfin Function Attributes.
                                                              (line   36)
@@ -72138,352 +72138,352 @@ Node: Visium Options1249978
 Node: VMS Options1252286
 Node: VxWorks Options1253102
 Node: x86 Options1254254
-Node: x86 Windows Options1328282
-Node: Xstormy16 Options1331088
-Node: Xtensa Options1331382
-Node: zSeries Options1337874
-Node: Spec Files1338070
-Node: Environment Variables1364149
-Node: Precompiled Headers1373582
-Node: C++ Modules1379791
-Ref: C++ Modules-Footnote-11385454
-Node: C++ Module Mapper1385707
-Node: C++ Module Preprocessing1390860
-Node: C++ Compiled Module Interface1392689
-Ref: C++ Compiled Module Interface-Footnote-11396073
-Ref: C++ Compiled Module Interface-Footnote-21396162
-Node: C Implementation1396218
-Node: Translation implementation1397909
-Node: Environment implementation1398500
-Node: Identifiers implementation1399054
-Node: Characters implementation1400140
-Node: Integers implementation1403790
-Node: Floating point implementation1405839
-Node: Arrays and pointers implementation1408939
-Ref: Arrays and pointers implementation-Footnote-11410399
-Node: Hints implementation1410525
-Node: Structures unions enumerations and bit-fields implementation1412020
-Node: Qualifiers implementation1414244
-Node: Declarators implementation1416305
-Node: Statements implementation1416646
-Node: Preprocessing directives implementation1416972
-Node: Library functions implementation1419293
-Node: Architecture implementation1419942
-Node: Locale-specific behavior implementation1421587
-Node: C++ Implementation1421892
-Node: Conditionally-supported behavior1423176
-Node: Exception handling1423793
-Node: C Extensions1424201
-Node: Statement Exprs1429424
-Node: Local Labels1434796
-Node: Labels as Values1437769
-Ref: Labels as Values-Footnote-11440296
-Node: Nested Functions1440481
-Node: Nonlocal Gotos1444435
-Node: Constructing Calls1446701
-Node: Typeof1451413
-Node: Conditionals1455342
-Node: __int1281456231
-Node: Long Long1456756
-Node: Complex1458247
-Node: Floating Types1462992
-Node: Half-Precision1466463
-Node: Decimal Float1469931
-Node: Hex Floats1471785
-Node: Fixed-Point1472859
-Node: Named Address Spaces1476117
-Ref: AVR Named Address Spaces1476803
-Node: Zero Length1484102
-Node: Empty Structures1488283
-Node: Variable Length1488689
-Node: Variadic Macros1491407
-Node: Escaped Newlines1493785
-Node: Subscripting1494646
-Node: Pointer Arith1495371
-Node: Variadic Pointer Args1495948
-Node: Pointers to Arrays1496673
-Node: Initializers1497426
-Node: Compound Literals1497927
-Node: Designated Inits1501494
-Node: Case Ranges1505418
-Node: Cast to Union1506099
-Node: Mixed Labels and Declarations1507833
-Node: Function Attributes1508470
-Node: Common Function Attributes1512924
-Ref: Common Function Attributes-Footnote-11591436
-Node: AArch64 Function Attributes1591753
-Node: AMD GCN Function Attributes1597947
-Node: ARC Function Attributes1601000
-Node: ARM Function Attributes1603937
-Node: AVR Function Attributes1609076
-Node: Blackfin Function Attributes1613611
-Node: BPF Function Attributes1616108
-Node: C-SKY Function Attributes1616697
-Node: Epiphany Function Attributes1617993
-Node: H8/300 Function Attributes1620748
-Node: IA-64 Function Attributes1621946
-Node: M32C Function Attributes1622988
-Node: M32R/D Function Attributes1625326
-Node: m68k Function Attributes1626800
-Node: MCORE Function Attributes1627744
-Node: MicroBlaze Function Attributes1628562
-Node: Microsoft Windows Function Attributes1630071
-Node: MIPS Function Attributes1634640
-Node: MSP430 Function Attributes1640503
-Node: NDS32 Function Attributes1644582
-Node: Nios II Function Attributes1647006
-Node: Nvidia PTX Function Attributes1648303
-Node: PowerPC Function Attributes1648918
-Node: RISC-V Function Attributes1655692
-Node: RL78 Function Attributes1657108
-Node: RX Function Attributes1658347
-Node: S/390 Function Attributes1660894
-Node: SH Function Attributes1662722
-Node: Symbian OS Function Attributes1666150
-Node: V850 Function Attributes1666486
-Node: Visium Function Attributes1667031
-Node: x86 Function Attributes1667559
-Node: Xstormy16 Function Attributes1692399
-Node: Variable Attributes1692906
-Node: Common Variable Attributes1694445
-Node: ARC Variable Attributes1717741
-Node: AVR Variable Attributes1718123
-Node: Blackfin Variable Attributes1723242
-Node: H8/300 Variable Attributes1724100
-Node: IA-64 Variable Attributes1725173
-Node: LoongArch Variable Attributes1725927
-Node: M32R/D Variable Attributes1726603
-Node: Microsoft Windows Variable Attributes1727404
-Node: MSP430 Variable Attributes1729860
-Node: Nvidia PTX Variable Attributes1731074
-Node: PowerPC Variable Attributes1731691
-Node: RL78 Variable Attributes1732248
-Node: V850 Variable Attributes1732667
-Node: x86 Variable Attributes1733300
-Node: Xstormy16 Variable Attributes1734356
-Node: Type Attributes1734926
-Node: Common Type Attributes1736590
-Node: ARC Type Attributes1758951
-Node: ARM Type Attributes1759423
-Node: BPF Type Attributes1760205
-Node: PowerPC Type Attributes1760726
-Node: x86 Type Attributes1761715
-Node: Label Attributes1762707
-Node: Enumerator Attributes1764734
-Node: Statement Attributes1766266
-Node: Attribute Syntax1768566
-Node: Function Prototypes1779823
-Node: C++ Comments1781603
-Node: Dollar Signs1782122
-Node: Character Escapes1782587
-Node: Alignment1782871
-Node: Inline1784524
-Node: Volatiles1789341
-Node: Using Assembly Language with C1792240
-Node: Basic Asm1793477
-Node: Extended Asm1799100
-Ref: Volatile1803214
-Ref: AssemblerTemplate1807327
-Ref: OutputOperands1811567
-Ref: FlagOutputOperands1818647
-Ref: InputOperands1821594
-Ref: Clobbers and Scratch Registers1825979
-Ref: GotoLabels1834620
-Ref: GenericOperandmodifiers1838243
-Ref: x86Operandmodifiers1839201
-Ref: x86floatingpointasmoperands1844017
-Ref: msp430Operandmodifiers1847348
-Ref: loongarchOperandmodifiers1849006
-Node: Constraints1849540
-Node: Simple Constraints1850646
-Node: Multi-Alternative1857960
-Node: Modifiers1859635
-Node: Machine Constraints1862434
-Node: Asm Labels1916235
-Node: Explicit Register Variables1917851
-Ref: Explicit Reg Vars1918065
-Node: Global Register Variables1918674
-Ref: Global Reg Vars1918882
-Node: Local Register Variables1923664
-Ref: Local Reg Vars1923884
-Node: Size of an asm1927512
-Node: Alternate Keywords1928990
-Node: Incomplete Enums1930495
-Node: Function Names1931252
-Node: Return Address1933156
-Node: Vector Extensions1937743
-Node: Offsetof1948726
-Node: __sync Builtins1949559
-Node: __atomic Builtins1956514
-Node: Integer Overflow Builtins1970027
-Node: x86 specific memory model extensions for transactional memory1976510
-Node: Object Size Checking1977776
-Node: Other Builtins1985285
-Node: Target Builtins2038843
-Node: AArch64 Built-in Functions2040591
-Node: Alpha Built-in Functions2041287
-Node: Altera Nios II Built-in Functions2044381
-Node: ARC Built-in Functions2048820
-Node: ARC SIMD Built-in Functions2054032
-Node: ARM iWMMXt Built-in Functions2063030
-Node: ARM C Language Extensions (ACLE)2070166
-Node: ARM Floating Point Status and Control Intrinsics2071443
-Node: ARM ARMv8-M Security Extensions2071930
-Node: AVR Built-in Functions2073222
-Node: Blackfin Built-in Functions2076988
-Node: BPF Built-in Functions2077608
-Node: FR-V Built-in Functions2082150
-Node: Argument Types2083019
-Node: Directly-mapped Integer Functions2084850
-Node: Directly-mapped Media Functions2086010
-Node: Raw read/write Functions2094292
-Node: Other Built-in Functions2095200
-Node: LoongArch Base Built-in Functions2096386
-Node: MIPS DSP Built-in Functions2102132
-Node: MIPS Paired-Single Support2114897
-Node: MIPS Loongson Built-in Functions2116396
-Node: Paired-Single Arithmetic2122918
-Node: Paired-Single Built-in Functions2123941
-Node: MIPS-3D Built-in Functions2126608
-Node: MIPS SIMD Architecture (MSA) Support2132002
-Node: MIPS SIMD Architecture Built-in Functions2134842
-Node: Other MIPS Built-in Functions2161696
-Node: MSP430 Built-in Functions2162705
-Node: NDS32 Built-in Functions2164106
-Node: Basic PowerPC Built-in Functions2165404
-Node: Basic PowerPC Built-in Functions Available on all Configurations2166259
-Node: Basic PowerPC Built-in Functions Available on ISA 2.052174769
-Node: Basic PowerPC Built-in Functions Available on ISA 2.062179604
-Node: Basic PowerPC Built-in Functions Available on ISA 2.072181684
-Node: Basic PowerPC Built-in Functions Available on ISA 3.02182538
-Node: Basic PowerPC Built-in Functions Available on ISA 3.12189813
-Node: PowerPC AltiVec/VSX Built-in Functions2193730
-Node: PowerPC AltiVec Built-in Functions on ISA 2.052201799
-Node: PowerPC AltiVec Built-in Functions Available on ISA 2.062227199
-Node: PowerPC AltiVec Built-in Functions Available on ISA 2.072234265
-Node: PowerPC AltiVec Built-in Functions Available on ISA 3.02244075
-Node: PowerPC AltiVec Built-in Functions Available on ISA 3.12259798
-Node: PowerPC Hardware Transactional Memory Built-in Functions2293082
-Node: PowerPC Atomic Memory Operation Functions2301632
-Node: PowerPC Matrix-Multiply Assist Built-in Functions2304195
-Node: PRU Built-in Functions2310320
-Node: RISC-V Built-in Functions2311600
-Node: RISC-V Vector Intrinsics2312258
-Node: RX Built-in Functions2312753
-Node: S/390 System z Built-in Functions2316754
-Node: SH Built-in Functions2322023
-Node: SPARC VIS Built-in Functions2323751
-Node: TI C6X Built-in Functions2332282
-Node: x86 Built-in Functions2333329
-Node: x86 transactional memory intrinsics2399744
-Node: x86 control-flow protection intrinsics2403070
-Node: Target Format Checks2404841
-Node: Solaris Format Checks2405273
-Node: Darwin Format Checks2405699
-Node: Pragmas2406662
-Node: AArch64 Pragmas2407587
-Node: ARM Pragmas2408044
-Node: M32C Pragmas2408671
-Node: PRU Pragmas2409743
-Node: RS/6000 and PowerPC Pragmas2410322
-Node: S/390 Pragmas2411062
-Node: Darwin Pragmas2411628
-Node: Solaris Pragmas2412681
-Node: Symbol-Renaming Pragmas2413845
-Node: Structure-Layout Pragmas2415480
-Node: Weak Pragmas2417760
-Node: Diagnostic Pragmas2418495
-Node: Visibility Pragmas2423246
-Node: Push/Pop Macro Pragmas2423931
-Node: Function Specific Option Pragmas2424904
-Node: Loop-Specific Pragmas2426870
-Node: Unnamed Fields2428470
-Node: Thread-Local2430667
-Node: C99 Thread-Local Edits2432773
-Node: C++98 Thread-Local Edits2434771
-Node: Binary constants2438216
-Node: C++ Extensions2438887
-Node: C++ Volatiles2440517
-Node: Restricted Pointers2442865
-Node: Vague Linkage2444456
-Node: C++ Interface2448079
-Ref: C++ Interface-Footnote-12451876
-Node: Template Instantiation2452014
-Node: Bound member functions2458105
-Node: C++ Attributes2459637
-Node: Function Multiversioning2463709
-Node: Type Traits2465517
-Node: C++ Concepts2473239
-Node: Deprecated Features2474782
-Node: Backwards Compatibility2476607
-Node: Objective-C2477679
-Node: GNU Objective-C runtime API2478286
-Node: Modern GNU Objective-C runtime API2479293
-Node: Traditional GNU Objective-C runtime API2481729
-Node: Executing code before main2482456
-Node: What you can and what you cannot do in +load2485200
-Node: Type encoding2487570
-Node: Legacy type encoding2492936
-Node: @encode2494026
-Node: Method signatures2494571
-Node: Garbage Collection2496563
-Node: Constant string objects2499253
-Node: compatibility_alias2501762
-Node: Exceptions2502487
-Node: Synchronization2505197
-Node: Fast enumeration2506381
-Node: Using fast enumeration2506693
-Node: c99-like fast enumeration syntax2507904
-Node: Fast enumeration details2508607
-Node: Fast enumeration protocol2510947
-Node: Messaging with the GNU Objective-C runtime2514099
-Node: Dynamically registering methods2515471
-Node: Forwarding hook2517162
-Node: Compatibility2520202
-Node: Gcov2526758
-Node: Gcov Intro2527426
-Node: Invoking Gcov2530144
-Node: Gcov and Optimization2552877
-Node: Gcov Data Files2556630
-Node: Cross-profiling2558039
-Node: Freestanding Environments2559927
-Node: Gcov-tool2574790
-Node: Gcov-tool Intro2575215
-Node: Invoking Gcov-tool2577569
-Node: Gcov-dump2580982
-Node: Gcov-dump Intro2581305
-Node: Invoking Gcov-dump2581572
-Node: lto-dump2582305
-Node: lto-dump Intro2582604
-Node: Invoking lto-dump2582854
-Node: Trouble2583950
-Node: Actual Bugs2585367
-Node: Interoperation2585814
-Node: Incompatibilities2592705
-Node: Fixed Headers2600857
-Node: Standard Libraries2602515
-Node: Disappointments2603887
-Node: C++ Misunderstandings2608246
-Node: Static Definitions2609057
-Node: Name lookup2610110
-Ref: Name lookup-Footnote-12614891
-Node: Temporaries2615080
-Node: Copy Assignment2617056
-Node: Non-bugs2618891
-Node: Warnings and Errors2629397
-Node: Bugs2631159
-Node: Bug Criteria2631626
-Node: Bug Reporting2633836
-Node: Service2634054
-Node: Contributing2634875
-Node: Funding2635621
-Node: GNU Project2638111
-Node: Copying2638759
-Node: GNU Free Documentation License2676273
-Node: Contributors2701396
-Node: Indices2742471
-Node: Option Index2742717
-Node: Concept and Symbol Index3049355
+Node: x86 Windows Options1328274
+Node: Xstormy16 Options1331080
+Node: Xtensa Options1331374
+Node: zSeries Options1337866
+Node: Spec Files1338062
+Node: Environment Variables1364141
+Node: Precompiled Headers1373574
+Node: C++ Modules1379783
+Ref: C++ Modules-Footnote-11385446
+Node: C++ Module Mapper1385699
+Node: C++ Module Preprocessing1390852
+Node: C++ Compiled Module Interface1392681
+Ref: C++ Compiled Module Interface-Footnote-11396065
+Ref: C++ Compiled Module Interface-Footnote-21396154
+Node: C Implementation1396210
+Node: Translation implementation1397901
+Node: Environment implementation1398492
+Node: Identifiers implementation1399046
+Node: Characters implementation1400132
+Node: Integers implementation1403782
+Node: Floating point implementation1405831
+Node: Arrays and pointers implementation1408931
+Ref: Arrays and pointers implementation-Footnote-11410391
+Node: Hints implementation1410517
+Node: Structures unions enumerations and bit-fields implementation1412012
+Node: Qualifiers implementation1414236
+Node: Declarators implementation1416297
+Node: Statements implementation1416638
+Node: Preprocessing directives implementation1416964
+Node: Library functions implementation1419285
+Node: Architecture implementation1419934
+Node: Locale-specific behavior implementation1421579
+Node: C++ Implementation1421884
+Node: Conditionally-supported behavior1423168
+Node: Exception handling1423785
+Node: C Extensions1424193
+Node: Statement Exprs1429416
+Node: Local Labels1434788
+Node: Labels as Values1437761
+Ref: Labels as Values-Footnote-11440288
+Node: Nested Functions1440473
+Node: Nonlocal Gotos1444427
+Node: Constructing Calls1446693
+Node: Typeof1451405
+Node: Conditionals1455334
+Node: __int1281456223
+Node: Long Long1456748
+Node: Complex1458239
+Node: Floating Types1462984
+Node: Half-Precision1466455
+Node: Decimal Float1469923
+Node: Hex Floats1471777
+Node: Fixed-Point1472851
+Node: Named Address Spaces1476109
+Ref: AVR Named Address Spaces1476795
+Node: Zero Length1484094
+Node: Empty Structures1488275
+Node: Variable Length1488681
+Node: Variadic Macros1491399
+Node: Escaped Newlines1493777
+Node: Subscripting1494638
+Node: Pointer Arith1495363
+Node: Variadic Pointer Args1495940
+Node: Pointers to Arrays1496665
+Node: Initializers1497418
+Node: Compound Literals1497919
+Node: Designated Inits1501486
+Node: Case Ranges1505410
+Node: Cast to Union1506091
+Node: Mixed Labels and Declarations1507825
+Node: Function Attributes1508462
+Node: Common Function Attributes1512916
+Ref: Common Function Attributes-Footnote-11591428
+Node: AArch64 Function Attributes1591745
+Node: AMD GCN Function Attributes1597939
+Node: ARC Function Attributes1600992
+Node: ARM Function Attributes1603929
+Node: AVR Function Attributes1609068
+Node: Blackfin Function Attributes1613603
+Node: BPF Function Attributes1616100
+Node: C-SKY Function Attributes1616689
+Node: Epiphany Function Attributes1617985
+Node: H8/300 Function Attributes1620740
+Node: IA-64 Function Attributes1621938
+Node: M32C Function Attributes1622980
+Node: M32R/D Function Attributes1625318
+Node: m68k Function Attributes1626792
+Node: MCORE Function Attributes1627736
+Node: MicroBlaze Function Attributes1628554
+Node: Microsoft Windows Function Attributes1630063
+Node: MIPS Function Attributes1634632
+Node: MSP430 Function Attributes1640495
+Node: NDS32 Function Attributes1644574
+Node: Nios II Function Attributes1646998
+Node: Nvidia PTX Function Attributes1648295
+Node: PowerPC Function Attributes1648910
+Node: RISC-V Function Attributes1655684
+Node: RL78 Function Attributes1657100
+Node: RX Function Attributes1658339
+Node: S/390 Function Attributes1660886
+Node: SH Function Attributes1662714
+Node: Symbian OS Function Attributes1666142
+Node: V850 Function Attributes1666478
+Node: Visium Function Attributes1667023
+Node: x86 Function Attributes1667551
+Node: Xstormy16 Function Attributes1692391
+Node: Variable Attributes1692898
+Node: Common Variable Attributes1694437
+Node: ARC Variable Attributes1717733
+Node: AVR Variable Attributes1718115
+Node: Blackfin Variable Attributes1723234
+Node: H8/300 Variable Attributes1724092
+Node: IA-64 Variable Attributes1725165
+Node: LoongArch Variable Attributes1725919
+Node: M32R/D Variable Attributes1726595
+Node: Microsoft Windows Variable Attributes1727396
+Node: MSP430 Variable Attributes1729852
+Node: Nvidia PTX Variable Attributes1731066
+Node: PowerPC Variable Attributes1731683
+Node: RL78 Variable Attributes1732240
+Node: V850 Variable Attributes1732659
+Node: x86 Variable Attributes1733292
+Node: Xstormy16 Variable Attributes1734348
+Node: Type Attributes1734918
+Node: Common Type Attributes1736582
+Node: ARC Type Attributes1758943
+Node: ARM Type Attributes1759415
+Node: BPF Type Attributes1760197
+Node: PowerPC Type Attributes1760718
+Node: x86 Type Attributes1761707
+Node: Label Attributes1762699
+Node: Enumerator Attributes1764726
+Node: Statement Attributes1766258
+Node: Attribute Syntax1768558
+Node: Function Prototypes1779815
+Node: C++ Comments1781595
+Node: Dollar Signs1782114
+Node: Character Escapes1782579
+Node: Alignment1782863
+Node: Inline1784516
+Node: Volatiles1789333
+Node: Using Assembly Language with C1792232
+Node: Basic Asm1793469
+Node: Extended Asm1799092
+Ref: Volatile1803206
+Ref: AssemblerTemplate1807319
+Ref: OutputOperands1811559
+Ref: FlagOutputOperands1818639
+Ref: InputOperands1821586
+Ref: Clobbers and Scratch Registers1825971
+Ref: GotoLabels1834612
+Ref: GenericOperandmodifiers1838235
+Ref: x86Operandmodifiers1839193
+Ref: x86floatingpointasmoperands1844009
+Ref: msp430Operandmodifiers1847340
+Ref: loongarchOperandmodifiers1848998
+Node: Constraints1849532
+Node: Simple Constraints1850638
+Node: Multi-Alternative1857952
+Node: Modifiers1859627
+Node: Machine Constraints1862426
+Node: Asm Labels1916227
+Node: Explicit Register Variables1917843
+Ref: Explicit Reg Vars1918057
+Node: Global Register Variables1918666
+Ref: Global Reg Vars1918874
+Node: Local Register Variables1923656
+Ref: Local Reg Vars1923876
+Node: Size of an asm1927504
+Node: Alternate Keywords1928982
+Node: Incomplete Enums1930487
+Node: Function Names1931244
+Node: Return Address1933148
+Node: Vector Extensions1937735
+Node: Offsetof1948718
+Node: __sync Builtins1949551
+Node: __atomic Builtins1956506
+Node: Integer Overflow Builtins1970019
+Node: x86 specific memory model extensions for transactional memory1976502
+Node: Object Size Checking1977768
+Node: Other Builtins1985277
+Node: Target Builtins2038835
+Node: AArch64 Built-in Functions2040583
+Node: Alpha Built-in Functions2041279
+Node: Altera Nios II Built-in Functions2044373
+Node: ARC Built-in Functions2048812
+Node: ARC SIMD Built-in Functions2054024
+Node: ARM iWMMXt Built-in Functions2063022
+Node: ARM C Language Extensions (ACLE)2070158
+Node: ARM Floating Point Status and Control Intrinsics2071435
+Node: ARM ARMv8-M Security Extensions2071922
+Node: AVR Built-in Functions2073214
+Node: Blackfin Built-in Functions2076980
+Node: BPF Built-in Functions2077600
+Node: FR-V Built-in Functions2082142
+Node: Argument Types2083011
+Node: Directly-mapped Integer Functions2084842
+Node: Directly-mapped Media Functions2086002
+Node: Raw read/write Functions2094284
+Node: Other Built-in Functions2095192
+Node: LoongArch Base Built-in Functions2096378
+Node: MIPS DSP Built-in Functions2102124
+Node: MIPS Paired-Single Support2114889
+Node: MIPS Loongson Built-in Functions2116388
+Node: Paired-Single Arithmetic2122910
+Node: Paired-Single Built-in Functions2123933
+Node: MIPS-3D Built-in Functions2126600
+Node: MIPS SIMD Architecture (MSA) Support2131994
+Node: MIPS SIMD Architecture Built-in Functions2134834
+Node: Other MIPS Built-in Functions2161688
+Node: MSP430 Built-in Functions2162697
+Node: NDS32 Built-in Functions2164098
+Node: Basic PowerPC Built-in Functions2165396
+Node: Basic PowerPC Built-in Functions Available on all Configurations2166251
+Node: Basic PowerPC Built-in Functions Available on ISA 2.052174761
+Node: Basic PowerPC Built-in Functions Available on ISA 2.062179596
+Node: Basic PowerPC Built-in Functions Available on ISA 2.072181676
+Node: Basic PowerPC Built-in Functions Available on ISA 3.02182530
+Node: Basic PowerPC Built-in Functions Available on ISA 3.12189805
+Node: PowerPC AltiVec/VSX Built-in Functions2193722
+Node: PowerPC AltiVec Built-in Functions on ISA 2.052201791
+Node: PowerPC AltiVec Built-in Functions Available on ISA 2.062227191
+Node: PowerPC AltiVec Built-in Functions Available on ISA 2.072234257
+Node: PowerPC AltiVec Built-in Functions Available on ISA 3.02244067
+Node: PowerPC AltiVec Built-in Functions Available on ISA 3.12259790
+Node: PowerPC Hardware Transactional Memory Built-in Functions2293074
+Node: PowerPC Atomic Memory Operation Functions2301624
+Node: PowerPC Matrix-Multiply Assist Built-in Functions2304187
+Node: PRU Built-in Functions2310312
+Node: RISC-V Built-in Functions2311592
+Node: RISC-V Vector Intrinsics2312250
+Node: RX Built-in Functions2312745
+Node: S/390 System z Built-in Functions2316746
+Node: SH Built-in Functions2322015
+Node: SPARC VIS Built-in Functions2323743
+Node: TI C6X Built-in Functions2332274
+Node: x86 Built-in Functions2333321
+Node: x86 transactional memory intrinsics2399736
+Node: x86 control-flow protection intrinsics2403062
+Node: Target Format Checks2404833
+Node: Solaris Format Checks2405265
+Node: Darwin Format Checks2405691
+Node: Pragmas2406654
+Node: AArch64 Pragmas2407579
+Node: ARM Pragmas2408036
+Node: M32C Pragmas2408663
+Node: PRU Pragmas2409735
+Node: RS/6000 and PowerPC Pragmas2410314
+Node: S/390 Pragmas2411054
+Node: Darwin Pragmas2411620
+Node: Solaris Pragmas2412673
+Node: Symbol-Renaming Pragmas2413837
+Node: Structure-Layout Pragmas2415472
+Node: Weak Pragmas2417752
+Node: Diagnostic Pragmas2418487
+Node: Visibility Pragmas2423238
+Node: Push/Pop Macro Pragmas2423923
+Node: Function Specific Option Pragmas2424896
+Node: Loop-Specific Pragmas2426862
+Node: Unnamed Fields2428462
+Node: Thread-Local2430659
+Node: C99 Thread-Local Edits2432765
+Node: C++98 Thread-Local Edits2434763
+Node: Binary constants2438208
+Node: C++ Extensions2438879
+Node: C++ Volatiles2440509
+Node: Restricted Pointers2442857
+Node: Vague Linkage2444448
+Node: C++ Interface2448071
+Ref: C++ Interface-Footnote-12451868
+Node: Template Instantiation2452006
+Node: Bound member functions2458097
+Node: C++ Attributes2459629
+Node: Function Multiversioning2463701
+Node: Type Traits2465509
+Node: C++ Concepts2473231
+Node: Deprecated Features2474774
+Node: Backwards Compatibility2476599
+Node: Objective-C2477671
+Node: GNU Objective-C runtime API2478278
+Node: Modern GNU Objective-C runtime API2479285
+Node: Traditional GNU Objective-C runtime API2481721
+Node: Executing code before main2482448
+Node: What you can and what you cannot do in +load2485192
+Node: Type encoding2487562
+Node: Legacy type encoding2492928
+Node: @encode2494018
+Node: Method signatures2494563
+Node: Garbage Collection2496555
+Node: Constant string objects2499245
+Node: compatibility_alias2501754
+Node: Exceptions2502479
+Node: Synchronization2505189
+Node: Fast enumeration2506373
+Node: Using fast enumeration2506685
+Node: c99-like fast enumeration syntax2507896
+Node: Fast enumeration details2508599
+Node: Fast enumeration protocol2510939
+Node: Messaging with the GNU Objective-C runtime2514091
+Node: Dynamically registering methods2515463
+Node: Forwarding hook2517154
+Node: Compatibility2520194
+Node: Gcov2526750
+Node: Gcov Intro2527418
+Node: Invoking Gcov2530136
+Node: Gcov and Optimization2552869
+Node: Gcov Data Files2556622
+Node: Cross-profiling2558031
+Node: Freestanding Environments2559919
+Node: Gcov-tool2574782
+Node: Gcov-tool Intro2575207
+Node: Invoking Gcov-tool2577561
+Node: Gcov-dump2580974
+Node: Gcov-dump Intro2581297
+Node: Invoking Gcov-dump2581564
+Node: lto-dump2582297
+Node: lto-dump Intro2582596
+Node: Invoking lto-dump2582846
+Node: Trouble2583942
+Node: Actual Bugs2585359
+Node: Interoperation2585806
+Node: Incompatibilities2592697
+Node: Fixed Headers2600849
+Node: Standard Libraries2602507
+Node: Disappointments2603879
+Node: C++ Misunderstandings2608238
+Node: Static Definitions2609049
+Node: Name lookup2610102
+Ref: Name lookup-Footnote-12614883
+Node: Temporaries2615072
+Node: Copy Assignment2617048
+Node: Non-bugs2618883
+Node: Warnings and Errors2629389
+Node: Bugs2631151
+Node: Bug Criteria2631618
+Node: Bug Reporting2633828
+Node: Service2634046
+Node: Contributing2634867
+Node: Funding2635613
+Node: GNU Project2638103
+Node: Copying2638751
+Node: GNU Free Documentation License2676265
+Node: Contributors2701388
+Node: Indices2742463
+Node: Option Index2742709
+Node: Concept and Symbol Index3049347
 
 End Tag Table
 
