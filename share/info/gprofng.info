@@ -1,9 +1,9 @@
 This is gprofng.info, produced by makeinfo version 6.8 from
 gprofng_ug.texi.
 
-This document is the manual for gprofng, last updated 3 July 2023.
+This document is the manual for gprofng, last updated 15 January 2024.
 
-   Copyright (C) 2022-2023 Free Software Foundation, Inc.
+   Copyright (C) 2022-2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -23,9 +23,9 @@ File: gprofng.info,  Node: Top,  Next: Introduction,  Up: (dir)
 GNU Gprofng
 ***********
 
-This document is the manual for gprofng, last updated 3 July 2023.
+This document is the manual for gprofng, last updated 15 January 2024.
 
-   Copyright (C) 2022-2023 Free Software Foundation, Inc.
+   Copyright (C) 2022-2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -36,16 +36,16 @@ Free Documentation License."
 
 * Menu:
 
-* Introduction::                    About this manual.
-* Overview::                        A brief overview of gprofng.
-* A Mini Tutorial::                 A short tutorial covering the key features.
-* The gprofng Tools::               An overview of the tools supported.
-* Performance Data Collection::     Record the performance information.
-* View the Performance Information:: Different ways to view the data.
-* Terminology::                     Concepts and terminology explained.
-* Other Document Formats::          Create this document in other formats.
-* The gprofng Man Pages::           The gprofng man pages.
-* Index::                           The index.
+* Introduction::                      About this manual.
+* Overview::                          A brief overview of gprofng.
+* A Mini Tutorial::                   A short tutorial covering the key features.
+* The gprofng Tools::                 An overview of the tools supported.
+* Performance Data Collection::       Record the performance information.
+* View the Performance Information::  Different ways to view the data.
+* Terminology::                       Concepts and terminology explained.
+* Other Document Formats::            Create this document in other formats.
+* The gprofng Man Pages::             The gprofng man pages.
+* Index::                             The index.
 
 
 -- The Detailed Node Listing --
@@ -73,6 +73,14 @@ The gprofng Tools
 * Filters::                                   Filters.
 * Supported Environment Variables::           The supported environment variables.
 
+Performance Data Collection
+
+* The gprofng collect app Tool::    Collect application performance data.
+
+View the Performance Information
+
+* The gprofng display text Tool::   View the performance data in plain text.
+
 Terminology
 
 * The Program Counter::                    What is a Program Counter?
@@ -81,17 +89,17 @@ Terminology
 * The Viewmode::                           Select the way call stacks are presented.
 * The Selection List::                     How to define a selection.
 * Load Objects and Functions::             The components in an application.
-* The Concept of a CPU in gprofng:: The definition of a CPU.
+* The Concept of a CPU in gprofng::        The definition of a CPU.
 * Hardware Event Counters Explained::      What are event counters?
 * apath::                                  Our generic definition of a path.
 
 The gprofng Man Pages
 
-* gprofng collect app::                    The man page for gprofng collect app.
-* gprofng display text::                   The man page for gprofng display text.
-* gprofng display src::                    The man page for gprofng display src.
-* gprofng display html::                   The man page for gprofng display html.
-* gprofng archive::                        The man page for gprofng archive.
+* Man page for gprofng collect app::   The man page for gprofng collect app.
+* Man page for gprofng display text::  The man page for gprofng display text.
+* Man page for gprofng display html::  The man page for gprofng display html.
+* Man page for gprofng display src::   The man page for gprofng display src.
+* Man page for gprofng archive::       The man page for gprofng archive.
 
 
 
@@ -2140,7 +2148,8 @@ tedious and also not portable in case we would like to repeat this
 experiment on another processor.
 
    This is where the special 'hwc' metric comes very handy.  It
-automatically expands to the active set of events used.
+automatically expands to the active set of hardware event counters used
+in the experiment(s).
 
    With this, it is very easy to display the event counter values.  Note
 that although the regular clock based profiling was enabled, we only
@@ -2601,23 +2610,44 @@ The following tools are supported by gprofng:
      is required for the subsequent analysis of the results.
 
 'gprofng display text'
+
      Generates performance reports in ASCII format.  Commandline
      options, and/or commands in a script file are used to control the
      contents and lay-out of the generated report(s).
 
 'gprofng display html'
+
      Takes one or more experiment directories and generates a directory
      with HTML files.  Starting from the index.html file, the
      performance data may be examined in a browser.
 
 'gprofng display src'
+
      Displays the source code, interleaved with the disassembled
      instructions.
 
 'gprofng archive'
+
      Archives an experiment directory by (optionally) including source
      code and object files, as well as the shared libraries that have
      been used.
+
+'gprofng display gui'
+
+     This is an optional component that can be installed in addition to
+     the command line gprofng tools listed above.  It supports the
+     graphical analysis of one or more experiments that have been
+     created using 'gprofng collect app'.
+
+     The GUI part of gprofng is a GNU project.  This is the link to the
+     gprofng GUI page (https://savannah.gnu.org/projects/gprofng-gui).
+     This page contains more information (e.g.  how to clone the repo).
+     There is also a tar file distribution directory
+     (https://ftp.gnu.org/gnu/gprofng-gui) with tar files that include
+     everything that is needed to build and install the GUI code.
+     Various versions are available here.  Be aware that in order to
+     build and use the gprofng GUI, Java needs to be installed first.
+     The minimum Java version required is Java 8.
 
 
 File: gprofng.info,  Node: The gprofng.rc file with default settings,  Next: Filters,  Prev: Tools Overview,  Up: The gprofng Tools
@@ -2626,19 +2656,22 @@ File: gprofng.info,  Node: The gprofng.rc file with default settings,  Next: Fil
 =============================================
 
 The 'gprofng.rc' file is used to define default settings for the
-'gprofng display text' and 'gprofng display src' tools, but the user can
-override these defaults through local configuration files.
+'gprofng display text', 'gprofng archive', and 'gprofng display src'
+tools, but the user can override these defaults through local
+configuration settings when building and installing from the source
+code..
 
    There are three files that are checked when the tool starts up.  The
 first file has pre-defined settings and comes with the installation, but
 through a hidden file called '.gprofng.rc', the user can (re)define the
-defaults:
+defaults.
 
    These are the locations and files that are checked upon starting the
 above mentioned tools:
 
   1. The system-wide filename is called 'gprofng.rc' and is located in
-     the top level '/etc' directory.
+     the '/etc' subdirectory in case an RPM was used for the
+     installation..
 
      If gprofng has been built from the source, this file is in
      subdirectory 'etc' in the top level installation directory.
@@ -2647,7 +2680,7 @@ above mentioned tools:
      '.gprofng.rc'.
 
   3. The directory where 'gprofng display text' (or 'gprofng display
-     src') is invoked from may have a hidden file called '.gprofng.rc'.
+     src') is invoked from, may have a hidden file called '.gprofng.rc'.
 
    The settings of each file override the settings of the file(s) read
 before it.  Defaults in the system-wide file are overruled by the file
@@ -2807,13 +2840,13 @@ subsequent analysis with one of the viewing tools.
 
 * Menu:
 
-* The gprofng collect app command::
+* The gprofng collect app Tool::
 
 
-File: gprofng.info,  Node: The gprofng collect app command,  Up: Performance Data Collection
+File: gprofng.info,  Node: The gprofng collect app Tool,  Up: Performance Data Collection
 
-5.1 The 'gprofng collect app' command
-=====================================
+5.1 The 'gprofng collect app' Tool
+==================================
 
 This is the command to collect the performance information for the
 target application.  The usage is as follows:
@@ -2873,8 +2906,8 @@ File: gprofng.info,  Node: The gprofng display text Commands,  Up: The gprofng d
 -----------------------------------------
 
 The most commonly used commands are documented in the man page for this
-tool (*Note gprofng display text::).  In this section we list and
-describe all other commands that are supported.
+tool (*Note Man page for gprofng display text::).  In this section we
+list and describe all other commands that are supported.
 
 * Menu:
 
@@ -3558,14 +3591,14 @@ In this appendix the man pages for the various gprofng tools are listed.
 * Menu:
 
 * Man page for gprofng::
-* gprofng collect app::
-* gprofng display text::
-* gprofng display html::
-* gprofng display src::
-* gprofng archive::
+* Man page for gprofng collect app::
+* Man page for gprofng display text::
+* Man page for gprofng display html::
+* Man page for gprofng display src::
+* Man page for gprofng archive::
 
 
-File: gprofng.info,  Node: Man page for gprofng,  Next: gprofng collect app,  Up: The gprofng Man Pages
+File: gprofng.info,  Node: Man page for gprofng,  Next: Man page for gprofng collect app,  Up: The gprofng Man Pages
 
 A.1 Man page for 'gprofng'
 ==========================
@@ -3627,31 +3660,53 @@ ENVIRONMENT
      The following environment variables are supported:
 
      ''GPROFNG_MAX_CALL_STACK_DEPTH''
+
           Set the depth of the call stack (default is 256).
 
      ''GPROFNG_USE_JAVA_OPTIONS''
+
           May be set when profiling a C/C++ application that uses
           dlopen() to execute Java code.
 
      ''GPROFNG_ALLOW_CORE_DUMP''
+
           Set this variable to allow a core file to be generated;
-          otherwise an error report is created on /tmp.
+          otherwise an error report is created on '/tmp'.
 
      ''GPROFNG_ARCHIVE''
+
           Use this variable to define the settings for automatic
           archiving upon experiment recording completion.
 
      ''GPROFNG_ARCHIVE_COMMON_DIR''
+
           Set this variable to the location of the common archive.
 
      ''GPROFNG_JAVA_MAX_CALL_STACK_DEPTH''
+
           Set the depth of the Java call stack; the default is 256; set
           to 0 to disable capturing of call stacks.
 
      ''GPROFNG_JAVA_NATIVE_MAX_CALL_STACK_DEPTH''
+
           Set the depth of the Java native call stack; the default is
           256; set to 0 to disable capturing of call stacks (JNI and
           assembly call stacks are not captured).
+
+     ''GPROFNG_SYSCONFDIR''
+
+          Set the path to the 'gprofng.rc' configuration file.  By
+          default, this file is placed in the 'etc' subdirectory of the
+          binutils installation directory.  In case an RPM has been used
+          for the installation, this file is in directory '/etc'.
+
+          When building and installing from the source, the user can set
+          the path to this configuration file to a non-default location.
+          If this is the case, the user may set the 'GPROFNG_SYSCONFDIR'
+          environment variable to point to this location.
+
+          Otherwise, the 'gp-display-text', 'gp-display-src', and
+          'gp-archive' tools cannot find this file.
 
 
 NOTES
@@ -3671,6 +3726,10 @@ NOTES
      'gprofng display html'
           Generate an HTML file from one or more experiments.
 
+     'gprofng display gui'
+          Start the GUI. Note that this tool is not available by default
+          and needs to be installed seperately.
+
      Miscellaneous commands:
 
      'gprofng display src'
@@ -3684,10 +3743,10 @@ NOTES
      we recommend to use the driver.
 
 
-SEEALSO
+SEE ALSO
 
-     gp-archive(1), gp-collect-app(1), gp-display-html(1),
-     gp-display-src(1), gp-display-text(1)
+     gp-archive(1), gp-collect-app(1), gp-display-gui(1),
+     gp-display-html(1), gp-display-src(1), gp-display-text(1)
 
      Each gprofng command also supports the '--help' option.  This lists
      the options and a short description for each option.
@@ -3704,7 +3763,7 @@ SEEALSO
 
 COPYRIGHT
 
-     Copyright (C) 2022-2023 Free Software Foundation, Inc.
+     Copyright (C) 2022-2024 Free Software Foundation, Inc.
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -3714,7 +3773,7 @@ COPYRIGHT
      the section entitled "GNU Free Documentation License".
 
 
-File: gprofng.info,  Node: gprofng collect app,  Next: gprofng display text,  Prev: Man page for gprofng,  Up: The gprofng Man Pages
+File: gprofng.info,  Node: Man page for gprofng collect app,  Next: Man page for gprofng display text,  Prev: Man page for gprofng,  Up: The gprofng Man Pages
 
 A.2 Man page for 'gprofng collect app'
 ======================================
@@ -3722,13 +3781,12 @@ A.2 Man page for 'gprofng collect app'
 
 NAME
 
-     gprofng collect app - Collect performance data for the target
-     program
+     gp-collect-app - Collect performance data for the target program
 
 
 SYNOPSIS
 
-     'gprofng collect app' [OPTION(S)] TARGET [OPTION(S)]
+     'gprofng collect app' [OPTION(S)] TARGET [TARGET-OPTION(S)]
 
 
 DESCRIPTION
@@ -3754,15 +3812,20 @@ OPTIONS
 
           Print usage information and exit.
 
-     '-p {off|on|lo|hi|<VALUE>}'
+     '-v, --verbose'
 
-          Disable (off) or enable (on) clock-profiling using a default
-          sampling granularity, or enable clock-profiling implicitly by
-          setting the sampling granularity (lo, hi, or a specific value
-          in ms).  By default, clock profiling is enabled ('-p on').
+          By default, verbose mode is disabled.  This option enables it.
 
-     '-h {<CTR_DEF>...,<CTR_N_DEF>}'
-          Enable hardware event counter profiling and select the
+     '-p {off | on | lo[w] | hi[gh] | <VALUE>}'
+
+          Disable ('off') or enable ('on') clock profiling using a
+          default sampling granularity, or enable clock profiling
+          implicitly by setting the sampling granularity ('lo[w]',
+          'hi[gh]', or a specific value in ms).  By default, clock
+          profiling is enabled ('-p on').
+
+     '-h <CTR_DEF>[,<CTR_DEF>]'
+          Enable hardware event counter profiling and select one or more
           counter(s).  To see the supported counters on this system, use
           the '-h' option without other arguments.
 
@@ -3770,7 +3833,8 @@ OPTIONS
 
           Specify the name for the experiment directory.  The name has
           to end with '.er' and may contain an absolute path (e.g.
-          '/tmp/experiment.er').
+          '/tmp/experiment.er').  An existing experiment with the same
+          name will not be overwritten.
 
      '-O <EXP_NAME>'
 
@@ -3785,34 +3849,34 @@ OPTIONS
           retrieved with the 'gprofng display text' command using the
           '-header' option.
 
-     '-j {on|off|<PATH>}'
+     '-j {on | off | <PATH>}'
 
           Controls Java profiling when the target is a JVM machine.  The
-          allowed values of this option are: enable (on), disable (off)
-          Java profiling when the target program is a JVM, or set
-          '<path>' to a non-default JVM. The default is '-j on'
+          allowed values for this option are:
 
           'on'
                Record profiling data for the JVM machine, and recognize
                methods compiled by the Java HotSpot virtual machine.
-               Also record Java call stacks.  The default is '-j on'.
+               Also record Java call stacks.
 
           'off'
-               Does not record Java profiling data.  Profiling data for
+               Do not record Java profiling data.  Profiling data for
                native call stacks is still recorded.
 
           '<PATH>'
                Records profiling data for the JVM, and use the JVM as
                installed in <PATH>.
 
-     '-J <JVM-OPTIONS>'
+          The default is '-j on'.
 
-          Specifies additional options to be passed to the JVM used.
-          The JVM-OPTIONS list must be enclosed in quotation marks if it
-          contains more than one option.  The items in the list need to
-          be separated by spaces or tab.  Each item is passed as a
-          separate option to the JVM. Note that this option implies '-j
-          on'.
+     '-J <JVM-OPTION(S)>'
+
+          Specifies one or more additional options to be passed to the
+          JVM used.  The JVM-OPTION(S) list must be enclosed in
+          quotation marks if it contains more than one option.  The
+          items in the list need to be separated by spaces or tabs.
+          Each item is passed as a separate option to the JVM. Note that
+          this option implies '-j on'.
 
      '-t <DURATION>[m|s]'
 
@@ -3820,13 +3884,13 @@ OPTIONS
           a single number, optionally followed by either 'm' to specify
           minutes, or 's' to specify seconds, which is the default.
 
-          The duration can also two numbers separated by minus (-) sign.
-          If a single number is given, data is collected from the start
-          of the run until the given time.  If two numbers are given,
-          data is collected from the first time to the second.  If the
-          second time is zero, data is collected until the end of the
-          run.  If two non-zero numbers are given, the first must be
-          less than the second.
+          The duration can also consists of two numbers separated by a
+          minus (-) sign.  If a single number is given, data is
+          collected from the start of the run until the given time.  If
+          two numbers are given, data is collected from the first time
+          to the second.  In case the second time is zero, data is
+          collected until the end of the run.  If two non-zero numbers
+          are given, the first must be less than the second.
 
      '-n'
 
@@ -3847,8 +3911,8 @@ OPTIONS
      '-a {off|on|ldobjects|src|usedldobjects|usedsrc}'
 
           Specify archiving of binaries and other files.  In addition to
-          disable this feature (off), or enable archiving off all
-          loadobjects and sources (on), the other op tions support a
+          disable this feature ('off'), or enable archiving off all
+          loadobjects and sources ('on'), the other options support a
           more refined selection.
 
           All of these options enable archiving, but the keyword
@@ -3919,10 +3983,10 @@ NOTES
      this is not a requirement.
 
 
-SEEALSO
+SEE ALSO
 
-     gprofng(1), gp-archive(1), gp-display-html(1), gp-display-src(1),
-     gp-display-text(1)
+     gprofng(1), gp-archive(1), gp-display-gui(1), gp-display-html(1),
+     gp-display-src(1), gp-display-text(1)
 
      The user guide for gprofng is maintained as a Texinfo manual.  If
      the 'info' and 'gprofng' programs are correctly installed, the
@@ -3931,7 +3995,7 @@ SEEALSO
 
 COPYRIGHT
 
-     Copyright (C) 2022-2023 Free Software Foundation, Inc.
+     Copyright (C) 2022-2024 Free Software Foundation, Inc.
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -3941,7 +4005,7 @@ COPYRIGHT
      the section entitled "GNU Free Documentation License".
 
 
-File: gprofng.info,  Node: gprofng display text,  Next: gprofng display html,  Prev: gprofng collect app,  Up: The gprofng Man Pages
+File: gprofng.info,  Node: Man page for gprofng display text,  Next: Man page for gprofng display html,  Prev: Man page for gprofng collect app,  Up: The gprofng Man Pages
 
 A.3 Man page for 'gprofng display text'
 =======================================
@@ -3949,8 +4013,7 @@ A.3 Man page for 'gprofng display text'
 
 NAME
 
-     gprofng display text - Display the performance data in plain text
-     format
+     gp-display-text - Display the performance data in plain text format
 
 
 SYNOPSIS
@@ -4068,7 +4131,7 @@ NOTES
 
      'functions'
           Display a list of all functions executed.  For each function
-          the used metrics (e.g.  the CPU time) ar shown.
+          the used metrics (e.g.  the CPU time) are shown.
 
      'header'
           Shows several operational characteristics of the experiment(s)
@@ -4094,6 +4157,15 @@ NOTES
           the default metrics selection, or a colon separated list with
           metrics.
 
+          A special metric is 'hwc'.  It automatically expands to the
+          active set of hardware event counters used in the
+          experiment(s).
+
+          If both instructions and clock cycles have been measured, the
+          'CPI' and 'IPC' metrics can be used to see the Clockcycles Per
+          Instruction and Instructions Per Clockcyle values,
+          respectively.
+
           The gprofng user guide has more details how to define metrics.
 
      'name {short | long | mangled}[:{soname | nosoname}]'
@@ -4108,6 +4180,10 @@ NOTES
 
           Note that there should be no (white)space to the left and
           right of the colon (':').
+
+          This option should not be confused with the keyword 'name' in
+          a metric definition, which is used to specify that the names
+          of functions should be shown in the function overview.
 
      'overview'
           Shows a summary of the recorded performance data for the
@@ -4160,10 +4236,10 @@ NOTES
                is the view mode for C, C++, and Fortran.
 
 
-SEEALSO
+SEE ALSO
 
-     gprofng(1), gp-archive(1), gp-collect-app(1), gp-display-html(1),
-     gp-display-src(1)
+     gprofng(1), gp-archive(1), gp-collect-app(1), gp-display-gui(1),
+     gp-display-html(1), gp-display-src(1)
 
      The user guide for gprofng is maintained as a Texinfo manual.  If
      the 'info' and 'gprofng' programs are correctly installed, the
@@ -4172,7 +4248,7 @@ SEEALSO
 
 COPYRIGHT
 
-     Copyright (C) 2022-2023 Free Software Foundation, Inc.
+     Copyright (C) 2022-2024 Free Software Foundation, Inc.
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -4182,7 +4258,7 @@ COPYRIGHT
      the section entitled "GNU Free Documentation License".
 
 
-File: gprofng.info,  Node: gprofng display html,  Next: gprofng display src,  Prev: gprofng display text,  Up: The gprofng Man Pages
+File: gprofng.info,  Node: Man page for gprofng display html,  Next: Man page for gprofng display src,  Prev: Man page for gprofng display text,  Up: The gprofng Man Pages
 
 A.4 Man page for 'gprofng display html'
 =======================================
@@ -4190,8 +4266,8 @@ A.4 Man page for 'gprofng display html'
 
 NAME
 
-     gprofng display html - Generate an HTML based directory structure
-     to browse the profiles
+     gp-display-html - Generate an HTML based directory structure to
+     browse the profiles
 
 
 SYNOPSIS
@@ -4216,75 +4292,114 @@ OPTIONS
 
           Print usage information and exit.
 
-     '--verbose {on|off}'
+     '--verbose'
 
-          Enable ('on') or disable ('off)' verbose mode.  The default is
-          'off'.
+          Enable verbose mode to show diagnostic messages about the
+          processing of the data.  By default verbose mode is disabled.
 
-     '--debug {on|s|m|l|xl|off}'
-     '-d {on|s|m|l|xl|off}'
+     '-d [DB-VOL-SIZE], --debug[=DB-VOL-SIZE]'
 
-          Control the printing of run time information to assist with
-          troubleshooting, or further development of this tool.  The
-          keyword is case insensitive.  A setting of 'on' gives a modest
-          amount of information.  The keywords 's', 'm', 'l', and 'xl'
-          give an increasing amount of information, while 'off' disables
-          the printing of debug information.  This is also the default.
+          Control the printing of run time debug information to assist
+          with the troubleshooting, or further development of this tool.
 
-          Note that currently 'on', 's', 'm', and 'l' are equivalent.
-          This is expected to change in future updates.
+          The DB-VOL-SIZE parameter controls the output volume and is
+          one from the list 's', 'S', 'm', 'M', 'l', 'L', 'xl', or 'XL'.
+          If DB-VOL-SIZE is not set, a modest amount of information is
+          printed.  This is equivalent to select 's', or 'S'.  The
+          volume of data goes up as the size increases.  Note that
+          currently 'l/L' is equivalent to 'xl/XL', but this is expected
+          to change in future updates.  By default debug mode is
+          disabled.
 
-     '---highlight-percentage VALUE'
-     '-hp VALUE'
+     '--highlight-percentage=VALUE'
 
           Set a percentage value in the interval [0,100] to select and
           color code source lines, as well as instructions, that are
           within this percentage of the maximum metric value(s).  The
-          default is 90 (%).
+          default is 90 (%).  A value of zero disables this feature.
 
-          A value of zero '(-hp 0)' disables this feature.
+     '-o DIRNAME, --output=DIRNAME'
 
-     '--output DIRNAME'
-     '-o DIRNAME'
+          Use DIRNAME as the directory name to store the results in.  In
+          absence of this option, the default name is
+          'display.<n>.html'.  This directory is created in the current
+          directory.  The number <N> is the first positive integer
+          number not in use in this naming scheme.  An existing
+          directory with the same name is not overwritten.  In case the
+          directory exists already, an error message is printed and the
+          tool terminates.
 
-          Use DIRNAME as the directory name to store the HTML files in.
-          The default name is 'display.<n>.html' with <N> the first
-          positive integer number not in use.  An existing directory
-          with the same name is not overwritten.
+     '-O DIRNAME, --overwrite=DIRNAME'
 
-     '--overwrite DIRNAME'
-     '-O DIRNAME'
+          Use DIRNAME as the directory name to store the results in.  In
+          absence of this option, the default name is
+          'display.<n>.html'.  This directory is created in the current
+          directory.  The number <N> is the first positive integer
+          number not in use in this naming scheme.  An existing
+          directory with the same name is silently overwritten.
 
-          Use DIRNAME as the directory name to store the HTML files in.
+     '-q, --quiet'
 
-     '--quiet {on|off}'
-     '-q {on|off}'
+          Disable the display of all warning, debug, verbose and any
+          other messages.  If enabled, the settings for verbose and
+          debug are accepted, but ignored.  With this option, there is
+          no screen output, other than errors.  By default quiet mode is
+          disabled.
 
-          Control the display of all warning, debug and verbose
-          messages.  If set to 'on', the settings for verbose, warnings
-          and debug are ignored.  By default the quiet mode is disabled
-          ('-q off').
+     '--nowarnings'
 
-     '--warnings {on|off}'
-     '-w {on|off}'
-
-          Enable ('on'), or disable ('off') run time warning messages
-          from the tool.  By default these are enabled.
+          Disable the printing of warning messages on stdout.  By
+          default warning messages are printed.
 
 
 NOTES
 
-     When setting a directory name for the HTML files to be stored in,
-     make sure that umask is set to the correct access permissions.
+        - The options and values are case sensitive.
 
-     Regardless of the setting for the warning messages, any warnings
-     are accessible through the main 'index.html' page.
+        - In this release, the option syntax has changed to be more
+          compliant with other tools and commands.
+
+          The options that used to have an 'on' or 'off' value only, now
+          act as a switch.  The option negates the default setting.  For
+          example, by default, verbose mode is disabled.  It is enabled
+          by using the '--verbose' option.
+
+          The long options, those starting with '--', that require a
+          value, expect the '=' sign between the option and the value.
+
+          While the previous syntax and choices are accepted still, we
+          strongly recommend to change the usage of the options
+          according to the new syntax and values.  At some point, these
+          legacy settings may no longer be accepted.
+
+          To assist with the transition, a warning message is shown if
+          the legacy syntax, or value, or both, are used.
+
+        - The '-hp' option is still accepted, but it will be deprecated
+          in a future release.  Use the '--highlight-percentage' option
+          instead.
+
+        - When setting a directory name for the HTML files to be stored
+          in, make sure that umask is set to the correct access
+          permissions.
+
+        - Regardless of the setting for the warning messages, if there
+          are warnings, they are accessible through the main
+          'index.html' page.
+
+        - The tool tries to accumulate as many warnings and errors as
+          possible, before taking action.  In this way, it is easier to
+          address multiple issues at once.  As a result of this
+          approach, it may be that the messages do not show immediately.
+          In particular, warnings are shown towards the end of the
+          execution, but one or more errors will terminate execution
+          before the processing begins.
 
 
-SEEALSO
+SEE ALSO
 
-     gprofng(1), gp-archive(1), gp-collect-app(1), gp-display-src(1),
-     gp-display-text(1)
+     gprofng(1), gp-archive(1), gp-collect-app(1), gp-display-gui(1),
+     gp-display-src(1), gp-display-text(1)
 
      The user guide for gprofng is maintained as a Texinfo manual.  If
      the 'info' and 'gprofng' programs are correctly installed, the
@@ -4293,7 +4408,7 @@ SEEALSO
 
 COPYRIGHT
 
-     Copyright (C) 2022-2023 Free Software Foundation, Inc.
+     Copyright (C) 2022-2024 Free Software Foundation, Inc.
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -4303,7 +4418,7 @@ COPYRIGHT
      the section entitled "GNU Free Documentation License".
 
 
-File: gprofng.info,  Node: gprofng display src,  Next: gprofng archive,  Prev: gprofng display html,  Up: The gprofng Man Pages
+File: gprofng.info,  Node: Man page for gprofng display src,  Next: Man page for gprofng archive,  Prev: Man page for gprofng display html,  Up: The gprofng Man Pages
 
 A.5 Man page for 'gprofng display src'
 ======================================
@@ -4311,13 +4426,13 @@ A.5 Man page for 'gprofng display src'
 
 NAME
 
-     gprofng display src - Display the source code, optionally
-     interleaved with the disassembly of the target object
+     gp-display-src - Display the source code, optionally interleaved
+     with the disassembly of the target object
 
 
 SYNOPSIS
 
-     'gprofng display src' [OPTION(S)] TARGET_FILE
+     'gprofng display src' [OPTION(S)] TARGET-FILE
 
 
 DESCRIPTION
@@ -4337,10 +4452,10 @@ DESCRIPTION
 
           $ gprofng display src -disasm all -1 mxv.o
 
-     The TARGET_FILE is the name of an executable, a shared object, an
+     The TARGET-FILE is the name of an executable, a shared object, an
      object file (.o), or a Java .class file.
 
-     If no options are given, the source code listing of the TARGET_FILE
+     If no options are given, the source code listing of the TARGET-FILE
      is shown.  This is equivalent to '-source all -1'.  If this
      information is not available, a message to this extent is printed.
 
@@ -4359,7 +4474,7 @@ OPTIONS
           List all the functions from the given object.
 
      '-source ITEM TAG'
-          Show the source code for ITEM in TARGET_FILE.  The TAG is used
+          Show the source code for ITEM in TARGET-FILE.  The TAG is used
           to differentiate in case there are multiple occurences with
           the same name.  See the 'NOTES' section for the definition of
           ITEM and TAG.
@@ -4373,7 +4488,7 @@ OPTIONS
      '-outfile FILENAME'
           Write results to file FILENAME.  A dash (-) writes to stdout.
           This is also the default.  Note that this option only affects
-          those options included to the right of this option.
+          those options included to the right of the option.
 
 
 NOTES
@@ -4392,13 +4507,13 @@ NOTES
 
      The special ITEM and TAG combination 'all -1', is used to indicate
      generating the source, or disassembly, for all functions in the
-     TARGET_FILE.
+     TARGET-FILE.
 
 
-SEEALSO
+SEE ALSO
 
-     gprofng(1), gp-archive(1), gp-collect-app(1), gp-display-html(1),
-     gp-display-text(1)
+     gprofng(1), gp-archive(1), gp-collect-app(1), gp-display-gui(1),
+     gp-display-html(1), gp-display-text(1)
 
      The user guide for gprofng is maintained as a Texinfo manual.  If
      the info and gprofng programs are correctly installed, the command
@@ -4407,7 +4522,7 @@ SEEALSO
 
 COPYRIGHT
 
-     Copyright (C) 2022-2023 Free Software Foundation, Inc.
+     Copyright (C) 2022-2024 Free Software Foundation, Inc.
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -4417,7 +4532,7 @@ COPYRIGHT
      the section entitled "GNU Free Documentation License".
 
 
-File: gprofng.info,  Node: gprofng archive,  Prev: gprofng display src,  Up: The gprofng Man Pages
+File: gprofng.info,  Node: Man page for gprofng archive,  Prev: Man page for gprofng display src,  Up: The gprofng Man Pages
 
 A.6 Man page for 'gprofng archive'
 ==================================
@@ -4425,7 +4540,8 @@ A.6 Man page for 'gprofng archive'
 
 NAME
 
-     gprofng archive - Archive gprofng experiment data
+     gp-archive - Archive the associated application binaries and
+     sources for a gprofng experiment
 
 
 SYNOPSIS
@@ -4438,9 +4554,13 @@ DESCRIPTION
      Archive the associated application binaries and source files in a
      gprofng experiment to make it self contained and portable.
 
-     By default, the binaries are archived, but the application source
-     files are not archived.  Use this tool to change this and
-     afterwards archive additional components.
+     By default, the binaries are archived as part of the data
+     collection, but the application source files are not archived.  Use
+     this tool to change this and afterwards archive additional
+     components.
+
+     This tool has to be executed on the same system where the profiling
+     data was recorded.
 
 
 OPTIONS
@@ -4453,23 +4573,33 @@ OPTIONS
 
           Print usage information and exit.
 
-     '-a {off|on|ldobjects|src|usedldobjects|usedsrc}'
+     '-a {off | on | ldobjects | src | usedldobjects | used[src]}'
 
           Specify archiving of binaries and other files.  In addition to
-          disable this feature (off), or enable archiving off all
-          loadobjects and sources (on), the other op tions support a
+          disable this feature ('off'), or enable archiving of all
+          loadobjects and sources ('on'), the other choices support a
           more refined selection.
 
-          All of these options enable archiving, but the keyword
+          All of these choices enable archiving, but the keyword
           controls what exactly is selected: all load objects
-          (ldobjects), all source files (src), the loadobjects
-          asscoiated with a program counter (usedldobjects), or the
-          source files associated with a program counter (usedsrc).  The
-          default is '-a ldobjects'.
+          ('ldobjects'), all source files ('src'), the loadobjects
+          associated with a program counter ('usedldobjects'), or the
+          source files associated with a program counter ('used[src]').
+          The default is '-a ldobjects'.
 
-     '-n'
+     '-d PATH'
 
-          Archive the named experiment only, not any of its descendants.
+          The PATH is the absolute path to a common archive, which is a
+          directory that contains archived files.  If the directory does
+          not exist, then it will be created.  Files are saved in the
+          common archive directory, and a symbolic link is created in
+          the experiment archive.
+
+     '-F'
+
+          Force writing, or rewriting of .archive files.  All archived
+          files will be removed and recreated, except if the '-n' or
+          '-m' option is used, or if the experiment is a subexperiment.
 
      '-m REGEX'
 
@@ -4477,48 +4607,153 @@ OPTIONS
           full path name matches the given POSIX compliant REGEX regular
           expression.
 
+     '-n'
+
+          Archive the named experiment only, not any of its descendants.
+
      '-q'
 
-          Do not write any warnings to stderr.  Warnings are
+          Do not write any warnings to 'stderr'.  Warnings are
           incorporated into the .archive file in the experiment
-          directory.  They are shown in the output of 'gprofng display
-          text'.
+          directory.  They are shown in the output of the 'gprofng
+          display text' command.
 
-     '-F'
+     '-r PATH'
 
-          Force writing or rewriting of the archive.  This is ignored
-          with the '-n' or '-m' option, or if this is a subexperiment.
+          This option specifies the location of a common archive.  The
+          value is the relative path to a common archive, which is a
+          directory that contains archived files.  If the directory does
+          not exist, then it will be created.  Files are saved in the
+          common archive directory, and a symbolic link is created in
+          the experiment archive.
 
-     '-d PATH'
+     '-s SELECTION'
 
-          The PATH is the absolute path path to a common archive, which
-          is a directory that contains archived files.  If the directory
-          does not exist, then it will be created.  Files are saved in
-          the common archive directory, and a symbolic link is created
-          in the experiment archive.
+          Specify archiving of source files.  The allowed values for
+          SELECTION are:
+
+          'no'
+
+               Do not archive any source files.
+
+          'all'
+
+               Archive all source and object files that can be found.
+
+          'used[src]'
+
+               Archive source and object files for functions against
+               which data was recorded in the experiment, and that can
+               be found.
+
+          By default, application source files are not archived into the
+          experiment.  If the '-s all', or '-s used' option is used,
+          sources and object files are archived.  These options also
+          ensure that source files are available in the experiment, even
+          if the original source files have been modified, or are
+          inaccessible afterwards.
+
+          In case archive files cannot be found, use the 'addpath', or
+          'pathmap' command, or both, in an '.er.rc' file to specify the
+          location of the missing file(s).
 
 
 NOTES
 
-     Default archiving does not occur in case the application profiled
-     terminates prematurely, or if archiving is disabled when collecting
-     the performance data.  In such cases, this tool can be used to
-     afterwards archive the information, but it has to be run on the
-     same system where the profiling data was recorded.
+        - Archiving of application binaries - By default, binaries are
+          archived automatically when an experiment is created.
+          However, archiving does not occur in one or more of the
+          following circumstances:
 
-     Some Java applications store shared objects in jar files.  By
-     default, such shared objects are not automatically archived.  To
-     archive shared objects contained in jar files, the addpath
-     directive in an .er.rc file.  The addpath directive should give the
-     path to the jar file, including the jar file itself.  The .er.rc
-     file should be saved in the user home directory or parent of the
-     experiment directory.
+             * If the profiled application is terminated before it exits
+               normally.
+
+             * If a running process is profiled.
+
+             * If archiving is explicitly disabled when profiling.  For
+               example by using the '-a off' option on 'gprofng collect
+               app'.
+
+          In these cases, 'gprofng archive' must be run manually and on
+          the same machine where the profiling data was recorded.
+
+          Archiving of experiment data during the data collection
+          process can be quite expensive.  Especially if the experiment
+          has many descendant processes.  In such cases, a more
+          efficient strategy is to use the '-a off' option when
+          collecting the data.  Once the collection has completed, the
+          data can be archived using the '-s all' option.  This saves
+          all executables and source files in the experiment.
+
+          If during the archiving there is an error message that an
+          executable, or source file cannot be found, the 'addpath'
+          command to add the path to the missing file(s) can be included
+          in the '.er.rc' file.  After this command has been added,
+          archive the experiment again.  The archiving archiving can be
+          repeated as many times as necessary to archive all files.
+
+          Archiving should be done on the same system as was used to
+          collect the experiment.  If some files cannot be accessed from
+          this system (e.g.  sources or object files), then additional
+          archiving can be done using another system that can access
+          them.  For example, the system where the application was
+          built.
+
+          Some Java applications store shared objects in jar files.  By
+          default, such shared objects are not automatically archived.
+          To archive shared objects contained in jar files, make sure to
+          include the 'addpath' command in an '.er.rc' file.  The
+          'addpath' command should give the path to the jar file,
+          including the jar file itself.  The '.er.rc' file should be
+          saved in the user home directory, or experiment parent
+          directory.
+
+        - Archiving of application sources - By default, application
+          source files are not archived in the experiment.  Execute the
+          'gprofng archive' command with the '-s all', or '-s used'
+          option on each experiment to store source files in the
+          experiment.
+
+        - Automatic archiving of application sources - Environment
+          variable 'GPROFNG_ARCHIVE' may be set to automatically archive
+          sources when the experiment has completed.  This environment
+          variable can contain '-s' and '-m' arguments, as pairs of
+          argument and options, separated by one or more blanks.
+
+          If more than one '-s' argument appears on the command line,
+          the last one prevails.  If '-s' is both passed on the command
+          line, and set by the environment variable, the option from the
+          environment variable prevails.
+
+          Note that in case automatic source archiving during data
+          collection has been enabled using either the 'GPROFNG_ARCHIVE'
+          variable, or the '-a src', or '-a usedsrc' option, it is
+          recommended to confirm that source files have been correctly
+          resolved by executing the 'gprofng archive -s all', or
+          'gprofng archive -s used' command.
+
+        - The '-d' and '-r' options are mutually exclusive.
+
+        - When using the '-d' or '-r' option, environment variable
+          'GPROFNG_ARCHIVE_COMMON_DIR' can be used to specify the
+          location of the common archive.  This can be very convenient
+          when using a script to profile applications.
+
+        - If more than one '-s' option is given on the command line, or
+          specified in the environment variable, the specified option
+          for all must be the same.  If not, 'gprofng archive' exits
+          with an error.
+
+        - This tool does not work on experiments recorded with earlier
+          versions of the tools.  If invoked on such experiments, a
+          warning is printed.  Use the version of 'gprofng archive' from
+          the same release with which the experiment was recorded.
 
 
-SEEALSO
+SEE ALSO
 
-     gprofng(1), gp-collect-app(1), gp-display-html(1),
-     gp-display-src(1), gp-display-text(1)
+     gprofng(1), gp-collect-app(1), gp-display-gui(1),
+     gp-display-html(1), gp-display-src(1), gp-display-text(1)
 
      The user guide for gprofng is maintained as a Texinfo manual.  If
      the info and gprofng programs are correctly installed, the command
@@ -4527,7 +4762,7 @@ SEEALSO
 
 COPYRIGHT
 
-     Copyright (C) 2022-2023 Free Software Foundation, Inc.
+     Copyright (C) 2022-2024 Free Software Foundation, Inc.
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -4548,15 +4783,19 @@ Index
 * Command line mode:                     A First Profile.     (line  40)
 * Commands:                              The gprofng display text Tool.
                                                               (line  18)
+* Commands, -header:                     Man page for gprofng collect app.
+                                                              (line  75)
 * Commands, addpath:                     Commands to Set and Change Search Paths.
                                                               (line   7)
+* Commands, addpath <1>:                 Man page for gprofng archive.
+                                                              (line 155)
 * Commands, add_exp:                     Commands that List Experiment Details.
                                                               (line  94)
-* Commands, callers-callees:             gprofng display text.
-                                                              (line  77)
+* Commands, callers-callees:             Man page for gprofng display text.
+                                                              (line  76)
 * Commands, calltree:                    The Call Tree.       (line  11)
-* Commands, calltree <1>:                gprofng display text.
-                                                              (line  84)
+* Commands, calltree <1>:                Man page for gprofng display text.
+                                                              (line  83)
 * Commands, compare:                     View Multiple Experiments.
                                                               (line  12)
 * Commands, compare <1>:                 Comparison of Experiments.
@@ -4564,9 +4803,9 @@ Index
 * Commands, compare <2>:                 Comparison of Experiments.
                                                               (line 100)
 * Commands, compare <3>:                 Examples Using Hardware Event Counters.
-                                                              (line 166)
-* Commands, compare <4>:                 gprofng display text.
-                                                              (line  88)
+                                                              (line 167)
+* Commands, compare <4>:                 Man page for gprofng display text.
+                                                              (line  87)
 * Commands, cpus:                        Commands Specific to Multithreading.
                                                               (line 169)
 * Commands, cpus <1>:                    Commands that List Experiment Details.
@@ -4578,19 +4817,20 @@ Index
 * Commands, cpu_select:                  Predefined Filters.  (line  12)
 * Commands, disasm:                      The Disassembly View.
                                                               (line  11)
-* Commands, disasm <1>:                  gprofng display text.
-                                                              (line 114)
-* Commands, disasm <2>:                  gprofng display src. (line  63)
+* Commands, disasm <1>:                  Man page for gprofng display text.
+                                                              (line 113)
+* Commands, disasm <2>:                  Man page for gprofng display src.
+                                                              (line  63)
 * Commands, dmetrics:                    The gprofng.rc file with default settings.
-                                                              (line  47)
+                                                              (line  50)
 * Commands, drop_exp:                    Commands that List Experiment Details.
                                                               (line  98)
 * Commands, dsort:                       The gprofng.rc file with default settings.
-                                                              (line  60)
+                                                              (line  63)
 * Commands, dthresh:                     Commands that Affect Listings and Output.
                                                               (line   7)
 * Commands, en_desc:                     The gprofng.rc file with default settings.
-                                                              (line  79)
+                                                              (line  82)
 * Commands, experiment_ids:              Commands that List Experiment Details.
                                                               (line   7)
 * Commands, experiment_list:             Aggregation of Experiments.
@@ -4603,36 +4843,37 @@ Index
                                                               (line  10)
 * Commands, fsingle <2>:                 Information on Load Objects.
                                                               (line  34)
-* Commands, fsingle <3>:                 gprofng display text.
-                                                              (line 119)
+* Commands, fsingle <3>:                 Man page for gprofng display text.
+                                                              (line 118)
 * Commands, fsummary:                    Information on Load Objects.
                                                               (line  10)
 * Commands, fsummary <1>:                Information on Load Objects.
                                                               (line  61)
-* Commands, fsummary <2>:                gprofng display text.
-                                                              (line 124)
+* Commands, fsummary <2>:                Man page for gprofng display text.
+                                                              (line 123)
 * Commands, functions:                   A First Profile.     (line  50)
-* Commands, functions <1>:               gprofng display text.
-                                                              (line 127)
-* Commands, functions <2>:               gprofng display src. (line  54)
+* Commands, functions <1>:               Man page for gprofng display text.
+                                                              (line 126)
+* Commands, functions <2>:               Man page for gprofng display src.
+                                                              (line  54)
 * Commands, GCEvents:                    Commands that List Experiment Details.
                                                               (line  36)
 * Commands, header:                      More Information on the Experiment.
                                                               (line  10)
 * Commands, header <1>:                  Control the Sampling Frequency.
                                                               (line  64)
-* Commands, header <2>:                  gprofng display text.
-                                                              (line 131)
+* Commands, header <2>:                  Man page for gprofng display text.
+                                                              (line 130)
 * Commands, limit:                       Control the Number of Lines in the Output.
                                                               (line   6)
 * Commands, limit <1>:                   Examples Using Hardware Event Counters.
-                                                              (line 320)
-* Commands, limit <2>:                   gprofng display text.
-                                                              (line 135)
+                                                              (line 321)
+* Commands, limit <2>:                   Man page for gprofng display text.
+                                                              (line 134)
 * Commands, lines:                       The Source Code View.
                                                               (line  87)
-* Commands, lines <1>:                   gprofng display text.
-                                                              (line 138)
+* Commands, lines <1>:                   Man page for gprofng display text.
+                                                              (line 137)
 * Commands, lwp_list:                    Commands that List Experiment Details.
                                                               (line  42)
 * Commands, lwp_select:                  Predefined Filters.  (line  16)
@@ -4641,36 +4882,37 @@ Index
 * Commands, metrics <1>:                 Display and Define the Metrics.
                                                               (line  40)
 * Commands, metrics <2>:                 Metric Definitions.  (line   9)
-* Commands, metrics <3>:                 gprofng display text.
-                                                              (line 147)
+* Commands, metrics <3>:                 Man page for gprofng display text.
+                                                              (line 146)
 * Commands, metric_list:                 Display and Define the Metrics.
                                                               (line  10)
 * Commands, metric_list <1>:             Display and Define the Metrics.
                                                               (line  19)
 * Commands, metric_list <2>:             Examples Using Hardware Event Counters.
-                                                              (line 261)
+                                                              (line 262)
 * Commands, metric_list <3>:             Examples Using Hardware Event Counters.
-                                                              (line 316)
-* Commands, metric_list <4>:             gprofng display text.
-                                                              (line 142)
-* Commands, name:                        gprofng display text.
-                                                              (line 157)
+                                                              (line 317)
+* Commands, metric_list <4>:             Man page for gprofng display text.
+                                                              (line 141)
+* Commands, name:                        Man page for gprofng display text.
+                                                              (line 165)
 * Commands, objects:                     The Call Tree.       (line  59)
 * Commands, objects <1>:                 Information on Load Objects.
                                                               (line  10)
 * Commands, open_exp:                    Commands that List Experiment Details.
                                                               (line 102)
-* Commands, outfile:                     gprofng display src. (line  69)
+* Commands, outfile:                     Man page for gprofng display src.
+                                                              (line  69)
 * Commands, overview:                    More Information on the Experiment.
                                                               (line  55)
-* Commands, overview <1>:                gprofng display text.
-                                                              (line 170)
+* Commands, overview <1>:                Man page for gprofng display text.
+                                                              (line 182)
 * Commands, pathmap:                     Commands to Set and Change Search Paths.
                                                               (line  13)
 * Commands, pcs:                         The Disassembly View.
                                                               (line  86)
-* Commands, pcs <1>:                     gprofng display text.
-                                                              (line 174)
+* Commands, pcs <1>:                     Man page for gprofng display text.
+                                                              (line 186)
 * Commands, printmode:                   Commands that Affect Listings and Output.
                                                               (line  16)
 * Commands, processes:                   Commands that List Experiment Details.
@@ -4681,8 +4923,8 @@ Index
 * Commands, sample_list:                 Commands that List Experiment Details.
                                                               (line  63)
 * Commands, script:                      Scripting.           (line  10)
-* Commands, script <1>:                  gprofng display text.
-                                                              (line  65)
+* Commands, script <1>:                  Man page for gprofng display text.
+                                                              (line  64)
 * Commands, seconds:                     Commands that List Experiment Details.
                                                               (line  68)
 * Commands, setpath:                     Commands to Set and Change Search Paths.
@@ -4691,13 +4933,14 @@ Index
                                                               (line   6)
 * Commands, sort <1>:                    Commands Specific to Multithreading.
                                                               (line 198)
-* Commands, sort <2>:                    gprofng display text.
-                                                              (line 178)
+* Commands, sort <2>:                    Man page for gprofng display text.
+                                                              (line 190)
 * Commands, source:                      The Source Code View.
                                                               (line  13)
-* Commands, source <1>:                  gprofng display text.
-                                                              (line 190)
-* Commands, source <2>:                  gprofng display src. (line  57)
+* Commands, source <1>:                  Man page for gprofng display text.
+                                                              (line 202)
+* Commands, source <2>:                  Man page for gprofng display src.
+                                                              (line  57)
 * Commands, sthresh:                     Commands that Affect Listings and Output.
                                                               (line  30)
 * Commands, threads:                     Commands Specific to Multithreading.
@@ -4713,8 +4956,8 @@ Index
 * Commands, thread_select <1>:           Predefined Filters.  (line  22)
 * Commands, viewmode:                    Java Profiling.      (line  37)
 * Commands, viewmode <1>:                The Viewmode.        (line   6)
-* Commands, viewmode <2>:                gprofng display text.
-                                                              (line 194)
+* Commands, viewmode <2>:                Man page for gprofng display text.
+                                                              (line 206)
 * Compare experiments:                   Comparison of Experiments.
                                                               (line   6)
 * CPI:                                   Hardware Event Counters Explained.
@@ -4726,19 +4969,25 @@ Index
 * ELF:                                   Load Objects and Functions.
                                                               (line  16)
 * Environment variables:                 Man page for gprofng.
-                                                              (line  63)
+                                                              (line  64)
 * Environment variables <1>:             Man page for gprofng.
-                                                              (line  66)
+                                                              (line  68)
 * Environment variables <2>:             Man page for gprofng.
-                                                              (line  70)
+                                                              (line  73)
 * Environment variables <3>:             Man page for gprofng.
-                                                              (line  74)
-* Environment variables <4>:             Man page for gprofng.
                                                               (line  78)
+* Environment variables <4>:             Man page for gprofng.
+                                                              (line  83)
 * Environment variables <5>:             Man page for gprofng.
-                                                              (line  81)
+                                                              (line  87)
 * Environment variables <6>:             Man page for gprofng.
-                                                              (line  85)
+                                                              (line  92)
+* Environment variables <7>:             Man page for gprofng.
+                                                              (line  98)
+* Environment variables, GPROFNG_ARCHIVE: Man page for gprofng archive.
+                                                              (line 187)
+* Environment variables, GPROFNG_ARCHIVE_COMMON_DIR: Man page for gprofng archive.
+                                                              (line 203)
 * Exclusive metric:                      Inclusive and Exclusive Metrics.
                                                               (line  14)
 * Experiment directory:                  Steps Needed to Create a Profile.
@@ -4753,12 +5002,13 @@ Index
 * Flavor field:                          Metric Definitions.  (line  13)
 * Function:                              Load Objects and Functions.
                                                               (line  26)
-* gprofng, archive:                      Tools Overview.      (line  30)
+* gprofng, archive:                      Tools Overview.      (line  33)
 * gprofng, collect app:                  Tools Overview.      (line   9)
+* gprofng, display gui:                  Tools Overview.      (line  39)
 * gprofng, display html:                 Steps Needed to Create a Profile.
                                                               (line  45)
-* gprofng, display html <1>:             Tools Overview.      (line  21)
-* gprofng, display src:                  Tools Overview.      (line  26)
+* gprofng, display html <1>:             Tools Overview.      (line  22)
+* gprofng, display src:                  Tools Overview.      (line  28)
 * gprofng, display text:                 Steps Needed to Create a Profile.
                                                               (line  41)
 * gprofng, display text <1>:             Tools Overview.      (line  16)
@@ -4771,13 +5021,19 @@ Index
 * Hardware event counters, counter definition: Getting Information on the Counters Supported.
                                                               (line  82)
 * Hardware event counters, CPI:          Examples Using Hardware Event Counters.
-                                                              (line 254)
+                                                              (line 255)
+* Hardware event counters, CPI metric:   Man page for gprofng display text.
+                                                              (line 157)
 * Hardware event counters, description:  Hardware Event Counters Explained.
                                                               (line   6)
 * Hardware event counters, hwc metric:   Examples Using Hardware Event Counters.
                                                               (line  31)
+* Hardware event counters, hwc metric <1>: Man page for gprofng display text.
+                                                              (line 153)
 * Hardware event counters, IPC:          Examples Using Hardware Event Counters.
-                                                              (line 250)
+                                                              (line 251)
+* Hardware event counters, IPC metric:   Man page for gprofng display text.
+                                                              (line 157)
 * Hardware event counters, variable CPU frequency: Hardware Event Counters Explained.
                                                               (line  40)
 * Inclusive metric:                      Inclusive and Exclusive Metrics.
@@ -4816,50 +5072,65 @@ Index
                                                               (line  16)
 * Miscellaneous, <Total>:                A First Profile.     (line  95)
 * mxv-pthreads:                          The Example Program. (line  12)
-* Options, --debug:                      gprofng display html.
-                                                              (line  42)
+* Options, --debug:                      Man page for gprofng display html.
+                                                              (line  41)
 * Options, --help:                       Man page for gprofng.
                                                               (line  55)
-* Options, --help <1>:                   gprofng collect app. (line  38)
-* Options, --help <2>:                   gprofng display text.
-                                                              (line  61)
-* Options, --help <3>:                   gprofng display html.
+* Options, --help <1>:                   Man page for gprofng collect app.
+                                                              (line  37)
+* Options, --help <2>:                   Man page for gprofng display text.
+                                                              (line  60)
+* Options, --help <3>:                   Man page for gprofng display html.
                                                               (line  32)
-* Options, --help <4>:                   gprofng display src. (line  50)
-* Options, --help <5>:                   gprofng archive.     (line  34)
-* Options, --highlight-percentage:       gprofng display html.
+* Options, --help <4>:                   Man page for gprofng display src.
+                                                              (line  50)
+* Options, --help <5>:                   Man page for gprofng archive.
+                                                              (line  39)
+* Options, --highlight-percentage:       Man page for gprofng display html.
                                                               (line  55)
-* Options, --output:                     gprofng display html.
-                                                              (line  65)
-* Options, --overwrite:                  gprofng display html.
+* Options, --nowarnings:                 Man page for gprofng display html.
+                                                              (line  90)
+* Options, --output:                     Man page for gprofng display html.
+                                                              (line  62)
+* Options, --overwrite:                  Man page for gprofng display html.
                                                               (line  73)
-* Options, --quiet:                      gprofng display html.
-                                                              (line  78)
-* Options, --verbose:                    gprofng display html.
+* Options, --quiet:                      Man page for gprofng display html.
+                                                              (line  82)
+* Options, --verbose:                    Man page for gprofng collect app.
+                                                              (line  41)
+* Options, --verbose <1>:                Man page for gprofng display html.
                                                               (line  36)
 * Options, --version:                    Man page for gprofng.
                                                               (line  52)
-* Options, --version <1>:                gprofng collect app. (line  34)
-* Options, --version <2>:                gprofng display text.
-                                                              (line  57)
-* Options, --version <3>:                gprofng display html.
+* Options, --version <1>:                Man page for gprofng collect app.
+                                                              (line  33)
+* Options, --version <2>:                Man page for gprofng display text.
+                                                              (line  56)
+* Options, --version <3>:                Man page for gprofng display html.
                                                               (line  28)
-* Options, --version <4>:                gprofng display src. (line  46)
-* Options, --version <5>:                gprofng archive.     (line  30)
-* Options, --warnings:                   gprofng display html.
-                                                              (line  86)
-* Options, -a:                           gprofng collect app. (line 132)
-* Options, -a <1>:                       gprofng archive.     (line  38)
+* Options, --version <4>:                Man page for gprofng display src.
+                                                              (line  46)
+* Options, --version <5>:                Man page for gprofng archive.
+                                                              (line  35)
+* Options, -a:                           Man page for gprofng collect app.
+                                                              (line 137)
+* Options, -a <1>:                       Man page for gprofng archive.
+                                                              (line  43)
+* Options, -a <2>:                       Man page for gprofng archive.
+                                                              (line 148)
+* Options, -a <3>:                       Man page for gprofng archive.
+                                                              (line 187)
 * Options, -addpath:                     Commands to Set and Change Search Paths.
                                                               (line   7)
 * Options, -C:                           More Information on the Experiment.
                                                               (line  49)
-* Options, -C <1>:                       gprofng collect app. (line  66)
-* Options, -callers-callees:             gprofng display text.
-                                                              (line  77)
+* Options, -C <1>:                       Man page for gprofng collect app.
+                                                              (line  71)
+* Options, -callers-callees:             Man page for gprofng display text.
+                                                              (line  76)
 * Options, -calltree:                    The Call Tree.       (line  11)
-* Options, -calltree <1>:                gprofng display text.
-                                                              (line  84)
+* Options, -calltree <1>:                Man page for gprofng display text.
+                                                              (line  83)
 * Options, -compare:                     View Multiple Experiments.
                                                               (line  12)
 * Options, -compare <1>:                 Comparison of Experiments.
@@ -4867,9 +5138,9 @@ Index
 * Options, -compare <2>:                 Comparison of Experiments.
                                                               (line 100)
 * Options, -compare <3>:                 Examples Using Hardware Event Counters.
-                                                              (line 166)
-* Options, -compare <4>:                 gprofng display text.
-                                                              (line  88)
+                                                              (line 167)
+* Options, -compare <4>:                 Man page for gprofng display text.
+                                                              (line  87)
 * Options, -cpus:                        Commands Specific to Multithreading.
                                                               (line 169)
 * Options, -cpus <1>:                    Commands that List Experiment Details.
@@ -4879,14 +5150,20 @@ Index
 * Options, -cpu_list <1>:                Commands that List Experiment Details.
                                                               (line  21)
 * Options, -cpu_select:                  Predefined Filters.  (line  12)
-* Options, -d:                           gprofng display html.
-                                                              (line  42)
-* Options, -d <1>:                       gprofng archive.     (line  74)
+* Options, -d:                           Man page for gprofng display html.
+                                                              (line  41)
+* Options, -d <1>:                       Man page for gprofng archive.
+                                                              (line  57)
+* Options, -d <2>:                       Man page for gprofng archive.
+                                                              (line 201)
+* Options, -d <3>:                       Man page for gprofng archive.
+                                                              (line 203)
 * Options, -disasm:                      The Disassembly View.
                                                               (line  11)
-* Options, -disasm <1>:                  gprofng display text.
-                                                              (line 114)
-* Options, -disasm <2>:                  gprofng display src. (line  63)
+* Options, -disasm <1>:                  Man page for gprofng display text.
+                                                              (line 113)
+* Options, -disasm <2>:                  Man page for gprofng display src.
+                                                              (line  63)
 * Options, -dthresh:                     Commands that Affect Listings and Output.
                                                               (line   7)
 * Options, -experiment_ids:              Commands that List Experiment Details.
@@ -4896,129 +5173,162 @@ Index
 * Options, -experiment_list <1>:         Commands that List Experiment Details.
                                                               (line  14)
 * Options, -experiment_list <2>:         The Selection List.  (line  47)
-* Options, -F:                           gprofng collect app. (line 122)
-* Options, -F <1>:                       gprofng archive.     (line  69)
+* Options, -F:                           Man page for gprofng collect app.
+                                                              (line 127)
+* Options, -F <1>:                       Man page for gprofng archive.
+                                                              (line  65)
 * Options, -fsingle:                     The Call Tree.       (line  59)
 * Options, -fsingle <1>:                 Information on Load Objects.
                                                               (line  10)
 * Options, -fsingle <2>:                 Information on Load Objects.
                                                               (line  34)
-* Options, -fsingle <3>:                 gprofng display text.
-                                                              (line 119)
+* Options, -fsingle <3>:                 Man page for gprofng display text.
+                                                              (line 118)
 * Options, -fsummary:                    Information on Load Objects.
                                                               (line  10)
 * Options, -fsummary <1>:                Information on Load Objects.
                                                               (line  61)
-* Options, -fsummary <2>:                gprofng display text.
-                                                              (line 124)
+* Options, -fsummary <2>:                Man page for gprofng display text.
+                                                              (line 123)
 * Options, -functions:                   A First Profile.     (line  50)
-* Options, -functions <1>:               gprofng display text.
-                                                              (line 127)
-* Options, -functions <2>:               gprofng display src. (line  54)
+* Options, -functions <1>:               Man page for gprofng display text.
+                                                              (line 126)
+* Options, -functions <2>:               Man page for gprofng display src.
+                                                              (line  54)
 * Options, -GCEvents:                    Commands that List Experiment Details.
                                                               (line  36)
 * Options, -h:                           Getting Information on the Counters Supported.
                                                               (line   7)
 * Options, -h <1>:                       Examples Using Hardware Event Counters.
                                                               (line  21)
-* Options, -h <2>:                       gprofng collect app. (line  49)
-* Options, -H:                           gprofng collect app. (line 188)
+* Options, -h <2>:                       Man page for gprofng collect app.
+                                                              (line  53)
+* Options, -H:                           Man page for gprofng collect app.
+                                                              (line 193)
 * Options, -header:                      More Information on the Experiment.
                                                               (line  10)
 * Options, -header <1>:                  Control the Sampling Frequency.
                                                               (line  64)
-* Options, -header <2>:                  gprofng display text.
-                                                              (line 131)
-* Options, -hp:                          gprofng display html.
-                                                              (line  55)
-* Options, -i:                           gprofng collect app. (line 193)
+* Options, -header <2>:                  Man page for gprofng collect app.
+                                                              (line  75)
+* Options, -header <3>:                  Man page for gprofng display text.
+                                                              (line 130)
+* Options, -i:                           Man page for gprofng collect app.
+                                                              (line 198)
 * Options, -j:                           Java Profiling.      (line   6)
 * Options, -J:                           Java Profiling.      (line  29)
-* Options, -j <1>:                       gprofng collect app. (line  73)
-* Options, -J <1>:                       gprofng collect app. (line  93)
-* Options, -l:                           gprofng collect app. (line 167)
+* Options, -j <1>:                       Man page for gprofng collect app.
+                                                              (line  78)
+* Options, -J <1>:                       Man page for gprofng collect app.
+                                                              (line  98)
+* Options, -l:                           Man page for gprofng collect app.
+                                                              (line 172)
 * Options, -limit:                       Control the Number of Lines in the Output.
                                                               (line   6)
 * Options, -limit <1>:                   Examples Using Hardware Event Counters.
-                                                              (line 320)
-* Options, -limit <2>:                   gprofng display text.
-                                                              (line 135)
+                                                              (line 321)
+* Options, -limit <2>:                   Man page for gprofng display text.
+                                                              (line 134)
 * Options, -lines:                       The Source Code View.
                                                               (line  87)
-* Options, -lines <1>:                   gprofng display text.
-                                                              (line 138)
+* Options, -lines <1>:                   Man page for gprofng display text.
+                                                              (line 137)
 * Options, -lwp_list:                    Commands that List Experiment Details.
                                                               (line  42)
 * Options, -lwp_select:                  Predefined Filters.  (line  16)
-* Options, -m:                           gprofng archive.     (line  56)
+* Options, -m:                           Man page for gprofng archive.
+                                                              (line  71)
+* Options, -m <1>:                       Man page for gprofng archive.
+                                                              (line 187)
 * Options, -metrics:                     Display and Define the Metrics.
                                                               (line  11)
 * Options, -metrics <1>:                 Display and Define the Metrics.
                                                               (line  40)
 * Options, -metrics <2>:                 Metric Definitions.  (line   9)
-* Options, -metrics <3>:                 gprofng display text.
-                                                              (line 147)
+* Options, -metrics <3>:                 Man page for gprofng display text.
+                                                              (line 146)
 * Options, -metric_list:                 Display and Define the Metrics.
                                                               (line  10)
 * Options, -metric_list <1>:             Display and Define the Metrics.
                                                               (line  19)
 * Options, -metric_list <2>:             Examples Using Hardware Event Counters.
-                                                              (line 261)
+                                                              (line 262)
 * Options, -metric_list <3>:             Examples Using Hardware Event Counters.
-                                                              (line 316)
-* Options, -metric_list <4>:             gprofng display text.
-                                                              (line 142)
-* Options, -n:                           gprofng collect app. (line 116)
-* Options, -n <1>:                       gprofng archive.     (line  52)
-* Options, -name:                        gprofng display text.
-                                                              (line 157)
+                                                              (line 317)
+* Options, -metric_list <4>:             Man page for gprofng display text.
+                                                              (line 141)
+* Options, -n:                           Man page for gprofng collect app.
+                                                              (line 121)
+* Options, -n <1>:                       Man page for gprofng archive.
+                                                              (line  77)
+* Options, -name:                        Man page for gprofng display text.
+                                                              (line 165)
 * Options, -o:                           Name the Experiment Directory.
                                                               (line  15)
 * Options, -O:                           Name the Experiment Directory.
                                                               (line  19)
 * Options, -O <1>:                       A More Elaborate Example.
                                                               (line  15)
-* Options, -o <1>:                       gprofng collect app. (line  54)
-* Options, -O <2>:                       gprofng collect app. (line  60)
-* Options, -o <2>:                       gprofng display html.
+* Options, -o <1>:                       Man page for gprofng collect app.
+                                                              (line  58)
+* Options, -O <2>:                       Man page for gprofng collect app.
                                                               (line  65)
-* Options, -O <3>:                       gprofng display html.
+* Options, -o <2>:                       Man page for gprofng display html.
+                                                              (line  62)
+* Options, -O <3>:                       Man page for gprofng display html.
                                                               (line  73)
 * Options, -objects:                     The Call Tree.       (line  59)
 * Options, -objects <1>:                 Information on Load Objects.
                                                               (line  10)
-* Options, -outfile:                     gprofng display src. (line  69)
+* Options, -outfile:                     Man page for gprofng display src.
+                                                              (line  69)
 * Options, -overview:                    More Information on the Experiment.
                                                               (line  55)
-* Options, -overview <1>:                gprofng display text.
-                                                              (line 170)
+* Options, -overview <1>:                Man page for gprofng display text.
+                                                              (line 182)
 * Options, -p:                           The Call Tree.       (line  85)
 * Options, -p <1>:                       Control the Sampling Frequency.
                                                               (line  19)
-* Options, -p <2>:                       gprofng collect app. (line  42)
+* Options, -p <2>:                       Man page for gprofng collect app.
+                                                              (line  45)
 * Options, -pathmap:                     Commands to Set and Change Search Paths.
                                                               (line  13)
 * Options, -pcs:                         The Disassembly View.
                                                               (line  86)
-* Options, -pcs <1>:                     gprofng display text.
-                                                              (line 174)
+* Options, -pcs <1>:                     Man page for gprofng display text.
+                                                              (line 186)
 * Options, -printmode:                   Commands that Affect Listings and Output.
                                                               (line  16)
 * Options, -processes:                   Commands that List Experiment Details.
                                                               (line  46)
-* Options, -q:                           gprofng display html.
-                                                              (line  78)
-* Options, -q <1>:                       gprofng archive.     (line  62)
-* Options, -S:                           gprofng collect app. (line 146)
-* Options, -s:                           gprofng collect app. (line 180)
+* Options, -q:                           Man page for gprofng display html.
+                                                              (line  82)
+* Options, -q <1>:                       Man page for gprofng archive.
+                                                              (line  81)
+* Options, -r:                           Man page for gprofng archive.
+                                                              (line  88)
+* Options, -r <1>:                       Man page for gprofng archive.
+                                                              (line 201)
+* Options, -r <2>:                       Man page for gprofng archive.
+                                                              (line 203)
+* Options, -S:                           Man page for gprofng collect app.
+                                                              (line 151)
+* Options, -s:                           Man page for gprofng collect app.
+                                                              (line 185)
+* Options, -s <1>:                       Man page for gprofng archive.
+                                                              (line  97)
+* Options, -s <2>:                       Man page for gprofng archive.
+                                                              (line 151)
+* Options, -s <3>:                       Man page for gprofng archive.
+                                                              (line 187)
 * Options, -sample-select:               Predefined Filters.  (line  20)
 * Options, -samples:                     Commands that List Experiment Details.
                                                               (line  55)
 * Options, -sample_list:                 Commands that List Experiment Details.
                                                               (line  63)
 * Options, -script:                      Scripting.           (line  10)
-* Options, -script <1>:                  gprofng display text.
-                                                              (line  65)
+* Options, -script <1>:                  Man page for gprofng display text.
+                                                              (line  64)
 * Options, -seconds:                     Commands that List Experiment Details.
                                                               (line  68)
 * Options, -setpath:                     Commands to Set and Change Search Paths.
@@ -5027,16 +5337,18 @@ Index
                                                               (line   6)
 * Options, -sort <1>:                    Commands Specific to Multithreading.
                                                               (line 198)
-* Options, -sort <2>:                    gprofng display text.
-                                                              (line 178)
+* Options, -sort <2>:                    Man page for gprofng display text.
+                                                              (line 190)
 * Options, -source:                      The Source Code View.
                                                               (line  13)
-* Options, -source <1>:                  gprofng display text.
-                                                              (line 190)
-* Options, -source <2>:                  gprofng display src. (line  57)
+* Options, -source <1>:                  Man page for gprofng display text.
+                                                              (line 202)
+* Options, -source <2>:                  Man page for gprofng display src.
+                                                              (line  57)
 * Options, -sthresh:                     Commands that Affect Listings and Output.
                                                               (line  30)
-* Options, -t:                           gprofng collect app. (line 102)
+* Options, -t:                           Man page for gprofng collect app.
+                                                              (line 107)
 * Options, -threads:                     Commands Specific to Multithreading.
                                                               (line  33)
 * Options, -threads <1>:                 Commands that List Experiment Details.
@@ -5048,13 +5360,14 @@ Index
 * Options, -thread_select:               Commands Specific to Multithreading.
                                                               (line  60)
 * Options, -thread_select <1>:           Predefined Filters.  (line  22)
+* Options, -v:                           Man page for gprofng collect app.
+                                                              (line  41)
 * Options, -viewmode:                    Java Profiling.      (line  37)
 * Options, -viewmode <1>:                The Viewmode.        (line   6)
-* Options, -viewmode <2>:                gprofng display text.
-                                                              (line 194)
-* Options, -w:                           gprofng display html.
-                                                              (line  86)
-* Options, -y:                           gprofng collect app. (line 153)
+* Options, -viewmode <2>:                Man page for gprofng display text.
+                                                              (line 206)
+* Options, -y:                           Man page for gprofng collect app.
+                                                              (line 158)
 * PC:                                    The Program Counter. (line   6)
 * PC <1>:                                Load Objects and Functions.
                                                               (line  32)
@@ -5077,12 +5390,12 @@ Index
 * Selection list:                        The Selection List.  (line   6)
 * Sort, Reset to default:                Sorting the Performance Data.
                                                               (line  18)
-* Sort, Reset to default <1>:            gprofng display text.
-                                                              (line 185)
+* Sort, Reset to default <1>:            Man page for gprofng display text.
+                                                              (line 197)
 * Sort, Reverse order:                   Sorting the Performance Data.
                                                               (line  15)
-* Sort, Reverse order <1>:               gprofng display text.
-                                                              (line 180)
+* Sort, Reverse order <1>:               Man page for gprofng display text.
+                                                              (line 192)
 * Source level metrics:                  The Source Code View.
                                                               (line   9)
 * texi2dvi:                              Other Document Formats.
@@ -5096,72 +5409,72 @@ Index
 
 
 Tag Table:
-Node: Top753
-Node: Introduction4135
-Node: Overview5412
-Node: Main Features6053
-Node: Sampling versus Tracing7895
-Node: Steps Needed to Create a Profile10291
-Node: A Mini Tutorial12475
-Node: Getting Started13215
-Node: The Example Program14865
-Node: A First Profile16183
-Node: The Source Code View21566
-Node: The Disassembly View27385
-Node: Display and Define the Metrics33063
-Node: Customization of the Output34979
-Node: Name the Experiment Directory37115
-Node: Control the Number of Lines in the Output38240
-Node: Sorting the Performance Data39006
-Node: Scripting39966
-Node: A More Elaborate Example40899
-Node: The Call Tree44028
-Node: More Information on the Experiment48075
-Node: Control the Sampling Frequency51488
-Node: Information on Load Objects54113
-Node: Support for Multithreading57989
-Node: Creating a Multithreading Experiment58632
-Node: Commands Specific to Multithreading59982
-Node: View Multiple Experiments70091
-Node: Aggregation of Experiments70861
-Node: Comparison of Experiments73677
-Node: Profile Hardware Event Counters78151
-Node: Getting Information on the Counters Supported78856
-Node: Examples Using Hardware Event Counters86255
-Node: Java Profiling103922
-Node: The gprofng Tools106291
-Node: Tools Overview106778
-Node: The gprofng.rc file with default settings107979
-Node: Filters111792
-Node: Supported Environment Variables114444
-Node: Performance Data Collection114770
-Node: The gprofng collect app command115409
-Node: View the Performance Information115964
-Node: The gprofng display text Tool116367
-Node: The gprofng display text Commands117359
-Node: Commands that List Experiment Details117895
-Node: Commands that Affect Listings and Output121452
-Node: Predefined Filters123131
-Node: Commands to Set and Change Search Paths124016
-Node: Terminology126199
-Node: The Program Counter127237
-Node: Inclusive and Exclusive Metrics127729
-Node: Metric Definitions129182
-Node: The Viewmode130828
-Node: The Selection List131967
-Node: Load Objects and Functions134091
-Node: The Concept of a CPU in gprofng136105
-Node: Hardware Event Counters Explained136968
-Node: apath140760
-Node: Other Document Formats141295
-Node: The gprofng Man Pages144156
-Node: Man page for gprofng144557
-Node: gprofng collect app149331
-Node: gprofng display text157726
-Node: gprofng display html166472
-Node: gprofng display src170192
-Node: gprofng archive174042
-Node: Index178041
+Node: Top757
+Node: Introduction4365
+Node: Overview5642
+Node: Main Features6283
+Node: Sampling versus Tracing8125
+Node: Steps Needed to Create a Profile10521
+Node: A Mini Tutorial12705
+Node: Getting Started13445
+Node: The Example Program15095
+Node: A First Profile16413
+Node: The Source Code View21796
+Node: The Disassembly View27615
+Node: Display and Define the Metrics33293
+Node: Customization of the Output35209
+Node: Name the Experiment Directory37345
+Node: Control the Number of Lines in the Output38470
+Node: Sorting the Performance Data39236
+Node: Scripting40196
+Node: A More Elaborate Example41129
+Node: The Call Tree44258
+Node: More Information on the Experiment48305
+Node: Control the Sampling Frequency51718
+Node: Information on Load Objects54343
+Node: Support for Multithreading58219
+Node: Creating a Multithreading Experiment58862
+Node: Commands Specific to Multithreading60212
+Node: View Multiple Experiments70321
+Node: Aggregation of Experiments71091
+Node: Comparison of Experiments73907
+Node: Profile Hardware Event Counters78381
+Node: Getting Information on the Counters Supported79086
+Node: Examples Using Hardware Event Counters86485
+Node: Java Profiling104190
+Node: The gprofng Tools106559
+Node: Tools Overview107046
+Node: The gprofng.rc file with default settings109117
+Node: Filters113049
+Node: Supported Environment Variables115701
+Node: Performance Data Collection116027
+Node: The gprofng collect app Tool116663
+Node: View the Performance Information117209
+Node: The gprofng display text Tool117612
+Node: The gprofng display text Commands118604
+Node: Commands that List Experiment Details119153
+Node: Commands that Affect Listings and Output122710
+Node: Predefined Filters124389
+Node: Commands to Set and Change Search Paths125274
+Node: Terminology127457
+Node: The Program Counter128495
+Node: Inclusive and Exclusive Metrics128987
+Node: Metric Definitions130440
+Node: The Viewmode132086
+Node: The Selection List133225
+Node: Load Objects and Functions135349
+Node: The Concept of a CPU in gprofng137363
+Node: Hardware Event Counters Explained138226
+Node: apath142018
+Node: Other Document Formats142553
+Node: The gprofng Man Pages145414
+Node: Man page for gprofng145880
+Node: Man page for gprofng collect app151550
+Node: Man page for gprofng display text160101
+Node: Man page for gprofng display html169493
+Node: Man page for gprofng display src175557
+Node: Man page for gprofng archive179460
+Node: Index189024
 
 End Tag Table
 
