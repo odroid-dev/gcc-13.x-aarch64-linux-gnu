@@ -1,8 +1,8 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.38.
+This is ‘The GNU C Library Reference Manual’, for version 2.39.
 
-   Copyright © 1993–2023 Free Software Foundation, Inc.
+   Copyright © 1993–2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -774,8 +774,6 @@ START-INFO-DIR-ENTRY
 * creall: (libc)Operations on Complex.
 * creat64: (libc)Opening and Closing Files.
 * creat: (libc)Opening and Closing Files.
-* crypt: (libc)Passphrase Storage.
-* crypt_r: (libc)Passphrase Storage.
 * csin: (libc)Trig Functions.
 * csinf: (libc)Trig Functions.
 * csinfN: (libc)Trig Functions.
@@ -1602,6 +1600,7 @@ START-INFO-DIR-ENTRY
 * pause: (libc)Using Pause.
 * pclose: (libc)Pipe to a Subprocess.
 * perror: (libc)Error Messages.
+* pidfd_getpid: (libc)Querying a Process.
 * pipe: (libc)Creating a Pipe.
 * pkey_alloc: (libc)Memory Protection.
 * pkey_free: (libc)Memory Protection.
@@ -1884,6 +1883,76 @@ START-INFO-DIR-ENTRY
 * ssignal: (libc)Basic Signal Handling.
 * stat64: (libc)Reading Attributes.
 * stat: (libc)Reading Attributes.
+* stdc_bit_ceil_uc: (libc)Bit Manipulation.
+* stdc_bit_ceil_ui: (libc)Bit Manipulation.
+* stdc_bit_ceil_ul: (libc)Bit Manipulation.
+* stdc_bit_ceil_ull: (libc)Bit Manipulation.
+* stdc_bit_ceil_us: (libc)Bit Manipulation.
+* stdc_bit_floor_uc: (libc)Bit Manipulation.
+* stdc_bit_floor_ui: (libc)Bit Manipulation.
+* stdc_bit_floor_ul: (libc)Bit Manipulation.
+* stdc_bit_floor_ull: (libc)Bit Manipulation.
+* stdc_bit_floor_us: (libc)Bit Manipulation.
+* stdc_bit_width_uc: (libc)Bit Manipulation.
+* stdc_bit_width_ui: (libc)Bit Manipulation.
+* stdc_bit_width_ul: (libc)Bit Manipulation.
+* stdc_bit_width_ull: (libc)Bit Manipulation.
+* stdc_bit_width_us: (libc)Bit Manipulation.
+* stdc_count_ones_uc: (libc)Bit Manipulation.
+* stdc_count_ones_ui: (libc)Bit Manipulation.
+* stdc_count_ones_ul: (libc)Bit Manipulation.
+* stdc_count_ones_ull: (libc)Bit Manipulation.
+* stdc_count_ones_us: (libc)Bit Manipulation.
+* stdc_count_zeros_uc: (libc)Bit Manipulation.
+* stdc_count_zeros_ui: (libc)Bit Manipulation.
+* stdc_count_zeros_ul: (libc)Bit Manipulation.
+* stdc_count_zeros_ull: (libc)Bit Manipulation.
+* stdc_count_zeros_us: (libc)Bit Manipulation.
+* stdc_first_leading_one_uc: (libc)Bit Manipulation.
+* stdc_first_leading_one_ui: (libc)Bit Manipulation.
+* stdc_first_leading_one_ul: (libc)Bit Manipulation.
+* stdc_first_leading_one_ull: (libc)Bit Manipulation.
+* stdc_first_leading_one_us: (libc)Bit Manipulation.
+* stdc_first_leading_zero_uc: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ui: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ul: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ull: (libc)Bit Manipulation.
+* stdc_first_leading_zero_us: (libc)Bit Manipulation.
+* stdc_first_trailing_one_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_one_us: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_us: (libc)Bit Manipulation.
+* stdc_has_single_bit_uc: (libc)Bit Manipulation.
+* stdc_has_single_bit_ui: (libc)Bit Manipulation.
+* stdc_has_single_bit_ul: (libc)Bit Manipulation.
+* stdc_has_single_bit_ull: (libc)Bit Manipulation.
+* stdc_has_single_bit_us: (libc)Bit Manipulation.
+* stdc_leading_ones_uc: (libc)Bit Manipulation.
+* stdc_leading_ones_ui: (libc)Bit Manipulation.
+* stdc_leading_ones_ul: (libc)Bit Manipulation.
+* stdc_leading_ones_ull: (libc)Bit Manipulation.
+* stdc_leading_ones_us: (libc)Bit Manipulation.
+* stdc_leading_zeros_uc: (libc)Bit Manipulation.
+* stdc_leading_zeros_ui: (libc)Bit Manipulation.
+* stdc_leading_zeros_ul: (libc)Bit Manipulation.
+* stdc_leading_zeros_ull: (libc)Bit Manipulation.
+* stdc_leading_zeros_us: (libc)Bit Manipulation.
+* stdc_trailing_ones_uc: (libc)Bit Manipulation.
+* stdc_trailing_ones_ui: (libc)Bit Manipulation.
+* stdc_trailing_ones_ul: (libc)Bit Manipulation.
+* stdc_trailing_ones_ull: (libc)Bit Manipulation.
+* stdc_trailing_ones_us: (libc)Bit Manipulation.
+* stdc_trailing_zeros_uc: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ui: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ul: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ull: (libc)Bit Manipulation.
+* stdc_trailing_zeros_us: (libc)Bit Manipulation.
 * stime: (libc)Setting and Adjusting the Time.
 * stpcpy: (libc)Copying Strings and Arrays.
 * stpncpy: (libc)Truncating Strings.
@@ -2172,6 +2241,42 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Allocating Cleared Space,  Next: Aligned Memory Blocks,  Prev: Changing Block Size,  Up: Unconstrained Allocation
+
+3.2.3.5 Allocating Cleared Space
+................................
+
+The function ‘calloc’ allocates memory and clears it to zero.  It is
+declared in ‘stdlib.h’.
+
+ -- Function: void * calloc (size_t COUNT, size_t ELTSIZE)
+
+     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
+     *Note POSIX Safety Concepts::.
+
+     This function allocates a block long enough to contain a vector of
+     COUNT elements, each of size ELTSIZE.  Its contents are cleared to
+     zero before ‘calloc’ returns.
+
+   You could define ‘calloc’ as follows:
+
+     void *
+     calloc (size_t count, size_t eltsize)
+     {
+       void *value = reallocarray (0, count, eltsize);
+       if (value != 0)
+         memset (value, 0, count * eltsize);
+       return value;
+     }
+
+   But in general, it is not guaranteed that ‘calloc’ calls
+‘reallocarray’ and ‘memset’ internally.  For example, if the ‘calloc’
+implementation knows for other reasons that the new memory block is
+zero, it need not zero out the block again with ‘memset’.  Also, if an
+application provides its own ‘reallocarray’ outside the C library,
+‘calloc’ might not use that redefinition.  *Note Replacing malloc::.
 
 
 File: libc.info,  Node: Aligned Memory Blocks,  Next: Malloc Tunable Parameters,  Prev: Allocating Cleared Space,  Up: Unconstrained Allocation
@@ -2502,9 +2607,7 @@ process.
 it could possibly be exploited since diverging from the normal programs
 behavior it now writes something to the standard error descriptor.
 Therefore the use of ‘MALLOC_CHECK_’ is disabled by default for SUID and
-SGID binaries.  It can be enabled again by the system administrator by
-adding a file ‘/etc/suid-debug’ (the content is not important it could
-be empty).
+SGID binaries.
 
    So, what’s the difference between using ‘MALLOC_CHECK_’ and linking
 with ‘-lmcheck’?  ‘MALLOC_CHECK_’ is orthogonal with respect to
@@ -2608,7 +2711,7 @@ Here is a summary of the functions that work with ‘malloc’:
      Allocate a block of SIZE bytes, starting on a page boundary.  *Note
      Aligned Memory Blocks::.
 
-‘void *aligned_alloc (size_t SIZE, size_t ALIGNMENT)’
+‘void *aligned_alloc (size_t ALIGNMENT, size_t SIZE)’
      Allocate a block of SIZE bytes, starting on an address that is a
      multiple of ALIGNMENT.  *Note Aligned Memory Blocks::.
 
@@ -2616,7 +2719,7 @@ Here is a summary of the functions that work with ‘malloc’:
      Allocate a block of SIZE bytes, starting on an address that is a
      multiple of ALIGNMENT.  *Note Aligned Memory Blocks::.
 
-‘void *memalign (size_t SIZE, size_t BOUNDARY)’
+‘void *memalign (size_t BOUNDARY, size_t SIZE)’
      Allocate a block of SIZE bytes, starting on an address that is a
      multiple of BOUNDARY.  *Note Aligned Memory Blocks::.
 
@@ -2899,6 +3002,13 @@ dynamically linked programs, this happens through ELF symbol
 interposition, either using shared object dependencies or ‘LD_PRELOAD’.
 For static linking, the ‘malloc’ replacement library must be linked in
 before linking against ‘libc.a’ (explicitly or implicitly).
+
+   Care must be taken not to use functionality from the GNU C Library
+that uses ‘malloc’ internally.  For example, the ‘fopen’, ‘opendir’,
+‘dlopen’, and ‘pthread_setspecific’ functions currently use the ‘malloc’
+subsystem internally.  If the replacement ‘malloc’ or its dependencies
+use thread-local storage (TLS), it must use the initial-exec TLS model,
+and not one of the dynamic TLS variants.
 
    *Note:* Failure to provide a complete set of replacement functions
 (that is, all the functions used by the application, the GNU C Library,
@@ -5452,7 +5562,7 @@ beginning with ‘mem’ and ‘wmem’ (such as ‘memcpy’ and ‘wmemcpy’)
 invariably take an argument which specifies the size (in bytes and wide
 characters respectively) of the block of memory to operate on.  The
 array arguments and return values for these functions have type ‘void *’
-or ‘wchar_t’.  As a matter of style, the elements of the arrays used
+or ‘wchar_t *’.  As a matter of style, the elements of the arrays used
 with the ‘mem’ functions are referred to as “bytes”.  You can pass any
 kind of pointer to these functions, and the ‘sizeof’ operator is useful
 in computing the value for the size argument.  Parameters to the ‘wmem’
@@ -6343,7 +6453,7 @@ have truncation-related bugs and performance issues.
 
      As a companion to ‘strncpy’, ‘strncat’ was designed for
      now-rarely-used arrays consisting of non-null bytes followed by
-     zero or more null bytes.  As noted below, this function is
+     zero or more null bytes.  However, As noted below, this function is
      generally a poor choice for processing strings.  Also, this
      function has significant performance issues.  *Note Concatenating
      Strings::.
@@ -7416,289 +7526,4 @@ optimized in a special way so that ‘strchr’ actually is faster.
      New code should always use ‘strrchr’ since this name is defined in
      ISO C while ‘rindex’ is a BSD invention which never was available
      on System V derived systems.
-
-
-File: libc.info,  Node: Finding Tokens in a String,  Next: Erasing Sensitive Data,  Prev: Search Functions,  Up: String and Array Utilities
-
-5.10 Finding Tokens in a String
-===============================
-
-It’s fairly common for programs to have a need to do some simple kinds
-of lexical analysis and parsing, such as splitting a command string up
-into tokens.  You can do this with the ‘strtok’ function, declared in
-the header file ‘string.h’.
-
- -- Function: char * strtok (char *restrict NEWSTRING, const char
-          *restrict DELIMITERS)
-
-     Preliminary: | MT-Unsafe race:strtok | AS-Unsafe | AC-Safe | *Note
-     POSIX Safety Concepts::.
-
-     A string can be split into tokens by making a series of calls to
-     the function ‘strtok’.
-
-     The string to be split up is passed as the NEWSTRING argument on
-     the first call only.  The ‘strtok’ function uses this to set up
-     some internal state information.  Subsequent calls to get
-     additional tokens from the same string are indicated by passing a
-     null pointer as the NEWSTRING argument.  Calling ‘strtok’ with
-     another non-null NEWSTRING argument reinitializes the state
-     information.  It is guaranteed that no other library function ever
-     calls ‘strtok’ behind your back (which would mess up this internal
-     state information).
-
-     The DELIMITERS argument is a string that specifies a set of
-     delimiters that may surround the token being extracted.  All the
-     initial bytes that are members of this set are discarded.  The
-     first byte that is _not_ a member of this set of delimiters marks
-     the beginning of the next token.  The end of the token is found by
-     looking for the next byte that is a member of the delimiter set.
-     This byte in the original string NEWSTRING is overwritten by a null
-     byte, and the pointer to the beginning of the token in NEWSTRING is
-     returned.
-
-     On the next call to ‘strtok’, the searching begins at the next byte
-     beyond the one that marked the end of the previous token.  Note
-     that the set of delimiters DELIMITERS do not have to be the same on
-     every call in a series of calls to ‘strtok’.
-
-     If the end of the string NEWSTRING is reached, or if the remainder
-     of string consists only of delimiter bytes, ‘strtok’ returns a null
-     pointer.
-
-     In a multibyte string, characters consisting of more than one byte
-     are not treated as single entities.  Each byte is treated
-     separately.  The function is not locale-dependent.
-
- -- Function: wchar_t * wcstok (wchar_t *NEWSTRING, const wchar_t
-          *DELIMITERS, wchar_t **SAVE_PTR)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     A string can be split into tokens by making a series of calls to
-     the function ‘wcstok’.
-
-     The string to be split up is passed as the NEWSTRING argument on
-     the first call only.  The ‘wcstok’ function uses this to set up
-     some internal state information.  Subsequent calls to get
-     additional tokens from the same wide string are indicated by
-     passing a null pointer as the NEWSTRING argument, which causes the
-     pointer previously stored in SAVE_PTR to be used instead.
-
-     The DELIMITERS argument is a wide string that specifies a set of
-     delimiters that may surround the token being extracted.  All the
-     initial wide characters that are members of this set are discarded.
-     The first wide character that is _not_ a member of this set of
-     delimiters marks the beginning of the next token.  The end of the
-     token is found by looking for the next wide character that is a
-     member of the delimiter set.  This wide character in the original
-     wide string NEWSTRING is overwritten by a null wide character, the
-     pointer past the overwritten wide character is saved in SAVE_PTR,
-     and the pointer to the beginning of the token in NEWSTRING is
-     returned.
-
-     On the next call to ‘wcstok’, the searching begins at the next wide
-     character beyond the one that marked the end of the previous token.
-     Note that the set of delimiters DELIMITERS do not have to be the
-     same on every call in a series of calls to ‘wcstok’.
-
-     If the end of the wide string NEWSTRING is reached, or if the
-     remainder of string consists only of delimiter wide characters,
-     ‘wcstok’ returns a null pointer.
-
-   *Warning:* Since ‘strtok’ and ‘wcstok’ alter the string they is
-parsing, you should always copy the string to a temporary buffer before
-parsing it with ‘strtok’/‘wcstok’ (*note Copying Strings and Arrays::).
-If you allow ‘strtok’ or ‘wcstok’ to modify a string that came from
-another part of your program, you are asking for trouble; that string
-might be used for other purposes after ‘strtok’ or ‘wcstok’ has modified
-it, and it would not have the expected value.
-
-   The string that you are operating on might even be a constant.  Then
-when ‘strtok’ or ‘wcstok’ tries to modify it, your program will get a
-fatal signal for writing in read-only memory.  *Note Program Error
-Signals::.  Even if the operation of ‘strtok’ or ‘wcstok’ would not
-require a modification of the string (e.g., if there is exactly one
-token) the string can (and in the GNU C Library case will) be modified.
-
-   This is a special case of a general principle: if a part of a program
-does not have as its purpose the modification of a certain data
-structure, then it is error-prone to modify the data structure
-temporarily.
-
-   The function ‘strtok’ is not reentrant, whereas ‘wcstok’ is.  *Note
-Nonreentrancy::, for a discussion of where and why reentrancy is
-important.
-
-   Here is a simple example showing the use of ‘strtok’.
-
-     #include <string.h>
-     #include <stddef.h>
-
-     ...
-
-     const char string[] = "words separated by spaces -- and, punctuation!";
-     const char delimiters[] = " .,;:!-";
-     char *token, *cp;
-
-     ...
-
-     cp = strdupa (string);                /* Make writable copy.  */
-     token = strtok (cp, delimiters);      /* token => "words" */
-     token = strtok (NULL, delimiters);    /* token => "separated" */
-     token = strtok (NULL, delimiters);    /* token => "by" */
-     token = strtok (NULL, delimiters);    /* token => "spaces" */
-     token = strtok (NULL, delimiters);    /* token => "and" */
-     token = strtok (NULL, delimiters);    /* token => "punctuation" */
-     token = strtok (NULL, delimiters);    /* token => NULL */
-
-   The GNU C Library contains two more functions for tokenizing a string
-which overcome the limitation of non-reentrancy.  They are not available
-available for wide strings.
-
- -- Function: char * strtok_r (char *NEWSTRING, const char *DELIMITERS,
-          char **SAVE_PTR)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     Just like ‘strtok’, this function splits the string into several
-     tokens which can be accessed by successive calls to ‘strtok_r’.
-     The difference is that, as in ‘wcstok’, the information about the
-     next token is stored in the space pointed to by the third argument,
-     SAVE_PTR, which is a pointer to a string pointer.  Calling
-     ‘strtok_r’ with a null pointer for NEWSTRING and leaving SAVE_PTR
-     between the calls unchanged does the job without hindering
-     reentrancy.
-
-     This function is defined in POSIX.1 and can be found on many
-     systems which support multi-threading.
-
- -- Function: char * strsep (char **STRING_PTR, const char *DELIMITER)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     This function has a similar functionality as ‘strtok_r’ with the
-     NEWSTRING argument replaced by the SAVE_PTR argument.  The
-     initialization of the moving pointer has to be done by the user.
-     Successive calls to ‘strsep’ move the pointer along the tokens
-     separated by DELIMITER, returning the address of the next token and
-     updating STRING_PTR to point to the beginning of the next token.
-
-     One difference between ‘strsep’ and ‘strtok_r’ is that if the input
-     string contains more than one byte from DELIMITER in a row ‘strsep’
-     returns an empty string for each pair of bytes from DELIMITER.
-     This means that a program normally should test for ‘strsep’
-     returning an empty string before processing it.
-
-     This function was introduced in 4.3BSD and therefore is widely
-     available.
-
-   Here is how the above example looks like when ‘strsep’ is used.
-
-     #include <string.h>
-     #include <stddef.h>
-
-     ...
-
-     const char string[] = "words separated by spaces -- and, punctuation!";
-     const char delimiters[] = " .,;:!-";
-     char *running;
-     char *token;
-
-     ...
-
-     running = strdupa (string);
-     token = strsep (&running, delimiters);    /* token => "words" */
-     token = strsep (&running, delimiters);    /* token => "separated" */
-     token = strsep (&running, delimiters);    /* token => "by" */
-     token = strsep (&running, delimiters);    /* token => "spaces" */
-     token = strsep (&running, delimiters);    /* token => "" */
-     token = strsep (&running, delimiters);    /* token => "" */
-     token = strsep (&running, delimiters);    /* token => "" */
-     token = strsep (&running, delimiters);    /* token => "and" */
-     token = strsep (&running, delimiters);    /* token => "" */
-     token = strsep (&running, delimiters);    /* token => "punctuation" */
-     token = strsep (&running, delimiters);    /* token => "" */
-     token = strsep (&running, delimiters);    /* token => NULL */
-
- -- Function: char * basename (const char *FILENAME)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     The GNU version of the ‘basename’ function returns the last
-     component of the path in FILENAME.  This function is the preferred
-     usage, since it does not modify the argument, FILENAME, and
-     respects trailing slashes.  The prototype for ‘basename’ can be
-     found in ‘string.h’.  Note, this function is overridden by the XPG
-     version, if ‘libgen.h’ is included.
-
-     Example of using GNU ‘basename’:
-
-          #include <string.h>
-
-          int
-          main (int argc, char *argv[])
-          {
-            char *prog = basename (argv[0]);
-
-            if (argc < 2)
-              {
-                fprintf (stderr, "Usage %s <arg>\n", prog);
-                exit (1);
-              }
-
-            ...
-          }
-
-     *Portability Note:* This function may produce different results on
-     different systems.
-
- -- Function: char * basename (char *PATH)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     This is the standard XPG defined ‘basename’.  It is similar in
-     spirit to the GNU version, but may modify the PATH by removing
-     trailing ’/’ bytes.  If the PATH is made up entirely of ’/’ bytes,
-     then "/" will be returned.  Also, if PATH is ‘NULL’ or an empty
-     string, then "."  is returned.  The prototype for the XPG version
-     can be found in ‘libgen.h’.
-
-     Example of using XPG ‘basename’:
-
-          #include <libgen.h>
-
-          int
-          main (int argc, char *argv[])
-          {
-            char *prog;
-            char *path = strdupa (argv[0]);
-
-            prog = basename (path);
-
-            if (argc < 2)
-              {
-                fprintf (stderr, "Usage %s <arg>\n", prog);
-                exit (1);
-              }
-
-            ...
-
-          }
-
- -- Function: char * dirname (char *PATH)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     The ‘dirname’ function is the compliment to the XPG version of
-     ‘basename’.  It returns the parent directory of the file specified
-     by PATH.  If PATH is ‘NULL’, an empty string, or contains no ’/’
-     bytes, then "."  is returned.  The prototype for this function can
-     be found in ‘libgen.h’.
 

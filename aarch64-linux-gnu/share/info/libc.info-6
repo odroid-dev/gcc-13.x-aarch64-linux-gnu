@@ -1,8 +1,8 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.38.
+This is ‘The GNU C Library Reference Manual’, for version 2.39.
 
-   Copyright © 1993–2023 Free Software Foundation, Inc.
+   Copyright © 1993–2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -774,8 +774,6 @@ START-INFO-DIR-ENTRY
 * creall: (libc)Operations on Complex.
 * creat64: (libc)Opening and Closing Files.
 * creat: (libc)Opening and Closing Files.
-* crypt: (libc)Passphrase Storage.
-* crypt_r: (libc)Passphrase Storage.
 * csin: (libc)Trig Functions.
 * csinf: (libc)Trig Functions.
 * csinfN: (libc)Trig Functions.
@@ -1602,6 +1600,7 @@ START-INFO-DIR-ENTRY
 * pause: (libc)Using Pause.
 * pclose: (libc)Pipe to a Subprocess.
 * perror: (libc)Error Messages.
+* pidfd_getpid: (libc)Querying a Process.
 * pipe: (libc)Creating a Pipe.
 * pkey_alloc: (libc)Memory Protection.
 * pkey_free: (libc)Memory Protection.
@@ -1884,6 +1883,76 @@ START-INFO-DIR-ENTRY
 * ssignal: (libc)Basic Signal Handling.
 * stat64: (libc)Reading Attributes.
 * stat: (libc)Reading Attributes.
+* stdc_bit_ceil_uc: (libc)Bit Manipulation.
+* stdc_bit_ceil_ui: (libc)Bit Manipulation.
+* stdc_bit_ceil_ul: (libc)Bit Manipulation.
+* stdc_bit_ceil_ull: (libc)Bit Manipulation.
+* stdc_bit_ceil_us: (libc)Bit Manipulation.
+* stdc_bit_floor_uc: (libc)Bit Manipulation.
+* stdc_bit_floor_ui: (libc)Bit Manipulation.
+* stdc_bit_floor_ul: (libc)Bit Manipulation.
+* stdc_bit_floor_ull: (libc)Bit Manipulation.
+* stdc_bit_floor_us: (libc)Bit Manipulation.
+* stdc_bit_width_uc: (libc)Bit Manipulation.
+* stdc_bit_width_ui: (libc)Bit Manipulation.
+* stdc_bit_width_ul: (libc)Bit Manipulation.
+* stdc_bit_width_ull: (libc)Bit Manipulation.
+* stdc_bit_width_us: (libc)Bit Manipulation.
+* stdc_count_ones_uc: (libc)Bit Manipulation.
+* stdc_count_ones_ui: (libc)Bit Manipulation.
+* stdc_count_ones_ul: (libc)Bit Manipulation.
+* stdc_count_ones_ull: (libc)Bit Manipulation.
+* stdc_count_ones_us: (libc)Bit Manipulation.
+* stdc_count_zeros_uc: (libc)Bit Manipulation.
+* stdc_count_zeros_ui: (libc)Bit Manipulation.
+* stdc_count_zeros_ul: (libc)Bit Manipulation.
+* stdc_count_zeros_ull: (libc)Bit Manipulation.
+* stdc_count_zeros_us: (libc)Bit Manipulation.
+* stdc_first_leading_one_uc: (libc)Bit Manipulation.
+* stdc_first_leading_one_ui: (libc)Bit Manipulation.
+* stdc_first_leading_one_ul: (libc)Bit Manipulation.
+* stdc_first_leading_one_ull: (libc)Bit Manipulation.
+* stdc_first_leading_one_us: (libc)Bit Manipulation.
+* stdc_first_leading_zero_uc: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ui: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ul: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ull: (libc)Bit Manipulation.
+* stdc_first_leading_zero_us: (libc)Bit Manipulation.
+* stdc_first_trailing_one_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_one_us: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_us: (libc)Bit Manipulation.
+* stdc_has_single_bit_uc: (libc)Bit Manipulation.
+* stdc_has_single_bit_ui: (libc)Bit Manipulation.
+* stdc_has_single_bit_ul: (libc)Bit Manipulation.
+* stdc_has_single_bit_ull: (libc)Bit Manipulation.
+* stdc_has_single_bit_us: (libc)Bit Manipulation.
+* stdc_leading_ones_uc: (libc)Bit Manipulation.
+* stdc_leading_ones_ui: (libc)Bit Manipulation.
+* stdc_leading_ones_ul: (libc)Bit Manipulation.
+* stdc_leading_ones_ull: (libc)Bit Manipulation.
+* stdc_leading_ones_us: (libc)Bit Manipulation.
+* stdc_leading_zeros_uc: (libc)Bit Manipulation.
+* stdc_leading_zeros_ui: (libc)Bit Manipulation.
+* stdc_leading_zeros_ul: (libc)Bit Manipulation.
+* stdc_leading_zeros_ull: (libc)Bit Manipulation.
+* stdc_leading_zeros_us: (libc)Bit Manipulation.
+* stdc_trailing_ones_uc: (libc)Bit Manipulation.
+* stdc_trailing_ones_ui: (libc)Bit Manipulation.
+* stdc_trailing_ones_ul: (libc)Bit Manipulation.
+* stdc_trailing_ones_ull: (libc)Bit Manipulation.
+* stdc_trailing_ones_us: (libc)Bit Manipulation.
+* stdc_trailing_zeros_uc: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ui: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ul: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ull: (libc)Bit Manipulation.
+* stdc_trailing_zeros_us: (libc)Bit Manipulation.
 * stime: (libc)Setting and Adjusting the Time.
 * stpcpy: (libc)Copying Strings and Arrays.
 * stpncpy: (libc)Truncating Strings.
@@ -2172,6 +2241,451 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Adding Severity Classes,  Next: Example,  Prev: Printing Formatted Messages,  Up: Formatted Messages
+
+12.22.2 Adding Severity Classes
+-------------------------------
+
+There is another possibility to introduce severity classes besides using
+the environment variable ‘SEV_LEVEL’.  This simplifies the task of
+introducing new classes in a running program.  One could use the
+‘setenv’ or ‘putenv’ function to set the environment variable, but this
+is toilsome.
+
+ -- Function: int addseverity (int SEVERITY, const char *STRING)
+     Preliminary: | MT-Safe | AS-Unsafe heap lock | AC-Unsafe lock mem |
+     *Note POSIX Safety Concepts::.
+
+     This function allows the introduction of new severity classes which
+     can be addressed by the SEVERITY parameter of the ‘fmtmsg’
+     function.  The SEVERITY parameter of ‘addseverity’ must match the
+     value for the parameter with the same name of ‘fmtmsg’, and STRING
+     is the string printed in the actual messages instead of the numeric
+     value.
+
+     If STRING is ‘NULL’ the severity class with the numeric value
+     according to SEVERITY is removed.
+
+     It is not possible to overwrite or remove one of the default
+     severity classes.  All calls to ‘addseverity’ with SEVERITY set to
+     one of the values for the default classes will fail.
+
+     The return value is ‘MM_OK’ if the task was successfully performed.
+     If the return value is ‘MM_NOTOK’ something went wrong.  This could
+     mean that no more memory is available or a class is not available
+     when it has to be removed.
+
+     This function is not specified in the X/Open Portability Guide
+     although the ‘fmtsmg’ function is.  It is available on System V
+     systems.
+
+
+File: libc.info,  Node: Example,  Prev: Adding Severity Classes,  Up: Formatted Messages
+
+12.22.3 How to use ‘fmtmsg’ and ‘addseverity’
+---------------------------------------------
+
+Here is a simple example program to illustrate the use of both functions
+described in this section.
+
+
+     #include <fmtmsg.h>
+
+     int
+     main (void)
+     {
+       addseverity (5, "NOTE2");
+       fmtmsg (MM_PRINT, "only1field", MM_INFO, "text2", "action2", "tag2");
+       fmtmsg (MM_PRINT, "UX:cat", 5, "invalid syntax", "refer to manual",
+               "UX:cat:001");
+       fmtmsg (MM_PRINT, "label:foo", 6, "text", "action", "tag");
+       return 0;
+     }
+
+   The second call to ‘fmtmsg’ illustrates a use of this function as it
+usually occurs on System V systems, which heavily use this function.  It
+seems worthwhile to give a short explanation here of how this system
+works on System V. The value of the LABEL field (‘UX:cat’) says that the
+error occurred in the Unix program ‘cat’.  The explanation of the error
+follows and the value for the ACTION parameter is ‘"refer to manual"’.
+One could be more specific here, if necessary.  The TAG field contains,
+as proposed above, the value of the string given for the LABEL
+parameter, and additionally a unique ID (‘001’ in this case).  For a GNU
+environment this string could contain a reference to the corresponding
+node in the Info page for the program.
+
+Running this program without specifying the ‘MSGVERB’ and ‘SEV_LEVEL’
+function produces the following output:
+
+     UX:cat: NOTE2: invalid syntax
+     TO FIX: refer to manual UX:cat:001
+
+   We see the different fields of the message and how the extra glue
+(the colons and the ‘TO FIX’ string) is printed.  But only one of the
+three calls to ‘fmtmsg’ produced output.  The first call does not print
+anything because the LABEL parameter is not in the correct form.  The
+string must contain two fields, separated by a colon (*note Printing
+Formatted Messages::).  The third ‘fmtmsg’ call produced no output since
+the class with the numeric value ‘6’ is not defined.  Although a class
+with numeric value ‘5’ is also not defined by default, the call to
+‘addseverity’ introduces it and the second call to ‘fmtmsg’ produces the
+above output.
+
+   When we change the environment of the program to contain
+‘SEV_LEVEL=XXX,6,NOTE’ when running it we get a different result:
+
+     UX:cat: NOTE2: invalid syntax
+     TO FIX: refer to manual UX:cat:001
+     label:foo: NOTE: text
+     TO FIX: action tag
+
+   Now the third call to ‘fmtmsg’ produced some output and we see how
+the string ‘NOTE’ from the environment variable appears in the message.
+
+   Now we can reduce the output by specifying which fields we are
+interested in.  If we additionally set the environment variable
+‘MSGVERB’ to the value ‘severity:label:action’ we get the following
+output:
+
+     UX:cat: NOTE2
+     TO FIX: refer to manual
+     label:foo: NOTE
+     TO FIX: action
+
+I.e., the output produced by the TEXT and the TAG parameters to ‘fmtmsg’
+vanished.  Please also note that now there is no colon after the ‘NOTE’
+and ‘NOTE2’ strings in the output.  This is not necessary since there is
+no more output on this line because the text is missing.
+
+
+File: libc.info,  Node: Low-Level I/O,  Next: File System Interface,  Prev: I/O on Streams,  Up: Top
+
+13 Low-Level Input/Output
+*************************
+
+This chapter describes functions for performing low-level input/output
+operations on file descriptors.  These functions include the primitives
+for the higher-level I/O functions described in *note I/O on Streams::,
+as well as functions for performing low-level control operations for
+which there are no equivalents on streams.
+
+   Stream-level I/O is more flexible and usually more convenient;
+therefore, programmers generally use the descriptor-level functions only
+when necessary.  These are some of the usual reasons:
+
+   • For reading binary files in large chunks.
+
+   • For reading an entire file into core before parsing it.
+
+   • To perform operations other than data transfer, which can only be
+     done with a descriptor.  (You can use ‘fileno’ to get the
+     descriptor corresponding to a stream.)
+
+   • To pass descriptors to a child process.  (The child can create its
+     own stream to use a descriptor that it inherits, but cannot inherit
+     a stream directly.)
+
+* Menu:
+
+* Opening and Closing Files::           How to open and close file
+                                         descriptors.
+* I/O Primitives::                      Reading and writing data.
+* File Position Primitive::             Setting a descriptor’s file
+                                         position.
+* Descriptors and Streams::             Converting descriptor to stream
+                                         or vice-versa.
+* Stream/Descriptor Precautions::       Precautions needed if you use both
+                                         descriptors and streams.
+* Scatter-Gather::                      Fast I/O to discontinuous buffers.
+* Copying File Data::                   Copying data between files.
+* Memory-mapped I/O::                   Using files like memory.
+* Waiting for I/O::                     How to check for input or output
+					 on multiple file descriptors.
+* Synchronizing I/O::                   Making sure all I/O actions completed.
+* Asynchronous I/O::                    Perform I/O in parallel.
+* Control Operations::                  Various other operations on file
+					 descriptors.
+* Duplicating Descriptors::             Fcntl commands for duplicating
+                                         file descriptors.
+* Descriptor Flags::                    Fcntl commands for manipulating
+                                         flags associated with file
+                                         descriptors.
+* File Status Flags::                   Fcntl commands for manipulating
+                                         flags associated with open files.
+* File Locks::                          Fcntl commands for implementing
+                                         file locking.
+* Open File Description Locks::         Fcntl commands for implementing
+                                         open file description locking.
+* Open File Description Locks Example:: An example of open file description lock
+                                         usage
+* Interrupt Input::                     Getting an asynchronous signal when
+                                         input arrives.
+* IOCTLs::                              Generic I/O Control operations.
+
+
+File: libc.info,  Node: Opening and Closing Files,  Next: I/O Primitives,  Up: Low-Level I/O
+
+13.1 Opening and Closing Files
+==============================
+
+This section describes the primitives for opening and closing files
+using file descriptors.  The ‘open’ and ‘creat’ functions are declared
+in the header file ‘fcntl.h’, while ‘close’ is declared in ‘unistd.h’.
+
+ -- Function: int open (const char *FILENAME, int FLAGS[, mode_t MODE])
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
+     Concepts::.
+
+     The ‘open’ function creates and returns a new file descriptor for
+     the file named by FILENAME.  Initially, the file position indicator
+     for the file is at the beginning of the file.  The argument MODE
+     (*note Permission Bits::) is used only when a file is created, but
+     it doesn’t hurt to supply the argument in any case.
+
+     The FLAGS argument controls how the file is to be opened.  This is
+     a bit mask; you create the value by the bitwise OR of the
+     appropriate parameters (using the ‘|’ operator in C). *Note File
+     Status Flags::, for the parameters available.
+
+     The normal return value from ‘open’ is a non-negative integer file
+     descriptor.  In the case of an error, a value of -1 is returned
+     instead.  In addition to the usual file name errors (*note File
+     Name Errors::), the following ‘errno’ error conditions are defined
+     for this function:
+
+     ‘EACCES’
+          The file exists but is not readable/writable as requested by
+          the FLAGS argument, or the file does not exist and the
+          directory is unwritable so it cannot be created.
+
+     ‘EEXIST’
+          Both ‘O_CREAT’ and ‘O_EXCL’ are set, and the named file
+          already exists.
+
+     ‘EINTR’
+          The ‘open’ operation was interrupted by a signal.  *Note
+          Interrupted Primitives::.
+
+     ‘EISDIR’
+          The FLAGS argument specified write access, and the file is a
+          directory.
+
+     ‘EMFILE’
+          The process has too many files open.  The maximum number of
+          file descriptors is controlled by the ‘RLIMIT_NOFILE’ resource
+          limit; *note Limits on Resources::.
+
+     ‘ENFILE’
+          The entire system, or perhaps the file system which contains
+          the directory, cannot support any additional open files at the
+          moment.  (This problem cannot happen on GNU/Hurd systems.)
+
+     ‘ENOENT’
+          The named file does not exist, and ‘O_CREAT’ is not specified.
+
+     ‘ENOSPC’
+          The directory or file system that would contain the new file
+          cannot be extended, because there is no disk space left.
+
+     ‘ENXIO’
+          ‘O_NONBLOCK’ and ‘O_WRONLY’ are both set in the FLAGS
+          argument, the file named by FILENAME is a FIFO (*note Pipes
+          and FIFOs::), and no process has the file open for reading.
+
+     ‘EROFS’
+          The file resides on a read-only file system and any of
+          ‘O_WRONLY’, ‘O_RDWR’, and ‘O_TRUNC’ are set in the FLAGS
+          argument, or ‘O_CREAT’ is set and the file does not already
+          exist.
+
+     If on a 32 bit machine the sources are translated with
+     ‘_FILE_OFFSET_BITS == 64’ the function ‘open’ returns a file
+     descriptor opened in the large file mode which enables the file
+     handling functions to use files up to 2^63 bytes in size and offset
+     from −2^63 to 2^63.  This happens transparently for the user since
+     all of the low-level file handling functions are equally replaced.
+
+     This function is a cancellation point in multi-threaded programs.
+     This is a problem if the thread allocates some resources (like
+     memory, file descriptors, semaphores or whatever) at the time
+     ‘open’ is called.  If the thread gets canceled these resources stay
+     allocated until the program ends.  To avoid this calls to ‘open’
+     should be protected using cancellation handlers.
+
+     The ‘open’ function is the underlying primitive for the ‘fopen’ and
+     ‘freopen’ functions, that create streams.
+
+ -- Function: int open64 (const char *FILENAME, int FLAGS[, mode_t
+          MODE])
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
+     Concepts::.
+
+     This function is similar to ‘open’.  It returns a file descriptor
+     which can be used to access the file named by FILENAME.  The only
+     difference is that on 32 bit systems the file is opened in the
+     large file mode.  I.e., file length and file offsets can exceed 31
+     bits.
+
+     When the sources are translated with ‘_FILE_OFFSET_BITS == 64’ this
+     function is actually available under the name ‘open’.  I.e., the
+     new, extended API using 64 bit file sizes and offsets transparently
+     replaces the old API.
+
+ -- Obsolete function: int creat (const char *FILENAME, mode_t MODE)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
+     Concepts::.
+
+     This function is obsolete.  The call:
+
+          creat (FILENAME, MODE)
+
+     is equivalent to:
+
+          open (FILENAME, O_WRONLY | O_CREAT | O_TRUNC, MODE)
+
+     If on a 32 bit machine the sources are translated with
+     ‘_FILE_OFFSET_BITS == 64’ the function ‘creat’ returns a file
+     descriptor opened in the large file mode which enables the file
+     handling functions to use files up to 2^63 in size and offset from
+     −2^63 to 2^63.  This happens transparently for the user since all
+     of the low-level file handling functions are equally replaced.
+
+ -- Obsolete function: int creat64 (const char *FILENAME, mode_t MODE)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
+     Concepts::.
+
+     This function is similar to ‘creat’.  It returns a file descriptor
+     which can be used to access the file named by FILENAME.  The only
+     difference is that on 32 bit systems the file is opened in the
+     large file mode.  I.e., file length and file offsets can exceed 31
+     bits.
+
+     To use this file descriptor one must not use the normal operations
+     but instead the counterparts named ‘*64’, e.g., ‘read64’.
+
+     When the sources are translated with ‘_FILE_OFFSET_BITS == 64’ this
+     function is actually available under the name ‘open’.  I.e., the
+     new, extended API using 64 bit file sizes and offsets transparently
+     replaces the old API.
+
+ -- Function: int close (int FILEDES)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
+     Concepts::.
+
+     The function ‘close’ closes the file descriptor FILEDES.  Closing a
+     file has the following consequences:
+
+        • The file descriptor is deallocated.
+
+        • Any record locks owned by the process on the file are
+          unlocked.
+
+        • When all file descriptors associated with a pipe or FIFO have
+          been closed, any unread data is discarded.
+
+     This function is a cancellation point in multi-threaded programs.
+     This is a problem if the thread allocates some resources (like
+     memory, file descriptors, semaphores or whatever) at the time
+     ‘close’ is called.  If the thread gets canceled these resources
+     stay allocated until the program ends.  To avoid this, calls to
+     ‘close’ should be protected using cancellation handlers.
+
+     The normal return value from ‘close’ is 0; a value of -1 is
+     returned in case of failure.  The following ‘errno’ error
+     conditions are defined for this function:
+
+     ‘EBADF’
+          The FILEDES argument is not a valid file descriptor.
+
+     ‘EINTR’
+          The ‘close’ call was interrupted by a signal.  *Note
+          Interrupted Primitives::.  Here is an example of how to handle
+          ‘EINTR’ properly:
+
+               TEMP_FAILURE_RETRY (close (desc));
+
+     ‘ENOSPC’
+     ‘EIO’
+     ‘EDQUOT’
+          When the file is accessed by NFS, these errors from ‘write’
+          can sometimes not be detected until ‘close’.  *Note I/O
+          Primitives::, for details on their meaning.
+
+     Please note that there is _no_ separate ‘close64’ function.  This
+     is not necessary since this function does not determine nor depend
+     on the mode of the file.  The kernel which performs the ‘close’
+     operation knows which mode the descriptor is used for and can
+     handle this situation.
+
+   To close a stream, call ‘fclose’ (*note Closing Streams::) instead of
+trying to close its underlying file descriptor with ‘close’.  This
+flushes any buffered output and updates the stream object to indicate
+that it is closed.
+
+ -- Function: int close_range (unsigned int LOWFD, unsigned int MAXFD,
+          int FLAGS)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
+     Concepts::.
+
+     The function ‘close_range’ closes the file descriptor from LOWFD to
+     MAXFD (inclusive).  This function is similar to call ‘close’ in
+     specified file descriptor range depending on the FLAGS.
+
+     This is function is only supported on recent Linux versions and the
+     GNU C Library does not provide any fallback (the application will
+     need to handle possible ‘ENOSYS’).
+
+     The FLAGS add options on how the files are closes.  Linux currently
+     supports:
+
+     ‘CLOSE_RANGE_UNSHARE’
+          Unshare the file descriptor table before closing file
+          descriptors.
+
+     ‘CLOSE_RANGE_CLOEXEC’
+          Set the ‘FD_CLOEXEC’ bit instead of closing the file
+          descriptor.
+
+     The normal return value from ‘close_range’ is 0; a value of -1 is
+     returned in case of failure.  The following ‘errno’ error
+     conditions are defined for this function:
+
+     ‘EINVAL’
+          The LOWFD value is larger than MAXFD or an unsupported FLAGS
+          is used.
+
+     ‘ENOMEM’
+          Either there is not enough memory for the operation, or the
+          process is out of address space.  It can only happen when
+          ‘CLOSE_RANGE_UNSHARED’ flag is used.
+
+     ‘EMFILE’
+          The process has too many files open and it can only happens
+          when ‘CLOSE_RANGE_UNSHARED’ flag is used.  The maximum number
+          of file descriptors is controlled by the ‘RLIMIT_NOFILE’
+          resource limit; *note Limits on Resources::.
+
+     ‘ENOSYS’
+          The kernel does not implement the required functionality.
+
+ -- Function: void closefrom (int LOWFD)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
+     Concepts::.
+
+     The function ‘closefrom’ closes all file descriptors greater than
+     or equal to LOWFD.  This function is similar to calling ‘close’ for
+     all open file descriptors not less than LOWFD.
+
+     Already closed file descriptors are ignored.
 
 
 File: libc.info,  Node: I/O Primitives,  Next: File Position Primitive,  Prev: Opening and Closing Files,  Up: Low-Level I/O
@@ -6572,710 +7086,4 @@ access.
      the directory is closed with ‘closedir’.  If the directory stream
      implementation is not using file descriptors the return value is
      ‘-1’.
-
-
-File: libc.info,  Node: Reading/Closing Directory,  Next: Simple Directory Lister,  Prev: Opening a Directory,  Up: Accessing Directories
-
-14.2.3 Reading and Closing a Directory Stream
----------------------------------------------
-
-This section describes how to read directory entries from a directory
-stream, and how to close the stream when you are done with it.  All the
-symbols are declared in the header file ‘dirent.h’.
-
- -- Function: struct dirent * readdir (DIR *DIRSTREAM)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock | *Note
-     POSIX Safety Concepts::.
-
-     This function reads the next entry from the directory.  It normally
-     returns a pointer to a structure containing information about the
-     file.  This structure is associated with the DIRSTREAM handle and
-     can be rewritten by a subsequent call.
-
-     *Portability Note:* On some systems ‘readdir’ may not return
-     entries for ‘.’ and ‘..’, even though these are always valid file
-     names in any directory.  *Note File Name Resolution::.
-
-     If there are no more entries in the directory or an error is
-     detected, ‘readdir’ returns a null pointer.  The following ‘errno’
-     error conditions are defined for this function:
-
-     ‘EBADF’
-          The DIRSTREAM argument is not valid.
-
-     To distinguish between an end-of-directory condition or an error,
-     you must set ‘errno’ to zero before calling ‘readdir’.  To avoid
-     entering an infinite loop, you should stop reading from the
-     directory after the first error.
-
-     *Caution:* The pointer returned by ‘readdir’ points to a buffer
-     within the ‘DIR’ object.  The data in that buffer will be
-     overwritten by the next call to ‘readdir’.  You must take care, for
-     instance, to copy the ‘d_name’ string if you need it later.
-
-     Because of this, it is not safe to share a ‘DIR’ object among
-     multiple threads, unless you use your own locking to ensure that no
-     thread calls ‘readdir’ while another thread is still using the data
-     from the previous call.  In the GNU C Library, it is safe to call
-     ‘readdir’ from multiple threads as long as each thread uses its own
-     ‘DIR’ object.  POSIX.1-2008 does not require this to be safe, but
-     we are not aware of any operating systems where it does not work.
-
-     ‘readdir_r’ allows you to provide your own buffer for the ‘struct
-     dirent’, but it is less portable than ‘readdir’, and has problems
-     with very long filenames (see below).  We recommend you use
-     ‘readdir’, but do not share ‘DIR’ objects.
-
- -- Function: int readdir_r (DIR *DIRSTREAM, struct dirent *ENTRY,
-          struct dirent **RESULT)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock | *Note
-     POSIX Safety Concepts::.
-
-     This function is a version of ‘readdir’ which performs internal
-     locking.  Like ‘readdir’ it returns the next entry from the
-     directory.  To prevent conflicts between simultaneously running
-     threads the result is stored inside the ENTRY object.
-
-     *Portability Note:* ‘readdir_r’ is deprecated.  It is recommended
-     to use ‘readdir’ instead of ‘readdir_r’ for the following reasons:
-
-        • On systems which do not define ‘NAME_MAX’, it may not be
-          possible to use ‘readdir_r’ safely because the caller does not
-          specify the length of the buffer for the directory entry.
-
-        • On some systems, ‘readdir_r’ cannot read directory entries
-          with very long names.  If such a name is encountered, the GNU
-          C Library implementation of ‘readdir_r’ returns with an error
-          code of ‘ENAMETOOLONG’ after the final directory entry has
-          been read.  On other systems, ‘readdir_r’ may return
-          successfully, but the ‘d_name’ member may not be
-          NUL-terminated or may be truncated.
-
-        • POSIX-1.2008 does not guarantee that ‘readdir’ is thread-safe,
-          even when access to the same DIRSTREAM is serialized.  But in
-          current implementations (including the GNU C Library), it is
-          safe to call ‘readdir’ concurrently on different DIRSTREAMs,
-          so there is no need to use ‘readdir_r’ in most multi-threaded
-          programs.  In the rare case that multiple threads need to read
-          from the same DIRSTREAM, it is still better to use ‘readdir’
-          and external synchronization.
-
-        • It is expected that future versions of POSIX will obsolete
-          ‘readdir_r’ and mandate the level of thread safety for
-          ‘readdir’ which is provided by the GNU C Library and other
-          implementations today.
-
-     Normally ‘readdir_r’ returns zero and sets ‘*RESULT’ to ENTRY.  If
-     there are no more entries in the directory or an error is detected,
-     ‘readdir_r’ sets ‘*RESULT’ to a null pointer and returns a nonzero
-     error code, also stored in ‘errno’, as described for ‘readdir’.
-
-     It is also important to look at the definition of the ‘struct
-     dirent’ type.  Simply passing a pointer to an object of this type
-     for the second parameter of ‘readdir_r’ might not be enough.  Some
-     systems don’t define the ‘d_name’ element sufficiently long.  In
-     this case the user has to provide additional space.  There must be
-     room for at least ‘NAME_MAX + 1’ characters in the ‘d_name’ array.
-     Code to call ‘readdir_r’ could look like this:
-
-            union
-            {
-              struct dirent d;
-              char b[offsetof (struct dirent, d_name) + NAME_MAX + 1];
-            } u;
-
-            if (readdir_r (dir, &u.d, &res) == 0)
-              ...
-
-   To support large filesystems on 32-bit machines there are LFS
-variants of the last two functions.
-
- -- Function: struct dirent64 * readdir64 (DIR *DIRSTREAM)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock | *Note
-     POSIX Safety Concepts::.
-
-     The ‘readdir64’ function is just like the ‘readdir’ function except
-     that it returns a pointer to a record of type ‘struct dirent64’.
-     Some of the members of this data type (notably ‘d_ino’) might have
-     a different size to allow large filesystems.
-
-     In all other aspects this function is equivalent to ‘readdir’.
-
- -- Function: int readdir64_r (DIR *DIRSTREAM, struct dirent64 *ENTRY,
-          struct dirent64 **RESULT)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock | *Note
-     POSIX Safety Concepts::.
-
-     The deprecated ‘readdir64_r’ function is equivalent to the
-     ‘readdir_r’ function except that it takes parameters of base type
-     ‘struct dirent64’ instead of ‘struct dirent’ in the second and
-     third position.  The same precautions mentioned in the
-     documentation of ‘readdir_r’ also apply here.
-
- -- Function: int closedir (DIR *DIRSTREAM)
-
-     Preliminary: | MT-Safe | AS-Unsafe heap lock/hurd | AC-Unsafe mem
-     fd lock/hurd | *Note POSIX Safety Concepts::.
-
-     This function closes the directory stream DIRSTREAM.  It returns
-     ‘0’ on success and ‘-1’ on failure.
-
-     The following ‘errno’ error conditions are defined for this
-     function:
-
-     ‘EBADF’
-          The DIRSTREAM argument is not valid.
-
-
-File: libc.info,  Node: Simple Directory Lister,  Next: Random Access Directory,  Prev: Reading/Closing Directory,  Up: Accessing Directories
-
-14.2.4 Simple Program to List a Directory
------------------------------------------
-
-Here’s a simple program that prints the names of the files in the
-current working directory:
-
-
-     #include <stdio.h>
-     #include <sys/types.h>
-     #include <dirent.h>
-
-     int
-     main (void)
-     {
-       DIR *dp;
-       struct dirent *ep;
-
-       dp = opendir ("./");
-       if (dp != NULL)
-         {
-           while (ep = readdir (dp))
-             puts (ep->d_name);
-           (void) closedir (dp);
-         }
-       else
-         perror ("Couldn't open the directory");
-
-       return 0;
-     }
-
-   The order in which files appear in a directory tends to be fairly
-random.  A more useful program would sort the entries (perhaps by
-alphabetizing them) before printing them; see *note Scanning Directory
-Content::, and *note Array Sort Function::.
-
-
-File: libc.info,  Node: Random Access Directory,  Next: Scanning Directory Content,  Prev: Simple Directory Lister,  Up: Accessing Directories
-
-14.2.5 Random Access in a Directory Stream
-------------------------------------------
-
-This section describes how to reread parts of a directory that you have
-already read from an open directory stream.  All the symbols are
-declared in the header file ‘dirent.h’.
-
- -- Function: void rewinddir (DIR *DIRSTREAM)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock | *Note
-     POSIX Safety Concepts::.
-
-     The ‘rewinddir’ function is used to reinitialize the directory
-     stream DIRSTREAM, so that if you call ‘readdir’ it returns
-     information about the first entry in the directory again.  This
-     function also notices if files have been added or removed to the
-     directory since it was opened with ‘opendir’.  (Entries for these
-     files might or might not be returned by ‘readdir’ if they were
-     added or removed since you last called ‘opendir’ or ‘rewinddir’.)
-
- -- Function: long int telldir (DIR *DIRSTREAM)
-
-     Preliminary: | MT-Safe | AS-Unsafe heap/bsd lock/bsd | AC-Unsafe
-     mem/bsd lock/bsd | *Note POSIX Safety Concepts::.
-
-     The ‘telldir’ function returns the file position of the directory
-     stream DIRSTREAM.  You can use this value with ‘seekdir’ to restore
-     the directory stream to that position.
-
- -- Function: void seekdir (DIR *DIRSTREAM, long int POS)
-
-     Preliminary: | MT-Safe | AS-Unsafe heap/bsd lock/bsd | AC-Unsafe
-     mem/bsd lock/bsd | *Note POSIX Safety Concepts::.
-
-     The ‘seekdir’ function sets the file position of the directory
-     stream DIRSTREAM to POS.  The value POS must be the result of a
-     previous call to ‘telldir’ on this particular stream; closing and
-     reopening the directory can invalidate values returned by
-     ‘telldir’.
-
-
-File: libc.info,  Node: Scanning Directory Content,  Next: Simple Directory Lister Mark II,  Prev: Random Access Directory,  Up: Accessing Directories
-
-14.2.6 Scanning the Content of a Directory
-------------------------------------------
-
-A higher-level interface to the directory handling functions is the
-‘scandir’ function.  With its help one can select a subset of the
-entries in a directory, possibly sort them and get a list of names as
-the result.
-
- -- Function: int scandir (const char *DIR, struct dirent ***NAMELIST,
-          int (*SELECTOR) (const struct dirent *), int (*CMP) (const
-          struct dirent **, const struct dirent **))
-
-     Preliminary: | MT-Safe | AS-Unsafe heap | AC-Unsafe mem fd | *Note
-     POSIX Safety Concepts::.
-
-     The ‘scandir’ function scans the contents of the directory selected
-     by DIR.  The result in *NAMELIST is an array of pointers to
-     structures of type ‘struct dirent’ which describe all selected
-     directory entries and which is allocated using ‘malloc’.  Instead
-     of always getting all directory entries returned, the user supplied
-     function SELECTOR can be used to decide which entries are in the
-     result.  Only the entries for which SELECTOR returns a non-zero
-     value are selected.
-
-     Finally the entries in *NAMELIST are sorted using the user-supplied
-     function CMP.  The arguments passed to the CMP function are of type
-     ‘struct dirent **’, therefore one cannot directly use the ‘strcmp’
-     or ‘strcoll’ functions; instead see the functions ‘alphasort’ and
-     ‘versionsort’ below.
-
-     The return value of the function is the number of entries placed in
-     *NAMELIST.  If it is ‘-1’ an error occurred (either the directory
-     could not be opened for reading or memory allocation failed) and
-     the global variable ‘errno’ contains more information on the error.
-
-   As described above, the fourth argument to the ‘scandir’ function
-must be a pointer to a sorting function.  For the convenience of the
-programmer the GNU C Library contains implementations of functions which
-are very helpful for this purpose.
-
- -- Function: int alphasort (const struct dirent **A, const struct
-          dirent **B)
-
-     Preliminary: | MT-Safe locale | AS-Unsafe heap | AC-Unsafe mem |
-     *Note POSIX Safety Concepts::.
-
-     The ‘alphasort’ function behaves like the ‘strcoll’ function (*note
-     String/Array Comparison::).  The difference is that the arguments
-     are not string pointers but instead they are of type ‘struct dirent
-     **’.
-
-     The return value of ‘alphasort’ is less than, equal to, or greater
-     than zero depending on the order of the two entries A and B.
-
- -- Function: int versionsort (const struct dirent **A, const struct
-          dirent **B)
-
-     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
-     Safety Concepts::.
-
-     The ‘versionsort’ function is like ‘alphasort’ except that it uses
-     the ‘strverscmp’ function internally.
-
-   If the filesystem supports large files we cannot use the ‘scandir’
-anymore since the ‘dirent’ structure might not able to contain all the
-information.  The LFS provides the new type ‘struct dirent64’.  To use
-this we need a new function.
-
- -- Function: int scandir64 (const char *DIR, struct dirent64
-          ***NAMELIST, int (*SELECTOR) (const struct dirent64 *), int
-          (*CMP) (const struct dirent64 **, const struct dirent64 **))
-
-     Preliminary: | MT-Safe | AS-Unsafe heap | AC-Unsafe mem fd | *Note
-     POSIX Safety Concepts::.
-
-     The ‘scandir64’ function works like the ‘scandir’ function except
-     that the directory entries it returns are described by elements of
-     type ‘struct dirent64’.  The function pointed to by SELECTOR is
-     again used to select the desired entries, except that SELECTOR now
-     must point to a function which takes a ‘struct dirent64 *’
-     parameter.
-
-     Similarly the CMP function should expect its two arguments to be of
-     type ‘struct dirent64 **’.
-
-   As CMP is now a function of a different type, the functions
-‘alphasort’ and ‘versionsort’ cannot be supplied for that argument.
-Instead we provide the two replacement functions below.
-
- -- Function: int alphasort64 (const struct dirent64 **A, const struct
-          dirent **B)
-
-     Preliminary: | MT-Safe locale | AS-Unsafe heap | AC-Unsafe mem |
-     *Note POSIX Safety Concepts::.
-
-     The ‘alphasort64’ function behaves like the ‘strcoll’ function
-     (*note String/Array Comparison::).  The difference is that the
-     arguments are not string pointers but instead they are of type
-     ‘struct dirent64 **’.
-
-     Return value of ‘alphasort64’ is less than, equal to, or greater
-     than zero depending on the order of the two entries A and B.
-
- -- Function: int versionsort64 (const struct dirent64 **A, const struct
-          dirent64 **B)
-
-     Preliminary: | MT-Safe locale | AS-Safe | AC-Safe | *Note POSIX
-     Safety Concepts::.
-
-     The ‘versionsort64’ function is like ‘alphasort64’, excepted that
-     it uses the ‘strverscmp’ function internally.
-
-   It is important not to mix the use of ‘scandir’ and the 64-bit
-comparison functions or vice versa.  There are systems on which this
-works but on others it will fail miserably.
-
-
-File: libc.info,  Node: Simple Directory Lister Mark II,  Next: Low-level Directory Access,  Prev: Scanning Directory Content,  Up: Accessing Directories
-
-14.2.7 Simple Program to List a Directory, Mark II
---------------------------------------------------
-
-Here is a revised version of the directory lister found above (*note
-Simple Directory Lister::).  Using the ‘scandir’ function we can avoid
-the functions which work directly with the directory contents.  After
-the call the returned entries are available for direct use.
-
-
-     #include <stdio.h>
-     #include <dirent.h>
-
-     static int
-     one (const struct dirent *unused)
-     {
-       return 1;
-     }
-
-     int
-     main (void)
-     {
-       struct dirent **eps;
-       int n;
-
-       n = scandir ("./", &eps, one, alphasort);
-       if (n >= 0)
-         {
-           int cnt;
-           for (cnt = 0; cnt < n; ++cnt)
-             puts (eps[cnt]->d_name);
-         }
-       else
-         perror ("Couldn't open the directory");
-
-       return 0;
-     }
-
-   Note the simple selector function in this example.  Since we want to
-see all directory entries we always return ‘1’.
-
-
-File: libc.info,  Node: Low-level Directory Access,  Prev: Simple Directory Lister Mark II,  Up: Accessing Directories
-
-14.2.8 Low-level Directory Access
----------------------------------
-
-The stream-based directory functions are not AS-Safe and cannot be used
-after ‘vfork’.  *Note POSIX Safety Concepts::.  The functions below
-provide an alternative that can be used in these contexts.
-
-   Directory data is obtained from a file descriptor, as created by the
-‘open’ function, with or without the ‘O_DIRECTORY’ flag.  *Note Opening
-and Closing Files::.
-
- -- Function: ssize_t getdents64 (int FD, void *BUFFER, size_t LENGTH)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     The ‘getdents64’ function reads at most LENGTH bytes of directory
-     entry data from the file descriptor FD and stores it into the byte
-     array starting at BUFFER.
-
-     On success, the function returns the number of bytes written to the
-     buffer.  This number is zero if FD is already at the end of the
-     directory stream.  On error, the function returns ‘-1’ and sets
-     ‘errno’ to the appropriate error code.
-
-     The data is stored as a sequence of ‘struct dirent64’ records,
-     which can be traversed using the ‘d_reclen’ member.  The buffer
-     should be large enough to hold the largest possible directory
-     entry.  Note that some file systems support file names longer than
-     ‘NAME_MAX’ bytes (e.g., because they support up to 255 Unicode
-     characters), so a buffer size of at least 1024 is recommended.
-
-     This function is specific to Linux.
-
-
-File: libc.info,  Node: Working with Directory Trees,  Next: Hard Links,  Prev: Accessing Directories,  Up: File System Interface
-
-14.3 Working with Directory Trees
-=================================
-
-The functions described so far for handling the files in a directory
-have allowed you to either retrieve the information bit by bit, or to
-process all the files as a group (see ‘scandir’).  Sometimes it is
-useful to process whole hierarchies of directories and their contained
-files.  The X/Open specification defines two functions to do this.  The
-simpler form is derived from an early definition in System V systems and
-therefore this function is available on SVID-derived systems.  The
-prototypes and required definitions can be found in the ‘ftw.h’ header.
-
-   There are four functions in this family: ‘ftw’, ‘nftw’ and their
-64-bit counterparts ‘ftw64’ and ‘nftw64’.  These functions take as one
-of their arguments a pointer to a callback function of the appropriate
-type.
-
- -- Data Type: __ftw_func_t
-
-          int (*) (const char *, const struct stat *, int)
-
-     The type of callback functions given to the ‘ftw’ function.  The
-     first parameter points to the file name, the second parameter to an
-     object of type ‘struct stat’ which is filled in for the file named
-     in the first parameter.
-
-     The last parameter is a flag giving more information about the
-     current file.  It can have the following values:
-
-     ‘FTW_F’
-          The item is either a normal file or a file which does not fit
-          into one of the following categories.  This could be special
-          files, sockets etc.
-     ‘FTW_D’
-          The item is a directory.
-     ‘FTW_NS’
-          The ‘stat’ call failed and so the information pointed to by
-          the second parameter is invalid.
-     ‘FTW_DNR’
-          The item is a directory which cannot be read.
-     ‘FTW_SL’
-          The item is a symbolic link.  Since symbolic links are
-          normally followed seeing this value in a ‘ftw’ callback
-          function means the referenced file does not exist.  The
-          situation for ‘nftw’ is different.
-
-          This value is only available if the program is compiled with
-          ‘_XOPEN_EXTENDED’ defined before including the first header.
-          The original SVID systems do not have symbolic links.
-
-     If the sources are compiled with ‘_FILE_OFFSET_BITS == 64’ this
-     type is in fact ‘__ftw64_func_t’ since this mode changes ‘struct
-     stat’ to be ‘struct stat64’.
-
-   For the LFS interface and for use in the function ‘ftw64’, the header
-‘ftw.h’ defines another function type.
-
- -- Data Type: __ftw64_func_t
-
-          int (*) (const char *, const struct stat64 *, int)
-
-     This type is used just like ‘__ftw_func_t’ for the callback
-     function, but this time is called from ‘ftw64’.  The second
-     parameter to the function is a pointer to a variable of type
-     ‘struct stat64’ which is able to represent the larger values.
-
- -- Data Type: __nftw_func_t
-
-          int (*) (const char *, const struct stat *, int, struct FTW *)
-
-     The first three arguments are the same as for the ‘__ftw_func_t’
-     type.  However for the third argument some additional values are
-     defined to allow finer differentiation:
-     ‘FTW_DP’
-          The current item is a directory and all subdirectories have
-          already been visited and reported.  This flag is returned
-          instead of ‘FTW_D’ if the ‘FTW_DEPTH’ flag is passed to ‘nftw’
-          (see below).
-     ‘FTW_SLN’
-          The current item is a stale symbolic link.  The file it points
-          to does not exist.
-
-     The last parameter of the callback function is a pointer to a
-     structure with some extra information as described below.
-
-     If the sources are compiled with ‘_FILE_OFFSET_BITS == 64’ this
-     type is in fact ‘__nftw64_func_t’ since this mode changes ‘struct
-     stat’ to be ‘struct stat64’.
-
-   For the LFS interface there is also a variant of this data type
-available which has to be used with the ‘nftw64’ function.
-
- -- Data Type: __nftw64_func_t
-
-          int (*) (const char *, const struct stat64 *, int, struct FTW *)
-
-     This type is used just like ‘__nftw_func_t’ for the callback
-     function, but this time is called from ‘nftw64’.  The second
-     parameter to the function is this time a pointer to a variable of
-     type ‘struct stat64’ which is able to represent the larger values.
-
- -- Data Type: struct FTW
-
-     The information contained in this structure helps in interpreting
-     the name parameter and gives some information about the current
-     state of the traversal of the directory hierarchy.
-
-     ‘int base’
-          The value is the offset into the string passed in the first
-          parameter to the callback function of the beginning of the
-          file name.  The rest of the string is the path of the file.
-          This information is especially important if the ‘FTW_CHDIR’
-          flag was set in calling ‘nftw’ since then the current
-          directory is the one the current item is found in.
-     ‘int level’
-          Whilst processing, the code tracks how many directories down
-          it has gone to find the current file.  This nesting level
-          starts at 0 for files in the initial directory (or is zero for
-          the initial file if a file was passed).
-
- -- Function: int ftw (const char *FILENAME, __ftw_func_t FUNC, int
-          DESCRIPTORS)
-
-     Preliminary: | MT-Safe | AS-Unsafe heap | AC-Unsafe mem fd | *Note
-     POSIX Safety Concepts::.
-
-     The ‘ftw’ function calls the callback function given in the
-     parameter FUNC for every item which is found in the directory
-     specified by FILENAME and all directories below.  The function
-     follows symbolic links if necessary but does not process an item
-     twice.  If FILENAME is not a directory then it itself is the only
-     object returned to the callback function.
-
-     The file name passed to the callback function is constructed by
-     taking the FILENAME parameter and appending the names of all passed
-     directories and then the local file name.  So the callback function
-     can use this parameter to access the file.  ‘ftw’ also calls ‘stat’
-     for the file and passes that information on to the callback
-     function.  If this ‘stat’ call is not successful the failure is
-     indicated by setting the third argument of the callback function to
-     ‘FTW_NS’.  Otherwise it is set according to the description given
-     in the account of ‘__ftw_func_t’ above.
-
-     The callback function is expected to return 0 to indicate that no
-     error occurred and that processing should continue.  If an error
-     occurred in the callback function or it wants ‘ftw’ to return
-     immediately, the callback function can return a value other than 0.
-     This is the only correct way to stop the function.  The program
-     must not use ‘setjmp’ or similar techniques to continue from
-     another place.  This would leave resources allocated by the ‘ftw’
-     function unfreed.
-
-     The DESCRIPTORS parameter to ‘ftw’ specifies how many file
-     descriptors it is allowed to consume.  The function runs faster the
-     more descriptors it can use.  For each level in the directory
-     hierarchy at most one descriptor is used, but for very deep ones
-     any limit on open file descriptors for the process or the system
-     may be exceeded.  Moreover, file descriptor limits in a
-     multi-threaded program apply to all the threads as a group, and
-     therefore it is a good idea to supply a reasonable limit to the
-     number of open descriptors.
-
-     The return value of the ‘ftw’ function is 0 if all callback
-     function calls returned 0 and all actions performed by the ‘ftw’
-     succeeded.  If a function call failed (other than calling ‘stat’ on
-     an item) the function returns -1.  If a callback function returns a
-     value other than 0 this value is returned as the return value of
-     ‘ftw’.
-
-     When the sources are compiled with ‘_FILE_OFFSET_BITS == 64’ on a
-     32-bit system this function is in fact ‘ftw64’, i.e., the LFS
-     interface transparently replaces the old interface.
-
- -- Function: int ftw64 (const char *FILENAME, __ftw64_func_t FUNC, int
-          DESCRIPTORS)
-
-     Preliminary: | MT-Safe | AS-Unsafe heap | AC-Unsafe mem fd | *Note
-     POSIX Safety Concepts::.
-
-     This function is similar to ‘ftw’ but it can work on filesystems
-     with large files.  File information is reported using a variable of
-     type ‘struct stat64’ which is passed by reference to the callback
-     function.
-
-     When the sources are compiled with ‘_FILE_OFFSET_BITS == 64’ on a
-     32-bit system this function is available under the name ‘ftw’ and
-     transparently replaces the old implementation.
-
- -- Function: int nftw (const char *FILENAME, __nftw_func_t FUNC, int
-          DESCRIPTORS, int FLAG)
-
-     Preliminary: | MT-Safe cwd | AS-Unsafe heap | AC-Unsafe mem fd cwd
-     | *Note POSIX Safety Concepts::.
-
-     The ‘nftw’ function works like the ‘ftw’ functions.  They call the
-     callback function FUNC for all items found in the directory
-     FILENAME and below.  At most DESCRIPTORS file descriptors are
-     consumed during the ‘nftw’ call.
-
-     One difference is that the callback function is of a different
-     type.  It is of type ‘struct FTW *’ and provides the callback
-     function with the extra information described above.
-
-     A second difference is that ‘nftw’ takes a fourth argument, which
-     is 0 or a bitwise-OR combination of any of the following values.
-
-     ‘FTW_PHYS’
-          While traversing the directory symbolic links are not
-          followed.  Instead symbolic links are reported using the
-          ‘FTW_SL’ value for the type parameter to the callback
-          function.  If the file referenced by a symbolic link does not
-          exist ‘FTW_SLN’ is returned instead.
-     ‘FTW_MOUNT’
-          The callback function is only called for items which are on
-          the same mounted filesystem as the directory given by the
-          FILENAME parameter to ‘nftw’.
-     ‘FTW_CHDIR’
-          If this flag is given the current working directory is changed
-          to the directory of the reported object before the callback
-          function is called.  When ‘ntfw’ finally returns the current
-          directory is restored to its original value.
-     ‘FTW_DEPTH’
-          If this option is specified then all subdirectories and files
-          within them are processed before processing the top directory
-          itself (depth-first processing).  This also means the type
-          flag given to the callback function is ‘FTW_DP’ and not
-          ‘FTW_D’.
-     ‘FTW_ACTIONRETVAL’
-          If this option is specified then return values from callbacks
-          are handled differently.  If the callback returns
-          ‘FTW_CONTINUE’, walking continues normally.  ‘FTW_STOP’ means
-          walking stops and ‘FTW_STOP’ is returned to the caller.  If
-          ‘FTW_SKIP_SUBTREE’ is returned by the callback with ‘FTW_D’
-          argument, the subtree is skipped and walking continues with
-          next sibling of the directory.  If ‘FTW_SKIP_SIBLINGS’ is
-          returned by the callback, all siblings of the current entry
-          are skipped and walking continues in its parent.  No other
-          return values should be returned from the callbacks if this
-          option is set.  This option is a GNU extension.
-
-     The return value is computed in the same way as for ‘ftw’.  ‘nftw’
-     returns 0 if no failures occurred and all callback functions
-     returned 0.  In case of internal errors, such as memory problems,
-     the return value is -1 and ‘errno’ is set accordingly.  If the
-     return value of a callback invocation was non-zero then that value
-     is returned.
-
-     When the sources are compiled with ‘_FILE_OFFSET_BITS == 64’ on a
-     32-bit system this function is in fact ‘nftw64’, i.e., the LFS
-     interface transparently replaces the old interface.
-
- -- Function: int nftw64 (const char *FILENAME, __nftw64_func_t FUNC,
-          int DESCRIPTORS, int FLAG)
-
-     Preliminary: | MT-Safe cwd | AS-Unsafe heap | AC-Unsafe mem fd cwd
-     | *Note POSIX Safety Concepts::.
-
-     This function is similar to ‘nftw’ but it can work on filesystems
-     with large files.  File information is reported using a variable of
-     type ‘struct stat64’ which is passed by reference to the callback
-     function.
-
-     When the sources are compiled with ‘_FILE_OFFSET_BITS == 64’ on a
-     32-bit system this function is available under the name ‘nftw’ and
-     transparently replaces the old implementation.
 

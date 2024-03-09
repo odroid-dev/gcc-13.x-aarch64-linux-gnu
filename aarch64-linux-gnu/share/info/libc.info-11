@@ -1,8 +1,8 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.38.
+This is ‘The GNU C Library Reference Manual’, for version 2.39.
 
-   Copyright © 1993–2023 Free Software Foundation, Inc.
+   Copyright © 1993–2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -774,8 +774,6 @@ START-INFO-DIR-ENTRY
 * creall: (libc)Operations on Complex.
 * creat64: (libc)Opening and Closing Files.
 * creat: (libc)Opening and Closing Files.
-* crypt: (libc)Passphrase Storage.
-* crypt_r: (libc)Passphrase Storage.
 * csin: (libc)Trig Functions.
 * csinf: (libc)Trig Functions.
 * csinfN: (libc)Trig Functions.
@@ -1602,6 +1600,7 @@ START-INFO-DIR-ENTRY
 * pause: (libc)Using Pause.
 * pclose: (libc)Pipe to a Subprocess.
 * perror: (libc)Error Messages.
+* pidfd_getpid: (libc)Querying a Process.
 * pipe: (libc)Creating a Pipe.
 * pkey_alloc: (libc)Memory Protection.
 * pkey_free: (libc)Memory Protection.
@@ -1884,6 +1883,76 @@ START-INFO-DIR-ENTRY
 * ssignal: (libc)Basic Signal Handling.
 * stat64: (libc)Reading Attributes.
 * stat: (libc)Reading Attributes.
+* stdc_bit_ceil_uc: (libc)Bit Manipulation.
+* stdc_bit_ceil_ui: (libc)Bit Manipulation.
+* stdc_bit_ceil_ul: (libc)Bit Manipulation.
+* stdc_bit_ceil_ull: (libc)Bit Manipulation.
+* stdc_bit_ceil_us: (libc)Bit Manipulation.
+* stdc_bit_floor_uc: (libc)Bit Manipulation.
+* stdc_bit_floor_ui: (libc)Bit Manipulation.
+* stdc_bit_floor_ul: (libc)Bit Manipulation.
+* stdc_bit_floor_ull: (libc)Bit Manipulation.
+* stdc_bit_floor_us: (libc)Bit Manipulation.
+* stdc_bit_width_uc: (libc)Bit Manipulation.
+* stdc_bit_width_ui: (libc)Bit Manipulation.
+* stdc_bit_width_ul: (libc)Bit Manipulation.
+* stdc_bit_width_ull: (libc)Bit Manipulation.
+* stdc_bit_width_us: (libc)Bit Manipulation.
+* stdc_count_ones_uc: (libc)Bit Manipulation.
+* stdc_count_ones_ui: (libc)Bit Manipulation.
+* stdc_count_ones_ul: (libc)Bit Manipulation.
+* stdc_count_ones_ull: (libc)Bit Manipulation.
+* stdc_count_ones_us: (libc)Bit Manipulation.
+* stdc_count_zeros_uc: (libc)Bit Manipulation.
+* stdc_count_zeros_ui: (libc)Bit Manipulation.
+* stdc_count_zeros_ul: (libc)Bit Manipulation.
+* stdc_count_zeros_ull: (libc)Bit Manipulation.
+* stdc_count_zeros_us: (libc)Bit Manipulation.
+* stdc_first_leading_one_uc: (libc)Bit Manipulation.
+* stdc_first_leading_one_ui: (libc)Bit Manipulation.
+* stdc_first_leading_one_ul: (libc)Bit Manipulation.
+* stdc_first_leading_one_ull: (libc)Bit Manipulation.
+* stdc_first_leading_one_us: (libc)Bit Manipulation.
+* stdc_first_leading_zero_uc: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ui: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ul: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ull: (libc)Bit Manipulation.
+* stdc_first_leading_zero_us: (libc)Bit Manipulation.
+* stdc_first_trailing_one_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_one_us: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_us: (libc)Bit Manipulation.
+* stdc_has_single_bit_uc: (libc)Bit Manipulation.
+* stdc_has_single_bit_ui: (libc)Bit Manipulation.
+* stdc_has_single_bit_ul: (libc)Bit Manipulation.
+* stdc_has_single_bit_ull: (libc)Bit Manipulation.
+* stdc_has_single_bit_us: (libc)Bit Manipulation.
+* stdc_leading_ones_uc: (libc)Bit Manipulation.
+* stdc_leading_ones_ui: (libc)Bit Manipulation.
+* stdc_leading_ones_ul: (libc)Bit Manipulation.
+* stdc_leading_ones_ull: (libc)Bit Manipulation.
+* stdc_leading_ones_us: (libc)Bit Manipulation.
+* stdc_leading_zeros_uc: (libc)Bit Manipulation.
+* stdc_leading_zeros_ui: (libc)Bit Manipulation.
+* stdc_leading_zeros_ul: (libc)Bit Manipulation.
+* stdc_leading_zeros_ull: (libc)Bit Manipulation.
+* stdc_leading_zeros_us: (libc)Bit Manipulation.
+* stdc_trailing_ones_uc: (libc)Bit Manipulation.
+* stdc_trailing_ones_ui: (libc)Bit Manipulation.
+* stdc_trailing_ones_ul: (libc)Bit Manipulation.
+* stdc_trailing_ones_ull: (libc)Bit Manipulation.
+* stdc_trailing_ones_us: (libc)Bit Manipulation.
+* stdc_trailing_zeros_uc: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ui: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ul: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ull: (libc)Bit Manipulation.
+* stdc_trailing_zeros_us: (libc)Bit Manipulation.
 * stime: (libc)Setting and Adjusting the Time.
 * stpcpy: (libc)Copying Strings and Arrays.
 * stpncpy: (libc)Truncating Strings.
@@ -2174,9 +2243,1990 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
+File: libc.info,  Node: Time Zone Functions,  Next: Time Functions Example,  Prev: TZ Variable,  Up: Calendar Time
+
+22.5.7 Functions and Variables for Time Zones
+---------------------------------------------
+
+ -- Variable: char * tzname [2]
+
+     The array ‘tzname’ contains two strings, which are the standard
+     abbreviations of the pair of time zones (standard and Daylight
+     Saving) that the user has selected.  ‘tzname[0]’ abbreviates the
+     standard time zone (for example, ‘"EST"’), and ‘tzname[1]’
+     abbreviates the time zone when Daylight Saving Time is in use (for
+     example, ‘"EDT"’).  These correspond to the STD and DST strings
+     (respectively) from the ‘TZ’ environment variable.  If Daylight
+     Saving Time is never used, ‘tzname[1]’ is the empty string.
+
+     The ‘tzname’ array is initialized from the ‘TZ’ environment
+     variable whenever ‘tzset’, ‘ctime’, ‘strftime’, ‘mktime’, or
+     ‘localtime’ is called.  If multiple abbreviations have been used
+     (e.g.  ‘"EWT"’ and ‘"EDT"’ for U.S. Eastern War Time and Eastern
+     Daylight Time), the array contains the most recent abbreviation.
+
+     The ‘tzname’ array is required for POSIX.1 compatibility, but in
+     GNU programs it is better to use the ‘tm_zone’ member of the
+     broken-down time structure, since ‘tm_zone’ reports the correct
+     abbreviation even when it is not the latest one.
+
+     Though the strings are declared as ‘char *’ the user must refrain
+     from modifying these strings.  Modifying the strings will almost
+     certainly lead to trouble.
+
+ -- Function: void tzset (void)
+
+     Preliminary: | MT-Safe env locale | AS-Unsafe heap lock | AC-Unsafe
+     lock mem fd | *Note POSIX Safety Concepts::.
+
+     The ‘tzset’ function initializes the ‘tzname’ variable from the
+     value of the ‘TZ’ environment variable.  It is not usually
+     necessary for your program to call this function, because it is
+     called automatically when you use the other time conversion
+     functions that depend on the time zone.
+
+   The following variables are defined for compatibility with System V
+Unix.  Like ‘tzname’, these variables are set by calling ‘tzset’ or the
+other time conversion functions.
+
+ -- Variable: long int timezone
+
+     This contains the difference between UTC and the latest local
+     standard time, in seconds west of UTC. For example, in the U.S.
+     Eastern time zone, the value is ‘5*60*60’.  Unlike the ‘tm_gmtoff’
+     member of the broken-down time structure, this value is not
+     adjusted for daylight saving, and its sign is reversed.  In GNU
+     programs it is better to use ‘tm_gmtoff’, since it contains the
+     correct offset even when it is not the latest one.
+
+ -- Variable: int daylight
+
+     This variable has a nonzero value if Daylight Saving Time rules
+     apply.  A nonzero value does not necessarily mean that Daylight
+     Saving Time is now in effect; it means only that Daylight Saving
+     Time is sometimes in effect.
+
+
+File: libc.info,  Node: Time Functions Example,  Prev: Time Zone Functions,  Up: Calendar Time
+
+22.5.8 Time Functions Example
+-----------------------------
+
+Here is an example program showing the use of some of the calendar time
+functions.
+
+
+     #include <time.h>
+     #include <stdio.h>
+
+     #define SIZE 256
+
+     int
+     main (void)
+     {
+       char buffer[SIZE];
+       time_t curtime;
+       struct tm *loctime;
+
+       /* Get the current time. */
+       curtime = time (NULL);
+
+       /* Convert it to local time representation. */
+       loctime = localtime (&curtime);
+
+       /* Print out the date and time in the standard format. */
+       fputs (asctime (loctime), stdout);
+
+       /* Print it out in a nice format. */
+       strftime (buffer, SIZE, "Today is %A, %B %d.\n", loctime);
+       fputs (buffer, stdout);
+       strftime (buffer, SIZE, "The time is %I:%M %p.\n", loctime);
+       fputs (buffer, stdout);
+
+       return 0;
+     }
+
+   It produces output like this:
+
+     Wed Jul 31 13:02:36 1991
+     Today is Wednesday, July 31.
+     The time is 01:02 PM.
+
+
+File: libc.info,  Node: Setting an Alarm,  Next: Sleeping,  Prev: Calendar Time,  Up: Date and Time
+
+22.6 Setting an Alarm
+=====================
+
+The ‘alarm’ and ‘setitimer’ functions provide a mechanism for a process
+to interrupt itself in the future.  They do this by setting a timer;
+when the timer expires, the process receives a signal.
+
+   Each process has three independent interval timers available:
+
+   • A real-time timer that counts elapsed time.  This timer sends a
+     ‘SIGALRM’ signal to the process when it expires.
+
+   • A virtual timer that counts processor time used by the process.
+     This timer sends a ‘SIGVTALRM’ signal to the process when it
+     expires.
+
+   • A profiling timer that counts both processor time used by the
+     process, and processor time spent in system calls on behalf of the
+     process.  This timer sends a ‘SIGPROF’ signal to the process when
+     it expires.
+
+     This timer is useful for profiling in interpreters.  The interval
+     timer mechanism does not have the fine granularity necessary for
+     profiling native code.
+
+   You can only have one timer of each kind set at any given time.  If
+you set a timer that has not yet expired, that timer is simply reset to
+the new value.
+
+   You should establish a handler for the appropriate alarm signal using
+‘signal’ or ‘sigaction’ before issuing a call to ‘setitimer’ or ‘alarm’.
+Otherwise, an unusual chain of events could cause the timer to expire
+before your program establishes the handler.  In this case it would be
+terminated, since termination is the default action for the alarm
+signals.  *Note Signal Handling::.
+
+   To be able to use the alarm function to interrupt a system call which
+might block otherwise indefinitely it is important to _not_ set the
+‘SA_RESTART’ flag when registering the signal handler using ‘sigaction’.
+When not using ‘sigaction’ things get even uglier: the ‘signal’ function
+has fixed semantics with respect to restarts.  The BSD semantics for
+this function is to set the flag.  Therefore, if ‘sigaction’ for
+whatever reason cannot be used, it is necessary to use ‘sysv_signal’ and
+not ‘signal’.
+
+   The ‘setitimer’ function is the primary means for setting an alarm.
+This facility is declared in the header file ‘sys/time.h’.  The ‘alarm’
+function, declared in ‘unistd.h’, provides a somewhat simpler interface
+for setting the real-time timer.
+
+ -- Data Type: struct itimerval
+
+     This structure is used to specify when a timer should expire.  It
+     contains the following members:
+     ‘struct timeval it_interval’
+          This is the period between successive timer interrupts.  If
+          zero, the alarm will only be sent once.
+
+     ‘struct timeval it_value’
+          This is the period between now and the first timer interrupt.
+          If zero, the alarm is disabled.
+
+     The ‘struct timeval’ data type is described in *note Time Types::.
+
+ -- Function: int setitimer (int WHICH, const struct itimerval *NEW,
+          struct itimerval *OLD)
+
+     Preliminary: | MT-Safe timer | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘setitimer’ function sets the timer specified by WHICH
+     according to NEW.  The WHICH argument can have a value of
+     ‘ITIMER_REAL’, ‘ITIMER_VIRTUAL’, or ‘ITIMER_PROF’.
+
+     If OLD is not a null pointer, ‘setitimer’ returns information about
+     any previous unexpired timer of the same kind in the structure it
+     points to.
+
+     The return value is ‘0’ on success and ‘-1’ on failure.  The
+     following ‘errno’ error conditions are defined for this function:
+
+     ‘EINVAL’
+          The timer period is too large.
+
+ -- Function: int getitimer (int WHICH, struct itimerval *OLD)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     The ‘getitimer’ function stores information about the timer
+     specified by WHICH in the structure pointed at by OLD.
+
+     The return value and error conditions are the same as for
+     ‘setitimer’.
+
+‘ITIMER_REAL’
+
+     This constant can be used as the WHICH argument to the ‘setitimer’
+     and ‘getitimer’ functions to specify the real-time timer.
+
+‘ITIMER_VIRTUAL’
+
+     This constant can be used as the WHICH argument to the ‘setitimer’
+     and ‘getitimer’ functions to specify the virtual timer.
+
+‘ITIMER_PROF’
+
+     This constant can be used as the WHICH argument to the ‘setitimer’
+     and ‘getitimer’ functions to specify the profiling timer.
+
+ -- Function: unsigned int alarm (unsigned int SECONDS)
+
+     Preliminary: | MT-Safe timer | AS-Safe | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     The ‘alarm’ function sets the real-time timer to expire in SECONDS
+     seconds.  If you want to cancel any existing alarm, you can do this
+     by calling ‘alarm’ with a SECONDS argument of zero.
+
+     The return value indicates how many seconds remain before the
+     previous alarm would have been sent.  If there was no previous
+     alarm, ‘alarm’ returns zero.
+
+   The ‘alarm’ function could be defined in terms of ‘setitimer’ like
+this:
+
+     unsigned int
+     alarm (unsigned int seconds)
+     {
+       struct itimerval old, new;
+       new.it_interval.tv_usec = 0;
+       new.it_interval.tv_sec = 0;
+       new.it_value.tv_usec = 0;
+       new.it_value.tv_sec = (long int) seconds;
+       if (setitimer (ITIMER_REAL, &new, &old) < 0)
+         return 0;
+       else
+         return old.it_value.tv_sec;
+     }
+
+   There is an example showing the use of the ‘alarm’ function in *note
+Handler Returns::.
+
+   If you simply want your process to wait for a given number of
+seconds, you should use the ‘sleep’ function.  *Note Sleeping::.
+
+   You shouldn’t count on the signal arriving precisely when the timer
+expires.  In a multiprocessing environment there is typically some
+amount of delay involved.
+
+   *Portability Note:* The ‘setitimer’ and ‘getitimer’ functions are
+derived from BSD Unix, while the ‘alarm’ function is specified by the
+POSIX.1 standard.  ‘setitimer’ is more powerful than ‘alarm’, but
+‘alarm’ is more widely used.
+
+
+File: libc.info,  Node: Sleeping,  Prev: Setting an Alarm,  Up: Date and Time
+
+22.7 Sleeping
+=============
+
+The function ‘sleep’ gives a simple way to make the program wait for a
+short interval.  If your program doesn’t use signals (except to
+terminate), then you can expect ‘sleep’ to wait reliably throughout the
+specified interval.  Otherwise, ‘sleep’ can return sooner if a signal
+arrives; if you want to wait for a given interval regardless of signals,
+use ‘select’ (*note Waiting for I/O::) and don’t specify any descriptors
+to wait for.
+
+ -- Function: unsigned int sleep (unsigned int SECONDS)
+
+     Preliminary: | MT-Unsafe sig:SIGCHLD/linux | AS-Unsafe | AC-Unsafe
+     | *Note POSIX Safety Concepts::.
+
+     The ‘sleep’ function waits for SECONDS seconds or until a signal is
+     delivered, whichever happens first.
+
+     If ‘sleep’ returns because the requested interval is over, it
+     returns a value of zero.  If it returns because of delivery of a
+     signal, its return value is the remaining time in the sleep
+     interval.
+
+     The ‘sleep’ function is declared in ‘unistd.h’.
+
+   Resist the temptation to implement a sleep for a fixed amount of time
+by using the return value of ‘sleep’, when nonzero, to call ‘sleep’
+again.  This will work with a certain amount of accuracy as long as
+signals arrive infrequently.  But each signal can cause the eventual
+wakeup time to be off by an additional second or so.  Suppose a few
+signals happen to arrive in rapid succession by bad luck—there is no
+limit on how much this could shorten or lengthen the wait.
+
+   Instead, compute the calendar time at which the program should stop
+waiting, and keep trying to wait until that calendar time.  This won’t
+be off by more than a second.  With just a little more work, you can use
+‘select’ and make the waiting period quite accurate.  (Of course, heavy
+system load can cause additional unavoidable delays—unless the machine
+is dedicated to one application, there is no way you can avoid this.)
+
+   On some systems, ‘sleep’ can do strange things if your program uses
+‘SIGALRM’ explicitly.  Even if ‘SIGALRM’ signals are being ignored or
+blocked when ‘sleep’ is called, ‘sleep’ might return prematurely on
+delivery of a ‘SIGALRM’ signal.  If you have established a handler for
+‘SIGALRM’ signals and a ‘SIGALRM’ signal is delivered while the process
+is sleeping, the action taken might be just to cause ‘sleep’ to return
+instead of invoking your handler.  And, if ‘sleep’ is interrupted by
+delivery of a signal whose handler requests an alarm or alters the
+handling of ‘SIGALRM’, this handler and ‘sleep’ will interfere.
+
+   On GNU systems, it is safe to use ‘sleep’ and ‘SIGALRM’ in the same
+program, because ‘sleep’ does not work by means of ‘SIGALRM’.
+
+ -- Function: int nanosleep (const struct timespec *REQUESTED_TIME,
+          struct timespec *REMAINING)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     If resolution to seconds is not enough the ‘nanosleep’ function can
+     be used.  As the name suggests the sleep interval can be specified
+     in nanoseconds.  The actual elapsed time of the sleep interval
+     might be longer since the system rounds the elapsed time you
+     request up to the next integer multiple of the actual resolution
+     the system can deliver.
+
+     ‘*REQUESTED_TIME’ is the elapsed time of the interval you want to
+     sleep.
+
+     The function returns as ‘*REMAINING’ the elapsed time left in the
+     interval for which you requested to sleep.  If the interval
+     completed without getting interrupted by a signal, this is zero.
+
+     ‘struct timespec’ is described in *note Time Types::.
+
+     If the function returns because the interval is over the return
+     value is zero.  If the function returns -1 the global variable
+     ‘errno’ is set to the following values:
+
+     ‘EINTR’
+          The call was interrupted because a signal was delivered to the
+          thread.  If the REMAINING parameter is not the null pointer
+          the structure pointed to by REMAINING is updated to contain
+          the remaining elapsed time.
+
+     ‘EINVAL’
+          The nanosecond value in the REQUESTED_TIME parameter contains
+          an illegal value.  Either the value is negative or greater
+          than or equal to 1000 million.
+
+     This function is a cancellation point in multi-threaded programs.
+     This is a problem if the thread allocates some resources (like
+     memory, file descriptors, semaphores or whatever) at the time
+     ‘nanosleep’ is called.  If the thread gets canceled these resources
+     stay allocated until the program ends.  To avoid this calls to
+     ‘nanosleep’ should be protected using cancellation handlers.
+
+     The ‘nanosleep’ function is declared in ‘time.h’.
+
+
+File: libc.info,  Node: Resource Usage And Limitation,  Next: Non-Local Exits,  Prev: Date and Time,  Up: Top
+
+23 Resource Usage And Limitation
+********************************
+
+This chapter describes functions for examining how much of various kinds
+of resources (CPU time, memory, etc.)  a process has used and getting
+and setting limits on future usage.
+
+* Menu:
+
+* Resource Usage::		Measuring various resources used.
+* Limits on Resources::		Specifying limits on resource usage.
+* Priority::			Reading or setting process run priority.
+* Memory Resources::            Querying memory available resources.
+* Processor Resources::         Learn about the processors available.
+
+
+File: libc.info,  Node: Resource Usage,  Next: Limits on Resources,  Up: Resource Usage And Limitation
+
+23.1 Resource Usage
+===================
+
+The function ‘getrusage’ and the data type ‘struct rusage’ are used to
+examine the resource usage of a process.  They are declared in
+‘sys/resource.h’.
+
+ -- Function: int getrusage (int PROCESSES, struct rusage *RUSAGE)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function reports resource usage totals for processes specified
+     by PROCESSES, storing the information in ‘*RUSAGE’.
+
+     In most systems, PROCESSES has only two valid values:
+
+     ‘RUSAGE_SELF’
+
+          Just the current process.
+
+     ‘RUSAGE_CHILDREN’
+
+          All child processes (direct and indirect) that have already
+          terminated.
+
+     The return value of ‘getrusage’ is zero for success, and ‘-1’ for
+     failure.
+
+     ‘EINVAL’
+          The argument PROCESSES is not valid.
+
+   One way of getting resource usage for a particular child process is
+with the function ‘wait4’, which returns totals for a child when it
+terminates.  *Note BSD Wait Functions::.
+
+ -- Data Type: struct rusage
+
+     This data type stores various resource usage statistics.  It has
+     the following members, and possibly others:
+
+     ‘struct timeval ru_utime’
+          Time spent executing user instructions.
+
+     ‘struct timeval ru_stime’
+          Time spent in operating system code on behalf of PROCESSES.
+
+     ‘long int ru_maxrss’
+          The maximum resident set size used, in kilobytes.  That is,
+          the maximum number of kilobytes of physical memory that
+          PROCESSES used simultaneously.
+
+     ‘long int ru_ixrss’
+          An integral value expressed in kilobytes times ticks of
+          execution, which indicates the amount of memory used by text
+          that was shared with other processes.
+
+     ‘long int ru_idrss’
+          An integral value expressed the same way, which is the amount
+          of unshared memory used for data.
+
+     ‘long int ru_isrss’
+          An integral value expressed the same way, which is the amount
+          of unshared memory used for stack space.
+
+     ‘long int ru_minflt’
+          The number of page faults which were serviced without
+          requiring any I/O.
+
+     ‘long int ru_majflt’
+          The number of page faults which were serviced by doing I/O.
+
+     ‘long int ru_nswap’
+          The number of times PROCESSES was swapped entirely out of main
+          memory.
+
+     ‘long int ru_inblock’
+          The number of times the file system had to read from the disk
+          on behalf of PROCESSES.
+
+     ‘long int ru_oublock’
+          The number of times the file system had to write to the disk
+          on behalf of PROCESSES.
+
+     ‘long int ru_msgsnd’
+          Number of IPC messages sent.
+
+     ‘long int ru_msgrcv’
+          Number of IPC messages received.
+
+     ‘long int ru_nsignals’
+          Number of signals received.
+
+     ‘long int ru_nvcsw’
+          The number of times PROCESSES voluntarily invoked a context
+          switch (usually to wait for some service).
+
+     ‘long int ru_nivcsw’
+          The number of times an involuntary context switch took place
+          (because a time slice expired, or another process of higher
+          priority was scheduled).
+
+
+File: libc.info,  Node: Limits on Resources,  Next: Priority,  Prev: Resource Usage,  Up: Resource Usage And Limitation
+
+23.2 Limiting Resource Usage
+============================
+
+You can specify limits for the resource usage of a process.  When the
+process tries to exceed a limit, it may get a signal, or the system call
+by which it tried to do so may fail, depending on the resource.  Each
+process initially inherits its limit values from its parent, but it can
+subsequently change them.
+
+   There are two per-process limits associated with a resource:
+
+“current limit”
+     The current limit is the value the system will not allow usage to
+     exceed.  It is also called the “soft limit” because the process
+     being limited can generally raise the current limit at will.
+
+“maximum limit”
+     The maximum limit is the maximum value to which a process is
+     allowed to set its current limit.  It is also called the “hard
+     limit” because there is no way for a process to get around it.  A
+     process may lower its own maximum limit, but only the superuser may
+     increase a maximum limit.
+
+   The symbols for use with ‘getrlimit’, ‘setrlimit’, ‘getrlimit64’, and
+‘setrlimit64’ are defined in ‘sys/resource.h’.
+
+ -- Function: int getrlimit (int RESOURCE, struct rlimit *RLP)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     Read the current and maximum limits for the resource RESOURCE and
+     store them in ‘*RLP’.
+
+     The return value is ‘0’ on success and ‘-1’ on failure.  The only
+     possible ‘errno’ error condition is ‘EFAULT’.
+
+     When the sources are compiled with ‘_FILE_OFFSET_BITS == 64’ on a
+     32-bit system this function is in fact ‘getrlimit64’.  Thus, the
+     LFS interface transparently replaces the old interface.
+
+ -- Function: int getrlimit64 (int RESOURCE, struct rlimit64 *RLP)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function is similar to ‘getrlimit’ but its second parameter is
+     a pointer to a variable of type ‘struct rlimit64’, which allows it
+     to read values which wouldn’t fit in the member of a ‘struct
+     rlimit’.
+
+     If the sources are compiled with ‘_FILE_OFFSET_BITS == 64’ on a
+     32-bit machine, this function is available under the name
+     ‘getrlimit’ and so transparently replaces the old interface.
+
+ -- Function: int setrlimit (int RESOURCE, const struct rlimit *RLP)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     Store the current and maximum limits for the resource RESOURCE in
+     ‘*RLP’.
+
+     The return value is ‘0’ on success and ‘-1’ on failure.  The
+     following ‘errno’ error condition is possible:
+
+     ‘EPERM’
+             • The process tried to raise a current limit beyond the
+               maximum limit.
+
+             • The process tried to raise a maximum limit, but is not
+               superuser.
+
+     When the sources are compiled with ‘_FILE_OFFSET_BITS == 64’ on a
+     32-bit system this function is in fact ‘setrlimit64’.  Thus, the
+     LFS interface transparently replaces the old interface.
+
+ -- Function: int setrlimit64 (int RESOURCE, const struct rlimit64 *RLP)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function is similar to ‘setrlimit’ but its second parameter is
+     a pointer to a variable of type ‘struct rlimit64’ which allows it
+     to set values which wouldn’t fit in the member of a ‘struct
+     rlimit’.
+
+     If the sources are compiled with ‘_FILE_OFFSET_BITS == 64’ on a
+     32-bit machine this function is available under the name
+     ‘setrlimit’ and so transparently replaces the old interface.
+
+ -- Data Type: struct rlimit
+
+     This structure is used with ‘getrlimit’ to receive limit values,
+     and with ‘setrlimit’ to specify limit values for a particular
+     process and resource.  It has two fields:
+
+     ‘rlim_t rlim_cur’
+          The current limit
+
+     ‘rlim_t rlim_max’
+          The maximum limit.
+
+     For ‘getrlimit’, the structure is an output; it receives the
+     current values.  For ‘setrlimit’, it specifies the new values.
+
+   For the LFS functions a similar type is defined in ‘sys/resource.h’.
+
+ -- Data Type: struct rlimit64
+
+     This structure is analogous to the ‘rlimit’ structure above, but
+     its components have wider ranges.  It has two fields:
+
+     ‘rlim64_t rlim_cur’
+          This is analogous to ‘rlimit.rlim_cur’, but with a different
+          type.
+
+     ‘rlim64_t rlim_max’
+          This is analogous to ‘rlimit.rlim_max’, but with a different
+          type.
+
+   Here is a list of resources for which you can specify a limit.
+Memory and file sizes are measured in bytes.
+
+‘RLIMIT_CPU’
+
+     The maximum amount of CPU time the process can use.  If it runs for
+     longer than this, it gets a signal: ‘SIGXCPU’.  The value is
+     measured in seconds.  *Note Operation Error Signals::.
+
+‘RLIMIT_FSIZE’
+
+     The maximum size of file the process can create.  Trying to write a
+     larger file causes a signal: ‘SIGXFSZ’.  *Note Operation Error
+     Signals::.
+
+‘RLIMIT_DATA’
+
+     The maximum size of data memory for the process.  If the process
+     tries to allocate data memory beyond this amount, the allocation
+     function fails.
+
+‘RLIMIT_STACK’
+
+     The maximum stack size for the process.  If the process tries to
+     extend its stack past this size, it gets a ‘SIGSEGV’ signal.  *Note
+     Program Error Signals::.
+
+‘RLIMIT_CORE’
+
+     The maximum size core file that this process can create.  If the
+     process terminates and would dump a core file larger than this,
+     then no core file is created.  So setting this limit to zero
+     prevents core files from ever being created.
+
+‘RLIMIT_RSS’
+
+     The maximum amount of physical memory that this process should get.
+     This parameter is a guide for the system’s scheduler and memory
+     allocator; the system may give the process more memory when there
+     is a surplus.
+
+‘RLIMIT_MEMLOCK’
+
+     The maximum amount of memory that can be locked into physical
+     memory (so it will never be paged out).
+
+‘RLIMIT_NPROC’
+
+     The maximum number of processes that can be created with the same
+     user ID. If you have reached the limit for your user ID, ‘fork’
+     will fail with ‘EAGAIN’.  *Note Creating a Process::.
+
+‘RLIMIT_NOFILE’
+‘RLIMIT_OFILE’
+
+     The maximum number of files that the process can open.  If it tries
+     to open more files than this, its open attempt fails with ‘errno’
+     ‘EMFILE’.  *Note Error Codes::.  Not all systems support this
+     limit; GNU does, and 4.4 BSD does.
+
+‘RLIMIT_AS’
+
+     The maximum size of total memory that this process should get.  If
+     the process tries to allocate more memory beyond this amount with,
+     for example, ‘brk’, ‘malloc’, ‘mmap’ or ‘sbrk’, the allocation
+     function fails.
+
+‘RLIM_NLIMITS’
+
+     The number of different resource limits.  Any valid RESOURCE
+     operand must be less than ‘RLIM_NLIMITS’.
+
+ -- Constant: rlim_t RLIM_INFINITY
+
+     This constant stands for a value of “infinity” when supplied as the
+     limit value in ‘setrlimit’.
+
+   The following are historical functions to do some of what the
+functions above do.  The functions above are better choices.
+
+   ‘ulimit’ and the command symbols are declared in ‘ulimit.h’.
+
+ -- Function: long int ulimit (int CMD, ...)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     ‘ulimit’ gets the current limit or sets the current and maximum
+     limit for a particular resource for the calling process according
+     to the command CMD.
+
+     If you are getting a limit, the command argument is the only
+     argument.  If you are setting a limit, there is a second argument:
+     ‘long int’ LIMIT which is the value to which you are setting the
+     limit.
+
+     The CMD values and the operations they specify are:
+
+     ‘GETFSIZE’
+          Get the current limit on the size of a file, in units of 512
+          bytes.
+
+     ‘SETFSIZE’
+          Set the current and maximum limit on the size of a file to
+          LIMIT * 512 bytes.
+
+     There are also some other CMD values that may do things on some
+     systems, but they are not supported.
+
+     Only the superuser may increase a maximum limit.
+
+     When you successfully get a limit, the return value of ‘ulimit’ is
+     that limit, which is never negative.  When you successfully set a
+     limit, the return value is zero.  When the function fails, the
+     return value is ‘-1’ and ‘errno’ is set according to the reason:
+
+     ‘EPERM’
+          A process tried to increase a maximum limit, but is not
+          superuser.
+
+   ‘vlimit’ and its resource symbols are declared in ‘sys/vlimit.h’.
+
+ -- Function: int vlimit (int RESOURCE, int LIMIT)
+
+     Preliminary: | MT-Unsafe race:setrlimit | AS-Unsafe | AC-Safe |
+     *Note POSIX Safety Concepts::.
+
+     ‘vlimit’ sets the current limit for a resource for a process.
+
+     RESOURCE identifies the resource:
+
+     ‘LIM_CPU’
+          Maximum CPU time.  Same as ‘RLIMIT_CPU’ for ‘setrlimit’.
+     ‘LIM_FSIZE’
+          Maximum file size.  Same as ‘RLIMIT_FSIZE’ for ‘setrlimit’.
+     ‘LIM_DATA’
+          Maximum data memory.  Same as ‘RLIMIT_DATA’ for ‘setrlimit’.
+     ‘LIM_STACK’
+          Maximum stack size.  Same as ‘RLIMIT_STACK’ for ‘setrlimit’.
+     ‘LIM_CORE’
+          Maximum core file size.  Same as ‘RLIMIT_COR’ for ‘setrlimit’.
+     ‘LIM_MAXRSS’
+          Maximum physical memory.  Same as ‘RLIMIT_RSS’ for
+          ‘setrlimit’.
+
+     The return value is zero for success, and ‘-1’ with ‘errno’ set
+     accordingly for failure:
+
+     ‘EPERM’
+          The process tried to set its current limit beyond its maximum
+          limit.
+
+
+File: libc.info,  Node: Priority,  Next: Memory Resources,  Prev: Limits on Resources,  Up: Resource Usage And Limitation
+
+23.3 Process CPU Priority And Scheduling
+========================================
+
+When multiple processes simultaneously require CPU time, the system’s
+scheduling policy and process CPU priorities determine which processes
+get it.  This section describes how that determination is made and GNU C
+Library functions to control it.
+
+   It is common to refer to CPU scheduling simply as scheduling and a
+process’ CPU priority simply as the process’ priority, with the CPU
+resource being implied.  Bear in mind, though, that CPU time is not the
+only resource a process uses or that processes contend for.  In some
+cases, it is not even particularly important.  Giving a process a high
+“priority” may have very little effect on how fast a process runs with
+respect to other processes.  The priorities discussed in this section
+apply only to CPU time.
+
+   CPU scheduling is a complex issue and different systems do it in
+wildly different ways.  New ideas continually develop and find their way
+into the intricacies of the various systems’ scheduling algorithms.
+This section discusses the general concepts, some specifics of systems
+that commonly use the GNU C Library, and some standards.
+
+   For simplicity, we talk about CPU contention as if there is only one
+CPU in the system.  But all the same principles apply when a processor
+has multiple CPUs, and knowing that the number of processes that can run
+at any one time is equal to the number of CPUs, you can easily
+extrapolate the information.
+
+   The functions described in this section are all defined by the
+POSIX.1 and POSIX.1b standards (the ‘sched...’ functions are POSIX.1b).
+However, POSIX does not define any semantics for the values that these
+functions get and set.  In this chapter, the semantics are based on the
+Linux kernel’s implementation of the POSIX standard.  As you will see,
+the Linux implementation is quite the inverse of what the authors of the
+POSIX syntax had in mind.
+
+* Menu:
+
+* Absolute Priority::               The first tier of priority.  Posix
+* Realtime Scheduling::             Scheduling among the process nobility
+* Basic Scheduling Functions::      Get/set scheduling policy, priority
+* Traditional Scheduling::          Scheduling among the vulgar masses
+* CPU Affinity::                    Limiting execution to certain CPUs
+
+
+File: libc.info,  Node: Absolute Priority,  Next: Realtime Scheduling,  Up: Priority
+
+23.3.1 Absolute Priority
+------------------------
+
+Every process has an absolute priority, and it is represented by a
+number.  The higher the number, the higher the absolute priority.
+
+   On systems of the past, and most systems today, all processes have
+absolute priority 0 and this section is irrelevant.  In that case, *Note
+Traditional Scheduling::.  Absolute priorities were invented to
+accommodate realtime systems, in which it is vital that certain
+processes be able to respond to external events happening in real time,
+which means they cannot wait around while some other process that _wants
+to_, but doesn’t _need to_ run occupies the CPU.
+
+   When two processes are in contention to use the CPU at any instant,
+the one with the higher absolute priority always gets it.  This is true
+even if the process with the lower priority is already using the CPU
+(i.e., the scheduling is preemptive).  Of course, we’re only talking
+about processes that are running or “ready to run,” which means they are
+ready to execute instructions right now.  When a process blocks to wait
+for something like I/O, its absolute priority is irrelevant.
+
+   *NB:* The term “runnable” is a synonym for “ready to run.”
+
+   When two processes are running or ready to run and both have the same
+absolute priority, it’s more interesting.  In that case, who gets the
+CPU is determined by the scheduling policy.  If the processes have
+absolute priority 0, the traditional scheduling policy described in
+*note Traditional Scheduling:: applies.  Otherwise, the policies
+described in *note Realtime Scheduling:: apply.
+
+   You normally give an absolute priority above 0 only to a process that
+can be trusted not to hog the CPU. Such processes are designed to block
+(or terminate) after relatively short CPU runs.
+
+   A process begins life with the same absolute priority as its parent
+process.  Functions described in *note Basic Scheduling Functions:: can
+change it.
+
+   Only a privileged process can change a process’ absolute priority to
+something other than ‘0’.  Only a privileged process or the target
+process’ owner can change its absolute priority at all.
+
+   POSIX requires absolute priority values used with the realtime
+scheduling policies to be consecutive with a range of at least 32.  On
+Linux, they are 1 through 99.  The functions ‘sched_get_priority_max’
+and ‘sched_set_priority_min’ portably tell you what the range is on a
+particular system.
+
+23.3.1.1 Using Absolute Priority
+................................
+
+One thing you must keep in mind when designing real time applications is
+that having higher absolute priority than any other process doesn’t
+guarantee the process can run continuously.  Two things that can wreck a
+good CPU run are interrupts and page faults.
+
+   Interrupt handlers live in that limbo between processes.  The CPU is
+executing instructions, but they aren’t part of any process.  An
+interrupt will stop even the highest priority process.  So you must
+allow for slight delays and make sure that no device in the system has
+an interrupt handler that could cause too long a delay between
+instructions for your process.
+
+   Similarly, a page fault causes what looks like a straightforward
+sequence of instructions to take a long time.  The fact that other
+processes get to run while the page faults in is of no consequence,
+because as soon as the I/O is complete, the higher priority process will
+kick them out and run again, but the wait for the I/O itself could be a
+problem.  To neutralize this threat, use ‘mlock’ or ‘mlockall’.
+
+   There are a few ramifications of the absoluteness of this priority on
+a single-CPU system that you need to keep in mind when you choose to set
+a priority and also when you’re working on a program that runs with high
+absolute priority.  Consider a process that has higher absolute priority
+than any other process in the system and due to a bug in its program, it
+gets into an infinite loop.  It will never cede the CPU. You can’t run a
+command to kill it because your command would need to get the CPU in
+order to run.  The errant program is in complete control.  It controls
+the vertical, it controls the horizontal.
+
+   There are two ways to avoid this: 1) keep a shell running somewhere
+with a higher absolute priority or 2) keep a controlling terminal
+attached to the high priority process group.  All the priority in the
+world won’t stop an interrupt handler from running and delivering a
+signal to the process if you hit Control-C.
+
+   Some systems use absolute priority as a means of allocating a fixed
+percentage of CPU time to a process.  To do this, a super high priority
+privileged process constantly monitors the process’ CPU usage and raises
+its absolute priority when the process isn’t getting its entitled share
+and lowers it when the process is exceeding it.
+
+   *NB:* The absolute priority is sometimes called the “static
+priority.” We don’t use that term in this manual because it misses the
+most important feature of the absolute priority: its absoluteness.
+
+
+File: libc.info,  Node: Realtime Scheduling,  Next: Basic Scheduling Functions,  Prev: Absolute Priority,  Up: Priority
+
+23.3.2 Realtime Scheduling
+--------------------------
+
+Whenever two processes with the same absolute priority are ready to run,
+the kernel has a decision to make, because only one can run at a time.
+If the processes have absolute priority 0, the kernel makes this
+decision as described in *note Traditional Scheduling::.  Otherwise, the
+decision is as described in this section.
+
+   If two processes are ready to run but have different absolute
+priorities, the decision is much simpler, and is described in *note
+Absolute Priority::.
+
+   Each process has a scheduling policy.  For processes with absolute
+priority other than zero, there are two available:
+
+  1. First Come First Served
+  2. Round Robin
+
+   The most sensible case is where all the processes with a certain
+absolute priority have the same scheduling policy.  We’ll discuss that
+first.
+
+   In Round Robin, processes share the CPU, each one running for a small
+quantum of time (“time slice”) and then yielding to another in a
+circular fashion.  Of course, only processes that are ready to run and
+have the same absolute priority are in this circle.
+
+   In First Come First Served, the process that has been waiting the
+longest to run gets the CPU, and it keeps it until it voluntarily
+relinquishes the CPU, runs out of things to do (blocks), or gets
+preempted by a higher priority process.
+
+   First Come First Served, along with maximal absolute priority and
+careful control of interrupts and page faults, is the one to use when a
+process absolutely, positively has to run at full CPU speed or not at
+all.
+
+   Judicious use of ‘sched_yield’ function invocations by processes with
+First Come First Served scheduling policy forms a good compromise
+between Round Robin and First Come First Served.
+
+   To understand how scheduling works when processes of different
+scheduling policies occupy the same absolute priority, you have to know
+the nitty gritty details of how processes enter and exit the ready to
+run list.
+
+   In both cases, the ready to run list is organized as a true queue,
+where a process gets pushed onto the tail when it becomes ready to run
+and is popped off the head when the scheduler decides to run it.  Note
+that ready to run and running are two mutually exclusive states.  When
+the scheduler runs a process, that process is no longer ready to run and
+no longer in the ready to run list.  When the process stops running, it
+may go back to being ready to run again.
+
+   The only difference between a process that is assigned the Round
+Robin scheduling policy and a process that is assigned First Come First
+Serve is that in the former case, the process is automatically booted
+off the CPU after a certain amount of time.  When that happens, the
+process goes back to being ready to run, which means it enters the queue
+at the tail.  The time quantum we’re talking about is small.  Really
+small.  This is not your father’s timesharing.  For example, with the
+Linux kernel, the round robin time slice is a thousand times shorter
+than its typical time slice for traditional scheduling.
+
+   A process begins life with the same scheduling policy as its parent
+process.  Functions described in *note Basic Scheduling Functions:: can
+change it.
+
+   Only a privileged process can set the scheduling policy of a process
+that has absolute priority higher than 0.
+
+
+File: libc.info,  Node: Basic Scheduling Functions,  Next: Traditional Scheduling,  Prev: Realtime Scheduling,  Up: Priority
+
+23.3.3 Basic Scheduling Functions
+---------------------------------
+
+This section describes functions in the GNU C Library for setting the
+absolute priority and scheduling policy of a process.
+
+   *Portability Note:* On systems that have the functions in this
+section, the macro _POSIX_PRIORITY_SCHEDULING is defined in
+‘<unistd.h>’.
+
+   For the case that the scheduling policy is traditional scheduling,
+more functions to fine tune the scheduling are in *note Traditional
+Scheduling::.
+
+   Don’t try to make too much out of the naming and structure of these
+functions.  They don’t match the concepts described in this manual
+because the functions are as defined by POSIX.1b, but the implementation
+on systems that use the GNU C Library is the inverse of what the POSIX
+structure contemplates.  The POSIX scheme assumes that the primary
+scheduling parameter is the scheduling policy and that the priority
+value, if any, is a parameter of the scheduling policy.  In the
+implementation, though, the priority value is king and the scheduling
+policy, if anything, only fine tunes the effect of that priority.
+
+   The symbols in this section are declared by including file ‘sched.h’.
+
+   *Portability Note:* In POSIX, the ‘pid_t’ arguments of the functions
+below refer to process IDs.  On Linux, they are actually thread IDs, and
+control how specific threads are scheduled with regards to the entire
+system.  The resulting behavior does not conform to POSIX. This is why
+the following description refers to tasks and tasks IDs, and not
+processes and process IDs.
+
+ -- Data Type: struct sched_param
+
+     This structure describes an absolute priority.
+     ‘int sched_priority’
+          absolute priority value
+
+ -- Function: int sched_setscheduler (pid_t PID, int POLICY, const
+          struct sched_param *PARAM)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function sets both the absolute priority and the scheduling
+     policy for a task.
+
+     It assigns the absolute priority value given by PARAM and the
+     scheduling policy POLICY to the task with ID PID, or the calling
+     task if PID is zero.  If POLICY is negative, ‘sched_setscheduler’
+     keeps the existing scheduling policy.
+
+     The following macros represent the valid values for POLICY:
+
+     ‘SCHED_OTHER’
+          Traditional Scheduling
+     ‘SCHED_FIFO’
+          First In First Out
+     ‘SCHED_RR’
+          Round Robin
+
+     On success, the return value is ‘0’.  Otherwise, it is ‘-1’ and
+     ‘ERRNO’ is set accordingly.  The ‘errno’ values specific to this
+     function are:
+
+     ‘EPERM’
+             • The calling task does not have ‘CAP_SYS_NICE’ permission
+               and POLICY is not ‘SCHED_OTHER’ (or it’s negative and the
+               existing policy is not ‘SCHED_OTHER’.
+
+             • The calling task does not have ‘CAP_SYS_NICE’ permission
+               and its owner is not the target task’s owner.  I.e., the
+               effective uid of the calling task is neither the
+               effective nor the real uid of task PID.
+
+     ‘ESRCH’
+          There is no task with pid PID and PID is not zero.
+
+     ‘EINVAL’
+             • POLICY does not identify an existing scheduling policy.
+
+             • The absolute priority value identified by *PARAM is
+               outside the valid range for the scheduling policy POLICY
+               (or the existing scheduling policy if POLICY is negative)
+               or PARAM is null.  ‘sched_get_priority_max’ and
+               ‘sched_get_priority_min’ tell you what the valid range
+               is.
+
+             • PID is negative.
+
+ -- Function: int sched_getscheduler (pid_t PID)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function returns the scheduling policy assigned to the task
+     with ID PID, or the calling task if PID is zero.
+
+     The return value is the scheduling policy.  See
+     ‘sched_setscheduler’ for the possible values.
+
+     If the function fails, the return value is instead ‘-1’ and ‘errno’
+     is set accordingly.
+
+     The ‘errno’ values specific to this function are:
+
+     ‘ESRCH’
+          There is no task with pid PID and it is not zero.
+
+     ‘EINVAL’
+          PID is negative.
+
+     Note that this function is not an exact mate to
+     ‘sched_setscheduler’ because while that function sets the
+     scheduling policy and the absolute priority, this function gets
+     only the scheduling policy.  To get the absolute priority, use
+     ‘sched_getparam’.
+
+ -- Function: int sched_setparam (pid_t PID, const struct sched_param
+          *PARAM)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function sets a task’s absolute priority.
+
+     It is functionally identical to ‘sched_setscheduler’ with POLICY =
+     ‘-1’.
+
+ -- Function: int sched_getparam (pid_t PID, struct sched_param *PARAM)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function returns a task’s absolute priority.
+
+     PID is the task ID of the task whose absolute priority you want to
+     know.
+
+     PARAM is a pointer to a structure in which the function stores the
+     absolute priority of the task.
+
+     On success, the return value is ‘0’.  Otherwise, it is ‘-1’ and
+     ‘errno’ is set accordingly.  The ‘errno’ values specific to this
+     function are:
+
+     ‘ESRCH’
+          There is no task with ID PID and it is not zero.
+
+     ‘EINVAL’
+          PID is negative.
+
+ -- Function: int sched_get_priority_min (int POLICY)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function returns the lowest absolute priority value that is
+     allowable for a task with scheduling policy POLICY.
+
+     On Linux, it is 0 for SCHED_OTHER and 1 for everything else.
+
+     On success, the return value is ‘0’.  Otherwise, it is ‘-1’ and
+     ‘ERRNO’ is set accordingly.  The ‘errno’ values specific to this
+     function are:
+
+     ‘EINVAL’
+          POLICY does not identify an existing scheduling policy.
+
+ -- Function: int sched_get_priority_max (int POLICY)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function returns the highest absolute priority value that is
+     allowable for a task that with scheduling policy POLICY.
+
+     On Linux, it is 0 for SCHED_OTHER and 99 for everything else.
+
+     On success, the return value is ‘0’.  Otherwise, it is ‘-1’ and
+     ‘ERRNO’ is set accordingly.  The ‘errno’ values specific to this
+     function are:
+
+     ‘EINVAL’
+          POLICY does not identify an existing scheduling policy.
+
+ -- Function: int sched_rr_get_interval (pid_t PID, struct timespec
+          *INTERVAL)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function returns the length of the quantum (time slice) used
+     with the Round Robin scheduling policy, if it is used, for the task
+     with task ID PID.
+
+     It returns the length of time as INTERVAL.
+
+     With a Linux kernel, the round robin time slice is always 150
+     microseconds, and PID need not even be a real pid.
+
+     The return value is ‘0’ on success and in the pathological case
+     that it fails, the return value is ‘-1’ and ‘errno’ is set
+     accordingly.  There is nothing specific that can go wrong with this
+     function, so there are no specific ‘errno’ values.
+
+ -- Function: int sched_yield (void)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function voluntarily gives up the task’s claim on the CPU.
+
+     Technically, ‘sched_yield’ causes the calling task to be made
+     immediately ready to run (as opposed to running, which is what it
+     was before).  This means that if it has absolute priority higher
+     than 0, it gets pushed onto the tail of the queue of tasks that
+     share its absolute priority and are ready to run, and it will run
+     again when its turn next arrives.  If its absolute priority is 0,
+     it is more complicated, but still has the effect of yielding the
+     CPU to other tasks.
+
+     If there are no other tasks that share the calling task’s absolute
+     priority, this function doesn’t have any effect.
+
+     To the extent that the containing program is oblivious to what
+     other processes in the system are doing and how fast it executes,
+     this function appears as a no-op.
+
+     The return value is ‘0’ on success and in the pathological case
+     that it fails, the return value is ‘-1’ and ‘errno’ is set
+     accordingly.  There is nothing specific that can go wrong with this
+     function, so there are no specific ‘errno’ values.
+
+
+File: libc.info,  Node: Traditional Scheduling,  Next: CPU Affinity,  Prev: Basic Scheduling Functions,  Up: Priority
+
+23.3.4 Traditional Scheduling
+-----------------------------
+
+This section is about the scheduling among processes whose absolute
+priority is 0.  When the system hands out the scraps of CPU time that
+are left over after the processes with higher absolute priority have
+taken all they want, the scheduling described herein determines who
+among the great unwashed processes gets them.
+
+* Menu:
+
+* Traditional Scheduling Intro::
+* Traditional Scheduling Functions::
+
+
+File: libc.info,  Node: Traditional Scheduling Intro,  Next: Traditional Scheduling Functions,  Up: Traditional Scheduling
+
+23.3.4.1 Introduction To Traditional Scheduling
+...............................................
+
+Long before there was absolute priority (See *note Absolute Priority::),
+Unix systems were scheduling the CPU using this system.  When POSIX came
+in like the Romans and imposed absolute priorities to accommodate the
+needs of realtime processing, it left the indigenous Absolute Priority
+Zero processes to govern themselves by their own familiar scheduling
+policy.
+
+   Indeed, absolute priorities higher than zero are not available on
+many systems today and are not typically used when they are, being
+intended mainly for computers that do realtime processing.  So this
+section describes the only scheduling many programmers need to be
+concerned about.
+
+   But just to be clear about the scope of this scheduling: Any time a
+process with an absolute priority of 0 and a process with an absolute
+priority higher than 0 are ready to run at the same time, the one with
+absolute priority 0 does not run.  If it’s already running when the
+higher priority ready-to-run process comes into existence, it stops
+immediately.
+
+   In addition to its absolute priority of zero, every process has
+another priority, which we will refer to as "dynamic priority" because
+it changes over time.  The dynamic priority is meaningless for processes
+with an absolute priority higher than zero.
+
+   The dynamic priority sometimes determines who gets the next turn on
+the CPU. Sometimes it determines how long turns last.  Sometimes it
+determines whether a process can kick another off the CPU.
+
+   In Linux, the value is a combination of these things, but mostly it
+just determines the length of the time slice.  The higher a process’
+dynamic priority, the longer a shot it gets on the CPU when it gets one.
+If it doesn’t use up its time slice before giving up the CPU to do
+something like wait for I/O, it is favored for getting the CPU back when
+it’s ready for it, to finish out its time slice.  Other than that,
+selection of processes for new time slices is basically round robin.
+But the scheduler does throw a bone to the low priority processes: A
+process’ dynamic priority rises every time it is snubbed in the
+scheduling process.  In Linux, even the fat kid gets to play.
+
+   The fluctuation of a process’ dynamic priority is regulated by
+another value: The “nice” value.  The nice value is an integer, usually
+in the range -20 to 20, and represents an upper limit on a process’
+dynamic priority.  The higher the nice number, the lower that limit.
+
+   On a typical Linux system, for example, a process with a nice value
+of 20 can get only 10 milliseconds on the CPU at a time, whereas a
+process with a nice value of -20 can achieve a high enough priority to
+get 400 milliseconds.
+
+   The idea of the nice value is deferential courtesy.  In the
+beginning, in the Unix garden of Eden, all processes shared equally in
+the bounty of the computer system.  But not all processes really need
+the same share of CPU time, so the nice value gave a courteous process
+the ability to refuse its equal share of CPU time that others might
+prosper.  Hence, the higher a process’ nice value, the nicer the process
+is.  (Then a snake came along and offered some process a negative nice
+value and the system became the crass resource allocation system we know
+today.)
+
+   Dynamic priorities tend upward and downward with an objective of
+smoothing out allocation of CPU time and giving quick response time to
+infrequent requests.  But they never exceed their nice limits, so on a
+heavily loaded CPU, the nice value effectively determines how fast a
+process runs.
+
+   In keeping with the socialistic heritage of Unix process priority, a
+process begins life with the same nice value as its parent process and
+can raise it at will.  A process can also raise the nice value of any
+other process owned by the same user (or effective user).  But only a
+privileged process can lower its nice value.  A privileged process can
+also raise or lower another process’ nice value.
+
+   GNU C Library functions for getting and setting nice values are
+described in *Note Traditional Scheduling Functions::.
+
+
+File: libc.info,  Node: Traditional Scheduling Functions,  Prev: Traditional Scheduling Intro,  Up: Traditional Scheduling
+
+23.3.4.2 Functions For Traditional Scheduling
+.............................................
+
+This section describes how you can read and set the nice value of a
+process.  All these symbols are declared in ‘sys/resource.h’.
+
+   The function and macro names are defined by POSIX, and refer to
+"priority," but the functions actually have to do with nice values, as
+the terms are used both in the manual and POSIX.
+
+   The range of valid nice values depends on the kernel, but typically
+it runs from ‘-20’ to ‘20’.  A lower nice value corresponds to higher
+priority for the process.  These constants describe the range of
+priority values:
+
+‘PRIO_MIN’
+
+     The lowest valid nice value.
+
+‘PRIO_MAX’
+
+     The highest valid nice value.
+
+ -- Function: int getpriority (int CLASS, int ID)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     Return the nice value of a set of processes; CLASS and ID specify
+     which ones (see below).  If the processes specified do not all have
+     the same nice value, this returns the lowest value that any of them
+     has.
+
+     On success, the return value is ‘0’.  Otherwise, it is ‘-1’ and
+     ‘errno’ is set accordingly.  The ‘errno’ values specific to this
+     function are:
+
+     ‘ESRCH’
+          The combination of CLASS and ID does not match any existing
+          process.
+
+     ‘EINVAL’
+          The value of CLASS is not valid.
+
+     If the return value is ‘-1’, it could indicate failure, or it could
+     be the nice value.  The only way to make certain is to set ‘errno =
+     0’ before calling ‘getpriority’, then use ‘errno != 0’ afterward as
+     the criterion for failure.
+
+ -- Function: int setpriority (int CLASS, int ID, int NICEVAL)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     Set the nice value of a set of processes to NICEVAL; CLASS and ID
+     specify which ones (see below).
+
+     The return value is ‘0’ on success, and ‘-1’ on failure.  The
+     following ‘errno’ error condition are possible for this function:
+
+     ‘ESRCH’
+          The combination of CLASS and ID does not match any existing
+          process.
+
+     ‘EINVAL’
+          The value of CLASS is not valid.
+
+     ‘EPERM’
+          The call would set the nice value of a process which is owned
+          by a different user than the calling process (i.e., the target
+          process’ real or effective uid does not match the calling
+          process’ effective uid) and the calling process does not have
+          ‘CAP_SYS_NICE’ permission.
+
+     ‘EACCES’
+          The call would lower the process’ nice value and the process
+          does not have ‘CAP_SYS_NICE’ permission.
+
+   The arguments CLASS and ID together specify a set of processes in
+which you are interested.  These are the possible values of CLASS:
+
+‘PRIO_PROCESS’
+
+     One particular process.  The argument ID is a process ID (pid).
+
+‘PRIO_PGRP’
+
+     All the processes in a particular process group.  The argument ID
+     is a process group ID (pgid).
+
+‘PRIO_USER’
+
+     All the processes owned by a particular user (i.e., whose real uid
+     indicates the user).  The argument ID is a user ID (uid).
+
+   If the argument ID is 0, it stands for the calling process, its
+process group, or its owner (real uid), according to CLASS.
+
+ -- Function: int nice (int INCREMENT)
+
+     Preliminary: | MT-Unsafe race:setpriority | AS-Unsafe | AC-Safe |
+     *Note POSIX Safety Concepts::.
+
+     Increment the nice value of the calling process by INCREMENT.  The
+     return value is the new nice value on success, and ‘-1’ on failure.
+     In the case of failure, ‘errno’ will be set to the same values as
+     for ‘setpriority’.
+
+     Here is an equivalent definition of ‘nice’:
+
+          int
+          nice (int increment)
+          {
+            int result, old = getpriority (PRIO_PROCESS, 0);
+            result = setpriority (PRIO_PROCESS, 0, old + increment);
+            if (result != -1)
+                return old + increment;
+            else
+                return -1;
+          }
+
+
+File: libc.info,  Node: CPU Affinity,  Prev: Traditional Scheduling,  Up: Priority
+
+23.3.5 Limiting execution to certain CPUs
+-----------------------------------------
+
+On a multi-processor system the operating system usually distributes the
+different processes which are runnable on all available CPUs in a way
+which allows the system to work most efficiently.  Which processes and
+threads run can be to some extend be control with the scheduling
+functionality described in the last sections.  But which CPU finally
+executes which process or thread is not covered.
+
+   There are a number of reasons why a program might want to have
+control over this aspect of the system as well:
+
+   • One thread or process is responsible for absolutely critical work
+     which under no circumstances must be interrupted or hindered from
+     making progress by other processes or threads using CPU resources.
+     In this case the special process would be confined to a CPU which
+     no other process or thread is allowed to use.
+
+   • The access to certain resources (RAM, I/O ports) has different
+     costs from different CPUs.  This is the case in NUMA (Non-Uniform
+     Memory Architecture) machines.  Preferably memory should be
+     accessed locally but this requirement is usually not visible to the
+     scheduler.  Therefore forcing a process or thread to the CPUs which
+     have local access to the most-used memory helps to significantly
+     boost the performance.
+
+   • In controlled runtimes resource allocation and book-keeping work
+     (for instance garbage collection) is performance local to
+     processors.  This can help to reduce locking costs if the resources
+     do not have to be protected from concurrent accesses from different
+     processors.
+
+   The POSIX standard up to this date is of not much help to solve this
+problem.  The Linux kernel provides a set of interfaces to allow
+specifying _affinity sets_ for a process.  The scheduler will schedule
+the thread or process on CPUs specified by the affinity masks.  The
+interfaces which the GNU C Library define follow to some extent the
+Linux kernel interface.
+
+ -- Data Type: cpu_set_t
+
+     This data set is a bitset where each bit represents a CPU. How the
+     system’s CPUs are mapped to bits in the bitset is system dependent.
+     The data type has a fixed size; in the unlikely case that the
+     number of bits are not sufficient to describe the CPUs of the
+     system a different interface has to be used.
+
+     This type is a GNU extension and is defined in ‘sched.h’.
+
+   To manipulate the bitset, to set and reset bits, a number of macros
+are defined.  Some of the macros take a CPU number as a parameter.  Here
+it is important to never exceed the size of the bitset.  The following
+macro specifies the number of bits in the ‘cpu_set_t’ bitset.
+
+ -- Macro: int CPU_SETSIZE
+
+     The value of this macro is the maximum number of CPUs which can be
+     handled with a ‘cpu_set_t’ object.
+
+   The type ‘cpu_set_t’ should be considered opaque; all manipulation
+should happen via the next four macros.
+
+ -- Macro: void CPU_ZERO (cpu_set_t *SET)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This macro initializes the CPU set SET to be the empty set.
+
+     This macro is a GNU extension and is defined in ‘sched.h’.
+
+ -- Macro: void CPU_SET (int CPU, cpu_set_t *SET)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This macro adds CPU to the CPU set SET.
+
+     The CPU parameter must not have side effects since it is evaluated
+     more than once.
+
+     This macro is a GNU extension and is defined in ‘sched.h’.
+
+ -- Macro: void CPU_CLR (int CPU, cpu_set_t *SET)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This macro removes CPU from the CPU set SET.
+
+     The CPU parameter must not have side effects since it is evaluated
+     more than once.
+
+     This macro is a GNU extension and is defined in ‘sched.h’.
+
+ -- Macro: int CPU_ISSET (int CPU, const cpu_set_t *SET)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This macro returns a nonzero value (true) if CPU is a member of the
+     CPU set SET, and zero (false) otherwise.
+
+     The CPU parameter must not have side effects since it is evaluated
+     more than once.
+
+     This macro is a GNU extension and is defined in ‘sched.h’.
+
+   CPU bitsets can be constructed from scratch or the currently
+installed affinity mask can be retrieved from the system.
+
+ -- Function: int sched_getaffinity (pid_t PID, size_t CPUSETSIZE,
+          cpu_set_t *CPUSET)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function stores the CPU affinity mask for the process or
+     thread with the ID PID in the CPUSETSIZE bytes long bitmap pointed
+     to by CPUSET.  If successful, the function always initializes all
+     bits in the ‘cpu_set_t’ object and returns zero.
+
+     If PID does not correspond to a process or thread on the system the
+     or the function fails for some other reason, it returns ‘-1’ and
+     ‘errno’ is set to represent the error condition.
+
+     ‘ESRCH’
+          No process or thread with the given ID found.
+
+     ‘EFAULT’
+          The pointer CPUSET does not point to a valid object.
+
+     This function is a GNU extension and is declared in ‘sched.h’.
+
+   Note that it is not portably possible to use this information to
+retrieve the information for different POSIX threads.  A separate
+interface must be provided for that.
+
+ -- Function: int sched_setaffinity (pid_t PID, size_t CPUSETSIZE, const
+          cpu_set_t *CPUSET)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function installs the CPUSETSIZE bytes long affinity mask
+     pointed to by CPUSET for the process or thread with the ID PID.  If
+     successful the function returns zero and the scheduler will in the
+     future take the affinity information into account.
+
+     If the function fails it will return ‘-1’ and ‘errno’ is set to the
+     error code:
+
+     ‘ESRCH’
+          No process or thread with the given ID found.
+
+     ‘EFAULT’
+          The pointer CPUSET does not point to a valid object.
+
+     ‘EINVAL’
+          The bitset is not valid.  This might mean that the affinity
+          set might not leave a processor for the process or thread to
+          run on.
+
+     This function is a GNU extension and is declared in ‘sched.h’.
+
+ -- Function: int getcpu (unsigned int *cpu, unsigned int *node)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     The ‘getcpu’ function identifies the processor and node on which
+     the calling thread or process is currently running and writes them
+     into the integers pointed to by the CPU and NODE arguments.  The
+     processor is a unique nonnegative integer identifying a CPU. The
+     node is a unique nonnegative integer identifying a NUMA node.  When
+     either CPU or NODE is ‘NULL’, nothing is written to the respective
+     pointer.
+
+     The return value is ‘0’ on success and ‘-1’ on failure.  The
+     following ‘errno’ error condition is defined for this function:
+
+     ‘ENOSYS’
+          The operating system does not support this function.
+
+     This function is Linux-specific and is declared in ‘sched.h’.
+
+
+File: libc.info,  Node: Memory Resources,  Next: Processor Resources,  Prev: Priority,  Up: Resource Usage And Limitation
+
+23.4 Querying memory available resources
+========================================
+
+The amount of memory available in the system and the way it is organized
+determines oftentimes the way programs can and have to work.  For
+functions like ‘mmap’ it is necessary to know about the size of
+individual memory pages and knowing how much memory is available enables
+a program to select appropriate sizes for, say, caches.  Before we get
+into these details a few words about memory subsystems in traditional
+Unix systems will be given.
+
+* Menu:
+
+* Memory Subsystem::           Overview about traditional Unix memory handling.
+* Query Memory Parameters::    How to get information about the memory
+                                subsystem?
+
+
+File: libc.info,  Node: Memory Subsystem,  Next: Query Memory Parameters,  Up: Memory Resources
+
+23.4.1 Overview about traditional Unix memory handling
+------------------------------------------------------
+
+Unix systems normally provide processes virtual address spaces.  This
+means that the addresses of the memory regions do not have to correspond
+directly to the addresses of the actual physical memory which stores the
+data.  An extra level of indirection is introduced which translates
+virtual addresses into physical addresses.  This is normally done by the
+hardware of the processor.
+
+   Using a virtual address space has several advantages.  The most
+important is process isolation.  The different processes running on the
+system cannot interfere directly with each other.  No process can write
+into the address space of another process (except when shared memory is
+used but then it is wanted and controlled).
+
+   Another advantage of virtual memory is that the address space the
+processes see can actually be larger than the physical memory available.
+The physical memory can be extended by storage on an external media
+where the content of currently unused memory regions is stored.  The
+address translation can then intercept accesses to these memory regions
+and make memory content available again by loading the data back into
+memory.  This concept makes it necessary that programs which have to use
+lots of memory know the difference between available virtual address
+space and available physical memory.  If the working set of virtual
+memory of all the processes is larger than the available physical memory
+the system will slow down dramatically due to constant swapping of
+memory content from the memory to the storage media and back.  This is
+called “thrashing”.
+
+   A final aspect of virtual memory which is important and follows from
+what is said in the last paragraph is the granularity of the virtual
+address space handling.  When we said that the virtual address handling
+stores memory content externally it cannot do this on a byte-by-byte
+basis.  The administrative overhead does not allow this (leaving alone
+the processor hardware).  Instead several thousand bytes are handled
+together and form a “page”.  The size of each page is always a power of
+two bytes.  The smallest page size in use today is 4096, with 8192,
+16384, and 65536 being other popular sizes.
+
+
+File: libc.info,  Node: Query Memory Parameters,  Prev: Memory Subsystem,  Up: Memory Resources
+
+23.4.2 How to get information about the memory subsystem?
+---------------------------------------------------------
+
+The page size of the virtual memory the process sees is essential to
+know in several situations.  Some programming interfaces (e.g., ‘mmap’,
+*note Memory-mapped I/O::) require the user to provide information
+adjusted to the page size.  In the case of ‘mmap’ it is necessary to
+provide a length argument which is a multiple of the page size.  Another
+place where the knowledge about the page size is useful is in memory
+allocation.  If one allocates pieces of memory in larger chunks which
+are then subdivided by the application code it is useful to adjust the
+size of the larger blocks to the page size.  If the total memory
+requirement for the block is close (but not larger) to a multiple of the
+page size the kernel’s memory handling can work more effectively since
+it only has to allocate memory pages which are fully used.  (To do this
+optimization it is necessary to know a bit about the memory allocator
+which will require a bit of memory itself for each block and this
+overhead must not push the total size over the page size multiple.)
+
+   The page size traditionally was a compile time constant.  But recent
+development of processors changed this.  Processors now support
+different page sizes and they can possibly even vary among different
+processes on the same system.  Therefore the system should be queried at
+runtime about the current page size and no assumptions (except about it
+being a power of two) should be made.
+
+   The correct interface to query about the page size is ‘sysconf’
+(*note Sysconf Definition::) with the parameter ‘_SC_PAGESIZE’.  There
+is a much older interface available, too.
+
+ -- Function: int getpagesize (void)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     The ‘getpagesize’ function returns the page size of the process.
+     This value is fixed for the runtime of the process but can vary in
+     different runs of the application.
+
+     The function is declared in ‘unistd.h’.
+
+   Widely available on System V derived systems is a method to get
+information about the physical memory the system has.  The call
+
+       sysconf (_SC_PHYS_PAGES)
+
+returns the total number of pages of physical memory the system has.
+This does not mean all this memory is available.  This information can
+be found using
+
+       sysconf (_SC_AVPHYS_PAGES)
+
+   These two values help to optimize applications.  The value returned
+for ‘_SC_AVPHYS_PAGES’ is the amount of memory the application can use
+without hindering any other process (given that no other process
+increases its memory usage).  The value returned for ‘_SC_PHYS_PAGES’ is
+more or less a hard limit for the working set.  If all applications
+together constantly use more than that amount of memory the system is in
+trouble.
+
+   The GNU C Library provides in addition to these already described way
+to get this information two functions.  They are declared in the file
+‘sys/sysinfo.h’.  Programmers should prefer to use the ‘sysconf’ method
+described above.
+
+ -- Function: long int get_phys_pages (void)
+
+     Preliminary: | MT-Safe | AS-Unsafe heap lock | AC-Unsafe lock fd
+     mem | *Note POSIX Safety Concepts::.
+
+     The ‘get_phys_pages’ function returns the total number of pages of
+     physical memory the system has.  To get the amount of memory this
+     number has to be multiplied by the page size.
+
+     This function is a GNU extension.
+
+ -- Function: long int get_avphys_pages (void)
+
+     Preliminary: | MT-Safe | AS-Unsafe heap lock | AC-Unsafe lock fd
+     mem | *Note POSIX Safety Concepts::.
+
+     The ‘get_avphys_pages’ function returns the number of available
+     pages of physical memory the system has.  To get the amount of
+     memory this number has to be multiplied by the page size.
+
+     This function is a GNU extension.
+
+
+File: libc.info,  Node: Processor Resources,  Prev: Memory Resources,  Up: Resource Usage And Limitation
+
+23.5 Learn about the processors available
+=========================================
+
+The use of threads or processes with shared memory allows an application
+to take advantage of all the processing power a system can provide.  If
+the task can be parallelized the optimal way to write an application is
+to have at any time as many processes running as there are processors.
+To determine the number of processors available to the system one can
+run
+
+       sysconf (_SC_NPROCESSORS_CONF)
+
+which returns the number of processors the operating system configured.
+But it might be possible for the operating system to disable individual
+processors and so the call
+
+       sysconf (_SC_NPROCESSORS_ONLN)
+
+returns the number of processors which are currently online (i.e.,
+available).
+
+   For these two pieces of information the GNU C Library also provides
+functions to get the information directly.  The functions are declared
+in ‘sys/sysinfo.h’.
+
+ -- Function: int get_nprocs_conf (void)
+
+     Preliminary: | MT-Safe | AS-Unsafe heap lock | AC-Unsafe lock fd
+     mem | *Note POSIX Safety Concepts::.
+
+     The ‘get_nprocs_conf’ function returns the number of processors the
+     operating system configured.
+
+     This function is a GNU extension.
+
+ -- Function: int get_nprocs (void)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
+     Concepts::.
+
+     The ‘get_nprocs’ function returns the number of available
+     processors.
+
+     This function is a GNU extension.
+
+   Before starting more threads it should be checked whether the
+processors are not already overused.  Unix systems calculate something
+called the “load average”.  This is a number indicating how many
+processes were running.  This number is an average over different
+periods of time (normally 1, 5, and 15 minutes).
+
+ -- Function: int getloadavg (double LOADAVG[], int NELEM)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
+     Concepts::.
+
+     This function gets the 1, 5 and 15 minute load averages of the
+     system.  The values are placed in LOADAVG.  ‘getloadavg’ will place
+     at most NELEM elements into the array but never more than three
+     elements.  The return value is the number of elements written to
+     LOADAVG, or -1 on error.
+
+     This function is declared in ‘stdlib.h’.
+
+
+File: libc.info,  Node: Non-Local Exits,  Next: Signal Handling,  Prev: Resource Usage And Limitation,  Up: Top
+
+24 Non-Local Exits
+******************
+
+Sometimes when your program detects an unusual situation inside a deeply
+nested set of function calls, you would like to be able to immediately
+return to an outer level of control.  This section describes how you can
+do such “non-local exits” using the ‘setjmp’ and ‘longjmp’ functions.
+
+* Menu:
+
+* Intro: Non-Local Intro.        When and how to use these facilities.
+* Details: Non-Local Details.    Functions for non-local exits.
+* Non-Local Exits and Signals::  Portability issues.
+* System V contexts::            Complete context control a la System V.
+
+
+File: libc.info,  Node: Non-Local Intro,  Next: Non-Local Details,  Up: Non-Local Exits
+
+24.1 Introduction to Non-Local Exits
+====================================
+
+As an example of a situation where a non-local exit can be useful,
+suppose you have an interactive program that has a “main loop” that
+prompts for and executes commands.  Suppose the “read” command reads
+input from a file, doing some lexical analysis and parsing of the input
+while processing it.  If a low-level input error is detected, it would
+be useful to be able to return immediately to the “main loop” instead of
+having to make each of the lexical analysis, parsing, and processing
+phases all have to explicitly deal with error situations initially
+detected by nested calls.
+
+   (On the other hand, if each of these phases has to do a substantial
+amount of cleanup when it exits—such as closing files, deallocating
+buffers or other data structures, and the like—then it can be more
+appropriate to do a normal return and have each phase do its own
+cleanup, because a non-local exit would bypass the intervening phases
+and their associated cleanup code entirely.  Alternatively, you could
+use a non-local exit but do the cleanup explicitly either before or
+after returning to the “main loop”.)
+
+   In some ways, a non-local exit is similar to using the ‘return’
+statement to return from a function.  But while ‘return’ abandons only a
+single function call, transferring control back to the point at which it
+was called, a non-local exit can potentially abandon many levels of
+nested function calls.
+
+   You identify return points for non-local exits by calling the
+function ‘setjmp’.  This function saves information about the execution
+environment in which the call to ‘setjmp’ appears in an object of type
+‘jmp_buf’.  Execution of the program continues normally after the call
+to ‘setjmp’, but if an exit is later made to this return point by
+calling ‘longjmp’ with the corresponding ‘jmp_buf’ object, control is
+transferred back to the point where ‘setjmp’ was called.  The return
+value from ‘setjmp’ is used to distinguish between an ordinary return
+and a return made by a call to ‘longjmp’, so calls to ‘setjmp’ usually
+appear in an ‘if’ statement.
+
+   Here is how the example program described above might be set up:
+
+
+     #include <setjmp.h>
+     #include <stdlib.h>
+     #include <stdio.h>
+
+     jmp_buf main_loop;
+
+     void
+     abort_to_main_loop (int status)
+     {
+       longjmp (main_loop, status);
+     }
+
+     int
+     main (void)
+     {
+       while (1)
+         if (setjmp (main_loop))
+           puts ("Back at main loop....");
+         else
+           do_command ();
+     }
+
+
+     void
+     do_command (void)
+     {
+       char buffer[128];
+       if (fgets (buffer, 128, stdin) == NULL)
+         abort_to_main_loop (-1);
+       else
+         exit (EXIT_SUCCESS);
+     }
+
+   The function ‘abort_to_main_loop’ causes an immediate transfer of
+control back to the main loop of the program, no matter where it is
+called from.
+
+   The flow of control inside the ‘main’ function may appear a little
+mysterious at first, but it is actually a common idiom with ‘setjmp’.  A
+normal call to ‘setjmp’ returns zero, so the “else” clause of the
+conditional is executed.  If ‘abort_to_main_loop’ is called somewhere
+within the execution of ‘do_command’, then it actually appears as if the
+_same_ call to ‘setjmp’ in ‘main’ were returning a second time with a
+value of ‘-1’.
+
+   So, the general pattern for using ‘setjmp’ looks something like:
+
+     if (setjmp (BUFFER))
+       /* Code to clean up after premature return. */
+       ...
+     else
+       /* Code to be executed normally after setting up the return point. */
+       ...
+
+
 File: libc.info,  Node: Non-Local Details,  Next: Non-Local Exits and Signals,  Prev: Non-Local Intro,  Up: Non-Local Exits
 
-23.2 Details of Non-Local Exits
+24.2 Details of Non-Local Exits
 ===============================
 
 Here are the details on the functions and data structures used for
@@ -2253,7 +4303,7 @@ call to ‘setjmp’ are indeterminate, unless you have declared them
 
 File: libc.info,  Node: Non-Local Exits and Signals,  Next: System V contexts,  Prev: Non-Local Details,  Up: Non-Local Exits
 
-23.3 Non-Local Exits and Signals
+24.3 Non-Local Exits and Signals
 ================================
 
 In BSD Unix systems, ‘setjmp’ and ‘longjmp’ also save and restore the
@@ -2297,7 +4347,7 @@ behavior.
 
 File: libc.info,  Node: System V contexts,  Prev: Non-Local Exits and Signals,  Up: Non-Local Exits
 
-23.4 Complete Context Control
+24.4 Complete Context Control
 =============================
 
 The Unix standard provides one more set of functions to control the
@@ -2636,7 +4686,7 @@ points in the code.  Execution will always resume where it was left.
 
 File: libc.info,  Node: Signal Handling,  Next: Program Basics,  Prev: Non-Local Exits,  Up: Top
 
-24 Signal Handling
+25 Signal Handling
 ******************
 
 A “signal” is a software interrupt delivered to a process.  The
@@ -2680,7 +4730,7 @@ communicate and synchronize.
 
 File: libc.info,  Node: Concepts of Signals,  Next: Standard Signals,  Up: Signal Handling
 
-24.1 Basic Concepts of Signals
+25.1 Basic Concepts of Signals
 ==============================
 
 This section explains basic concepts of how signals are generated, what
@@ -2697,7 +4747,7 @@ signals.
 
 File: libc.info,  Node: Kinds of Signals,  Next: Signal Generation,  Up: Concepts of Signals
 
-24.1.1 Some Kinds of Signals
+25.1.1 Some Kinds of Signals
 ----------------------------
 
 A signal reports the occurrence of an exceptional event.  These are some
@@ -2734,7 +4784,7 @@ Signals::.
 
 File: libc.info,  Node: Signal Generation,  Next: Delivery of Signal,  Prev: Kinds of Signals,  Up: Concepts of Signals
 
-24.1.2 Concepts of Signal Generation
+25.1.2 Concepts of Signal Generation
 ------------------------------------
 
 In general, the events that generate signals fall into three major
@@ -2781,7 +4831,7 @@ request.
 
 File: libc.info,  Node: Delivery of Signal,  Prev: Signal Generation,  Up: Concepts of Signals
 
-24.1.3 How Signals Are Delivered
+25.1.3 How Signals Are Delivered
 --------------------------------
 
 When a signal is generated, it becomes “pending”.  Normally it remains
@@ -2836,7 +4886,7 @@ had been due directly to an error.
 
 File: libc.info,  Node: Standard Signals,  Next: Signal Actions,  Prev: Concepts of Signals,  Up: Signal Handling
 
-24.2 Standard Signals
+25.2 Standard Signals
 =====================
 
 This section lists the names for various standard kinds of signals and
@@ -2871,7 +4921,7 @@ standardized and fairly uniform.
 
 File: libc.info,  Node: Program Error Signals,  Next: Termination Signals,  Up: Standard Signals
 
-24.2.1 Program Error Signals
+25.2.1 Program Error Signals
 ----------------------------
 
 The following signals are generated when a serious program error is
@@ -3039,7 +5089,7 @@ provide the information (BSD systems and GNU systems).
 
 File: libc.info,  Node: Termination Signals,  Next: Alarm Signals,  Prev: Program Error Signals,  Up: Standard Signals
 
-24.2.2 Termination Signals
+25.2.2 Termination Signals
 --------------------------
 
 These signals are all used to tell a process to terminate, in one way or
@@ -3127,7 +5177,7 @@ process to terminate.
 
 File: libc.info,  Node: Alarm Signals,  Next: Asynchronous I/O Signals,  Prev: Termination Signals,  Up: Standard Signals
 
-24.2.3 Alarm Signals
+25.2.3 Alarm Signals
 --------------------
 
 These signals are used to indicate the expiration of timers.  *Note
@@ -3161,7 +5211,7 @@ functions in any case.
 
 File: libc.info,  Node: Asynchronous I/O Signals,  Next: Job Control Signals,  Prev: Alarm Signals,  Up: Standard Signals
 
-24.2.4 Asynchronous I/O Signals
+25.2.4 Asynchronous I/O Signals
 -------------------------------
 
 The signals listed in this section are used in conjunction with
@@ -3195,7 +5245,7 @@ is to ignore them.
 
 File: libc.info,  Node: Job Control Signals,  Next: Operation Error Signals,  Prev: Asynchronous I/O Signals,  Up: Standard Signals
 
-24.2.5 Job Control Signals
+25.2.5 Job Control Signals
 --------------------------
 
 These signals are used to support job control.  If your system doesn’t
@@ -3297,7 +5347,7 @@ system.
 
 File: libc.info,  Node: Operation Error Signals,  Next: Miscellaneous Signals,  Prev: Job Control Signals,  Up: Standard Signals
 
-24.2.6 Operation Error Signals
+25.2.6 Operation Error Signals
 ------------------------------
 
 These signals are used to report various errors generated by an
@@ -3347,7 +5397,7 @@ them is to cause the process to terminate.
 
 File: libc.info,  Node: Miscellaneous Signals,  Next: Signal Messages,  Prev: Operation Error Signals,  Up: Standard Signals
 
-24.2.7 Miscellaneous Signals
+25.2.7 Miscellaneous Signals
 ----------------------------
 
 These signals are used for various other purposes.  In general, they
@@ -3392,7 +5442,7 @@ something.
 
 File: libc.info,  Node: Signal Messages,  Prev: Miscellaneous Signals,  Up: Standard Signals
 
-24.2.8 Signal Messages
+25.2.8 Signal Messages
 ----------------------
 
 We mentioned above that the shell prints a message describing the signal
@@ -3465,7 +5515,7 @@ handler in the same process.
 
 File: libc.info,  Node: Signal Actions,  Next: Defining Handlers,  Prev: Standard Signals,  Up: Signal Handling
 
-24.3 Specifying Signal Actions
+25.3 Specifying Signal Actions
 ==============================
 
 The simplest way to change the action for a signal is to use the
@@ -3488,7 +5538,7 @@ on which to use when.
 
 File: libc.info,  Node: Basic Signal Handling,  Next: Advanced Signal Handling,  Up: Signal Actions
 
-24.3.1 Basic Signal Handling
+25.3.1 Basic Signal Handling
 ----------------------------
 
 The ‘signal’ function provides a simple interface for establishing an
@@ -3646,7 +5696,7 @@ example because these are designed to provide information for debugging
 
 File: libc.info,  Node: Advanced Signal Handling,  Next: Signal and Sigaction,  Prev: Basic Signal Handling,  Up: Signal Actions
 
-24.3.2 Advanced Signal Handling
+25.3.2 Advanced Signal Handling
 -------------------------------
 
 The ‘sigaction’ function has the same basic effect as ‘signal’: to
@@ -3714,7 +5764,7 @@ control when the signal is generated and how the handler is invoked.
 
 File: libc.info,  Node: Signal and Sigaction,  Next: Sigaction Function Example,  Prev: Advanced Signal Handling,  Up: Signal Actions
 
-24.3.3 Interaction of ‘signal’ and ‘sigaction’
+25.3.3 Interaction of ‘signal’ and ‘sigaction’
 ----------------------------------------------
 
 It’s possible to use both the ‘signal’ and ‘sigaction’ functions within
@@ -3751,7 +5801,7 @@ the ‘signal’ function instead.
 
 File: libc.info,  Node: Sigaction Function Example,  Next: Flags for Sigaction,  Prev: Signal and Sigaction,  Up: Signal Actions
 
-24.3.4 ‘sigaction’ Function Example
+25.3.4 ‘sigaction’ Function Example
 -----------------------------------
 
 In *note Basic Signal Handling::, we gave an example of establishing a
@@ -3818,7 +5868,7 @@ action for ‘SIGINT’ without changing that action.
 
 File: libc.info,  Node: Flags for Sigaction,  Next: Initial Signal Actions,  Prev: Sigaction Function Example,  Up: Signal Actions
 
-24.3.5 Flags for ‘sigaction’
+25.3.5 Flags for ‘sigaction’
 ----------------------------
 
 The ‘sa_flags’ member of the ‘sigaction’ structure is a catch-all for
@@ -3874,7 +5924,7 @@ Primitives::, to see what this is about.
 
 File: libc.info,  Node: Initial Signal Actions,  Prev: Flags for Sigaction,  Up: Signal Actions
 
-24.3.6 Initial Signal Actions
+25.3.6 Initial Signal Actions
 -----------------------------
 
 When a new process is created (*note Creating a Process::), it inherits
@@ -3910,7 +5960,7 @@ not if ‘SIGHUP’ is currently ignored:
 
 File: libc.info,  Node: Defining Handlers,  Next: Interrupted Primitives,  Prev: Signal Actions,  Up: Signal Handling
 
-24.4 Defining Signal Handlers
+25.4 Defining Signal Handlers
 =============================
 
 This section describes how to write a signal handler function that can
@@ -3958,7 +6008,7 @@ avoid.
 
 File: libc.info,  Node: Handler Returns,  Next: Termination in Handler,  Up: Defining Handlers
 
-24.4.1 Signal Handlers that Return
+25.4.1 Signal Handlers that Return
 ----------------------------------
 
 Handlers which return normally are usually used for signals such as
@@ -4023,7 +6073,7 @@ signal arrives to complete before the loop exits.
 
 File: libc.info,  Node: Termination in Handler,  Next: Longjmp in Handler,  Prev: Handler Returns,  Up: Defining Handlers
 
-24.4.2 Handlers That Terminate the Process
+25.4.2 Handlers That Terminate the Process
 ------------------------------------------
 
 Handler functions that terminate the program are typically used to cause
@@ -4064,7 +6114,7 @@ do this:
 
 File: libc.info,  Node: Longjmp in Handler,  Next: Signals in Handler,  Prev: Termination in Handler,  Up: Defining Handlers
 
-24.4.3 Nonlocal Control Transfer in Handlers
+25.4.3 Nonlocal Control Transfer in Handlers
 --------------------------------------------
 
 You can do a nonlocal transfer of control out of a signal handler using
@@ -4132,7 +6182,7 @@ one global variable.
 
 File: libc.info,  Node: Signals in Handler,  Next: Merged Signals,  Prev: Longjmp in Handler,  Up: Defining Handlers
 
-24.4.4 Signals Arriving While a Handler Runs
+25.4.4 Signals Arriving While a Handler Runs
 --------------------------------------------
 
 What happens if another signal arrives while your signal handler
@@ -4173,7 +6223,7 @@ receive the default handling, which could terminate the process.
 
 File: libc.info,  Node: Merged Signals,  Next: Nonreentrancy,  Prev: Signals in Handler,  Up: Defining Handlers
 
-24.4.5 Signals Close Together Merge into One
+25.4.5 Signals Close Together Merge into One
 --------------------------------------------
 
 If multiple signals of the same type are delivered to your process
@@ -4324,7 +6374,7 @@ has been a signal since that part last checked.
 
 File: libc.info,  Node: Nonreentrancy,  Next: Atomic Data Access,  Prev: Merged Signals,  Up: Defining Handlers
 
-24.4.6 Signal Handling and Nonreentrant Functions
+25.4.6 Signal Handling and Nonreentrant Functions
 -------------------------------------------------
 
 Handler functions usually don’t do very much.  The best practice is to
@@ -4432,7 +6482,7 @@ stack.
 
 File: libc.info,  Node: Atomic Data Access,  Prev: Nonreentrancy,  Up: Defining Handlers
 
-24.4.7 Atomic Data Access and Signal Handling
+25.4.7 Atomic Data Access and Signal Handling
 ---------------------------------------------
 
 Whether the data in your application concerns atoms, or mere text, you
@@ -4456,7 +6506,7 @@ interrupted (*note Blocking Signals::).
 
 File: libc.info,  Node: Non-atomic Example,  Next: Atomic Types,  Up: Atomic Data Access
 
-24.4.7.1 Problems with Non-Atomic Access
+25.4.7.1 Problems with Non-Atomic Access
 ........................................
 
 Here is an example which shows what can happen if a signal handler runs
@@ -4510,7 +6560,7 @@ machines, the handler will always print two zeros or two ones.
 
 File: libc.info,  Node: Atomic Types,  Next: Atomic Usage,  Prev: Non-atomic Example,  Up: Atomic Data Access
 
-24.4.7.2 Atomic Types
+25.4.7.2 Atomic Types
 .....................
 
 To avoid uncertainty about interrupting access to a variable, you can
@@ -4535,7 +6585,7 @@ supports and on all POSIX systems we know of.
 
 File: libc.info,  Node: Atomic Usage,  Prev: Atomic Types,  Up: Atomic Data Access
 
-24.4.7.3 Atomic Usage Patterns
+25.4.7.3 Atomic Usage Patterns
 ..............................
 
 Certain patterns of access avoid any problem even if an access is
@@ -4565,7 +6615,7 @@ guarantees atomicity.  *Note Merged Signals::, for an example.
 
 File: libc.info,  Node: Interrupted Primitives,  Next: Generating Signals,  Prev: Defining Handlers,  Up: Signal Handling
 
-24.5 Primitives Interrupted by Signals
+25.5 Primitives Interrupted by Signals
 ======================================
 
 A signal can arrive and be handled while an I/O primitive such as ‘open’
@@ -4631,7 +6681,7 @@ started.
 
 File: libc.info,  Node: Generating Signals,  Next: Blocking Signals,  Prev: Interrupted Primitives,  Up: Signal Handling
 
-24.6 Generating Signals
+25.6 Generating Signals
 =======================
 
 Besides signals that are generated as a result of a hardware trap or
@@ -4648,7 +6698,7 @@ another process.
 
 File: libc.info,  Node: Signaling Yourself,  Next: Signaling Another Process,  Up: Generating Signals
 
-24.6.1 Signaling Yourself
+25.6.1 Signaling Yourself
 -------------------------
 
 A process can send itself a signal with the ‘raise’ function.  This
@@ -4719,7 +6769,7 @@ Older systems may not support it, so using ‘kill’ may be more portable.
 
 File: libc.info,  Node: Signaling Another Process,  Next: Permission for kill,  Prev: Signaling Yourself,  Up: Generating Signals
 
-24.6.2 Signaling Another Process
+25.6.2 Signaling Another Process
 --------------------------------
 
 The ‘kill’ function can be used to send a signal to another process.  In
@@ -4829,7 +6879,7 @@ the same effect as ‘raise (SIG)’.
 
 File: libc.info,  Node: Permission for kill,  Next: Kill Example,  Prev: Signaling Another Process,  Up: Generating Signals
 
-24.6.3 Permission for using ‘kill’
+25.6.3 Permission for using ‘kill’
 ----------------------------------
 
 There are restrictions that prevent you from using ‘kill’ to send
@@ -4863,7 +6913,7 @@ is part of the same session as the receiver, regardless of user IDs.
 
 File: libc.info,  Node: Kill Example,  Prev: Permission for kill,  Up: Generating Signals
 
-24.6.4 Using ‘kill’ for Communication
+25.6.4 Using ‘kill’ for Communication
 -------------------------------------
 
 Here is a longer example showing how signals can be used for
@@ -4944,7 +6994,7 @@ Waiting for a Signal::.
 
 File: libc.info,  Node: Blocking Signals,  Next: Waiting for a Signal,  Prev: Generating Signals,  Up: Signal Handling
 
-24.7 Blocking Signals
+25.7 Blocking Signals
 =====================
 
 Blocking a signal means telling the operating system to hold it and
@@ -4981,7 +7031,7 @@ from interrupting sensitive operations.  For instance:
 
 File: libc.info,  Node: Why Block,  Next: Signal Sets,  Up: Blocking Signals
 
-24.7.1 Why Blocking Signals is Useful
+25.7.1 Why Blocking Signals is Useful
 -------------------------------------
 
 Temporary blocking of signals with ‘sigprocmask’ gives you a way to
@@ -5014,7 +7064,7 @@ to test while the signal is blocked.
 
 File: libc.info,  Node: Signal Sets,  Next: Process Signal Mask,  Prev: Why Block,  Up: Blocking Signals
 
-24.7.2 Signal Sets
+25.7.2 Signal Sets
 ------------------
 
 All of the signal blocking functions use a data structure called a
@@ -5108,7 +7158,7 @@ set:
 
 File: libc.info,  Node: Process Signal Mask,  Next: Testing for Delivery,  Prev: Signal Sets,  Up: Blocking Signals
 
-24.7.3 Process Signal Mask
+25.7.3 Process Signal Mask
 --------------------------
 
 The collection of signals that are currently blocked is called the
@@ -5188,7 +7238,7 @@ in a multi-threaded process is “unspecified”.  Instead, use
 
 File: libc.info,  Node: Testing for Delivery,  Next: Blocking for Handler,  Prev: Process Signal Mask,  Up: Blocking Signals
 
-24.7.4 Blocking to Test for Delivery of a Signal
+25.7.4 Blocking to Test for Delivery of a Signal
 ------------------------------------------------
 
 Now for a simple example.  Suppose you establish a handler for ‘SIGALRM’
@@ -5230,7 +7280,7 @@ this:
 
 File: libc.info,  Node: Blocking for Handler,  Next: Checking for Pending Signals,  Prev: Testing for Delivery,  Up: Blocking Signals
 
-24.7.5 Blocking Signals for a Handler
+25.7.5 Blocking Signals for a Handler
 -------------------------------------
 
 When a signal handler is invoked, you usually want it to be able to
@@ -5293,7 +7343,7 @@ interrupted.
 
 File: libc.info,  Node: Checking for Pending Signals,  Next: Remembering a Signal,  Prev: Blocking for Handler,  Up: Blocking Signals
 
-24.7.6 Checking for Pending Signals
+25.7.6 Checking for Pending Signals
 -----------------------------------
 
 You can find out which signals are pending at any time by calling
@@ -5347,1983 +7397,4 @@ only see one of them when you unblock this signal.
 
    *Portability Note:* The ‘sigpending’ function is new in POSIX.1.
 Older systems have no equivalent facility.
-
-
-File: libc.info,  Node: Remembering a Signal,  Prev: Checking for Pending Signals,  Up: Blocking Signals
-
-24.7.7 Remembering a Signal to Act On Later
--------------------------------------------
-
-Instead of blocking a signal using the library facilities, you can get
-almost the same results by making the handler set a flag to be tested
-later, when you “unblock”.  Here is an example:
-
-     /* If this flag is nonzero, don’t handle the signal right away. */
-     volatile sig_atomic_t signal_pending;
-
-     /* This is nonzero if a signal arrived and was not handled. */
-     volatile sig_atomic_t defer_signal;
-
-     void
-     handler (int signum)
-     {
-       if (defer_signal)
-         signal_pending = signum;
-       else
-         ... /* “Really” handle the signal. */
-     }
-
-     ...
-
-     void
-     update_mumble (int frob)
-     {
-       /* Prevent signals from having immediate effect. */
-       defer_signal++;
-       /* Now update ‘mumble’, without worrying about interruption. */
-       mumble.a = 1;
-       mumble.b = hack ();
-       mumble.c = frob;
-       /* We have updated ‘mumble’.  Handle any signal that came in. */
-       defer_signal--;
-       if (defer_signal == 0 && signal_pending != 0)
-         raise (signal_pending);
-     }
-
-   Note how the particular signal that arrives is stored in
-‘signal_pending’.  That way, we can handle several types of inconvenient
-signals with the same mechanism.
-
-   We increment and decrement ‘defer_signal’ so that nested critical
-sections will work properly; thus, if ‘update_mumble’ were called with
-‘signal_pending’ already nonzero, signals would be deferred not only
-within ‘update_mumble’, but also within the caller.  This is also why we
-do not check ‘signal_pending’ if ‘defer_signal’ is still nonzero.
-
-   The incrementing and decrementing of ‘defer_signal’ each require more
-than one instruction; it is possible for a signal to happen in the
-middle.  But that does not cause any problem.  If the signal happens
-early enough to see the value from before the increment or decrement,
-that is equivalent to a signal which came before the beginning of the
-increment or decrement, which is a case that works properly.
-
-   It is absolutely vital to decrement ‘defer_signal’ before testing
-‘signal_pending’, because this avoids a subtle bug.  If we did these
-things in the other order, like this,
-
-       if (defer_signal == 1 && signal_pending != 0)
-         raise (signal_pending);
-       defer_signal--;
-
-then a signal arriving in between the ‘if’ statement and the decrement
-would be effectively “lost” for an indefinite amount of time.  The
-handler would merely set ‘defer_signal’, but the program having already
-tested this variable, it would not test the variable again.
-
-   Bugs like these are called “timing errors”.  They are especially bad
-because they happen only rarely and are nearly impossible to reproduce.
-You can’t expect to find them with a debugger as you would find a
-reproducible bug.  So it is worth being especially careful to avoid
-them.
-
-   (You would not be tempted to write the code in this order, given the
-use of ‘defer_signal’ as a counter which must be tested along with
-‘signal_pending’.  After all, testing for zero is cleaner than testing
-for one.  But if you did not use ‘defer_signal’ as a counter, and gave
-it values of zero and one only, then either order might seem equally
-simple.  This is a further advantage of using a counter for
-‘defer_signal’: it will reduce the chance you will write the code in the
-wrong order and create a subtle bug.)
-
-
-File: libc.info,  Node: Waiting for a Signal,  Next: Signal Stack,  Prev: Blocking Signals,  Up: Signal Handling
-
-24.8 Waiting for a Signal
-=========================
-
-If your program is driven by external events, or uses signals for
-synchronization, then when it has nothing to do it should probably wait
-until a signal arrives.
-
-* Menu:
-
-* Using Pause::                 The simple way, using ‘pause’.
-* Pause Problems::              Why the simple way is often not very good.
-* Sigsuspend::                  Reliably waiting for a specific signal.
-
-
-File: libc.info,  Node: Using Pause,  Next: Pause Problems,  Up: Waiting for a Signal
-
-24.8.1 Using ‘pause’
---------------------
-
-The simple way to wait until a signal arrives is to call ‘pause’.
-Please read about its disadvantages, in the following section, before
-you use it.
-
- -- Function: int pause (void)
-
-     Preliminary: | MT-Unsafe race:sigprocmask/!bsd!linux | AS-Unsafe
-     lock/hurd | AC-Unsafe lock/hurd | *Note POSIX Safety Concepts::.
-
-     The ‘pause’ function suspends program execution until a signal
-     arrives whose action is either to execute a handler function, or to
-     terminate the process.
-
-     If the signal causes a handler function to be executed, then
-     ‘pause’ returns.  This is considered an unsuccessful return (since
-     “successful” behavior would be to suspend the program forever), so
-     the return value is ‘-1’.  Even if you specify that other
-     primitives should resume when a system handler returns (*note
-     Interrupted Primitives::), this has no effect on ‘pause’; it always
-     fails when a signal is handled.
-
-     The following ‘errno’ error conditions are defined for this
-     function:
-
-     ‘EINTR’
-          The function was interrupted by delivery of a signal.
-
-     If the signal causes program termination, ‘pause’ doesn’t return
-     (obviously).
-
-     This function is a cancellation point in multithreaded programs.
-     This is a problem if the thread allocates some resources (like
-     memory, file descriptors, semaphores or whatever) at the time
-     ‘pause’ is called.  If the thread gets cancelled these resources
-     stay allocated until the program ends.  To avoid this calls to
-     ‘pause’ should be protected using cancellation handlers.
-
-     The ‘pause’ function is declared in ‘unistd.h’.
-
-
-File: libc.info,  Node: Pause Problems,  Next: Sigsuspend,  Prev: Using Pause,  Up: Waiting for a Signal
-
-24.8.2 Problems with ‘pause’
-----------------------------
-
-The simplicity of ‘pause’ can conceal serious timing errors that can
-make a program hang mysteriously.
-
-   It is safe to use ‘pause’ if the real work of your program is done by
-the signal handlers themselves, and the “main program” does nothing but
-call ‘pause’.  Each time a signal is delivered, the handler will do the
-next batch of work that is to be done, and then return, so that the main
-loop of the program can call ‘pause’ again.
-
-   You can’t safely use ‘pause’ to wait until one more signal arrives,
-and then resume real work.  Even if you arrange for the signal handler
-to cooperate by setting a flag, you still can’t use ‘pause’ reliably.
-Here is an example of this problem:
-
-     /* ‘usr_interrupt’ is set by the signal handler.  */
-     if (!usr_interrupt)
-       pause ();
-
-     /* Do work once the signal arrives.  */
-     ...
-
-This has a bug: the signal could arrive after the variable
-‘usr_interrupt’ is checked, but before the call to ‘pause’.  If no
-further signals arrive, the process would never wake up again.
-
-   You can put an upper limit on the excess waiting by using ‘sleep’ in
-a loop, instead of using ‘pause’.  (*Note Sleeping::, for more about
-‘sleep’.)  Here is what this looks like:
-
-     /* ‘usr_interrupt’ is set by the signal handler.
-     while (!usr_interrupt)
-       sleep (1);
-
-     /* Do work once the signal arrives.  */
-     ...
-
-   For some purposes, that is good enough.  But with a little more
-complexity, you can wait reliably until a particular signal handler is
-run, using ‘sigsuspend’.  *Note Sigsuspend::.
-
-
-File: libc.info,  Node: Sigsuspend,  Prev: Pause Problems,  Up: Waiting for a Signal
-
-24.8.3 Using ‘sigsuspend’
--------------------------
-
-The clean and reliable way to wait for a signal to arrive is to block it
-and then use ‘sigsuspend’.  By using ‘sigsuspend’ in a loop, you can
-wait for certain kinds of signals, while letting other kinds of signals
-be handled by their handlers.
-
- -- Function: int sigsuspend (const sigset_t *SET)
-
-     Preliminary: | MT-Unsafe race:sigprocmask/!bsd!linux | AS-Unsafe
-     lock/hurd | AC-Unsafe lock/hurd | *Note POSIX Safety Concepts::.
-
-     This function replaces the process’s signal mask with SET and then
-     suspends the process until a signal is delivered whose action is
-     either to terminate the process or invoke a signal handling
-     function.  In other words, the program is effectively suspended
-     until one of the signals that is not a member of SET arrives.
-
-     If the process is woken up by delivery of a signal that invokes a
-     handler function, and the handler function returns, then
-     ‘sigsuspend’ also returns.
-
-     The mask remains SET only as long as ‘sigsuspend’ is waiting.  The
-     function ‘sigsuspend’ always restores the previous signal mask when
-     it returns.
-
-     The return value and error conditions are the same as for ‘pause’.
-
-   With ‘sigsuspend’, you can replace the ‘pause’ or ‘sleep’ loop in the
-previous section with something completely reliable:
-
-     sigset_t mask, oldmask;
-
-     ...
-
-     /* Set up the mask of signals to temporarily block. */
-     sigemptyset (&mask);
-     sigaddset (&mask, SIGUSR1);
-
-     ...
-
-     /* Wait for a signal to arrive. */
-     sigprocmask (SIG_BLOCK, &mask, &oldmask);
-     while (!usr_interrupt)
-       sigsuspend (&oldmask);
-     sigprocmask (SIG_UNBLOCK, &mask, NULL);
-
-   This last piece of code is a little tricky.  The key point to
-remember here is that when ‘sigsuspend’ returns, it resets the process’s
-signal mask to the original value, the value from before the call to
-‘sigsuspend’—in this case, the ‘SIGUSR1’ signal is once again blocked.
-The second call to ‘sigprocmask’ is necessary to explicitly unblock this
-signal.
-
-   One other point: you may be wondering why the ‘while’ loop is
-necessary at all, since the program is apparently only waiting for one
-‘SIGUSR1’ signal.  The answer is that the mask passed to ‘sigsuspend’
-permits the process to be woken up by the delivery of other kinds of
-signals, as well—for example, job control signals.  If the process is
-woken up by a signal that doesn’t set ‘usr_interrupt’, it just suspends
-itself again until the “right” kind of signal eventually arrives.
-
-   This technique takes a few more lines of preparation, but that is
-needed just once for each kind of wait criterion you want to use.  The
-code that actually waits is just four lines.
-
-
-File: libc.info,  Node: Signal Stack,  Next: BSD Signal Handling,  Prev: Waiting for a Signal,  Up: Signal Handling
-
-24.9 Using a Separate Signal Stack
-==================================
-
-A signal stack is a special area of memory to be used as the execution
-stack during signal handlers.  It should be fairly large, to avoid any
-danger that it will overflow in turn; the macro ‘SIGSTKSZ’ is defined to
-a canonical size for signal stacks.  You can use ‘malloc’ to allocate
-the space for the stack.  Then call ‘sigaltstack’ or ‘sigstack’ to tell
-the system to use that space for the signal stack.
-
-   You don’t need to write signal handlers differently in order to use a
-signal stack.  Switching from one stack to the other happens
-automatically.  (Some non-GNU debuggers on some machines may get
-confused if you examine a stack trace while a handler that uses the
-signal stack is running.)
-
-   There are two interfaces for telling the system to use a separate
-signal stack.  ‘sigstack’ is the older interface, which comes from 4.2
-BSD. ‘sigaltstack’ is the newer interface, and comes from 4.4 BSD. The
-‘sigaltstack’ interface has the advantage that it does not require your
-program to know which direction the stack grows, which depends on the
-specific machine and operating system.
-
- -- Data Type: stack_t
-
-     This structure describes a signal stack.  It contains the following
-     members:
-
-     ‘void *ss_sp’
-          This points to the base of the signal stack.
-
-     ‘size_t ss_size’
-          This is the size (in bytes) of the signal stack which ‘ss_sp’
-          points to.  You should set this to however much space you
-          allocated for the stack.
-
-          There are two macros defined in ‘signal.h’ that you should use
-          in calculating this size:
-
-          ‘SIGSTKSZ’
-               This is the canonical size for a signal stack.  It is
-               judged to be sufficient for normal uses.
-
-          ‘MINSIGSTKSZ’
-               This is the amount of signal stack space the operating
-               system needs just to implement signal delivery.  The size
-               of a signal stack *must* be greater than this.
-
-               For most cases, just using ‘SIGSTKSZ’ for ‘ss_size’ is
-               sufficient.  But if you know how much stack space your
-               program’s signal handlers will need, you may want to use
-               a different size.  In this case, you should allocate
-               ‘MINSIGSTKSZ’ additional bytes for the signal stack and
-               increase ‘ss_size’ accordingly.
-
-     ‘int ss_flags’
-          This field contains the bitwise OR of these flags:
-
-          ‘SS_DISABLE’
-               This tells the system that it should not use the signal
-               stack.
-
-          ‘SS_ONSTACK’
-               This is set by the system, and indicates that the signal
-               stack is currently in use.  If this bit is not set, then
-               signals will be delivered on the normal user stack.
-
- -- Function: int sigaltstack (const stack_t *restrict STACK, stack_t
-          *restrict OLDSTACK)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock/hurd | AC-Unsafe lock/hurd
-     | *Note POSIX Safety Concepts::.
-
-     The ‘sigaltstack’ function specifies an alternate stack for use
-     during signal handling.  When a signal is received by the process
-     and its action indicates that the signal stack is used, the system
-     arranges a switch to the currently installed signal stack while the
-     handler for that signal is executed.
-
-     If OLDSTACK is not a null pointer, information about the currently
-     installed signal stack is returned in the location it points to.
-     If STACK is not a null pointer, then this is installed as the new
-     stack for use by signal handlers.
-
-     The return value is ‘0’ on success and ‘-1’ on failure.  If
-     ‘sigaltstack’ fails, it sets ‘errno’ to one of these values:
-
-     ‘EINVAL’
-          You tried to disable a stack that was in fact currently in
-          use.
-
-     ‘ENOMEM’
-          The size of the alternate stack was too small.  It must be
-          greater than ‘MINSIGSTKSZ’.
-
-   Here is the older ‘sigstack’ interface.  You should use ‘sigaltstack’
-instead on systems that have it.
-
- -- Data Type: struct sigstack
-
-     This structure describes a signal stack.  It contains the following
-     members:
-
-     ‘void *ss_sp’
-          This is the stack pointer.  If the stack grows downwards on
-          your machine, this should point to the top of the area you
-          allocated.  If the stack grows upwards, it should point to the
-          bottom.
-
-     ‘int ss_onstack’
-          This field is true if the process is currently using this
-          stack.
-
- -- Function: int sigstack (struct sigstack *STACK, struct sigstack
-          *OLDSTACK)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock/hurd | AC-Unsafe lock/hurd
-     | *Note POSIX Safety Concepts::.
-
-     The ‘sigstack’ function specifies an alternate stack for use during
-     signal handling.  When a signal is received by the process and its
-     action indicates that the signal stack is used, the system arranges
-     a switch to the currently installed signal stack while the handler
-     for that signal is executed.
-
-     If OLDSTACK is not a null pointer, information about the currently
-     installed signal stack is returned in the location it points to.
-     If STACK is not a null pointer, then this is installed as the new
-     stack for use by signal handlers.
-
-     The return value is ‘0’ on success and ‘-1’ on failure.
-
-
-File: libc.info,  Node: BSD Signal Handling,  Prev: Signal Stack,  Up: Signal Handling
-
-24.10 BSD Signal Handling
-=========================
-
-This section describes alternative signal handling functions derived
-from BSD Unix.  These facilities were an advance, in their time; today,
-they are mostly obsolete, and supported mainly for compatibility with
-BSD Unix.
-
-   There are many similarities between the BSD and POSIX signal handling
-facilities, because the POSIX facilities were inspired by the BSD
-facilities.  Besides having different names for all the functions to
-avoid conflicts, the main difference between the two is that BSD Unix
-represents signal masks as an ‘int’ bit mask, rather than as a
-‘sigset_t’ object.
-
-   The BSD facilities are declared in ‘signal.h’.
-
- -- Function: int siginterrupt (int SIGNUM, int FAILFLAG)
-
-     Preliminary: | MT-Unsafe const:sigintr | AS-Unsafe | AC-Unsafe
-     corrupt | *Note POSIX Safety Concepts::.
-
-     This function specifies which approach to use when certain
-     primitives are interrupted by handling signal SIGNUM.  If FAILFLAG
-     is false, signal SIGNUM restarts primitives.  If FAILFLAG is true,
-     handling SIGNUM causes these primitives to fail with error code
-     ‘EINTR’.  *Note Interrupted Primitives::.
-
-     This function has been replaced by the ‘SA_RESTART’ flag of the
-     ‘sigaction’ function.  *Note Advanced Signal Handling::.
-
- -- Macro: int sigmask (int SIGNUM)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     This macro returns a signal mask that has the bit for signal SIGNUM
-     set.  You can bitwise-OR the results of several calls to ‘sigmask’
-     together to specify more than one signal.  For example,
-
-          (sigmask (SIGTSTP) | sigmask (SIGSTOP)
-           | sigmask (SIGTTIN) | sigmask (SIGTTOU))
-
-     specifies a mask that includes all the job-control stop signals.
-
-     This macro has been replaced by the ‘sigset_t’ type and the
-     associated signal set manipulation functions.  *Note Signal Sets::.
-
- -- Function: int sigblock (int MASK)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock/hurd | AC-Unsafe lock/hurd
-     | *Note POSIX Safety Concepts::.
-
-     This function is equivalent to ‘sigprocmask’ (*note Process Signal
-     Mask::) with a HOW argument of ‘SIG_BLOCK’: it adds the signals
-     specified by MASK to the calling process’s set of blocked signals.
-     The return value is the previous set of blocked signals.
-
- -- Function: int sigsetmask (int MASK)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock/hurd | AC-Unsafe lock/hurd
-     | *Note POSIX Safety Concepts::.
-
-     This function is equivalent to ‘sigprocmask’ (*note Process Signal
-     Mask::) with a HOW argument of ‘SIG_SETMASK’: it sets the calling
-     process’s signal mask to MASK.  The return value is the previous
-     set of blocked signals.
-
- -- Function: int sigpause (int MASK)
-
-     Preliminary: | MT-Unsafe race:sigprocmask/!bsd!linux | AS-Unsafe
-     lock/hurd | AC-Unsafe lock/hurd | *Note POSIX Safety Concepts::.
-
-     This function is the equivalent of ‘sigsuspend’ (*note Waiting for
-     a Signal::): it sets the calling process’s signal mask to MASK, and
-     waits for a signal to arrive.  On return the previous set of
-     blocked signals is restored.
-
-
-File: libc.info,  Node: Program Basics,  Next: Processes,  Prev: Signal Handling,  Up: Top
-
-25 The Basic Program/System Interface
-*************************************
-
-“Processes” are the primitive units for allocation of system resources.
-Each process has its own address space and (usually) one thread of
-control.  A process executes a program; you can have multiple processes
-executing the same program, but each process has its own copy of the
-program within its own address space and executes it independently of
-the other copies.  Though it may have multiple threads of control within
-the same program and a program may be composed of multiple logically
-separate modules, a process always executes exactly one program.
-
-   Note that we are using a specific definition of “program” for the
-purposes of this manual, which corresponds to a common definition in the
-context of Unix systems.  In popular usage, “program” enjoys a much
-broader definition; it can refer for example to a system’s kernel, an
-editor macro, a complex package of software, or a discrete section of
-code executing within a process.
-
-   Writing the program is what this manual is all about.  This chapter
-explains the most basic interface between your program and the system
-that runs, or calls, it.  This includes passing of parameters (arguments
-and environment) from the system, requesting basic services from the
-system, and telling the system the program is done.
-
-   A program starts another program with the ‘exec’ family of system
-calls.  This chapter looks at program startup from the execee’s point of
-view.  To see the event from the execor’s point of view, see *note
-Executing a File::.
-
-* Menu:
-
-* Program Arguments::           Parsing your program’s command-line arguments
-* Environment Variables::       Less direct parameters affecting your program
-* Auxiliary Vector::            Least direct parameters affecting your program
-* System Calls::                Requesting service from the system
-* Program Termination::         Telling the system you’re done; return status
-
-
-File: libc.info,  Node: Program Arguments,  Next: Environment Variables,  Up: Program Basics
-
-25.1 Program Arguments
-======================
-
-The system starts a C program by calling the function ‘main’.  It is up
-to you to write a function named ‘main’—otherwise, you won’t even be
-able to link your program without errors.
-
-   In ISO C you can define ‘main’ either to take no arguments, or to
-take two arguments that represent the command line arguments to the
-program, like this:
-
-     int main (int ARGC, char *ARGV[])
-
-   The command line arguments are the whitespace-separated tokens given
-in the shell command used to invoke the program; thus, in ‘cat foo bar’,
-the arguments are ‘foo’ and ‘bar’.  The only way a program can look at
-its command line arguments is via the arguments of ‘main’.  If ‘main’
-doesn’t take arguments, then you cannot get at the command line.
-
-   The value of the ARGC argument is the number of command line
-arguments.  The ARGV argument is a vector of C strings; its elements are
-the individual command line argument strings.  The file name of the
-program being run is also included in the vector as the first element;
-the value of ARGC counts this element.  A null pointer always follows
-the last element: ‘ARGV[ARGC]’ is this null pointer.
-
-   For the command ‘cat foo bar’, ARGC is 3 and ARGV has three elements,
-‘"cat"’, ‘"foo"’ and ‘"bar"’.
-
-   In Unix systems you can define ‘main’ a third way, using three
-arguments:
-
-     int main (int ARGC, char *ARGV[], char *ENVP[])
-
-   The first two arguments are just the same.  The third argument ENVP
-gives the program’s environment; it is the same as the value of
-‘environ’.  *Note Environment Variables::.  POSIX.1 does not allow this
-three-argument form, so to be portable it is best to write ‘main’ to
-take two arguments, and use the value of ‘environ’.
-
-* Menu:
-
-* Argument Syntax::             By convention, options start with a hyphen.
-* Parsing Program Arguments::   Ways to parse program options and arguments.
-
-
-File: libc.info,  Node: Argument Syntax,  Next: Parsing Program Arguments,  Up: Program Arguments
-
-25.1.1 Program Argument Syntax Conventions
-------------------------------------------
-
-POSIX recommends these conventions for command line arguments.  ‘getopt’
-(*note Getopt::) and ‘argp_parse’ (*note Argp::) make it easy to
-implement them.
-
-   • Arguments are options if they begin with a hyphen delimiter (‘-’).
-
-   • Multiple options may follow a hyphen delimiter in a single token if
-     the options do not take arguments.  Thus, ‘-abc’ is equivalent to
-     ‘-a -b -c’.
-
-   • Option names are single alphanumeric characters (as for ‘isalnum’;
-     *note Classification of Characters::).
-
-   • Certain options require an argument.  For example, the ‘-o’ option
-     of the ‘ld’ command requires an argument—an output file name.
-
-   • An option and its argument may or may not appear as separate
-     tokens.  (In other words, the whitespace separating them is
-     optional.)  Thus, ‘-o foo’ and ‘-ofoo’ are equivalent.
-
-   • Options typically precede other non-option arguments.
-
-     The implementations of ‘getopt’ and ‘argp_parse’ in the GNU C
-     Library normally make it appear as if all the option arguments were
-     specified before all the non-option arguments for the purposes of
-     parsing, even if the user of your program intermixed option and
-     non-option arguments.  They do this by reordering the elements of
-     the ARGV array.  This behavior is nonstandard; if you want to
-     suppress it, define the ‘_POSIX_OPTION_ORDER’ environment variable.
-     *Note Standard Environment::.
-
-   • The argument ‘--’ terminates all options; any following arguments
-     are treated as non-option arguments, even if they begin with a
-     hyphen.
-
-   • A token consisting of a single hyphen character is interpreted as
-     an ordinary non-option argument.  By convention, it is used to
-     specify input from or output to the standard input and output
-     streams.
-
-   • Options may be supplied in any order, or appear multiple times.
-     The interpretation is left up to the particular application
-     program.
-
-   GNU adds “long options” to these conventions.  Long options consist
-of ‘--’ followed by a name made of alphanumeric characters and dashes.
-Option names are typically one to three words long, with hyphens to
-separate words.  Users can abbreviate the option names as long as the
-abbreviations are unique.
-
-   To specify an argument for a long option, write ‘--NAME=VALUE’.  This
-syntax enables a long option to accept an argument that is itself
-optional.
-
-   Eventually, GNU systems will provide completion for long option names
-in the shell.
-
-
-File: libc.info,  Node: Parsing Program Arguments,  Prev: Argument Syntax,  Up: Program Arguments
-
-25.1.2 Parsing Program Arguments
---------------------------------
-
-If the syntax for the command line arguments to your program is simple
-enough, you can simply pick the arguments off from ARGV by hand.  But
-unless your program takes a fixed number of arguments, or all of the
-arguments are interpreted in the same way (as file names, for example),
-you are usually better off using ‘getopt’ (*note Getopt::) or
-‘argp_parse’ (*note Argp::) to do the parsing.
-
-   ‘getopt’ is more standard (the short-option only version of it is a
-part of the POSIX standard), but using ‘argp_parse’ is often easier,
-both for very simple and very complex option structures, because it does
-more of the dirty work for you.
-
-* Menu:
-
-* Getopt::                      Parsing program options using ‘getopt’.
-* Argp::                        Parsing program options using ‘argp_parse’.
-* Suboptions::                  Some programs need more detailed options.
-* Suboptions Example::          This shows how it could be done for ‘mount’.
-
-
-File: libc.info,  Node: Getopt,  Next: Argp,  Up: Parsing Program Arguments
-
-25.2 Parsing program options using ‘getopt’
-===========================================
-
-The ‘getopt’ and ‘getopt_long’ functions automate some of the chore
-involved in parsing typical unix command line options.
-
-* Menu:
-
-* Using Getopt::                Using the ‘getopt’ function.
-* Example of Getopt::           An example of parsing options with ‘getopt’.
-* Getopt Long Options::         GNU suggests utilities accept long-named
-                                 options; here is one way to do.
-* Getopt Long Option Example::  An example of using ‘getopt_long’.
-
-
-File: libc.info,  Node: Using Getopt,  Next: Example of Getopt,  Up: Getopt
-
-25.2.1 Using the ‘getopt’ function
-----------------------------------
-
-Here are the details about how to call the ‘getopt’ function.  To use
-this facility, your program must include the header file ‘unistd.h’.
-
- -- Variable: int opterr
-
-     If the value of this variable is nonzero, then ‘getopt’ prints an
-     error message to the standard error stream if it encounters an
-     unknown option character or an option with a missing required
-     argument.  This is the default behavior.  If you set this variable
-     to zero, ‘getopt’ does not print any messages, but it still returns
-     the character ‘?’ to indicate an error.
-
- -- Variable: int optopt
-
-     When ‘getopt’ encounters an unknown option character or an option
-     with a missing required argument, it stores that option character
-     in this variable.  You can use this for providing your own
-     diagnostic messages.
-
- -- Variable: int optind
-
-     This variable is set by ‘getopt’ to the index of the next element
-     of the ARGV array to be processed.  Once ‘getopt’ has found all of
-     the option arguments, you can use this variable to determine where
-     the remaining non-option arguments begin.  The initial value of
-     this variable is ‘1’.
-
- -- Variable: char * optarg
-
-     This variable is set by ‘getopt’ to point at the value of the
-     option argument, for those options that accept arguments.
-
- -- Function: int getopt (int ARGC, char *const *ARGV, const char
-          *OPTIONS)
-
-     Preliminary: | MT-Unsafe race:getopt env | AS-Unsafe heap i18n lock
-     corrupt | AC-Unsafe mem lock corrupt | *Note POSIX Safety
-     Concepts::.
-
-     The ‘getopt’ function gets the next option argument from the
-     argument list specified by the ARGV and ARGC arguments.  Normally
-     these values come directly from the arguments received by ‘main’.
-
-     The OPTIONS argument is a string that specifies the option
-     characters that are valid for this program.  An option character in
-     this string can be followed by a colon (‘:’) to indicate that it
-     takes a required argument.  If an option character is followed by
-     two colons (‘::’), its argument is optional; this is a GNU
-     extension.
-
-     ‘getopt’ has three ways to deal with options that follow
-     non-options ARGV elements.  The special argument ‘--’ forces in all
-     cases the end of option scanning.
-
-        • The default is to permute the contents of ARGV while scanning
-          it so that eventually all the non-options are at the end.
-          This allows options to be given in any order, even with
-          programs that were not written to expect this.
-
-        • If the OPTIONS argument string begins with a hyphen (‘-’),
-          this is treated specially.  It permits arguments that are not
-          options to be returned as if they were associated with option
-          character ‘\1’.
-
-        • POSIX demands the following behavior: the first non-option
-          stops option processing.  This mode is selected by either
-          setting the environment variable ‘POSIXLY_CORRECT’ or
-          beginning the OPTIONS argument string with a plus sign (‘+’).
-
-     The ‘getopt’ function returns the option character for the next
-     command line option.  When no more option arguments are available,
-     it returns ‘-1’.  There may still be more non-option arguments; you
-     must compare the external variable ‘optind’ against the ARGC
-     parameter to check this.
-
-     If the option has an argument, ‘getopt’ returns the argument by
-     storing it in the variable OPTARG.  You don’t ordinarily need to
-     copy the ‘optarg’ string, since it is a pointer into the original
-     ARGV array, not into a static area that might be overwritten.
-
-     If ‘getopt’ finds an option character in ARGV that was not included
-     in OPTIONS, or a missing option argument, it returns ‘?’ and sets
-     the external variable ‘optopt’ to the actual option character.  If
-     the first character of OPTIONS is a colon (‘:’), then ‘getopt’
-     returns ‘:’ instead of ‘?’ to indicate a missing option argument.
-     In addition, if the external variable ‘opterr’ is nonzero (which is
-     the default), ‘getopt’ prints an error message.
-
-
-File: libc.info,  Node: Example of Getopt,  Next: Getopt Long Options,  Prev: Using Getopt,  Up: Getopt
-
-25.2.2 Example of Parsing Arguments with ‘getopt’
--------------------------------------------------
-
-Here is an example showing how ‘getopt’ is typically used.  The key
-points to notice are:
-
-   • Normally, ‘getopt’ is called in a loop.  When ‘getopt’ returns
-     ‘-1’, indicating no more options are present, the loop terminates.
-
-   • A ‘switch’ statement is used to dispatch on the return value from
-     ‘getopt’.  In typical use, each case just sets a variable that is
-     used later in the program.
-
-   • A second loop is used to process the remaining non-option
-     arguments.
-
-
-     #include <ctype.h>
-     #include <stdio.h>
-     #include <stdlib.h>
-     #include <unistd.h>
-
-     int
-     main (int argc, char **argv)
-     {
-       int aflag = 0;
-       int bflag = 0;
-       char *cvalue = NULL;
-       int index;
-       int c;
-
-       opterr = 0;
-
-       while ((c = getopt (argc, argv, "abc:")) != -1)
-         switch (c)
-           {
-           case 'a':
-             aflag = 1;
-             break;
-           case 'b':
-             bflag = 1;
-             break;
-           case 'c':
-             cvalue = optarg;
-             break;
-           case '?':
-             if (optopt == 'c')
-               fprintf (stderr, "Option -%c requires an argument.\n", optopt);
-             else if (isprint (optopt))
-               fprintf (stderr, "Unknown option `-%c'.\n", optopt);
-             else
-               fprintf (stderr,
-                        "Unknown option character `\\x%x'.\n",
-                        optopt);
-             return 1;
-           default:
-             abort ();
-           }
-
-       printf ("aflag = %d, bflag = %d, cvalue = %s\n",
-               aflag, bflag, cvalue);
-
-       for (index = optind; index < argc; index++)
-         printf ("Non-option argument %s\n", argv[index]);
-       return 0;
-     }
-
-   Here are some examples showing what this program prints with
-different combinations of arguments:
-
-     % testopt
-     aflag = 0, bflag = 0, cvalue = (null)
-
-     % testopt -a -b
-     aflag = 1, bflag = 1, cvalue = (null)
-
-     % testopt -ab
-     aflag = 1, bflag = 1, cvalue = (null)
-
-     % testopt -c foo
-     aflag = 0, bflag = 0, cvalue = foo
-
-     % testopt -cfoo
-     aflag = 0, bflag = 0, cvalue = foo
-
-     % testopt arg1
-     aflag = 0, bflag = 0, cvalue = (null)
-     Non-option argument arg1
-
-     % testopt -a arg1
-     aflag = 1, bflag = 0, cvalue = (null)
-     Non-option argument arg1
-
-     % testopt -c foo arg1
-     aflag = 0, bflag = 0, cvalue = foo
-     Non-option argument arg1
-
-     % testopt -a -- -b
-     aflag = 1, bflag = 0, cvalue = (null)
-     Non-option argument -b
-
-     % testopt -a -
-     aflag = 1, bflag = 0, cvalue = (null)
-     Non-option argument -
-
-
-File: libc.info,  Node: Getopt Long Options,  Next: Getopt Long Option Example,  Prev: Example of Getopt,  Up: Getopt
-
-25.2.3 Parsing Long Options with ‘getopt_long’
-----------------------------------------------
-
-To accept GNU-style long options as well as single-character options,
-use ‘getopt_long’ instead of ‘getopt’.  This function is declared in
-‘getopt.h’, not ‘unistd.h’.  You should make every program accept long
-options if it uses any options, for this takes little extra work and
-helps beginners remember how to use the program.
-
- -- Data Type: struct option
-
-     This structure describes a single long option name for the sake of
-     ‘getopt_long’.  The argument LONGOPTS must be an array of these
-     structures, one for each long option.  Terminate the array with an
-     element containing all zeros.
-
-     The ‘struct option’ structure has these fields:
-
-     ‘const char *name’
-          This field is the name of the option.  It is a string.
-
-     ‘int has_arg’
-          This field says whether the option takes an argument.  It is
-          an integer, and there are three legitimate values:
-          ‘no_argument’, ‘required_argument’ and ‘optional_argument’.
-
-     ‘int *flag’
-     ‘int val’
-          These fields control how to report or act on the option when
-          it occurs.
-
-          If ‘flag’ is a null pointer, then the ‘val’ is a value which
-          identifies this option.  Often these values are chosen to
-          uniquely identify particular long options.
-
-          If ‘flag’ is not a null pointer, it should be the address of
-          an ‘int’ variable which is the flag for this option.  The
-          value in ‘val’ is the value to store in the flag to indicate
-          that the option was seen.
-
- -- Function: int getopt_long (int ARGC, char *const *ARGV, const char
-          *SHORTOPTS, const struct option *LONGOPTS, int *INDEXPTR)
-
-     Preliminary: | MT-Unsafe race:getopt env | AS-Unsafe heap i18n lock
-     corrupt | AC-Unsafe mem lock corrupt | *Note POSIX Safety
-     Concepts::.
-
-     Decode options from the vector ARGV (whose length is ARGC).  The
-     argument SHORTOPTS describes the short options to accept, just as
-     it does in ‘getopt’.  The argument LONGOPTS describes the long
-     options to accept (see above).
-
-     When ‘getopt_long’ encounters a short option, it does the same
-     thing that ‘getopt’ would do: it returns the character code for the
-     option, and stores the option’s argument (if it has one) in
-     ‘optarg’.
-
-     When ‘getopt_long’ encounters a long option, it takes actions based
-     on the ‘flag’ and ‘val’ fields of the definition of that option.
-     The option name may be abbreviated as long as the abbreviation is
-     unique.
-
-     If ‘flag’ is a null pointer, then ‘getopt_long’ returns the
-     contents of ‘val’ to indicate which option it found.  You should
-     arrange distinct values in the ‘val’ field for options with
-     different meanings, so you can decode these values after
-     ‘getopt_long’ returns.  If the long option is equivalent to a short
-     option, you can use the short option’s character code in ‘val’.
-
-     If ‘flag’ is not a null pointer, that means this option should just
-     set a flag in the program.  The flag is a variable of type ‘int’
-     that you define.  Put the address of the flag in the ‘flag’ field.
-     Put in the ‘val’ field the value you would like this option to
-     store in the flag.  In this case, ‘getopt_long’ returns ‘0’.
-
-     For any long option, ‘getopt_long’ tells you the index in the array
-     LONGOPTS of the options definition, by storing it into ‘*INDEXPTR’.
-     You can get the name of the option with ‘LONGOPTS[*INDEXPTR].name’.
-     So you can distinguish among long options either by the values in
-     their ‘val’ fields or by their indices.  You can also distinguish
-     in this way among long options that set flags.
-
-     When a long option has an argument, ‘getopt_long’ puts the argument
-     value in the variable ‘optarg’ before returning.  When the option
-     has no argument, the value in ‘optarg’ is a null pointer.  This is
-     how you can tell whether an optional argument was supplied.
-
-     When ‘getopt_long’ has no more options to handle, it returns ‘-1’,
-     and leaves in the variable ‘optind’ the index in ARGV of the next
-     remaining argument.
-
-   Since long option names were used before ‘getopt_long’ was invented
-there are program interfaces which require programs to recognize options
-like ‘-option value’ instead of ‘--option value’.  To enable these
-programs to use the GNU getopt functionality there is one more function
-available.
-
- -- Function: int getopt_long_only (int ARGC, char *const *ARGV, const
-          char *SHORTOPTS, const struct option *LONGOPTS, int *INDEXPTR)
-
-     Preliminary: | MT-Unsafe race:getopt env | AS-Unsafe heap i18n lock
-     corrupt | AC-Unsafe mem lock corrupt | *Note POSIX Safety
-     Concepts::.
-
-     The ‘getopt_long_only’ function is equivalent to the ‘getopt_long’
-     function but it allows the user of the application to pass long
-     options with only ‘-’ instead of ‘--’.  The ‘--’ prefix is still
-     recognized but instead of looking through the short options if a
-     ‘-’ is seen it is first tried whether this parameter names a long
-     option.  If not, it is parsed as a short option.
-
-     Assuming ‘getopt_long_only’ is used starting an application with
-
-            app -foo
-
-     the ‘getopt_long_only’ will first look for a long option named
-     ‘foo’.  If this is not found, the short options ‘f’, ‘o’, and again
-     ‘o’ are recognized.
-
-
-File: libc.info,  Node: Getopt Long Option Example,  Prev: Getopt Long Options,  Up: Getopt
-
-25.2.4 Example of Parsing Long Options with ‘getopt_long’
----------------------------------------------------------
-
-
-     #include <stdio.h>
-     #include <stdlib.h>
-     #include <getopt.h>
-
-     /* Flag set by ‘--verbose’. */
-     static int verbose_flag;
-
-     int
-     main (int argc, char **argv)
-     {
-       int c;
-
-       while (1)
-         {
-           static struct option long_options[] =
-             {
-               /* These options set a flag. */
-               {"verbose", no_argument,       &verbose_flag, 1},
-               {"brief",   no_argument,       &verbose_flag, 0},
-               /* These options don’t set a flag.
-                  We distinguish them by their indices. */
-               {"add",     no_argument,       0, 'a'},
-               {"append",  no_argument,       0, 'b'},
-               {"delete",  required_argument, 0, 'd'},
-               {"create",  required_argument, 0, 'c'},
-               {"file",    required_argument, 0, 'f'},
-               {0, 0, 0, 0}
-             };
-           /* ‘getopt_long’ stores the option index here. */
-           int option_index = 0;
-
-           c = getopt_long (argc, argv, "abc:d:f:",
-                            long_options, &option_index);
-
-           /* Detect the end of the options. */
-           if (c == -1)
-             break;
-
-           switch (c)
-             {
-             case 0:
-               /* If this option set a flag, do nothing else now. */
-               if (long_options[option_index].flag != 0)
-                 break;
-               printf ("option %s", long_options[option_index].name);
-               if (optarg)
-                 printf (" with arg %s", optarg);
-               printf ("\n");
-               break;
-
-             case 'a':
-               puts ("option -a\n");
-               break;
-
-             case 'b':
-               puts ("option -b\n");
-               break;
-
-             case 'c':
-               printf ("option -c with value `%s'\n", optarg);
-               break;
-
-             case 'd':
-               printf ("option -d with value `%s'\n", optarg);
-               break;
-
-             case 'f':
-               printf ("option -f with value `%s'\n", optarg);
-               break;
-
-             case '?':
-               /* ‘getopt_long’ already printed an error message. */
-               break;
-
-             default:
-               abort ();
-             }
-         }
-
-       /* Instead of reporting ‘--verbose’
-          and ‘--brief’ as they are encountered,
-          we report the final status resulting from them. */
-       if (verbose_flag)
-         puts ("verbose flag is set");
-
-       /* Print any remaining command line arguments (not options). */
-       if (optind < argc)
-         {
-           printf ("non-option ARGV-elements: ");
-           while (optind < argc)
-             printf ("%s ", argv[optind++]);
-           putchar ('\n');
-         }
-
-       exit (0);
-     }
-
-
-File: libc.info,  Node: Argp,  Next: Suboptions,  Prev: Getopt,  Up: Parsing Program Arguments
-
-25.3 Parsing Program Options with Argp
-======================================
-
-“Argp” is an interface for parsing unix-style argument vectors.  *Note
-Program Arguments::.
-
-   Argp provides features unavailable in the more commonly used ‘getopt’
-interface.  These features include automatically producing output in
-response to the ‘--help’ and ‘--version’ options, as described in the
-GNU coding standards.  Using argp makes it less likely that programmers
-will neglect to implement these additional options or keep them up to
-date.
-
-   Argp also provides the ability to merge several independently defined
-option parsers into one, mediating conflicts between them and making the
-result appear seamless.  A library can export an argp option parser that
-user programs might employ in conjunction with their own option parsers,
-resulting in less work for the user programs.  Some programs may use
-only argument parsers exported by libraries, thereby achieving
-consistent and efficient option-parsing for abstractions implemented by
-the libraries.
-
-   The header file ‘<argp.h>’ should be included to use argp.
-
-25.3.1 The ‘argp_parse’ Function
---------------------------------
-
-The main interface to argp is the ‘argp_parse’ function.  In many cases,
-calling ‘argp_parse’ is the only argument-parsing code needed in ‘main’.
-*Note Program Arguments::.
-
- -- Function: error_t argp_parse (const struct argp *ARGP, int ARGC,
-          char **ARGV, unsigned FLAGS, int *ARG_INDEX, void *INPUT)
-
-     Preliminary: | MT-Unsafe race:argpbuf locale env | AS-Unsafe heap
-     i18n lock corrupt | AC-Unsafe mem lock corrupt | *Note POSIX Safety
-     Concepts::.
-
-     The ‘argp_parse’ function parses the arguments in ARGV, of length
-     ARGC, using the argp parser ARGP.  *Note Argp Parsers::.  Passing a
-     null pointer for ARGP is the same as using a ‘struct argp’
-     containing all zeros.
-
-     FLAGS is a set of flag bits that modify the parsing behavior.
-     *Note Argp Flags::.  INPUT is passed through to the argp parser
-     ARGP, and has meaning defined by ARGP.  A typical usage is to pass
-     a pointer to a structure which is used for specifying parameters to
-     the parser and passing back the results.
-
-     Unless the ‘ARGP_NO_EXIT’ or ‘ARGP_NO_HELP’ flags are included in
-     FLAGS, calling ‘argp_parse’ may result in the program exiting.
-     This behavior is true if an error is detected, or when an unknown
-     option is encountered.  *Note Program Termination::.
-
-     If ARG_INDEX is non-null, the index of the first unparsed option in
-     ARGV is returned as a value.
-
-     The return value is zero for successful parsing, or an error code
-     (*note Error Codes::) if an error is detected.  Different argp
-     parsers may return arbitrary error codes, but the standard error
-     codes are: ‘ENOMEM’ if a memory allocation error occurred, or
-     ‘EINVAL’ if an unknown option or option argument is encountered.
-
-* Menu:
-
-* Globals: Argp Global Variables.  Global argp parameters.
-* Parsers: Argp Parsers.        Defining parsers for use with ‘argp_parse’.
-* Flags: Argp Flags.            Flags that modify the behavior of ‘argp_parse’.
-* Help: Argp Help.              Printing help messages when not parsing.
-* Examples: Argp Examples.      Simple examples of programs using argp.
-* Customization: Argp User Customization.
-                                Users may control the ‘--help’ output format.
-
-
-File: libc.info,  Node: Argp Global Variables,  Next: Argp Parsers,  Up: Argp
-
-25.3.2 Argp Global Variables
-----------------------------
-
-These variables make it easy for user programs to implement the
-‘--version’ option and provide a bug-reporting address in the ‘--help’
-output.  These are implemented in argp by default.
-
- -- Variable: const char * argp_program_version
-
-     If defined or set by the user program to a non-zero value, then a
-     ‘--version’ option is added when parsing with ‘argp_parse’, which
-     will print the ‘--version’ string followed by a newline and exit.
-     The exception to this is if the ‘ARGP_NO_EXIT’ flag is used.
-
- -- Variable: const char * argp_program_bug_address
-
-     If defined or set by the user program to a non-zero value,
-     ‘argp_program_bug_address’ should point to a string that will be
-     printed at the end of the standard output for the ‘--help’ option,
-     embedded in a sentence that says ‘Report bugs to ADDRESS.’.
-
- -- Variable: argp_program_version_hook
-
-     If defined or set by the user program to a non-zero value, a
-     ‘--version’ option is added when parsing with ‘arg_parse’, which
-     prints the program version and exits with a status of zero.  This
-     is not the case if the ‘ARGP_NO_HELP’ flag is used.  If the
-     ‘ARGP_NO_EXIT’ flag is set, the exit behavior of the program is
-     suppressed or modified, as when the argp parser is going to be used
-     by other programs.
-
-     It should point to a function with this type of signature:
-
-          void PRINT-VERSION (FILE *STREAM, struct argp_state *STATE)
-
-     *Note Argp Parsing State::, for an explanation of STATE.
-
-     This variable takes precedence over ‘argp_program_version’, and is
-     useful if a program has version information not easily expressed in
-     a simple string.
-
- -- Variable: error_t argp_err_exit_status
-
-     This is the exit status used when argp exits due to a parsing
-     error.  If not defined or set by the user program, this defaults
-     to: ‘EX_USAGE’ from ‘<sysexits.h>’.
-
-
-File: libc.info,  Node: Argp Parsers,  Next: Argp Flags,  Prev: Argp Global Variables,  Up: Argp
-
-25.3.3 Specifying Argp Parsers
-------------------------------
-
-The first argument to the ‘argp_parse’ function is a pointer to a
-‘struct argp’, which is known as an “argp parser”:
-
- -- Data Type: struct argp
-
-     This structure specifies how to parse a given set of options and
-     arguments, perhaps in conjunction with other argp parsers.  It has
-     the following fields:
-
-     ‘const struct argp_option *options’
-          A pointer to a vector of ‘argp_option’ structures specifying
-          which options this argp parser understands; it may be zero if
-          there are no options at all.  *Note Argp Option Vectors::.
-
-     ‘argp_parser_t parser’
-          A pointer to a function that defines actions for this parser;
-          it is called for each option parsed, and at other well-defined
-          points in the parsing process.  A value of zero is the same as
-          a pointer to a function that always returns
-          ‘ARGP_ERR_UNKNOWN’.  *Note Argp Parser Functions::.
-
-     ‘const char *args_doc’
-          If non-zero, a string describing what non-option arguments are
-          called by this parser.  This is only used to print the
-          ‘Usage:’ message.  If it contains newlines, the strings
-          separated by them are considered alternative usage patterns
-          and printed on separate lines.  Lines after the first are
-          prefixed by ‘ or: ’ instead of ‘Usage:’.
-
-     ‘const char *doc’
-          If non-zero, a string containing extra text to be printed
-          before and after the options in a long help message, with the
-          two sections separated by a vertical tab (‘'\v'’, ‘'\013'’)
-          character.  By convention, the documentation before the
-          options is just a short string explaining what the program
-          does.  Documentation printed after the options describe
-          behavior in more detail.
-
-     ‘const struct argp_child *children’
-          A pointer to a vector of ‘argp_child’ structures.  This
-          pointer specifies which additional argp parsers should be
-          combined with this one.  *Note Argp Children::.
-
-     ‘char *(*help_filter)(int KEY, const char *TEXT, void *INPUT)’
-          If non-zero, a pointer to a function that filters the output
-          of help messages.  *Note Argp Help Filtering::.
-
-     ‘const char *argp_domain’
-          If non-zero, the strings used in the argp library are
-          translated using the domain described by this string.  If
-          zero, the current default domain is used.
-
-   Of the above group, ‘options’, ‘parser’, ‘args_doc’, and the ‘doc’
-fields are usually all that are needed.  If an argp parser is defined as
-an initialized C variable, only the fields used need be specified in the
-initializer.  The rest will default to zero due to the way C structure
-initialization works.  This design is exploited in most argp structures;
-the most-used fields are grouped near the beginning, the unused fields
-left unspecified.
-
-* Menu:
-
-* Options: Argp Option Vectors.   Specifying options in an argp parser.
-* Argp Parser Functions::         Defining actions for an argp parser.
-* Children: Argp Children.        Combining multiple argp parsers.
-* Help Filtering: Argp Help Filtering.  Customizing help output for an argp parser.
-
-
-File: libc.info,  Node: Argp Option Vectors,  Next: Argp Parser Functions,  Prev: Argp Parsers,  Up: Argp Parsers
-
-25.3.4 Specifying Options in an Argp Parser
--------------------------------------------
-
-The ‘options’ field in a ‘struct argp’ points to a vector of ‘struct
-argp_option’ structures, each of which specifies an option that the argp
-parser supports.  Multiple entries may be used for a single option
-provided it has multiple names.  This should be terminated by an entry
-with zero in all fields.  Note that when using an initialized C array
-for options, writing ‘{ 0 }’ is enough to achieve this.
-
- -- Data Type: struct argp_option
-
-     This structure specifies a single option that an argp parser
-     understands, as well as how to parse and document that option.  It
-     has the following fields:
-
-     ‘const char *name’
-          The long name for this option, corresponding to the long
-          option ‘--NAME’; this field may be zero if this option _only_
-          has a short name.  To specify multiple names for an option,
-          additional entries may follow this one, with the
-          ‘OPTION_ALIAS’ flag set.  *Note Argp Option Flags::.
-
-     ‘int key’
-          The integer key provided by the current option to the option
-          parser.  If KEY has a value that is a printable ASCII
-          character (i.e., ‘isascii (KEY)’ is true), it _also_ specifies
-          a short option ‘-CHAR’, where CHAR is the ASCII character with
-          the code KEY.
-
-     ‘const char *arg’
-          If non-zero, this is the name of an argument associated with
-          this option, which must be provided (e.g., with the
-          ‘--NAME=VALUE’ or ‘-CHAR VALUE’ syntaxes), unless the
-          ‘OPTION_ARG_OPTIONAL’ flag (*note Argp Option Flags::) is set,
-          in which case it _may_ be provided.
-
-     ‘int flags’
-          Flags associated with this option, some of which are referred
-          to above.  *Note Argp Option Flags::.
-
-     ‘const char *doc’
-          A documentation string for this option, for printing in help
-          messages.
-
-          If both the ‘name’ and ‘key’ fields are zero, this string will
-          be printed tabbed left from the normal option column, making
-          it useful as a group header.  This will be the first thing
-          printed in its group.  In this usage, it’s conventional to end
-          the string with a ‘:’ character.
-
-     ‘int group’
-          Group identity for this option.
-
-          In a long help message, options are sorted alphabetically
-          within each group, and the groups presented in the order 0, 1,
-          2, ..., N, −M, ..., −2, −1.
-
-          Every entry in an options array with this field 0 will inherit
-          the group number of the previous entry, or zero if it’s the
-          first one.  If it’s a group header with ‘name’ and ‘key’
-          fields both zero, the previous entry + 1 is the default.
-          Automagic options such as ‘--help’ are put into group −1.
-
-          Note that because of C structure initialization rules, this
-          field often need not be specified, because 0 is the correct
-          value.
-
-* Menu:
-
-* Flags: Argp Option Flags.     Flags for options.
-
-
-File: libc.info,  Node: Argp Option Flags,  Up: Argp Option Vectors
-
-25.3.4.1 Flags for Argp Options
-...............................
-
-The following flags may be or’d together in the ‘flags’ field of a
-‘struct argp_option’.  These flags control various aspects of how that
-option is parsed or displayed in help messages:
-
-‘OPTION_ARG_OPTIONAL’
-
-     The argument associated with this option is optional.
-
-‘OPTION_HIDDEN’
-
-     This option isn’t displayed in any help messages.
-
-‘OPTION_ALIAS’
-
-     This option is an alias for the closest previous non-alias option.
-     This means that it will be displayed in the same help entry, and
-     will inherit fields other than ‘name’ and ‘key’ from the option
-     being aliased.
-
-‘OPTION_DOC’
-
-     This option isn’t actually an option and should be ignored by the
-     actual option parser.  It is an arbitrary section of documentation
-     that should be displayed in much the same manner as the options.
-     This is known as a “documentation option”.
-
-     If this flag is set, then the option ‘name’ field is displayed
-     unmodified (e.g., no ‘--’ prefix is added) at the left-margin where
-     a _short_ option would normally be displayed, and this
-     documentation string is left in its usual place.  For purposes of
-     sorting, any leading whitespace and punctuation is ignored, unless
-     the first non-whitespace character is ‘-’.  This entry is displayed
-     after all options, after ‘OPTION_DOC’ entries with a leading ‘-’,
-     in the same group.
-
-‘OPTION_NO_USAGE’
-
-     This option shouldn’t be included in ‘long’ usage messages, but
-     should still be included in other help messages.  This is intended
-     for options that are completely documented in an argp’s ‘args_doc’
-     field.  *Note Argp Parsers::.  Including this option in the generic
-     usage list would be redundant, and should be avoided.
-
-     For instance, if ‘args_doc’ is ‘"FOO BAR\n-x BLAH"’, and the ‘-x’
-     option’s purpose is to distinguish these two cases, ‘-x’ should
-     probably be marked ‘OPTION_NO_USAGE’.
-
-
-File: libc.info,  Node: Argp Parser Functions,  Next: Argp Children,  Prev: Argp Option Vectors,  Up: Argp Parsers
-
-25.3.5 Argp Parser Functions
-----------------------------
-
-The function pointed to by the ‘parser’ field in a ‘struct argp’ (*note
-Argp Parsers::) defines what actions take place in response to each
-option or argument parsed.  It is also used as a hook, allowing a parser
-to perform tasks at certain other points during parsing.
-
-   Argp parser functions have the following type signature:
-
-     error_t PARSER (int KEY, char *ARG, struct argp_state *STATE)
-
-where the arguments are as follows:
-
-KEY
-     For each option that is parsed, PARSER is called with a value of
-     KEY from that option’s ‘key’ field in the option vector.  *Note
-     Argp Option Vectors::.  PARSER is also called at other times with
-     special reserved keys, such as ‘ARGP_KEY_ARG’ for non-option
-     arguments.  *Note Argp Special Keys::.
-
-ARG
-     If KEY is an option, ARG is its given value.  This defaults to zero
-     if no value is specified.  Only options that have a non-zero ‘arg’
-     field can ever have a value.  These must _always_ have a value
-     unless the ‘OPTION_ARG_OPTIONAL’ flag is specified.  If the input
-     being parsed specifies a value for an option that doesn’t allow
-     one, an error results before PARSER ever gets called.
-
-     If KEY is ‘ARGP_KEY_ARG’, ARG is a non-option argument.  Other
-     special keys always have a zero ARG.
-
-STATE
-     STATE points to a ‘struct argp_state’, containing useful
-     information about the current parsing state for use by PARSER.
-     *Note Argp Parsing State::.
-
-   When PARSER is called, it should perform whatever action is
-appropriate for KEY, and return ‘0’ for success, ‘ARGP_ERR_UNKNOWN’ if
-the value of KEY is not handled by this parser function, or a unix error
-code if a real error occurred.  *Note Error Codes::.
-
- -- Macro: int ARGP_ERR_UNKNOWN
-
-     Argp parser functions should return ‘ARGP_ERR_UNKNOWN’ for any KEY
-     value they do not recognize, or for non-option arguments (‘KEY ==
-     ARGP_KEY_ARG’) that they are not equipped to handle.
-
-   A typical parser function uses a switch statement on KEY:
-
-     error_t
-     parse_opt (int key, char *arg, struct argp_state *state)
-     {
-       switch (key)
-         {
-         case OPTION_KEY:
-           ACTION
-           break;
-         ...
-         default:
-           return ARGP_ERR_UNKNOWN;
-         }
-       return 0;
-     }
-
-* Menu:
-
-* Keys: Argp Special Keys.           Special values for the KEY argument.
-* State: Argp Parsing State.         What the STATE argument refers to.
-* Functions: Argp Helper Functions.  Functions to help during argp parsing.
-
-
-File: libc.info,  Node: Argp Special Keys,  Next: Argp Parsing State,  Up: Argp Parser Functions
-
-25.3.5.1 Special Keys for Argp Parser Functions
-...............................................
-
-In addition to key values corresponding to user options, the KEY
-argument to argp parser functions may have a number of other special
-values.  In the following example ARG and STATE refer to parser function
-arguments.  *Note Argp Parser Functions::.
-
-‘ARGP_KEY_ARG’
-
-     This is not an option at all, but rather a command line argument,
-     whose value is pointed to by ARG.
-
-     When there are multiple parser functions in play due to argp
-     parsers being combined, it’s impossible to know which one will
-     handle a specific argument.  Each is called until one returns 0 or
-     an error other than ‘ARGP_ERR_UNKNOWN’; if an argument is not
-     handled, ‘argp_parse’ immediately returns success, without parsing
-     any more arguments.
-
-     Once a parser function returns success for this key, that fact is
-     recorded, and the ‘ARGP_KEY_NO_ARGS’ case won’t be used.
-     _However_, if while processing the argument a parser function
-     decrements the ‘next’ field of its STATE argument, the option won’t
-     be considered processed; this is to allow you to actually modify
-     the argument, perhaps into an option, and have it processed again.
-
-‘ARGP_KEY_ARGS’
-
-     If a parser function returns ‘ARGP_ERR_UNKNOWN’ for ‘ARGP_KEY_ARG’,
-     it is immediately called again with the key ‘ARGP_KEY_ARGS’, which
-     has a similar meaning, but is slightly more convenient for
-     consuming all remaining arguments.  ARG is 0, and the tail of the
-     argument vector may be found at ‘STATE->argv + STATE->next’.  If
-     success is returned for this key, and ‘STATE->next’ is unchanged,
-     all remaining arguments are considered to have been consumed.
-     Otherwise, the amount by which ‘STATE->next’ has been adjusted
-     indicates how many were used.  Here’s an example that uses both,
-     for different args:
-
-          ...
-          case ARGP_KEY_ARG:
-            if (STATE->arg_num == 0)
-              /* First argument */
-              first_arg = ARG;
-            else
-              /* Let the next case parse it.  */
-              return ARGP_KEY_UNKNOWN;
-            break;
-          case ARGP_KEY_ARGS:
-            remaining_args = STATE->argv + STATE->next;
-            num_remaining_args = STATE->argc - STATE->next;
-            break;
-
-‘ARGP_KEY_END’
-
-     This indicates that there are no more command line arguments.
-     Parser functions are called in a different order, children first.
-     This allows each parser to clean up its state for the parent.
-
-‘ARGP_KEY_NO_ARGS’
-
-     Because it’s common to do some special processing if there aren’t
-     any non-option args, parser functions are called with this key if
-     they didn’t successfully process any non-option arguments.  This is
-     called just before ‘ARGP_KEY_END’, where more general validity
-     checks on previously parsed arguments take place.
-
-‘ARGP_KEY_INIT’
-
-     This is passed in before any parsing is done.  Afterwards, the
-     values of each element of the ‘child_input’ field of STATE, if any,
-     are copied to each child’s state to be the initial value of the
-     ‘input’ when _their_ parsers are called.
-
-‘ARGP_KEY_SUCCESS’
-
-     Passed in when parsing has successfully been completed, even if
-     arguments remain.
-
-‘ARGP_KEY_ERROR’
-
-     Passed in if an error has occurred and parsing is terminated.  In
-     this case a call with a key of ‘ARGP_KEY_SUCCESS’ is never made.
-
-‘ARGP_KEY_FINI’
-
-     The final key ever seen by any parser, even after
-     ‘ARGP_KEY_SUCCESS’ and ‘ARGP_KEY_ERROR’.  Any resources allocated
-     by ‘ARGP_KEY_INIT’ may be freed here.  At times, certain resources
-     allocated are to be returned to the caller after a successful
-     parse.  In that case, those particular resources can be freed in
-     the ‘ARGP_KEY_ERROR’ case.
-
-   In all cases, ‘ARGP_KEY_INIT’ is the first key seen by parser
-functions, and ‘ARGP_KEY_FINI’ the last, unless an error was returned by
-the parser for ‘ARGP_KEY_INIT’.  Other keys can occur in one the
-following orders.  OPT refers to an arbitrary option key:
-
-OPT... ‘ARGP_KEY_NO_ARGS’ ‘ARGP_KEY_END’ ‘ARGP_KEY_SUCCESS’
-     The arguments being parsed did not contain any non-option
-     arguments.
-
-( OPT | ‘ARGP_KEY_ARG’ )... ‘ARGP_KEY_END’ ‘ARGP_KEY_SUCCESS’
-     All non-option arguments were successfully handled by a parser
-     function.  There may be multiple parser functions if multiple argp
-     parsers were combined.
-
-( OPT | ‘ARGP_KEY_ARG’ )... ‘ARGP_KEY_SUCCESS’
-     Some non-option argument went unrecognized.
-
-     This occurs when every parser function returns ‘ARGP_KEY_UNKNOWN’
-     for an argument, in which case parsing stops at that argument if
-     ARG_INDEX is a null pointer.  Otherwise an error occurs.
-
-   In all cases, if a non-null value for ARG_INDEX gets passed to
-‘argp_parse’, the index of the first unparsed command-line argument is
-passed back in that value.
-
-   If an error occurs and is either detected by argp or because a parser
-function returned an error value, each parser is called with
-‘ARGP_KEY_ERROR’.  No further calls are made, except the final call with
-‘ARGP_KEY_FINI’.
-
-
-File: libc.info,  Node: Argp Parsing State,  Next: Argp Helper Functions,  Prev: Argp Special Keys,  Up: Argp Parser Functions
-
-25.3.5.2 Argp Parsing State
-...........................
-
-The third argument to argp parser functions (*note Argp Parser
-Functions::) is a pointer to a ‘struct argp_state’, which contains
-information about the state of the option parsing.
-
- -- Data Type: struct argp_state
-
-     This structure has the following fields, which may be modified as
-     noted:
-
-     ‘const struct argp *const root_argp’
-          The top level argp parser being parsed.  Note that this is
-          often _not_ the same ‘struct argp’ passed into ‘argp_parse’ by
-          the invoking program.  *Note Argp::.  It is an internal argp
-          parser that contains options implemented by ‘argp_parse’
-          itself, such as ‘--help’.
-
-     ‘int argc’
-     ‘char **argv’
-          The argument vector being parsed.  This may be modified.
-
-     ‘int next’
-          The index in ‘argv’ of the next argument to be parsed.  This
-          may be modified.
-
-          One way to consume all remaining arguments in the input is to
-          set ‘STATE->next = STATE->argc’, perhaps after recording the
-          value of the ‘next’ field to find the consumed arguments.  The
-          current option can be re-parsed immediately by decrementing
-          this field, then modifying ‘STATE->argv[STATE->next]’ to
-          reflect the option that should be reexamined.
-
-     ‘unsigned flags’
-          The flags supplied to ‘argp_parse’.  These may be modified,
-          although some flags may only take effect when ‘argp_parse’ is
-          first invoked.  *Note Argp Flags::.
-
-     ‘unsigned arg_num’
-          While calling a parsing function with the KEY argument
-          ‘ARGP_KEY_ARG’, this represents the number of the current arg,
-          starting at 0.  It is incremented after each ‘ARGP_KEY_ARG’
-          call returns.  At all other times, this is the number of
-          ‘ARGP_KEY_ARG’ arguments that have been processed.
-
-     ‘int quoted’
-          If non-zero, the index in ‘argv’ of the first argument
-          following a special ‘--’ argument.  This prevents anything
-          that follows from being interpreted as an option.  It is only
-          set after argument parsing has proceeded past this point.
-
-     ‘void *input’
-          An arbitrary pointer passed in from the caller of
-          ‘argp_parse’, in the INPUT argument.
-
-     ‘void **child_inputs’
-          These are values that will be passed to child parsers.  This
-          vector will be the same length as the number of children in
-          the current parser.  Each child parser will be given the value
-          of ‘STATE->child_inputs[I]’ as _its_ ‘STATE->input’ field,
-          where I is the index of the child in the this parser’s
-          ‘children’ field.  *Note Argp Children::.
-
-     ‘void *hook’
-          For the parser function’s use.  Initialized to 0, but
-          otherwise ignored by argp.
-
-     ‘char *name’
-          The name used when printing messages.  This is initialized to
-          ‘argv[0]’, or ‘program_invocation_name’ if ‘argv[0]’ is
-          unavailable.
-
-     ‘FILE *err_stream’
-     ‘FILE *out_stream’
-          The stdio streams used when argp prints.  Error messages are
-          printed to ‘err_stream’, all other output, such as ‘--help’
-          output) to ‘out_stream’.  These are initialized to ‘stderr’
-          and ‘stdout’ respectively.  *Note Standard Streams::.
-
-     ‘void *pstate’
-          Private, for use by the argp implementation.
-
-
-File: libc.info,  Node: Argp Helper Functions,  Prev: Argp Parsing State,  Up: Argp Parser Functions
-
-25.3.5.3 Functions For Use in Argp Parsers
-..........................................
-
-Argp provides a number of functions available to the user of argp (*note
-Argp Parser Functions::), mostly for producing error messages.  These
-take as their first argument the STATE argument to the parser function.
-*Note Argp Parsing State::.
-
- -- Function: void argp_usage (const struct argp_state *STATE)
-
-     Preliminary: | MT-Unsafe race:argpbuf env locale | AS-Unsafe heap
-     i18n corrupt | AC-Unsafe mem corrupt lock | *Note POSIX Safety
-     Concepts::.
-
-     Outputs the standard usage message for the argp parser referred to
-     by STATE to ‘STATE->err_stream’ and terminates the program with
-     ‘exit (argp_err_exit_status)’.  *Note Argp Global Variables::.
-
- -- Function: void argp_error (const struct argp_state *STATE, const
-          char *FMT, ...)
-
-     Preliminary: | MT-Unsafe race:argpbuf env locale | AS-Unsafe heap
-     i18n corrupt | AC-Unsafe mem corrupt lock | *Note POSIX Safety
-     Concepts::.
-
-     Prints the printf format string FMT and following args, preceded by
-     the program name and ‘:’, and followed by a ‘Try ... --help’
-     message, and terminates the program with an exit status of
-     ‘argp_err_exit_status’.  *Note Argp Global Variables::.
-
- -- Function: void argp_failure (const struct argp_state *STATE, int
-          STATUS, int ERRNUM, const char *FMT, ...)
-
-     Preliminary: | MT-Safe | AS-Unsafe corrupt heap | AC-Unsafe lock
-     corrupt mem | *Note POSIX Safety Concepts::.
-
-     Similar to the standard GNU error-reporting function ‘error’, this
-     prints the program name and ‘:’, the printf format string FMT, and
-     the appropriate following args.  If it is non-zero, the standard
-     unix error text for ERRNUM is printed.  If STATUS is non-zero, it
-     terminates the program with that value as its exit status.
-
-     The difference between ‘argp_failure’ and ‘argp_error’ is that
-     ‘argp_error’ is for _parsing errors_, whereas ‘argp_failure’ is for
-     other problems that occur during parsing but don’t reflect a
-     syntactic problem with the input, such as illegal values for
-     options, bad phase of the moon, etc.
-
- -- Function: void argp_state_help (const struct argp_state *STATE, FILE
-          *STREAM, unsigned FLAGS)
-
-     Preliminary: | MT-Unsafe race:argpbuf env locale | AS-Unsafe heap
-     i18n corrupt | AC-Unsafe mem corrupt lock | *Note POSIX Safety
-     Concepts::.
-
-     Outputs a help message for the argp parser referred to by STATE, to
-     STREAM.  The FLAGS argument determines what sort of help message is
-     produced.  *Note Argp Help Flags::.
-
-   Error output is sent to ‘STATE->err_stream’, and the program name
-printed is ‘STATE->name’.
-
-   The output or program termination behavior of these functions may be
-suppressed if the ‘ARGP_NO_EXIT’ or ‘ARGP_NO_ERRS’ flags are passed to
-‘argp_parse’.  *Note Argp Flags::.
-
-   This behavior is useful if an argp parser is exported for use by
-other programs (e.g., by a library), and may be used in a context where
-it is not desirable to terminate the program in response to parsing
-errors.  In argp parsers intended for such general use, and for the case
-where the program _doesn’t_ terminate, calls to any of these functions
-should be followed by code that returns the appropriate error code:
-
-     if (BAD ARGUMENT SYNTAX)
-       {
-          argp_usage (STATE);
-          return EINVAL;
-       }
-
-If a parser function will _only_ be used when ‘ARGP_NO_EXIT’ is not set,
-the return may be omitted.
-
-
-File: libc.info,  Node: Argp Children,  Next: Argp Help Filtering,  Prev: Argp Parser Functions,  Up: Argp Parsers
-
-25.3.6 Combining Multiple Argp Parsers
---------------------------------------
-
-The ‘children’ field in a ‘struct argp’ enables other argp parsers to be
-combined with the referencing one for the parsing of a single set of
-arguments.  This field should point to a vector of ‘struct argp_child’,
-which is terminated by an entry having a value of zero in the ‘argp’
-field.
-
-   Where conflicts between combined parsers arise, as when two specify
-an option with the same name, the parser conflicts are resolved in favor
-of the parent argp parser(s), or the earlier of the argp parsers in the
-list of children.
-
- -- Data Type: struct argp_child
-
-     An entry in the list of subsidiary argp parsers pointed to by the
-     ‘children’ field in a ‘struct argp’.  The fields are as follows:
-
-     ‘const struct argp *argp’
-          The child argp parser, or zero to end of the list.
-
-     ‘int flags’
-          Flags for this child.
-
-     ‘const char *header’
-          If non-zero, this is an optional header to be printed within
-          help output before the child options.  As a side-effect, a
-          non-zero value forces the child options to be grouped
-          together.  To achieve this effect without actually printing a
-          header string, use a value of ‘""’.  As with header strings
-          specified in an option entry, the conventional value of the
-          last character is ‘:’.  *Note Argp Option Vectors::.
-
-     ‘int group’
-          This is where the child options are grouped relative to the
-          other ‘consolidated’ options in the parent argp parser.  The
-          values are the same as the ‘group’ field in ‘struct
-          argp_option’.  *Note Argp Option Vectors::.  All
-          child-groupings follow parent options at a particular group
-          level.  If both this field and ‘header’ are zero, then the
-          child’s options aren’t grouped together, they are merged with
-          parent options at the parent option group level.
-
-
-File: libc.info,  Node: Argp Flags,  Next: Argp Help,  Prev: Argp Parsers,  Up: Argp
-
-25.3.7 Flags for ‘argp_parse’
------------------------------
-
-The default behavior of ‘argp_parse’ is designed to be convenient for
-the most common case of parsing program command line argument.  To
-modify these defaults, the following flags may be or’d together in the
-FLAGS argument to ‘argp_parse’:
-
-‘ARGP_PARSE_ARGV0’
-
-     Don’t ignore the first element of the ARGV argument to
-     ‘argp_parse’.  Unless ‘ARGP_NO_ERRS’ is set, the first element of
-     the argument vector is skipped for option parsing purposes, as it
-     corresponds to the program name in a command line.
-
-‘ARGP_NO_ERRS’
-
-     Don’t print error messages for unknown options to ‘stderr’; unless
-     this flag is set, ‘ARGP_PARSE_ARGV0’ is ignored, as ‘argv[0]’ is
-     used as the program name in the error messages.  This flag implies
-     ‘ARGP_NO_EXIT’.  This is based on the assumption that silent
-     exiting upon errors is bad behavior.
-
-‘ARGP_NO_ARGS’
-
-     Don’t parse any non-option args.  Normally these are parsed by
-     calling the parse functions with a key of ‘ARGP_KEY_ARG’, the
-     actual argument being the value.  This flag needn’t normally be
-     set, as the default behavior is to stop parsing as soon as an
-     argument fails to be parsed.  *Note Argp Parser Functions::.
-
-‘ARGP_IN_ORDER’
-
-     Parse options and arguments in the same order they occur on the
-     command line.  Normally they’re rearranged so that all options come
-     first.
-
-‘ARGP_NO_HELP’
-
-     Don’t provide the standard long option ‘--help’, which ordinarily
-     causes usage and option help information to be output to ‘stdout’
-     and ‘exit (0)’.
-
-‘ARGP_NO_EXIT’
-
-     Don’t exit on errors, although they may still result in error
-     messages.
-
-‘ARGP_LONG_ONLY’
-
-     Use the GNU getopt ‘long-only’ rules for parsing arguments.  This
-     allows long-options to be recognized with only a single ‘-’ (i.e.,
-     ‘-help’).  This results in a less useful interface, and its use is
-     discouraged as it conflicts with the way most GNU programs work as
-     well as the GNU coding standards.
-
-‘ARGP_SILENT’
-
-     Turns off any message-printing/exiting options, specifically
-     ‘ARGP_NO_EXIT’, ‘ARGP_NO_ERRS’, and ‘ARGP_NO_HELP’.
-
-
-File: libc.info,  Node: Argp Help Filtering,  Prev: Argp Children,  Up: Argp Parsers
-
-25.3.8 Customizing Argp Help Output
------------------------------------
-
-The ‘help_filter’ field in a ‘struct argp’ is a pointer to a function
-that filters the text of help messages before displaying them.  They
-have a function signature like:
-
-     char *HELP-FILTER (int KEY, const char *TEXT, void *INPUT)
-
-Where KEY is either a key from an option, in which case TEXT is that
-option’s help text.  *Note Argp Option Vectors::.  Alternately, one of
-the special keys with names beginning with ‘ARGP_KEY_HELP_’ might be
-used, describing which other help text TEXT will contain.  *Note Argp
-Help Filter Keys::.
-
-   The function should return either TEXT if it remains as-is, or a
-replacement string allocated using ‘malloc’.  This will be either be
-freed by argp or zero, which prints nothing.  The value of TEXT is
-supplied _after_ any translation has been done, so if any of the
-replacement text needs translation, it will be done by the filter
-function.  INPUT is either the input supplied to ‘argp_parse’ or it is
-zero, if ‘argp_help’ was called directly by the user.
-
-* Menu:
-
-* Keys: Argp Help Filter Keys.  Special KEY values for help filter functions.
-
-
-File: libc.info,  Node: Argp Help Filter Keys,  Up: Argp Help Filtering
-
-25.3.8.1 Special Keys for Argp Help Filter Functions
-....................................................
-
-The following special values may be passed to an argp help filter
-function as the first argument in addition to key values for user
-options.  They specify which help text the TEXT argument contains:
-
-‘ARGP_KEY_HELP_PRE_DOC’
-
-     The help text preceding options.
-
-‘ARGP_KEY_HELP_POST_DOC’
-
-     The help text following options.
-
-‘ARGP_KEY_HELP_HEADER’
-
-     The option header string.
-
-‘ARGP_KEY_HELP_EXTRA’
-
-     This is used after all other documentation; TEXT is zero for this
-     key.
-
-‘ARGP_KEY_HELP_DUP_ARGS_NOTE’
-
-     The explanatory note printed when duplicate option arguments have
-     been suppressed.
-
-‘ARGP_KEY_HELP_ARGS_DOC’
-
-     The argument doc string; formally the ‘args_doc’ field from the
-     argp parser.  *Note Argp Parsers::.
 

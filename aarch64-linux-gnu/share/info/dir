@@ -290,7 +290,6 @@ GNU C library functions and macros
 * clock_settime: (libc)Setting and Adjusting the Time.
 * clock: (libc)CPU Time.
 * CLOCKS_PER_SEC: (libc)CPU Time.
-* clog10fNx: (libc)Exponents and Logarithms.
 * clog10fN: (libc)Exponents and Logarithms.
 * clog10f: (libc)Exponents and Logarithms.
 * clog10: (libc)Exponents and Logarithms.
@@ -299,6 +298,7 @@ GNU C library functions and macros
 * clogf: (libc)Exponents and Logarithms.
 * clogl: (libc)Exponents and Logarithms.
 * clog: (libc)Exponents and Logarithms.
+* clog10fNx: (libc)Exponents and Logarithms.
 * clog10l: (libc)Exponents and Logarithms.
 * close_range: (libc)Opening and Closing Files.
 * closedir: (libc)Reading/Closing Directory.
@@ -361,8 +361,6 @@ GNU C library functions and macros
 * creat: (libc)Opening and Closing Files.
 * creat64: (libc)Opening and Closing Files.
 * CRTS_IFLOW: (libc)Control Modes.
-* crypt_r: (libc)Passphrase Storage.
-* crypt: (libc)Passphrase Storage.
 * CS5: (libc)Control Modes.
 * CS6: (libc)Control Modes.
 * CS7: (libc)Control Modes.
@@ -635,7 +633,6 @@ GNU C library functions and macros
 * exp2fNx: (libc)Exponents and Logarithms.
 * exp2fN: (libc)Exponents and Logarithms.
 * exp2f: (libc)Exponents and Logarithms.
-* exp2l: (libc)Exponents and Logarithms.
 * exp2: (libc)Exponents and Logarithms.
 * expfNx: (libc)Exponents and Logarithms.
 * expfN: (libc)Exponents and Logarithms.
@@ -648,6 +645,7 @@ GNU C library functions and macros
 * expm1l: (libc)Exponents and Logarithms.
 * expm1: (libc)Exponents and Logarithms.
 * exp: (libc)Exponents and Logarithms.
+* exp2l: (libc)Exponents and Logarithms.
 * EXPR_NEST_MAX: (libc)Utility Limits.
 * F_DUPFD: (libc)Duplicating Descriptors.
 * F_GETFD: (libc)Descriptor Flags.
@@ -957,10 +955,10 @@ GNU C library functions and macros
 * getgroups: (libc)Reading Persona.
 * gethostbyaddr_r: (libc)Host Names.
 * gethostbyaddr: (libc)Host Names.
-* gethostbyname_r: (libc)Host Names.
-* gethostbyname: (libc)Host Names.
 * gethostbyname2_r: (libc)Host Names.
 * gethostbyname2: (libc)Host Names.
+* gethostbyname_r: (libc)Host Names.
+* gethostbyname: (libc)Host Names.
 * gethostent: (libc)Host Names.
 * gethostid: (libc)Host Identification.
 * gethostname: (libc)Host Identification.
@@ -1324,9 +1322,9 @@ GNU C library functions and macros
 * mkstemp: (libc)Temporary Files.
 * mktemp: (libc)Temporary Files.
 * mktime: (libc)Broken-down Time.
+* mlock2: (libc)Page Lock Functions.
 * mlockall: (libc)Page Lock Functions.
 * mlock: (libc)Page Lock Functions.
-* mlock2: (libc)Page Lock Functions.
 * mmap: (libc)Memory-mapped I/O.
 * mmap64: (libc)Memory-mapped I/O.
 * modffNx: (libc)Rounding Functions.
@@ -1460,13 +1458,13 @@ GNU C library functions and macros
 * on_exit: (libc)Cleanups on Exit.
 * ONLCR: (libc)Output Modes.
 * ONOEOT: (libc)Output Modes.
+* open64: (libc)Opening and Closing Files.
 * OPEN_MAX: (libc)General Limits.
 * open_memstream: (libc)String Streams.
 * opendir: (libc)Opening a Directory.
 * openlog: (libc)openlog.
 * openpty: (libc)Pseudo-Terminal Pairs.
 * open: (libc)Opening and Closing Files.
-* open64: (libc)Opening and Closing Files.
 * OPOST: (libc)Output Modes.
 * OXTABS: (libc)Output Modes.
 * P_tmpdir: (libc)Temporary Files.
@@ -1486,6 +1484,7 @@ GNU C library functions and macros
 * PF_INET6: (libc)Internet Namespace.
 * PF_LOCAL: (libc)Local Namespace Details.
 * PF_UNIX: (libc)Local Namespace Details.
+* pidfd_getpid: (libc)Querying a Process.
 * pipe: (libc)Creating a Pipe.
 * PIPE_BUF: (libc)Limits for Files.
 * pkey_alloc: (libc)Memory Protection.
@@ -1830,16 +1829,86 @@ GNU C library functions and macros
 * sqrtf: (libc)Exponents and Logarithms.
 * sqrtl: (libc)Exponents and Logarithms.
 * sqrt: (libc)Exponents and Logarithms.
-* srand48_r: (libc)SVID Random.
-* srand48: (libc)SVID Random.
 * srandom_r: (libc)BSD Random.
 * srandom: (libc)BSD Random.
 * srand: (libc)ISO Random.
+* srand48_r: (libc)SVID Random.
+* srand48: (libc)SVID Random.
 * sscanf: (libc)Formatted Input Functions.
 * ssignal: (libc)Basic Signal Handling.
 * SSIZE_MAX: (libc)General Limits.
 * stat: (libc)Reading Attributes.
 * stat64: (libc)Reading Attributes.
+* stdc_bit_ceil_uc: (libc)Bit Manipulation.
+* stdc_bit_ceil_ui: (libc)Bit Manipulation.
+* stdc_bit_ceil_ull: (libc)Bit Manipulation.
+* stdc_bit_ceil_ul: (libc)Bit Manipulation.
+* stdc_bit_ceil_us: (libc)Bit Manipulation.
+* stdc_bit_floor_uc: (libc)Bit Manipulation.
+* stdc_bit_floor_ui: (libc)Bit Manipulation.
+* stdc_bit_floor_ull: (libc)Bit Manipulation.
+* stdc_bit_floor_ul: (libc)Bit Manipulation.
+* stdc_bit_floor_us: (libc)Bit Manipulation.
+* stdc_bit_width_uc: (libc)Bit Manipulation.
+* stdc_bit_width_ui: (libc)Bit Manipulation.
+* stdc_bit_width_ull: (libc)Bit Manipulation.
+* stdc_bit_width_ul: (libc)Bit Manipulation.
+* stdc_bit_width_us: (libc)Bit Manipulation.
+* stdc_count_ones_uc: (libc)Bit Manipulation.
+* stdc_count_ones_ui: (libc)Bit Manipulation.
+* stdc_count_ones_ull: (libc)Bit Manipulation.
+* stdc_count_ones_ul: (libc)Bit Manipulation.
+* stdc_count_ones_us: (libc)Bit Manipulation.
+* stdc_count_zeros_uc: (libc)Bit Manipulation.
+* stdc_count_zeros_ui: (libc)Bit Manipulation.
+* stdc_count_zeros_ull: (libc)Bit Manipulation.
+* stdc_count_zeros_ul: (libc)Bit Manipulation.
+* stdc_count_zeros_us: (libc)Bit Manipulation.
+* stdc_first_leading_one_uc: (libc)Bit Manipulation.
+* stdc_first_leading_one_ui: (libc)Bit Manipulation.
+* stdc_first_leading_one_ull: (libc)Bit Manipulation.
+* stdc_first_leading_one_ul: (libc)Bit Manipulation.
+* stdc_first_leading_one_us: (libc)Bit Manipulation.
+* stdc_first_leading_zero_uc: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ui: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ull: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ul: (libc)Bit Manipulation.
+* stdc_first_leading_zero_us: (libc)Bit Manipulation.
+* stdc_first_trailing_one_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_one_us: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_us: (libc)Bit Manipulation.
+* stdc_has_single_bit_uc: (libc)Bit Manipulation.
+* stdc_has_single_bit_ui: (libc)Bit Manipulation.
+* stdc_has_single_bit_ull: (libc)Bit Manipulation.
+* stdc_has_single_bit_ul: (libc)Bit Manipulation.
+* stdc_has_single_bit_us: (libc)Bit Manipulation.
+* stdc_leading_ones_uc: (libc)Bit Manipulation.
+* stdc_leading_ones_ui: (libc)Bit Manipulation.
+* stdc_leading_ones_ull: (libc)Bit Manipulation.
+* stdc_leading_ones_ul: (libc)Bit Manipulation.
+* stdc_leading_ones_us: (libc)Bit Manipulation.
+* stdc_leading_zeros_uc: (libc)Bit Manipulation.
+* stdc_leading_zeros_ui: (libc)Bit Manipulation.
+* stdc_leading_zeros_ull: (libc)Bit Manipulation.
+* stdc_leading_zeros_ul: (libc)Bit Manipulation.
+* stdc_leading_zeros_us: (libc)Bit Manipulation.
+* stdc_trailing_ones_uc: (libc)Bit Manipulation.
+* stdc_trailing_ones_ui: (libc)Bit Manipulation.
+* stdc_trailing_ones_ull: (libc)Bit Manipulation.
+* stdc_trailing_ones_ul: (libc)Bit Manipulation.
+* stdc_trailing_ones_us: (libc)Bit Manipulation.
+* stdc_trailing_zeros_uc: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ui: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ull: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ul: (libc)Bit Manipulation.
+* stdc_trailing_zeros_us: (libc)Bit Manipulation.
 * stime: (libc)Setting and Adjusting the Time.
 * stpcpy: (libc)Copying Strings and Arrays.
 * stpncpy: (libc)Truncating Strings.

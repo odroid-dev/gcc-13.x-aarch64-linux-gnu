@@ -1,8 +1,8 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.38.
+This is ‘The GNU C Library Reference Manual’, for version 2.39.
 
-   Copyright © 1993–2023 Free Software Foundation, Inc.
+   Copyright © 1993–2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -774,8 +774,6 @@ START-INFO-DIR-ENTRY
 * creall: (libc)Operations on Complex.
 * creat64: (libc)Opening and Closing Files.
 * creat: (libc)Opening and Closing Files.
-* crypt: (libc)Passphrase Storage.
-* crypt_r: (libc)Passphrase Storage.
 * csin: (libc)Trig Functions.
 * csinf: (libc)Trig Functions.
 * csinfN: (libc)Trig Functions.
@@ -1602,6 +1600,7 @@ START-INFO-DIR-ENTRY
 * pause: (libc)Using Pause.
 * pclose: (libc)Pipe to a Subprocess.
 * perror: (libc)Error Messages.
+* pidfd_getpid: (libc)Querying a Process.
 * pipe: (libc)Creating a Pipe.
 * pkey_alloc: (libc)Memory Protection.
 * pkey_free: (libc)Memory Protection.
@@ -1884,6 +1883,76 @@ START-INFO-DIR-ENTRY
 * ssignal: (libc)Basic Signal Handling.
 * stat64: (libc)Reading Attributes.
 * stat: (libc)Reading Attributes.
+* stdc_bit_ceil_uc: (libc)Bit Manipulation.
+* stdc_bit_ceil_ui: (libc)Bit Manipulation.
+* stdc_bit_ceil_ul: (libc)Bit Manipulation.
+* stdc_bit_ceil_ull: (libc)Bit Manipulation.
+* stdc_bit_ceil_us: (libc)Bit Manipulation.
+* stdc_bit_floor_uc: (libc)Bit Manipulation.
+* stdc_bit_floor_ui: (libc)Bit Manipulation.
+* stdc_bit_floor_ul: (libc)Bit Manipulation.
+* stdc_bit_floor_ull: (libc)Bit Manipulation.
+* stdc_bit_floor_us: (libc)Bit Manipulation.
+* stdc_bit_width_uc: (libc)Bit Manipulation.
+* stdc_bit_width_ui: (libc)Bit Manipulation.
+* stdc_bit_width_ul: (libc)Bit Manipulation.
+* stdc_bit_width_ull: (libc)Bit Manipulation.
+* stdc_bit_width_us: (libc)Bit Manipulation.
+* stdc_count_ones_uc: (libc)Bit Manipulation.
+* stdc_count_ones_ui: (libc)Bit Manipulation.
+* stdc_count_ones_ul: (libc)Bit Manipulation.
+* stdc_count_ones_ull: (libc)Bit Manipulation.
+* stdc_count_ones_us: (libc)Bit Manipulation.
+* stdc_count_zeros_uc: (libc)Bit Manipulation.
+* stdc_count_zeros_ui: (libc)Bit Manipulation.
+* stdc_count_zeros_ul: (libc)Bit Manipulation.
+* stdc_count_zeros_ull: (libc)Bit Manipulation.
+* stdc_count_zeros_us: (libc)Bit Manipulation.
+* stdc_first_leading_one_uc: (libc)Bit Manipulation.
+* stdc_first_leading_one_ui: (libc)Bit Manipulation.
+* stdc_first_leading_one_ul: (libc)Bit Manipulation.
+* stdc_first_leading_one_ull: (libc)Bit Manipulation.
+* stdc_first_leading_one_us: (libc)Bit Manipulation.
+* stdc_first_leading_zero_uc: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ui: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ul: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ull: (libc)Bit Manipulation.
+* stdc_first_leading_zero_us: (libc)Bit Manipulation.
+* stdc_first_trailing_one_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_one_us: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_us: (libc)Bit Manipulation.
+* stdc_has_single_bit_uc: (libc)Bit Manipulation.
+* stdc_has_single_bit_ui: (libc)Bit Manipulation.
+* stdc_has_single_bit_ul: (libc)Bit Manipulation.
+* stdc_has_single_bit_ull: (libc)Bit Manipulation.
+* stdc_has_single_bit_us: (libc)Bit Manipulation.
+* stdc_leading_ones_uc: (libc)Bit Manipulation.
+* stdc_leading_ones_ui: (libc)Bit Manipulation.
+* stdc_leading_ones_ul: (libc)Bit Manipulation.
+* stdc_leading_ones_ull: (libc)Bit Manipulation.
+* stdc_leading_ones_us: (libc)Bit Manipulation.
+* stdc_leading_zeros_uc: (libc)Bit Manipulation.
+* stdc_leading_zeros_ui: (libc)Bit Manipulation.
+* stdc_leading_zeros_ul: (libc)Bit Manipulation.
+* stdc_leading_zeros_ull: (libc)Bit Manipulation.
+* stdc_leading_zeros_us: (libc)Bit Manipulation.
+* stdc_trailing_ones_uc: (libc)Bit Manipulation.
+* stdc_trailing_ones_ui: (libc)Bit Manipulation.
+* stdc_trailing_ones_ul: (libc)Bit Manipulation.
+* stdc_trailing_ones_ull: (libc)Bit Manipulation.
+* stdc_trailing_ones_us: (libc)Bit Manipulation.
+* stdc_trailing_zeros_uc: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ui: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ul: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ull: (libc)Bit Manipulation.
+* stdc_trailing_zeros_us: (libc)Bit Manipulation.
 * stime: (libc)Setting and Adjusting the Time.
 * stpcpy: (libc)Copying Strings and Arrays.
 * stpncpy: (libc)Truncating Strings.
@@ -2172,6 +2241,291 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Finding Tokens in a String,  Next: Erasing Sensitive Data,  Prev: Search Functions,  Up: String and Array Utilities
+
+5.10 Finding Tokens in a String
+===============================
+
+It’s fairly common for programs to have a need to do some simple kinds
+of lexical analysis and parsing, such as splitting a command string up
+into tokens.  You can do this with the ‘strtok’ function, declared in
+the header file ‘string.h’.
+
+ -- Function: char * strtok (char *restrict NEWSTRING, const char
+          *restrict DELIMITERS)
+
+     Preliminary: | MT-Unsafe race:strtok | AS-Unsafe | AC-Safe | *Note
+     POSIX Safety Concepts::.
+
+     A string can be split into tokens by making a series of calls to
+     the function ‘strtok’.
+
+     The string to be split up is passed as the NEWSTRING argument on
+     the first call only.  The ‘strtok’ function uses this to set up
+     some internal state information.  Subsequent calls to get
+     additional tokens from the same string are indicated by passing a
+     null pointer as the NEWSTRING argument.  Calling ‘strtok’ with
+     another non-null NEWSTRING argument reinitializes the state
+     information.  It is guaranteed that no other library function ever
+     calls ‘strtok’ behind your back (which would mess up this internal
+     state information).
+
+     The DELIMITERS argument is a string that specifies a set of
+     delimiters that may surround the token being extracted.  All the
+     initial bytes that are members of this set are discarded.  The
+     first byte that is _not_ a member of this set of delimiters marks
+     the beginning of the next token.  The end of the token is found by
+     looking for the next byte that is a member of the delimiter set.
+     This byte in the original string NEWSTRING is overwritten by a null
+     byte, and the pointer to the beginning of the token in NEWSTRING is
+     returned.
+
+     On the next call to ‘strtok’, the searching begins at the next byte
+     beyond the one that marked the end of the previous token.  Note
+     that the set of delimiters DELIMITERS do not have to be the same on
+     every call in a series of calls to ‘strtok’.
+
+     If the end of the string NEWSTRING is reached, or if the remainder
+     of string consists only of delimiter bytes, ‘strtok’ returns a null
+     pointer.
+
+     In a multibyte string, characters consisting of more than one byte
+     are not treated as single entities.  Each byte is treated
+     separately.  The function is not locale-dependent.
+
+ -- Function: wchar_t * wcstok (wchar_t *NEWSTRING, const wchar_t
+          *DELIMITERS, wchar_t **SAVE_PTR)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     A string can be split into tokens by making a series of calls to
+     the function ‘wcstok’.
+
+     The string to be split up is passed as the NEWSTRING argument on
+     the first call only.  The ‘wcstok’ function uses this to set up
+     some internal state information.  Subsequent calls to get
+     additional tokens from the same wide string are indicated by
+     passing a null pointer as the NEWSTRING argument, which causes the
+     pointer previously stored in SAVE_PTR to be used instead.
+
+     The DELIMITERS argument is a wide string that specifies a set of
+     delimiters that may surround the token being extracted.  All the
+     initial wide characters that are members of this set are discarded.
+     The first wide character that is _not_ a member of this set of
+     delimiters marks the beginning of the next token.  The end of the
+     token is found by looking for the next wide character that is a
+     member of the delimiter set.  This wide character in the original
+     wide string NEWSTRING is overwritten by a null wide character, the
+     pointer past the overwritten wide character is saved in SAVE_PTR,
+     and the pointer to the beginning of the token in NEWSTRING is
+     returned.
+
+     On the next call to ‘wcstok’, the searching begins at the next wide
+     character beyond the one that marked the end of the previous token.
+     Note that the set of delimiters DELIMITERS do not have to be the
+     same on every call in a series of calls to ‘wcstok’.
+
+     If the end of the wide string NEWSTRING is reached, or if the
+     remainder of string consists only of delimiter wide characters,
+     ‘wcstok’ returns a null pointer.
+
+   *Warning:* Since ‘strtok’ and ‘wcstok’ alter the string they is
+parsing, you should always copy the string to a temporary buffer before
+parsing it with ‘strtok’/‘wcstok’ (*note Copying Strings and Arrays::).
+If you allow ‘strtok’ or ‘wcstok’ to modify a string that came from
+another part of your program, you are asking for trouble; that string
+might be used for other purposes after ‘strtok’ or ‘wcstok’ has modified
+it, and it would not have the expected value.
+
+   The string that you are operating on might even be a constant.  Then
+when ‘strtok’ or ‘wcstok’ tries to modify it, your program will get a
+fatal signal for writing in read-only memory.  *Note Program Error
+Signals::.  Even if the operation of ‘strtok’ or ‘wcstok’ would not
+require a modification of the string (e.g., if there is exactly one
+token) the string can (and in the GNU C Library case will) be modified.
+
+   This is a special case of a general principle: if a part of a program
+does not have as its purpose the modification of a certain data
+structure, then it is error-prone to modify the data structure
+temporarily.
+
+   The function ‘strtok’ is not reentrant, whereas ‘wcstok’ is.  *Note
+Nonreentrancy::, for a discussion of where and why reentrancy is
+important.
+
+   Here is a simple example showing the use of ‘strtok’.
+
+     #include <string.h>
+     #include <stddef.h>
+
+     ...
+
+     const char string[] = "words separated by spaces -- and, punctuation!";
+     const char delimiters[] = " .,;:!-";
+     char *token, *cp;
+
+     ...
+
+     cp = strdupa (string);                /* Make writable copy.  */
+     token = strtok (cp, delimiters);      /* token => "words" */
+     token = strtok (NULL, delimiters);    /* token => "separated" */
+     token = strtok (NULL, delimiters);    /* token => "by" */
+     token = strtok (NULL, delimiters);    /* token => "spaces" */
+     token = strtok (NULL, delimiters);    /* token => "and" */
+     token = strtok (NULL, delimiters);    /* token => "punctuation" */
+     token = strtok (NULL, delimiters);    /* token => NULL */
+
+   The GNU C Library contains two more functions for tokenizing a string
+which overcome the limitation of non-reentrancy.  They are not available
+available for wide strings.
+
+ -- Function: char * strtok_r (char *NEWSTRING, const char *DELIMITERS,
+          char **SAVE_PTR)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     Just like ‘strtok’, this function splits the string into several
+     tokens which can be accessed by successive calls to ‘strtok_r’.
+     The difference is that, as in ‘wcstok’, the information about the
+     next token is stored in the space pointed to by the third argument,
+     SAVE_PTR, which is a pointer to a string pointer.  Calling
+     ‘strtok_r’ with a null pointer for NEWSTRING and leaving SAVE_PTR
+     between the calls unchanged does the job without hindering
+     reentrancy.
+
+     This function is defined in POSIX.1 and can be found on many
+     systems which support multi-threading.
+
+ -- Function: char * strsep (char **STRING_PTR, const char *DELIMITER)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function has a similar functionality as ‘strtok_r’ with the
+     NEWSTRING argument replaced by the SAVE_PTR argument.  The
+     initialization of the moving pointer has to be done by the user.
+     Successive calls to ‘strsep’ move the pointer along the tokens
+     separated by DELIMITER, returning the address of the next token and
+     updating STRING_PTR to point to the beginning of the next token.
+
+     One difference between ‘strsep’ and ‘strtok_r’ is that if the input
+     string contains more than one byte from DELIMITER in a row ‘strsep’
+     returns an empty string for each pair of bytes from DELIMITER.
+     This means that a program normally should test for ‘strsep’
+     returning an empty string before processing it.
+
+     This function was introduced in 4.3BSD and therefore is widely
+     available.
+
+   Here is how the above example looks like when ‘strsep’ is used.
+
+     #include <string.h>
+     #include <stddef.h>
+
+     ...
+
+     const char string[] = "words separated by spaces -- and, punctuation!";
+     const char delimiters[] = " .,;:!-";
+     char *running;
+     char *token;
+
+     ...
+
+     running = strdupa (string);
+     token = strsep (&running, delimiters);    /* token => "words" */
+     token = strsep (&running, delimiters);    /* token => "separated" */
+     token = strsep (&running, delimiters);    /* token => "by" */
+     token = strsep (&running, delimiters);    /* token => "spaces" */
+     token = strsep (&running, delimiters);    /* token => "" */
+     token = strsep (&running, delimiters);    /* token => "" */
+     token = strsep (&running, delimiters);    /* token => "" */
+     token = strsep (&running, delimiters);    /* token => "and" */
+     token = strsep (&running, delimiters);    /* token => "" */
+     token = strsep (&running, delimiters);    /* token => "punctuation" */
+     token = strsep (&running, delimiters);    /* token => "" */
+     token = strsep (&running, delimiters);    /* token => NULL */
+
+ -- Function: char * basename (const char *FILENAME)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     The GNU version of the ‘basename’ function returns the last
+     component of the path in FILENAME.  This function is the preferred
+     usage, since it does not modify the argument, FILENAME, and
+     respects trailing slashes.  The prototype for ‘basename’ can be
+     found in ‘string.h’.  Note, this function is overridden by the XPG
+     version, if ‘libgen.h’ is included.
+
+     Example of using GNU ‘basename’:
+
+          #include <string.h>
+
+          int
+          main (int argc, char *argv[])
+          {
+            char *prog = basename (argv[0]);
+
+            if (argc < 2)
+              {
+                fprintf (stderr, "Usage %s <arg>\n", prog);
+                exit (1);
+              }
+
+            ...
+          }
+
+     *Portability Note:* This function may produce different results on
+     different systems.
+
+ -- Function: char * basename (char *PATH)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This is the standard XPG defined ‘basename’.  It is similar in
+     spirit to the GNU version, but may modify the PATH by removing
+     trailing ’/’ bytes.  If the PATH is made up entirely of ’/’ bytes,
+     then "/" will be returned.  Also, if PATH is ‘NULL’ or an empty
+     string, then "."  is returned.  The prototype for the XPG version
+     can be found in ‘libgen.h’.
+
+     Example of using XPG ‘basename’:
+
+          #include <libgen.h>
+
+          int
+          main (int argc, char *argv[])
+          {
+            char *prog;
+            char *path = strdupa (argv[0]);
+
+            prog = basename (path);
+
+            if (argc < 2)
+              {
+                fprintf (stderr, "Usage %s <arg>\n", prog);
+                exit (1);
+              }
+
+            ...
+
+          }
+
+ -- Function: char * dirname (char *PATH)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     The ‘dirname’ function is the compliment to the XPG version of
+     ‘basename’.  It returns the parent directory of the file specified
+     by PATH.  If PATH is ‘NULL’, an empty string, or contains no ’/’
+     bytes, then "."  is returned.  The prototype for this function can
+     be found in ‘libgen.h’.
 
 
 File: libc.info,  Node: Erasing Sensitive Data,  Next: Shuffling Bytes,  Prev: Finding Tokens in a String,  Up: String and Array Utilities
@@ -6648,197 +7002,4 @@ rewritten like this:
    Now it uses the date and time format of the locale selected when the
 program runs.  If the user selects the locale correctly there should
 never be a misunderstanding over the time and date format.
-
-
-File: libc.info,  Node: Formatting Numbers,  Next: Yes-or-No Questions,  Prev: Locale Information,  Up: Locales
-
-7.8 A dedicated function to format numbers
-==========================================
-
-We have seen that the structure returned by ‘localeconv’ as well as the
-values given to ‘nl_langinfo’ allow you to retrieve the various pieces
-of locale-specific information to format numbers and monetary amounts.
-We have also seen that the underlying rules are quite complex.
-
-   Therefore the X/Open standards introduce a function which uses such
-locale information, making it easier for the user to format numbers
-according to these rules.
-
- -- Function: ssize_t strfmon (char *S, size_t MAXSIZE, const char
-          *FORMAT, ...)
-     Preliminary: | MT-Safe locale | AS-Unsafe heap | AC-Unsafe mem |
-     *Note POSIX Safety Concepts::.
-
-     The ‘strfmon’ function is similar to the ‘strftime’ function in
-     that it takes a buffer, its size, a format string, and values to
-     write into the buffer as text in a form specified by the format
-     string.  Like ‘strftime’, the function also returns the number of
-     bytes written into the buffer.
-
-     There are two differences: ‘strfmon’ can take more than one
-     argument, and, of course, the format specification is different.
-     Like ‘strftime’, the format string consists of normal text, which
-     is output as is, and format specifiers, which are indicated by a
-     ‘%’.  Immediately after the ‘%’, you can optionally specify various
-     flags and formatting information before the main formatting
-     character, in a similar way to ‘printf’:
-
-        • Immediately following the ‘%’ there can be one or more of the
-          following flags:
-          ‘=F’
-               The single byte character F is used for this field as the
-               numeric fill character.  By default this character is a
-               space character.  Filling with this character is only
-               performed if a left precision is specified.  It is not
-               just to fill to the given field width.
-          ‘^’
-               The number is printed without grouping the digits
-               according to the rules of the current locale.  By default
-               grouping is enabled.
-          ‘+’, ‘(’
-               At most one of these flags can be used.  They select
-               which format to represent the sign of a currency amount.
-               By default, and if ‘+’ is given, the locale equivalent of
-               +/- is used.  If ‘(’ is given, negative amounts are
-               enclosed in parentheses.  The exact format is determined
-               by the values of the ‘LC_MONETARY’ category of the locale
-               selected at program runtime.
-          ‘!’
-               The output will not contain the currency symbol.
-          ‘-’
-               The output will be formatted left-justified instead of
-               right-justified if it does not fill the entire field
-               width.
-
-     The next part of the specification is an optional field width.  If
-     no width is specified 0 is taken.  During output, the function
-     first determines how much space is required.  If it requires at
-     least as many characters as given by the field width, it is output
-     using as much space as necessary.  Otherwise, it is extended to use
-     the full width by filling with the space character.  The presence
-     or absence of the ‘-’ flag determines the side at which such
-     padding occurs.  If present, the spaces are added at the right
-     making the output left-justified, and vice versa.
-
-     So far the format looks familiar, being similar to the ‘printf’ and
-     ‘strftime’ formats.  However, the next two optional fields
-     introduce something new.  The first one is a ‘#’ character followed
-     by a decimal digit string.  The value of the digit string specifies
-     the number of _digit_ positions to the left of the decimal point
-     (or equivalent).  This does _not_ include the grouping character
-     when the ‘^’ flag is not given.  If the space needed to print the
-     number does not fill the whole width, the field is padded at the
-     left side with the fill character, which can be selected using the
-     ‘=’ flag and by default is a space.  For example, if the field
-     width is selected as 6 and the number is 123, the fill character is
-     ‘*’ the result will be ‘***123’.
-
-     The second optional field starts with a ‘.’ (period) and consists
-     of another decimal digit string.  Its value describes the number of
-     characters printed after the decimal point.  The default is
-     selected from the current locale (‘frac_digits’, ‘int_frac_digits’,
-     see *note General Numeric::).  If the exact representation needs
-     more digits than given by the field width, the displayed value is
-     rounded.  If the number of fractional digits is selected to be
-     zero, no decimal point is printed.
-
-     As a GNU extension, the ‘strfmon’ implementation in the GNU C
-     Library allows an optional ‘L’ next as a format modifier.  If this
-     modifier is given, the argument is expected to be a ‘long double’
-     instead of a ‘double’ value.
-
-     Finally, the last component is a format specifier.  There are three
-     specifiers defined:
-
-     ‘i’
-          Use the locale’s rules for formatting an international
-          currency value.
-     ‘n’
-          Use the locale’s rules for formatting a national currency
-          value.
-     ‘%’
-          Place a ‘%’ in the output.  There must be no flag, width
-          specifier or modifier given, only ‘%%’ is allowed.
-
-     As for ‘printf’, the function reads the format string from left to
-     right and uses the values passed to the function following the
-     format string.  The values are expected to be either of type
-     ‘double’ or ‘long double’, depending on the presence of the
-     modifier ‘L’.  The result is stored in the buffer pointed to by S.
-     At most MAXSIZE characters are stored.
-
-     The return value of the function is the number of characters stored
-     in S, including the terminating ‘NULL’ byte.  If the number of
-     characters stored would exceed MAXSIZE, the function returns -1 and
-     the content of the buffer S is unspecified.  In this case ‘errno’
-     is set to ‘E2BIG’.
-
-   A few examples should make clear how the function works.  It is
-assumed that all the following pieces of code are executed in a program
-which uses the USA locale (‘en_US’).  The simplest form of the format is
-this:
-
-     strfmon (buf, 100, "@%n@%n@%n@", 123.45, -567.89, 12345.678);
-
-The output produced is
-     "@$123.45@-$567.89@$12,345.68@"
-
-   We can notice several things here.  First, the widths of the output
-numbers are different.  We have not specified a width in the format
-string, and so this is no wonder.  Second, the third number is printed
-using thousands separators.  The thousands separator for the ‘en_US’
-locale is a comma.  The number is also rounded.  .678 is rounded to .68
-since the format does not specify a precision and the default value in
-the locale is 2.  Finally, note that the national currency symbol is
-printed since ‘%n’ was used, not ‘i’.  The next example shows how we can
-align the output.
-
-     strfmon (buf, 100, "@%=*11n@%=*11n@%=*11n@", 123.45, -567.89, 12345.678);
-
-The output this time is:
-
-     "@    $123.45@   -$567.89@ $12,345.68@"
-
-   Two things stand out.  Firstly, all fields have the same width
-(eleven characters) since this is the width given in the format and
-since no number required more characters to be printed.  The second
-important point is that the fill character is not used.  This is correct
-since the white space was not used to achieve a precision given by a ‘#’
-modifier, but instead to fill to the given width.  The difference
-becomes obvious if we now add a width specification.
-
-     strfmon (buf, 100, "@%=*11#5n@%=*11#5n@%=*11#5n@",
-              123.45, -567.89, 12345.678);
-
-The output is
-
-     "@ $***123.45@-$***567.89@ $12,456.68@"
-
-   Here we can see that all the currency symbols are now aligned, and
-that the space between the currency sign and the number is filled with
-the selected fill character.  Note that although the width is selected
-to be 5 and 123.45 has three digits left of the decimal point, the space
-is filled with three asterisks.  This is correct since, as explained
-above, the width does not include the positions used to store thousands
-separators.  One last example should explain the remaining
-functionality.
-
-     strfmon (buf, 100, "@%=0(16#5.3i@%=0(16#5.3i@%=0(16#5.3i@",
-              123.45, -567.89, 12345.678);
-
-This rather complex format string produces the following output:
-
-     "@ USD 000123,450 @(USD 000567.890)@ USD 12,345.678 @"
-
-   The most noticeable change is the alternative way of representing
-negative numbers.  In financial circles this is often done using
-parentheses, and this is what the ‘(’ flag selected.  The fill character
-is now ‘0’.  Note that this ‘0’ character is not regarded as a numeric
-zero, and therefore the first and second numbers are not printed using a
-thousands separator.  Since we used the format specifier ‘i’ instead of
-‘n’, the international form of the currency symbol is used.  This is a
-four letter string, in this case ‘"USD "’.  The last point is that since
-the precision right of the decimal point is selected to be three, the
-first and second numbers are printed with an extra zero at the end and
-the third number is printed without rounding.
 

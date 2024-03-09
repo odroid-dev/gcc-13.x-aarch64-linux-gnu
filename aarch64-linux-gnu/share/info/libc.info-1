@@ -1,8 +1,8 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.38.
+This is ‘The GNU C Library Reference Manual’, for version 2.39.
 
-   Copyright © 1993–2023 Free Software Foundation, Inc.
+   Copyright © 1993–2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -774,8 +774,6 @@ START-INFO-DIR-ENTRY
 * creall: (libc)Operations on Complex.
 * creat64: (libc)Opening and Closing Files.
 * creat: (libc)Opening and Closing Files.
-* crypt: (libc)Passphrase Storage.
-* crypt_r: (libc)Passphrase Storage.
 * csin: (libc)Trig Functions.
 * csinf: (libc)Trig Functions.
 * csinfN: (libc)Trig Functions.
@@ -1602,6 +1600,7 @@ START-INFO-DIR-ENTRY
 * pause: (libc)Using Pause.
 * pclose: (libc)Pipe to a Subprocess.
 * perror: (libc)Error Messages.
+* pidfd_getpid: (libc)Querying a Process.
 * pipe: (libc)Creating a Pipe.
 * pkey_alloc: (libc)Memory Protection.
 * pkey_free: (libc)Memory Protection.
@@ -1884,6 +1883,76 @@ START-INFO-DIR-ENTRY
 * ssignal: (libc)Basic Signal Handling.
 * stat64: (libc)Reading Attributes.
 * stat: (libc)Reading Attributes.
+* stdc_bit_ceil_uc: (libc)Bit Manipulation.
+* stdc_bit_ceil_ui: (libc)Bit Manipulation.
+* stdc_bit_ceil_ul: (libc)Bit Manipulation.
+* stdc_bit_ceil_ull: (libc)Bit Manipulation.
+* stdc_bit_ceil_us: (libc)Bit Manipulation.
+* stdc_bit_floor_uc: (libc)Bit Manipulation.
+* stdc_bit_floor_ui: (libc)Bit Manipulation.
+* stdc_bit_floor_ul: (libc)Bit Manipulation.
+* stdc_bit_floor_ull: (libc)Bit Manipulation.
+* stdc_bit_floor_us: (libc)Bit Manipulation.
+* stdc_bit_width_uc: (libc)Bit Manipulation.
+* stdc_bit_width_ui: (libc)Bit Manipulation.
+* stdc_bit_width_ul: (libc)Bit Manipulation.
+* stdc_bit_width_ull: (libc)Bit Manipulation.
+* stdc_bit_width_us: (libc)Bit Manipulation.
+* stdc_count_ones_uc: (libc)Bit Manipulation.
+* stdc_count_ones_ui: (libc)Bit Manipulation.
+* stdc_count_ones_ul: (libc)Bit Manipulation.
+* stdc_count_ones_ull: (libc)Bit Manipulation.
+* stdc_count_ones_us: (libc)Bit Manipulation.
+* stdc_count_zeros_uc: (libc)Bit Manipulation.
+* stdc_count_zeros_ui: (libc)Bit Manipulation.
+* stdc_count_zeros_ul: (libc)Bit Manipulation.
+* stdc_count_zeros_ull: (libc)Bit Manipulation.
+* stdc_count_zeros_us: (libc)Bit Manipulation.
+* stdc_first_leading_one_uc: (libc)Bit Manipulation.
+* stdc_first_leading_one_ui: (libc)Bit Manipulation.
+* stdc_first_leading_one_ul: (libc)Bit Manipulation.
+* stdc_first_leading_one_ull: (libc)Bit Manipulation.
+* stdc_first_leading_one_us: (libc)Bit Manipulation.
+* stdc_first_leading_zero_uc: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ui: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ul: (libc)Bit Manipulation.
+* stdc_first_leading_zero_ull: (libc)Bit Manipulation.
+* stdc_first_leading_zero_us: (libc)Bit Manipulation.
+* stdc_first_trailing_one_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_one_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_one_us: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_uc: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ui: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ul: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_ull: (libc)Bit Manipulation.
+* stdc_first_trailing_zero_us: (libc)Bit Manipulation.
+* stdc_has_single_bit_uc: (libc)Bit Manipulation.
+* stdc_has_single_bit_ui: (libc)Bit Manipulation.
+* stdc_has_single_bit_ul: (libc)Bit Manipulation.
+* stdc_has_single_bit_ull: (libc)Bit Manipulation.
+* stdc_has_single_bit_us: (libc)Bit Manipulation.
+* stdc_leading_ones_uc: (libc)Bit Manipulation.
+* stdc_leading_ones_ui: (libc)Bit Manipulation.
+* stdc_leading_ones_ul: (libc)Bit Manipulation.
+* stdc_leading_ones_ull: (libc)Bit Manipulation.
+* stdc_leading_ones_us: (libc)Bit Manipulation.
+* stdc_leading_zeros_uc: (libc)Bit Manipulation.
+* stdc_leading_zeros_ui: (libc)Bit Manipulation.
+* stdc_leading_zeros_ul: (libc)Bit Manipulation.
+* stdc_leading_zeros_ull: (libc)Bit Manipulation.
+* stdc_leading_zeros_us: (libc)Bit Manipulation.
+* stdc_trailing_ones_uc: (libc)Bit Manipulation.
+* stdc_trailing_ones_ui: (libc)Bit Manipulation.
+* stdc_trailing_ones_ul: (libc)Bit Manipulation.
+* stdc_trailing_ones_ull: (libc)Bit Manipulation.
+* stdc_trailing_ones_us: (libc)Bit Manipulation.
+* stdc_trailing_zeros_uc: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ui: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ul: (libc)Bit Manipulation.
+* stdc_trailing_zeros_ull: (libc)Bit Manipulation.
+* stdc_trailing_zeros_us: (libc)Bit Manipulation.
 * stime: (libc)Setting and Adjusting the Time.
 * stpcpy: (libc)Copying Strings and Arrays.
 * stpncpy: (libc)Truncating Strings.
@@ -2179,9 +2248,9 @@ File: libc.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 Main Menu
 *********
 
-This is ‘The GNU C Library Reference Manual’, for version 2.38.
+This is ‘The GNU C Library Reference Manual’, for version 2.39.
 
-   Copyright © 1993–2023 Free Software Foundation, Inc.
+   Copyright © 1993–2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -2227,6 +2296,7 @@ developing GNU and promoting software freedom.”
 * Mathematics::                  Math functions, useful constants, random
                                    numbers.
 * Arithmetic::                   Low level arithmetic functions.
+* Bit Manipulation::             Bit manipulation.
 * Date and Time::                Functions for getting the date and time and
                                    formatting them nicely.
 * Resource Usage And Limitation:: Functions for examining resource usage and
@@ -2245,8 +2315,8 @@ developing GNU and promoting software freedom.”
                                    information about it.
 * System Configuration::         Parameters describing operating system
                                    limits.
-* Cryptographic Functions::      Passphrase storage and strongly
-                                   unpredictable bytes..
+* Cryptographic Functions::      A few functions to support cryptographic
+                                   applications.
 * Debugging Support::            Functions to help debugging applications.
 * Threads::                      Functions, constants, and data types for
                                    working with threads.
@@ -3258,6 +3328,7 @@ Processes
 * Process Creation Concepts::   An overview of the hard way to do it.
 * Process Identification::      How to get the process ID of a process.
 * Creating a Process::          How to fork a child process.
+* Querying a Process::          How to query a child process.
 * Executing a File::            How to make a process execute another program.
 * Process Completion::          How to tell when a child process has completed.
 * Process Completion Status::   How to interpret the status value
@@ -3432,7 +3503,6 @@ Sysconf
 
 Cryptographic Functions
 
-* Passphrase Storage::          One-way hashing for passphrases.
 * Unpredictable Bytes::         Randomness for cryptographic purposes.
 
 Debugging Support
@@ -3475,7 +3545,17 @@ Non-POSIX Extensions
 
 Dynamic Linker
 
+* Dynamic Linker Invocation::   Explicit invocation of the dynamic linker.
 * Dynamic Linker Introspection::    Interfaces for querying mapping information.
+
+Dynamic Linker Invocation
+
+* Dynamic Linker Diagnostics::   Obtaining system diagnostic information.
+
+Dynamic Linker Diagnostics
+
+* Dynamic Linker Diagnostics Format::  Format of ld.so output.
+* Dynamic Linker Diagnostics Values::  Data contain in ld.so output.
 
 Internal Probes
 
@@ -7120,40 +7200,4 @@ if no other space is available.
      return the same address that you gave.  However, POSIX and ISO C
      allow the functions to relocate the object or fail in this
      situation.
-
-
-File: libc.info,  Node: Allocating Cleared Space,  Next: Aligned Memory Blocks,  Prev: Changing Block Size,  Up: Unconstrained Allocation
-
-3.2.3.5 Allocating Cleared Space
-................................
-
-The function ‘calloc’ allocates memory and clears it to zero.  It is
-declared in ‘stdlib.h’.
-
- -- Function: void * calloc (size_t COUNT, size_t ELTSIZE)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
-     *Note POSIX Safety Concepts::.
-
-     This function allocates a block long enough to contain a vector of
-     COUNT elements, each of size ELTSIZE.  Its contents are cleared to
-     zero before ‘calloc’ returns.
-
-   You could define ‘calloc’ as follows:
-
-     void *
-     calloc (size_t count, size_t eltsize)
-     {
-       void *value = reallocarray (0, count, eltsize);
-       if (value != 0)
-         memset (value, 0, count * eltsize);
-       return value;
-     }
-
-   But in general, it is not guaranteed that ‘calloc’ calls
-‘reallocarray’ and ‘memset’ internally.  For example, if the ‘calloc’
-implementation knows for other reasons that the new memory block is
-zero, it need not zero out the block again with ‘memset’.  Also, if an
-application provides its own ‘reallocarray’ outside the C library,
-‘calloc’ might not use that redefinition.  *Note Replacing malloc::.
 
