@@ -1,21 +1,21 @@
-This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
+This is libc.info, produced by makeinfo version 7.1 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.39.
+This is ‘The GNU C Library Reference Manual’, for version 2.40.
 
-   Copyright © 1993–2024 Free Software Foundation, Inc.
+   Copyright © 1993-2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
 any later version published by the Free Software Foundation; with the
-Invariant Sections being “Free Software Needs Free Documentation” and
-“GNU Lesser General Public License”, the Front-Cover texts being “A GNU
-Manual”, and with the Back-Cover Texts as in (a) below.  A copy of the
+Invariant Sections being "Free Software Needs Free Documentation" and
+"GNU Lesser General Public License", the Front-Cover texts being "A GNU
+Manual", and with the Back-Cover Texts as in (a) below.  A copy of the
 license is included in the section entitled "GNU Free Documentation
 License".
 
-   (a) The FSF’s Back-Cover Text is: “You have the freedom to copy and
+   (a) The FSF's Back-Cover Text is: "You have the freedom to copy and
 modify this GNU manual.  Buying copies from the FSF supports it in
-developing GNU and promoting software freedom.”
+developing GNU and promoting software freedom."
 INFO-DIR-SECTION Software libraries
 START-INFO-DIR-ENTRY
 * Libc: (libc).                 C library.
@@ -422,6 +422,7 @@ START-INFO-DIR-ENTRY
 * S_TYPEISMQ: (libc)Testing File Type.
 * S_TYPEISSEM: (libc)Testing File Type.
 * S_TYPEISSHM: (libc)Testing File Type.
+* TIME_UTC: (libc)Getting the Time.
 * TMP_MAX: (libc)Temporary Files.
 * TOSTOP: (libc)Local Modes.
 * TZNAME_MAX: (libc)General Limits.
@@ -567,8 +568,6 @@ START-INFO-DIR-ENTRY
 * argz_next: (libc)Argz Functions.
 * argz_replace: (libc)Argz Functions.
 * argz_stringify: (libc)Argz Functions.
-* asctime: (libc)Formatting Calendar Time.
-* asctime_r: (libc)Formatting Calendar Time.
 * asin: (libc)Inverse Trig Functions.
 * asinf: (libc)Inverse Trig Functions.
 * asinfN: (libc)Inverse Trig Functions.
@@ -698,6 +697,10 @@ START-INFO-DIR-ENTRY
 * cfsetispeed: (libc)Line Speed.
 * cfsetospeed: (libc)Line Speed.
 * cfsetspeed: (libc)Line Speed.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
 * chdir: (libc)Working Directory.
 * chmod: (libc)Setting Permissions.
 * chown: (libc)File Owner.
@@ -800,8 +803,6 @@ START-INFO-DIR-ENTRY
 * ctanhl: (libc)Hyperbolic Functions.
 * ctanl: (libc)Trig Functions.
 * ctermid: (libc)Identifying the Terminal.
-* ctime: (libc)Formatting Calendar Time.
-* ctime_r: (libc)Formatting Calendar Time.
 * cuserid: (libc)Who Logged In.
 * daddl: (libc)Misc FP Arithmetic.
 * dcgettext: (libc)Translation with gettext.
@@ -824,6 +825,7 @@ START-INFO-DIR-ENTRY
 * dsqrtl: (libc)Misc FP Arithmetic.
 * dsubl: (libc)Misc FP Arithmetic.
 * dup2: (libc)Duplicating Descriptors.
+* dup3: (libc)Duplicating Descriptors.
 * dup: (libc)Duplicating Descriptors.
 * ecvt: (libc)System V Number Conversion.
 * ecvt_r: (libc)System V Number Conversion.
@@ -844,6 +846,8 @@ START-INFO-DIR-ENTRY
 * envz_merge: (libc)Envz Functions.
 * envz_remove: (libc)Envz Functions.
 * envz_strip: (libc)Envz Functions.
+* epoll_createint: (libc)Other Low-Level I/O APIs.
+* epoll_waitint: (libc)Other Low-Level I/O APIs.
 * erand48: (libc)SVID Random.
 * erand48_r: (libc)SVID Random.
 * erf: (libc)Special Functions.
@@ -873,11 +877,21 @@ START-INFO-DIR-ENTRY
 * exp10fN: (libc)Exponents and Logarithms.
 * exp10fNx: (libc)Exponents and Logarithms.
 * exp10l: (libc)Exponents and Logarithms.
+* exp10m1: (libc)Exponents and Logarithms.
+* exp10m1f: (libc)Exponents and Logarithms.
+* exp10m1fN: (libc)Exponents and Logarithms.
+* exp10m1fNx: (libc)Exponents and Logarithms.
+* exp10m1l: (libc)Exponents and Logarithms.
 * exp2: (libc)Exponents and Logarithms.
 * exp2f: (libc)Exponents and Logarithms.
 * exp2fN: (libc)Exponents and Logarithms.
 * exp2fNx: (libc)Exponents and Logarithms.
 * exp2l: (libc)Exponents and Logarithms.
+* exp2m1: (libc)Exponents and Logarithms.
+* exp2m1f: (libc)Exponents and Logarithms.
+* exp2m1fN: (libc)Exponents and Logarithms.
+* exp2m1fNx: (libc)Exponents and Logarithms.
+* exp2m1l: (libc)Exponents and Logarithms.
 * exp: (libc)Exponents and Logarithms.
 * expf: (libc)Exponents and Logarithms.
 * expfN: (libc)Exponents and Logarithms.
@@ -1418,6 +1432,11 @@ START-INFO-DIR-ENTRY
 * log10fN: (libc)Exponents and Logarithms.
 * log10fNx: (libc)Exponents and Logarithms.
 * log10l: (libc)Exponents and Logarithms.
+* log10p1: (libc)Exponents and Logarithms.
+* log10p1f: (libc)Exponents and Logarithms.
+* log10p1fN: (libc)Exponents and Logarithms.
+* log10p1fNx: (libc)Exponents and Logarithms.
+* log10p1l: (libc)Exponents and Logarithms.
 * log1p: (libc)Exponents and Logarithms.
 * log1pf: (libc)Exponents and Logarithms.
 * log1pfN: (libc)Exponents and Logarithms.
@@ -1428,6 +1447,11 @@ START-INFO-DIR-ENTRY
 * log2fN: (libc)Exponents and Logarithms.
 * log2fNx: (libc)Exponents and Logarithms.
 * log2l: (libc)Exponents and Logarithms.
+* log2p1: (libc)Exponents and Logarithms.
+* log2p1f: (libc)Exponents and Logarithms.
+* log2p1fN: (libc)Exponents and Logarithms.
+* log2p1fNx: (libc)Exponents and Logarithms.
+* log2p1l: (libc)Exponents and Logarithms.
 * log: (libc)Exponents and Logarithms.
 * logb: (libc)Exponents and Logarithms.
 * logbf: (libc)Exponents and Logarithms.
@@ -1441,6 +1465,11 @@ START-INFO-DIR-ENTRY
 * login_tty: (libc)Logging In and Out.
 * logl: (libc)Exponents and Logarithms.
 * logout: (libc)Logging In and Out.
+* logp1: (libc)Exponents and Logarithms.
+* logp1f: (libc)Exponents and Logarithms.
+* logp1fN: (libc)Exponents and Logarithms.
+* logp1fNx: (libc)Exponents and Logarithms.
+* logp1l: (libc)Exponents and Logarithms.
 * logwtmp: (libc)Logging In and Out.
 * longjmp: (libc)Non-Local Details.
 * lrand48: (libc)SVID Random.
@@ -1607,6 +1636,7 @@ START-INFO-DIR-ENTRY
 * pkey_get: (libc)Memory Protection.
 * pkey_mprotect: (libc)Memory Protection.
 * pkey_set: (libc)Memory Protection.
+* poll: (libc)Other Low-Level I/O APIs.
 * popen: (libc)Pipe to a Subprocess.
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
@@ -1687,7 +1717,7 @@ START-INFO-DIR-ENTRY
 * realpath: (libc)Symbolic Links.
 * recv: (libc)Receiving Data.
 * recvfrom: (libc)Receiving Datagrams.
-* recvmsg: (libc)Receiving Datagrams.
+* recvmsg: (libc)Other Socket APIs.
 * regcomp: (libc)POSIX Regexp Compilation.
 * regerror: (libc)Regexp Cleanup.
 * regexec: (libc)Matching POSIX Regexps.
@@ -1768,7 +1798,7 @@ START-INFO-DIR-ENTRY
 * semop: (libc)Semaphores.
 * semtimedop: (libc)Semaphores.
 * send: (libc)Sending Data.
-* sendmsg: (libc)Receiving Datagrams.
+* sendmsg: (libc)Other Socket APIs.
 * sendto: (libc)Sending Datagrams.
 * setbuf: (libc)Controlling Buffering.
 * setbuffer: (libc)Controlling Buffering.
@@ -1981,6 +2011,7 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strftime_l: (libc)Formatting Calendar Time.
 * strlcat: (libc)Truncating Strings.
 * strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
@@ -2069,6 +2100,8 @@ START-INFO-DIR-ENTRY
 * timegm: (libc)Broken-down Time.
 * timelocal: (libc)Broken-down Time.
 * times: (libc)Processor Time.
+* timespec_get: (libc)Getting the Time.
+* timespec_getres: (libc)Getting the Time.
 * tmpfile64: (libc)Temporary Files.
 * tmpfile: (libc)Temporary Files.
 * tmpnam: (libc)Temporary Files.
@@ -2105,7 +2138,7 @@ START-INFO-DIR-ENTRY
 * ttyname_r: (libc)Is It a Terminal.
 * twalk: (libc)Tree Search Function.
 * twalk_r: (libc)Tree Search Function.
-* tzset: (libc)Time Zone Functions.
+* tzset: (libc)Time Zone State.
 * ufromfp: (libc)Rounding Functions.
 * ufromfpf: (libc)Rounding Functions.
 * ufromfpfN: (libc)Rounding Functions.
@@ -2248,7 +2281,7 @@ File: libc.info,  Node: Finding Tokens in a String,  Next: Erasing Sensitive Dat
 5.10 Finding Tokens in a String
 ===============================
 
-It’s fairly common for programs to have a need to do some simple kinds
+It's fairly common for programs to have a need to do some simple kinds
 of lexical analysis and parsing, such as splitting a command string up
 into tokens.  You can do this with the ‘strtok’ function, declared in
 the header file ‘string.h’.
@@ -2489,7 +2522,7 @@ available for wide strings.
 
      This is the standard XPG defined ‘basename’.  It is similar in
      spirit to the GNU version, but may modify the PATH by removing
-     trailing ’/’ bytes.  If the PATH is made up entirely of ’/’ bytes,
+     trailing '/' bytes.  If the PATH is made up entirely of '/' bytes,
      then "/" will be returned.  Also, if PATH is ‘NULL’ or an empty
      string, then "."  is returned.  The prototype for the XPG version
      can be found in ‘libgen.h’.
@@ -2523,7 +2556,7 @@ available for wide strings.
 
      The ‘dirname’ function is the compliment to the XPG version of
      ‘basename’.  It returns the parent directory of the file specified
-     by PATH.  If PATH is ‘NULL’, an empty string, or contains no ’/’
+     by PATH.  If PATH is ‘NULL’, an empty string, or contains no '/'
      bytes, then "."  is returned.  The prototype for this function can
      be found in ‘libgen.h’.
 
@@ -2536,14 +2569,14 @@ File: libc.info,  Node: Erasing Sensitive Data,  Next: Shuffling Bytes,  Prev: F
 Sensitive data, such as cryptographic keys, should be erased from memory
 after use, to reduce the risk that a bug will expose it to the outside
 world.  However, compiler optimizations may determine that an erasure
-operation is “unnecessary,” and remove it from the generated code,
+operation is "unnecessary," and remove it from the generated code,
 because no _correct_ program could access the variable or heap object
-containing the sensitive data after it’s deallocated.  Since erasure is
+containing the sensitive data after it's deallocated.  Since erasure is
 a precaution against bugs, this optimization is inappropriate.
 
    The function ‘explicit_bzero’ erases a block of memory, and
 guarantees that the compiler will not remove the erasure as
-“unnecessary.”
+"unnecessary."
 
      #include <string.h>
 
@@ -2561,11 +2594,11 @@ guarantees that the compiler will not remove the erasure as
      }
 
 In this example, if ‘memset’, ‘bzero’, or a hand-written loop had been
-used, the compiler might remove them as “unnecessary.”
+used, the compiler might remove them as "unnecessary."
 
    *Warning:* ‘explicit_bzero’ does not guarantee that sensitive data is
-_completely_ erased from the computer’s memory.  There may be copies in
-temporary storage areas, such as registers and “scratch” stack space;
+_completely_ erased from the computer's memory.  There may be copies in
+temporary storage areas, such as registers and "scratch" stack space;
 since these are invisible to the source code, a library function cannot
 erase them.
 
@@ -2576,13 +2609,13 @@ the call to ‘explicit_bzero’.  Then it will be copied into RAM, the copy
 will be erased, and the original will remain intact.  Data in RAM is
 more likely to be exposed by a bug than data in registers, so this
 creates a brief window where the data is at greater risk of exposure
-than it would have been if the program didn’t try to erase it at all.
+than it would have been if the program didn't try to erase it at all.
 
    Declaring sensitive variables as ‘volatile’ will make both the above
 problems _worse_; a ‘volatile’ variable will be stored in memory for its
 entire lifetime, and the compiler will make _more_ copies of it than it
-would otherwise have.  Attempting to erase a normal variable “by hand”
-through a ‘volatile’-qualified pointer doesn’t work at all—because the
+would otherwise have.  Attempting to erase a normal variable "by hand"
+through a ‘volatile’-qualified pointer doesn't work at all--because the
 variable itself is not ‘volatile’, some compilers will ignore the
 qualification on the pointer and remove the erasure anyway.
 
@@ -2600,11 +2633,11 @@ the affected data, wherever they may be.
 
      ‘explicit_bzero’ writes zero into LEN bytes of memory beginning at
      BLOCK, just as ‘bzero’ would.  The zeroes are always written, even
-     if the compiler could determine that this is “unnecessary” because
+     if the compiler could determine that this is "unnecessary" because
      no correct program could read them back.
 
      *Note:* The _only_ optimization that ‘explicit_bzero’ disables is
-     removal of “unnecessary” writes to memory.  The compiler can
+     removal of "unnecessary" writes to memory.  The compiler can
      perform all the other optimizations that it could for a call to
      ‘memset’.  For instance, it may replace the function call with
      inline memory writes, and it may assume that BLOCK cannot be a null
@@ -2624,8 +2657,8 @@ File: libc.info,  Node: Shuffling Bytes,  Next: Obfuscating Data,  Prev: Erasing
 5.12 Shuffling Bytes
 ====================
 
-The function below addresses the perennial programming quandary: “How do
-I take good data in string form and painlessly turn it into garbage?”
+The function below addresses the perennial programming quandary: "How do
+I take good data in string form and painlessly turn it into garbage?"
 This is not a difficult thing to code for oneself, but the authors of
 the GNU C Library wish to make it as convenient as possible.
 
@@ -2640,7 +2673,7 @@ Data::).
 
      ‘strfry’ performs an in-place shuffle on STRING.  Each character is
      swapped to a position selected at random, within the portion of the
-     string starting with the character’s original position.  (This is
+     string starting with the character's original position.  (This is
      the Fisher-Yates algorithm for unbiased shuffling.)
 
      Calling ‘strfry’ will not disturb any of the random number
@@ -2660,13 +2693,13 @@ File: libc.info,  Node: Obfuscating Data,  Next: Encode Binary Data,  Prev: Shuf
 The ‘memfrob’ function reversibly obfuscates an array of binary data.
 This is not true encryption; the obfuscated data still bears a clear
 relationship to the original, and no secret key is required to undo the
-obfuscation.  It is analogous to the “Rot13” cipher used on Usenet for
+obfuscation.  It is analogous to the "Rot13" cipher used on Usenet for
 obscuring offensive jokes, spoilers for works of fiction, and so on, but
 it can be applied to arbitrary binary data.
 
-   Programs that need true encryption—a transformation that completely
+   Programs that need true encryption--a transformation that completely
 obscures the original and cannot be reversed without knowledge of a
-secret key—should use a dedicated cryptography library, such as
+secret key--should use a dedicated cryptography library, such as
 libgcrypt.
 
    Programs that need to _destroy_ data should use ‘explicit_bzero’
@@ -2732,9 +2765,9 @@ nowadays XPG compliant systems) provide minimal support for this task.
             char *cp = out, *p;
 
             /* Encode the length. */
-            /* Using ‘htonl’ is necessary so that the data can be
+            /* Using 'htonl' is necessary so that the data can be
                decoded even on machines with different byte order.
-               ‘l64a’ can return a string shorter than 6 bytes, so
+               'l64a' can return a string shorter than 6 bytes, so
                we pad it with encoding of 0 ('.') at the end by
                hand. */
 
@@ -2888,8 +2921,8 @@ error occurs.
      pre-allocated with enough space to hold all the elements in ARGZ
      plus the terminating ‘(char *)0’ (‘(argz_count (ARGZ, ARGZ_LEN) +
      1) * sizeof (char *)’ bytes should be enough).  Note that the
-     string pointers stored into ARGV point into ARGZ—they are not
-     copies—and so ARGZ must be copied if it will be changed while ARGV
+     string pointers stored into ARGV point into ARGZ--they are not
+     copies--and so ARGZ must be copied if it will be changed while ARGV
      is still active.  This function is useful for passing the elements
      in ARGZ to an exec function (*note Executing a File::).
 
@@ -3020,7 +3053,7 @@ after the first are considered part of the value, and treated like all
 other non-‘'\0'’ bytes.
 
    If _no_ ‘'='’ bytes are present in an element, that element is
-considered the name of a “null” entry, as distinct from an entry with an
+considered the name of a "null" entry, as distinct from an entry with an
 empty value: ‘envz_get’ will return ‘0’ if given the name of null entry,
 whereas an entry with an empty value would result in a value of ‘""’;
 ‘envz_entry’ will still find such entries, however.  Null entries can be
@@ -3039,7 +3072,7 @@ thus fail) have a return type of ‘error_t’, and return either ‘0’ or
      Concepts::.
 
      The ‘envz_entry’ function finds the entry in ENVZ with the name
-     NAME, and returns a pointer to the whole entry—that is, the argz
+     NAME, and returns a pointer to the whole entry--that is, the argz
      element which begins with NAME followed by a ‘'='’ byte.  If there
      is no entry with that name, ‘0’ is returned.
 
@@ -3109,7 +3142,7 @@ or eight bits for each character: there was never a case where more than
 eight bits (one byte) were used to represent a single character.  The
 limitations of this approach became more apparent as more people
 grappled with non-Roman character sets, where not all the characters
-that make up a language’s character set can be represented by 2^8
+that make up a language's character set can be represented by 2^8
 choices.  This chapter shows the functionality that was added to the C
 library to support multiple character sets.
 
@@ -3289,7 +3322,7 @@ UCS-4.  The external encoding is byte-based and can be chosen
 appropriately for the environment and for the texts to be handled.  A
 variety of different character sets can be used for this external
 encoding (information that will not be exhaustively presented
-here–instead, a description of the major groups will suffice).  All of
+here-instead, a description of the major groups will suffice).  All of
 the ASCII-based character sets fulfill one requirement: they are
 "filesystem safe."  This means that the character ‘'/'’ is used in the
 encoding _only_ to represent itself.  Things are a bit different for
@@ -3320,7 +3353,7 @@ to be converted first anyhow.
      the big advantage that whenever one can identify the beginning of
      the byte sequence of a character one can interpret a text
      correctly.  Examples of character sets using this policy are the
-     various EUC character sets (used by Sun’s operating systems,
+     various EUC character sets (used by Sun's operating systems,
      EUC-JP, EUC-KR, EUC-TW, and EUC-CN) or Shift_JIS (SJIS, a Japanese
      encoding).
 
@@ -3335,7 +3368,7 @@ to be converted first anyhow.
      produce output themselves: one has to combine them with other
      characters to get the desired result.  For example, the byte
      sequence ‘0xc2 0x61’ (non-spacing acute accent, followed by
-     lower-case ‘a’) to get the “small a with acute” character.  To get
+     lower-case 'a') to get the "small a with acute" character.  To get
      the acute accent character on its own, one has to write ‘0xc2 0x20’
      (the non-spacing acute followed by a space).
 
@@ -3504,7 +3537,7 @@ shows the problem:
 the array BUF to convert one multibyte character.  The array BUF has to
 be sized statically since many compilers do not allow a variable size.
 The ‘fread’ call makes sure that ‘MB_CUR_MAX’ bytes are always available
-in BUF.  Note that it isn’t a problem if ‘MB_CUR_MAX’ is not a
+in BUF.  Note that it isn't a problem if ‘MB_CUR_MAX’ is not a
 compile-time constant.
 
 
@@ -3612,7 +3645,7 @@ first byte that is beyond the range 0 to 127.
      Preliminary: | MT-Safe | AS-Unsafe corrupt heap lock dlopen |
      AC-Unsafe corrupt lock mem fd | *Note POSIX Safety Concepts::.
 
-     The ‘btowc’ function (“byte to wide character”) converts a valid
+     The ‘btowc’ function ("byte to wide character") converts a valid
      single byte character C in the initial shift state into the wide
      character equivalent using the conversion rules from the currently
      selected locale of the ‘LC_CTYPE’ category.
@@ -3665,7 +3698,7 @@ There is also a function for the conversion in the other direction.
      Preliminary: | MT-Safe | AS-Unsafe corrupt heap lock dlopen |
      AC-Unsafe corrupt lock mem fd | *Note POSIX Safety Concepts::.
 
-     The ‘wctob’ function (“wide character to byte”) takes as the
+     The ‘wctob’ function ("wide character to byte") takes as the
      parameter a valid wide character.  If the multibyte representation
      for this character in the initial state is exactly one byte long,
      the return value of this function is this character.  Otherwise the
@@ -3686,7 +3719,7 @@ and they also do not require it to be in the initial state.
      lock dlopen | AC-Unsafe corrupt lock mem fd | *Note POSIX Safety
      Concepts::.
 
-     The ‘mbrtowc’ function (“multibyte restartable to wide character”)
+     The ‘mbrtowc’ function ("multibyte restartable to wide character")
      converts the next multibyte character in the string pointed to by S
      into a wide character and stores it in the location pointed to by
      PWC.  The conversion is performed according to the locale currently
@@ -3812,7 +3845,7 @@ a function that does part of the work.
      lock dlopen | AC-Unsafe corrupt lock mem fd | *Note POSIX Safety
      Concepts::.
 
-     The ‘mbrlen’ function (“multibyte restartable length”) computes the
+     The ‘mbrlen’ function ("multibyte restartable length") computes the
      number of at most N bytes starting at S, which form the next valid
      and complete multibyte character.
 
@@ -3891,7 +3924,7 @@ the work twice.
      lock dlopen | AC-Unsafe corrupt lock mem fd | *Note POSIX Safety
      Concepts::.
 
-     The ‘wcrtomb’ function (“wide character restartable to multibyte”)
+     The ‘wcrtomb’ function ("wide character restartable to multibyte")
      converts a single wide character into a multibyte string
      corresponding to that wide character.
 
@@ -4031,8 +4064,8 @@ that can help in some important situations.
      heap lock dlopen | AC-Unsafe corrupt lock mem fd | *Note POSIX
      Safety Concepts::.
 
-     The ‘mbsrtowcs’ function (“multibyte string restartable to wide
-     character string”) converts the NUL-terminated multibyte character
+     The ‘mbsrtowcs’ function ("multibyte string restartable to wide
+     character string") converts the NUL-terminated multibyte character
      string at ‘*SRC’ into an equivalent wide character string,
      including the NUL wide character at the end.  The conversion is
      started using the state information from the object pointed to by
@@ -4096,7 +4129,7 @@ the initial shift state and therefore the first character of the next
 line is encoded using this state).  But the state in question is never
 accessible to the user since the conversion stops after the NUL byte
 (which resets the state).  Most stateful character sets in use today
-require that the shift state after a newline be the initial state–but
+require that the shift state after a newline be the initial state-but
 this is not a strict guarantee.  Therefore, simply NUL-terminating a
 piece of a running text is not always an adequate solution and,
 therefore, should never be used in generally used code.
@@ -4105,7 +4138,7 @@ therefore, should never be used in generally used code.
 does not have this limitation (it simply works on buffers, not strings),
 and the GNU C Library contains a set of functions that take additional
 parameters specifying the maximal number of bytes that are consumed from
-the input string.  This way the problem of ‘mbsrtowcs’’s example above
+the input string.  This way the problem of ‘mbsrtowcs’'s example above
 could be solved by determining the line length and passing this length
 to the function.
 
@@ -4116,8 +4149,8 @@ to the function.
      heap lock dlopen | AC-Unsafe corrupt lock mem fd | *Note POSIX
      Safety Concepts::.
 
-     The ‘wcsrtombs’ function (“wide character string restartable to
-     multibyte string”) converts the NUL-terminated wide character
+     The ‘wcsrtombs’ function ("wide character string restartable to
+     multibyte string") converts the NUL-terminated wide character
      string at ‘*SRC’ into an equivalent multibyte character string and
      stores the result in the array pointed to by DST.  The NUL wide
      character is also converted.  The conversion starts in the state
@@ -4212,7 +4245,7 @@ example):
      }
 
    There is no problem with the state after a call to ‘mbsnrtowcs’.
-Since we don’t insert characters in the strings that were not in there
+Since we don't insert characters in the strings that were not in there
 right from the beginning and we use STATE only for the conversion of the
 given buffer, there is no problem with altering the state.
 
@@ -4283,7 +4316,7 @@ should be easy to derive versions using the other functions.
            /* ‘filled’ is now the number of bytes in ‘buffer’. */
            filled += nread;
 
-           /* Convert those bytes to wide characters–as many as we can. */
+           /* Convert those bytes to wide characters-as many as we can. */
            while (1)
              {
                size_t thislen = mbrtowc (outp, inp, filled, &state);
@@ -4374,7 +4407,7 @@ File: libc.info,  Node: Non-reentrant Character Conversion,  Next: Non-reentrant
      Preliminary: | MT-Unsafe race | AS-Unsafe corrupt heap lock dlopen
      | AC-Unsafe corrupt lock mem fd | *Note POSIX Safety Concepts::.
 
-     The ‘mbtowc’ (“multibyte to wide character”) function when called
+     The ‘mbtowc’ ("multibyte to wide character") function when called
      with non-null STRING converts the first multibyte character
      beginning at STRING to its corresponding wide character code.  It
      stores the result in ‘*RESULT’.
@@ -4408,7 +4441,7 @@ File: libc.info,  Node: Non-reentrant Character Conversion,  Next: Non-reentrant
      Preliminary: | MT-Unsafe race | AS-Unsafe corrupt heap lock dlopen
      | AC-Unsafe corrupt lock mem fd | *Note POSIX Safety Concepts::.
 
-     The ‘wctomb’ (“wide character to multibyte”) function converts the
+     The ‘wctomb’ ("wide character to multibyte") function converts the
      wide character code WCHAR to its corresponding multibyte character
      sequence, and stores the result in bytes starting at STRING.  At
      most ‘MB_CUR_MAX’ characters are stored.
@@ -4488,7 +4521,7 @@ to ISO C90; see *note Converting Strings::.
      Preliminary: | MT-Safe | AS-Unsafe corrupt heap lock dlopen |
      AC-Unsafe corrupt lock mem fd | *Note POSIX Safety Concepts::.
 
-     The ‘mbstowcs’ (“multibyte string to wide character string”)
+     The ‘mbstowcs’ ("multibyte string to wide character string")
      function converts the null-terminated string of multibyte
      characters STRING to an array of wide character codes, storing not
      more than SIZE wide characters into the array beginning at WSTRING.
@@ -4534,7 +4567,7 @@ to ISO C90; see *note Converting Strings::.
      Preliminary: | MT-Safe | AS-Unsafe corrupt heap lock dlopen |
      AC-Unsafe corrupt lock mem fd | *Note POSIX Safety Concepts::.
 
-     The ‘wcstombs’ (“wide character string to multibyte string”)
+     The ‘wcstombs’ ("wide character string to multibyte string")
      function converts the null-terminated wide character array WSTRING
      into a string containing multibyte characters, storing not more
      than SIZE bytes starting at STRING, followed by a terminating null
@@ -4570,7 +4603,7 @@ of bytes in the range from ‘0240’ to ‘0377’ are single characters, while
 ‘0201’ enters Latin-1 mode, in which single bytes in the range from
 ‘0240’ to ‘0377’ are characters, and interpreted according to the ISO
 Latin-1 character set.  This is a multibyte code that has two
-alternative shift states (“Japanese mode” and “Latin-1 mode”), and two
+alternative shift states ("Japanese mode" and "Latin-1 mode"), and two
 shift sequences that specify particular shift states.
 
    When the multibyte character code in use has shift states, then
@@ -4579,12 +4612,12 @@ shift state as they scan the string.  To make this work properly, you
 must follow these rules:
 
    • Before starting to scan a string, call the function with a null
-     pointer for the multibyte character address—for example, ‘mblen
+     pointer for the multibyte character address--for example, ‘mblen
      (NULL, 0)’.  This initializes the shift state to its standard
      initial value.
 
-   • Scan the string one character at a time, in order.  Do not “back
-     up” and rescan characters already scanned, and do not intersperse
+   • Scan the string one character at a time, in order.  Do not "back
+     up" and rescan characters already scanned, and do not intersperse
      the processing of different strings.
 
    Here is an example of using ‘mblen’ following these rules:
@@ -4616,7 +4649,7 @@ must follow these rules:
 
    The functions ‘mblen’, ‘mbtowc’ and ‘wctomb’ are not reentrant when
 using a multibyte code that uses a shift state.  However, no other
-library functions call these functions, so you don’t have to worry that
+library functions call these functions, so you don't have to worry that
 the shift state will be changed mysteriously.
 
 
@@ -4693,11 +4726,11 @@ File: libc.info,  Node: Generic Conversion Interface,  Next: iconv Examples,  Up
 ------------------------------------------------
 
 This set of functions follows the traditional cycle of using a resource:
-open–use–close.  The interface consists of three functions, each of
+open-use-close.  The interface consists of three functions, each of
 which implements one step.
 
    Before the interfaces are described it is necessary to introduce a
-data type.  Just like other open–use–close interfaces the functions
+data type.  Just like other open-use-close interfaces the functions
 introduced here work using handles and the ‘iconv.h’ header defines a
 special type for the handles used.
 
@@ -5150,7 +5183,7 @@ based on the current state of the development (as of January 1999).  The
 development of the ‘iconv’ functions is not complete, but basic
 functionality has solidified.
 
-   The GNU C Library’s ‘iconv’ implementation uses shared loadable
+   The GNU C Library's ‘iconv’ implementation uses shared loadable
 modules to implement the conversions.  A very small number of
 conversions are built into the library itself but these are only rather
 trivial conversions.
@@ -5292,8 +5325,8 @@ unless you have the relevant spell-casting materials: ashes from an
 original DOS 6.2 boot disk burnt in effigy, a crucifix blessed by St.
 Emacs, assorted herbal roots from Central America, sand from Cebu, etc.
 Sorry!  *The part of the implementation where this is used is not yet
-finished.  For now please simply follow the existing examples.  It’ll
-become clearer once it is.  –drepper*
+finished.  For now please simply follow the existing examples.  It'll
+become clearer once it is.  -drepper*
 
    A last remark about the ‘gconv-modules’ is about the names not ending
 with ‘//’.  A character set named ‘INTERNAL’ is often mentioned.  From
@@ -5974,7 +6007,7 @@ format for representing dates and times, to very complex ones, such as
 the language spoken.
 
    “Internationalization” of software means programming it to be able to
-adapt to the user’s favorite conventions.  In ISO C,
+adapt to the user's favorite conventions.  In ISO C,
 internationalization works by means of “locales”.  Each locale specifies
 a collection of conventions, one convention for each purpose.  The user
 chooses a set of conventions by specifying a locale (via environment
@@ -6030,7 +6063,7 @@ following:
      Yes-or-No Questions::).
 
    • What language to use for more complex user input.  (The C library
-     doesn’t yet help you implement this.)
+     doesn't yet help you implement this.)
 
    Some aspects of adapting to the specified locale are handled
 automatically by the library subroutines.  For example, all your program
@@ -6038,9 +6071,9 @@ needs to do in order to use the collating sequence of the chosen locale
 is to use ‘strcoll’ or ‘strxfrm’ to compare strings.
 
    Other aspects of locales are beyond the comprehension of the library.
-For example, the library can’t automatically translate your program’s
+For example, the library can't automatically translate your program's
 output messages into other languages.  The only way you can support
-output in the user’s favorite language is to program this more or less
+output in the user's favorite language is to program this more or less
 by hand.  The C library provides functions to handle translations for
 multiple languages easily.
 
@@ -6069,7 +6102,7 @@ or ‘POSIX’ always exist.  *Note Locale Names::.
 user can set the ‘LC_ALL’ environment variable to ‘C’.
 
    A user also has the option of specifying different locales for
-different purposes—in effect, choosing a mixture of multiple locales.
+different purposes--in effect, choosing a mixture of multiple locales.
 *Note Locale Categories::.
 
    For example, the user might specify the locale ‘espana-castellano’
@@ -6211,7 +6244,7 @@ general use or for a specific category.
 
      When you read the current locale for category ‘LC_ALL’, the value
      encodes the entire combination of selected locales for all
-     categories.  If you specify the same “locale name” with ‘LC_ALL’ in
+     categories.  If you specify the same "locale name" with ‘LC_ALL’ in
      a subsequent call to ‘setlocale’, it restores the same combination
      of locale selections.
 
@@ -6256,7 +6289,7 @@ temporarily switch to a new locale.
        /* Get the name of the current locale.  */
        old_locale = setlocale (LC_ALL, NULL);
 
-       /* Copy the name so it won’t be clobbered by ‘setlocale’. */
+       /* Copy the name so it won't be clobbered by ‘setlocale’. */
        saved_locale = strdup (old_locale);
        if (saved_locale == NULL)
          fatal ("Out of memory");
@@ -6411,8 +6444,8 @@ system follows the Unix standards.
 
 * Menu:
 
-* The Lame Way to Locale Data::   ISO C’s ‘localeconv’.
-* The Elegant and Fast Way::      X/Open’s ‘nl_langinfo’.
+* The Lame Way to Locale Data::   ISO C's ‘localeconv’.
+* The Elegant and Fast Way::      X/Open's ‘nl_langinfo’.
 
 
 File: libc.info,  Node: The Lame Way to Locale Data,  Next: The Elegant and Fast Way,  Up: Locale Information
@@ -6445,7 +6478,7 @@ information.
 
  -- Data Type: struct lconv
 
-     ‘localeconv’’s return value is of this data type.  Its elements are
+     ‘localeconv’'s return value is of this data type.  Its elements are
      described in the following subsections.
 
    If a member of the structure ‘struct lconv’ has type ‘char’, and the
@@ -6496,7 +6529,7 @@ These are the standard members of ‘struct lconv’; there may be others.
      the sizes of successive groups (from right to left, starting at the
      decimal point.)  The last member is either ‘0’, in which case the
      previous member is used over and over again for all the remaining
-     groups, or ‘CHAR_MAX’, in which case there is no more grouping—or,
+     groups, or ‘CHAR_MAX’, in which case there is no more grouping--or,
      put another way, any remaining digits form one large group without
      separators.
 
@@ -6521,7 +6554,7 @@ These are the standard members of ‘struct lconv’; there may be others.
      often, both members have the same value.)
 
      In the standard ‘C’ locale, both of these members have the value
-     ‘CHAR_MAX’, meaning “unspecified”.  The ISO standard doesn’t say
+     ‘CHAR_MAX’, meaning "unspecified".  The ISO standard doesn't say
      what to do when you find this value; we recommend printing no
      fractional digits.  (This locale also specifies the empty string
      for ‘mon_decimal_point’, so printing any fractional digits would be
@@ -6534,26 +6567,26 @@ File: libc.info,  Node: Currency Symbol,  Next: Sign of Money Amount,  Prev: Gen
 ....................................
 
 These members of the ‘struct lconv’ structure specify how to print the
-symbol to identify a monetary value—the international analog of ‘$’ for
+symbol to identify a monetary value--the international analog of ‘$’ for
 US dollars.
 
    Each country has two standard currency symbols.  The “local currency
 symbol” is used commonly within the country, while the “international
-currency symbol” is used internationally to refer to that country’s
+currency symbol” is used internationally to refer to that country's
 currency when it is necessary to indicate the country unambiguously.
 
    For example, many countries use the dollar as their monetary unit,
-and when dealing with international currencies it’s important to specify
+and when dealing with international currencies it's important to specify
 that one is dealing with (say) Canadian dollars instead of U.S. dollars
 or Australian dollars.  But when the context is known to be Canada,
-there is no need to make this explicit—dollar amounts are implicitly
+there is no need to make this explicit--dollar amounts are implicitly
 assumed to be in Canadian dollars.
 
 ‘char *currency_symbol’
      The local currency symbol for the selected locale.
 
      In the standard ‘C’ locale, this member has a value of ‘""’ (the
-     empty string), meaning “unspecified”.  The ISO standard doesn’t say
+     empty string), meaning "unspecified".  The ISO standard doesn't say
      what to do when you find this value; we recommend you simply print
      the empty string as you would print any other string pointed to by
      this variable.
@@ -6567,7 +6600,7 @@ assumed to be in Canadian dollars.
      followed by a one-character separator (often a space).
 
      In the standard ‘C’ locale, this member has a value of ‘""’ (the
-     empty string), meaning “unspecified”.  We recommend you simply
+     empty string), meaning "unspecified".  We recommend you simply
      print the empty string as you would print any other string pointed
      to by this variable.
 
@@ -6583,7 +6616,7 @@ assumed to be in Canadian dollars.
      negative amounts.
 
      In the standard ‘C’ locale, all of these members have a value of
-     ‘CHAR_MAX’, meaning “unspecified”.  The ISO standard doesn’t say
+     ‘CHAR_MAX’, meaning "unspecified".  The ISO standard doesn't say
      what to do when you find this value.  We recommend printing the
      currency symbol before the amount, which is right for most
      countries.  In other words, treat all nonzero values alike in these
@@ -6604,7 +6637,7 @@ assumed to be in Canadian dollars.
      negative amounts.
 
      In the standard ‘C’ locale, all of these members have a value of
-     ‘CHAR_MAX’, meaning “unspecified”.  The ISO standard doesn’t say
+     ‘CHAR_MAX’, meaning "unspecified".  The ISO standard doesn't say
      what you should do when you find this value; we suggest you treat
      it as 1 (print a space).  In other words, treat all nonzero values
      alike in these members.
@@ -6632,9 +6665,9 @@ sign (if any) of a monetary value.
      monetary quantities, respectively.
 
      In the standard ‘C’ locale, both of these members have a value of
-     ‘""’ (the empty string), meaning “unspecified”.
+     ‘""’ (the empty string), meaning "unspecified".
 
-     The ISO standard doesn’t say what to do when you find this value;
+     The ISO standard doesn't say what to do when you find this value;
      we recommend printing ‘positive_sign’ as you find it, even if it is
      empty.  For a negative value, print ‘negative_sign’ as you find it
      unless both it and ‘positive_sign’ are empty, in which case print
@@ -6668,10 +6701,10 @@ sign (if any) of a monetary value.
           Print the sign string right after the currency symbol.
 
      ‘CHAR_MAX’
-          “Unspecified”.  Both members have this value in the standard
+          "Unspecified".  Both members have this value in the standard
           ‘C’ locale.
 
-     The ISO standard doesn’t say what you should do when the value is
+     The ISO standard doesn't say what you should do when the value is
      ‘CHAR_MAX’.  We recommend you print the sign after the currency
      symbol.
 
@@ -6819,7 +6852,7 @@ ways to access it.  Therefore the ‘nl_langinfo’ function was introduced.
           Most locales do not define this value.  An example of a locale
           which does define this value is the Japanese one.  In Japan,
           the traditional representation of dates includes the name of
-          the era corresponding to the then-emperor’s reign.
+          the era corresponding to the then-emperor's reign.
 
           Normally it should not be necessary to use this value
           directly.  Specifying the ‘E’ modifier in their format strings

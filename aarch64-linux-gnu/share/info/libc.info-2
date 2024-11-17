@@ -1,21 +1,21 @@
-This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
+This is libc.info, produced by makeinfo version 7.1 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.39.
+This is ‘The GNU C Library Reference Manual’, for version 2.40.
 
-   Copyright © 1993–2024 Free Software Foundation, Inc.
+   Copyright © 1993-2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
 any later version published by the Free Software Foundation; with the
-Invariant Sections being “Free Software Needs Free Documentation” and
-“GNU Lesser General Public License”, the Front-Cover texts being “A GNU
-Manual”, and with the Back-Cover Texts as in (a) below.  A copy of the
+Invariant Sections being "Free Software Needs Free Documentation" and
+"GNU Lesser General Public License", the Front-Cover texts being "A GNU
+Manual", and with the Back-Cover Texts as in (a) below.  A copy of the
 license is included in the section entitled "GNU Free Documentation
 License".
 
-   (a) The FSF’s Back-Cover Text is: “You have the freedom to copy and
+   (a) The FSF's Back-Cover Text is: "You have the freedom to copy and
 modify this GNU manual.  Buying copies from the FSF supports it in
-developing GNU and promoting software freedom.”
+developing GNU and promoting software freedom."
 INFO-DIR-SECTION Software libraries
 START-INFO-DIR-ENTRY
 * Libc: (libc).                 C library.
@@ -422,6 +422,7 @@ START-INFO-DIR-ENTRY
 * S_TYPEISMQ: (libc)Testing File Type.
 * S_TYPEISSEM: (libc)Testing File Type.
 * S_TYPEISSHM: (libc)Testing File Type.
+* TIME_UTC: (libc)Getting the Time.
 * TMP_MAX: (libc)Temporary Files.
 * TOSTOP: (libc)Local Modes.
 * TZNAME_MAX: (libc)General Limits.
@@ -567,8 +568,6 @@ START-INFO-DIR-ENTRY
 * argz_next: (libc)Argz Functions.
 * argz_replace: (libc)Argz Functions.
 * argz_stringify: (libc)Argz Functions.
-* asctime: (libc)Formatting Calendar Time.
-* asctime_r: (libc)Formatting Calendar Time.
 * asin: (libc)Inverse Trig Functions.
 * asinf: (libc)Inverse Trig Functions.
 * asinfN: (libc)Inverse Trig Functions.
@@ -698,6 +697,10 @@ START-INFO-DIR-ENTRY
 * cfsetispeed: (libc)Line Speed.
 * cfsetospeed: (libc)Line Speed.
 * cfsetspeed: (libc)Line Speed.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
 * chdir: (libc)Working Directory.
 * chmod: (libc)Setting Permissions.
 * chown: (libc)File Owner.
@@ -800,8 +803,6 @@ START-INFO-DIR-ENTRY
 * ctanhl: (libc)Hyperbolic Functions.
 * ctanl: (libc)Trig Functions.
 * ctermid: (libc)Identifying the Terminal.
-* ctime: (libc)Formatting Calendar Time.
-* ctime_r: (libc)Formatting Calendar Time.
 * cuserid: (libc)Who Logged In.
 * daddl: (libc)Misc FP Arithmetic.
 * dcgettext: (libc)Translation with gettext.
@@ -824,6 +825,7 @@ START-INFO-DIR-ENTRY
 * dsqrtl: (libc)Misc FP Arithmetic.
 * dsubl: (libc)Misc FP Arithmetic.
 * dup2: (libc)Duplicating Descriptors.
+* dup3: (libc)Duplicating Descriptors.
 * dup: (libc)Duplicating Descriptors.
 * ecvt: (libc)System V Number Conversion.
 * ecvt_r: (libc)System V Number Conversion.
@@ -844,6 +846,8 @@ START-INFO-DIR-ENTRY
 * envz_merge: (libc)Envz Functions.
 * envz_remove: (libc)Envz Functions.
 * envz_strip: (libc)Envz Functions.
+* epoll_createint: (libc)Other Low-Level I/O APIs.
+* epoll_waitint: (libc)Other Low-Level I/O APIs.
 * erand48: (libc)SVID Random.
 * erand48_r: (libc)SVID Random.
 * erf: (libc)Special Functions.
@@ -873,11 +877,21 @@ START-INFO-DIR-ENTRY
 * exp10fN: (libc)Exponents and Logarithms.
 * exp10fNx: (libc)Exponents and Logarithms.
 * exp10l: (libc)Exponents and Logarithms.
+* exp10m1: (libc)Exponents and Logarithms.
+* exp10m1f: (libc)Exponents and Logarithms.
+* exp10m1fN: (libc)Exponents and Logarithms.
+* exp10m1fNx: (libc)Exponents and Logarithms.
+* exp10m1l: (libc)Exponents and Logarithms.
 * exp2: (libc)Exponents and Logarithms.
 * exp2f: (libc)Exponents and Logarithms.
 * exp2fN: (libc)Exponents and Logarithms.
 * exp2fNx: (libc)Exponents and Logarithms.
 * exp2l: (libc)Exponents and Logarithms.
+* exp2m1: (libc)Exponents and Logarithms.
+* exp2m1f: (libc)Exponents and Logarithms.
+* exp2m1fN: (libc)Exponents and Logarithms.
+* exp2m1fNx: (libc)Exponents and Logarithms.
+* exp2m1l: (libc)Exponents and Logarithms.
 * exp: (libc)Exponents and Logarithms.
 * expf: (libc)Exponents and Logarithms.
 * expfN: (libc)Exponents and Logarithms.
@@ -1418,6 +1432,11 @@ START-INFO-DIR-ENTRY
 * log10fN: (libc)Exponents and Logarithms.
 * log10fNx: (libc)Exponents and Logarithms.
 * log10l: (libc)Exponents and Logarithms.
+* log10p1: (libc)Exponents and Logarithms.
+* log10p1f: (libc)Exponents and Logarithms.
+* log10p1fN: (libc)Exponents and Logarithms.
+* log10p1fNx: (libc)Exponents and Logarithms.
+* log10p1l: (libc)Exponents and Logarithms.
 * log1p: (libc)Exponents and Logarithms.
 * log1pf: (libc)Exponents and Logarithms.
 * log1pfN: (libc)Exponents and Logarithms.
@@ -1428,6 +1447,11 @@ START-INFO-DIR-ENTRY
 * log2fN: (libc)Exponents and Logarithms.
 * log2fNx: (libc)Exponents and Logarithms.
 * log2l: (libc)Exponents and Logarithms.
+* log2p1: (libc)Exponents and Logarithms.
+* log2p1f: (libc)Exponents and Logarithms.
+* log2p1fN: (libc)Exponents and Logarithms.
+* log2p1fNx: (libc)Exponents and Logarithms.
+* log2p1l: (libc)Exponents and Logarithms.
 * log: (libc)Exponents and Logarithms.
 * logb: (libc)Exponents and Logarithms.
 * logbf: (libc)Exponents and Logarithms.
@@ -1441,6 +1465,11 @@ START-INFO-DIR-ENTRY
 * login_tty: (libc)Logging In and Out.
 * logl: (libc)Exponents and Logarithms.
 * logout: (libc)Logging In and Out.
+* logp1: (libc)Exponents and Logarithms.
+* logp1f: (libc)Exponents and Logarithms.
+* logp1fN: (libc)Exponents and Logarithms.
+* logp1fNx: (libc)Exponents and Logarithms.
+* logp1l: (libc)Exponents and Logarithms.
 * logwtmp: (libc)Logging In and Out.
 * longjmp: (libc)Non-Local Details.
 * lrand48: (libc)SVID Random.
@@ -1607,6 +1636,7 @@ START-INFO-DIR-ENTRY
 * pkey_get: (libc)Memory Protection.
 * pkey_mprotect: (libc)Memory Protection.
 * pkey_set: (libc)Memory Protection.
+* poll: (libc)Other Low-Level I/O APIs.
 * popen: (libc)Pipe to a Subprocess.
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
@@ -1687,7 +1717,7 @@ START-INFO-DIR-ENTRY
 * realpath: (libc)Symbolic Links.
 * recv: (libc)Receiving Data.
 * recvfrom: (libc)Receiving Datagrams.
-* recvmsg: (libc)Receiving Datagrams.
+* recvmsg: (libc)Other Socket APIs.
 * regcomp: (libc)POSIX Regexp Compilation.
 * regerror: (libc)Regexp Cleanup.
 * regexec: (libc)Matching POSIX Regexps.
@@ -1768,7 +1798,7 @@ START-INFO-DIR-ENTRY
 * semop: (libc)Semaphores.
 * semtimedop: (libc)Semaphores.
 * send: (libc)Sending Data.
-* sendmsg: (libc)Receiving Datagrams.
+* sendmsg: (libc)Other Socket APIs.
 * sendto: (libc)Sending Datagrams.
 * setbuf: (libc)Controlling Buffering.
 * setbuffer: (libc)Controlling Buffering.
@@ -1981,6 +2011,7 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strftime_l: (libc)Formatting Calendar Time.
 * strlcat: (libc)Truncating Strings.
 * strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
@@ -2069,6 +2100,8 @@ START-INFO-DIR-ENTRY
 * timegm: (libc)Broken-down Time.
 * timelocal: (libc)Broken-down Time.
 * times: (libc)Processor Time.
+* timespec_get: (libc)Getting the Time.
+* timespec_getres: (libc)Getting the Time.
 * tmpfile64: (libc)Temporary Files.
 * tmpfile: (libc)Temporary Files.
 * tmpnam: (libc)Temporary Files.
@@ -2105,7 +2138,7 @@ START-INFO-DIR-ENTRY
 * ttyname_r: (libc)Is It a Terminal.
 * twalk: (libc)Tree Search Function.
 * twalk_r: (libc)Tree Search Function.
-* tzset: (libc)Time Zone Functions.
+* tzset: (libc)Time Zone State.
 * ufromfp: (libc)Rounding Functions.
 * ufromfpf: (libc)Rounding Functions.
 * ufromfpfN: (libc)Rounding Functions.
@@ -2241,6 +2274,112 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Changing Block Size,  Next: Allocating Cleared Space,  Prev: Freeing after Malloc,  Up: Unconstrained Allocation
+
+3.2.3.4 Changing the Size of a Block
+....................................
+
+Often you do not know for certain how big a block you will ultimately
+need at the time you must begin to use the block.  For example, the
+block might be a buffer that you use to hold a line being read from a
+file; no matter how long you make the buffer initially, you may
+encounter a line that is longer.
+
+   You can make the block longer by calling ‘realloc’ or ‘reallocarray’.
+These functions are declared in ‘stdlib.h’.
+
+ -- Function: void * realloc (void *PTR, size_t NEWSIZE)
+
+     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
+     *Note POSIX Safety Concepts::.
+
+     The ‘realloc’ function changes the size of the block whose address
+     is PTR to be NEWSIZE.
+
+     Since the space after the end of the block may be in use, ‘realloc’
+     may find it necessary to copy the block to a new address where more
+     free space is available.  The value of ‘realloc’ is the new address
+     of the block.  If the block needs to be moved, ‘realloc’ copies the
+     old contents.
+
+     If you pass a null pointer for PTR, ‘realloc’ behaves just like
+     ‘malloc (NEWSIZE)’.  Otherwise, if NEWSIZE is zero ‘realloc’ frees
+     the block and returns ‘NULL’.  Otherwise, if ‘realloc’ cannot
+     reallocate the requested size it returns ‘NULL’ and sets ‘errno’;
+     the original block is left undisturbed.
+
+ -- Function: void * reallocarray (void *PTR, size_t NMEMB, size_t SIZE)
+
+     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
+     *Note POSIX Safety Concepts::.
+
+     The ‘reallocarray’ function changes the size of the block whose
+     address is PTR to be long enough to contain a vector of NMEMB
+     elements, each of size SIZE.  It is equivalent to ‘realloc (PTR,
+     NMEMB * SIZE)’, except that ‘reallocarray’ fails safely if the
+     multiplication overflows, by setting ‘errno’ to ‘ENOMEM’, returning
+     a null pointer, and leaving the original block unchanged.
+
+     ‘reallocarray’ should be used instead of ‘realloc’ when the new
+     size of the allocated block is the result of a multiplication that
+     might overflow.
+
+     *Portability Note:* This function is not part of any standard.  It
+     was first introduced in OpenBSD 5.6.
+
+   Like ‘malloc’, ‘realloc’ and ‘reallocarray’ may return a null pointer
+if no memory space is available to make the block bigger.  When this
+happens, the original block is untouched; it has not been modified or
+relocated.
+
+   In most cases it makes no difference what happens to the original
+block when ‘realloc’ fails, because the application program cannot
+continue when it is out of memory, and the only thing to do is to give a
+fatal error message.  Often it is convenient to write and use
+subroutines, conventionally called ‘xrealloc’ and ‘xreallocarray’, that
+take care of the error message as ‘xmalloc’ does for ‘malloc’:
+
+     void *
+     xreallocarray (void *ptr, size_t nmemb, size_t size)
+     {
+       void *value = reallocarray (ptr, nmemb, size);
+       if (value == 0)
+         fatal ("Virtual memory exhausted");
+       return value;
+     }
+
+     void *
+     xrealloc (void *ptr, size_t size)
+     {
+       return xreallocarray (ptr, 1, size);
+     }
+
+   You can also use ‘realloc’ or ‘reallocarray’ to make a block smaller.
+The reason you would do this is to avoid tying up a lot of memory space
+when only a little is needed.  In several allocation implementations,
+making a block smaller sometimes necessitates copying it, so it can fail
+if no other space is available.
+
+   *Portability Notes:*
+
+   • Portable programs should not attempt to reallocate blocks to be
+     size zero.  On other implementations if PTR is non-null, ‘realloc
+     (ptr, 0)’ might free the block and return a non-null pointer to a
+     size-zero object, or it might fail and return ‘NULL’ without
+     freeing the block.  The ISO C17 standard allows these variations.
+
+   • In the GNU C Library, reallocation fails if the resulting block
+     would exceed ‘PTRDIFF_MAX’ in size, to avoid problems with programs
+     that subtract pointers or use signed indexes.  Other
+     implementations may succeed, leading to undefined behavior later.
+
+   • In the GNU C Library, if the new size is the same as the old,
+     ‘realloc’ and ‘reallocarray’ are guaranteed to change nothing and
+     return the same address that you gave.  However, POSIX and ISO C
+     allow the functions to relocate the object or fail in this
+     situation.
 
 
 File: libc.info,  Node: Allocating Cleared Space,  Next: Aligned Memory Blocks,  Prev: Changing Block Size,  Up: Unconstrained Allocation
@@ -2533,7 +2672,7 @@ function is a GNU extension, declared in ‘mcheck.h’.
      otherwise (when it is successful).
 
      The easiest way to arrange to call ‘mcheck’ early enough is to use
-     the option ‘-lmcheck’ when you link your program; then you don’t
+     the option ‘-lmcheck’ when you link your program; then you don't
      need to modify your program source at all.  Alternatively you might
      use a debugger to insert a call to ‘mcheck’ whenever the program is
      started, for example these gdb commands will automatically call
@@ -2609,11 +2748,11 @@ behavior it now writes something to the standard error descriptor.
 Therefore the use of ‘MALLOC_CHECK_’ is disabled by default for SUID and
 SGID binaries.
 
-   So, what’s the difference between using ‘MALLOC_CHECK_’ and linking
+   So, what's the difference between using ‘MALLOC_CHECK_’ and linking
 with ‘-lmcheck’?  ‘MALLOC_CHECK_’ is orthogonal with respect to
 ‘-lmcheck’.  ‘-lmcheck’ has been added for backward compatibility.  Both
 ‘MALLOC_CHECK_’ and ‘-lmcheck’ should uncover the same bugs - but using
-‘MALLOC_CHECK_’ you don’t need to recompile your application.
+‘MALLOC_CHECK_’ you don't need to recompile your application.
 
 
 File: libc.info,  Node: Statistics of Malloc,  Next: Summary of Malloc,  Prev: Heap Consistency Checking,  Up: Unconstrained Allocation
@@ -2668,7 +2807,7 @@ version.
      ‘size_t keepcost’
           This is the size of the top-most releasable chunk that
           normally borders the end of the heap (i.e., the high end of
-          the virtual address space’s data segment).
+          the virtual address space's data segment).
 
  -- Function: struct mallinfo2 mallinfo2 (void)
 
@@ -3127,7 +3266,7 @@ structure in another obstack, but this is rarely useful.)
 
    All the functions that work with obstacks require you to specify
 which obstack to use.  You do this with a pointer of type ‘struct
-obstack *’.  In the following, we often say “an obstack” when strictly
+obstack *’.  In the following, we often say "an obstack" when strictly
 speaking the object at hand is such a pointer.
 
    The objects in the obstack are packed into large blocks called
@@ -3135,8 +3274,8 @@ speaking the object at hand is such a pointer.
 chunks currently in use.
 
    The obstack library obtains a new chunk whenever you allocate an
-object that won’t fit in the previous chunk.  Since the obstack library
-manages chunks automatically, you don’t need to pay much attention to
+object that won't fit in the previous chunk.  Since the obstack library
+manages chunks automatically, you don't need to pay much attention to
 them, but you do need to supply a function which the obstack library
 should use to get a chunk.  Usually you supply a function which uses
 ‘malloc’ directly or indirectly.  You must also supply a function to
@@ -3181,7 +3320,7 @@ an obstack, it must initialize the obstack by calling ‘obstack_init’.
      *Note POSIX Safety Concepts::.
 
      Initialize obstack OBSTACK-PTR for allocation of objects.  This
-     function calls the obstack’s ‘obstack_chunk_alloc’ function.  If
+     function calls the obstack's ‘obstack_chunk_alloc’ function.  If
      allocation of memory fails, the function pointed to by
      ‘obstack_alloc_failed_handler’ is called.  The ‘obstack_init’
      function always returns 1 (Compatibility notice: Former versions of
@@ -3207,7 +3346,7 @@ Second, an obstack that is itself dynamically allocated:
      ‘obstack’ uses when ‘obstack_chunk_alloc’ fails to allocate memory.
      The default action is to print a message and abort.  You should
      supply a function that either calls ‘exit’ (*note Program
-     Termination::) or ‘longjmp’ (*note Non-Local Exits::) and doesn’t
+     Termination::) or ‘longjmp’ (*note Non-Local Exits::) and doesn't
      return.
 
           void my_obstack_alloc_failed (void)
@@ -3235,7 +3374,7 @@ The most direct way to allocate an object in an obstack is with
      object which represents the obstack.  Each obstack function or
      macro requires you to specify an OBSTACK-PTR as the first argument.
 
-     This function calls the obstack’s ‘obstack_chunk_alloc’ function if
+     This function calls the obstack's ‘obstack_chunk_alloc’ function if
      it needs to allocate a new chunk of memory; it calls
      ‘obstack_alloc_failed_handler’ if allocation of memory by
      ‘obstack_chunk_alloc’ failed.
@@ -3336,7 +3475,7 @@ all C compilers, including both ISO C and traditional C, but there are
 precautions you must take if you plan to use compilers other than GNU C.
 
    If you are using an old-fashioned non-ISO C compiler, all the obstack
-“functions” are actually defined only as macros.  You can call these
+"functions" are actually defined only as macros.  You can call these
 macros like functions, but you cannot use them in any other way (for
 example, you cannot take their address).
 
@@ -3388,7 +3527,7 @@ much data you will put in the object until you come to the end of it.
 We call this the technique of “growing objects”.  The special functions
 for adding data to the growing object are described in this section.
 
-   You don’t need to do anything special when you start to grow an
+   You don't need to do anything special when you start to grow an
 object.  Using one of the functions to add data to the object
 automatically starts it.  However, it is necessary to say explicitly
 when the object is finished.  This is done with the function
@@ -3497,8 +3636,8 @@ should finish it and then free it, like this:
 This has no effect if no object was growing.
 
    You can use ‘obstack_blank’ with a negative size argument to make the
-current object smaller.  Just don’t try to shrink it beyond zero
-length—there’s no telling what will happen if you do that.
+current object smaller.  Just don't try to shrink it beyond zero
+length--there's no telling what will happen if you do that.
 
 
 File: libc.info,  Node: Extra Fast Growing,  Next: Status of an Obstack,  Prev: Growing Objects,  Up: Obstacks
@@ -3511,7 +3650,7 @@ whether there is room for the new growth in the current chunk.  If you
 are frequently constructing objects in small steps of growth, this
 overhead can be significant.
 
-   You can reduce the overhead by using special “fast growth” functions
+   You can reduce the overhead by using special "fast growth" functions
 that grow the object without checking.  In order to have a robust
 program, you must do the checking yourself.  If you do this checking in
 the simplest way each time you are about to add data to the object, you
@@ -3628,7 +3767,7 @@ while still growing it.
      This function returns the tentative address of the beginning of the
      currently growing object in OBSTACK-PTR.  If you finish the object
      immediately, it will have that address.  If you make it larger
-     first, it may outgrow the current chunk—then its address will
+     first, it may outgrow the current chunk--then its address will
      change!
 
      If no object is growing, this value says where the next object you
@@ -3666,7 +3805,7 @@ obstack automatically starts on an address that is a multiple of the
 specified boundary.  By default, this boundary is aligned so that the
 object can hold any type of data.
 
-   To access an obstack’s alignment boundary, use the macro
+   To access an obstack's alignment boundary, use the macro
 ‘obstack_alignment_mask’, whose function prototype looks like this:
 
  -- Macro: int obstack_alignment_mask (struct obstack *OBSTACK-PTR)
@@ -3864,7 +4003,7 @@ extension.
      bytes of memory, allocated in the stack frame of the calling
      function.
 
-   Do not use ‘alloca’ inside the arguments of a function call—you will
+   Do not use ‘alloca’ inside the arguments of a function call--you will
 get unpredictable results, because the stack space for the ‘alloca’
 would appear on the stack in the middle of the space for the function
 arguments.  An example of what to avoid is ‘foo (x, alloca (4), y)’.
@@ -3938,7 +4077,7 @@ Here are the reasons why ‘alloca’ may be preferable to ‘malloc’:
      ‘open_or_report_error’ which returns a descriptor, like ‘open’, if
      it succeeds, but does not return to its caller if it fails.  If the
      file cannot be opened, it prints an error message and jumps out to
-     the command level of your program using ‘longjmp’.  Let’s change
+     the command level of your program using ‘longjmp’.  Let's change
      ‘open2’ (*note Alloca Example::) to use this subroutine:
 
           int
@@ -3966,7 +4105,7 @@ File: libc.info,  Node: Disadvantages of Alloca,  Next: GNU C Variable-Size Arra
 These are the disadvantages of ‘alloca’ in comparison with ‘malloc’:
 
    • If you try to allocate more memory than the machine can provide,
-     you don’t get a clean error message.  Instead you get a fatal
+     you don't get a clean error message.  Instead you get a fatal
      signal like the one you would get from an infinite recursion;
      probably a segmentation violation (*note Program Error Signals::).
 
@@ -3993,7 +4132,7 @@ variable size.  Here is how ‘open2’ would look then:
    But ‘alloca’ is not always equivalent to a variable-sized array, for
 several reasons:
 
-   • A variable size array’s space is freed at the end of the scope of
+   • A variable size array's space is freed at the end of the scope of
      the name of the array.  The space allocated with ‘alloca’ remains
      until the end of the function.
 
@@ -4025,7 +4164,7 @@ system calls.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     ‘brk’ sets the high end of the calling process’ data segment to
+     ‘brk’ sets the high end of the calling process' data segment to
      ADDR.
 
      The address of the end of a segment is defined to be the address of
@@ -4035,7 +4174,7 @@ system calls.
      data segment.  (This is considered success, by the way.)
 
      The function fails if it would cause the data segment to overlap
-     another segment or exceed the process’ data storage limit (*note
+     another segment or exceed the process' data storage limit (*note
      Limits on Resources::).
 
      The function is named for a common historical case where data
@@ -4050,7 +4189,7 @@ system calls.
 
      ‘ENOMEM’
           The request would cause the data segment to overlap another
-          segment or exceed the process’ data storage limit.
+          segment or exceed the process' data storage limit.
 
  -- Function: void *sbrk (ptrdiff_t DELTA)
 
@@ -4413,12 +4552,12 @@ File: libc.info,  Node: Locking Pages,  Prev: Memory Protection,  Up: Memory
 =================
 
 You can tell the system to associate a particular virtual memory page
-with a real page frame and keep it that way — i.e., cause the page to be
-paged in if it isn’t already and mark it so it will never be paged out
-and consequently will never cause a page fault.  This is called
+with a real page frame and keep it that way -- i.e., cause the page to
+be paged in if it isn't already and mark it so it will never be paged
+out and consequently will never cause a page fault.  This is called
 “locking” a page.
 
-   The functions in this chapter lock and unlock the calling process’
+   The functions in this chapter lock and unlock the calling process'
 pages.
 
 * Menu:
@@ -4426,7 +4565,7 @@ pages.
 * Why Lock Pages::                Reasons to read this section.
 * Locked Memory Details::         Everything you need to know locked
                                     memory
-* Page Lock Functions::           Here’s how to do it.
+* Page Lock Functions::           Here's how to do it.
 
 
 File: libc.info,  Node: Why Lock Pages,  Next: Locked Memory Details,  Up: Locking Pages
@@ -4448,7 +4587,7 @@ there are two reasons people sometimes are:
      needs priority among other processes for use of the CPU. *Note
      Priority::.
 
-     In some cases, the programmer knows better than the system’s demand
+     In some cases, the programmer knows better than the system's demand
      paging allocator which pages should remain in real memory to
      optimize system performance.  In this case, locking pages can help.
 
@@ -4458,7 +4597,7 @@ there are two reasons people sometimes are:
      for example, it might still be there long after virtual and real
      memory have been wiped clean.
 
-   Be aware that when you lock a page, that’s one fewer page frame that
+   Be aware that when you lock a page, that's one fewer page frame that
 can be used to back other virtual memory (by the same or other
 processes), which can mean more page faults, which means the system runs
 more slowly.  In fact, if you lock enough memory, some programs may not
@@ -4471,22 +4610,22 @@ File: libc.info,  Node: Locked Memory Details,  Next: Page Lock Functions,  Prev
 ---------------------------
 
 A memory lock is associated with a virtual page, not a real frame.  The
-paging rule is: If a frame backs at least one locked page, don’t page it
+paging rule is: If a frame backs at least one locked page, don't page it
 out.
 
-   Memory locks do not stack.  I.e., you can’t lock a particular page
+   Memory locks do not stack.  I.e., you can't lock a particular page
 twice so that it has to be unlocked twice before it is truly unlocked.
-It is either locked or it isn’t.
+It is either locked or it isn't.
 
    A memory lock persists until the process that owns the memory
 explicitly unlocks it.  (But process termination and exec cause the
-virtual memory to cease to exist, which you might say means it isn’t
+virtual memory to cease to exist, which you might say means it isn't
 locked any more).
 
    Memory locks are not inherited by child processes.  (But note that on
-a modern Unix system, immediately after a fork, the parent’s and the
-child’s virtual address space are backed by the same real page frames,
-so the child enjoys the parent’s locks).  *Note Creating a Process::.
+a modern Unix system, immediately after a fork, the parent's and the
+child's virtual address space are backed by the same real page frames,
+so the child enjoys the parent's locks).  *Note Creating a Process::.
 
    Because of its ability to impact other processes, only the superuser
 can lock a page.  Any process can unlock its own page.
@@ -4495,19 +4634,19 @@ can lock a page.  Any process can unlock its own page.
 locked and the amount of real memory it can have dedicated to it.  *Note
 Limits on Resources::.
 
-   In Linux, locked pages aren’t as locked as you might think.  Two
+   In Linux, locked pages aren't as locked as you might think.  Two
 virtual pages that are not shared memory can nonetheless be backed by
 the same real frame.  The kernel does this in the name of efficiency
 when it knows both virtual pages contain identical data, and does it
 even if one or both of the virtual pages are locked.
 
    But when a process modifies one of those pages, the kernel must get
-it a separate frame and fill it with the page’s data.  This is known as
+it a separate frame and fill it with the page's data.  This is known as
 a “copy-on-write page fault”.  It takes a small amount of time and in a
 pathological case, getting that frame may require I/O.
 
-   To make sure this doesn’t happen to your program, don’t just lock the
-pages.  Write to them as well, unless you know you won’t write to them
+   To make sure this doesn't happen to your program, don't just lock the
+pages.  Write to them as well, unless you know you won't write to them
 ever.  And to make sure you have pre-allocated frames for your stack,
 enter a scope that declares a C automatic variable larger than the
 maximum stack size you will need, set it to something, then return from
@@ -4521,7 +4660,7 @@ File: libc.info,  Node: Page Lock Functions,  Prev: Locked Memory Details,  Up: 
 
 The symbols in this section are declared in ‘sys/mman.h’.  These
 functions are defined by POSIX.1b, but their availability depends on
-your kernel.  If your kernel doesn’t allow these functions, they exist
+your kernel.  If your kernel doesn't allow these functions, they exist
 but always fail.  They _are_ available with a Linux kernel.
 
    *Portability Note:* POSIX.1b requires that when the ‘mlock’ and
@@ -4537,7 +4676,7 @@ conforms to this requirement.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     ‘mlock’ locks a range of the calling process’ virtual pages.
+     ‘mlock’ locks a range of the calling process' virtual pages.
 
      The range of memory starts at address ADDR and is LEN bytes long.
      Actually, since you must lock whole pages, it is the range of pages
@@ -4557,7 +4696,7 @@ conforms to this requirement.
 
      ‘ENOMEM’
              • At least some of the specified address range does not
-               exist in the calling process’ virtual address space.
+               exist in the calling process' virtual address space.
              • The locking would cause the process to exceed its locked
                page limit.
 
@@ -4597,12 +4736,12 @@ conforms to this requirement.
           The specified (non-zero) FLAGS argument is not supported by
           this system.
 
-   You can lock _all_ a process’ memory with ‘mlockall’.  You unlock
+   You can lock _all_ a process' memory with ‘mlockall’.  You unlock
 memory with ‘munlock’ or ‘munlockall’.
 
    To avoid all page faults in a C program, you have to use ‘mlockall’,
 because some of the memory a program uses is hidden from the C code,
-e.g.  the stack and automatic variables, and you wouldn’t know what
+e.g.  the stack and automatic variables, and you wouldn't know what
 address to tell ‘mlock’.
 
  -- Function: int munlock (const void *ADDR, size_t LEN)
@@ -4610,7 +4749,7 @@ address to tell ‘mlock’.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     ‘munlock’ unlocks a range of the calling process’ virtual pages.
+     ‘munlock’ unlocks a range of the calling process' virtual pages.
 
      ‘munlock’ is the inverse of ‘mlock’ and functions completely
      analogously to ‘mlock’, except that there is no ‘EPERM’ failure.
@@ -4620,7 +4759,7 @@ address to tell ‘mlock’.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     ‘mlockall’ locks all the pages in a process’ virtual memory address
+     ‘mlockall’ locks all the pages in a process' virtual memory address
      space, and/or any that are added to it in the future.  This
      includes the pages of the code, data and stack segment, as well as
      shared libraries, user space kernel data, shared memory, and memory
@@ -4631,18 +4770,18 @@ address to tell ‘mlock’.
      other bits must be zero.
 
      ‘MCL_CURRENT’
-          Lock all pages which currently exist in the calling process’
+          Lock all pages which currently exist in the calling process'
           virtual address space.
 
      ‘MCL_FUTURE’
-          Set a mode such that any pages added to the process’ virtual
+          Set a mode such that any pages added to the process' virtual
           address space in the future will be locked from birth.  This
           mode does not affect future address spaces owned by the same
-          process so exec, which replaces a process’ address space,
+          process so exec, which replaces a process' address space,
           wipes out ‘MCL_FUTURE’.  *Note Executing a File::.
 
      When the function returns successfully, and you specified
-     ‘MCL_CURRENT’, all of the process’ pages are backed by (connected
+     ‘MCL_CURRENT’, all of the process' pages are backed by (connected
      to) real frames (they are resident) and are marked to stay that
      way.  This means the function may cause page-ins and have to wait
      for them.
@@ -4652,7 +4791,7 @@ address to tell ‘mlock’.
      by the process that requires space be added to its virtual address
      space fails with ‘errno’ = ‘ENOMEM’ if locking the additional space
      would cause the process to exceed its locked page limit.  In the
-     case that the address space addition that can’t be accommodated is
+     case that the address space addition that can't be accommodated is
      stack expansion, the stack expansion fails and the kernel sends a
      ‘SIGSEGV’ signal to the process.
 
@@ -4665,7 +4804,7 @@ address to tell ‘mlock’.
 
      ‘ENOMEM’
              • At least some of the specified address range does not
-               exist in the calling process’ virtual address space.
+               exist in the calling process' virtual address space.
              • The locking would cause the process to exceed its locked
                page limit.
 
@@ -4686,7 +4825,7 @@ address to tell ‘mlock’.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     ‘munlockall’ unlocks every page in the calling process’ virtual
+     ‘munlockall’ unlocks every page in the calling process' virtual
      address space and turns off ‘MCL_FUTURE’ future locking mode.
 
      The return value is zero if the function succeeds.  Otherwise, it
@@ -4701,14 +4840,14 @@ File: libc.info,  Node: Character Handling,  Next: String and Array Utilities,  
 ********************
 
 Programs that work with characters and strings often need to classify a
-character—is it alphabetic, is it a digit, is it whitespace, and so
-on—and perform case conversion operations on characters.  The functions
+character--is it alphabetic, is it a digit, is it whitespace, and so
+on--and perform case conversion operations on characters.  The functions
 in the header file ‘ctype.h’ are provided for this purpose.
 
    Since the choice of locale and character set can alter the
 classifications of particular character codes, all of these functions
 are affected by the current locale.  (More precisely, they are affected
-by the locale currently selected for character classification—the
+by the locale currently selected for character classification--the
 ‘LC_CTYPE’ category; see *note Locale Categories::.)
 
    The ISO C standard specifies two different sets of functions.  The
@@ -4793,7 +4932,7 @@ unsigned character range as appropriate.
      also true.
 
      In some locales, there may be additional characters for which
-     ‘isalpha’ is true—letters which are neither upper case nor lower
+     ‘isalpha’ is true--letters which are neither upper case nor lower
      case.  But in the standard ‘"C"’ locale, there are no such
      additional characters.
 
@@ -4908,7 +5047,7 @@ File: libc.info,  Node: Case Conversion,  Next: Classification of Wide Character
 
 This section explains the library functions for performing conversions
 such as case mappings on characters.  For example, ‘toupper’ converts
-any character to upper case if possible.  If the character can’t be
+any character to upper case if possible.  If the character can't be
 converted, ‘toupper’ returns it unchanged.
 
    These functions take one argument of type ‘int’, which is the
@@ -5068,7 +5207,7 @@ it is important that ‘wctype’ can also handle the standard classes.
      also true.
 
      In some locales, there may be additional characters for which
-     ‘iswalpha’ is true—letters which are neither upper case nor lower
+     ‘iswalpha’ is true--letters which are neither upper case nor lower
      case.  But in the standard ‘"C"’ locale, there are no such
      additional characters.
 
@@ -5409,13 +5548,13 @@ functions can also operate on arbitrary regions of storage; for example,
 the ‘memcpy’ function can be used to copy the contents of any kind of
 array.
 
-   It’s fairly common for beginning C programmers to “reinvent the
-wheel” by duplicating this functionality in their own code, but it pays
+   It's fairly common for beginning C programmers to "reinvent the
+wheel" by duplicating this functionality in their own code, but it pays
 to become familiar with the library functions and to make use of them,
 since this offers benefits in maintenance, efficiency, and portability.
 
    For instance, you could easily compare one string to another in two
-lines of C code, but if you use the built-in ‘strcmp’ function, you’re
+lines of C code, but if you use the built-in ‘strcmp’ function, you're
 less likely to make a mistake.  And, since these library functions are
 typically highly optimized, your program may run faster too.
 
@@ -5435,7 +5574,7 @@ typically highly optimized, your program may run faster too.
 * Finding Tokens in a String::  Splitting a string into tokens by looking
 				 for delimiters.
 * Erasing Sensitive Data::      Clearing memory which contains sensitive
-                                 data, after it’s no longer needed.
+                                 data, after it's no longer needed.
 * Shuffling Bytes::             Or how to flash-cook a string.
 * Obfuscating Data::            Reversibly obscuring data from casual view.
 * Encode Binary Data::          Encoding and Decoding of Binary Data.
@@ -5456,15 +5595,15 @@ can skip this section.
 including the terminating null byte.  String-valued variables are
 usually declared to be pointers of type ‘char *’.  Such variables do not
 include space for the contents of a string; that has to be stored
-somewhere else—in an array variable, a string constant, or dynamically
-allocated memory (*note Memory Allocation::).  It’s up to you to store
+somewhere else--in an array variable, a string constant, or dynamically
+allocated memory (*note Memory Allocation::).  It's up to you to store
 the address of the chosen memory space into the pointer variable.
 Alternatively you can store a “null pointer” in the pointer variable.
 The null pointer does not point anywhere, so attempting to reference the
 string it points to gets an error.
 
    A “multibyte character” is a sequence of one or more bytes that
-represents a single character using the locale’s encoding scheme; a null
+represents a single character using the locale's encoding scheme; a null
 byte always represents the null character.  A “multibyte string” is a
 string that consists entirely of multibyte characters.  In contrast, a
 “wide string” is a null-terminated sequence of ‘wchar_t’ objects.  A
@@ -5490,7 +5629,7 @@ For wide strings one can use either ‘L"a" L"b"’ or ‘L"a" "b"’.
 Modification of string literals is not allowed by the GNU C compiler,
 because literals are placed in read-only storage.
 
-   Arrays that are declared ‘const’ cannot be modified either.  It’s
+   Arrays that are declared ‘const’ cannot be modified either.  It's
 generally good style to declare non-modifiable string pointers to be of
 type ‘const char *’, since this often allows the C compiler to detect
 accidental modifications as well as providing some amount of
@@ -5529,7 +5668,7 @@ incomplete (and therefore unusable) byte sequence in the target buffer.
 
    To avoid these problems later versions of the ISO C standard
 introduce a second set of functions which are operating on “wide
-characters” (*note Extended Char Intro::).  These functions don’t have
+characters” (*note Extended Char Intro::).  These functions don't have
 the problems the single-byte versions have since every wide character is
 a legal, interpretable value.  This does not mean that cutting wide
 strings at arbitrary points is without problems.  It normally is for
@@ -5563,7 +5702,7 @@ invariably take an argument which specifies the size (in bytes and wide
 characters respectively) of the block of memory to operate on.  The
 array arguments and return values for these functions have type ‘void *’
 or ‘wchar_t *’.  As a matter of style, the elements of the arrays used
-with the ‘mem’ functions are referred to as “bytes”.  You can pass any
+with the ‘mem’ functions are referred to as "bytes".  You can pass any
 kind of pointer to these functions, and the ‘sizeof’ operator is useful
 in computing the value for the size argument.  Parameters to the ‘wmem’
 functions must be of type ‘wchar_t *’.  These functions are not really
@@ -5576,8 +5715,8 @@ character instead of requiring an explicit size argument to be passed.
 (Some of these functions accept a specified maximum length, but they
 also check for premature termination.)  The array arguments and return
 values for these functions have type ‘char *’ and ‘wchar_t *’
-respectively, and the array elements are referred to as “bytes” and
-“wide characters”.
+respectively, and the array elements are referred to as "bytes" and
+"wide characters".
 
    In many cases, there are both ‘mem’ and ‘str’/‘wcs’ versions of a
 function.  The one that is more appropriate to use depends on the exact
@@ -5689,12 +5828,12 @@ function is declared in the header file ‘string.h’.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     If the array S of size MAXLEN contains a null byte, the ‘strnlen’
-     function returns the length of the string S in bytes.  Otherwise it
-     returns MAXLEN.  Therefore this function is equivalent to ‘(strlen
-     (S) < MAXLEN ? strlen (S) : MAXLEN)’ but it is more efficient and
-     works even if S is not null-terminated so long as MAXLEN does not
-     exceed the size of S’s array.
+     This returns the offset of the first null byte in the array S,
+     except that it returns MAXLEN if the first MAXLEN bytes are all
+     non-null.  Therefore this function is equivalent to ‘(strlen (S) <
+     MAXLEN ? strlen (S) : MAXLEN)’ but it is more efficient and works
+     even if S is not null-terminated so long as MAXLEN does not exceed
+     the size of S's array.
 
           char string[32] = "hello, world";
           strnlen (string, 32)
@@ -5702,7 +5841,9 @@ function is declared in the header file ‘string.h’.
           strnlen (string, 5)
               ⇒ 5
 
-     This function is a GNU extension and is declared in ‘string.h’.
+     This function is part of POSIX.1-2008 and later editions, but was
+     available in the GNU C Library and other systems as an extension
+     long before it was standardized.  It is declared in ‘string.h’.
 
  -- Function: size_t wcsnlen (const wchar_t *WS, size_t MAXLEN)
 
@@ -5712,7 +5853,8 @@ function is declared in the header file ‘string.h’.
      ‘wcsnlen’ is the wide character equivalent to ‘strnlen’.  The
      MAXLEN parameter specifies the maximum number of wide characters.
 
-     This function is a GNU extension and is declared in ‘wchar.h’.
+     This function is part of POSIX.1-2008 and later editions, and is
+     declared in ‘wchar.h’.
 
 
 File: libc.info,  Node: Copying Strings and Arrays,  Next: Concatenating Strings,  Prev: String Length,  Up: String and Array Utilities
@@ -5729,7 +5871,7 @@ declared in ‘string.h’ while the ‘w’ functions are declared in
 functions in this section is that it corresponds to an assignment
 expression, with the destination array specified to the left of the
 source array.  Most of these functions return the address of the
-destination array; a few return the address of the destination’s
+destination array; a few return the address of the destination's
 terminating null, or of just past the destination.
 
    Most of these functions do not work properly if the source and
@@ -6246,9 +6388,9 @@ efficiently:
 
    With a bit more knowledge about the input strings one could fine-tune
 the memory allocation.  The difference we are pointing to here is that
-we don’t use ‘strcat’ anymore.  We always keep track of the length of
+we don't use ‘strcat’ anymore.  We always keep track of the length of
 the current intermediate result so we can save ourselves the search for
-the end of the string and use ‘mempcpy’.  Please note that we also don’t
+the end of the string and use ‘mempcpy’.  Please note that we also don't
 use ‘stpcpy’ which might seem more natural since we are handling
 strings.  But this is not necessary since we already know the length of
 the string and therefore can use the faster memory copying function.
@@ -6496,8 +6638,8 @@ have truncation-related bugs and performance issues.
      Concepts::.
 
      This function copies the string FROM to the destination array TO,
-     limiting the result’s size (including the null terminator) to SIZE.
-     The caller should ensure that SIZE includes room for the result’s
+     limiting the result's size (including the null terminator) to SIZE.
+     The caller should ensure that SIZE includes room for the result's
      terminating null byte.
 
      If SIZE is greater than the length of the string FROM, this
@@ -6516,7 +6658,7 @@ have truncation-related bugs and performance issues.
      than or equal to SIZE.
 
      The behavior is undefined if TO or FROM is a null pointer, or if
-     the destination array’s size is less than SIZE, or if the string
+     the destination array's size is less than SIZE, or if the string
      FROM overlaps the first SIZE bytes of the destination array.
 
      As noted below, this function is generally a poor choice for
@@ -6545,8 +6687,8 @@ have truncation-related bugs and performance issues.
      Concepts::.
 
      This function appends the string FROM to the string TO, limiting
-     the result’s total size (including the null terminator) to SIZE.
-     The caller should ensure that SIZE includes room for the result’s
+     the result's total size (including the null terminator) to SIZE.
+     The caller should ensure that SIZE includes room for the result's
      terminating null byte.
 
      This function copies as much as possible of the string FROM into
@@ -6561,7 +6703,7 @@ have truncation-related bugs and performance issues.
      the returned value is greater than or equal to SIZE.
 
      The behavior is undefined if TO or FROM is a null pointer, or if
-     the destination array’s size is less than SIZE, or if the
+     the destination array's size is less than SIZE, or if the
      destination array does not contain a null byte in its first SIZE
      bytes, or if the string FROM overlaps the first SIZE bytes of the
      destination array.
@@ -6601,7 +6743,7 @@ often easier and safer automatic techniques, such as fortification
 Instrumentation Options: (gcc)Instrumentation Options.).  Because
 truncation functions can mask application bugs that would otherwise be
 caught by the automatic techniques, these functions should be used only
-when the application’s underlying logic requires truncation.
+when the application's underlying logic requires truncation.
 
    *Note:* GNU programs should not truncate strings or wide strings to
 fit arbitrary size limits.  *Note Writing Robust Programs:
@@ -6625,9 +6767,9 @@ operations.  *Note Searching and Sorting::, for an example of this.
 functions return a nonzero value if the strings are _not_ equivalent
 rather than if they are.  The sign of the value indicates the relative
 ordering of the first part of the strings that are not equivalent: a
-negative value indicates that the first string is “less” than the
+negative value indicates that the first string is "less" than the
 second, while a positive value indicates that the first string is
-“greater”.
+"greater".
 
    The most common use of these functions is to check only for equality.
 This is canonically done with an expression like ‘! strcmp (s1, s2)’.
@@ -6662,10 +6804,10 @@ This is canonically done with an expression like ‘! strcmp (s1, s2)’.
      If the contents of the two blocks are equal, ‘wmemcmp’ returns ‘0’.
 
    On arbitrary arrays, the ‘memcmp’ function is mostly useful for
-testing equality.  It usually isn’t meaningful to do byte-wise ordering
+testing equality.  It usually isn't meaningful to do byte-wise ordering
 comparisons on arrays of things other than bytes.  For example, a
 byte-wise comparison on the bytes that make up floating-point numbers
-isn’t likely to tell you anything about the relationship between the
+isn't likely to tell you anything about the relationship between the
 values of the floating-point numbers.
 
    ‘wmemcmp’ is really only useful to compare arrays of type ‘wchar_t’
@@ -6673,10 +6815,10 @@ since the function looks at ‘sizeof (wchar_t)’ bytes at a time and this
 number of bytes is system dependent.
 
    You should also be careful about using ‘memcmp’ to compare objects
-that can contain “holes”, such as the padding inserted into structure
+that can contain "holes", such as the padding inserted into structure
 objects to enforce alignment requirements, extra space at the end of
 unions, and extra bytes at the ends of strings whose length is less than
-their allocated size.  The contents of these “holes” are indeterminate
+their allocated size.  The contents of these "holes" are indeterminate
 and may cause strange behavior when performing byte-wise comparisons.
 For more predictable results, perform an explicit component-wise
 comparison.
@@ -6710,7 +6852,7 @@ you are better off writing a specialized comparison function to compare
      If the two strings are equal, ‘strcmp’ returns ‘0’.
 
      A consequence of the ordering used by ‘strcmp’ is that if S1 is an
-     initial substring of S2, then S1 is considered to be “less than”
+     initial substring of S2, then S1 is considered to be "less than"
      S2.
 
      ‘strcmp’ does not take sorting conventions of the language the
@@ -6730,7 +6872,7 @@ you are better off writing a specialized comparison function to compare
      If the two strings are equal, ‘wcscmp’ returns ‘0’.
 
      A consequence of the ordering used by ‘wcscmp’ is that if WS1 is an
-     initial substring of WS2, then WS1 is considered to be “less than”
+     initial substring of WS2, then WS1 is considered to be "less than"
      WS2.
 
      ‘wcscmp’ does not take sorting conventions of the language the
@@ -6811,7 +6953,7 @@ you are better off writing a specialized comparison function to compare
    Here are some examples showing the use of ‘strcmp’ and ‘strncmp’
 (equivalent examples can be constructed for the wide character
 functions).  These examples assume the use of the ASCII character set.
-(If some other character set—say, EBCDIC—is used instead, then the
+(If some other character set--say, EBCDIC--is used instead, then the
 glyphs are associated with different numeric codes, and the return
 values and ordering may differ.)
 
@@ -6935,9 +7077,9 @@ same in this situation.
 
    Effectively, the way these functions work is by applying a mapping to
 transform the characters in a multibyte string to a byte sequence that
-represents the string’s position in the collating sequence of the
+represents the string's position in the collating sequence of the
 current locale.  Comparing two such byte sequences in a simple fashion
-is equivalent to comparing the strings with the locale’s collating
+is equivalent to comparing the strings with the locale's collating
 sequence.
 
    The functions ‘strcoll’ and ‘wcscoll’ perform this translation
@@ -6984,8 +7126,8 @@ in this section, we will show a way to do this more efficiently using
        return strcoll (*p1, *p2);
      }
 
-     /* This is the entry point—the function to sort
-        strings using the locale’s collating sequence. */
+     /* This is the entry point--the function to sort
+        strings using the locale's collating sequence. */
 
      void
      sort_strings (char **array, int nstrings)
@@ -7081,8 +7223,8 @@ when there are many strings.
        return strcmp (p1->transformed, p2->transformed);
      }
 
-     /* This is the entry point—the function to sort
-        strings using the locale’s collating sequence. */
+     /* This is the entry point--the function to sort
+        strings using the locale's collating sequence. */
 
      void
      sort_strings_fast (char **array, int nstrings)
@@ -7284,7 +7426,7 @@ declared in the header file ‘string.h’.
      Concepts::.
 
      ‘strchrnul’ is the same as ‘strchr’ except that if it does not find
-     the byte, it returns a pointer to string’s terminating null byte
+     the byte, it returns a pointer to string's terminating null byte
      rather than a null pointer.
 
      This function is a GNU extension.
@@ -7295,7 +7437,7 @@ declared in the header file ‘string.h’.
      Concepts::.
 
      ‘wcschrnul’ is the same as ‘wcschr’ except that if it does not find
-     the wide character, it returns a pointer to the wide string’s
+     the wide character, it returns a pointer to the wide string's
      terminating null wide character rather than a null pointer.
 
      This function is a GNU extension.
@@ -7415,7 +7557,7 @@ optimized in a special way so that ‘strchr’ actually is faster.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     The ‘strspn’ (“string span”) function returns the length of the
+     The ‘strspn’ ("string span") function returns the length of the
      initial substring of STRING that consists entirely of bytes that
      are members of the set specified by the string SKIPSET.  The order
      of the bytes in SKIPSET is not important.
@@ -7434,7 +7576,7 @@ optimized in a special way so that ‘strchr’ actually is faster.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     The ‘wcsspn’ (“wide character string span”) function returns the
+     The ‘wcsspn’ ("wide character string span") function returns the
      length of the initial substring of WSTRING that consists entirely
      of wide characters that are members of the set specified by the
      string SKIPSET.  The order of the wide characters in SKIPSET is not
@@ -7445,7 +7587,7 @@ optimized in a special way so that ‘strchr’ actually is faster.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     The ‘strcspn’ (“string complement span”) function returns the
+     The ‘strcspn’ ("string complement span") function returns the
      length of the initial substring of STRING that consists entirely of
      bytes that are _not_ members of the set specified by the string
      STOPSET.  (In other words, it returns the offset of the first byte
@@ -7465,7 +7607,7 @@ optimized in a special way so that ‘strchr’ actually is faster.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     The ‘wcscspn’ (“wide character string complement span”) function
+     The ‘wcscspn’ ("wide character string complement span") function
      returns the length of the initial substring of WSTRING that
      consists entirely of wide characters that are _not_ members of the
      set specified by the string STOPSET.  (In other words, it returns
@@ -7477,7 +7619,7 @@ optimized in a special way so that ‘strchr’ actually is faster.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     The ‘strpbrk’ (“string pointer break”) function is related to
+     The ‘strpbrk’ ("string pointer break") function is related to
      ‘strcspn’, except that it returns a pointer to the first byte in
      STRING that is a member of the set STOPSET instead of the length of
      the initial substring.  It returns a null pointer if no such byte
@@ -7498,7 +7640,7 @@ optimized in a special way so that ‘strchr’ actually is faster.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     The ‘wcspbrk’ (“wide character string pointer break”) function is
+     The ‘wcspbrk’ ("wide character string pointer break") function is
      related to ‘wcscspn’, except that it returns a pointer to the first
      wide character in WSTRING that is a member of the set STOPSET
      instead of the length of the initial substring.  It returns a null

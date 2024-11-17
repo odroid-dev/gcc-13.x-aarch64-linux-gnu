@@ -1,21 +1,21 @@
-This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
+This is libc.info, produced by makeinfo version 7.1 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.39.
+This is ‘The GNU C Library Reference Manual’, for version 2.40.
 
-   Copyright © 1993–2024 Free Software Foundation, Inc.
+   Copyright © 1993-2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
 any later version published by the Free Software Foundation; with the
-Invariant Sections being “Free Software Needs Free Documentation” and
-“GNU Lesser General Public License”, the Front-Cover texts being “A GNU
-Manual”, and with the Back-Cover Texts as in (a) below.  A copy of the
+Invariant Sections being "Free Software Needs Free Documentation" and
+"GNU Lesser General Public License", the Front-Cover texts being "A GNU
+Manual", and with the Back-Cover Texts as in (a) below.  A copy of the
 license is included in the section entitled "GNU Free Documentation
 License".
 
-   (a) The FSF’s Back-Cover Text is: “You have the freedom to copy and
+   (a) The FSF's Back-Cover Text is: "You have the freedom to copy and
 modify this GNU manual.  Buying copies from the FSF supports it in
-developing GNU and promoting software freedom.”
+developing GNU and promoting software freedom."
 INFO-DIR-SECTION Software libraries
 START-INFO-DIR-ENTRY
 * Libc: (libc).                 C library.
@@ -422,6 +422,7 @@ START-INFO-DIR-ENTRY
 * S_TYPEISMQ: (libc)Testing File Type.
 * S_TYPEISSEM: (libc)Testing File Type.
 * S_TYPEISSHM: (libc)Testing File Type.
+* TIME_UTC: (libc)Getting the Time.
 * TMP_MAX: (libc)Temporary Files.
 * TOSTOP: (libc)Local Modes.
 * TZNAME_MAX: (libc)General Limits.
@@ -567,8 +568,6 @@ START-INFO-DIR-ENTRY
 * argz_next: (libc)Argz Functions.
 * argz_replace: (libc)Argz Functions.
 * argz_stringify: (libc)Argz Functions.
-* asctime: (libc)Formatting Calendar Time.
-* asctime_r: (libc)Formatting Calendar Time.
 * asin: (libc)Inverse Trig Functions.
 * asinf: (libc)Inverse Trig Functions.
 * asinfN: (libc)Inverse Trig Functions.
@@ -698,6 +697,10 @@ START-INFO-DIR-ENTRY
 * cfsetispeed: (libc)Line Speed.
 * cfsetospeed: (libc)Line Speed.
 * cfsetspeed: (libc)Line Speed.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
 * chdir: (libc)Working Directory.
 * chmod: (libc)Setting Permissions.
 * chown: (libc)File Owner.
@@ -800,8 +803,6 @@ START-INFO-DIR-ENTRY
 * ctanhl: (libc)Hyperbolic Functions.
 * ctanl: (libc)Trig Functions.
 * ctermid: (libc)Identifying the Terminal.
-* ctime: (libc)Formatting Calendar Time.
-* ctime_r: (libc)Formatting Calendar Time.
 * cuserid: (libc)Who Logged In.
 * daddl: (libc)Misc FP Arithmetic.
 * dcgettext: (libc)Translation with gettext.
@@ -824,6 +825,7 @@ START-INFO-DIR-ENTRY
 * dsqrtl: (libc)Misc FP Arithmetic.
 * dsubl: (libc)Misc FP Arithmetic.
 * dup2: (libc)Duplicating Descriptors.
+* dup3: (libc)Duplicating Descriptors.
 * dup: (libc)Duplicating Descriptors.
 * ecvt: (libc)System V Number Conversion.
 * ecvt_r: (libc)System V Number Conversion.
@@ -844,6 +846,8 @@ START-INFO-DIR-ENTRY
 * envz_merge: (libc)Envz Functions.
 * envz_remove: (libc)Envz Functions.
 * envz_strip: (libc)Envz Functions.
+* epoll_createint: (libc)Other Low-Level I/O APIs.
+* epoll_waitint: (libc)Other Low-Level I/O APIs.
 * erand48: (libc)SVID Random.
 * erand48_r: (libc)SVID Random.
 * erf: (libc)Special Functions.
@@ -873,11 +877,21 @@ START-INFO-DIR-ENTRY
 * exp10fN: (libc)Exponents and Logarithms.
 * exp10fNx: (libc)Exponents and Logarithms.
 * exp10l: (libc)Exponents and Logarithms.
+* exp10m1: (libc)Exponents and Logarithms.
+* exp10m1f: (libc)Exponents and Logarithms.
+* exp10m1fN: (libc)Exponents and Logarithms.
+* exp10m1fNx: (libc)Exponents and Logarithms.
+* exp10m1l: (libc)Exponents and Logarithms.
 * exp2: (libc)Exponents and Logarithms.
 * exp2f: (libc)Exponents and Logarithms.
 * exp2fN: (libc)Exponents and Logarithms.
 * exp2fNx: (libc)Exponents and Logarithms.
 * exp2l: (libc)Exponents and Logarithms.
+* exp2m1: (libc)Exponents and Logarithms.
+* exp2m1f: (libc)Exponents and Logarithms.
+* exp2m1fN: (libc)Exponents and Logarithms.
+* exp2m1fNx: (libc)Exponents and Logarithms.
+* exp2m1l: (libc)Exponents and Logarithms.
 * exp: (libc)Exponents and Logarithms.
 * expf: (libc)Exponents and Logarithms.
 * expfN: (libc)Exponents and Logarithms.
@@ -1418,6 +1432,11 @@ START-INFO-DIR-ENTRY
 * log10fN: (libc)Exponents and Logarithms.
 * log10fNx: (libc)Exponents and Logarithms.
 * log10l: (libc)Exponents and Logarithms.
+* log10p1: (libc)Exponents and Logarithms.
+* log10p1f: (libc)Exponents and Logarithms.
+* log10p1fN: (libc)Exponents and Logarithms.
+* log10p1fNx: (libc)Exponents and Logarithms.
+* log10p1l: (libc)Exponents and Logarithms.
 * log1p: (libc)Exponents and Logarithms.
 * log1pf: (libc)Exponents and Logarithms.
 * log1pfN: (libc)Exponents and Logarithms.
@@ -1428,6 +1447,11 @@ START-INFO-DIR-ENTRY
 * log2fN: (libc)Exponents and Logarithms.
 * log2fNx: (libc)Exponents and Logarithms.
 * log2l: (libc)Exponents and Logarithms.
+* log2p1: (libc)Exponents and Logarithms.
+* log2p1f: (libc)Exponents and Logarithms.
+* log2p1fN: (libc)Exponents and Logarithms.
+* log2p1fNx: (libc)Exponents and Logarithms.
+* log2p1l: (libc)Exponents and Logarithms.
 * log: (libc)Exponents and Logarithms.
 * logb: (libc)Exponents and Logarithms.
 * logbf: (libc)Exponents and Logarithms.
@@ -1441,6 +1465,11 @@ START-INFO-DIR-ENTRY
 * login_tty: (libc)Logging In and Out.
 * logl: (libc)Exponents and Logarithms.
 * logout: (libc)Logging In and Out.
+* logp1: (libc)Exponents and Logarithms.
+* logp1f: (libc)Exponents and Logarithms.
+* logp1fN: (libc)Exponents and Logarithms.
+* logp1fNx: (libc)Exponents and Logarithms.
+* logp1l: (libc)Exponents and Logarithms.
 * logwtmp: (libc)Logging In and Out.
 * longjmp: (libc)Non-Local Details.
 * lrand48: (libc)SVID Random.
@@ -1607,6 +1636,7 @@ START-INFO-DIR-ENTRY
 * pkey_get: (libc)Memory Protection.
 * pkey_mprotect: (libc)Memory Protection.
 * pkey_set: (libc)Memory Protection.
+* poll: (libc)Other Low-Level I/O APIs.
 * popen: (libc)Pipe to a Subprocess.
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
@@ -1687,7 +1717,7 @@ START-INFO-DIR-ENTRY
 * realpath: (libc)Symbolic Links.
 * recv: (libc)Receiving Data.
 * recvfrom: (libc)Receiving Datagrams.
-* recvmsg: (libc)Receiving Datagrams.
+* recvmsg: (libc)Other Socket APIs.
 * regcomp: (libc)POSIX Regexp Compilation.
 * regerror: (libc)Regexp Cleanup.
 * regexec: (libc)Matching POSIX Regexps.
@@ -1768,7 +1798,7 @@ START-INFO-DIR-ENTRY
 * semop: (libc)Semaphores.
 * semtimedop: (libc)Semaphores.
 * send: (libc)Sending Data.
-* sendmsg: (libc)Receiving Datagrams.
+* sendmsg: (libc)Other Socket APIs.
 * sendto: (libc)Sending Datagrams.
 * setbuf: (libc)Controlling Buffering.
 * setbuffer: (libc)Controlling Buffering.
@@ -1981,6 +2011,7 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strftime_l: (libc)Formatting Calendar Time.
 * strlcat: (libc)Truncating Strings.
 * strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
@@ -2069,6 +2100,8 @@ START-INFO-DIR-ENTRY
 * timegm: (libc)Broken-down Time.
 * timelocal: (libc)Broken-down Time.
 * times: (libc)Processor Time.
+* timespec_get: (libc)Getting the Time.
+* timespec_getres: (libc)Getting the Time.
 * tmpfile64: (libc)Temporary Files.
 * tmpfile: (libc)Temporary Files.
 * tmpnam: (libc)Temporary Files.
@@ -2105,7 +2138,7 @@ START-INFO-DIR-ENTRY
 * ttyname_r: (libc)Is It a Terminal.
 * twalk: (libc)Tree Search Function.
 * twalk_r: (libc)Tree Search Function.
-* tzset: (libc)Time Zone Functions.
+* tzset: (libc)Time Zone State.
 * ufromfp: (libc)Rounding Functions.
 * ufromfpf: (libc)Rounding Functions.
 * ufromfpfN: (libc)Rounding Functions.
@@ -2241,6 +2274,343 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Custom Streams,  Prev: String Streams,  Up: Other Kinds of Streams
+
+12.21.2 Programming Your Own Custom Streams
+-------------------------------------------
+
+This section describes how you can make a stream that gets input from an
+arbitrary data source or writes output to an arbitrary data sink
+programmed by you.  We call these “custom streams”.  The functions and
+types described here are all GNU extensions.
+
+* Menu:
+
+* Streams and Cookies::         The “cookie” records where to fetch or
+				 store data that is read or written.
+* Hook Functions::              How you should define the four “hook
+				 functions” that a custom stream needs.
+
+
+File: libc.info,  Node: Streams and Cookies,  Next: Hook Functions,  Up: Custom Streams
+
+12.21.2.1 Custom Streams and Cookies
+....................................
+
+Inside every custom stream is a special object called the “cookie”.
+This is an object supplied by you which records where to fetch or store
+the data read or written.  It is up to you to define a data type to use
+for the cookie.  The stream functions in the library never refer
+directly to its contents, and they don't even know what the type is;
+they record its address with type ‘void *’.
+
+   To implement a custom stream, you must specify _how_ to fetch or
+store the data in the specified place.  You do this by defining “hook
+functions” to read, write, change "file position", and close the stream.
+All four of these functions will be passed the stream's cookie so they
+can tell where to fetch or store the data.  The library functions don't
+know what's inside the cookie, but your functions will know.
+
+   When you create a custom stream, you must specify the cookie pointer,
+and also the four hook functions stored in a structure of type
+‘cookie_io_functions_t’.
+
+   These facilities are declared in ‘stdio.h’.
+
+ -- Data Type: cookie_io_functions_t
+
+     This is a structure type that holds the functions that define the
+     communications protocol between the stream and its cookie.  It has
+     the following members:
+
+     ‘cookie_read_function_t *read’
+          This is the function that reads data from the cookie.  If the
+          value is a null pointer instead of a function, then read
+          operations on this stream always return ‘EOF’.
+
+     ‘cookie_write_function_t *write’
+          This is the function that writes data to the cookie.  If the
+          value is a null pointer instead of a function, then data
+          written to the stream is discarded.
+
+     ‘cookie_seek_function_t *seek’
+          This is the function that performs the equivalent of file
+          positioning on the cookie.  If the value is a null pointer
+          instead of a function, calls to ‘fseek’ or ‘fseeko’ on this
+          stream can only seek to locations within the buffer; any
+          attempt to seek outside the buffer will return an ‘ESPIPE’
+          error.
+
+     ‘cookie_close_function_t *close’
+          This function performs any appropriate cleanup on the cookie
+          when closing the stream.  If the value is a null pointer
+          instead of a function, nothing special is done to close the
+          cookie when the stream is closed.
+
+ -- Function: FILE * fopencookie (void *COOKIE, const char *OPENTYPE,
+          cookie_io_functions_t IO-FUNCTIONS)
+
+     Preliminary: | MT-Safe | AS-Unsafe heap lock | AC-Unsafe mem lock |
+     *Note POSIX Safety Concepts::.
+
+     This function actually creates the stream for communicating with
+     the COOKIE using the functions in the IO-FUNCTIONS argument.  The
+     OPENTYPE argument is interpreted as for ‘fopen’; see *note Opening
+     Streams::.  (But note that the "truncate on open" option is
+     ignored.)  The new stream is fully buffered.
+
+     The ‘fopencookie’ function returns the newly created stream, or a
+     null pointer in case of an error.
+
+
+File: libc.info,  Node: Hook Functions,  Prev: Streams and Cookies,  Up: Custom Streams
+
+12.21.2.2 Custom Stream Hook Functions
+......................................
+
+Here are more details on how you should define the four hook functions
+that a custom stream needs.
+
+   You should define the function to read data from the cookie as:
+
+     ssize_t READER (void *COOKIE, char *BUFFER, size_t SIZE)
+
+   This is very similar to the ‘read’ function; see *note I/O
+Primitives::.  Your function should transfer up to SIZE bytes into the
+BUFFER, and return the number of bytes read, or zero to indicate
+end-of-file.  You can return a value of ‘-1’ to indicate an error.
+
+   You should define the function to write data to the cookie as:
+
+     ssize_t WRITER (void *COOKIE, const char *BUFFER, size_t SIZE)
+
+   This is very similar to the ‘write’ function; see *note I/O
+Primitives::.  Your function should transfer up to SIZE bytes from the
+buffer, and return the number of bytes written.  You can return a value
+of ‘0’ to indicate an error.  You must not return any negative value.
+
+   You should define the function to perform seek operations on the
+cookie as:
+
+     int SEEKER (void *COOKIE, off64_t *POSITION, int WHENCE)
+
+   For this function, the POSITION and WHENCE arguments are interpreted
+as for ‘fgetpos’; see *note Portable Positioning::.
+
+   After doing the seek operation, your function should store the
+resulting file position relative to the beginning of the file in
+POSITION.  Your function should return a value of ‘0’ on success and
+‘-1’ to indicate an error.
+
+   You should define the function to do cleanup operations on the cookie
+appropriate for closing the stream as:
+
+     int CLEANER (void *COOKIE)
+
+   Your function should return ‘-1’ to indicate an error, and ‘0’
+otherwise.
+
+ -- Data Type: cookie_read_function_t
+
+     This is the data type that the read function for a custom stream
+     should have.  If you declare the function as shown above, this is
+     the type it will have.
+
+ -- Data Type: cookie_write_function_t
+
+     The data type of the write function for a custom stream.
+
+ -- Data Type: cookie_seek_function_t
+
+     The data type of the seek function for a custom stream.
+
+ -- Data Type: cookie_close_function_t
+
+     The data type of the close function for a custom stream.
+
+
+File: libc.info,  Node: Formatted Messages,  Prev: Other Kinds of Streams,  Up: I/O on Streams
+
+12.22 Formatted Messages
+========================
+
+On systems which are based on System V messages of programs (especially
+the system tools) are printed in a strict form using the ‘fmtmsg’
+function.  The uniformity sometimes helps the user to interpret messages
+and the strictness tests of the ‘fmtmsg’ function ensure that the
+programmer follows some minimal requirements.
+
+* Menu:
+
+* Printing Formatted Messages::   The ‘fmtmsg’ function.
+* Adding Severity Classes::       Add more severity classes.
+* Example::                       How to use ‘fmtmsg’ and ‘addseverity’.
+
+
+File: libc.info,  Node: Printing Formatted Messages,  Next: Adding Severity Classes,  Up: Formatted Messages
+
+12.22.1 Printing Formatted Messages
+-----------------------------------
+
+Messages can be printed to standard error and/or to the console.  To
+select the destination the programmer can use the following two values,
+bitwise OR combined if wanted, for the CLASSIFICATION parameter of
+‘fmtmsg’:
+
+‘MM_PRINT’
+     Display the message in standard error.
+‘MM_CONSOLE’
+     Display the message on the system console.
+
+   The erroneous piece of the system can be signalled by exactly one of
+the following values which also is bitwise ORed with the CLASSIFICATION
+parameter to ‘fmtmsg’:
+
+‘MM_HARD’
+     The source of the condition is some hardware.
+‘MM_SOFT’
+     The source of the condition is some software.
+‘MM_FIRM’
+     The source of the condition is some firmware.
+
+   A third component of the CLASSIFICATION parameter to ‘fmtmsg’ can
+describe the part of the system which detects the problem.  This is done
+by using exactly one of the following values:
+
+‘MM_APPL’
+     The erroneous condition is detected by the application.
+‘MM_UTIL’
+     The erroneous condition is detected by a utility.
+‘MM_OPSYS’
+     The erroneous condition is detected by the operating system.
+
+   A last component of CLASSIFICATION can signal the results of this
+message.  Exactly one of the following values can be used:
+
+‘MM_RECOVER’
+     It is a recoverable error.
+‘MM_NRECOV’
+     It is a non-recoverable error.
+
+ -- Function: int fmtmsg (long int CLASSIFICATION, const char *LABEL,
+          int SEVERITY, const char *TEXT, const char *ACTION, const char
+          *TAG)
+
+     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Safe | *Note POSIX
+     Safety Concepts::.
+
+     Display a message described by its parameters on the device(s)
+     specified in the CLASSIFICATION parameter.  The LABEL parameter
+     identifies the source of the message.  The string should consist of
+     two colon separated parts where the first part has not more than 10
+     and the second part not more than 14 characters.  The TEXT
+     parameter describes the condition of the error, the ACTION
+     parameter possible steps to recover from the error and the TAG
+     parameter is a reference to the online documentation where more
+     information can be found.  It should contain the LABEL value and a
+     unique identification number.
+
+     Each of the parameters can be a special value which means this
+     value is to be omitted.  The symbolic names for these values are:
+
+     ‘MM_NULLLBL’
+          Ignore LABEL parameter.
+     ‘MM_NULLSEV’
+          Ignore SEVERITY parameter.
+     ‘MM_NULLMC’
+          Ignore CLASSIFICATION parameter.  This implies that nothing is
+          actually printed.
+     ‘MM_NULLTXT’
+          Ignore TEXT parameter.
+     ‘MM_NULLACT’
+          Ignore ACTION parameter.
+     ‘MM_NULLTAG’
+          Ignore TAG parameter.
+
+     There is another way certain fields can be omitted from the output
+     to standard error.  This is described below in the description of
+     environment variables influencing the behavior.
+
+     The SEVERITY parameter can have one of the values in the following
+     table:
+
+     ‘MM_NOSEV’
+          Nothing is printed, this value is the same as ‘MM_NULLSEV’.
+     ‘MM_HALT’
+          This value is printed as ‘HALT’.
+     ‘MM_ERROR’
+          This value is printed as ‘ERROR’.
+     ‘MM_WARNING’
+          This value is printed as ‘WARNING’.
+     ‘MM_INFO’
+          This value is printed as ‘INFO’.
+
+     The numeric value of these five macros are between ‘0’ and ‘4’.
+     Using the environment variable ‘SEV_LEVEL’ or using the
+     ‘addseverity’ function one can add more severity levels with their
+     corresponding string to print.  This is described below (*note
+     Adding Severity Classes::).
+
+     If no parameter is ignored the output looks like this:
+
+          LABEL: SEVERITY-STRING: TEXT
+          TO FIX: ACTION TAG
+
+     The colons, new line characters and the ‘TO FIX’ string are
+     inserted if necessary, i.e., if the corresponding parameter is not
+     ignored.
+
+     This function is specified in the X/Open Portability Guide.  It is
+     also available on all systems derived from System V.
+
+     The function returns the value ‘MM_OK’ if no error occurred.  If
+     only the printing to standard error failed, it returns ‘MM_NOMSG’.
+     If printing to the console fails, it returns ‘MM_NOCON’.  If
+     nothing is printed ‘MM_NOTOK’ is returned.  Among situations where
+     all outputs fail this last value is also returned if a parameter
+     value is incorrect.
+
+   There are two environment variables which influence the behavior of
+‘fmtmsg’.  The first is ‘MSGVERB’.  It is used to control the output
+actually happening on standard error (_not_ the console output).  Each
+of the five fields can explicitly be enabled.  To do this the user has
+to put the ‘MSGVERB’ variable with a format like the following in the
+environment before calling the ‘fmtmsg’ function the first time:
+
+     MSGVERB=KEYWORD[:KEYWORD[:...]]
+
+   Valid KEYWORDs are ‘label’, ‘severity’, ‘text’, ‘action’, and ‘tag’.
+If the environment variable is not given or is the empty string, a not
+supported keyword is given or the value is somehow else invalid, no part
+of the message is masked out.
+
+   The second environment variable which influences the behavior of
+‘fmtmsg’ is ‘SEV_LEVEL’.  This variable and the change in the behavior
+of ‘fmtmsg’ is not specified in the X/Open Portability Guide.  It is
+available in System V systems, though.  It can be used to introduce new
+severity levels.  By default, only the five severity levels described
+above are available.  Any other numeric value would make ‘fmtmsg’ print
+nothing.
+
+   If the user puts ‘SEV_LEVEL’ with a format like
+
+     SEV_LEVEL=[DESCRIPTION[:DESCRIPTION[:...]]]
+
+in the environment of the process before the first call to ‘fmtmsg’,
+where DESCRIPTION has a value of the form
+
+     SEVERITY-KEYWORD,LEVEL,PRINTSTRING
+
+   The SEVERITY-KEYWORD part is not used by ‘fmtmsg’ but it has to be
+present.  The LEVEL part is a string representation of a number.  The
+numeric value must be a number greater than 4.  This value must be used
+in the SEVERITY parameter of ‘fmtmsg’ to select this class.  It is not
+possible to overwrite any of the predefined classes.  The PRINTSTRING is
+the string printed when a message of this class is processed by ‘fmtmsg’
+(see above, ‘fmtsmg’ does not print the numeric value but instead the
+string representation).
 
 
 File: libc.info,  Node: Adding Severity Classes,  Next: Example,  Prev: Printing Formatted Messages,  Up: Formatted Messages
@@ -2392,7 +2762,7 @@ when necessary.  These are some of the usual reasons:
 * Opening and Closing Files::           How to open and close file
                                          descriptors.
 * I/O Primitives::                      Reading and writing data.
-* File Position Primitive::             Setting a descriptor’s file
+* File Position Primitive::             Setting a descriptor's file
                                          position.
 * Descriptors and Streams::             Converting descriptor to stream
                                          or vice-versa.
@@ -2423,6 +2793,7 @@ when necessary.  These are some of the usual reasons:
 * Interrupt Input::                     Getting an asynchronous signal when
                                          input arrives.
 * IOCTLs::                              Generic I/O Control operations.
+* Other Low-Level I/O APIs::            Other low-level-I/O-related functions.
 
 
 File: libc.info,  Node: Opening and Closing Files,  Next: I/O Primitives,  Up: Low-Level I/O
@@ -2443,7 +2814,7 @@ in the header file ‘fcntl.h’, while ‘close’ is declared in ‘unistd.h�
      the file named by FILENAME.  Initially, the file position indicator
      for the file is at the beginning of the file.  The argument MODE
      (*note Permission Bits::) is used only when a file is created, but
-     it doesn’t hurt to supply the argument in any case.
+     it doesn't hurt to supply the argument in any case.
 
      The FLAGS argument controls how the file is to be opened.  This is
      a bit mask; you create the value by the bitwise OR of the
@@ -2714,8 +3085,8 @@ These functions are declared in the header file ‘unistd.h’.
      character is added.)
 
      The return value is the number of bytes actually read.  This might
-     be less than SIZE; for example, if there aren’t that many bytes
-     left in the file or if there aren’t that many bytes immediately
+     be less than SIZE; for example, if there aren't that many bytes
+     left in the file or if there aren't that many bytes immediately
      available.  The exact behavior depends on what kind of file it is.
      Note that reading less than SIZE bytes is not an error.
 
@@ -2739,14 +3110,14 @@ These functions are declared in the header file ‘unistd.h’.
 
           *Compatibility Note:* Most versions of BSD Unix use a
           different error code for this: ‘EWOULDBLOCK’.  In the GNU C
-          Library, ‘EWOULDBLOCK’ is an alias for ‘EAGAIN’, so it doesn’t
+          Library, ‘EWOULDBLOCK’ is an alias for ‘EAGAIN’, so it doesn't
           matter which name you use.
 
           On some systems, reading a large amount of data from a
           character special file can also fail with ‘EAGAIN’ if the
           kernel cannot find enough physical memory to lock down the
-          user’s pages.  This is limited to devices that transfer with
-          direct memory access into the user’s memory, which means it
+          user's pages.  This is limited to devices that transfer with
+          direct memory access into the user's memory, which means it
           does not include terminals, since they always use separate
           buffers inside the kernel.  This problem never happens on
           GNU/Hurd systems.
@@ -2773,7 +3144,7 @@ These functions are declared in the header file ‘unistd.h’.
 
           ‘EIO’ also occurs when a background process tries to read from
           the controlling terminal, and the normal action of stopping
-          the process by sending it a ‘SIGTTIN’ signal isn’t working.
+          the process by sending it a ‘SIGTTIN’ signal isn't working.
           This might happen if the signal is being blocked or ignored,
           or because the process group is orphaned.  *Note Job
           Control::, for more information about job control, and *note
@@ -2896,14 +3267,14 @@ These functions are declared in the header file ‘unistd.h’.
 
           *Compatibility Note:* Most versions of BSD Unix use a
           different error code for this: ‘EWOULDBLOCK’.  In the GNU C
-          Library, ‘EWOULDBLOCK’ is an alias for ‘EAGAIN’, so it doesn’t
+          Library, ‘EWOULDBLOCK’ is an alias for ‘EAGAIN’, so it doesn't
           matter which name you use.
 
           On some systems, writing a large amount of data from a
           character special file can also fail with ‘EAGAIN’ if the
           kernel cannot find enough physical memory to lock down the
-          user’s pages.  This is limited to devices that transfer with
-          direct memory access into the user’s memory, which means it
+          user's pages.  This is limited to devices that transfer with
+          direct memory access into the user's memory, which means it
           does not include terminals, since they always use separate
           buffers inside the kernel.  This problem does not arise on
           GNU/Hurd systems.
@@ -2932,7 +3303,7 @@ These functions are declared in the header file ‘unistd.h’.
 
      ‘EPIPE’
           This error is returned when you try to write to a pipe or FIFO
-          that isn’t open for reading by any process.  When this
+          that isn't open for reading by any process.  When this
           happens, a ‘SIGPIPE’ signal is also sent to the process; see
           *note Signal Handling::.
 
@@ -3085,9 +3456,9 @@ it means.
      the file.  But subsequent output at that position will extend the
      file.  Characters between the previous end of file and the new
      position are filled with zeros.  Extending the file in this way can
-     create a “hole”: the blocks of zeros are not actually allocated on
+     create a "hole": the blocks of zeros are not actually allocated on
      disk, so the file takes up less space than it appears to; it is
-     then called a “sparse file”.
+     then called a "sparse file".
 
      If the file position cannot be changed, or the operation is in some
      way invalid, ‘lseek’ returns a value of -1.  The following ‘errno’
@@ -3175,8 +3546,8 @@ reading or writing data, affects all of them alike.  Thus, for example,
        read (d2, buf2, 4);
      }
 
-will read four characters starting with the 1024’th character of ‘foo’,
-and then four more characters starting with the 1028’th character.
+will read four characters starting with the 1024'th character of ‘foo’,
+and then four more characters starting with the 1028'th character.
 
  -- Data Type: off_t
 
@@ -3295,14 +3666,14 @@ File: libc.info,  Node: Stream/Descriptor Precautions,  Next: Scatter-Gather,  P
 13.5 Dangers of Mixing Streams and Descriptors
 ==============================================
 
-You can have multiple file descriptors and streams (let’s call both
-streams and descriptors “channels” for short) connected to the same
+You can have multiple file descriptors and streams (let's call both
+streams and descriptors "channels" for short) connected to the same
 file, but you must take care to avoid confusion between channels.  There
 are two cases to consider: “linked” channels that share a single file
 position value, and “independent” channels that have their own file
 positions.
 
-   It’s best to use just one channel in your program for actual data
+   It's best to use just one channel in your program for actual data
 transfer to any given file, except when all the access is for input.
 For example, if you open a pipe (something you can only do at the file
 descriptor level), either do all I/O with the descriptor, or construct a
@@ -3326,7 +3697,7 @@ Channels that come from a single opening share the same file position;
 we call them “linked” channels.  Linked channels result when you make a
 stream from a descriptor using ‘fdopen’, when you get a descriptor from
 a stream with ‘fileno’, when you copy a descriptor with ‘dup’ or ‘dup2’,
-and when descriptors are inherited during ‘fork’.  For files that don’t
+and when descriptors are inherited during ‘fork’.  For files that don't
 support random access, such as terminals and pipes, _all_ channels are
 effectively linked.  On random-access files, all append-type output
 streams are effectively linked to each other.
@@ -3363,7 +3734,7 @@ precautions:
 
    • You should clean an input stream before reading data that may have
      been modified using an independent channel.  Otherwise, you might
-     read obsolete data that had been in the stream’s buffer.
+     read obsolete data that had been in the stream's buffer.
 
    If you do output to one channel at the end of the file, this will
 certainly leave the other independent channels positioned somewhere
@@ -3375,8 +3746,8 @@ always output at the current end of the file.  In order to make the
 end-of-file position accurate, you must clean the output channel you
 were using, if it is a stream.
 
-   It’s impossible for two channels to have separate file pointers for a
-file that doesn’t support random access.  Thus, channels for reading or
+   It's impossible for two channels to have separate file pointers for a
+file that doesn't support random access.  Thus, channels for reading or
 writing such files are always linked, never independent.  Append-type
 channels are also always linked.  For these channels, follow the rules
 for linked channels; see *note Linked Channels::.
@@ -3408,12 +3779,12 @@ place; you must set the file pointer before doing any further I/O.
 way of cleaning an output stream.
 
    You need not clean a stream before using its descriptor for control
-operations such as setting terminal modes; these operations don’t affect
+operations such as setting terminal modes; these operations don't affect
 the file position and are not affected by it.  You can use any
 descriptor for these operations, and all channels are affected
-simultaneously.  However, text already “output” to a stream but still
+simultaneously.  However, text already "output" to a stream but still
 buffered by the stream will be subject to the new terminal modes when
-subsequently flushed.  To make sure “past” output is covered by the
+subsequently flushed.  To make sure "past" output is covered by the
 terminal settings that were in effect at the time, flush the output
 streams for that terminal before setting the modes.  *Note Terminal
 Modes::.
@@ -3604,6 +3975,10 @@ which describe the location and size of each buffer.
           Per-IO synchronization as if the file was opened with
           ‘O_APPEND’ flag.
 
+     ‘RWF_NOAPPEND’
+          This flag allows an offset to be honored, even if the file was
+          opened with ‘O_APPEND’ flag.
+
      When the source file is compiled with ‘_FILE_OFFSET_BITS == 64’ the
      ‘preadv2’ function is in fact ‘preadv64v2’ and the type ‘off_t’ has
      64 bits, which makes it possible to handle files up to 2^63 bytes
@@ -3771,7 +4146,7 @@ File: libc.info,  Node: Memory-mapped I/O,  Next: Waiting for I/O,  Prev: Copyin
 ======================
 
 On modern operating systems, it is possible to “mmap” (pronounced
-“em-map”) a file to a region of memory.  When this is done, the file can
+"em-map") a file to a region of memory.  When this is done, the file can
 be accessed just like an array in the program.
 
    This is more efficient than ‘read’ or ‘write’, as only the regions of
@@ -3823,10 +4198,14 @@ mappings as well (see the ‘MAP_HUGETLB’ flag below).
      address space for future use.  The ‘mprotect’ function can be used
      to change the protection flags.  *Note Memory Protection::.
 
-     FLAGS contains flags that control the nature of the map.  One of
-     ‘MAP_SHARED’ or ‘MAP_PRIVATE’ must be specified.
+     The FLAGS parameter contains flags that control the nature of the
+     map.  One of ‘MAP_SHARED’, ‘MAP_SHARED_VALIDATE’, or ‘MAP_PRIVATE’
+     must be specified.  Additional flags may be bitwise OR'd to further
+     define the mapping.
 
-     They include:
+     Note that, aside from ‘MAP_PRIVATE’ and ‘MAP_SHARED’, not all flags
+     are supported on all versions of all operating systems.  Consult
+     the kernel-specific documentation for details.  The flags include:
 
      ‘MAP_PRIVATE’
           This specifies that writes to the region should never be
@@ -3849,9 +4228,19 @@ mappings as well (see the ‘MAP_HUGETLB’ flag below).
           processes using conventional I/O get a consistent view of the
           file.
 
+     ‘MAP_SHARED_VALIDATE’
+          Similar to ‘MAP_SHARED’ except that additional flags will be
+          validated by the kernel, and the call will fail if an
+          unrecognized flag is provided.  With ‘MAP_SHARED’ using a flag
+          on a kernel that doesn't support it causes the flag to be
+          ignored.  ‘MAP_SHARED_VALIDATE’ should be used when the
+          behavior of all flags is required.
+
      ‘MAP_FIXED’
           This forces the system to use the exact mapping address
-          specified in ADDRESS and fail if it can’t.
+          specified in ADDRESS and fail if it can't.  Note that if the
+          new mapping would overlap an existing mapping, the overlapping
+          portion of the existing map is unmapped.
 
      ‘MAP_ANONYMOUS’
      ‘MAP_ANON’
@@ -3890,10 +4279,102 @@ mappings as well (see the ‘MAP_HUGETLB’ flag below).
 
           The ‘MAP_HUGETLB’ flag is specific to Linux.
 
+     ‘MAP_32BIT’
+          Require addresses that can be accessed with a signed 32 bit
+          pointer, i.e., within the first 2 GiB. Ignored if MAP_FIXED is
+          specified.
+
+     ‘MAP_DENYWRITE’
+     ‘MAP_EXECUTABLE’
+     ‘MAP_FILE’
+
+          Provided for compatibility.  Ignored by the Linux kernel.
+
+     ‘MAP_FIXED_NOREPLACE’
+          Similar to ‘MAP_FIXED’ except the call will fail with ‘EEXIST’
+          if the new mapping would overwrite an existing mapping.  To
+          test for support for this flag, specify MAP_FIXED_NOREPLACE
+          without MAP_FIXED, and (if the call was successful) check the
+          actual address returned.  If it does not match the address
+          passed, then this flag is not supported.
+
+     ‘MAP_GROWSDOWN’
+          This flag is used to make stacks, and is typically only needed
+          inside the program loader to set up the main stack for the
+          running process.  The mapping is created according to the
+          other flags, except an additional page just prior to the
+          mapping is marked as a "guard page".  If a write is attempted
+          inside this guard page, that page is mapped, the mapping is
+          extended, and a new guard page is created.  Thus, the mapping
+          continues to grow towards lower addresses until it encounters
+          some other mapping.
+
+          Note that accessing memory beyond the guard page will not
+          trigger this feature.  In gcc, use ‘-fstack-clash-protection’
+          to ensure the guard page is always touched.
+
+     ‘MAP_LOCKED’
+          A hint that requests that mapped pages are locked in memory
+          (i.e.  not paged out).  Note that this is a request and not a
+          requirement; use ‘mlock’ if locking is required.
+
+     ‘MAP_POPULATE’
+     ‘MAP_NONBLOCK’
+          ‘MAP_POPULATE’ is a hint that requests that the kernel
+          read-ahead a file-backed mapping, causing pages to be mapped
+          before they're needed.  ‘MAP_NONBLOCK’ is a hint that requests
+          that the kernel _not_ attempt such except for pages are
+          already in memory.  Note that neither of these hints affects
+          future paging activity, use ‘mlock’ if such needs to be
+          controlled.
+
+     ‘MAP_NORESERVE’
+          Asks the kernel to not reserve physical backing (i.e.  space
+          in a swap device) for a mapping.  This would be useful for,
+          for example, a very large but sparsely used mapping which need
+          not be limited in total length by available RAM, but with very
+          few mapped pages.  Note that writes to such a mapping may
+          cause a ‘SIGSEGV’ if the system is unable to map a page due to
+          lack of resources.
+
+          On Linux, this flag's behavior may be overwridden by
+          ‘/proc/sys/vm/overcommit_memory’ as documented in the proc(5)
+          man page.
+
+     ‘MAP_STACK’
+          Ensures that the resulting mapping is suitable for use as a
+          program stack.  For example, the use of huge pages might be
+          precluded.
+
+     ‘MAP_SYNC’
+          This is a special flag for DAX devices, which tells the kernel
+          to write dirty metadata out whenever dirty data is written
+          out.  Unlike most other flags, this one will fail unless
+          ‘MAP_SHARED_VALIDATE’ is also given.
+
      ‘mmap’ returns the address of the new mapping, or ‘MAP_FAILED’ for
      an error.
 
      Possible errors include:
+
+     ‘EACCES’
+
+          FILEDES was not open for the type of access specified in
+          PROTECT.
+
+     ‘EAGAIN’
+
+          The system has temporarily run out of resources.
+
+     ‘EBADF’
+
+          The FD passed is invalid, and a valid file descriptor is
+          required (i.e.  MAP_ANONYMOUS was not specified).
+
+     ‘EEXIST’
+
+          ‘MAP_FIXED_NOREPLACE’ was specified and an existing mapping
+          was found overlapping the requested address range.
 
      ‘EINVAL’
 
@@ -3903,23 +4384,36 @@ mappings as well (see the ‘MAP_HUGETLB’ flag below).
           If ‘MAP_HUGETLB’ was specified, the file or system does not
           support large page sizes.
 
-     ‘EACCES’
+     ‘ENODEV’
 
-          FILEDES was not open for the type of access specified in
-          PROTECT.
+          This file is of a type that doesn't support mapping, the
+          process has exceeded its data space limit, or the map request
+          would exceed the process's virtual address space.
 
      ‘ENOMEM’
 
-          Either there is not enough memory for the operation, or the
-          process is out of address space.
-
-     ‘ENODEV’
-
-          This file is of a type that doesn’t support mapping.
+          There is not enough memory for the operation, the process is
+          out of address space, or there are too many mappings.  On
+          Linux, the maximum number of mappings can be controlled via
+          ‘/proc/sys/vm/max_map_count’ or, if your OS supports it, via
+          the ‘vm.max_map_count’ ‘sysctl’ setting.
 
      ‘ENOEXEC’
 
-          The file is on a filesystem that doesn’t support mapping.
+          The file is on a filesystem that doesn't support mapping.
+
+     ‘EPERM’
+
+          ‘PROT_EXEC’ was requested but the file is on a filesystem that
+          was mounted with execution denied, a file seal prevented the
+          mapping, or the caller set MAP_HUDETLB but does not have the
+          required priviledges.
+
+     ‘EOVERFLOW’
+
+          Either the offset into the file plus the length of the mapping
+          causes internal page counts to overflow, or the offset
+          requested exceeds the length of the file.
 
  -- Function: void * mmap64 (void *ADDRESS, size_t LENGTH, int PROTECT,
           int FLAGS, int FILEDES, off64_t OFFSET)
@@ -3959,7 +4453,7 @@ mappings as well (see the ‘MAP_HUGETLB’ flag below).
 
      ‘EINVAL’
           The memory range given was outside the user mmap range or
-          wasn’t page aligned.
+          wasn't page aligned.
 
  -- Function: int msync (void *ADDRESS, size_t LENGTH, int FLAGS)
 
@@ -4024,7 +4518,7 @@ mappings as well (see the ‘MAP_HUGETLB’ flag below).
 
      ‘EAGAIN’
           The region has pages locked, and if extended it would exceed
-          the process’s resource limit for locked pages.  *Note Limits
+          the process's resource limit for locked pages.  *Note Limits
           on Resources::.
 
      ‘ENOMEM’
@@ -4096,19 +4590,19 @@ older kernels may not support mapping at all.  Thus, programs using
      The POSIX names are slightly different, but with the same meanings:
 
      ‘POSIX_MADV_NORMAL’
-          This corresponds with BSD’s ‘MADV_NORMAL’.
+          This corresponds with BSD's ‘MADV_NORMAL’.
 
      ‘POSIX_MADV_RANDOM’
-          This corresponds with BSD’s ‘MADV_RANDOM’.
+          This corresponds with BSD's ‘MADV_RANDOM’.
 
      ‘POSIX_MADV_SEQUENTIAL’
-          This corresponds with BSD’s ‘MADV_SEQUENTIAL’.
+          This corresponds with BSD's ‘MADV_SEQUENTIAL’.
 
      ‘POSIX_MADV_WILLNEED’
-          This corresponds with BSD’s ‘MADV_WILLNEED’.
+          This corresponds with BSD's ‘MADV_WILLNEED’.
 
      ‘POSIX_MADV_DONTNEED’
-          This corresponds with BSD’s ‘MADV_DONTNEED’.
+          This corresponds with BSD's ‘MADV_DONTNEED’.
 
      ‘madvise’ returns 0 for success and -1 for error.  Errors include:
 
@@ -4228,7 +4722,7 @@ via pipes or sockets.
 
    You cannot normally use ‘read’ for this purpose, because this blocks
 the program until input is available on one particular file descriptor;
-input on other channels won’t wake it up.  You could set nonblocking
+input on other channels won't wake it up.  You could set nonblocking
 mode and poll each file descriptor in turn, but this is very
 inefficient.
 
@@ -4238,7 +4732,7 @@ descriptors, or until a timer expires, whichever comes first.  This
 facility is declared in the header file ‘sys/types.h’.
 
    In the case of a server socket (*note Listening::), we say that
-“input” is available when there are pending connections that could be
+"input" is available when there are pending connections that could be
 accepted (*note Accepting Connections::).  ‘accept’ for server sockets
 blocks and interacts with ‘select’ just as ‘read’ does for normal input.
 
@@ -4328,7 +4822,7 @@ macros for manipulating these objects.
      client socket is ready for writing when its connection is fully
      established; *note Connecting::.
 
-     “Exceptional conditions” does not mean errors—errors are reported
+     "Exceptional conditions" does not mean errors--errors are reported
      immediately when an erroneous system call is executed, and do not
      constitute a state of the descriptor.  Rather, they include
      conditions such as the presence of an urgent message on a socket.
@@ -4357,7 +4851,7 @@ macros for manipulating these objects.
      a value of zero.
 
      Any signal will cause ‘select’ to return immediately.  So if your
-     program uses signals, you can’t rely on ‘select’ to keep waiting
+     program uses signals, you can't rely on ‘select’ to keep waiting
      for the full time specified.  If you want to be sure of waiting for
      a particular amount of time, you must check for ‘EINTR’ and repeat
      the ‘select’ with a newly calculated timeout based on the current
@@ -4424,6 +4918,9 @@ descriptor, or until the timeout period expires.
 
    There is another example showing the use of ‘select’ to multiplex
 input from multiple sockets in *note Server Example::.
+
+   For an alternate interface to this functionality, see ‘poll’ (*note
+Other Low-Level I/O APIs::).
 
 
 File: libc.info,  Node: Synchronizing I/O,  Next: Asynchronous I/O,  Prev: Waiting for I/O,  Up: Low-Level I/O
@@ -4890,7 +5387,7 @@ operations.  It is therefore similar to a combination of ‘readv’ and
      the ‘aio_lio_opcode’ member is ‘LIO_WRITE’ a write operation is
      enqueued.  Otherwise the ‘aio_lio_opcode’ must be ‘LIO_NOP’ in
      which case this element of LIST is simply ignored.  This
-     “operation” is useful in situations where one has a fixed array of
+     "operation" is useful in situations where one has a fixed array of
      ‘struct aiocb’ elements from which only a few need to be handled at
      a time.  Another situation is where the ‘lio_listio’ call was
      canceled before all requests are processed (*note Cancel AIO
@@ -4940,7 +5437,7 @@ operations.  It is therefore similar to a combination of ‘readv’ and
           The MODE parameter is invalid or NENT is larger than
           ‘AIO_LISTIO_MAX’.
      ‘EIO’
-          One or more of the request’s I/O operations failed.  The error
+          One or more of the request's I/O operations failed.  The error
           status of each request should be checked to determine which
           one failed.
      ‘ENOSYS’
@@ -5245,15 +5742,15 @@ hint.
      After a request is successfully canceled, a call to ‘aio_error’
      with a reference to this request as the parameter will return
      ‘ECANCELED’ and a call to ‘aio_return’ will return -1.  If the
-     request wasn’t canceled and is still running the error status is
+     request wasn't canceled and is still running the error status is
      still ‘EINPROGRESS’.
 
      The return value of the function is ‘AIO_CANCELED’ if there were
-     requests which haven’t terminated and which were successfully
-     canceled.  If there is one or more requests left which couldn’t be
+     requests which haven't terminated and which were successfully
+     canceled.  If there is one or more requests left which couldn't be
      canceled, the return value is ‘AIO_NOTCANCELED’.  In this case
      ‘aio_error’ must be used to find out which of the, perhaps
-     multiple, requests (if AIOCBP is ‘NULL’) weren’t successfully
+     multiple, requests (if AIOCBP is ‘NULL’) weren't successfully
      canceled.  If all requests already terminated at the time
      ‘aio_cancel’ is called the return value is ‘AIO_ALLDONE’.
 
@@ -5371,7 +5868,9 @@ see *note Opening and Closing Files::.
      return value and error conditions are given in the detailed
      descriptions of the individual commands.
 
-     Briefly, here is a list of what the various commands are.
+     Briefly, here is a list of what the various commands are.  For an
+     exhaustive list of kernel-specific options, please see *Note System
+     Calls::.
 
      ‘F_DUPFD’
           Duplicate the file descriptor (return another file descriptor
@@ -5484,6 +5983,15 @@ prototypes for ‘dup’ and ‘dup2’ are in the header file ‘unistd.h’.
      middle of calling ‘dup2’ at which NEW is closed and not yet a
      duplicate of OLD.
 
+ -- Function: int dup3 (int OLD, int NEW, int FLAGS)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function is the same as ‘dup2’ but creates the new descriptor
+     as if it had been opened with flags FLAGS.  The only allowed flag
+     is ‘O_CLOEXEC’.
+
  -- Macro: int F_DUPFD
 
      This macro is used as the COMMAND argument to ‘fcntl’, to copy the
@@ -5509,7 +6017,7 @@ prototypes for ‘dup’ and ‘dup2’ are in the header file ‘unistd.h’.
           The NEXT-FILEDES argument is invalid.
 
      ‘EMFILE’
-          There are no more file descriptors available—your program is
+          There are no more file descriptors available--your program is
           already using the maximum.  In BSD and GNU, the maximum is
           controlled by a resource limit that can be changed; *note
           Limits on Resources::, for more information about the
@@ -5610,7 +6118,7 @@ mask value.
      descriptor will survive into the new program after ‘exec’.
 
    If you want to modify the file descriptor flags, you should get the
-current flags with ‘F_GETFD’ and modify the value.  Don’t assume that
+current flags with ‘F_GETFD’ and modify the value.  Don't assume that
 the flags listed here are the only ones that are implemented; your
 program may be run years from now and more flags may exist then.  For
 example, here is a function to set or clear the flag ‘FD_CLOEXEC’
@@ -5731,7 +6239,7 @@ it is valid for either bit to be set or clear.  This means that ‘O_RDWR’
 is the same as ‘O_RDONLY|O_WRONLY’.  A file access mode of zero is
 permissible; it allows no operations that do input or output to the
 file, but does allow other operations such as ‘fchmod’.  On GNU/Hurd
-systems, since “read-only” or “write-only” is a misnomer, ‘fcntl.h’
+systems, since "read-only" or "write-only" is a misnomer, ‘fcntl.h’
 defines additional names for the file access modes.
 
  -- Macro: int O_READ
@@ -5771,7 +6279,7 @@ saved.  *Note Opening and Closing Files::, for how to call ‘open’.
 
  -- Macro: int O_CREAT
 
-     If set, the file will be created if it doesn’t already exist.
+     If set, the file will be created if it doesn't already exist.
 
  -- Macro: int O_EXCL
 
@@ -5820,7 +6328,7 @@ saved.  *Note Opening and Closing Files::, for how to call ‘open’.
 
  -- Macro: int O_NONBLOCK
 
-     This prevents ‘open’ from blocking for a “long time” to open the
+     This prevents ‘open’ from blocking for a "long time" to open the
      file.  This is only meaningful for some kinds of files, usually
      devices such as serial ports; when it is not meaningful, it is
      harmless and ignored.  Often, opening a port to a modem blocks
@@ -5836,7 +6344,7 @@ saved.  *Note Opening and Closing Files::, for how to call ‘open’.
 
  -- Macro: int O_NOCTTY
 
-     If the named file is a terminal device, don’t make it the
+     If the named file is a terminal device, don't make it the
      controlling terminal for the process.  *Note Job Control::, for
      information about what it means to be the controlling terminal.
 
@@ -5853,7 +6361,7 @@ GNU/Hurd systems.
  -- Macro: int O_IGNORE_CTTY
 
      Do not recognize the named file as the controlling terminal, even
-     if it refers to the process’s existing controlling terminal device.
+     if it refers to the process's existing controlling terminal device.
      Operations on the new file descriptor will never induce job control
      signals.  *Note Job Control::.
 
@@ -5861,7 +6369,7 @@ GNU/Hurd systems.
 
      If the named file is a symbolic link, open the link itself instead
      of the file it refers to.  (‘fstat’ on the new file descriptor will
-     return the information returned by ‘lstat’ on the link’s name.)
+     return the information returned by ‘lstat’ on the link's name.)
 
  -- Macro: int O_NOTRANS
 
@@ -5933,7 +6441,7 @@ changed with ‘fcntl’.
      set, ‘read’ requests on the file can return immediately with a
      failure status if there is no input immediately available, instead
      of blocking.  Likewise, ‘write’ requests can also return
-     immediately with a failure status if the output can’t be written
+     immediately with a failure status if the output can't be written
      immediately.
 
      Note that the ‘O_NONBLOCK’ flag is overloaded as both an I/O
@@ -6011,7 +6519,7 @@ The ‘fcntl’ function can fetch or change file status flags.
 
           fcntl (FILEDES, F_SETFL, NEW-FLAGS)
 
-     You can’t change the access mode for the file in this way; that is,
+     You can't change the access mode for the file in this way; that is,
      whether the file descriptor was opened for reading or writing.
 
      The normal return value from ‘fcntl’ with this command is an
@@ -6019,7 +6527,7 @@ The ‘fcntl’ function can fetch or change file status flags.
      error conditions are the same as for the ‘F_GETFL’ command.
 
    If you want to modify the file status flags, you should get the
-current flags with ‘F_GETFL’ and modify the value.  Don’t assume that
+current flags with ‘F_GETFL’ and modify the value.  Don't assume that
 the flags listed here are the only ones that are implemented; your
 program may be run years from now and more flags may exist then.  For
 example, here is a function to set or clear the flag ‘O_NONBLOCK’
@@ -6153,8 +6661,8 @@ function are declared in the header file ‘fcntl.h’.
           The FILEDES argument is invalid.
 
      ‘EINVAL’
-          Either the LOCKP argument doesn’t specify valid lock
-          information, or the file associated with FILEDES doesn’t
+          Either the LOCKP argument doesn't specify valid lock
+          information, or the file associated with FILEDES doesn't
           support locks.
 
  -- Macro: int F_SETLK
@@ -6193,8 +6701,8 @@ function are declared in the header file ‘fcntl.h’.
           access.
 
      ‘EINVAL’
-          Either the LOCKP argument doesn’t specify valid lock
-          information, or the file associated with FILEDES doesn’t
+          Either the LOCKP argument doesn't specify valid lock
+          information, or the file associated with FILEDES doesn't
           support locks.
 
      ‘ENOLCK’
@@ -6266,7 +6774,7 @@ lock that part of the file for writing.
 
    Remember that file locks are only an _advisory_ protocol for
 controlling access to a file.  There is still potential for access to
-the file by programs that don’t use the lock protocol.
+the file by programs that don't use the lock protocol.
 
 
 File: libc.info,  Node: Open File Description Locks,  Next: Open File Description Locks Example,  Prev: File Locks,  Up: Low-Level I/O
@@ -6359,10 +6867,10 @@ field to 0.
           The FILEDES argument is invalid.
 
      ‘EINVAL’
-          Either the LOCKP argument doesn’t specify valid lock
-          information, the operating system kernel doesn’t support open
+          Either the LOCKP argument doesn't specify valid lock
+          information, the operating system kernel doesn't support open
           file description locks, or the file associated with FILEDES
-          doesn’t support locks.
+          doesn't support locks.
 
  -- Macro: int F_OFD_SETLK
 
@@ -6395,10 +6903,10 @@ field to 0.
           access.
 
      ‘EINVAL’
-          Either the LOCKP argument doesn’t specify valid lock
-          information, the operating system kernel doesn’t support open
+          Either the LOCKP argument doesn't specify valid lock
+          information, the operating system kernel doesn't support open
           file description locks, or the file associated with FILEDES
-          doesn’t support locks.
+          doesn't support locks.
 
      ‘ENOLCK’
           The system has run out of file lock resources; there are
@@ -6522,7 +7030,7 @@ brevity.
 
    This example creates three threads each of which loops five times,
 appending to the file.  Access to the file is serialized via open file
-description locks.  If we compile and run the above program, we’ll end
+description locks.  If we compile and run the above program, we'll end
 up with /tmp/foo that has 15 lines in it.
 
    If we, however, were to replace the ‘F_OFD_SETLK’ and ‘F_OFD_SETLKW’
@@ -6546,7 +7054,7 @@ the ‘fcntl’ function.  If the file descriptor is a socket, this also
 selects the recipient of ‘SIGURG’ signals that are delivered when
 out-of-band data arrives on that socket; see *note Out-of-Band Data::.
 (‘SIGURG’ is sent in any situation where ‘select’ would report the
-socket as having an “exceptional condition”.  *Note Waiting for I/O::.)
+socket as having an "exceptional condition".  *Note Waiting for I/O::.)
 
    If the file descriptor corresponds to a terminal device, then ‘SIGIO’
 signals are sent to the foreground process group of the terminal.  *Note
@@ -6593,7 +7101,7 @@ Job Control::.
           There is no process or process group corresponding to PID.
 
 
-File: libc.info,  Node: IOCTLs,  Prev: Interrupt Input,  Up: Low-Level I/O
+File: libc.info,  Node: IOCTLs,  Next: Other Low-Level I/O APIs,  Prev: Interrupt Input,  Up: Low-Level I/O
 
 13.20 Generic I/O Control operations
 ====================================
@@ -6651,12 +7159,44 @@ example of the use of an IOCTL, see *note Out-of-Band Data::.
 IOCTLs on many platforms.
 
 
+File: libc.info,  Node: Other Low-Level I/O APIs,  Prev: IOCTLs,  Up: Low-Level I/O
+
+13.21 Other low-level-I/O-related functions
+===========================================
+
+ -- Data Type: struct pollfd
+
+ -- Data Type: struct epoll_event
+
+ -- Function: int poll (struct pollfd *FDS, nfds_t NFDS, int TIMEOUT)
+
+     This documentation is a stub.  For additional information on this
+     function, consult the manual page
+     <https://man7.org/linux/man-pages/man2/poll.2.html>.  *Note Linux
+     Kernel::.
+
+ -- Function: int epoll_create(int SIZE)
+
+     This documentation is a stub.  For additional information on this
+     function, consult the manual page
+     <https://man7.org/linux/man-pages/man2/epoll_create.2.html>.  *Note
+     Linux Kernel::.
+
+ -- Function: int epoll_wait(int EPFD, struct epoll_event *EVENTS, int
+          MAXEVENTS, int TIMEOUT)
+
+     This documentation is a stub.  For additional information on this
+     function, consult the manual page
+     <https://man7.org/linux/man-pages/man2/epoll_wait.2.html>.  *Note
+     Linux Kernel::.
+
+
 File: libc.info,  Node: File System Interface,  Next: Pipes and FIFOs,  Prev: Low-Level I/O,  Up: Top
 
 14 File System Interface
 ************************
 
-This chapter describes the GNU C Library’s functions for manipulating
+This chapter describes the GNU C Library's functions for manipulating
 files.  Unlike the input and output functions (*note I/O on Streams::;
 *note Low-Level I/O::), these functions are concerned with operating on
 the files themselves rather than on their contents.
@@ -6675,415 +7215,11 @@ access permissions and modification times.
 * Working with Directory Trees:: Apply actions to all files or a selectable
                                  subset of a directory hierarchy.
 * Hard Links::                  Adding alternate names to a file.
-* Symbolic Links::              A file that “points to” a file name.
+* Symbolic Links::              A file that "points to" a file name.
 * Deleting Files::              How to delete a file, and what that means.
-* Renaming Files::              Changing a file’s name.
+* Renaming Files::              Changing a file's name.
 * Creating Directories::        A system call just for creating a directory.
 * File Attributes::             Attributes of individual files.
 * Making Special Files::        How to create special files.
 * Temporary Files::             Naming and creating temporary files.
-
-
-File: libc.info,  Node: Working Directory,  Next: Accessing Directories,  Up: File System Interface
-
-14.1 Working Directory
-======================
-
-Each process has associated with it a directory, called its “current
-working directory” or simply “working directory”, that is used in the
-resolution of relative file names (*note File Name Resolution::).
-
-   When you log in and begin a new session, your working directory is
-initially set to the home directory associated with your login account
-in the system user database.  You can find any user’s home directory
-using the ‘getpwuid’ or ‘getpwnam’ functions; see *note User Database::.
-
-   Users can change the working directory using shell commands like
-‘cd’.  The functions described in this section are the primitives used
-by those commands and by other programs for examining and changing the
-working directory.
-
-   Prototypes for these functions are declared in the header file
-‘unistd.h’.
-
- -- Function: char * getcwd (char *BUFFER, size_t SIZE)
-
-     Preliminary: | MT-Safe | AS-Unsafe heap | AC-Unsafe mem fd | *Note
-     POSIX Safety Concepts::.
-
-     The ‘getcwd’ function returns an absolute file name representing
-     the current working directory, storing it in the character array
-     BUFFER that you provide.  The SIZE argument is how you tell the
-     system the allocation size of BUFFER.
-
-     The GNU C Library version of this function also permits you to
-     specify a null pointer for the BUFFER argument.  Then ‘getcwd’
-     allocates a buffer automatically, as with ‘malloc’ (*note
-     Unconstrained Allocation::).  If the SIZE is greater than zero,
-     then the buffer is that large; otherwise, the buffer is as large as
-     necessary to hold the result.
-
-     The return value is BUFFER on success and a null pointer on
-     failure.  The following ‘errno’ error conditions are defined for
-     this function:
-
-     ‘EINVAL’
-          The SIZE argument is zero and BUFFER is not a null pointer.
-
-     ‘ERANGE’
-          The SIZE argument is less than the length of the working
-          directory name.  You need to allocate a bigger array and try
-          again.
-
-     ‘EACCES’
-          Permission to read or search a component of the file name was
-          denied.
-
-   You could implement the behavior of GNU’s ‘getcwd (NULL, 0)’ using
-only the standard behavior of ‘getcwd’:
-
-     char *
-     gnu_getcwd ()
-     {
-       size_t size = 100;
-
-       while (1)
-         {
-           char *buffer = (char *) xmalloc (size);
-           if (getcwd (buffer, size) == buffer)
-             return buffer;
-           free (buffer);
-           if (errno != ERANGE)
-             return 0;
-           size *= 2;
-         }
-     }
-
-*Note Malloc Examples::, for information about ‘xmalloc’, which is not a
-library function but is a customary name used in most GNU software.
-
- -- Deprecated Function: char * getwd (char *BUFFER)
-
-     Preliminary: | MT-Safe | AS-Unsafe heap i18n | AC-Unsafe mem fd |
-     *Note POSIX Safety Concepts::.
-
-     This is similar to ‘getcwd’, but has no way to specify the size of
-     the buffer.  The GNU C Library provides ‘getwd’ only for backwards
-     compatibility with BSD.
-
-     The BUFFER argument should be a pointer to an array at least
-     ‘PATH_MAX’ bytes long (*note Limits for Files::).  On GNU/Hurd
-     systems there is no limit to the size of a file name, so this is
-     not necessarily enough space to contain the directory name.  That
-     is why this function is deprecated.
-
- -- Function: char * get_current_dir_name (void)
-
-     Preliminary: | MT-Safe env | AS-Unsafe heap | AC-Unsafe mem fd |
-     *Note POSIX Safety Concepts::.
-
-     The ‘get_current_dir_name’ function is basically equivalent to
-     ‘getcwd (NULL, 0)’, except the value of the ‘PWD’ environment
-     variable is first examined, and if it does in fact correspond to
-     the current directory, that value is returned.  This is a subtle
-     difference which is visible if the path described by the value in
-     ‘PWD’ is using one or more symbolic links, in which case the value
-     returned by ‘getcwd’ would resolve the symbolic links and therefore
-     yield a different result.
-
-     This function is a GNU extension.
-
- -- Function: int chdir (const char *FILENAME)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     This function is used to set the process’s working directory to
-     FILENAME.
-
-     The normal, successful return value from ‘chdir’ is ‘0’.  A value
-     of ‘-1’ is returned to indicate an error.  The ‘errno’ error
-     conditions defined for this function are the usual file name syntax
-     errors (*note File Name Errors::), plus ‘ENOTDIR’ if the file
-     FILENAME is not a directory.
-
- -- Function: int fchdir (int FILEDES)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     This function is used to set the process’s working directory to
-     directory associated with the file descriptor FILEDES.
-
-     The normal, successful return value from ‘fchdir’ is ‘0’.  A value
-     of ‘-1’ is returned to indicate an error.  The following ‘errno’
-     error conditions are defined for this function:
-
-     ‘EACCES’
-          Read permission is denied for the directory named by
-          ‘dirname’.
-
-     ‘EBADF’
-          The FILEDES argument is not a valid file descriptor.
-
-     ‘ENOTDIR’
-          The file descriptor FILEDES is not associated with a
-          directory.
-
-     ‘EINTR’
-          The function call was interrupt by a signal.
-
-     ‘EIO’
-          An I/O error occurred.
-
-
-File: libc.info,  Node: Accessing Directories,  Next: Working with Directory Trees,  Prev: Working Directory,  Up: File System Interface
-
-14.2 Accessing Directories
-==========================
-
-The facilities described in this section let you read the contents of a
-directory file.  This is useful if you want your program to list all the
-files in a directory, perhaps as part of a menu.
-
-   The ‘opendir’ function opens a “directory stream” whose elements are
-directory entries.  Alternatively ‘fdopendir’ can be used which can have
-advantages if the program needs to have more control over the way the
-directory is opened for reading.  This allows, for instance, to pass the
-‘O_NOATIME’ flag to ‘open’.
-
-   You use the ‘readdir’ function on the directory stream to retrieve
-these entries, represented as ‘struct dirent’ objects.  The name of the
-file for each entry is stored in the ‘d_name’ member of this structure.
-There are obvious parallels here to the stream facilities for ordinary
-files, described in *note I/O on Streams::.
-
-* Menu:
-
-* Directory Entries::           Format of one directory entry.
-* Opening a Directory::         How to open a directory stream.
-* Reading/Closing Directory::   How to read directory entries from the stream.
-* Simple Directory Lister::     A very simple directory listing program.
-* Random Access Directory::     Rereading part of the directory
-                                 already read with the same stream.
-* Scanning Directory Content::  Get entries for user selected subset of
-                                 contents in given directory.
-* Simple Directory Lister Mark II::  Revised version of the program.
-* Low-level Directory Access::  AS-Safe functions for directory access.
-
-
-File: libc.info,  Node: Directory Entries,  Next: Opening a Directory,  Up: Accessing Directories
-
-14.2.1 Format of a Directory Entry
-----------------------------------
-
-This section describes what you find in a single directory entry, as you
-might obtain it from a directory stream.  All the symbols are declared
-in the header file ‘dirent.h’.
-
- -- Data Type: struct dirent
-
-     This is a structure type used to return information about directory
-     entries.  It contains the following fields:
-
-     ‘char d_name[]’
-          This is the null-terminated file name component.  This is the
-          only field you can count on in all POSIX systems.
-
-     ‘ino_t d_fileno’
-          This is the file serial number.  For BSD compatibility, you
-          can also refer to this member as ‘d_ino’.  On GNU/Linux and
-          GNU/Hurd systems and most POSIX systems, for most files this
-          the same as the ‘st_ino’ member that ‘stat’ will return for
-          the file.  *Note File Attributes::.
-
-     ‘unsigned char d_namlen’
-          This is the length of the file name, not including the
-          terminating null character.  Its type is ‘unsigned char’
-          because that is the integer type of the appropriate size.
-          This member is a BSD extension.  The symbol
-          ‘_DIRENT_HAVE_D_NAMLEN’ is defined if this member is
-          available.
-
-     ‘unsigned char d_type’
-          This is the type of the file, possibly unknown.  The following
-          constants are defined for its value:
-
-          ‘DT_UNKNOWN’
-               The type is unknown.  Only some filesystems have full
-               support to return the type of the file, others might
-               always return this value.
-
-          ‘DT_REG’
-               A regular file.
-
-          ‘DT_DIR’
-               A directory.
-
-          ‘DT_FIFO’
-               A named pipe, or FIFO. *Note FIFO Special Files::.
-
-          ‘DT_SOCK’
-               A local-domain socket.
-
-          ‘DT_CHR’
-               A character device.
-
-          ‘DT_BLK’
-               A block device.
-
-          ‘DT_LNK’
-               A symbolic link.
-
-          This member is a BSD extension.  The symbol
-          ‘_DIRENT_HAVE_D_TYPE’ is defined if this member is available.
-          On systems where it is used, it corresponds to the file type
-          bits in the ‘st_mode’ member of ‘struct stat’.  If the value
-          cannot be determined the member value is DT_UNKNOWN. These two
-          macros convert between ‘d_type’ values and ‘st_mode’ values:
-
-           -- Function: int IFTODT (mode_t MODE)
-
-               Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX
-               Safety Concepts::.
-
-               This returns the ‘d_type’ value corresponding to MODE.
-
-           -- Function: mode_t DTTOIF (int DTYPE)
-
-               Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX
-               Safety Concepts::.
-
-               This returns the ‘st_mode’ value corresponding to DTYPE.
-
-     This structure may contain additional members in the future.  Their
-     availability is always announced in the compilation environment by
-     a macro named ‘_DIRENT_HAVE_D_XXX’ where XXX is replaced by the
-     name of the new member.  For instance, the member ‘d_reclen’
-     available on some systems is announced through the macro
-     ‘_DIRENT_HAVE_D_RECLEN’.
-
-     When a file has multiple names, each name has its own directory
-     entry.  The only way you can tell that the directory entries belong
-     to a single file is that they have the same value for the
-     ‘d_fileno’ field.
-
-     File attributes such as size, modification times etc., are part of
-     the file itself, not of any particular directory entry.  *Note File
-     Attributes::.
-
-
-File: libc.info,  Node: Opening a Directory,  Next: Reading/Closing Directory,  Prev: Directory Entries,  Up: Accessing Directories
-
-14.2.2 Opening a Directory Stream
----------------------------------
-
-This section describes how to open a directory stream.  All the symbols
-are declared in the header file ‘dirent.h’.
-
- -- Data Type: DIR
-
-     The ‘DIR’ data type represents a directory stream.
-
-   You shouldn’t ever allocate objects of the ‘struct dirent’ or ‘DIR’
-data types, since the directory access functions do that for you.
-Instead, you refer to these objects using the pointers returned by the
-following functions.
-
-   Directory streams are a high-level interface.  On Linux, alternative
-interfaces for accessing directories using file descriptors are
-available.  *Note Low-level Directory Access::.
-
- -- Function: DIR * opendir (const char *DIRNAME)
-
-     Preliminary: | MT-Safe | AS-Unsafe heap | AC-Unsafe mem fd | *Note
-     POSIX Safety Concepts::.
-
-     The ‘opendir’ function opens and returns a directory stream for
-     reading the directory whose file name is DIRNAME.  The stream has
-     type ‘DIR *’.
-
-     If unsuccessful, ‘opendir’ returns a null pointer.  In addition to
-     the usual file name errors (*note File Name Errors::), the
-     following ‘errno’ error conditions are defined for this function:
-
-     ‘EACCES’
-          Read permission is denied for the directory named by
-          ‘dirname’.
-
-     ‘EMFILE’
-          The process has too many files open.
-
-     ‘ENFILE’
-          The entire system, or perhaps the file system which contains
-          the directory, cannot support any additional open files at the
-          moment.  (This problem cannot happen on GNU/Hurd systems.)
-
-     ‘ENOMEM’
-          Not enough memory available.
-
-     The ‘DIR’ type is typically implemented using a file descriptor,
-     and the ‘opendir’ function in terms of the ‘open’ function.  *Note
-     Low-Level I/O::.  Directory streams and the underlying file
-     descriptors are closed on ‘exec’ (*note Executing a File::).
-
-   The directory which is opened for reading by ‘opendir’ is identified
-by the name.  In some situations this is not sufficient.  Or the way
-‘opendir’ implicitly creates a file descriptor for the directory is not
-the way a program might want it.  In these cases an alternative
-interface can be used.
-
- -- Function: DIR * fdopendir (int FD)
-
-     Preliminary: | MT-Safe | AS-Unsafe heap | AC-Unsafe mem fd | *Note
-     POSIX Safety Concepts::.
-
-     The ‘fdopendir’ function works just like ‘opendir’ but instead of
-     taking a file name and opening a file descriptor for the directory
-     the caller is required to provide a file descriptor.  This file
-     descriptor is then used in subsequent uses of the returned
-     directory stream object.
-
-     The caller must make sure the file descriptor is associated with a
-     directory and it allows reading.
-
-     If the ‘fdopendir’ call returns successfully the file descriptor is
-     now under the control of the system.  It can be used in the same
-     way the descriptor implicitly created by ‘opendir’ can be used but
-     the program must not close the descriptor.
-
-     In case the function is unsuccessful it returns a null pointer and
-     the file descriptor remains to be usable by the program.  The
-     following ‘errno’ error conditions are defined for this function:
-
-     ‘EBADF’
-          The file descriptor is not valid.
-
-     ‘ENOTDIR’
-          The file descriptor is not associated with a directory.
-
-     ‘EINVAL’
-          The descriptor does not allow reading the directory content.
-
-     ‘ENOMEM’
-          Not enough memory available.
-
-   In some situations it can be desirable to get hold of the file
-descriptor which is created by the ‘opendir’ call.  For instance, to
-switch the current working directory to the directory just read the
-‘fchdir’ function could be used.  Historically the ‘DIR’ type was
-exposed and programs could access the fields.  This does not happen in
-the GNU C Library.  Instead a separate function is provided to allow
-access.
-
- -- Function: int dirfd (DIR *DIRSTREAM)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     The function ‘dirfd’ returns the file descriptor associated with
-     the directory stream DIRSTREAM.  This descriptor can be used until
-     the directory is closed with ‘closedir’.  If the directory stream
-     implementation is not using file descriptors the return value is
-     ‘-1’.
 

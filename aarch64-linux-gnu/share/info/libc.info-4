@@ -1,21 +1,21 @@
-This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
+This is libc.info, produced by makeinfo version 7.1 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.39.
+This is ‘The GNU C Library Reference Manual’, for version 2.40.
 
-   Copyright © 1993–2024 Free Software Foundation, Inc.
+   Copyright © 1993-2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
 any later version published by the Free Software Foundation; with the
-Invariant Sections being “Free Software Needs Free Documentation” and
-“GNU Lesser General Public License”, the Front-Cover texts being “A GNU
-Manual”, and with the Back-Cover Texts as in (a) below.  A copy of the
+Invariant Sections being "Free Software Needs Free Documentation" and
+"GNU Lesser General Public License", the Front-Cover texts being "A GNU
+Manual", and with the Back-Cover Texts as in (a) below.  A copy of the
 license is included in the section entitled "GNU Free Documentation
 License".
 
-   (a) The FSF’s Back-Cover Text is: “You have the freedom to copy and
+   (a) The FSF's Back-Cover Text is: "You have the freedom to copy and
 modify this GNU manual.  Buying copies from the FSF supports it in
-developing GNU and promoting software freedom.”
+developing GNU and promoting software freedom."
 INFO-DIR-SECTION Software libraries
 START-INFO-DIR-ENTRY
 * Libc: (libc).                 C library.
@@ -422,6 +422,7 @@ START-INFO-DIR-ENTRY
 * S_TYPEISMQ: (libc)Testing File Type.
 * S_TYPEISSEM: (libc)Testing File Type.
 * S_TYPEISSHM: (libc)Testing File Type.
+* TIME_UTC: (libc)Getting the Time.
 * TMP_MAX: (libc)Temporary Files.
 * TOSTOP: (libc)Local Modes.
 * TZNAME_MAX: (libc)General Limits.
@@ -567,8 +568,6 @@ START-INFO-DIR-ENTRY
 * argz_next: (libc)Argz Functions.
 * argz_replace: (libc)Argz Functions.
 * argz_stringify: (libc)Argz Functions.
-* asctime: (libc)Formatting Calendar Time.
-* asctime_r: (libc)Formatting Calendar Time.
 * asin: (libc)Inverse Trig Functions.
 * asinf: (libc)Inverse Trig Functions.
 * asinfN: (libc)Inverse Trig Functions.
@@ -698,6 +697,10 @@ START-INFO-DIR-ENTRY
 * cfsetispeed: (libc)Line Speed.
 * cfsetospeed: (libc)Line Speed.
 * cfsetspeed: (libc)Line Speed.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
 * chdir: (libc)Working Directory.
 * chmod: (libc)Setting Permissions.
 * chown: (libc)File Owner.
@@ -800,8 +803,6 @@ START-INFO-DIR-ENTRY
 * ctanhl: (libc)Hyperbolic Functions.
 * ctanl: (libc)Trig Functions.
 * ctermid: (libc)Identifying the Terminal.
-* ctime: (libc)Formatting Calendar Time.
-* ctime_r: (libc)Formatting Calendar Time.
 * cuserid: (libc)Who Logged In.
 * daddl: (libc)Misc FP Arithmetic.
 * dcgettext: (libc)Translation with gettext.
@@ -824,6 +825,7 @@ START-INFO-DIR-ENTRY
 * dsqrtl: (libc)Misc FP Arithmetic.
 * dsubl: (libc)Misc FP Arithmetic.
 * dup2: (libc)Duplicating Descriptors.
+* dup3: (libc)Duplicating Descriptors.
 * dup: (libc)Duplicating Descriptors.
 * ecvt: (libc)System V Number Conversion.
 * ecvt_r: (libc)System V Number Conversion.
@@ -844,6 +846,8 @@ START-INFO-DIR-ENTRY
 * envz_merge: (libc)Envz Functions.
 * envz_remove: (libc)Envz Functions.
 * envz_strip: (libc)Envz Functions.
+* epoll_createint: (libc)Other Low-Level I/O APIs.
+* epoll_waitint: (libc)Other Low-Level I/O APIs.
 * erand48: (libc)SVID Random.
 * erand48_r: (libc)SVID Random.
 * erf: (libc)Special Functions.
@@ -873,11 +877,21 @@ START-INFO-DIR-ENTRY
 * exp10fN: (libc)Exponents and Logarithms.
 * exp10fNx: (libc)Exponents and Logarithms.
 * exp10l: (libc)Exponents and Logarithms.
+* exp10m1: (libc)Exponents and Logarithms.
+* exp10m1f: (libc)Exponents and Logarithms.
+* exp10m1fN: (libc)Exponents and Logarithms.
+* exp10m1fNx: (libc)Exponents and Logarithms.
+* exp10m1l: (libc)Exponents and Logarithms.
 * exp2: (libc)Exponents and Logarithms.
 * exp2f: (libc)Exponents and Logarithms.
 * exp2fN: (libc)Exponents and Logarithms.
 * exp2fNx: (libc)Exponents and Logarithms.
 * exp2l: (libc)Exponents and Logarithms.
+* exp2m1: (libc)Exponents and Logarithms.
+* exp2m1f: (libc)Exponents and Logarithms.
+* exp2m1fN: (libc)Exponents and Logarithms.
+* exp2m1fNx: (libc)Exponents and Logarithms.
+* exp2m1l: (libc)Exponents and Logarithms.
 * exp: (libc)Exponents and Logarithms.
 * expf: (libc)Exponents and Logarithms.
 * expfN: (libc)Exponents and Logarithms.
@@ -1418,6 +1432,11 @@ START-INFO-DIR-ENTRY
 * log10fN: (libc)Exponents and Logarithms.
 * log10fNx: (libc)Exponents and Logarithms.
 * log10l: (libc)Exponents and Logarithms.
+* log10p1: (libc)Exponents and Logarithms.
+* log10p1f: (libc)Exponents and Logarithms.
+* log10p1fN: (libc)Exponents and Logarithms.
+* log10p1fNx: (libc)Exponents and Logarithms.
+* log10p1l: (libc)Exponents and Logarithms.
 * log1p: (libc)Exponents and Logarithms.
 * log1pf: (libc)Exponents and Logarithms.
 * log1pfN: (libc)Exponents and Logarithms.
@@ -1428,6 +1447,11 @@ START-INFO-DIR-ENTRY
 * log2fN: (libc)Exponents and Logarithms.
 * log2fNx: (libc)Exponents and Logarithms.
 * log2l: (libc)Exponents and Logarithms.
+* log2p1: (libc)Exponents and Logarithms.
+* log2p1f: (libc)Exponents and Logarithms.
+* log2p1fN: (libc)Exponents and Logarithms.
+* log2p1fNx: (libc)Exponents and Logarithms.
+* log2p1l: (libc)Exponents and Logarithms.
 * log: (libc)Exponents and Logarithms.
 * logb: (libc)Exponents and Logarithms.
 * logbf: (libc)Exponents and Logarithms.
@@ -1441,6 +1465,11 @@ START-INFO-DIR-ENTRY
 * login_tty: (libc)Logging In and Out.
 * logl: (libc)Exponents and Logarithms.
 * logout: (libc)Logging In and Out.
+* logp1: (libc)Exponents and Logarithms.
+* logp1f: (libc)Exponents and Logarithms.
+* logp1fN: (libc)Exponents and Logarithms.
+* logp1fNx: (libc)Exponents and Logarithms.
+* logp1l: (libc)Exponents and Logarithms.
 * logwtmp: (libc)Logging In and Out.
 * longjmp: (libc)Non-Local Details.
 * lrand48: (libc)SVID Random.
@@ -1607,6 +1636,7 @@ START-INFO-DIR-ENTRY
 * pkey_get: (libc)Memory Protection.
 * pkey_mprotect: (libc)Memory Protection.
 * pkey_set: (libc)Memory Protection.
+* poll: (libc)Other Low-Level I/O APIs.
 * popen: (libc)Pipe to a Subprocess.
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
@@ -1687,7 +1717,7 @@ START-INFO-DIR-ENTRY
 * realpath: (libc)Symbolic Links.
 * recv: (libc)Receiving Data.
 * recvfrom: (libc)Receiving Datagrams.
-* recvmsg: (libc)Receiving Datagrams.
+* recvmsg: (libc)Other Socket APIs.
 * regcomp: (libc)POSIX Regexp Compilation.
 * regerror: (libc)Regexp Cleanup.
 * regexec: (libc)Matching POSIX Regexps.
@@ -1768,7 +1798,7 @@ START-INFO-DIR-ENTRY
 * semop: (libc)Semaphores.
 * semtimedop: (libc)Semaphores.
 * send: (libc)Sending Data.
-* sendmsg: (libc)Receiving Datagrams.
+* sendmsg: (libc)Other Socket APIs.
 * sendto: (libc)Sending Datagrams.
 * setbuf: (libc)Controlling Buffering.
 * setbuffer: (libc)Controlling Buffering.
@@ -1981,6 +2011,7 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strftime_l: (libc)Formatting Calendar Time.
 * strlcat: (libc)Truncating Strings.
 * strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
@@ -2069,6 +2100,8 @@ START-INFO-DIR-ENTRY
 * timegm: (libc)Broken-down Time.
 * timelocal: (libc)Broken-down Time.
 * times: (libc)Processor Time.
+* timespec_get: (libc)Getting the Time.
+* timespec_getres: (libc)Getting the Time.
 * tmpfile64: (libc)Temporary Files.
 * tmpfile: (libc)Temporary Files.
 * tmpnam: (libc)Temporary Files.
@@ -2105,7 +2138,7 @@ START-INFO-DIR-ENTRY
 * ttyname_r: (libc)Is It a Terminal.
 * twalk: (libc)Tree Search Function.
 * twalk_r: (libc)Tree Search Function.
-* tzset: (libc)Time Zone Functions.
+* tzset: (libc)Time Zone State.
 * ufromfp: (libc)Rounding Functions.
 * ufromfpf: (libc)Rounding Functions.
 * ufromfpfN: (libc)Rounding Functions.
@@ -2344,10 +2377,10 @@ according to these rules.
      specifiers defined:
 
      ‘i’
-          Use the locale’s rules for formatting an international
+          Use the locale's rules for formatting an international
           currency value.
      ‘n’
-          Use the locale’s rules for formatting a national currency
+          Use the locale's rules for formatting a national currency
           value.
      ‘%’
           Place a ‘%’ in the output.  There must be no flag, width
@@ -2509,8 +2542,8 @@ File: libc.info,  Node: Message Translation,  Next: Searching and Sorting,  Prev
 8 Message Translation
 *********************
 
-The program’s interface with the user should be designed to ease the
-user’s task.  One way to ease the user’s task is to use messages in
+The program's interface with the user should be designed to ease the
+user's task.  One way to ease the user's task is to use messages in
 whatever language the user prefers.
 
    Printing messages in different languages can be implemented in
@@ -2618,7 +2651,7 @@ File: libc.info,  Node: The catgets Functions,  Next: The message catalog files,
      can be found the user can set the environment variable ‘NLSPATH’ to
      a value which describes her/his choice.  Since this value must be
      usable for different languages and locales it cannot be a simple
-     string.  Instead it is a format string (similar to ‘printf’’s).  An
+     string.  Instead it is a format string (similar to ‘printf’'s).  An
      example is
 
           /usr/share/locale/%L/%N:/usr/share/locale/%L/LC_MESSAGES/%N
@@ -3176,7 +3209,7 @@ File: libc.info,  Node: The Uniforum approach,  Prev: Message catalogs a la X/Op
 
 Sun Microsystems tried to standardize a different approach to message
 translation in the Uniforum group.  There never was a real standard
-defined but still the interface was used in Sun’s operating systems.
+defined but still the interface was used in Sun's operating systems.
 Since this approach fits better in the development process of free
 software it is also used throughout the GNU project and the GNU
 ‘gettext’ package provides support for this outside the GNU C Library.
@@ -3268,7 +3301,7 @@ part of the C library they can be found in a separate library named
      history of the function and does not reflect the way the function
      should be used.
 
-     Please note that above we wrote “message catalogs” (plural).  This
+     Please note that above we wrote "message catalogs" (plural).  This
      is a specialty of the GNU implementation of these functions and we
      will say more about this when we talk about the ways message
      catalogs are selected (*note Locating gettext catalog::).
@@ -3532,7 +3565,7 @@ tries to solve the problem correctly looked like this:
           printf ("%d files deleted", n);
 
    But this does not solve the problem.  It helps languages where the
-plural form of a noun is not simply constructed by adding an ‘s’ but
+plural form of a noun is not simply constructed by adding an 's' but
 that is all.  Once again people fell into the trap of believing the
 rules their language uses are universal.  But the handling of plural
 forms differs widely between the language families.  There are two
@@ -3542,7 +3575,7 @@ things we can differ between (and even inside language families);
      with language which have many irregularities.  German, for
      instance, is a drastic case.  Though English and German are part of
      the same language family (Germanic), the almost regular forming of
-     plural noun forms (appending an ‘s’) is hardly found in German.
+     plural noun forms (appending an 's') is hardly found in German.
 
    • The number of plural forms differ.  This is somewhat surprising for
      those who only have experiences with Romanic and Germanic languages
@@ -3813,7 +3846,7 @@ function.
 
    Note that the MSGID argument to ‘gettext’ is not subject to character
 set conversion.  Also, when ‘gettext’ does not find a translation for
-MSGID, it returns MSGID unchanged – independently of the current output
+MSGID, it returns MSGID unchanged - independently of the current output
 character set.  It is therefore recommended that all MSGIDs be US-ASCII
 strings.
 
@@ -3916,7 +3949,7 @@ pointer comparison since the return value is the input value.  If there
 is no translation we know that the input string is in the format we used
 for the Menu entries and therefore contains a ‘|’ character.  We simply
 search for the last occurrence of this character and return a pointer to
-the character following it.  That’s it!
+the character following it.  That's it!
 
    If one now consistently uses the extended string form and replaces
 the ‘gettext’ calls with calls to ‘sgettext’ (this is normally limited
@@ -4035,7 +4068,7 @@ we can select the language independently of the locale setting which
 sometimes is useful.
 
    While for the ‘LC_xxx’ variables the value should consist of exactly
-one specification of a locale the ‘LANGUAGE’ variable’s value can
+one specification of a locale the ‘LANGUAGE’ variable's value can
 consist of a colon separated list of locale names.  The attentive reader
 will realize that this is the way we manage to implement one of our
 additional demands above: we want to be able to specify an ordered list
@@ -4061,7 +4094,7 @@ to work:
 
    At the program start the default domain is ‘messages’, and the
 default locale is "C". The ‘setlocale’ call sets the locale according to
-the user’s environment variables; remember that correct functioning of
+the user's environment variables; remember that correct functioning of
 ‘gettext’ relies on the correct setting of the ‘LC_MESSAGES’ locale (for
 looking up the message catalog) and of the ‘LC_CTYPE’ locale (for the
 character set conversion).  The ‘textdomain’ call changes the default
@@ -4215,20 +4248,23 @@ how to compare the elements of the array.
 of the array.  The library will call this function, passing as arguments
 pointers to two array elements to be compared.  Your comparison function
 should return a value the way ‘strcmp’ (*note String/Array Comparison::)
-does: negative if the first argument is “less” than the second, zero if
-they are “equal”, and positive if the first argument is “greater”.
+does: negative if the first argument is "less" than the second, zero if
+they are "equal", and positive if the first argument is "greater".
 
    Here is an example of a comparison function which works with an array
-of numbers of type ‘double’:
+of numbers of type ‘long int’:
 
      int
-     compare_doubles (const void *a, const void *b)
+     compare_long_ints (const void *a, const void *b)
      {
-       const double *da = (const double *) a;
-       const double *db = (const double *) b;
+       const long int *la = a;
+       const long int *lb = b;
 
-       return (*da > *db) - (*da < *db);
+       return (*la > *lb) - (*la < *lb);
      }
+
+   (The code would have to be more complicated for an array of ‘double’,
+to handle NaNs correctly.)
 
    The header file ‘stdlib.h’ defines a name for the data type of
 comparison functions.  This type is a GNU extension.
@@ -4261,10 +4297,11 @@ two functions can be found in ‘search.h’.
      starting at BASE if it is found.  If no matching element is
      available ‘NULL’ is returned.
 
-     The mean runtime of this function is ‘*NMEMB’/2.  This function
-     should only be used if elements often get added to or deleted from
-     the array in which case it might not be useful to sort the array
-     before searching.
+     The mean runtime of this function is proportional to ‘*NMEMB/2’,
+     assuming random elements of the array are searched for.  This
+     function should be used only if elements often get added to or
+     deleted from the array in which case it might not be useful to sort
+     the array before searching.
 
  -- Function: void * lsearch (const void *KEY, void *BASE, size_t
           *NMEMB, size_t SIZE, comparison_fn_t COMPAR)
@@ -4286,9 +4323,9 @@ two functions can be found in ‘search.h’.
      use ‘lfind’ so having more room in the array is always necessary
      when calling ‘lsearch’.
 
-   To search a sorted array for an element matching the key, use the
-‘bsearch’ function.  The prototype for this function is in the header
-file ‘stdlib.h’.
+   To search a sorted or partially sorted array for an element matching
+the key, use the ‘bsearch’ function.  The prototype for this function is
+in the header file ‘stdlib.h’.
 
  -- Function: void * bsearch (const void *KEY, const void *ARRAY, size_t
           COUNT, size_t SIZE, comparison_fn_t COMPARE)
@@ -4296,19 +4333,27 @@ file ‘stdlib.h’.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
      Concepts::.
 
-     The ‘bsearch’ function searches the sorted array ARRAY for an
-     object that is equivalent to KEY.  The array contains COUNT
-     elements, each of which is of size SIZE bytes.
+     The ‘bsearch’ function searches ARRAY for an element that is
+     equivalent to KEY.  The array contains COUNT elements, each of
+     which is of size SIZE bytes.
 
      The COMPARE function is used to perform the comparison.  This
-     function is called with two pointer arguments and should return an
-     integer less than, equal to, or greater than zero corresponding to
-     whether its first argument is considered less than, equal to, or
-     greater than its second argument.  The elements of the ARRAY must
-     already be sorted in ascending order according to this comparison
-     function.
+     function is called with arguments that point to the key and to an
+     array element, in that order, and should return an integer less
+     than, equal to, or greater than zero corresponding to whether the
+     key is considered less than, equal to, or greater than the array
+     element.  The function should not alter the array's contents, and
+     the same array element should always compare the same way with the
+     key.
 
-     The return value is a pointer to the matching array element, or a
+     Although the array need not be completely sorted, it should be
+     partially sorted with respect to KEY.  That is, the array should
+     begin with elements that compare less than KEY, followed by
+     elements that compare equal to KEY, and ending with elements that
+     compare greater than KEY.  Any or all of these element sequences
+     can be empty.
+
+     The return value is a pointer to a matching array element, or a
      null pointer if no match is found.  If the array contains more than
      one element that matches, the one that is returned is unspecified.
 
@@ -4337,39 +4382,42 @@ function.  The prototype for this function is in ‘stdlib.h’.
      elements.  This function is called with two pointer arguments and
      should return an integer less than, equal to, or greater than zero
      corresponding to whether its first argument is considered less
-     than, equal to, or greater than its second argument.
+     than, equal to, or greater than its second argument.  The function
+     must not alter the array's contents, and must define a total
+     ordering on the array elements, including any unusual values such
+     as floating-point NaN (*note Infinity and NaN::).  Because the
+     sorting process can move elements, the function's return value must
+     not depend on the element addresses or the relative positions of
+     elements within the array, as these are meaningless while ‘qsort’
+     is running.
 
-     *Warning:* If two objects compare as equal, their order after
-     sorting is unpredictable.  That is to say, the sorting is not
-     stable.  This can make a difference when the comparison considers
-     only part of the elements.  Two elements with the same sort key may
-     differ in other respects.
+     *Warning:* If two elements compare equal, their order after sorting
+     is unpredictable.  That is to say, the sorting is not stable.  This
+     can make a difference when the comparison considers only part of
+     the elements and two elements that compare equal may differ in
+     other respects.  To ensure a stable sort in this situation, you can
+     augment each element with an appropriate tie-breaking value, such
+     as its original array index.
 
-     Although the object addresses passed to the comparison function lie
-     within the array, they need not correspond with the original
-     locations of those objects because the sorting algorithm may swap
-     around objects in the array before making some comparisons.  The
-     only way to perform a stable sort with ‘qsort’ is to first augment
-     the objects with a monotonic counter of some kind.
-
-     Here is a simple example of sorting an array of doubles in
+     Here is a simple example of sorting an array of ‘long int’ in
      numerical order, using the comparison function defined above (*note
      Comparison Functions::):
 
           {
-            double *array;
-            int size;
+            long int *array;
+            size_t nmemb;
             ...
-            qsort (array, size, sizeof (double), compare_doubles);
+            qsort (array, nmemb, sizeof *array, compare_long_ints);
           }
 
      The ‘qsort’ function derives its name from the fact that it was
-     originally implemented using the “quick sort” algorithm.
+     originally implemented using the "quick sort" algorithm.
 
-     The implementation of ‘qsort’ attempts to allocate auxiliary
-     storage and use the merge sort algorithm, without violating C
-     standard requirement that arguments passed to the comparison
-     function point within the array.
+     The implementation of ‘qsort’ attempts to allocate auxiliary memory
+     and use the merge sort algorithm, without violating C standard
+     requirement that arguments passed to the comparison function point
+     within the array.  If the memory allocation fails, ‘qsort’ resorts
+     to a slower algorithm.
 
 
 File: libc.info,  Node: Search/Sort Example,  Next: Hash Search Function,  Prev: Array Sort Function,  Up: Searching and Sorting
@@ -4378,9 +4426,9 @@ File: libc.info,  Node: Search/Sort Example,  Next: Hash Search Function,  Prev:
 =================================
 
 Here is an example showing the use of ‘qsort’ and ‘bsearch’ with an
-array of structures.  The objects in the array are sorted by comparing
+array of structures.  The elements of the array are sorted by comparing
 their ‘name’ fields with the ‘strcmp’ function.  Then, we can look up
-individual objects based on their names.
+individual elements based on their names.
 
 
      #include <stdlib.h>
@@ -4541,8 +4589,8 @@ The following functions are declared in the header file ‘search.h’.
      maximal number of elements.  Hashing tables usually work
      inefficiently if they are filled 80% or more.  The constant access
      time guaranteed by hashing can only be achieved if few collisions
-     exist.  See Knuth’s “The Art of Computer Programming, Part 3:
-     Searching and Sorting” for more information.
+     exist.  See Knuth's "The Art of Computer Programming, Part 3:
+     Searching and Sorting" for more information.
 
      The weakest aspect of this function is that there can be at most
      one hashing table used through the whole program.  The table is
@@ -4577,7 +4625,7 @@ The following functions are declared in the header file ‘search.h’.
      elements in the hashing table.  If it is really necessary to free a
      table and all elements the programmer has to keep a list of all
      table elements and before calling ‘hdestroy’ s/he has to free all
-     element’s data using this list.  This is a very unpleasant
+     element's data using this list.  This is a very unpleasant
      mechanism and it also shows that this kind of hashing table is
      mainly meant for tables which are created once and used until the
      end of the program run.
@@ -4660,7 +4708,7 @@ as opaque, none of its members should be changed directly.
 
      The ‘hdestroy_r’ function frees all resources allocated by the
      ‘hcreate_r’ function for this very same object HTAB.  As for
-     ‘hdestroy’ it is the program’s responsibility to free the strings
+     ‘hdestroy’ it is the program's responsibility to free the strings
      for the elements of the table.
 
  -- Function: int hsearch_r (ENTRY ITEM, ACTION ACTION, ENTRY **RETVAL,
@@ -4809,7 +4857,7 @@ is an enumeration type.
  -- Data Type: VISIT
      The ‘VISIT’ value indicates the status of the current node in the
      tree and how the function is called.  The status of a node is
-     either ‘leaf’ or ‘internal node’.  For each leaf node the function
+     either 'leaf' or 'internal node'.  For each leaf node the function
      is called exactly once, for each internal node it is called three
      times: before the first child is processed, after the first child
      is processed and after both children are processed.  This makes it
@@ -4956,7 +5004,7 @@ fit the pattern or not.  The symbols described here are all declared in
      The argument FLAGS is a combination of flag bits that alter the
      details of matching.  See below for a list of the defined flags.
 
-     In the GNU C Library, ‘fnmatch’ might sometimes report “errors” by
+     In the GNU C Library, ‘fnmatch’ might sometimes report "errors" by
      returning nonzero values that are not equal to ‘FNM_NOMATCH’.
 
    These are the available flags for the FLAGS argument:
@@ -4971,7 +5019,7 @@ fit the pattern or not.  The symbols described here are all declared in
 ‘FNM_PATHNAME’
 
      This is an alias for ‘FNM_FILE_NAME’; it comes from POSIX.2.  We
-     don’t recommend this name because we don’t use the term “pathname”
+     don't recommend this name because we don't use the term "pathname"
      for file names.
 
 ‘FNM_PERIOD’
@@ -4987,7 +5035,7 @@ fit the pattern or not.  The symbols described here are all declared in
 
 ‘FNM_NOESCAPE’
 
-     Don’t treat the ‘\’ character specially in patterns.  Normally, ‘\’
+     Don't treat the ‘\’ character specially in patterns.  Normally, ‘\’
      quotes the following character, turning off its special meaning (if
      any) so that it matches only itself.  When quoting is enabled, the
      pattern ‘\?’ matches only the string ‘?’, because the question mark
@@ -5068,7 +5116,7 @@ File: libc.info,  Node: Calling Glob,  Next: Flags for Globbing,  Up: Globbing
 The result of globbing is a vector of file names (strings).  To return
 this vector, ‘glob’ uses a special data type, ‘glob_t’, which is a
 structure.  You pass ‘glob’ the address of the structure, and it fills
-in the structure’s fields to tell you about the results.
+in the structure's fields to tell you about the results.
 
  -- Data Type: glob_t
 
@@ -5319,7 +5367,7 @@ types of the members ‘gl_readdir’, ‘gl_stat’, and ‘gl_lstat’.
      Normally, ‘glob’ sorts the file names alphabetically before
      returning them.  You can turn this off with the flag ‘GLOB_NOSORT’
      if you want to get the information as fast as possible.  Usually
-     it’s a good idea to let ‘glob’ sort them—if you process the files
+     it's a good idea to let ‘glob’ sort them--if you process the files
      in alphabetical order, the users will have a feel for the rate of
      progress that your application is making.
 
@@ -5335,7 +5383,7 @@ types of the members ‘gl_readdir’, ‘gl_stat’, and ‘gl_lstat’.
 
      ‘GLOB_NOMATCH’
 
-          The pattern didn’t match any existing files.  If you use the
+          The pattern didn't match any existing files.  If you use the
           ‘GLOB_NOCHECK’ flag, then you never get this error code,
           because that flag tells ‘glob’ to _pretend_ that the pattern
           matched at least one file.
@@ -5420,20 +5468,20 @@ extensions.
      Give up right away and report an error if there is any difficulty
      reading the directories that must be read in order to expand
      PATTERN fully.  Such difficulties might include a directory in
-     which you don’t have the requisite access.  Normally, ‘glob’ tries
+     which you don't have the requisite access.  Normally, ‘glob’ tries
      its best to keep on going despite any errors, reading whatever
      directories it can.
 
      You can exercise even more control than this by specifying an
      error-handler function ERRFUNC when you call ‘glob’.  If ERRFUNC is
-     not a null pointer, then ‘glob’ doesn’t give up right away when it
-     can’t read a directory; instead, it calls ERRFUNC with two
+     not a null pointer, then ‘glob’ doesn't give up right away when it
+     can't read a directory; instead, it calls ERRFUNC with two
      arguments, like this:
 
           (*ERRFUNC) (FILENAME, ERROR-CODE)
 
      The argument FILENAME is the name of the directory that ‘glob’
-     couldn’t open or couldn’t read, and ERROR-CODE is the ‘errno’ value
+     couldn't open or couldn't read, and ERROR-CODE is the ‘errno’ value
      that was reported to ‘glob’.
 
      If the error handler function returns nonzero, then ‘glob’ gives up
@@ -5442,18 +5490,18 @@ extensions.
 ‘GLOB_MARK’
 
      If the pattern matches the name of a directory, append ‘/’ to the
-     directory’s name when returning it.
+     directory's name when returning it.
 
 ‘GLOB_NOCHECK’
 
-     If the pattern doesn’t match any file names, return the pattern
+     If the pattern doesn't match any file names, return the pattern
      itself as if it were a file name that had been matched.  (Normally,
-     when the pattern doesn’t match anything, ‘glob’ returns that there
+     when the pattern doesn't match anything, ‘glob’ returns that there
      were no matches.)
 
 ‘GLOB_NOESCAPE’
 
-     Don’t treat the ‘\’ character specially in patterns.  Normally, ‘\’
+     Don't treat the ‘\’ character specially in patterns.  Normally, ‘\’
      quotes the following character, turning off its special meaning (if
      any) so that it matches only itself.  When quoting is enabled, the
      pattern ‘\?’ matches only the string ‘?’, because the question mark
@@ -5467,7 +5515,7 @@ extensions.
 
 ‘GLOB_NOSORT’
 
-     Don’t sort the file names; return them in no particular order.  (In
+     Don't sort the file names; return them in no particular order.  (In
      practice, the order will depend on the order of the entries in the
      directory.)  The only reason _not_ to sort is to save time.
 
@@ -5536,7 +5584,7 @@ in modern shell implementations.
 ‘GLOB_NOMAGIC’
 
      If the pattern contains no wildcard constructs (it is a literal
-     file name), return it as the sole “matching” word, even if no file
+     file name), return it as the sole "matching" word, even if no file
      exists by that name.
 
 ‘GLOB_TILDE’
@@ -5558,7 +5606,7 @@ in modern shell implementations.
      Instead of referring to the own home directory it is also possible
      to name the home directory of other users.  To do so one has to
      append the user name after the tilde character.  So the contents of
-     user ‘homer’’s ‘bin’ directory can be retrieved by
+     user ‘homer’'s ‘bin’ directory can be retrieved by
 
           glob ("~homer/bin/*", GLOB_TILDE, NULL, &result)
 
@@ -5610,7 +5658,7 @@ when all ‘glob’ calls are done.
      The ‘globfree’ function frees all resources allocated by previous
      calls to ‘glob’ associated with the object pointed to by PGLOB.
      This function should be called whenever the currently used ‘glob_t’
-     typed object isn’t used anymore.
+     typed object isn't used anymore.
 
  -- Function: void globfree64 (glob64_t *PGLOB)
 
@@ -5651,9 +5699,9 @@ File: libc.info,  Node: POSIX Regexp Compilation,  Next: Flags for POSIX Regexps
 -------------------------------------------
 
 Before you can actually match a regular expression, you must “compile”
-it.  This is not true compilation—it produces a special data structure,
+it.  This is not true compilation--it produces a special data structure,
 not machine instructions.  But it is like ordinary compilation in that
-its purpose is to enable you to “execute” the pattern fast.  (*Note
+its purpose is to enable you to "execute" the pattern fast.  (*Note
 Matching POSIX Regexps::, for how to use the compiled regular expression
 for matching.)
 
@@ -5669,7 +5717,7 @@ for matching.)
           This field holds the number of parenthetical subexpressions in
           the regular expression that was compiled.
 
-     There are several other fields, but we don’t describe them here,
+     There are several other fields, but we don't describe them here,
      because only the functions in the library should use them.
 
    After you create a ‘regex_t’ object, you can compile a regular
@@ -5681,12 +5729,12 @@ expression into it by calling ‘regcomp’.
      Preliminary: | MT-Safe locale | AS-Unsafe corrupt heap lock dlopen
      | AC-Unsafe corrupt lock mem fd | *Note POSIX Safety Concepts::.
 
-     The function ‘regcomp’ “compiles” a regular expression into a data
+     The function ‘regcomp’ "compiles" a regular expression into a data
      structure that you can use with ‘regexec’ to match against a
      string.  The compiled regular expression format is designed for
      efficient matching.  ‘regcomp’ stores it into ‘*COMPILED’.
 
-     It’s up to you to allocate an object of type ‘regex_t’ and pass its
+     It's up to you to allocate an object of type ‘regex_t’ and pass its
      address to ‘regcomp’.
 
      The argument CFLAGS lets you specify various options that control
@@ -5699,7 +5747,7 @@ expression into it by calling ‘regcomp’.
      pass ‘0’ for the MATCHPTR and NMATCH arguments when you call
      ‘regexec’.
 
-     If you don’t use ‘REG_NOSUB’, then the compiled regular expression
+     If you don't use ‘REG_NOSUB’, then the compiled regular expression
      does have the capacity to record how subexpressions match.  Also,
      ‘regcomp’ tells you how many subexpressions PATTERN has, by storing
      the number in ‘COMPILED->re_nsub’.  You can use that value to
@@ -5788,13 +5836,13 @@ compiling a regular expression with ‘regcomp’.
 
 ‘REG_NOSUB’
 
-     Don’t bother storing the contents of the MATCHPTR array.
+     Don't bother storing the contents of the MATCHPTR array.
 
 ‘REG_NEWLINE’
 
      Treat a newline in STRING as dividing STRING into multiple lines,
      so that ‘$’ can match before the newline and ‘^’ can match after.
-     Also, don’t permit ‘.’ to match a newline, and don’t permit
+     Also, don't permit ‘.’ to match a newline, and don't permit
      ‘[^...]’ to match a newline.
 
      Otherwise, newline acts like any other ordinary character.
@@ -5843,20 +5891,20 @@ argument:
 ‘REG_NOTBOL’
 
      Do not regard the beginning of the specified string as the
-     beginning of a line; more generally, don’t make any assumptions
+     beginning of a line; more generally, don't make any assumptions
      about what text might precede it.
 
 ‘REG_NOTEOL’
 
      Do not regard the end of the specified string as the end of a line;
-     more generally, don’t make any assumptions about what text might
+     more generally, don't make any assumptions about what text might
      follow it.
 
    Here are the possible nonzero values that ‘regexec’ can return:
 
 ‘REG_NOMATCH’
 
-     The pattern didn’t match the string.  This isn’t really an error.
+     The pattern didn't match the string.  This isn't really an error.
 
 ‘REG_ESPACE’
 
@@ -5901,11 +5949,11 @@ The order of the subexpressions is the order in which they begin.
    When you call ‘regexec’, you specify how long the MATCHPTR array is,
 with the NMATCH argument.  This tells ‘regexec’ how many elements to
 store.  If the actual regular expression has more than NMATCH
-subexpressions, then you won’t get offset information about the rest of
-them.  But this doesn’t alter whether the pattern matches a particular
+subexpressions, then you won't get offset information about the rest of
+them.  But this doesn't alter whether the pattern matches a particular
 string or not.
 
-   If you don’t want ‘regexec’ to return any information about where the
+   If you don't want ‘regexec’ to return any information about where the
 subexpressions matched, you can either supply ‘0’ for NMATCH, or use the
 flag ‘REG_NOSUB’ when you compile the pattern with ‘regcomp’.
 
@@ -5922,19 +5970,19 @@ the string where the null substring was found.  In this example, the
 offsets are both ‘1’.
 
    Sometimes the entire regular expression can match without using some
-of its subexpressions at all—for example, when ‘ba\(na\)*’ matches the
+of its subexpressions at all--for example, when ‘ba\(na\)*’ matches the
 string ‘ba’, the parenthetical subexpression is not used.  When this
 happens, ‘regexec’ stores ‘-1’ in both fields of the element for that
 subexpression.
 
    Sometimes matching the entire regular expression can match a
-particular subexpression more than once—for example, when ‘ba\(na\)*’
+particular subexpression more than once--for example, when ‘ba\(na\)*’
 matches the string ‘bananana’, the parenthetical subexpression matches
 three times.  When this happens, ‘regexec’ usually stores the offsets of
 the last part of the string that matched the subexpression.  In the case
 of ‘bananana’, these offsets are ‘6’ and ‘8’.
 
-   But the last match is not always the one that is chosen.  It’s more
+   But the last match is not always the one that is chosen.  It's more
 accurate to say that the last _opportunity_ to match is the one that
 takes precedence.  What this means is that when one subexpression
 appears within another, then the results reported for the inner
@@ -5943,16 +5991,16 @@ subexpression.  For an example, consider ‘\(ba\(na\)*s \)*’ matching the
 string ‘bananas bas ’.  The last time the inner expression actually
 matches is near the end of the first word.  But it is _considered_ again
 in the second word, and fails to match there.  ‘regexec’ reports nonuse
-of the “na” subexpression.
+of the "na" subexpression.
 
    Another place where this rule applies is when the regular expression
      \(ba\(na\)*s \|nefer\(ti\)* \)*
-matches ‘bananas nefertiti’.  The “na” subexpression does match in the
-first word, but it doesn’t match in the second word because the other
+matches ‘bananas nefertiti’.  The "na" subexpression does match in the
+first word, but it doesn't match in the second word because the other
 alternative is used there.  Once again, the second repetition of the
 outer subexpression overrides the first, and within that second
-repetition, the “na” subexpression is not used.  So ‘regexec’ reports
-nonuse of the “na” subexpression.
+repetition, the "na" subexpression is not used.  So ‘regexec’ reports
+nonuse of the "na" subexpression.
 
 
 File: libc.info,  Node: Regexp Cleanup,  Prev: Subexpression Complications,  Up: Regular Expressions
@@ -5970,7 +6018,7 @@ the storage it uses by calling ‘regfree’.
 
      Calling ‘regfree’ frees all the storage that ‘*COMPILED’ points to.
      This includes various internal fields of the ‘regex_t’ structure
-     that aren’t documented in this manual.
+     that aren't documented in this manual.
 
      ‘regfree’ does not free the object ‘*COMPILED’ itself.
 
@@ -5995,7 +6043,7 @@ function ‘regerror’ to turn it into an error message string.
      ‘NULL’ for COMPILED; you will still get a meaningful error message,
      but it might not be as detailed.
 
-     If the error message can’t fit in LENGTH bytes (including a
+     If the error message can't fit in LENGTH bytes (including a
      terminating null character), then ‘regerror’ truncates it.  The
      string that ‘regerror’ stores is always null-terminated even if it
      has been truncated.
@@ -6027,7 +6075,7 @@ and substituting for variables, commands, and wildcards just as the
 shell does.
 
    For example, when you write ‘ls -l foo.c’, this string is split into
-three separate words—‘ls’, ‘-l’ and ‘foo.c’.  This is the most basic
+three separate words--‘ls’, ‘-l’ and ‘foo.c’.  This is the most basic
 function of word expansion.
 
    When you write ‘ls *.c’, this can become many words, because the word
@@ -6101,7 +6149,7 @@ declared in the header file ‘wordexp.h’.
    Word expansion produces a vector of words (strings).  To return this
 vector, ‘wordexp’ uses a special data type, ‘wordexp_t’, which is a
 structure.  You pass ‘wordexp’ the address of the structure, and it
-fills in the structure’s fields to tell you about the results.
+fills in the structure's fields to tell you about the results.
 
  -- Data Type: wordexp_t
 
@@ -6142,10 +6190,10 @@ fills in the structure’s fields to tell you about the results.
      combination of bit flags; see *note Flags for Wordexp::, for
      details of the flags.
 
-     You shouldn’t use any of the characters ‘|&;<>’ in the string WORDS
+     You shouldn't use any of the characters ‘|&;<>’ in the string WORDS
      unless they are quoted; likewise for newline.  If you use these
      characters unquoted, you will get the ‘WRDE_BADCHAR’ error code.
-     Don’t use parentheses or braces unless they are quoted or part of a
+     Don't use parentheses or braces unless they are quoted or part of a
      word expansion construct.  If you use quotation characters ‘'"`’,
      they should come in pairs that balance.
 
@@ -6180,7 +6228,7 @@ fills in the structure’s fields to tell you about the results.
      ‘WRDE_NOSPACE’
 
           It was impossible to allocate memory to hold the result.  In
-          this case, ‘wordexp’ can store part of the results—as much as
+          this case, ‘wordexp’ can store part of the results--as much as
           it could allocate room for.
 
      ‘WRDE_SYNTAX’
@@ -6197,7 +6245,7 @@ fills in the structure’s fields to tell you about the results.
 
      Free the storage used for the word-strings and vector that
      ‘*WORD-VECTOR-PTR’ points to.  This does not free the structure
-     ‘*WORD-VECTOR-PTR’ itself—only the other data it points to.
+     ‘*WORD-VECTOR-PTR’ itself--only the other data it points to.
 
 
 File: libc.info,  Node: Flags for Wordexp,  Next: Wordexp Example,  Prev: Calling Wordexp,  Up: Word Expansion
@@ -6229,7 +6277,7 @@ the C operator ‘|’.
 
 ‘WRDE_NOCMD’
 
-     Don’t do command substitution; if the input requests command
+     Don't do command substitution; if the input requests command
      substitution, report an error.
 
 ‘WRDE_REUSE’
@@ -6321,9 +6369,9 @@ File: libc.info,  Node: Tilde Expansion,  Next: Variable Substitution,  Prev: Wo
 10.4.5 Details of Tilde Expansion
 ---------------------------------
 
-It’s a standard part of shell syntax that you can use ‘~’ at the
+It's a standard part of shell syntax that you can use ‘~’ at the
 beginning of a file name to stand for your own home directory.  You can
-use ‘~USER’ to stand for USER’s home directory.
+use ‘~USER’ to stand for USER's home directory.
 
    “Tilde expansion” is the process of converting these abbreviations to
 the directory names that they stand for.
@@ -6394,7 +6442,7 @@ the value that is substituted, or test it in various ways.
      because ‘tractor’ is seven characters.
 
    These variants of variable substitution let you remove part of the
-variable’s value before substituting it.  The PREFIX and SUFFIX are not
+variable's value before substituting it.  The PREFIX and SUFFIX are not
 mere strings; they are wildcard patterns, just like the patterns that
 you use to match multiple file names.  But in this context, they match
 against parts of the variable value rather than against file names.
@@ -6534,7 +6582,7 @@ nonblocking (or polled) input (*note File Status Flags::).
 
    Streams provide a higher-level interface, layered on top of the
 primitive file descriptor facilities.  The stream interface treats all
-kinds of files pretty much alike—the sole exception being the three
+kinds of files pretty much alike--the sole exception being the three
 styles of buffering that you can choose (*note Stream Buffering::).
 
    The main advantage of using the stream interface is that the set of
@@ -6555,7 +6603,7 @@ that file descriptor.
    In general, you should stick with using streams rather than file
 descriptors, unless there is some specific operation you want to do that
 can only be done on a file descriptor.  If you are a beginning
-programmer and aren’t sure what functions to use, we suggest that you
+programmer and aren't sure what functions to use, we suggest that you
 concentrate on the formatted input functions (*note Formatted Input::)
 and formatted output functions (*note Formatted Output::).
 
@@ -6589,7 +6637,7 @@ do permit this are sometimes referred to as “random-access” files.  You
 can change the file position using the ‘fseek’ function on a stream
 (*note File Positioning::) or the ‘lseek’ function on a file descriptor
 (*note I/O Primitives::).  If you try to change the file position on a
-file that doesn’t support random access, you get the ‘ESPIPE’ error.
+file that doesn't support random access, you get the ‘ESPIPE’ error.
 
    Streams and descriptors that are opened for “append access” are
 treated specially for output: output to such files is _always_ appended
@@ -6597,7 +6645,7 @@ sequentially to the _end_ of the file, regardless of the file position.
 However, the file position is still used to control where in the file
 reading is done.
 
-   If you think about it, you’ll realize that several programs can read
+   If you think about it, you'll realize that several programs can read
 a given file at the same time.  In order for each program to be able to
 read the file at its own pace, each program must have its own file
 pointer, which is not affected by anything the other programs do.
@@ -6618,7 +6666,7 @@ File: libc.info,  Node: File Names,  Prev: I/O Concepts,  Up: I/O Overview
 
 In order to open a connection to a file, or to perform other operations
 such as deleting a file, you need some way to refer to the file.  Nearly
-all files have names that are strings—even files which are actually
+all files have names that are strings--even files which are actually
 devices such as tape drives or terminals.  These strings are called
 “file names”.  You specify the file name to say which file you want to
 open or operate on.
@@ -6644,7 +6692,7 @@ how the file system is organized into a hierarchy of directories.
 
    A “directory” is a file that contains information to associate other
 files with names; these associations are called “links” or “directory
-entries”.  Sometimes, people speak of “files in a directory”, but in
+entries”.  Sometimes, people speak of "files in a directory", but in
 reality, a directory only contains pointers to files, not the files
 themselves.
 
@@ -6658,10 +6706,10 @@ then a file in that directory, and so on.
    Some other documents, such as the POSIX standard, use the term
 “pathname” for what we call a file name, and either “filename” or
 “pathname component” for what this manual calls a file name component.
-We don’t use this terminology because a “path” is something completely
+We don't use this terminology because a "path" is something completely
 different (a list of directories to search), and we think that
-“pathname” used for something else will confuse users.  We always use
-“file name” and “file name component” (or sometimes just “component”,
+"pathname" used for something else will confuse users.  We always use
+"file name" and "file name component" (or sometimes just "component",
 where the context is obvious) in GNU documentation.  Some macros use the
 POSIX terminology in their names, such as ‘PATH_MAX’.  These macros are
 defined by the POSIX standard, so we cannot change their names.
@@ -6697,7 +6745,7 @@ is called an “absolute file name”.
 current working directory (*note Working Directory::).  This kind of
 file name is called a “relative file name”.
 
-   The file name components ‘.’ (“dot”) and ‘..’ (“dot-dot”) have
+   The file name components ‘.’ ("dot") and ‘..’ ("dot-dot") have
 special meanings.  Every directory has entries for these file name
 components.  The file name component ‘.’ refers to the directory itself,
 while the file name component ‘..’ refers to its “parent directory” (the
@@ -6732,11 +6780,11 @@ can specify a file name of ‘/’ to refer to the root directory, but the
 empty string is not a meaningful file name.  If you want to refer to the
 current working directory, use a file name of ‘.’ or ‘./’.
 
-   Unlike some other operating systems, GNU systems don’t have any
+   Unlike some other operating systems, GNU systems don't have any
 built-in support for file types (or extensions) or file versions as part
 of its file name syntax.  Many programs and utilities use conventions
-for file names—for example, files containing C source code usually have
-names suffixed with ‘.c’—but there is nothing in the file system itself
+for file names--for example, files containing C source code usually have
+names suffixed with ‘.c’--but there is nothing in the file system itself
 that enforces this kind of convention.
 
 
@@ -6765,13 +6813,13 @@ named file.  These errors are referred to throughout this manual as the
 
 ‘ENOENT’
      This error is reported when a file referenced as a directory
-     component in the file name doesn’t exist, or when a component is a
+     component in the file name doesn't exist, or when a component is a
      symbolic link whose target file does not exist.  *Note Symbolic
      Links::.
 
 ‘ENOTDIR’
      A file that is referenced as a directory component in the file name
-     exists, but it isn’t a directory.
+     exists, but it isn't a directory.
 
 ‘ELOOP’
      Too many symbolic links were resolved while trying to look up the
@@ -6818,125 +6866,3 @@ permitted in file names and on the length of file name and file name
 component strings.  However, on GNU systems, any character except the
 null character is permitted in a file name string, and on GNU/Hurd
 systems there are no limits on the length of file name strings.
-
-
-File: libc.info,  Node: I/O on Streams,  Next: Low-Level I/O,  Prev: I/O Overview,  Up: Top
-
-12 Input/Output on Streams
-**************************
-
-This chapter describes the functions for creating streams and performing
-input and output operations on them.  As discussed in *note I/O
-Overview::, a stream is a fairly abstract, high-level concept
-representing a communications channel to a file, device, or process.
-
-* Menu:
-
-* Streams::                     About the data type representing a stream.
-* Standard Streams::            Streams to the standard input and output
-				 devices are created for you.
-* Opening Streams::             How to create a stream to talk to a file.
-* Closing Streams::             Close a stream when you are finished with it.
-* Streams and Threads::         Issues with streams in threaded programs.
-* Streams and I18N::            Streams in internationalized applications.
-* Simple Output::               Unformatted output by characters and lines.
-* Character Input::             Unformatted input by characters and words.
-* Line Input::                  Reading a line or a record from a stream.
-* Unreading::                   Peeking ahead/pushing back input just read.
-* Block Input/Output::          Input and output operations on blocks of data.
-* Formatted Output::            ‘printf’ and related functions.
-* Customizing Printf::          You can define new conversion specifiers for
-				 ‘printf’ and friends.
-* Formatted Input::             ‘scanf’ and related functions.
-* EOF and Errors::              How you can tell if an I/O error happens.
-* Error Recovery::		What you can do about errors.
-* Binary Streams::              Some systems distinguish between text files
-				 and binary files.
-* File Positioning::            About random-access streams.
-* Portable Positioning::        Random access on peculiar ISO C systems.
-* Stream Buffering::            How to control buffering of streams.
-* Other Kinds of Streams::      Streams that do not necessarily correspond
-				 to an open file.
-* Formatted Messages::          Print strictly formatted messages.
-
-
-File: libc.info,  Node: Streams,  Next: Standard Streams,  Up: I/O on Streams
-
-12.1 Streams
-============
-
-For historical reasons, the type of the C data structure that represents
-a stream is called ‘FILE’ rather than “stream”.  Since most of the
-library functions deal with objects of type ‘FILE *’, sometimes the term
-“file pointer” is also used to mean “stream”.  This leads to unfortunate
-confusion over terminology in many books on C. This manual, however, is
-careful to use the terms “file” and “stream” only in the technical
-sense.
-
-   The ‘FILE’ type is declared in the header file ‘stdio.h’.
-
- -- Data Type: FILE
-
-     This is the data type used to represent stream objects.  A ‘FILE’
-     object holds all of the internal state information about the
-     connection to the associated file, including such things as the
-     file position indicator and buffering information.  Each stream
-     also has error and end-of-file status indicators that can be tested
-     with the ‘ferror’ and ‘feof’ functions; see *note EOF and Errors::.
-
-   ‘FILE’ objects are allocated and managed internally by the
-input/output library functions.  Don’t try to create your own objects of
-type ‘FILE’; let the library do it.  Your programs should deal only with
-pointers to these objects (that is, ‘FILE *’ values) rather than the
-objects themselves.
-
-
-File: libc.info,  Node: Standard Streams,  Next: Opening Streams,  Prev: Streams,  Up: I/O on Streams
-
-12.2 Standard Streams
-=====================
-
-When the ‘main’ function of your program is invoked, it already has
-three predefined streams open and available for use.  These represent
-the “standard” input and output channels that have been established for
-the process.
-
-   These streams are declared in the header file ‘stdio.h’.
-
- -- Variable: FILE * stdin
-
-     The “standard input” stream, which is the normal source of input
-     for the program.
-
- -- Variable: FILE * stdout
-
-     The “standard output” stream, which is used for normal output from
-     the program.
-
- -- Variable: FILE * stderr
-
-     The “standard error” stream, which is used for error messages and
-     diagnostics issued by the program.
-
-   On GNU systems, you can specify what files or processes correspond to
-these streams using the pipe and redirection facilities provided by the
-shell.  (The primitives shells use to implement these facilities are
-described in *note File System Interface::.)  Most other operating
-systems provide similar mechanisms, but the details of how to use them
-can vary.
-
-   In the GNU C Library, ‘stdin’, ‘stdout’, and ‘stderr’ are normal
-variables which you can set just like any others.  For example, to
-redirect the standard output to a file, you could do:
-
-     fclose (stdout);
-     stdout = fopen ("standard-output-file", "w");
-
-   Note however, that in other systems ‘stdin’, ‘stdout’, and ‘stderr’
-are macros that you cannot assign to in the normal way.  But you can use
-‘freopen’ to get the effect of closing one and reopening it.  *Note
-Opening Streams::.
-
-   The three streams ‘stdin’, ‘stdout’, and ‘stderr’ are not unoriented
-at program start (*note Streams and I18N::).
-

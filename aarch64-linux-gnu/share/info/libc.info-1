@@ -1,21 +1,21 @@
-This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
+This is libc.info, produced by makeinfo version 7.1 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.39.
+This is ‘The GNU C Library Reference Manual’, for version 2.40.
 
-   Copyright © 1993–2024 Free Software Foundation, Inc.
+   Copyright © 1993-2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
 any later version published by the Free Software Foundation; with the
-Invariant Sections being “Free Software Needs Free Documentation” and
-“GNU Lesser General Public License”, the Front-Cover texts being “A GNU
-Manual”, and with the Back-Cover Texts as in (a) below.  A copy of the
+Invariant Sections being "Free Software Needs Free Documentation" and
+"GNU Lesser General Public License", the Front-Cover texts being "A GNU
+Manual", and with the Back-Cover Texts as in (a) below.  A copy of the
 license is included in the section entitled "GNU Free Documentation
 License".
 
-   (a) The FSF’s Back-Cover Text is: “You have the freedom to copy and
+   (a) The FSF's Back-Cover Text is: "You have the freedom to copy and
 modify this GNU manual.  Buying copies from the FSF supports it in
-developing GNU and promoting software freedom.”
+developing GNU and promoting software freedom."
 INFO-DIR-SECTION Software libraries
 START-INFO-DIR-ENTRY
 * Libc: (libc).                 C library.
@@ -422,6 +422,7 @@ START-INFO-DIR-ENTRY
 * S_TYPEISMQ: (libc)Testing File Type.
 * S_TYPEISSEM: (libc)Testing File Type.
 * S_TYPEISSHM: (libc)Testing File Type.
+* TIME_UTC: (libc)Getting the Time.
 * TMP_MAX: (libc)Temporary Files.
 * TOSTOP: (libc)Local Modes.
 * TZNAME_MAX: (libc)General Limits.
@@ -567,8 +568,6 @@ START-INFO-DIR-ENTRY
 * argz_next: (libc)Argz Functions.
 * argz_replace: (libc)Argz Functions.
 * argz_stringify: (libc)Argz Functions.
-* asctime: (libc)Formatting Calendar Time.
-* asctime_r: (libc)Formatting Calendar Time.
 * asin: (libc)Inverse Trig Functions.
 * asinf: (libc)Inverse Trig Functions.
 * asinfN: (libc)Inverse Trig Functions.
@@ -698,6 +697,10 @@ START-INFO-DIR-ENTRY
 * cfsetispeed: (libc)Line Speed.
 * cfsetospeed: (libc)Line Speed.
 * cfsetspeed: (libc)Line Speed.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
 * chdir: (libc)Working Directory.
 * chmod: (libc)Setting Permissions.
 * chown: (libc)File Owner.
@@ -800,8 +803,6 @@ START-INFO-DIR-ENTRY
 * ctanhl: (libc)Hyperbolic Functions.
 * ctanl: (libc)Trig Functions.
 * ctermid: (libc)Identifying the Terminal.
-* ctime: (libc)Formatting Calendar Time.
-* ctime_r: (libc)Formatting Calendar Time.
 * cuserid: (libc)Who Logged In.
 * daddl: (libc)Misc FP Arithmetic.
 * dcgettext: (libc)Translation with gettext.
@@ -824,6 +825,7 @@ START-INFO-DIR-ENTRY
 * dsqrtl: (libc)Misc FP Arithmetic.
 * dsubl: (libc)Misc FP Arithmetic.
 * dup2: (libc)Duplicating Descriptors.
+* dup3: (libc)Duplicating Descriptors.
 * dup: (libc)Duplicating Descriptors.
 * ecvt: (libc)System V Number Conversion.
 * ecvt_r: (libc)System V Number Conversion.
@@ -844,6 +846,8 @@ START-INFO-DIR-ENTRY
 * envz_merge: (libc)Envz Functions.
 * envz_remove: (libc)Envz Functions.
 * envz_strip: (libc)Envz Functions.
+* epoll_createint: (libc)Other Low-Level I/O APIs.
+* epoll_waitint: (libc)Other Low-Level I/O APIs.
 * erand48: (libc)SVID Random.
 * erand48_r: (libc)SVID Random.
 * erf: (libc)Special Functions.
@@ -873,11 +877,21 @@ START-INFO-DIR-ENTRY
 * exp10fN: (libc)Exponents and Logarithms.
 * exp10fNx: (libc)Exponents and Logarithms.
 * exp10l: (libc)Exponents and Logarithms.
+* exp10m1: (libc)Exponents and Logarithms.
+* exp10m1f: (libc)Exponents and Logarithms.
+* exp10m1fN: (libc)Exponents and Logarithms.
+* exp10m1fNx: (libc)Exponents and Logarithms.
+* exp10m1l: (libc)Exponents and Logarithms.
 * exp2: (libc)Exponents and Logarithms.
 * exp2f: (libc)Exponents and Logarithms.
 * exp2fN: (libc)Exponents and Logarithms.
 * exp2fNx: (libc)Exponents and Logarithms.
 * exp2l: (libc)Exponents and Logarithms.
+* exp2m1: (libc)Exponents and Logarithms.
+* exp2m1f: (libc)Exponents and Logarithms.
+* exp2m1fN: (libc)Exponents and Logarithms.
+* exp2m1fNx: (libc)Exponents and Logarithms.
+* exp2m1l: (libc)Exponents and Logarithms.
 * exp: (libc)Exponents and Logarithms.
 * expf: (libc)Exponents and Logarithms.
 * expfN: (libc)Exponents and Logarithms.
@@ -1418,6 +1432,11 @@ START-INFO-DIR-ENTRY
 * log10fN: (libc)Exponents and Logarithms.
 * log10fNx: (libc)Exponents and Logarithms.
 * log10l: (libc)Exponents and Logarithms.
+* log10p1: (libc)Exponents and Logarithms.
+* log10p1f: (libc)Exponents and Logarithms.
+* log10p1fN: (libc)Exponents and Logarithms.
+* log10p1fNx: (libc)Exponents and Logarithms.
+* log10p1l: (libc)Exponents and Logarithms.
 * log1p: (libc)Exponents and Logarithms.
 * log1pf: (libc)Exponents and Logarithms.
 * log1pfN: (libc)Exponents and Logarithms.
@@ -1428,6 +1447,11 @@ START-INFO-DIR-ENTRY
 * log2fN: (libc)Exponents and Logarithms.
 * log2fNx: (libc)Exponents and Logarithms.
 * log2l: (libc)Exponents and Logarithms.
+* log2p1: (libc)Exponents and Logarithms.
+* log2p1f: (libc)Exponents and Logarithms.
+* log2p1fN: (libc)Exponents and Logarithms.
+* log2p1fNx: (libc)Exponents and Logarithms.
+* log2p1l: (libc)Exponents and Logarithms.
 * log: (libc)Exponents and Logarithms.
 * logb: (libc)Exponents and Logarithms.
 * logbf: (libc)Exponents and Logarithms.
@@ -1441,6 +1465,11 @@ START-INFO-DIR-ENTRY
 * login_tty: (libc)Logging In and Out.
 * logl: (libc)Exponents and Logarithms.
 * logout: (libc)Logging In and Out.
+* logp1: (libc)Exponents and Logarithms.
+* logp1f: (libc)Exponents and Logarithms.
+* logp1fN: (libc)Exponents and Logarithms.
+* logp1fNx: (libc)Exponents and Logarithms.
+* logp1l: (libc)Exponents and Logarithms.
 * logwtmp: (libc)Logging In and Out.
 * longjmp: (libc)Non-Local Details.
 * lrand48: (libc)SVID Random.
@@ -1607,6 +1636,7 @@ START-INFO-DIR-ENTRY
 * pkey_get: (libc)Memory Protection.
 * pkey_mprotect: (libc)Memory Protection.
 * pkey_set: (libc)Memory Protection.
+* poll: (libc)Other Low-Level I/O APIs.
 * popen: (libc)Pipe to a Subprocess.
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
@@ -1687,7 +1717,7 @@ START-INFO-DIR-ENTRY
 * realpath: (libc)Symbolic Links.
 * recv: (libc)Receiving Data.
 * recvfrom: (libc)Receiving Datagrams.
-* recvmsg: (libc)Receiving Datagrams.
+* recvmsg: (libc)Other Socket APIs.
 * regcomp: (libc)POSIX Regexp Compilation.
 * regerror: (libc)Regexp Cleanup.
 * regexec: (libc)Matching POSIX Regexps.
@@ -1768,7 +1798,7 @@ START-INFO-DIR-ENTRY
 * semop: (libc)Semaphores.
 * semtimedop: (libc)Semaphores.
 * send: (libc)Sending Data.
-* sendmsg: (libc)Receiving Datagrams.
+* sendmsg: (libc)Other Socket APIs.
 * sendto: (libc)Sending Datagrams.
 * setbuf: (libc)Controlling Buffering.
 * setbuffer: (libc)Controlling Buffering.
@@ -1981,6 +2011,7 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strftime_l: (libc)Formatting Calendar Time.
 * strlcat: (libc)Truncating Strings.
 * strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
@@ -2069,6 +2100,8 @@ START-INFO-DIR-ENTRY
 * timegm: (libc)Broken-down Time.
 * timelocal: (libc)Broken-down Time.
 * times: (libc)Processor Time.
+* timespec_get: (libc)Getting the Time.
+* timespec_getres: (libc)Getting the Time.
 * tmpfile64: (libc)Temporary Files.
 * tmpfile: (libc)Temporary Files.
 * tmpnam: (libc)Temporary Files.
@@ -2105,7 +2138,7 @@ START-INFO-DIR-ENTRY
 * ttyname_r: (libc)Is It a Terminal.
 * twalk: (libc)Tree Search Function.
 * twalk_r: (libc)Tree Search Function.
-* tzset: (libc)Time Zone Functions.
+* tzset: (libc)Time Zone State.
 * ufromfp: (libc)Rounding Functions.
 * ufromfpf: (libc)Rounding Functions.
 * ufromfpfN: (libc)Rounding Functions.
@@ -2248,22 +2281,22 @@ File: libc.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 Main Menu
 *********
 
-This is ‘The GNU C Library Reference Manual’, for version 2.39.
+This is ‘The GNU C Library Reference Manual’, for version 2.40.
 
-   Copyright © 1993–2024 Free Software Foundation, Inc.
+   Copyright © 1993-2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
 any later version published by the Free Software Foundation; with the
-Invariant Sections being “Free Software Needs Free Documentation” and
-“GNU Lesser General Public License”, the Front-Cover texts being “A GNU
-Manual”, and with the Back-Cover Texts as in (a) below.  A copy of the
+Invariant Sections being "Free Software Needs Free Documentation" and
+"GNU Lesser General Public License", the Front-Cover texts being "A GNU
+Manual", and with the Back-Cover Texts as in (a) below.  A copy of the
 license is included in the section entitled "GNU Free Documentation
 License".
 
-   (a) The FSF’s Back-Cover Text is: “You have the freedom to copy and
+   (a) The FSF's Back-Cover Text is: "You have the freedom to copy and
 modify this GNU manual.  Buying copies from the FSF supports it in
-developing GNU and promoting software freedom.”
+developing GNU and promoting software freedom."
 
 * Menu:
 
@@ -2277,10 +2310,10 @@ developing GNU and promoting software freedom.”
 * Character Set Handling::       Support for extended character sets.
 * Locales::                      The country and language can affect the
                                    behavior of library functions.
-* Message Translation::          How to make the program speak the user’s
+* Message Translation::          How to make the program speak the user's
                                    language.
 * Searching and Sorting::        General searching and sorting functions.
-* Pattern Matching::             Matching shell “globs” and regular
+* Pattern Matching::             Matching shell "globs" and regular
                                    expressions.
 * I/O Overview::                 Introduction to the I/O facilities.
 * I/O on Streams::               High-level, portable I/O facilities.
@@ -2349,7 +2382,7 @@ Indices
 * Variable Index::               Index of variables and variable-like macros.
 * File Index::                   Index of programs and files.
 
- — The Detailed Node Listing —
+ -- The Detailed Node Listing --
 
 Introduction
 
@@ -2369,6 +2402,7 @@ Standards and Portability
 * Berkeley Unix::               BSD and SunOS.
 * SVID::                        The System V Interface Description.
 * XPG::                         The X/Open Portability Guide.
+* Linux Kernel::                The Linux kernel.
 
 POSIX
 
@@ -2475,7 +2509,7 @@ Locking Pages
 * Why Lock Pages::                Reasons to read this section.
 * Locked Memory Details::         Everything you need to know locked
                                     memory
-* Page Lock Functions::           Here’s how to do it.
+* Page Lock Functions::           Here's how to do it.
 
 Character Handling
 
@@ -2505,7 +2539,7 @@ String and Array Utilities
 * Finding Tokens in a String::  Splitting a string into tokens by looking
 				 for delimiters.
 * Erasing Sensitive Data::      Clearing memory which contains sensitive
-                                 data, after it’s no longer needed.
+                                 data, after it's no longer needed.
 * Shuffling Bytes::             Or how to flash-cook a string.
 * Obfuscating Data::            Reversibly obscuring data from casual view.
 * Encode Binary Data::          Encoding and Decoding of Binary Data.
@@ -2568,8 +2602,8 @@ Locales
 
 Locale Information
 
-* The Lame Way to Locale Data::   ISO C’s ‘localeconv’.
-* The Elegant and Fast Way::      X/Open’s ‘nl_langinfo’.
+* The Lame Way to Locale Data::   ISO C's ‘localeconv’.
+* The Elegant and Fast Way::      X/Open's ‘nl_langinfo’.
 
 The Lame Way to Locale Data
 
@@ -2786,7 +2820,7 @@ Low-Level I/O
 * Opening and Closing Files::           How to open and close file
                                          descriptors.
 * I/O Primitives::                      Reading and writing data.
-* File Position Primitive::             Setting a descriptor’s file
+* File Position Primitive::             Setting a descriptor's file
                                          position.
 * Descriptors and Streams::             Converting descriptor to stream
                                          or vice-versa.
@@ -2817,6 +2851,7 @@ Low-Level I/O
 * Interrupt Input::                     Getting an asynchronous signal when
                                          input arrives.
 * IOCTLs::                              Generic I/O Control operations.
+* Other Low-Level I/O APIs::            Other low-level-I/O-related functions.
 
 Stream/Descriptor Precautions
 
@@ -2849,9 +2884,9 @@ File System Interface
 * Working with Directory Trees:: Apply actions to all files or a selectable
                                  subset of a directory hierarchy.
 * Hard Links::                  Adding alternate names to a file.
-* Symbolic Links::              A file that “points to” a file name.
+* Symbolic Links::              A file that "points to" a file name.
 * Deleting Files::              How to delete a file, and what that means.
-* Renaming Files::              Changing a file’s name.
+* Renaming Files::              Changing a file's name.
 * Creating Directories::        A system call just for creating a directory.
 * File Attributes::             Attributes of individual files.
 * Making Special Files::        How to create special files.
@@ -2879,7 +2914,7 @@ File Attributes
                                  directories, links...
 * File Owner::                  How ownership for new files is determined,
 			         and how to change it.
-* Permission Bits::             How information about a file’s access
+* Permission Bits::             How information about a file's access
                                  mode is stored.
 * Access Permission::           How the system decides who can access a file.
 * Setting Permissions::         How permissions for new files are assigned,
@@ -2902,7 +2937,7 @@ Sockets
 
 * Socket Concepts::	Basic concepts you need to know about.
 * Communication Styles::Stream communication, datagrams and other styles.
-* Socket Addresses::	How socket names (“addresses”) work.
+* Socket Addresses::	How socket names ("addresses") work.
 * Interface Naming::	Identifying specific network interfaces.
 * Local Namespace::	Details about the local namespace.
 * Internet Namespace::	Details about the Internet namespace.
@@ -2915,6 +2950,7 @@ Sockets
 			   is to make it work with Inetd.
 * Socket Options::	Miscellaneous low-level socket options.
 * Networks Database::   Accessing the database of network names.
+* Other Socket APIs::   Other socket-related functions.
 
 Socket Addresses
 
@@ -3044,7 +3080,7 @@ Pseudo-Terminals
 
 Syslog
 
-* Overview of Syslog::           Overview of a system’s Syslog facility
+* Overview of Syslog::           Overview of a system's Syslog facility
 * Submitting Syslog Messages::   Functions to submit messages to Syslog
 
 Submitting Syslog Messages
@@ -3084,7 +3120,7 @@ Arithmetic
 * Floating Point Classes::      The five kinds of floating-point number.
 * Floating Point Errors::       When something goes wrong in a calculation.
 * Rounding::                    Controlling how results are rounded.
-* Control Functions::           Saving and restoring the FPU’s state.
+* Control Functions::           Saving and restoring the FPU's state.
 * Arithmetic Functions::        Fundamental operations provided by the library.
 * Complex Numbers::             The types.  Writing complex constants.
 * Operations on Complex::       Projection, conjugation, decomposition.
@@ -3121,7 +3157,7 @@ Date and Time
 * Time Types::                  Data types to represent time.
 * Calculating Elapsed Time::    How to calculate the length of an interval.
 * Processor And CPU Time::      Time a program has spent executing.
-* Calendar Time::               Manipulation of “real” dates and times.
+* Calendar Time::               Manipulation of "real" dates and times.
 * Setting an Alarm::            Sending a signal after a specified time.
 * Sleeping::                    Waiting for a period of time.
 
@@ -3140,8 +3176,8 @@ Calendar Time
 * Formatting Calendar Time::    Converting times to strings.
 * Parsing Date and Time::       Convert textual time and date information back
                                  into broken-down time values.
-* TZ Variable::                 How users specify the time zone.
-* Time Zone Functions::         Functions to examine or specify the time zone.
+* TZ Variable::                 How users specify the time zone ruleset.
+* Time Zone State::             Time zone state variables.
 * Time Functions Example::      An example program showing use of some of
 				 the time functions.
 
@@ -3150,6 +3186,11 @@ Parsing Date and Time
 * Low-Level Time String Parsing::  Interpret string according to given format.
 * General Time String Parsing::    User-friendly function to parse data and
                                     time strings.
+
+TZ Variable
+
+* Geographical TZ::  ‘TZ’ settings like ‘America/New_York’.
+* Proleptic TZ::     ‘TZ’ settings like ‘EST+5EDT,M3.2.0/2,M11.1.0/2’.
 
 Resource Usage And Limitation
 
@@ -3285,11 +3326,11 @@ Waiting for a Signal
 
 Program Basics
 
-* Program Arguments::           Parsing your program’s command-line arguments
+* Program Arguments::           Parsing your program's command-line arguments
 * Environment Variables::       Less direct parameters affecting your program
 * Auxiliary Vector::            Least direct parameters affecting your program
 * System Calls::                Requesting service from the system
-* Program Termination::         Telling the system you’re done; return status
+* Program Termination::         Telling the system you're done; return status
 
 Program Arguments
 
@@ -3363,7 +3404,7 @@ Implementing a Shell
 
 Functions for Job Control
 
-* Identifying the Terminal::    Determining the controlling terminal’s name.
+* Identifying the Terminal::    Determining the controlling terminal's name.
 * Process Group Functions::     Functions for manipulating process groups.
 * Terminal Access Functions::   Functions for controlling terminal access.
 
@@ -3438,7 +3479,7 @@ User Database
 * User Data Structure::         What each user record contains.
 * Lookup User::                 How to look for a particular user.
 * Scanning All Users::          Scanning the list of all users, one by one.
-* Writing a User Entry::        How a program can rewrite a user’s record.
+* Writing a User Entry::        How a program can rewrite a user's record.
 
 Group Database
 
@@ -3518,7 +3559,7 @@ Threads
 ISO C Threads
 
 * ISO C Threads Return Values:: Symbolic constants that represent a
-				function’s return value.
+				function's return value.
 * ISO C Thread Management::	Support for basic threading.
 * Call Once::			Single-call functions and macros.
 * ISO C Mutexes::		A low-level mechanism for mutual exclusion.
@@ -3547,6 +3588,7 @@ Dynamic Linker
 
 * Dynamic Linker Invocation::   Explicit invocation of the dynamic linker.
 * Dynamic Linker Introspection::    Interfaces for querying mapping information.
+* Dynamic Linker Hardening::    Avoiding unexpected issues with dynamic linking.
 
 Dynamic Linker Invocation
 
@@ -3580,7 +3622,7 @@ Tunables
 Language Features
 
 * Consistency Checking::        Using ‘assert’ to abort if
-				 something “impossible” happens.
+				 something "impossible" happens.
 * Variadic Functions::          Defining functions with varying numbers
                                  of args.
 * Null Pointer Constant::       The macro ‘NULL’.
@@ -3624,11 +3666,11 @@ Floating Type Macros
 Installation
 
 * Configuring and compiling::   How to compile and test GNU libc.
-* Running make install::        How to install it once you’ve got it
+* Running make install::        How to install it once you've got it
  compiled.
-* Tools for Compilation::       You’ll need these first.
+* Tools for Compilation::       You'll need these first.
 * Linux::                       Specific advice for GNU/Linux systems.
-* Reporting Bugs::              So they’ll get fixed.
+* Reporting Bugs::              So they'll get fixed.
 
 Maintenance
 
@@ -3701,7 +3743,7 @@ File: libc.info,  Node: Getting Started,  Next: Standards and Portability,  Up: 
 This manual is written with the assumption that you are at least
 somewhat familiar with the C programming language and basic programming
 concepts.  Specifically, familiarity with ISO standard C (*note ISO
-C::), rather than “traditional” pre-ISO C dialects, is assumed.
+C::), rather than "traditional" pre-ISO C dialects, is assumed.
 
    The GNU C Library includes several “header files”, each of which
 provides definitions and declarations for a group of related facilities;
@@ -3713,9 +3755,9 @@ follows the same division as the header files.
 
    If you are reading this manual for the first time, you should read
 all of the introductory material and skim the remaining chapters.  There
-are a _lot_ of functions in the GNU C Library and it’s not realistic to
+are a _lot_ of functions in the GNU C Library and it's not realistic to
 expect that you will be able to remember exactly _how_ to use each and
-every one of them.  It’s more important to become generally familiar
+every one of them.  It's more important to become generally familiar
 with the kinds of facilities that the library provides, so that when you
 are writing your programs you can recognize _when_ to make use of
 library functions, and _where_ in this manual you can find more specific
@@ -3752,6 +3794,7 @@ standards each function or symbol comes from.
 * Berkeley Unix::               BSD and SunOS.
 * SVID::                        The System V Interface Description.
 * XPG::                         The X/Open Portability Guide.
+* Linux Kernel::                The Linux kernel.
 
 
 File: libc.info,  Node: ISO C,  Next: POSIX,  Up: Standards and Portability
@@ -3761,9 +3804,9 @@ File: libc.info,  Node: ISO C,  Next: POSIX,  Up: Standards and Portability
 
 The GNU C Library is compatible with the C standard adopted by the
 American National Standards Institute (ANSI): ‘American National
-Standard X3.159-1989—“ANSI C”’ and later by the International
-Standardization Organization (ISO): ‘ISO/IEC 9899:1990, “Programming
-languages—C”’.  We here refer to the standard as ISO C since this is the
+Standard X3.159-1989--"ANSI C"’ and later by the International
+Standardization Organization (ISO): ‘ISO/IEC 9899:1990, "Programming
+languages--C"’. We here refer to the standard as ISO C since this is the
 more general standard in respect of ratification.  The header files and
 library facilities that make up the GNU C Library are a superset of
 those specified by the ISO C standard.
@@ -3777,7 +3820,7 @@ information on how to do this.
 
    Being able to restrict the library to include only ISO C features is
 important because ISO C puts limitations on what names can be defined by
-the library implementation, and the GNU extensions don’t fit these
+the library implementation, and the GNU extensions don't fit these
 limitations.  *Note Reserved Names::, for more information about these
 restrictions.
 
@@ -3921,9 +3964,9 @@ attempting to capture the meaning of the standard definitions, follow.
      implementation.
 
      Furthermore, the POSIX standard does not offer a detailed
-     definition of safety.  We assume that, by “safe to call”, POSIX
+     definition of safety.  We assume that, by "safe to call", POSIX
      means that, as long as the program does not invoke undefined
-     behavior, the “safe to call” function behaves as specified, and
+     behavior, the "safe to call" function behaves as specified, and
      does not cause other functions to deviate from their specified
      behavior.  We have chosen to use its loose definitions of safety,
      not because they are the best definitions to use, but because
@@ -3976,7 +4019,7 @@ enabled.  There are no MT-Unsafe marks in this section.
      with ‘lock’, these take recursive locks to avoid MT-Safety
      problems, but this is not enough to stop a signal handler from
      observing a partially-updated data structure.  Further corruption
-     may arise from the interrupted function’s failure to notice updates
+     may arise from the interrupted function's failure to notice updates
      made by signal handlers.
 
      Functions marked with ‘corrupt’ as an AC-Unsafe feature may leave
@@ -4098,7 +4141,7 @@ context.
 
      We consider access to objects passed as (indirect) arguments to
      functions to be data race free.  The assurance of data race free
-     objects is the caller’s responsibility.  We will not mark a
+     objects is the caller's responsibility.  We will not mark a
      function as MT-Unsafe or AS-Unsafe if it misbehaves when users fail
      to take the measures required by POSIX to avoid data races when
      dealing with such objects.  As a general rule, if a function is
@@ -4121,7 +4164,7 @@ context.
      strings, and various user-visible ‘struct’ types, do _not_ give
      reason for functions to be annotated with ‘race’.  It would be
      noisy and redundant with the general requirement, and not many
-     would be surprised by the library’s lack of internal guards when
+     would be surprised by the library's lack of internal guards when
      accessing objects that can be accessed directly by users.
 
      As for objects that are opaque or opaque-like, in that they are to
@@ -4145,7 +4188,7 @@ context.
      This user responsibility does not apply, however, to objects
      controlled by the library itself, such as internal objects and
      static buffers used to return values from certain calls.  When the
-     library doesn’t guard them against concurrent uses, these cases are
+     library doesn't guard them against concurrent uses, these cases are
      regarded as MT-Unsafe and AS-Unsafe (although the ‘race’ mark under
      AS-Unsafe will be omitted as redundant with the one under
      MT-Unsafe).  As in the case of user-exposed objects, the mark may
@@ -4292,9 +4335,9 @@ taken into account in certain classes of programs:
    • ‘hostid’
 
      The function marked with ‘hostid’ as an MT-Safety issue reads from
-     the system-wide data structures that hold the “host ID” of the
+     the system-wide data structures that hold the "host ID" of the
      machine.  These data structures cannot generally be modified
-     atomically.  Since it is expected that the “host ID” will not
+     atomically.  Since it is expected that the "host ID" will not
      normally change, the function that reads from it (‘gethostid’) is
      regarded as safe, whereas the function that modifies it
      (‘sethostid’) is marked with ‘const:hostid’, indicating it may
@@ -4473,7 +4516,7 @@ inter-process communication and shared memory, the ‘hsearch’ and
 mathematical functions.
 
 
-File: libc.info,  Node: XPG,  Prev: SVID,  Up: Standards and Portability
+File: libc.info,  Node: XPG,  Next: Linux Kernel,  Prev: SVID,  Up: Standards and Portability
 
 1.2.5 XPG (The X/Open Portability Guide)
 ----------------------------------------
@@ -4493,6 +4536,23 @@ in System V systems were corrected, though.  Since fulfilling the XPG
 standard with the Unix extensions is a precondition for getting the Unix
 brand chances are good that the functionality is available on commercial
 systems.
+
+
+File: libc.info,  Node: Linux Kernel,  Prev: XPG,  Up: Standards and Portability
+
+1.2.6 Linux (The Linux Kernel)
+------------------------------
+
+The GNU C Library includes by reference the Linux man-pages 6.9.1
+documentation to document the listed syscalls for the Linux kernel.  For
+reference purposes only the latest Linux man-pages Project
+(https://www.kernel.org/doc/man-pages/) documentation can be accessed
+from the Linux kernel (https://www.kernel.org) website.  Where the
+syscall has more specific documentation in this manual that more
+specific documentation is considered authoritative.
+
+   Additional details on the Linux system call interface can be found in
+*Note System Calls::.
 
 
 File: libc.info,  Node: Using the Library,  Next: Roadmap to the Manual,  Prev: Standards and Portability,  Up: Introduction
@@ -4576,18 +4636,18 @@ which facilities you are using.
 automatically.  However, as a matter of programming style, you should
 not rely on this; it is better to explicitly include all the header
 files required for the library facilities you are using.  The GNU C
-Library header files have been written in such a way that it doesn’t
+Library header files have been written in such a way that it doesn't
 matter if a header file is accidentally included more than once;
 including a header file a second time has no effect.  Likewise, if your
 program needs to include multiple header files, the order in which they
-are included doesn’t matter.
+are included doesn't matter.
 
    *Compatibility Note:* Inclusion of standard header files in any order
 and any number of times works in any ISO C implementation.  However,
 this has traditionally not been the case in many older C
 implementations.
 
-   Strictly speaking, you don’t _have to_ include a header file to use a
+   Strictly speaking, you don't _have to_ include a header file to use a
 function it declares; you could declare the function explicitly
 yourself, according to the specifications in this manual.  But it is
 usually better to include the header file because it may define types
@@ -4603,7 +4663,7 @@ File: libc.info,  Node: Macro Definitions,  Next: Reserved Names,  Prev: Header 
 
 If we describe something as a function in this manual, it may have a
 macro definition as well.  This normally has no effect on how your
-program runs—the macro definition does the same thing as the function
+program runs--the macro definition does the same thing as the function
 would.  In particular, macro equivalents for library functions evaluate
 arguments exactly once, in the same way that a function call would.  The
 main reason for these macro definitions is that sometimes they can
@@ -4612,16 +4672,16 @@ function call.
 
    Taking the address of a library function works even if it is also
 defined as a macro.  This is because, in this context, the name of the
-function isn’t followed by the left parenthesis that is syntactically
+function isn't followed by the left parenthesis that is syntactically
 necessary to recognize a macro call.
 
    You might occasionally want to avoid using the macro definition of a
-function—perhaps to make your program easier to debug.  There are two
+function--perhaps to make your program easier to debug.  There are two
 ways you can do this:
 
    • You can avoid a macro definition in a specific use by enclosing the
      name of the function in parentheses.  This works because the name
-     of the function doesn’t appear in a syntactic context where it is
+     of the function doesn't appear in a syntactic context where it is
      recognizable as a macro call.
 
    • You can suppress any macro definition for a whole source file by
@@ -4775,7 +4835,7 @@ options.
 directives at the top of your source code files.  These directives
 _must_ come before any ‘#include’ of a system header file.  It is best
 to make them the very first thing in the file, preceded only by
-comments.  You could also use the ‘-D’ option to GCC, but it’s better if
+comments.  You could also use the ‘-D’ option to GCC, but it's better if
 you make the source files indicate their own meaning in a self-contained
 way.
 
@@ -4783,9 +4843,9 @@ way.
 standards.  Although the different standards are often described as
 supersets of each other, they are usually incompatible because larger
 standards require functions with names that smaller ones reserve to the
-user program.  This is not mere pedantry — it has been a problem in
+user program.  This is not mere pedantry -- it has been a problem in
 practice.  For instance, some non-GNU programs define functions named
-‘getline’ that have nothing to do with this library’s ‘getline’.  They
+‘getline’ that have nothing to do with this library's ‘getline’.  They
 would not be compilable if all features were enabled indiscriminately.
 
    This should not be used to verify that a program conforms to a
@@ -4944,6 +5004,12 @@ on semantics undefined within the standard.
           are used.  Otherwise, a fallback code is used with legacy
           (i.e.  32-bit) syscalls.
 
+          On such platforms, the GNU C Library will also define
+          ‘__USE_TIME64_REDIRECTS’ to indicate whether the declarations
+          are expanded to different ones (either by redefiniding the
+          symbol name or using symbol aliais).  For instance, if the
+          symbol ‘clock_gettime’ expands to ‘__glock_gettime64’.
+
        3. If ‘_TIME_BITS’ is defined to be 32, ‘time_t’ is defined to be
           a 32-bit integer where that is supported.  This is not
           recommended, as 32-bit ‘time_t’ stops working in the year
@@ -4968,11 +5034,12 @@ on semantics undefined within the standard.
      If this macro is defined, ISO C11 extensions to ISO C99 are
      included.
 
- -- Macro: _ISOC2X_SOURCE
+ -- Macro: _ISOC23_SOURCE
 
-     If this macro is defined, ISO C2X extensions to ISO C11 are
+     If this macro is defined, ISO C23 extensions to ISO C11 are
      included.  Only some features from this draft standard are
-     supported by the GNU C Library.
+     supported by the GNU C Library.  The older name ‘_ISOC2X_SOURCE’ is
+     also supported.
 
  -- Macro: __STDC_WANT_LIB_EXT2__
 
@@ -5003,7 +5070,7 @@ on semantics undefined within the standard.
 
  -- Macro: __STDC_WANT_IEC_60559_EXT__
 
-     If you define this macro, ISO C2X features defined in Annex F of
+     If you define this macro, ISO C23 features defined in Annex F of
      that standard are enabled.  This affects declarations of the
      ‘totalorder’ functions and functions related to NaN payloads.
 
@@ -5024,7 +5091,7 @@ on semantics undefined within the standard.
      Be aware that compiler options also affect included features:
 
         • If you use a strict conformance option, features beyond those
-          from the compiler’s language version will be disabled, though
+          from the compiler's language version will be disabled, though
           feature test macros may be used to enable them.
 
         • Features enabled by compiler options are not overridden by
@@ -5056,9 +5123,9 @@ on semantics undefined within the standard.
      Some very old C libraries required one of these macros to be
      defined for basic functionality (e.g. ‘getchar’) to be thread-safe.
 
-   We recommend you use ‘_GNU_SOURCE’ in new programs.  If you don’t
+   We recommend you use ‘_GNU_SOURCE’ in new programs.  If you don't
 specify the ‘-ansi’ option to GCC, or other conformance options such as
-‘-std=c99’, and don’t define any of these macros explicitly, the effect
+‘-std=c99’, and don't define any of these macros explicitly, the effect
 is the same as defining ‘_DEFAULT_SOURCE’ to 1.
 
    When you define a feature test macro to request a larger class of
@@ -5080,7 +5147,7 @@ manual.
    • *note Error Reporting::, describes how errors detected by the
      library are reported.
 
-   • *note Memory::, describes the GNU C Library’s facilities for
+   • *note Memory::, describes the GNU C Library's facilities for
      managing and using virtual and real memory, including dynamic
      allocation of virtual memory.  If you do not know in advance how
      much memory your program needs, you can allocate it dynamically
@@ -5163,10 +5230,10 @@ manual.
      ‘longjmp’ functions.  These functions provide a facility for
      ‘goto’-like jumps which can jump from one function to another.
 
-   • *note Signal Handling::, tells you all about signals—what they are,
-     how to establish a handler that is called when a particular kind of
-     signal is delivered, and how to prevent signals from arriving
-     during critical sections of your program.
+   • *note Signal Handling::, tells you all about signals--what they
+     are, how to establish a handler that is called when a particular
+     kind of signal is delivered, and how to prevent signals from
+     arriving during critical sections of your program.
 
    • *note Program Basics::, tells how your programs can access their
      command-line arguments and environment variables.
@@ -5286,8 +5353,8 @@ the variable ‘errno’.  This variable is declared in the header file
      inspecting the value of ‘errno’.  The proper way to check for error
      is documented for each function.
 
-     *Portability Note:* ISO C specifies ‘errno’ as a “modifiable
-     lvalue” rather than as a variable, permitting it to be implemented
+     *Portability Note:* ISO C specifies ‘errno’ as a "modifiable
+     lvalue" rather than as a variable, permitting it to be implemented
      as a macro.  For example, its expansion might involve a function
      call, like ‘*__errno_location ()’.  In fact, that is what it is on
      GNU/Linux and GNU/Hurd systems.  The GNU C Library, on each system,
@@ -5308,11 +5375,11 @@ Reserved Names::.
    The error code values are all positive integers and are all distinct,
 with one exception: ‘EWOULDBLOCK’ and ‘EAGAIN’ are the same.  Since the
 values are distinct, you can use them as labels in a ‘switch’ statement;
-just don’t use both ‘EWOULDBLOCK’ and ‘EAGAIN’.  Your program should not
+just don't use both ‘EWOULDBLOCK’ and ‘EAGAIN’.  Your program should not
 make any other assumptions about the specific values of these symbolic
 constants.
 
-   The value of ‘errno’ doesn’t necessarily have to correspond to any of
+   The value of ‘errno’ doesn't necessarily have to correspond to any of
 these macros, since some library functions might return other error
 codes of their own for other situations.  The only values that are
 guaranteed to be meaningful for a particular library function are the
@@ -5338,28 +5405,28 @@ File: libc.info,  Node: Error Codes,  Next: Error Messages,  Prev: Checking for 
 
 The error code macros are defined in the header file ‘errno.h’.  All of
 them expand into integer constant values.  Some of these error codes
-can’t occur on GNU systems, but they can occur using the GNU C Library
+can't occur on GNU systems, but they can occur using the GNU C Library
 on other systems.
 
  -- Macro: int EPERM
 
-     “Operation not permitted.” Only the owner of the file (or other
+     "Operation not permitted."  Only the owner of the file (or other
      resource) or processes with special privileges can perform the
      operation.
 
  -- Macro: int ENOENT
 
-     “No such file or directory.” This is a “file doesn’t exist” error
+     "No such file or directory."  This is a "file doesn't exist" error
      for ordinary files that are referenced in contexts where they are
      expected to already exist.
 
  -- Macro: int ESRCH
 
-     “No such process.” No process matches the specified process ID.
+     "No such process."  No process matches the specified process ID.
 
  -- Macro: int EINTR
 
-     “Interrupted system call.” An asynchronous signal occurred and
+     "Interrupted system call."  An asynchronous signal occurred and
      prevented completion of the call.  When this happens, you should
      try the call again.
 
@@ -5369,45 +5436,45 @@ on other systems.
 
  -- Macro: int EIO
 
-     “Input/output error.” Usually used for physical read or write
+     "Input/output error."  Usually used for physical read or write
      errors.
 
  -- Macro: int ENXIO
 
-     “No such device or address.” The system tried to use the device
-     represented by a file you specified, and it couldn’t find the
+     "No such device or address."  The system tried to use the device
+     represented by a file you specified, and it couldn't find the
      device.  This can mean that the device file was installed
      incorrectly, or that the physical device is missing or not
      correctly attached to the computer.
 
  -- Macro: int E2BIG
 
-     “Argument list too long.” Used when the arguments passed to a new
+     "Argument list too long."  Used when the arguments passed to a new
      program being executed with one of the ‘exec’ functions (*note
      Executing a File::) occupy too much memory space.  This condition
      never arises on GNU/Hurd systems.
 
  -- Macro: int ENOEXEC
 
-     “Exec format error.” Invalid executable file format.  This
+     "Exec format error."  Invalid executable file format.  This
      condition is detected by the ‘exec’ functions; see *note Executing
      a File::.
 
  -- Macro: int EBADF
 
-     “Bad file descriptor.” For example, I/O on a descriptor that has
+     "Bad file descriptor."  For example, I/O on a descriptor that has
      been closed or reading from a descriptor open only for writing (or
      vice versa).
 
  -- Macro: int ECHILD
 
-     “No child processes.” This error happens on operations that are
-     supposed to manipulate child processes, when there aren’t any
+     "No child processes."  This error happens on operations that are
+     supposed to manipulate child processes, when there aren't any
      processes to manipulate.
 
  -- Macro: int EDEADLK
 
-     “Resource deadlock avoided.” Allocating a system resource would
+     "Resource deadlock avoided."  Allocating a system resource would
      have resulted in a deadlock situation.  The system does not
      guarantee that it will notice all such situations.  This error
      means you got lucky and the system noticed; it might just hang.
@@ -5415,67 +5482,67 @@ on other systems.
 
  -- Macro: int ENOMEM
 
-     “Cannot allocate memory.” The system cannot allocate more virtual
+     "Cannot allocate memory."  The system cannot allocate more virtual
      memory because its capacity is full.
 
  -- Macro: int EACCES
 
-     “Permission denied.” The file permissions do not allow the
+     "Permission denied."  The file permissions do not allow the
      attempted operation.
 
  -- Macro: int EFAULT
 
-     “Bad address.” An invalid pointer was detected.  On GNU/Hurd
+     "Bad address."  An invalid pointer was detected.  On GNU/Hurd
      systems, this error never happens; you get a signal instead.
 
  -- Macro: int ENOTBLK
 
-     “Block device required.” A file that isn’t a block special file was
-     given in a situation that requires one.  For example, trying to
+     "Block device required."  A file that isn't a block special file
+     was given in a situation that requires one.  For example, trying to
      mount an ordinary file as a file system in Unix gives this error.
 
  -- Macro: int EBUSY
 
-     “Device or resource busy.” A system resource that can’t be shared
+     "Device or resource busy."  A system resource that can't be shared
      is already in use.  For example, if you try to delete a file that
      is the root of a currently mounted filesystem, you get this error.
 
  -- Macro: int EEXIST
 
-     “File exists.” An existing file was specified in a context where it
-     only makes sense to specify a new file.
+     "File exists."  An existing file was specified in a context where
+     it only makes sense to specify a new file.
 
  -- Macro: int EXDEV
 
-     “Invalid cross-device link.” An attempt to make an improper link
+     "Invalid cross-device link."  An attempt to make an improper link
      across file systems was detected.  This happens not only when you
      use ‘link’ (*note Hard Links::) but also when you rename a file
      with ‘rename’ (*note Renaming Files::).
 
  -- Macro: int ENODEV
 
-     “No such device.” The wrong type of device was given to a function
+     "No such device."  The wrong type of device was given to a function
      that expects a particular sort of device.
 
  -- Macro: int ENOTDIR
 
-     “Not a directory.” A file that isn’t a directory was specified when
-     a directory is required.
+     "Not a directory."  A file that isn't a directory was specified
+     when a directory is required.
 
  -- Macro: int EISDIR
 
-     “Is a directory.” You cannot open a directory for writing, or
+     "Is a directory."  You cannot open a directory for writing, or
      create or remove hard links to it.
 
  -- Macro: int EINVAL
 
-     “Invalid argument.” This is used to indicate various kinds of
+     "Invalid argument."  This is used to indicate various kinds of
      problems with passing the wrong argument to a library function.
 
  -- Macro: int EMFILE
 
-     “Too many open files.” The current process has too many files open
-     and can’t open any more.  Duplicate descriptors do count toward
+     "Too many open files."  The current process has too many files open
+     and can't open any more.  Duplicate descriptors do count toward
      this limit.
 
      In BSD and GNU, the number of open files is controlled by a
@@ -5485,54 +5552,54 @@ on other systems.
 
  -- Macro: int ENFILE
 
-     “Too many open files in system.” There are too many distinct file
+     "Too many open files in system."  There are too many distinct file
      openings in the entire system.  Note that any number of linked
      channels count as just one file opening; see *note Linked
      Channels::.  This error never occurs on GNU/Hurd systems.
 
  -- Macro: int ENOTTY
 
-     “Inappropriate ioctl for device.” Inappropriate I/O control
+     "Inappropriate ioctl for device."  Inappropriate I/O control
      operation, such as trying to set terminal modes on an ordinary
      file.
 
  -- Macro: int ETXTBSY
 
-     “Text file busy.” An attempt to execute a file that is currently
+     "Text file busy."  An attempt to execute a file that is currently
      open for writing, or write to a file that is currently being
      executed.  Often using a debugger to run a program is considered
      having it open for writing and will cause this error.  (The name
-     stands for “text file busy”.)  This is not an error on GNU/Hurd
+     stands for "text file busy".)  This is not an error on GNU/Hurd
      systems; the text is copied as necessary.
 
  -- Macro: int EFBIG
 
-     “File too large.” The size of a file would be larger than allowed
+     "File too large."  The size of a file would be larger than allowed
      by the system.
 
  -- Macro: int ENOSPC
 
-     “No space left on device.” Write operation on a file failed because
-     the disk is full.
+     "No space left on device."  Write operation on a file failed
+     because the disk is full.
 
  -- Macro: int ESPIPE
 
-     “Illegal seek.” Invalid seek operation (such as on a pipe).
+     "Illegal seek."  Invalid seek operation (such as on a pipe).
 
  -- Macro: int EROFS
 
-     “Read-only file system.” An attempt was made to modify something on
-     a read-only file system.
+     "Read-only file system."  An attempt was made to modify something
+     on a read-only file system.
 
  -- Macro: int EMLINK
 
-     “Too many links.” The link count of a single file would become too
+     "Too many links."  The link count of a single file would become too
      large.  ‘rename’ can cause this error if the file being renamed
      already has as many links as it can take (*note Renaming Files::).
 
  -- Macro: int EPIPE
 
-     “Broken pipe.” There is no process reading from the other end of a
+     "Broken pipe."  There is no process reading from the other end of a
      pipe.  Every library function that returns this error code also
      generates a ‘SIGPIPE’ signal; this signal terminates the program if
      not handled or blocked.  Thus, your program will never actually see
@@ -5540,19 +5607,19 @@ on other systems.
 
  -- Macro: int EDOM
 
-     “Numerical argument out of domain.” Used by mathematical functions
+     "Numerical argument out of domain."  Used by mathematical functions
      when an argument value does not fall into the domain over which the
      function is defined.
 
  -- Macro: int ERANGE
 
-     “Numerical result out of range.” Used by mathematical functions
+     "Numerical result out of range."  Used by mathematical functions
      when the result value is not representable because of overflow or
      underflow.
 
  -- Macro: int EAGAIN
 
-     “Resource temporarily unavailable.” The call might work if you try
+     "Resource temporarily unavailable."  The call might work if you try
      again later.  The macro ‘EWOULDBLOCK’ is another name for ‘EAGAIN’;
      they are always the same in the GNU C Library.
 
@@ -5582,16 +5649,16 @@ on other systems.
 
  -- Macro: int EWOULDBLOCK
 
-     “Operation would block.” In the GNU C Library, this is another name
-     for ‘EAGAIN’ (above).  The values are always the same, on every
-     operating system.
+     "Operation would block."  In the GNU C Library, this is another
+     name for ‘EAGAIN’ (above).  The values are always the same, on
+     every operating system.
 
      C libraries in many older Unix systems have ‘EWOULDBLOCK’ as a
      separate error code.
 
  -- Macro: int EINPROGRESS
 
-     “Operation now in progress.” An operation that cannot complete
+     "Operation now in progress."  An operation that cannot complete
      immediately was initiated on an object that has non-blocking mode
      selected.  Some functions that must always block (such as
      ‘connect’; *note Connecting::) never return ‘EAGAIN’.  Instead,
@@ -5603,44 +5670,44 @@ on other systems.
 
  -- Macro: int EALREADY
 
-     “Operation already in progress.” An operation is already in
+     "Operation already in progress."  An operation is already in
      progress on an object that has non-blocking mode selected.
 
  -- Macro: int ENOTSOCK
 
-     “Socket operation on non-socket.” A file that isn’t a socket was
+     "Socket operation on non-socket."  A file that isn't a socket was
      specified when a socket is required.
 
  -- Macro: int EMSGSIZE
 
-     “Message too long.” The size of a message sent on a socket was
+     "Message too long."  The size of a message sent on a socket was
      larger than the supported maximum size.
 
  -- Macro: int EPROTOTYPE
 
-     “Protocol wrong type for socket.” The socket type does not support
+     "Protocol wrong type for socket."  The socket type does not support
      the requested communications protocol.
 
  -- Macro: int ENOPROTOOPT
 
-     “Protocol not available.” You specified a socket option that
-     doesn’t make sense for the particular protocol being used by the
+     "Protocol not available."  You specified a socket option that
+     doesn't make sense for the particular protocol being used by the
      socket.  *Note Socket Options::.
 
  -- Macro: int EPROTONOSUPPORT
 
-     “Protocol not supported.” The socket domain does not support the
+     "Protocol not supported."  The socket domain does not support the
      requested communications protocol (perhaps because the requested
      protocol is completely invalid).  *Note Creating a Socket::.
 
  -- Macro: int ESOCKTNOSUPPORT
 
-     “Socket type not supported.” The socket type is not supported.
+     "Socket type not supported."  The socket type is not supported.
 
  -- Macro: int EOPNOTSUPP
 
-     “Operation not supported.” The operation you requested is not
-     supported.  Some socket functions don’t make sense for all types of
+     "Operation not supported."  The operation you requested is not
+     supported.  Some socket functions don't make sense for all types of
      sockets, and others may not be implemented for all communications
      protocols.  On GNU/Hurd systems, this error can happen for many
      calls when the object does not support the particular operation; it
@@ -5649,67 +5716,67 @@ on other systems.
 
  -- Macro: int EPFNOSUPPORT
 
-     “Protocol family not supported.” The socket communications protocol
-     family you requested is not supported.
+     "Protocol family not supported."  The socket communications
+     protocol family you requested is not supported.
 
  -- Macro: int EAFNOSUPPORT
 
-     “Address family not supported by protocol.” The address family
+     "Address family not supported by protocol."  The address family
      specified for a socket is not supported; it is inconsistent with
      the protocol being used on the socket.  *Note Sockets::.
 
  -- Macro: int EADDRINUSE
 
-     “Address already in use.” The requested socket address is already
+     "Address already in use."  The requested socket address is already
      in use.  *Note Socket Addresses::.
 
  -- Macro: int EADDRNOTAVAIL
 
-     “Cannot assign requested address.” The requested socket address is
+     "Cannot assign requested address."  The requested socket address is
      not available; for example, you tried to give a socket a name that
-     doesn’t match the local host name.  *Note Socket Addresses::.
+     doesn't match the local host name.  *Note Socket Addresses::.
 
  -- Macro: int ENETDOWN
 
-     “Network is down.” A socket operation failed because the network
+     "Network is down."  A socket operation failed because the network
      was down.
 
  -- Macro: int ENETUNREACH
 
-     “Network is unreachable.” A socket operation failed because the
+     "Network is unreachable."  A socket operation failed because the
      subnet containing the remote host was unreachable.
 
  -- Macro: int ENETRESET
 
-     “Network dropped connection on reset.” A network connection was
+     "Network dropped connection on reset."  A network connection was
      reset because the remote host crashed.
 
  -- Macro: int ECONNABORTED
 
-     “Software caused connection abort.” A network connection was
+     "Software caused connection abort."  A network connection was
      aborted locally.
 
  -- Macro: int ECONNRESET
 
-     “Connection reset by peer.” A network connection was closed for
+     "Connection reset by peer."  A network connection was closed for
      reasons outside the control of the local host, such as by the
      remote machine rebooting or an unrecoverable protocol violation.
 
  -- Macro: int ENOBUFS
 
-     “No buffer space available.” The kernel’s buffers for I/O
+     "No buffer space available."  The kernel's buffers for I/O
      operations are all in use.  In GNU, this error is always synonymous
      with ‘ENOMEM’; you may get one or the other from network
      operations.
 
  -- Macro: int EISCONN
 
-     “Transport endpoint is already connected.” You tried to connect a
+     "Transport endpoint is already connected."  You tried to connect a
      socket that is already connected.  *Note Connecting::.
 
  -- Macro: int ENOTCONN
 
-     “Transport endpoint is not connected.” The socket is not connected
+     "Transport endpoint is not connected."  The socket is not connected
      to anything.  You get this error when you try to transmit data over
      a socket, without first specifying a destination for the data.  For
      a connectionless socket (for datagram protocols, such as UDP), you
@@ -5717,77 +5784,77 @@ on other systems.
 
  -- Macro: int EDESTADDRREQ
 
-     “Destination address required.” No default destination address was
+     "Destination address required."  No default destination address was
      set for the socket.  You get this error when you try to transmit
      data over a connectionless socket, without first specifying a
      destination for the data with ‘connect’.
 
  -- Macro: int ESHUTDOWN
 
-     “Cannot send after transport endpoint shutdown.” The socket has
+     "Cannot send after transport endpoint shutdown."  The socket has
      already been shut down.
 
  -- Macro: int ETOOMANYREFS
 
-     “Too many references: cannot splice.”
+     "Too many references: cannot splice."
 
  -- Macro: int ETIMEDOUT
 
-     “Connection timed out.” A socket operation with a specified timeout
-     received no response during the timeout period.
+     "Connection timed out."  A socket operation with a specified
+     timeout received no response during the timeout period.
 
  -- Macro: int ECONNREFUSED
 
-     “Connection refused.” A remote host refused to allow the network
+     "Connection refused."  A remote host refused to allow the network
      connection (typically because it is not running the requested
      service).
 
  -- Macro: int ELOOP
 
-     “Too many levels of symbolic links.” Too many levels of symbolic
+     "Too many levels of symbolic links."  Too many levels of symbolic
      links were encountered in looking up a file name.  This often
      indicates a cycle of symbolic links.
 
  -- Macro: int ENAMETOOLONG
 
-     “File name too long.” Filename too long (longer than ‘PATH_MAX’;
+     "File name too long."  Filename too long (longer than ‘PATH_MAX’;
      *note Limits for Files::) or host name too long (in ‘gethostname’
      or ‘sethostname’; *note Host Identification::).
 
  -- Macro: int EHOSTDOWN
 
-     “Host is down.” The remote host for a requested network connection
+     "Host is down."  The remote host for a requested network connection
      is down.
 
  -- Macro: int EHOSTUNREACH
 
-     “No route to host.” The remote host for a requested network
+     "No route to host."  The remote host for a requested network
      connection is not reachable.
 
  -- Macro: int ENOTEMPTY
 
-     “Directory not empty.” Directory not empty, where an empty
+     "Directory not empty."  Directory not empty, where an empty
      directory was expected.  Typically, this error occurs when you are
      trying to delete a directory.
 
  -- Macro: int EPROCLIM
 
-     “Too many processes.” This means that the per-user limit on new
+     "Too many processes."  This means that the per-user limit on new
      process would be exceeded by an attempted ‘fork’.  *Note Limits on
      Resources::, for details on the ‘RLIMIT_NPROC’ limit.
 
  -- Macro: int EUSERS
 
-     “Too many users.” The file quota system is confused because there
+     "Too many users."  The file quota system is confused because there
      are too many users.
 
  -- Macro: int EDQUOT
 
-     “Disk quota exceeded.” The user’s disk quota was exceeded.
+     "Disk quota exceeded."  The user's disk quota was exceeded.
 
  -- Macro: int ESTALE
 
-     “Stale file handle.” This indicates an internal confusion in the
+     "Stale file handle."  This indicates an internal confusion in the
      file system which is due to file system rearrangements on the
      server host for NFS file systems or corruption in other file
      systems.  Repairing this condition usually requires unmounting,
@@ -5795,7 +5862,7 @@ on other systems.
 
  -- Macro: int EREMOTE
 
-     “Object is remote.” An attempt was made to NFS-mount a remote file
+     "Object is remote."  An attempt was made to NFS-mount a remote file
      system with a file name that already specifies an NFS-mounted file.
      (This is an error on some operating systems, but we expect it to
      work properly on GNU/Hurd systems, making this error code
@@ -5803,34 +5870,34 @@ on other systems.
 
  -- Macro: int EBADRPC
 
-     “RPC struct is bad.”
+     "RPC struct is bad."
 
  -- Macro: int ERPCMISMATCH
 
-     “RPC version wrong.”
+     "RPC version wrong."
 
  -- Macro: int EPROGUNAVAIL
 
-     “RPC program not available.”
+     "RPC program not available."
 
  -- Macro: int EPROGMISMATCH
 
-     “RPC program version wrong.”
+     "RPC program version wrong."
 
  -- Macro: int EPROCUNAVAIL
 
-     “RPC bad procedure for program.”
+     "RPC bad procedure for program."
 
  -- Macro: int ENOLCK
 
-     “No locks available.” This is used by the file locking facilities;
+     "No locks available."  This is used by the file locking facilities;
      see *note File Locks::.  This error is never generated by GNU/Hurd
      systems, but it can result from an operation to an NFS server
      running another operating system.
 
  -- Macro: int EFTYPE
 
-     “Inappropriate file type or format.” The file was the wrong type
+     "Inappropriate file type or format."  The file was the wrong type
      for the operation, or a data file had the wrong format.
 
      On some systems ‘chmod’ returns this error if you try to set the
@@ -5838,27 +5905,27 @@ on other systems.
 
  -- Macro: int EAUTH
 
-     “Authentication error.”
+     "Authentication error."
 
  -- Macro: int ENEEDAUTH
 
-     “Need authenticator.”
+     "Need authenticator."
 
  -- Macro: int ENOSYS
 
-     “Function not implemented.” This indicates that the function called
-     is not implemented at all, either in the C library itself or in the
-     operating system.  When you get this error, you can be sure that
-     this particular function will always fail with ‘ENOSYS’ unless you
-     install a new version of the C library or the operating system.
+     "Function not implemented."  This indicates that the function
+     called is not implemented at all, either in the C library itself or
+     in the operating system.  When you get this error, you can be sure
+     that this particular function will always fail with ‘ENOSYS’ unless
+     you install a new version of the C library or the operating system.
 
  -- Macro: int ELIBEXEC
 
-     “Cannot exec a shared library directly.”
+     "Cannot exec a shared library directly."
 
  -- Macro: int ENOTSUP
 
-     “Not supported.” A function returns this error when certain
+     "Not supported."  A function returns this error when certain
      parameter values are valid, but the functionality they request is
      not available.  This can mean that the function does not implement
      a particular command or option value or flag bit at all.  For
@@ -5873,14 +5940,14 @@ on other systems.
 
  -- Macro: int EILSEQ
 
-     “Invalid or incomplete multibyte or wide character.” While decoding
-     a multibyte character the function came along an invalid or an
-     incomplete sequence of bytes or the given wide character is
+     "Invalid or incomplete multibyte or wide character."  While
+     decoding a multibyte character the function came along an invalid
+     or an incomplete sequence of bytes or the given wide character is
      invalid.
 
  -- Macro: int EBACKGROUND
 
-     “Inappropriate operation for background process.” On GNU/Hurd
+     "Inappropriate operation for background process."  On GNU/Hurd
      systems, servers supporting the ‘term’ protocol return this error
      for certain operations when the caller is not in the foreground
      process group of the terminal.  Users do not usually see this error
@@ -5890,265 +5957,265 @@ on other systems.
 
  -- Macro: int EDIED
 
-     “Translator died.” On GNU/Hurd systems, opening a file returns this
-     error when the file is translated by a program and the translator
-     program dies while starting up, before it has connected to the
-     file.
+     "Translator died."  On GNU/Hurd systems, opening a file returns
+     this error when the file is translated by a program and the
+     translator program dies while starting up, before it has connected
+     to the file.
 
  -- Macro: int ED
 
-     “?.” The experienced user will know what is wrong.
+     "?."  The experienced user will know what is wrong.
 
  -- Macro: int EGREGIOUS
 
-     “You really blew it this time.” You did *what*?
+     "You really blew it this time."  You did *what*?
 
  -- Macro: int EIEIO
 
-     “Computer bought the farm.” Go home and have a glass of warm,
+     "Computer bought the farm."  Go home and have a glass of warm,
      dairy-fresh milk.
 
  -- Macro: int EGRATUITOUS
 
-     “Gratuitous error.” This error code has no purpose.
+     "Gratuitous error."  This error code has no purpose.
 
  -- Macro: int EBADMSG
 
-     “Bad message.”
+     "Bad message."
 
  -- Macro: int EIDRM
 
-     “Identifier removed.”
+     "Identifier removed."
 
  -- Macro: int EMULTIHOP
 
-     “Multihop attempted.”
+     "Multihop attempted."
 
  -- Macro: int ENODATA
 
-     “No data available.”
+     "No data available."
 
  -- Macro: int ENOLINK
 
-     “Link has been severed.”
+     "Link has been severed."
 
  -- Macro: int ENOMSG
 
-     “No message of desired type.”
+     "No message of desired type."
 
  -- Macro: int ENOSR
 
-     “Out of streams resources.”
+     "Out of streams resources."
 
  -- Macro: int ENOSTR
 
-     “Device not a stream.”
+     "Device not a stream."
 
  -- Macro: int EOVERFLOW
 
-     “Value too large for defined data type.”
+     "Value too large for defined data type."
 
  -- Macro: int EPROTO
 
-     “Protocol error.”
+     "Protocol error."
 
  -- Macro: int ETIME
 
-     “Timer expired.”
+     "Timer expired."
 
  -- Macro: int ECANCELED
 
-     “Operation canceled.” An asynchronous operation was canceled before
-     it completed.  *Note Asynchronous I/O::.  When you call
+     "Operation canceled."  An asynchronous operation was canceled
+     before it completed.  *Note Asynchronous I/O::.  When you call
      ‘aio_cancel’, the normal result is for the operations affected to
      complete with this error; *note Cancel AIO Operations::.
 
  -- Macro: int EOWNERDEAD
 
-     “Owner died.”
+     "Owner died."
 
  -- Macro: int ENOTRECOVERABLE
 
-     “State not recoverable.”
+     "State not recoverable."
 
    _The following error codes are defined by the Linux/i386 kernel.
 They are not yet documented._
 
  -- Macro: int ERESTART
 
-     “Interrupted system call should be restarted.”
+     "Interrupted system call should be restarted."
 
  -- Macro: int ECHRNG
 
-     “Channel number out of range.”
+     "Channel number out of range."
 
  -- Macro: int EL2NSYNC
 
-     “Level 2 not synchronized.”
+     "Level 2 not synchronized."
 
  -- Macro: int EL3HLT
 
-     “Level 3 halted.”
+     "Level 3 halted."
 
  -- Macro: int EL3RST
 
-     “Level 3 reset.”
+     "Level 3 reset."
 
  -- Macro: int ELNRNG
 
-     “Link number out of range.”
+     "Link number out of range."
 
  -- Macro: int EUNATCH
 
-     “Protocol driver not attached.”
+     "Protocol driver not attached."
 
  -- Macro: int ENOCSI
 
-     “No CSI structure available.”
+     "No CSI structure available."
 
  -- Macro: int EL2HLT
 
-     “Level 2 halted.”
+     "Level 2 halted."
 
  -- Macro: int EBADE
 
-     “Invalid exchange.”
+     "Invalid exchange."
 
  -- Macro: int EBADR
 
-     “Invalid request descriptor.”
+     "Invalid request descriptor."
 
  -- Macro: int EXFULL
 
-     “Exchange full.”
+     "Exchange full."
 
  -- Macro: int ENOANO
 
-     “No anode.”
+     "No anode."
 
  -- Macro: int EBADRQC
 
-     “Invalid request code.”
+     "Invalid request code."
 
  -- Macro: int EBADSLT
 
-     “Invalid slot.”
+     "Invalid slot."
 
  -- Macro: int EDEADLOCK
 
-     “File locking deadlock error.”
+     "File locking deadlock error."
 
  -- Macro: int EBFONT
 
-     “Bad font file format.”
+     "Bad font file format."
 
  -- Macro: int ENONET
 
-     “Machine is not on the network.”
+     "Machine is not on the network."
 
  -- Macro: int ENOPKG
 
-     “Package not installed.”
+     "Package not installed."
 
  -- Macro: int EADV
 
-     “Advertise error.”
+     "Advertise error."
 
  -- Macro: int ESRMNT
 
-     “Srmount error.”
+     "Srmount error."
 
  -- Macro: int ECOMM
 
-     “Communication error on send.”
+     "Communication error on send."
 
  -- Macro: int EDOTDOT
 
-     “RFS specific error.”
+     "RFS specific error."
 
  -- Macro: int ENOTUNIQ
 
-     “Name not unique on network.”
+     "Name not unique on network."
 
  -- Macro: int EBADFD
 
-     “File descriptor in bad state.”
+     "File descriptor in bad state."
 
  -- Macro: int EREMCHG
 
-     “Remote address changed.”
+     "Remote address changed."
 
  -- Macro: int ELIBACC
 
-     “Can not access a needed shared library.”
+     "Can not access a needed shared library."
 
  -- Macro: int ELIBBAD
 
-     “Accessing a corrupted shared library.”
+     "Accessing a corrupted shared library."
 
  -- Macro: int ELIBSCN
 
-     “.lib section in a.out corrupted.”
+     ".lib section in a.out corrupted."
 
  -- Macro: int ELIBMAX
 
-     “Attempting to link in too many shared libraries.”
+     "Attempting to link in too many shared libraries."
 
  -- Macro: int ESTRPIPE
 
-     “Streams pipe error.”
+     "Streams pipe error."
 
  -- Macro: int EUCLEAN
 
-     “Structure needs cleaning.”
+     "Structure needs cleaning."
 
  -- Macro: int ENOTNAM
 
-     “Not a XENIX named type file.”
+     "Not a XENIX named type file."
 
  -- Macro: int ENAVAIL
 
-     “No XENIX semaphores available.”
+     "No XENIX semaphores available."
 
  -- Macro: int EISNAM
 
-     “Is a named type file.”
+     "Is a named type file."
 
  -- Macro: int EREMOTEIO
 
-     “Remote I/O error.”
+     "Remote I/O error."
 
  -- Macro: int ENOMEDIUM
 
-     “No medium found.”
+     "No medium found."
 
  -- Macro: int EMEDIUMTYPE
 
-     “Wrong medium type.”
+     "Wrong medium type."
 
  -- Macro: int ENOKEY
 
-     “Required key not available.”
+     "Required key not available."
 
  -- Macro: int EKEYEXPIRED
 
-     “Key has expired.”
+     "Key has expired."
 
  -- Macro: int EKEYREVOKED
 
-     “Key has been revoked.”
+     "Key has been revoked."
 
  -- Macro: int EKEYREJECTED
 
-     “Key was rejected by service.”
+     "Key was rejected by service."
 
  -- Macro: int ERFKILL
 
-     “Operation not possible due to RF-kill.”
+     "Operation not possible due to RF-kill."
 
  -- Macro: int EHWPOISON
 
-     “Memory page has hardware error.”
+     "Memory page has hardware error."
 
 
 File: libc.info,  Node: Error Messages,  Prev: Error Codes,  Up: Error Reporting
@@ -6324,15 +6391,15 @@ are no multi-line messages or embedded newlines.  Each error message
 begins with a capital letter and does not include any terminating
 punctuation.
 
-   Many programs that don’t read input from the terminal are designed to
+   Many programs that don't read input from the terminal are designed to
 exit if any system call fails.  By convention, the error message from
-such a program should start with the program’s name, sans directories.
+such a program should start with the program's name, sans directories.
 You can find that name in the variable ‘program_invocation_short_name’;
 the full file name is stored the variable ‘program_invocation_name’.
 
  -- Variable: char * program_invocation_name
 
-     This variable’s value is the name that was used to invoke the
+     This variable's value is the name that was used to invoke the
      program running in the current process.  It is the same as
      ‘argv[0]’.  Note that this is not necessarily a useful file name;
      often it contains no directory names.  *Note Program Arguments::.
@@ -6341,7 +6408,7 @@ the full file name is stored the variable ‘program_invocation_name’.
 
  -- Variable: char * program_invocation_short_name
 
-     This variable’s value is the name that was used to invoke the
+     This variable's value is the name that was used to invoke the
      program running in the current process, with directory names
      removed.  (That is to say, it is the same as
      ‘program_invocation_name’ minus everything up to the last slash, if
@@ -6361,11 +6428,11 @@ that require no explicit cooperation from ‘main’.
    Here is an example showing how to handle failure to open a file
 correctly.  The function ‘open_sesame’ tries to open the named file for
 reading and returns a stream if successful.  The ‘fopen’ library
-function returns a null pointer if it couldn’t open the file for some
+function returns a null pointer if it couldn't open the file for some
 reason.  In that situation, ‘open_sesame’ constructs an appropriate
 error message using the ‘strerror’ function, and terminates the program.
 If we were going to make some other library calls before passing the
-error code to ‘strerror’, we’d have to save it in a local variable
+error code to ‘strerror’, we'd have to save it in a local variable
 instead, because those other library functions might overwrite ‘errno’
 in the meantime.
 
@@ -6433,7 +6500,7 @@ declared in ‘error.h’.
      newline.
 
      The output is directed to the ‘stderr’ stream.  If the ‘stderr’
-     wasn’t oriented before the call it will be narrow-oriented
+     wasn't oriented before the call it will be narrow-oriented
      afterwards.
 
      The function will return unless the STATUS parameter has a non-zero
@@ -6660,7 +6727,7 @@ store data.
 Backing each page of virtual memory is a page of real memory (called a
 “frame”) or some secondary storage, usually disk space.  The disk space
 might be swap space or just some ordinary disk file.  Actually, a page
-of all zeroes sometimes has nothing at all backing it – there’s just a
+of all zeroes sometimes has nothing at all backing it - there's just a
 flag saying it is all zeroes.
 
    The same frame of real memory or backing store can back multiple
@@ -6671,7 +6738,7 @@ virtual memory page in each of the existing processes that has a
 ‘printf’ call in its program.
 
    In order for a program to access any part of a virtual page, the page
-must at that moment be backed by (“connected to”) a real frame.  But
+must at that moment be backed by ("connected to") a real frame.  But
 because there is usually a lot more virtual memory than real memory, the
 pages must move back and forth between real memory and backing store
 regularly, coming into real memory when a process needs to access them
@@ -6681,8 +6748,8 @@ movement is called “paging”.
    When a program attempts to access a page which is not at that moment
 backed by real memory, this is known as a “page fault”.  When a page
 fault occurs, the kernel suspends the process, places the page into a
-real page frame (this is called “paging in” or “faulting in”), then
-resumes the process so that from the process’ point of view, the page
+real page frame (this is called "paging in" or "faulting in"), then
+resumes the process so that from the process' point of view, the page
 was in real memory all along.  In fact, to the process, all pages always
 seem to be in real memory.  Except for one thing: the elapsed execution
 time of an instruction that would normally be a few nanoseconds is
@@ -6693,18 +6760,18 @@ described in *note Locking Pages:: can control it.
    Within each virtual address space, a process has to keep track of
 what is at which addresses, and that process is called memory
 allocation.  Allocation usually brings to mind meting out scarce
-resources, but in the case of virtual memory, that’s not a major goal,
+resources, but in the case of virtual memory, that's not a major goal,
 because there is generally much more of it than anyone needs.  Memory
 allocation within a process is mainly just a matter of making sure that
-the same byte of memory isn’t used to store two different things.
+the same byte of memory isn't used to store two different things.
 
    Processes allocate memory in two major ways: by exec and
-programmatically.  Actually, forking is a third way, but it’s not very
+programmatically.  Actually, forking is a third way, but it's not very
 interesting.  *Note Creating a Process::.
 
    Exec is the operation of creating a virtual address space for a
 process, loading its basic program into it, and executing the program.
-It is done by the “exec” family of functions (e.g.  ‘execl’).  The
+It is done by the "exec" family of functions (e.g.  ‘execl’).  The
 operation takes a program file (an executable), it allocates space to
 load all the data in the executable, loads it, and transfers control to
 it.  That data is most notably the instructions of the program (the
@@ -6719,7 +6786,7 @@ Memory Allocation and C::.
 
    Memory-mapped I/O is another form of dynamic virtual memory
 allocation.  Mapping memory to a file means declaring that the contents
-of certain range of a process’ addresses shall be identical to the
+of certain range of a process' addresses shall be identical to the
 contents of a specified regular file.  The system makes the virtual
 memory initially contain the contents of the file, and if you modify the
 memory, the system writes the same modification to the file.  Note that
@@ -6729,18 +6796,18 @@ its contents, until the program accesses the virtual memory.  *Note
 Memory-mapped I/O::.
 
    Just as it programmatically allocates memory, the program can
-programmatically deallocate (“free”) it.  You can’t free the memory that
+programmatically deallocate (“free”) it.  You can't free the memory that
 was allocated by exec.  When the program exits or execs, you might say
 that all its memory gets freed, but since in both cases the address
 space ceases to exist, the point is really moot.  *Note Program
 Termination::.
 
-   A process’ virtual address space is divided into segments.  A segment
+   A process' virtual address space is divided into segments.  A segment
 is a contiguous range of virtual addresses.  Three important segments
 are:
 
    • 
-     The “text segment” contains a program’s instructions and literals
+     The “text segment” contains a program's instructions and literals
      and static constants.  It is allocated by exec and stays the same
      size for the life of the virtual address space.
 
@@ -6750,7 +6817,7 @@ are:
      Data Segment::.  Its lower end is fixed.
 
    • The “stack segment” contains a program stack.  It grows as the
-     stack grows, but doesn’t shrink when the stack shrinks.
+     stack grows, but doesn't shrink when the stack shrinks.
 
 
 File: libc.info,  Node: Memory Allocation,  Next: Resizing the Data Segment,  Prev: Memory Concepts,  Up: Memory
@@ -6820,7 +6887,7 @@ allocate the memory dynamically and make it dynamically larger as you
 read more of the line.
 
    Or, you may need a block for each record or each definition in the
-input data; since you can’t know in advance how many there will be, you
+input data; since you can't know in advance how many there will be, you
 must allocate a new block for each record or definition as you read it.
 
    When you use dynamic allocation, the allocation of a block of memory
@@ -6831,7 +6898,7 @@ function or macro.  You can do these things whenever you want, as often
 as you want.
 
    Dynamic allocation is not supported by C variables; there is no
-storage class “dynamic”, and there can never be a C variable whose value
+storage class "dynamic", and there can never be a C variable whose value
 is stored in dynamically allocated space.  The only way to get
 dynamically allocated memory is via a system call (which is generally
 via a GNU C Library function call), and the only way to refer to
@@ -6886,7 +6953,7 @@ much larger than a page.  These requests are allocated with ‘mmap’
 (anonymous or via ‘/dev/zero’; *note Memory-mapped I/O::)).  This has
 the great advantage that these chunks are returned to the system
 immediately when they are freed.  Therefore, it cannot happen that a
-large chunk becomes “locked” in between smaller ones and even after
+large chunk becomes "locked" in between smaller ones and even after
 calling ‘free’ wastes memory.  The size threshold for ‘mmap’ to be used
 is dynamic and gets adjusted according to allocation patterns of the
 program.  ‘mallopt’ can be used to statically adjust the threshold using
@@ -6966,8 +7033,8 @@ if the type is needed but not specified by context.
 
    Remember that when allocating space for a string, the argument to
 ‘malloc’ must be one plus the length of the string.  This is because a
-string is terminated with a null character that doesn’t count in the
-“length” of the string but does need space.  For example:
+string is terminated with a null character that doesn't count in the
+"length" of the string but does need space.  For example:
 
      char *ptr = malloc (length + 1);
 
@@ -7092,112 +7159,6 @@ code need not worry about saving and restoring ‘errno’ around a call to
 preserve ‘errno’, a future version of POSIX is planned to require it.
 
    There is no point in freeing blocks at the end of a program, because
-all of the program’s space is given back to the system when the process
+all of the program's space is given back to the system when the process
 terminates.
-
-
-File: libc.info,  Node: Changing Block Size,  Next: Allocating Cleared Space,  Prev: Freeing after Malloc,  Up: Unconstrained Allocation
-
-3.2.3.4 Changing the Size of a Block
-....................................
-
-Often you do not know for certain how big a block you will ultimately
-need at the time you must begin to use the block.  For example, the
-block might be a buffer that you use to hold a line being read from a
-file; no matter how long you make the buffer initially, you may
-encounter a line that is longer.
-
-   You can make the block longer by calling ‘realloc’ or ‘reallocarray’.
-These functions are declared in ‘stdlib.h’.
-
- -- Function: void * realloc (void *PTR, size_t NEWSIZE)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
-     *Note POSIX Safety Concepts::.
-
-     The ‘realloc’ function changes the size of the block whose address
-     is PTR to be NEWSIZE.
-
-     Since the space after the end of the block may be in use, ‘realloc’
-     may find it necessary to copy the block to a new address where more
-     free space is available.  The value of ‘realloc’ is the new address
-     of the block.  If the block needs to be moved, ‘realloc’ copies the
-     old contents.
-
-     If you pass a null pointer for PTR, ‘realloc’ behaves just like
-     ‘malloc (NEWSIZE)’.  Otherwise, if NEWSIZE is zero ‘realloc’ frees
-     the block and returns ‘NULL’.  Otherwise, if ‘realloc’ cannot
-     reallocate the requested size it returns ‘NULL’ and sets ‘errno’;
-     the original block is left undisturbed.
-
- -- Function: void * reallocarray (void *PTR, size_t NMEMB, size_t SIZE)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
-     *Note POSIX Safety Concepts::.
-
-     The ‘reallocarray’ function changes the size of the block whose
-     address is PTR to be long enough to contain a vector of NMEMB
-     elements, each of size SIZE.  It is equivalent to ‘realloc (PTR,
-     NMEMB * SIZE)’, except that ‘reallocarray’ fails safely if the
-     multiplication overflows, by setting ‘errno’ to ‘ENOMEM’, returning
-     a null pointer, and leaving the original block unchanged.
-
-     ‘reallocarray’ should be used instead of ‘realloc’ when the new
-     size of the allocated block is the result of a multiplication that
-     might overflow.
-
-     *Portability Note:* This function is not part of any standard.  It
-     was first introduced in OpenBSD 5.6.
-
-   Like ‘malloc’, ‘realloc’ and ‘reallocarray’ may return a null pointer
-if no memory space is available to make the block bigger.  When this
-happens, the original block is untouched; it has not been modified or
-relocated.
-
-   In most cases it makes no difference what happens to the original
-block when ‘realloc’ fails, because the application program cannot
-continue when it is out of memory, and the only thing to do is to give a
-fatal error message.  Often it is convenient to write and use
-subroutines, conventionally called ‘xrealloc’ and ‘xreallocarray’, that
-take care of the error message as ‘xmalloc’ does for ‘malloc’:
-
-     void *
-     xreallocarray (void *ptr, size_t nmemb, size_t size)
-     {
-       void *value = reallocarray (ptr, nmemb, size);
-       if (value == 0)
-         fatal ("Virtual memory exhausted");
-       return value;
-     }
-
-     void *
-     xrealloc (void *ptr, size_t size)
-     {
-       return xreallocarray (ptr, 1, size);
-     }
-
-   You can also use ‘realloc’ or ‘reallocarray’ to make a block smaller.
-The reason you would do this is to avoid tying up a lot of memory space
-when only a little is needed.  In several allocation implementations,
-making a block smaller sometimes necessitates copying it, so it can fail
-if no other space is available.
-
-   *Portability Notes:*
-
-   • Portable programs should not attempt to reallocate blocks to be
-     size zero.  On other implementations if PTR is non-null, ‘realloc
-     (ptr, 0)’ might free the block and return a non-null pointer to a
-     size-zero object, or it might fail and return ‘NULL’ without
-     freeing the block.  The ISO C17 standard allows these variations.
-
-   • In the GNU C Library, reallocation fails if the resulting block
-     would exceed ‘PTRDIFF_MAX’ in size, to avoid problems with programs
-     that subtract pointers or use signed indexes.  Other
-     implementations may succeed, leading to undefined behavior later.
-
-   • In the GNU C Library, if the new size is the same as the old,
-     ‘realloc’ and ‘reallocarray’ are guaranteed to change nothing and
-     return the same address that you gave.  However, POSIX and ISO C
-     allow the functions to relocate the object or fail in this
-     situation.
 

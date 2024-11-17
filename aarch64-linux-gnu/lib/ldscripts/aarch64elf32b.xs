@@ -12,7 +12,6 @@ SECTIONS
 {
   /* Read-only sections, merged into text segment: */
   . = SEGMENT_START("text-segment", 0) + SIZEOF_HEADERS;
-  .note.gnu.build-id  : { *(.note.gnu.build-id) }
   .hash           : { *(.hash) }
   .gnu.hash       : { *(.gnu.hash) }
   .dynsym         : { *(.dynsym) }
@@ -38,6 +37,7 @@ SECTIONS
       *(.rela.plt)
       *(.rela.iplt)
     }
+  .relr.dyn : { *(.relr.dyn) }
   .init           :
   {
     KEEP (*(SORT_NONE(.init)))

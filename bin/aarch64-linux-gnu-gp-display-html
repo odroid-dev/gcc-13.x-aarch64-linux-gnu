@@ -25,7 +25,7 @@ use warnings;
 # Disable before release
 # use Perl::Critic;
 
-use bignum;
+use bigint;
 use List::Util qw (max);
 use Cwd qw (abs_path cwd);
 use File::Basename;
@@ -197,7 +197,7 @@ my $thresh = 0;
 $driver_cmd       = "gprofng display html";
 $tool_name        = "gp-display-html";
 #$binutils_version = "2.38.50";
-$binutils_version = "2.42";
+$binutils_version = "2.43.0";
 $version_info     = $tool_name . " GNU binutils version " . $binutils_version;
 
 #------------------------------------------------------------------------------

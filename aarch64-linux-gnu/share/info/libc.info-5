@@ -1,21 +1,21 @@
-This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
+This is libc.info, produced by makeinfo version 7.1 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.39.
+This is ‘The GNU C Library Reference Manual’, for version 2.40.
 
-   Copyright © 1993–2024 Free Software Foundation, Inc.
+   Copyright © 1993-2024 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
 any later version published by the Free Software Foundation; with the
-Invariant Sections being “Free Software Needs Free Documentation” and
-“GNU Lesser General Public License”, the Front-Cover texts being “A GNU
-Manual”, and with the Back-Cover Texts as in (a) below.  A copy of the
+Invariant Sections being "Free Software Needs Free Documentation" and
+"GNU Lesser General Public License", the Front-Cover texts being "A GNU
+Manual", and with the Back-Cover Texts as in (a) below.  A copy of the
 license is included in the section entitled "GNU Free Documentation
 License".
 
-   (a) The FSF’s Back-Cover Text is: “You have the freedom to copy and
+   (a) The FSF's Back-Cover Text is: "You have the freedom to copy and
 modify this GNU manual.  Buying copies from the FSF supports it in
-developing GNU and promoting software freedom.”
+developing GNU and promoting software freedom."
 INFO-DIR-SECTION Software libraries
 START-INFO-DIR-ENTRY
 * Libc: (libc).                 C library.
@@ -422,6 +422,7 @@ START-INFO-DIR-ENTRY
 * S_TYPEISMQ: (libc)Testing File Type.
 * S_TYPEISSEM: (libc)Testing File Type.
 * S_TYPEISSHM: (libc)Testing File Type.
+* TIME_UTC: (libc)Getting the Time.
 * TMP_MAX: (libc)Temporary Files.
 * TOSTOP: (libc)Local Modes.
 * TZNAME_MAX: (libc)General Limits.
@@ -567,8 +568,6 @@ START-INFO-DIR-ENTRY
 * argz_next: (libc)Argz Functions.
 * argz_replace: (libc)Argz Functions.
 * argz_stringify: (libc)Argz Functions.
-* asctime: (libc)Formatting Calendar Time.
-* asctime_r: (libc)Formatting Calendar Time.
 * asin: (libc)Inverse Trig Functions.
 * asinf: (libc)Inverse Trig Functions.
 * asinfN: (libc)Inverse Trig Functions.
@@ -698,6 +697,10 @@ START-INFO-DIR-ENTRY
 * cfsetispeed: (libc)Line Speed.
 * cfsetospeed: (libc)Line Speed.
 * cfsetspeed: (libc)Line Speed.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
+* char: (libc)Formatting Calendar Time.
 * chdir: (libc)Working Directory.
 * chmod: (libc)Setting Permissions.
 * chown: (libc)File Owner.
@@ -800,8 +803,6 @@ START-INFO-DIR-ENTRY
 * ctanhl: (libc)Hyperbolic Functions.
 * ctanl: (libc)Trig Functions.
 * ctermid: (libc)Identifying the Terminal.
-* ctime: (libc)Formatting Calendar Time.
-* ctime_r: (libc)Formatting Calendar Time.
 * cuserid: (libc)Who Logged In.
 * daddl: (libc)Misc FP Arithmetic.
 * dcgettext: (libc)Translation with gettext.
@@ -824,6 +825,7 @@ START-INFO-DIR-ENTRY
 * dsqrtl: (libc)Misc FP Arithmetic.
 * dsubl: (libc)Misc FP Arithmetic.
 * dup2: (libc)Duplicating Descriptors.
+* dup3: (libc)Duplicating Descriptors.
 * dup: (libc)Duplicating Descriptors.
 * ecvt: (libc)System V Number Conversion.
 * ecvt_r: (libc)System V Number Conversion.
@@ -844,6 +846,8 @@ START-INFO-DIR-ENTRY
 * envz_merge: (libc)Envz Functions.
 * envz_remove: (libc)Envz Functions.
 * envz_strip: (libc)Envz Functions.
+* epoll_createint: (libc)Other Low-Level I/O APIs.
+* epoll_waitint: (libc)Other Low-Level I/O APIs.
 * erand48: (libc)SVID Random.
 * erand48_r: (libc)SVID Random.
 * erf: (libc)Special Functions.
@@ -873,11 +877,21 @@ START-INFO-DIR-ENTRY
 * exp10fN: (libc)Exponents and Logarithms.
 * exp10fNx: (libc)Exponents and Logarithms.
 * exp10l: (libc)Exponents and Logarithms.
+* exp10m1: (libc)Exponents and Logarithms.
+* exp10m1f: (libc)Exponents and Logarithms.
+* exp10m1fN: (libc)Exponents and Logarithms.
+* exp10m1fNx: (libc)Exponents and Logarithms.
+* exp10m1l: (libc)Exponents and Logarithms.
 * exp2: (libc)Exponents and Logarithms.
 * exp2f: (libc)Exponents and Logarithms.
 * exp2fN: (libc)Exponents and Logarithms.
 * exp2fNx: (libc)Exponents and Logarithms.
 * exp2l: (libc)Exponents and Logarithms.
+* exp2m1: (libc)Exponents and Logarithms.
+* exp2m1f: (libc)Exponents and Logarithms.
+* exp2m1fN: (libc)Exponents and Logarithms.
+* exp2m1fNx: (libc)Exponents and Logarithms.
+* exp2m1l: (libc)Exponents and Logarithms.
 * exp: (libc)Exponents and Logarithms.
 * expf: (libc)Exponents and Logarithms.
 * expfN: (libc)Exponents and Logarithms.
@@ -1418,6 +1432,11 @@ START-INFO-DIR-ENTRY
 * log10fN: (libc)Exponents and Logarithms.
 * log10fNx: (libc)Exponents and Logarithms.
 * log10l: (libc)Exponents and Logarithms.
+* log10p1: (libc)Exponents and Logarithms.
+* log10p1f: (libc)Exponents and Logarithms.
+* log10p1fN: (libc)Exponents and Logarithms.
+* log10p1fNx: (libc)Exponents and Logarithms.
+* log10p1l: (libc)Exponents and Logarithms.
 * log1p: (libc)Exponents and Logarithms.
 * log1pf: (libc)Exponents and Logarithms.
 * log1pfN: (libc)Exponents and Logarithms.
@@ -1428,6 +1447,11 @@ START-INFO-DIR-ENTRY
 * log2fN: (libc)Exponents and Logarithms.
 * log2fNx: (libc)Exponents and Logarithms.
 * log2l: (libc)Exponents and Logarithms.
+* log2p1: (libc)Exponents and Logarithms.
+* log2p1f: (libc)Exponents and Logarithms.
+* log2p1fN: (libc)Exponents and Logarithms.
+* log2p1fNx: (libc)Exponents and Logarithms.
+* log2p1l: (libc)Exponents and Logarithms.
 * log: (libc)Exponents and Logarithms.
 * logb: (libc)Exponents and Logarithms.
 * logbf: (libc)Exponents and Logarithms.
@@ -1441,6 +1465,11 @@ START-INFO-DIR-ENTRY
 * login_tty: (libc)Logging In and Out.
 * logl: (libc)Exponents and Logarithms.
 * logout: (libc)Logging In and Out.
+* logp1: (libc)Exponents and Logarithms.
+* logp1f: (libc)Exponents and Logarithms.
+* logp1fN: (libc)Exponents and Logarithms.
+* logp1fNx: (libc)Exponents and Logarithms.
+* logp1l: (libc)Exponents and Logarithms.
 * logwtmp: (libc)Logging In and Out.
 * longjmp: (libc)Non-Local Details.
 * lrand48: (libc)SVID Random.
@@ -1607,6 +1636,7 @@ START-INFO-DIR-ENTRY
 * pkey_get: (libc)Memory Protection.
 * pkey_mprotect: (libc)Memory Protection.
 * pkey_set: (libc)Memory Protection.
+* poll: (libc)Other Low-Level I/O APIs.
 * popen: (libc)Pipe to a Subprocess.
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
@@ -1687,7 +1717,7 @@ START-INFO-DIR-ENTRY
 * realpath: (libc)Symbolic Links.
 * recv: (libc)Receiving Data.
 * recvfrom: (libc)Receiving Datagrams.
-* recvmsg: (libc)Receiving Datagrams.
+* recvmsg: (libc)Other Socket APIs.
 * regcomp: (libc)POSIX Regexp Compilation.
 * regerror: (libc)Regexp Cleanup.
 * regexec: (libc)Matching POSIX Regexps.
@@ -1768,7 +1798,7 @@ START-INFO-DIR-ENTRY
 * semop: (libc)Semaphores.
 * semtimedop: (libc)Semaphores.
 * send: (libc)Sending Data.
-* sendmsg: (libc)Receiving Datagrams.
+* sendmsg: (libc)Other Socket APIs.
 * sendto: (libc)Sending Datagrams.
 * setbuf: (libc)Controlling Buffering.
 * setbuffer: (libc)Controlling Buffering.
@@ -1981,6 +2011,7 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strftime_l: (libc)Formatting Calendar Time.
 * strlcat: (libc)Truncating Strings.
 * strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
@@ -2069,6 +2100,8 @@ START-INFO-DIR-ENTRY
 * timegm: (libc)Broken-down Time.
 * timelocal: (libc)Broken-down Time.
 * times: (libc)Processor Time.
+* timespec_get: (libc)Getting the Time.
+* timespec_getres: (libc)Getting the Time.
 * tmpfile64: (libc)Temporary Files.
 * tmpfile: (libc)Temporary Files.
 * tmpnam: (libc)Temporary Files.
@@ -2105,7 +2138,7 @@ START-INFO-DIR-ENTRY
 * ttyname_r: (libc)Is It a Terminal.
 * twalk: (libc)Tree Search Function.
 * twalk_r: (libc)Tree Search Function.
-* tzset: (libc)Time Zone Functions.
+* tzset: (libc)Time Zone State.
 * ufromfp: (libc)Rounding Functions.
 * ufromfpf: (libc)Rounding Functions.
 * ufromfpfN: (libc)Rounding Functions.
@@ -2242,6 +2275,128 @@ START-INFO-DIR-ENTRY
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
 
+
+
+File: libc.info,  Node: I/O on Streams,  Next: Low-Level I/O,  Prev: I/O Overview,  Up: Top
+
+12 Input/Output on Streams
+**************************
+
+This chapter describes the functions for creating streams and performing
+input and output operations on them.  As discussed in *note I/O
+Overview::, a stream is a fairly abstract, high-level concept
+representing a communications channel to a file, device, or process.
+
+* Menu:
+
+* Streams::                     About the data type representing a stream.
+* Standard Streams::            Streams to the standard input and output
+				 devices are created for you.
+* Opening Streams::             How to create a stream to talk to a file.
+* Closing Streams::             Close a stream when you are finished with it.
+* Streams and Threads::         Issues with streams in threaded programs.
+* Streams and I18N::            Streams in internationalized applications.
+* Simple Output::               Unformatted output by characters and lines.
+* Character Input::             Unformatted input by characters and words.
+* Line Input::                  Reading a line or a record from a stream.
+* Unreading::                   Peeking ahead/pushing back input just read.
+* Block Input/Output::          Input and output operations on blocks of data.
+* Formatted Output::            ‘printf’ and related functions.
+* Customizing Printf::          You can define new conversion specifiers for
+				 ‘printf’ and friends.
+* Formatted Input::             ‘scanf’ and related functions.
+* EOF and Errors::              How you can tell if an I/O error happens.
+* Error Recovery::		What you can do about errors.
+* Binary Streams::              Some systems distinguish between text files
+				 and binary files.
+* File Positioning::            About random-access streams.
+* Portable Positioning::        Random access on peculiar ISO C systems.
+* Stream Buffering::            How to control buffering of streams.
+* Other Kinds of Streams::      Streams that do not necessarily correspond
+				 to an open file.
+* Formatted Messages::          Print strictly formatted messages.
+
+
+File: libc.info,  Node: Streams,  Next: Standard Streams,  Up: I/O on Streams
+
+12.1 Streams
+============
+
+For historical reasons, the type of the C data structure that represents
+a stream is called ‘FILE’ rather than "stream".  Since most of the
+library functions deal with objects of type ‘FILE *’, sometimes the term
+“file pointer” is also used to mean "stream".  This leads to unfortunate
+confusion over terminology in many books on C. This manual, however, is
+careful to use the terms "file" and "stream" only in the technical
+sense.
+
+   The ‘FILE’ type is declared in the header file ‘stdio.h’.
+
+ -- Data Type: FILE
+
+     This is the data type used to represent stream objects.  A ‘FILE’
+     object holds all of the internal state information about the
+     connection to the associated file, including such things as the
+     file position indicator and buffering information.  Each stream
+     also has error and end-of-file status indicators that can be tested
+     with the ‘ferror’ and ‘feof’ functions; see *note EOF and Errors::.
+
+   ‘FILE’ objects are allocated and managed internally by the
+input/output library functions.  Don't try to create your own objects of
+type ‘FILE’; let the library do it.  Your programs should deal only with
+pointers to these objects (that is, ‘FILE *’ values) rather than the
+objects themselves.
+
+
+File: libc.info,  Node: Standard Streams,  Next: Opening Streams,  Prev: Streams,  Up: I/O on Streams
+
+12.2 Standard Streams
+=====================
+
+When the ‘main’ function of your program is invoked, it already has
+three predefined streams open and available for use.  These represent
+the "standard" input and output channels that have been established for
+the process.
+
+   These streams are declared in the header file ‘stdio.h’.
+
+ -- Variable: FILE * stdin
+
+     The “standard input” stream, which is the normal source of input
+     for the program.
+
+ -- Variable: FILE * stdout
+
+     The “standard output” stream, which is used for normal output from
+     the program.
+
+ -- Variable: FILE * stderr
+
+     The “standard error” stream, which is used for error messages and
+     diagnostics issued by the program.
+
+   On GNU systems, you can specify what files or processes correspond to
+these streams using the pipe and redirection facilities provided by the
+shell.  (The primitives shells use to implement these facilities are
+described in *note File System Interface::.)  Most other operating
+systems provide similar mechanisms, but the details of how to use them
+can vary.
+
+   In the GNU C Library, ‘stdin’, ‘stdout’, and ‘stderr’ are normal
+variables which you can set just like any others.  For example, to
+redirect the standard output to a file, you could do:
+
+     fclose (stdout);
+     stdout = fopen ("standard-output-file", "w");
+
+   Note however, that in other systems ‘stdin’, ‘stdout’, and ‘stderr’
+are macros that you cannot assign to in the normal way.  But you can use
+‘freopen’ to get the effect of closing one and reopening it.  *Note
+Opening Streams::.
+
+   The three streams ‘stdin’, ‘stdout’, and ‘stderr’ are not unoriented
+at program start (*note Streams and I18N::).
+
 
 File: libc.info,  Node: Opening Streams,  Next: Closing Streams,  Prev: Standard Streams,  Up: I/O on Streams
 
@@ -2327,7 +2482,7 @@ involve creating a new file.
           supported with files opened for reading.
 
      ‘x’
-          Insist on creating a new file—if a file FILENAME already
+          Insist on creating a new file--if a file FILENAME already
           exists, ‘fopen’ fails rather than opening it.  If you use ‘x’
           you are guaranteed that you will not clobber an existing file.
           This is equivalent to the ‘O_EXCL’ option to the ‘open’
@@ -2681,7 +2836,7 @@ if the ‘ftrylockfile’ function succeeded in locking the stream.  It is
 therefore always wrong to ignore the result of ‘ftrylockfile’.  And it
 makes no sense since otherwise one would use ‘flockfile’.  The result of
 code like that above is that either ‘funlockfile’ tries to free a stream
-that hasn’t been locked by the current thread or it frees the stream
+that hasn't been locked by the current thread or it frees the stream
 prematurely.  The code should look like this:
 
      void
@@ -2696,12 +2851,12 @@ prematurely.  The code should look like this:
 
    Now that we covered why it is necessary to have locking it is
 necessary to talk about situations when locking is unwanted and what can
-be done.  The locking operations (explicit or implicit) don’t come for
+be done.  The locking operations (explicit or implicit) don't come for
 free.  Even if a lock is not taken the cost is not zero.  The operations
 which have to be performed require memory operations that are safe in
 multi-processor environments.  With the many local caches involved in
 such systems this is quite costly.  So it is best to avoid the locking
-completely if it is not needed – because the code in question is never
+completely if it is not needed - because the code in question is never
 used in a context where two or more threads may use a stream at a time.
 This can be determined most of the time for application code; for
 library code which can be used in many contexts one should default to be
@@ -3133,7 +3288,7 @@ only as a character.  Storing ‘EOF’ in a ‘char’ variable truncates its
 value to the size of a character, so that it is no longer
 distinguishable from the valid character ‘(char) -1’.  So always use an
 ‘int’ for the result of ‘getc’ and friends, and check for ‘EOF’ after
-the call; once you’ve verified that the result is not ‘EOF’, you can be
+the call; once you've verified that the result is not ‘EOF’, you can be
 sure that it will fit in a ‘char’ variable without loss of information.
 
  -- Function: int fgetc (FILE *STREAM)
@@ -3282,7 +3437,7 @@ wide character stream functions.
      Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe lock corrupt
      | *Note POSIX Safety Concepts::.
 
-     This function reads a word (that is, an ‘int’) from STREAM.  It’s
+     This function reads a word (that is, an ‘int’) from STREAM.  It's
      provided for compatibility with SVID. We recommend you use ‘fread’
      instead (*note Block Input/Output::).  Unlike ‘getc’, any ‘int’
      value could be a valid result.  ‘getw’ returns ‘EOF’ when it
@@ -3298,7 +3453,7 @@ File: libc.info,  Node: Line Input,  Next: Unreading,  Prev: Character Input,  U
 Since many programs interpret input on the basis of lines, it is
 convenient to have functions to read a line of text from a stream.
 
-   Standard C has functions to do this, but they aren’t very safe: null
+   Standard C has functions to do this, but they aren't very safe: null
 characters and even (for ‘gets’) long lines can confuse them.  So the
 GNU C Library provides the nonstandard ‘getline’ function that makes it
 easy to read lines reliably.
@@ -3360,7 +3515,7 @@ specified delimiter character.
 
      The text is stored in LINEPTR, including the delimiter character
      and a terminating null.  Like ‘getline’, ‘getdelim’ makes LINEPTR
-     bigger if it isn’t big enough.
+     bigger if it isn't big enough.
 
      ‘getline’ is in fact implemented in terms of ‘getdelim’, just like
      this:
@@ -3388,9 +3543,9 @@ specified delimiter character.
      returned.  A null pointer is also returned if a read error occurs.
      Otherwise, the return value is the pointer S.
 
-     *Warning:* If the input data has a null character, you can’t tell.
-     So don’t use ‘fgets’ unless you know the data cannot contain a
-     null.  Don’t use it to read files edited by the user because, if
+     *Warning:* If the input data has a null character, you can't tell.
+     So don't use ‘fgets’ unless you know the data cannot contain a
+     null.  Don't use it to read files edited by the user because, if
      the user inserts a null character, you should either handle it
      properly or print a clear error message.  We recommend using
      ‘getline’ instead of ‘fgets’.
@@ -3414,8 +3569,8 @@ specified delimiter character.
      occurs.  Otherwise, the return value is the pointer WS.
 
      *Warning:* If the input data has a null wide character (which are
-     null bytes in the input stream), you can’t tell.  So don’t use
-     ‘fgetws’ unless you know the data cannot contain a null.  Don’t use
+     null bytes in the input stream), you can't tell.  So don't use
+     ‘fgetws’ unless you know the data cannot contain a null.  Don't use
      it to read files edited by the user because, if the user inserts a
      null character, you should either handle it properly or print a
      clear error message.
@@ -3468,7 +3623,7 @@ File: libc.info,  Node: Unreading,  Next: Block Input/Output,  Prev: Line Input,
 
 In parser programs it is often useful to examine the next character in
 the input stream without removing it from the stream.  This is called
-“peeking ahead” at the input because your program gets a glimpse of the
+"peeking ahead" at the input because your program gets a glimpse of the
 input it will read next.
 
    Using stream I/O, you can peek ahead at input by first reading it and
@@ -3539,22 +3694,22 @@ reverses the action of ‘getc’.
      lets you call ‘ungetc’ with the return value of ‘getc’ without
      needing to check for an error from ‘getc’.
 
-     The character that you push back doesn’t have to be the same as the
+     The character that you push back doesn't have to be the same as the
      last character that was actually read from the stream.  In fact, it
-     isn’t necessary to actually read any characters from the stream
+     isn't necessary to actually read any characters from the stream
      before unreading them with ‘ungetc’!  But that is a strange way to
      write a program; usually ‘ungetc’ is used only to unread a
      character that was just read from the same stream.  The GNU C
      Library supports this even on files opened in binary mode, but
      other systems might not.
 
-     The GNU C Library only supports one character of pushback—in other
+     The GNU C Library only supports one character of pushback--in other
      words, it does not work to call ‘ungetc’ twice without doing input
      in between.  Other systems might let you push back multiple
      characters; then reading from the stream retrieves the characters
      in the reverse order that they were pushed.
 
-     Pushing back characters doesn’t alter the file; only the internal
+     Pushing back characters doesn't alter the file; only the internal
      buffering for the stream is affected.  If a file positioning
      function (such as ‘fseek’, ‘fseeko’ or ‘rewind’; *note File
      Positioning::) is called, any pending pushed-back characters are
@@ -3606,14 +3761,14 @@ characters or lines.
 
    Binary files are typically used to read and write blocks of data in
 the same format as is used to represent the data in a running program.
-In other words, arbitrary blocks of memory—not just character or string
-objects—can be written to a binary file, and meaningfully read in again
+In other words, arbitrary blocks of memory--not just character or string
+objects--can be written to a binary file, and meaningfully read in again
 by the same program.
 
    Storing data in binary form is often considerably more efficient than
 using the formatted I/O functions.  Also, for floating-point numbers,
 the binary form avoids possible loss of precision in the conversion
-process.  On the other hand, binary files can’t be examined or modified
+process.  On the other hand, binary files can't be examined or modified
 easily using many standard file utilities (such as text editors), and
 are not portable between different implementations of the language, or
 different kinds of computers.
@@ -3630,7 +3785,7 @@ different kinds of computers.
      DATA, from the stream STREAM.  It returns the number of objects
      actually read, which might be less than COUNT if a read error
      occurs or the end of the file is reached.  This function returns a
-     value of zero (and doesn’t read anything) if either SIZE or COUNT
+     value of zero (and doesn't read anything) if either SIZE or COUNT
      is zero.
 
      If ‘fread’ encounters end of file in the middle of an object, it
@@ -3756,11 +3911,11 @@ minimum field width and a flag indicating whether you want the result
 left- or right-justified within the field.
 
    The specific flags and modifiers that are permitted and their
-interpretation vary depending on the particular conversion.  They’re all
-described in more detail in the following sections.  Don’t worry if this
+interpretation vary depending on the particular conversion.  They're all
+described in more detail in the following sections.  Don't worry if this
 all seems excessively complicated at first; you can almost always get
 reasonable free-format output without using any of the modifiers at all.
-The modifiers are mostly used to make the output look “prettier” in
+The modifiers are mostly used to make the output look "prettier" in
 tables.
 
 
@@ -3888,7 +4043,7 @@ Here is a table summarizing what all the different conversions do:
 ‘%b’, ‘%B’
      Print an integer as an unsigned binary number.  ‘%b’ uses
      lower-case ‘b’ with the ‘#’ flag and ‘%B’ uses upper-case.  ‘%b’ is
-     an ISO C2X feature; ‘%B’ is an optional ISO C2X feature.  *Note
+     an ISO C23 feature; ‘%B’ is an optional ISO C23 feature.  *Note
      Integer Conversions::, for details.
 
 ‘%o’
@@ -3956,7 +4111,7 @@ Here is a table summarizing what all the different conversions do:
      Print a literal ‘%’ character.  *Note Other Output Conversions::.
 
    If the syntax of a conversion specification is invalid, unpredictable
-things will happen, so don’t do this.  If there aren’t enough function
+things will happen, so don't do this.  If there aren't enough function
 arguments provided to supply values for all the conversion
 specifications in the template string, or if the arguments are not of
 the correct types, the results are unpredictable.  If you supply more
@@ -3992,7 +4147,7 @@ that, with the ‘#’ flag, the output starts with ‘0B’ instead of ‘0b’
      value is positive.
 
 ‘ ’
-     For the signed ‘%d’ and ‘%i’ conversions, if the result doesn’t
+     For the signed ‘%d’ and ‘%i’ conversions, if the result doesn't
      start with a plus or minus sign, prefix it with a space character
      instead.  Since the ‘+’ flag ensures that the result includes a
      sign, this flag is ignored if you supply both of them.
@@ -4002,7 +4157,7 @@ that, with the ‘#’ flag, the output starts with ‘0B’ instead of ‘0b’
      as if by increasing the precision.  For ‘%x’ or ‘%X’, this prefixes
      a leading ‘0x’ or ‘0X’ (respectively) to the result.  For ‘%b’ or
      ‘%B’, this prefixes a leading ‘0b’ or ‘0B’ (respectively) to the
-     result.  This doesn’t do anything useful for the ‘%d’, ‘%i’, or
+     result.  This doesn't do anything useful for the ‘%d’, ‘%i’, or
      ‘%u’ conversions.  Using this flag produces output which can be
      parsed by the ‘strtoul’ function (*note Parsing of Integers::) and
      ‘scanf’ with the ‘%i’ conversion (*note Numeric Input
@@ -4022,7 +4177,7 @@ that, with the ‘#’ flag, the output starts with ‘0B’ instead of ‘0b’
      ‘-’ flag is also specified, or if a precision is specified.
 
    If a precision is supplied, it specifies the minimum number of digits
-to appear; leading zeros are produced if necessary.  If you don’t
+to appear; leading zeros are produced if necessary.  If you don't
 specify a precision, the number is printed with as many digits as it
 needs.  If you convert a value of zero with an explicit precision of
 zero, then no characters at all are produced.
@@ -4068,11 +4223,11 @@ these modifiers:
 ‘ll’
 ‘q’
      Specifies that the argument is a ‘long long int’.  (This type is an
-     extension supported by the GNU C compiler.  On systems that don’t
+     extension supported by the GNU C compiler.  On systems that don't
      support extra-long integers, this is the same as ‘long int’.)
 
      The ‘q’ modifier is another name for the same thing, which comes
-     from 4.4 BSD; a ‘long long int’ is sometimes called a “quad” ‘int’.
+     from 4.4 BSD; a ‘long long int’ is sometimes called a "quad" ‘int’.
 
 ‘t’
      Specifies that the argument is a ‘ptrdiff_t’.
@@ -4087,14 +4242,14 @@ these modifiers:
      ‘int’, the promoted argument is converted back to the specified
      type.
 
-     This modifier was introduced in ISO C2X.
+     This modifier was introduced in ISO C23.
 
 ‘wfN’
      Specifies that the argument is a ‘int_fastN_t’ or ‘uint_fastN_t’,
      as appropriate.  If the type is narrower than ‘int’, the promoted
      argument is converted back to the specified type.
 
-     This modifier was introduced in ISO C2X.
+     This modifier was introduced in ISO C23.
 
 ‘z’
 ‘Z’
@@ -4180,7 +4335,7 @@ is [‘-’]‘inf’ or ‘nan’ respectively if the conversion specifier is �
 ‘%e’, ‘%f’, or ‘%g’ and it is [‘-’]‘INF’ or ‘NAN’ respectively if the
 conversion is ‘%A’, ‘%E’, ‘%F’ or ‘%G’.  On some implementations, a NaN
 may result in longer output with information about the payload of the
-NaN; ISO C2X defines a macro ‘_PRINTF_NAN_LEN_MAX’ giving the maximum
+NaN; ISO C23 defines a macro ‘_PRINTF_NAN_LEN_MAX’ giving the maximum
 length of such output.
 
    The following flags can be used to modify the behavior:
@@ -4193,7 +4348,7 @@ length of such output.
      Always include a plus or minus sign in the result.
 
 ‘ ’
-     If the result doesn’t start with a plus or minus sign, prefix it
+     If the result doesn't start with a plus or minus sign, prefix it
      with a space instead.  Since the ‘+’ flag ensures that the result
      includes a sign, this flag is ignored if you supply both of them.
 
@@ -4297,7 +4452,7 @@ of type ‘wchar_t’ (or ‘const wchar_t *’).
 
    If you accidentally pass a null pointer as the argument for a ‘%s’
 conversion, the GNU C Library prints it as ‘(null)’.  We think this is
-more useful than crashing.  But it’s not good practice to pass a null
+more useful than crashing.  But it's not good practice to pass a null
 argument intentionally.
 
    The ‘%m’ conversion prints the string corresponding to the error code
@@ -4325,7 +4480,7 @@ integers, as if a ‘%#x’ conversion were used.  Null pointers print as
 
      printf ("%p", "testing");
 
-prints ‘0x’ followed by a hexadecimal number—the address of the string
+prints ‘0x’ followed by a hexadecimal number--the address of the string
 constant ‘"testing"’.  It does not print the word ‘testing’.
 
    You can supply the ‘-’ flag with the ‘%p’ conversion to specify
@@ -4352,7 +4507,7 @@ prints:
 and sets ‘nchar’ to ‘7’, because ‘3 bears’ is seven characters.
 
    The ‘%%’ conversion prints a literal ‘%’ character.  This conversion
-doesn’t use an argument, and no flags, field width, precision, or type
+doesn't use an argument, and no flags, field width, precision, or type
 modifiers are permitted.
 
 
@@ -4417,7 +4572,7 @@ way to make sure you have all the right prototypes is to just include
      the array S, not including the terminating null character.
 
      The behavior of this function is undefined if copying takes place
-     between objects that overlap—for example, if S is also given as an
+     between objects that overlap--for example, if S is also given as an
      argument to be printed under control of the ‘%s’ conversion.  *Note
      Copying Strings and Arrays::.
 
@@ -4578,15 +4733,15 @@ your own variadic ‘printf’-like functions that make use of the same
 internals as the built-in formatted output functions.
 
    The most natural way to define such functions would be to use a
-language construct to say, “Call ‘printf’ and pass this template plus
-all of my arguments after the first five.” But there is no way to do
+language construct to say, "Call ‘printf’ and pass this template plus
+all of my arguments after the first five."  But there is no way to do
 this in C, and it would be hard to provide a way, since at the C
 language level there is no way to tell how many arguments your function
 received.
 
    Since that method is impossible, we provide alternative functions,
-the ‘vprintf’ series, which lets you pass a ‘va_list’ to describe “all
-of my arguments after the first five.”
+the ‘vprintf’ series, which lets you pass a ‘va_list’ to describe "all
+of my arguments after the first five."
 
    When it is sufficient to define a macro rather than a real function,
 the GNU C compiler provides a way to do this much more easily with
@@ -4702,7 +4857,7 @@ you passed to it.
      ‘obstack_printf’ with the variable argument list specified directly
      as for ‘vprintf’.
 
-   Here’s an example showing how you might use ‘vfprintf’.  This is a
+   Here's an example showing how you might use ‘vfprintf’.  This is a
 function that prints error messages to the stream ‘stderr’, along with a
 prefix indicating the name of the program (*note Error Messages::, for a
 description of ‘program_invocation_short_name’).
@@ -4751,7 +4906,7 @@ You can use the function ‘parse_printf_format’ to obtain information
 about the number and types of arguments that are expected by a given
 template string.  This function permits interpreters that provide
 interfaces to ‘printf’ to avoid passing along invalid arguments from the
-user’s program, which could cause a crash.
+user's program, which could cause a crash.
 
    All the symbols described in this section are declared in the header
 file ‘printf.h’.
@@ -5071,7 +5226,7 @@ data type is declared in the header file ‘printf.h’.
           known.
 
      ‘wchar_t spec’
-          This is the conversion specifier character specified.  It’s
+          This is the conversion specifier character specified.  It's
           stored in the structure so that you can register the same
           handler function for multiple characters, but still have a way
           to tell them apart when the handler function is called.
@@ -5129,7 +5284,7 @@ File: libc.info,  Node: Defining the Output Handler,  Next: Printf Extension Exa
 12.13.3 Defining the Output Handler
 -----------------------------------
 
-Now let’s look at how to define the handler and arginfo functions which
+Now let's look at how to define the handler and arginfo functions which
 are passed as arguments to ‘register_printf_function’.
 
    *Compatibility Note:* The interface changed in the GNU C Library
@@ -5297,7 +5452,7 @@ implement a special way to print floating-point numbers.
      gigabytes, etc.  The full table is:
 
      low   Multiplier    From    Upper   Multiplier
-     ’ ’   1                     ’ ’     1
+     ' '   1                     ' '     1
      k     2^10 (1024)   kilo    K       10^3 (1000)
      m     2^20          mega    M       10^6
      g     2^30          giga    G       10^9
@@ -5378,7 +5533,7 @@ While the syntax of the conversion specifications in the template is
 very similar to that for ‘printf’, the interpretation of the template is
 oriented more towards free-format input and simple pattern matching,
 rather than fixed-field formatting.  For example, most ‘scanf’
-conversions skip over any amount of “white space” (including spaces,
+conversions skip over any amount of "white space" (including spaces,
 tabs, and newlines) in the input file, and there is no concept of
 precision for the numeric input conversions as there is for the
 corresponding output conversions.  Ordinarily, non-whitespace characters
@@ -5418,7 +5573,7 @@ formatted output functions.  Partly, this is because it takes some care
 to use them properly.  Another reason is that it is difficult to recover
 from a matching error.
 
-   If you are trying to read input that doesn’t match a single, fixed
+   If you are trying to read input that doesn't match a single, fixed
 pattern, you may be better off using a tool such as Flex to generate a
 lexical scanner, or Bison to generate a parser, rather than using
 ‘scanf’.  For more information about these tools, see *note
@@ -5470,8 +5625,8 @@ initial ‘%’ character followed in sequence by:
      width”.  Reading of characters from the input stream stops either
      when this maximum is reached or when a non-matching character is
      found, whichever happens first.  Most conversions discard initial
-     whitespace characters (those that don’t are explicitly documented),
-     and these discarded characters don’t count towards the maximum
+     whitespace characters (those that don't are explicitly documented),
+     and these discarded characters don't count towards the maximum
      field width.  String input conversions store a null character to
      mark the end of the input; the maximum field width does not include
      this terminator.
@@ -5514,7 +5669,7 @@ Here is a table that summarizes the various conversion specifications:
 
 ‘%b’
      Matches an unsigned integer written in binary radix.  This is an
-     ISO C2X feature.  *Note Numeric Input Conversions::.
+     ISO C23 feature.  *Note Numeric Input Conversions::.
 
 ‘%o’
      Matches an unsigned integer written in octal radix.  *Note Numeric
@@ -5585,7 +5740,7 @@ Here is a table that summarizes the various conversion specifications:
      Conversions::.
 
 ‘%n’
-     This conversion doesn’t read any characters; it records the number
+     This conversion doesn't read any characters; it records the number
      of characters read so far by this call.  *Note Other Input
      Conversions::.
 
@@ -5594,7 +5749,7 @@ Here is a table that summarizes the various conversion specifications:
      corresponding argument is used.  *Note Other Input Conversions::.
 
    If the syntax of a conversion specification is invalid, the behavior
-is undefined.  If there aren’t enough function arguments provided to
+is undefined.  If there aren't enough function arguments provided to
 supply addresses for all the conversion specifications in the template
 strings that perform assignments, or if the arguments are not of the
 correct types, the behavior is also undefined.  On the other hand, extra
@@ -5670,11 +5825,11 @@ specify other sizes of integer:
 ‘q’
      Specifies that the argument is a ‘long long int *’ or ‘unsigned
      long long int *’.  (The ‘long long’ type is an extension supported
-     by the GNU C compiler.  For systems that don’t provide extra-long
+     by the GNU C compiler.  For systems that don't provide extra-long
      integers, this is the same as ‘long int’.)
 
      The ‘q’ modifier is another name for the same thing, which comes
-     from 4.4 BSD; a ‘long long int’ is sometimes called a “quad” ‘int’.
+     from 4.4 BSD; a ‘long long int’ is sometimes called a "quad" ‘int’.
 
 ‘t’
      Specifies that the argument is a ‘ptrdiff_t *’.
@@ -5686,13 +5841,13 @@ specify other sizes of integer:
      (which are the same type), or ‘uintN_t *’ or ‘uint_leastN_t *’
      (which are the same type).
 
-     This modifier was introduced in ISO C2X.
+     This modifier was introduced in ISO C23.
 
 ‘wfN’
      Specifies that the argument is an ‘int_fastN_t *’ or ‘uint_fastN_t
      *’.
 
-     This modifier was introduced in ISO C2X.
+     This modifier was introduced in ISO C23.
 
 ‘z’
      Specifies that the argument is a ‘size_t *’.
@@ -5758,8 +5913,8 @@ conversions:
 
    The ‘%c’ conversion is the simplest: it matches a fixed number of
 characters, always.  The maximum field width says how many characters to
-read; if you don’t specify the maximum, the default is 1.  This
-conversion doesn’t append a null character to the end of the text it
+read; if you don't specify the maximum, the default is 1.  This
+conversion doesn't append a null character to the end of the text it
 reads.  It also does not skip over initial whitespace characters.  It
 reads precisely the next N characters, and fails if it cannot get that
 many.  Since there is always a maximum field width with ‘%c’ (whether
@@ -5787,7 +5942,7 @@ input with the conversion ‘%10s’ produces ‘"hello,"’.
    *Warning:* If you do not specify a field width for ‘%s’, then the
 number of characters read is limited only by where the next whitespace
 character appears.  This almost certainly means that invalid input can
-make your program crash—which is a bug.
+make your program crash--which is a bug.
 
    The ‘%ls’ and ‘%S’ format are handled just like ‘%s’ except that the
 external byte sequence is converted using the conversion associated with
@@ -5828,7 +5983,7 @@ available in the ‘%[’ conversion.
      Matches a string of up to 25 square brackets.
 
 ‘%25[^ \f\n\r\t\v]’
-     Matches a string up to 25 characters long that doesn’t contain any
+     Matches a string up to 25 characters long that doesn't contain any
      of the standard whitespace characters.  This is slightly different
      from ‘%s’, because if the input begins with a whitespace character,
      ‘%[’ reports a matching failure while ‘%s’ simply discards the
@@ -5842,7 +5997,7 @@ characters if the ‘l’ modifier is present.  All what is said about ‘%ls’
 above is true for ‘%l[’.
 
    One more reminder: the ‘%s’ and ‘%[’ conversions are *dangerous* if
-you don’t specify a maximum width or use the ‘a’ flag, because input too
+you don't specify a maximum width or use the ‘a’ flag, because input too
 long would overflow whatever buffer you have provided for it.  No matter
 how long your buffer is, a user could supply input that is longer.  A
 well-written program reports invalid input with a comprehensible error
@@ -5855,7 +6010,7 @@ File: libc.info,  Node: Dynamic String Input,  Next: Other Input Conversions,  P
 -------------------------------------------------
 
 A GNU extension to formatted input lets you safely read a string with no
-maximum size.  Using this feature, you don’t supply a buffer; instead,
+maximum size.  Using this feature, you don't supply a buffer; instead,
 ‘scanf’ allocates a buffer big enough to hold the data and gives you its
 address.  To use this feature, write ‘a’ as a flag character, as in
 ‘%as’ or ‘%a[0-9a-z]’.
@@ -5866,7 +6021,7 @@ its address in the word that the argument points to.  You should free
 the buffer with ‘free’ when you no longer need it.
 
    Here is an example of using the ‘a’ flag with the ‘%[...]’ conversion
-specification to read a “variable assignment” of the form ‘VARIABLE =
+specification to read a "variable assignment" of the form ‘VARIABLE =
 VALUE’.
 
      {
@@ -5982,7 +6137,7 @@ input.  Prototypes for these functions are in the header file ‘stdio.h’.
      end of the string is treated as an end-of-file condition.
 
      The behavior of this function is undefined if copying takes place
-     between objects that overlap—for example, if S is also given as an
+     between objects that overlap--for example, if S is also given as an
      argument to receive a string read under control of the ‘%s’, ‘%S’,
      or ‘%[’ conversion.
 
@@ -5997,9 +6152,9 @@ input.  Prototypes for these functions are in the header file ‘stdio.h’.
      the end of the string is treated as an end-of-file condition.
 
      The behavior of this function is undefined if copying takes place
-     between objects that overlap—for example, if WS is also given as an
-     argument to receive a string read under control of the ‘%s’, ‘%S’,
-     or ‘%[’ conversion.
+     between objects that overlap--for example, if WS is also given as
+     an argument to receive a string read under control of the ‘%s’,
+     ‘%S’, or ‘%[’ conversion.
 
 
 File: libc.info,  Node: Variable Arguments Input,  Prev: Formatted Input Functions,  Up: Formatted Input
@@ -6086,7 +6241,7 @@ File: libc.info,  Node: EOF and Errors,  Next: Error Recovery,  Prev: Formatted 
 
 Many of the functions described in this chapter return the value of the
 macro ‘EOF’ to indicate unsuccessful completion of the operation.  Since
-‘EOF’ is used to report both end of file and random errors, it’s often
+‘EOF’ is used to report both end of file and random errors, it's often
 better to use the ‘feof’ function to check explicitly for end of file
 and ‘ferror’ to check for errors.  These functions check indicators that
 are part of the internal state of the stream object, indicators set if
@@ -6160,10 +6315,10 @@ that stream.
 stream, the functions that operate on streams also set ‘errno’ in the
 same way as the corresponding low-level functions that operate on file
 descriptors.  For example, all of the functions that perform output to a
-stream—such as ‘fputc’, ‘printf’, and ‘fflush’—are implemented in terms
-of ‘write’, and all of the ‘errno’ error conditions defined for ‘write’
-are meaningful for these functions.  For more information about the
-descriptor-level I/O functions, see *note Low-Level I/O::.
+stream--such as ‘fputc’, ‘printf’, and ‘fflush’--are implemented in
+terms of ‘write’, and all of the ‘errno’ error conditions defined for
+‘write’ are meaningful for these functions.  For more information about
+the descriptor-level I/O functions, see *note Low-Level I/O::.
 
 
 File: libc.info,  Node: Error Recovery,  Next: Binary Streams,  Prev: EOF and Errors,  Up: I/O on Streams
@@ -6205,7 +6360,7 @@ can thus cause lost or repeated data.
 for a second try.  In both cases, you should seek to a known position
 before retrying.
 
-   Most errors that can happen are not recoverable — a second try will
+   Most errors that can happen are not recoverable -- a second try will
 always fail again in the same way.  So usually it is best to give up and
 report the error to the user, rather than install complicated recovery
 logic.
@@ -6215,7 +6370,7 @@ Many stream I/O implementations will treat it as an ordinary error,
 which can be quite inconvenient.  You can avoid this hassle by
 installing all signals with the ‘SA_RESTART’ flag.
 
-   For similar reasons, setting nonblocking I/O on a stream’s file
+   For similar reasons, setting nonblocking I/O on a stream's file
 descriptor is not usually advisable.
 
 
@@ -6262,7 +6417,7 @@ a text stream.
 than a text stream, you might wonder what purpose text streams serve.
 Why not simply always use binary streams?  The answer is that on these
 operating systems, text and binary streams use different file formats,
-and the only way to read or write “an ordinary file of text” that can
+and the only way to read or write "an ordinary file of text" that can
 work with other text-oriented programs is through a text stream.
 
    In the GNU C Library, and on all POSIX systems, there is no
@@ -6300,8 +6455,8 @@ below are declared in the header file ‘stdio.h’.
      This function returns the current file position of the stream
      STREAM.
 
-     This function can fail if the stream doesn’t support file
-     positioning, or if the file position can’t be represented in a
+     This function can fail if the stream doesn't support file
+     positioning, or if the file position can't be represented in a
      ‘long int’, and possibly for other reasons as well.  If a failure
      occurs, a value of ‘-1’ is returned.
 
@@ -6359,7 +6514,7 @@ below are declared in the header file ‘stdio.h’.
      This function returns a value of zero if the operation was
      successful, and a nonzero value to indicate failure.  A successful
      call also clears the end-of-file indicator of STREAM and discards
-     any characters that were “pushed back” by the use of ‘ungetc’.
+     any characters that were "pushed back" by the use of ‘ungetc’.
 
      ‘fseek’ either flushes any buffered output before setting the file
      position or else remembers it so it will be written later in its
@@ -6490,7 +6645,7 @@ systems, you must observe certain rules:
 
    • The value of the file position indicator of a text stream is
      undefined while there are characters that have been pushed back
-     with ‘ungetc’ that haven’t been read or discarded.  *Note
+     with ‘ungetc’ that haven't been read or discarded.  *Note
      Unreading::.
 
    But even if you observe these rules, you may still have trouble for
@@ -6571,7 +6726,7 @@ to system.
      STREAM to the position POSITION, which must have been set by a
      previous call to ‘fgetpos’ on the same stream.  If successful,
      ‘fsetpos’ clears the end-of-file indicator on the stream, discards
-     any characters that were “pushed back” by the use of ‘ungetc’, and
+     any characters that were "pushed back" by the use of ‘ungetc’, and
      returns a value of zero.  Otherwise, ‘fsetpos’ returns a nonzero
      value and stores an implementation-defined positive value in
      ‘errno’.
@@ -6608,7 +6763,7 @@ than on a character-by-character basis.  This is called “buffering”.
    If you are writing programs that do interactive input and output
 using streams, you need to understand how buffering works when you
 design the user interface to your program.  Otherwise, you might find
-that output (such as progress or prompt messages) doesn’t appear when
+that output (such as progress or prompt messages) doesn't appear when
 you intended it to, or displays some other unexpected behavior.
 
    This section deals only with controlling when characters are
@@ -6653,8 +6808,8 @@ selection gives you the most convenient kind of buffering for the file
 or device you open.
 
    The use of line buffering for interactive devices implies that output
-messages ending in a newline will appear immediately—which is usually
-what you want.  Output that doesn’t end in a newline might or might not
+messages ending in a newline will appear immediately--which is usually
+what you want.  Output that doesn't end in a newline might or might not
 show up immediately, so if you want them to appear immediately, you
 should flush buffered output explicitly with ‘fflush’, as described in
 *note Flushing Buffers::.
@@ -6726,7 +6881,7 @@ exported.
    *Compatibility Note:* Some brain-damaged operating systems have been
 known to be so thoroughly fixated on line-oriented input and output that
 flushing a line buffered stream causes a newline to be written!
-Fortunately, this “feature” seems to be becoming less common.  You do
+Fortunately, this "feature" seems to be becoming less common.  You do
 not need to worry about this with the GNU C Library.
 
    In some situations it might be useful to not flush the output pending
@@ -6785,7 +6940,7 @@ want it to have using the ‘setvbuf’ function.
      the block that declares the array.
 
      While the array remains a stream buffer, the stream I/O functions
-     will use the buffer for their internal purposes.  You shouldn’t try
+     will use the buffer for their internal purposes.  You shouldn't try
      to access the values in the array directly while the stream is
      using it for buffering.
 
@@ -6980,7 +7135,7 @@ string or memory buffer.  These facilities are declared in ‘stdio.h’.
      result in an error.
 
      For a stream open for reading, null characters (zero bytes) in the
-     buffer do not count as “end of file”.  Read operations indicate end
+     buffer do not count as "end of file".  Read operations indicate end
      of file only when the file position advances past SIZE bytes.  So,
      if you want to read characters from a null-terminated string, you
      should supply the length of the string as the SIZE argument.
@@ -7023,7 +7178,7 @@ from a string:
 
      This function opens a stream for writing to a buffer.  The buffer
      is allocated dynamically and grown as necessary, using ‘malloc’.
-     After you’ve closed the stream, this buffer is your responsibility
+     After you've closed the stream, this buffer is your responsibility
      to clean up using ‘free’ or ‘realloc’.  *Note Unconstrained
      Allocation::.
 
@@ -7037,7 +7192,7 @@ from a string:
      A null character is written at the end of the buffer.  This null
      character is _not_ included in the size value stored at SIZELOC.
 
-     You can move the stream’s file position with ‘fseek’ or ‘fseeko’
+     You can move the stream's file position with ‘fseek’ or ‘fseeko’
      (*note File Positioning::).  Moving the file position past the end
      of the data already written fills the intervening space with
      zeroes.
@@ -7069,341 +7224,4 @@ from a string:
 
      buf = `hello', size = 5
      buf = `hello, world', size = 12
-
-
-File: libc.info,  Node: Custom Streams,  Prev: String Streams,  Up: Other Kinds of Streams
-
-12.21.2 Programming Your Own Custom Streams
--------------------------------------------
-
-This section describes how you can make a stream that gets input from an
-arbitrary data source or writes output to an arbitrary data sink
-programmed by you.  We call these “custom streams”.  The functions and
-types described here are all GNU extensions.
-
-* Menu:
-
-* Streams and Cookies::         The “cookie” records where to fetch or
-				 store data that is read or written.
-* Hook Functions::              How you should define the four “hook
-				 functions” that a custom stream needs.
-
-
-File: libc.info,  Node: Streams and Cookies,  Next: Hook Functions,  Up: Custom Streams
-
-12.21.2.1 Custom Streams and Cookies
-....................................
-
-Inside every custom stream is a special object called the “cookie”.
-This is an object supplied by you which records where to fetch or store
-the data read or written.  It is up to you to define a data type to use
-for the cookie.  The stream functions in the library never refer
-directly to its contents, and they don’t even know what the type is;
-they record its address with type ‘void *’.
-
-   To implement a custom stream, you must specify _how_ to fetch or
-store the data in the specified place.  You do this by defining “hook
-functions” to read, write, change “file position”, and close the stream.
-All four of these functions will be passed the stream’s cookie so they
-can tell where to fetch or store the data.  The library functions don’t
-know what’s inside the cookie, but your functions will know.
-
-   When you create a custom stream, you must specify the cookie pointer,
-and also the four hook functions stored in a structure of type
-‘cookie_io_functions_t’.
-
-   These facilities are declared in ‘stdio.h’.
-
- -- Data Type: cookie_io_functions_t
-
-     This is a structure type that holds the functions that define the
-     communications protocol between the stream and its cookie.  It has
-     the following members:
-
-     ‘cookie_read_function_t *read’
-          This is the function that reads data from the cookie.  If the
-          value is a null pointer instead of a function, then read
-          operations on this stream always return ‘EOF’.
-
-     ‘cookie_write_function_t *write’
-          This is the function that writes data to the cookie.  If the
-          value is a null pointer instead of a function, then data
-          written to the stream is discarded.
-
-     ‘cookie_seek_function_t *seek’
-          This is the function that performs the equivalent of file
-          positioning on the cookie.  If the value is a null pointer
-          instead of a function, calls to ‘fseek’ or ‘fseeko’ on this
-          stream can only seek to locations within the buffer; any
-          attempt to seek outside the buffer will return an ‘ESPIPE’
-          error.
-
-     ‘cookie_close_function_t *close’
-          This function performs any appropriate cleanup on the cookie
-          when closing the stream.  If the value is a null pointer
-          instead of a function, nothing special is done to close the
-          cookie when the stream is closed.
-
- -- Function: FILE * fopencookie (void *COOKIE, const char *OPENTYPE,
-          cookie_io_functions_t IO-FUNCTIONS)
-
-     Preliminary: | MT-Safe | AS-Unsafe heap lock | AC-Unsafe mem lock |
-     *Note POSIX Safety Concepts::.
-
-     This function actually creates the stream for communicating with
-     the COOKIE using the functions in the IO-FUNCTIONS argument.  The
-     OPENTYPE argument is interpreted as for ‘fopen’; see *note Opening
-     Streams::.  (But note that the “truncate on open” option is
-     ignored.)  The new stream is fully buffered.
-
-     The ‘fopencookie’ function returns the newly created stream, or a
-     null pointer in case of an error.
-
-
-File: libc.info,  Node: Hook Functions,  Prev: Streams and Cookies,  Up: Custom Streams
-
-12.21.2.2 Custom Stream Hook Functions
-......................................
-
-Here are more details on how you should define the four hook functions
-that a custom stream needs.
-
-   You should define the function to read data from the cookie as:
-
-     ssize_t READER (void *COOKIE, char *BUFFER, size_t SIZE)
-
-   This is very similar to the ‘read’ function; see *note I/O
-Primitives::.  Your function should transfer up to SIZE bytes into the
-BUFFER, and return the number of bytes read, or zero to indicate
-end-of-file.  You can return a value of ‘-1’ to indicate an error.
-
-   You should define the function to write data to the cookie as:
-
-     ssize_t WRITER (void *COOKIE, const char *BUFFER, size_t SIZE)
-
-   This is very similar to the ‘write’ function; see *note I/O
-Primitives::.  Your function should transfer up to SIZE bytes from the
-buffer, and return the number of bytes written.  You can return a value
-of ‘0’ to indicate an error.  You must not return any negative value.
-
-   You should define the function to perform seek operations on the
-cookie as:
-
-     int SEEKER (void *COOKIE, off64_t *POSITION, int WHENCE)
-
-   For this function, the POSITION and WHENCE arguments are interpreted
-as for ‘fgetpos’; see *note Portable Positioning::.
-
-   After doing the seek operation, your function should store the
-resulting file position relative to the beginning of the file in
-POSITION.  Your function should return a value of ‘0’ on success and
-‘-1’ to indicate an error.
-
-   You should define the function to do cleanup operations on the cookie
-appropriate for closing the stream as:
-
-     int CLEANER (void *COOKIE)
-
-   Your function should return ‘-1’ to indicate an error, and ‘0’
-otherwise.
-
- -- Data Type: cookie_read_function_t
-
-     This is the data type that the read function for a custom stream
-     should have.  If you declare the function as shown above, this is
-     the type it will have.
-
- -- Data Type: cookie_write_function_t
-
-     The data type of the write function for a custom stream.
-
- -- Data Type: cookie_seek_function_t
-
-     The data type of the seek function for a custom stream.
-
- -- Data Type: cookie_close_function_t
-
-     The data type of the close function for a custom stream.
-
-
-File: libc.info,  Node: Formatted Messages,  Prev: Other Kinds of Streams,  Up: I/O on Streams
-
-12.22 Formatted Messages
-========================
-
-On systems which are based on System V messages of programs (especially
-the system tools) are printed in a strict form using the ‘fmtmsg’
-function.  The uniformity sometimes helps the user to interpret messages
-and the strictness tests of the ‘fmtmsg’ function ensure that the
-programmer follows some minimal requirements.
-
-* Menu:
-
-* Printing Formatted Messages::   The ‘fmtmsg’ function.
-* Adding Severity Classes::       Add more severity classes.
-* Example::                       How to use ‘fmtmsg’ and ‘addseverity’.
-
-
-File: libc.info,  Node: Printing Formatted Messages,  Next: Adding Severity Classes,  Up: Formatted Messages
-
-12.22.1 Printing Formatted Messages
------------------------------------
-
-Messages can be printed to standard error and/or to the console.  To
-select the destination the programmer can use the following two values,
-bitwise OR combined if wanted, for the CLASSIFICATION parameter of
-‘fmtmsg’:
-
-‘MM_PRINT’
-     Display the message in standard error.
-‘MM_CONSOLE’
-     Display the message on the system console.
-
-   The erroneous piece of the system can be signalled by exactly one of
-the following values which also is bitwise ORed with the CLASSIFICATION
-parameter to ‘fmtmsg’:
-
-‘MM_HARD’
-     The source of the condition is some hardware.
-‘MM_SOFT’
-     The source of the condition is some software.
-‘MM_FIRM’
-     The source of the condition is some firmware.
-
-   A third component of the CLASSIFICATION parameter to ‘fmtmsg’ can
-describe the part of the system which detects the problem.  This is done
-by using exactly one of the following values:
-
-‘MM_APPL’
-     The erroneous condition is detected by the application.
-‘MM_UTIL’
-     The erroneous condition is detected by a utility.
-‘MM_OPSYS’
-     The erroneous condition is detected by the operating system.
-
-   A last component of CLASSIFICATION can signal the results of this
-message.  Exactly one of the following values can be used:
-
-‘MM_RECOVER’
-     It is a recoverable error.
-‘MM_NRECOV’
-     It is a non-recoverable error.
-
- -- Function: int fmtmsg (long int CLASSIFICATION, const char *LABEL,
-          int SEVERITY, const char *TEXT, const char *ACTION, const char
-          *TAG)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Safe | *Note POSIX
-     Safety Concepts::.
-
-     Display a message described by its parameters on the device(s)
-     specified in the CLASSIFICATION parameter.  The LABEL parameter
-     identifies the source of the message.  The string should consist of
-     two colon separated parts where the first part has not more than 10
-     and the second part not more than 14 characters.  The TEXT
-     parameter describes the condition of the error, the ACTION
-     parameter possible steps to recover from the error and the TAG
-     parameter is a reference to the online documentation where more
-     information can be found.  It should contain the LABEL value and a
-     unique identification number.
-
-     Each of the parameters can be a special value which means this
-     value is to be omitted.  The symbolic names for these values are:
-
-     ‘MM_NULLLBL’
-          Ignore LABEL parameter.
-     ‘MM_NULLSEV’
-          Ignore SEVERITY parameter.
-     ‘MM_NULLMC’
-          Ignore CLASSIFICATION parameter.  This implies that nothing is
-          actually printed.
-     ‘MM_NULLTXT’
-          Ignore TEXT parameter.
-     ‘MM_NULLACT’
-          Ignore ACTION parameter.
-     ‘MM_NULLTAG’
-          Ignore TAG parameter.
-
-     There is another way certain fields can be omitted from the output
-     to standard error.  This is described below in the description of
-     environment variables influencing the behavior.
-
-     The SEVERITY parameter can have one of the values in the following
-     table:
-
-     ‘MM_NOSEV’
-          Nothing is printed, this value is the same as ‘MM_NULLSEV’.
-     ‘MM_HALT’
-          This value is printed as ‘HALT’.
-     ‘MM_ERROR’
-          This value is printed as ‘ERROR’.
-     ‘MM_WARNING’
-          This value is printed as ‘WARNING’.
-     ‘MM_INFO’
-          This value is printed as ‘INFO’.
-
-     The numeric value of these five macros are between ‘0’ and ‘4’.
-     Using the environment variable ‘SEV_LEVEL’ or using the
-     ‘addseverity’ function one can add more severity levels with their
-     corresponding string to print.  This is described below (*note
-     Adding Severity Classes::).
-
-     If no parameter is ignored the output looks like this:
-
-          LABEL: SEVERITY-STRING: TEXT
-          TO FIX: ACTION TAG
-
-     The colons, new line characters and the ‘TO FIX’ string are
-     inserted if necessary, i.e., if the corresponding parameter is not
-     ignored.
-
-     This function is specified in the X/Open Portability Guide.  It is
-     also available on all systems derived from System V.
-
-     The function returns the value ‘MM_OK’ if no error occurred.  If
-     only the printing to standard error failed, it returns ‘MM_NOMSG’.
-     If printing to the console fails, it returns ‘MM_NOCON’.  If
-     nothing is printed ‘MM_NOTOK’ is returned.  Among situations where
-     all outputs fail this last value is also returned if a parameter
-     value is incorrect.
-
-   There are two environment variables which influence the behavior of
-‘fmtmsg’.  The first is ‘MSGVERB’.  It is used to control the output
-actually happening on standard error (_not_ the console output).  Each
-of the five fields can explicitly be enabled.  To do this the user has
-to put the ‘MSGVERB’ variable with a format like the following in the
-environment before calling the ‘fmtmsg’ function the first time:
-
-     MSGVERB=KEYWORD[:KEYWORD[:...]]
-
-   Valid KEYWORDs are ‘label’, ‘severity’, ‘text’, ‘action’, and ‘tag’.
-If the environment variable is not given or is the empty string, a not
-supported keyword is given or the value is somehow else invalid, no part
-of the message is masked out.
-
-   The second environment variable which influences the behavior of
-‘fmtmsg’ is ‘SEV_LEVEL’.  This variable and the change in the behavior
-of ‘fmtmsg’ is not specified in the X/Open Portability Guide.  It is
-available in System V systems, though.  It can be used to introduce new
-severity levels.  By default, only the five severity levels described
-above are available.  Any other numeric value would make ‘fmtmsg’ print
-nothing.
-
-   If the user puts ‘SEV_LEVEL’ with a format like
-
-     SEV_LEVEL=[DESCRIPTION[:DESCRIPTION[:...]]]
-
-in the environment of the process before the first call to ‘fmtmsg’,
-where DESCRIPTION has a value of the form
-
-     SEVERITY-KEYWORD,LEVEL,PRINTSTRING
-
-   The SEVERITY-KEYWORD part is not used by ‘fmtmsg’ but it has to be
-present.  The LEVEL part is a string representation of a number.  The
-numeric value must be a number greater than 4.  This value must be used
-in the SEVERITY parameter of ‘fmtmsg’ to select this class.  It is not
-possible to overwrite any of the predefined classes.  The PRINTSTRING is
-the string printed when a message of this class is processed by ‘fmtmsg’
-(see above, ‘fmtsmg’ does not print the numeric value but instead the
-string representation).
 
